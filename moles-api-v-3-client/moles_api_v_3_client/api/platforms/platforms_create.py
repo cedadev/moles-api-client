@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        PlatformWrite,
-        PlatformWrite,
-        PlatformWrite,
-    ],
+    body: PlatformWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/platforms/",
+        "url": "/api/v3/platforms/",
     }
 
-    if isinstance(body, PlatformWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, PlatformWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, PlatformWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -65,24 +52,13 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PlatformWrite,
-        PlatformWrite,
-        PlatformWrite,
-    ],
+    body: PlatformWrite,
 ) -> Response[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -106,24 +82,13 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PlatformWrite,
-        PlatformWrite,
-        PlatformWrite,
-    ],
+    body: PlatformWrite,
 ) -> Optional[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -142,24 +107,13 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PlatformWrite,
-        PlatformWrite,
-        PlatformWrite,
-    ],
+    body: PlatformWrite,
 ) -> Response[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -181,24 +135,13 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PlatformWrite,
-        PlatformWrite,
-        PlatformWrite,
-    ],
+    body: PlatformWrite,
 ) -> Optional[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PlatformWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        InspireThemeWrite,
-        InspireThemeWrite,
-        InspireThemeWrite,
-    ],
+    body: InspireThemeWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/inspirethemes/",
+        "url": "/api/v3/inspirethemes/",
     }
 
-    if isinstance(body, InspireThemeWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, InspireThemeWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, InspireThemeWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -69,24 +56,13 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InspireThemeWrite,
-        InspireThemeWrite,
-        InspireThemeWrite,
-    ],
+    body: InspireThemeWrite,
 ) -> Response[InspireThemeWrite]:
     """Get a list of InspireTheme objects.
 
     Args:
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (InspireThemeWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -110,24 +86,13 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InspireThemeWrite,
-        InspireThemeWrite,
-        InspireThemeWrite,
-    ],
+    body: InspireThemeWrite,
 ) -> Optional[InspireThemeWrite]:
     """Get a list of InspireTheme objects.
 
     Args:
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (InspireThemeWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -146,24 +111,13 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InspireThemeWrite,
-        InspireThemeWrite,
-        InspireThemeWrite,
-    ],
+    body: InspireThemeWrite,
 ) -> Response[InspireThemeWrite]:
     """Get a list of InspireTheme objects.
 
     Args:
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (InspireThemeWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -185,24 +139,13 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InspireThemeWrite,
-        InspireThemeWrite,
-        InspireThemeWrite,
-    ],
+    body: InspireThemeWrite,
 ) -> Optional[InspireThemeWrite]:
     """Get a list of InspireTheme objects.
 
     Args:
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (InspireThemeWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (InspireThemeWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

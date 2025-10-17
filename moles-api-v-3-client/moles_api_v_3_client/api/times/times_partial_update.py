@@ -13,31 +13,18 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: Union[
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-    ],
+    body: PatchedTimePeriod,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "patch",
-        "url": f"/v3/times/{ob_id}/",
+        "url": f"/api/v3/times/{ob_id}/",
     }
 
-    if isinstance(body, PatchedTimePeriod):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, PatchedTimePeriod):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, PatchedTimePeriod):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -68,26 +55,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-    ],
+    body: PatchedTimePeriod,
 ) -> Response[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
         ob_id (int):
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PatchedTimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -113,26 +89,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-    ],
+    body: PatchedTimePeriod,
 ) -> Optional[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
         ob_id (int):
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PatchedTimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,26 +118,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-    ],
+    body: PatchedTimePeriod,
 ) -> Response[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
         ob_id (int):
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PatchedTimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -196,26 +150,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-        PatchedTimePeriod,
-    ],
+    body: PatchedTimePeriod,
 ) -> Optional[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
         ob_id (int):
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PatchedTimePeriod): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PatchedTimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

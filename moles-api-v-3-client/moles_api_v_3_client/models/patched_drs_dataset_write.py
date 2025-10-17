@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PatchedDRSDatasetWrite")
@@ -12,8 +11,8 @@ T = TypeVar("T", bound="PatchedDRSDatasetWrite")
 
 @_attrs_define
 class PatchedDRSDatasetWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -56,29 +55,6 @@ class PatchedDRSDatasetWrite:
             field_dict["relatedTo"] = related_to
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.drs_id, Unset):
-            files.append(("drsId", (None, str(self.drs_id).encode(), "text/plain")))
-
-        if not isinstance(self.version, Unset):
-            files.append(("version", (None, str(self.version).encode(), "text/plain")))
-
-        if not isinstance(self.directory, Unset):
-            files.append(("directory", (None, str(self.directory).encode(), "text/plain")))
-
-        if not isinstance(self.related_to, Unset):
-            files.append(("relatedTo", (None, str(self.related_to).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

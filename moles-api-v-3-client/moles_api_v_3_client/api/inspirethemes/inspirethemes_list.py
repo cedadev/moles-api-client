@@ -148,7 +148,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/inspirethemes/",
+        "url": "/api/v3/inspirethemes/",
         "params": params,
     }
 

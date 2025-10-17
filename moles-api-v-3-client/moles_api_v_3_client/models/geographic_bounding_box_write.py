@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="GeographicBoundingBoxWrite")
@@ -12,24 +11,24 @@ T = TypeVar("T", bound="GeographicBoundingBoxWrite")
 
 @_attrs_define
 class GeographicBoundingBoxWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
             bbox_name (Union[Unset, str]):
             east_bound_longitude (Union[Unset, float]):
-            north_bound_latitude (Union[Unset, float]):
             west_bound_longitude (Union[Unset, float]):
             south_bound_latitude (Union[Unset, float]):
+            north_bound_latitude (Union[Unset, float]):
     """
 
     ob_id: int
     bbox_name: Union[Unset, str] = UNSET
     east_bound_longitude: Union[Unset, float] = UNSET
-    north_bound_latitude: Union[Unset, float] = UNSET
     west_bound_longitude: Union[Unset, float] = UNSET
     south_bound_latitude: Union[Unset, float] = UNSET
+    north_bound_latitude: Union[Unset, float] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -39,11 +38,11 @@ class GeographicBoundingBoxWrite:
 
         east_bound_longitude = self.east_bound_longitude
 
-        north_bound_latitude = self.north_bound_latitude
-
         west_bound_longitude = self.west_bound_longitude
 
         south_bound_latitude = self.south_bound_latitude
+
+        north_bound_latitude = self.north_bound_latitude
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -56,39 +55,14 @@ class GeographicBoundingBoxWrite:
             field_dict["bboxName"] = bbox_name
         if east_bound_longitude is not UNSET:
             field_dict["eastBoundLongitude"] = east_bound_longitude
-        if north_bound_latitude is not UNSET:
-            field_dict["northBoundLatitude"] = north_bound_latitude
         if west_bound_longitude is not UNSET:
             field_dict["westBoundLongitude"] = west_bound_longitude
         if south_bound_latitude is not UNSET:
             field_dict["southBoundLatitude"] = south_bound_latitude
+        if north_bound_latitude is not UNSET:
+            field_dict["northBoundLatitude"] = north_bound_latitude
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.bbox_name, Unset):
-            files.append(("bboxName", (None, str(self.bbox_name).encode(), "text/plain")))
-
-        if not isinstance(self.east_bound_longitude, Unset):
-            files.append(("eastBoundLongitude", (None, str(self.east_bound_longitude).encode(), "text/plain")))
-
-        if not isinstance(self.north_bound_latitude, Unset):
-            files.append(("northBoundLatitude", (None, str(self.north_bound_latitude).encode(), "text/plain")))
-
-        if not isinstance(self.west_bound_longitude, Unset):
-            files.append(("westBoundLongitude", (None, str(self.west_bound_longitude).encode(), "text/plain")))
-
-        if not isinstance(self.south_bound_latitude, Unset):
-            files.append(("southBoundLatitude", (None, str(self.south_bound_latitude).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
@@ -99,19 +73,19 @@ class GeographicBoundingBoxWrite:
 
         east_bound_longitude = d.pop("eastBoundLongitude", UNSET)
 
-        north_bound_latitude = d.pop("northBoundLatitude", UNSET)
-
         west_bound_longitude = d.pop("westBoundLongitude", UNSET)
 
         south_bound_latitude = d.pop("southBoundLatitude", UNSET)
+
+        north_bound_latitude = d.pop("northBoundLatitude", UNSET)
 
         geographic_bounding_box_write = cls(
             ob_id=ob_id,
             bbox_name=bbox_name,
             east_bound_longitude=east_bound_longitude,
-            north_bound_latitude=north_bound_latitude,
             west_bound_longitude=west_bound_longitude,
             south_bound_latitude=south_bound_latitude,
+            north_bound_latitude=north_bound_latitude,
         )
 
         geographic_bounding_box_write.additional_properties = d

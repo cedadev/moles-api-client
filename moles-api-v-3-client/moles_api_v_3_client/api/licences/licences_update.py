@@ -12,31 +12,18 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: Union[
-        LicenceWrite,
-        LicenceWrite,
-        LicenceWrite,
-    ],
+    body: LicenceWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "put",
-        "url": f"/v3/licences/{ob_id}/",
+        "url": f"/api/v3/licences/{ob_id}/",
     }
 
-    if isinstance(body, LicenceWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, LicenceWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, LicenceWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -67,25 +54,14 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        LicenceWrite,
-        LicenceWrite,
-        LicenceWrite,
-    ],
+    body: LicenceWrite,
 ) -> Response[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (LicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -111,25 +87,14 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        LicenceWrite,
-        LicenceWrite,
-        LicenceWrite,
-    ],
+    body: LicenceWrite,
 ) -> Optional[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (LicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -150,25 +115,14 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        LicenceWrite,
-        LicenceWrite,
-        LicenceWrite,
-    ],
+    body: LicenceWrite,
 ) -> Response[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (LicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -192,25 +146,14 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        LicenceWrite,
-        LicenceWrite,
-        LicenceWrite,
-    ],
+    body: LicenceWrite,
 ) -> Optional[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (LicenceWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (LicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

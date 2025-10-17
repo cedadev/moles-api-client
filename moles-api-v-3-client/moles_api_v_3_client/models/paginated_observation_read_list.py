@@ -7,24 +7,24 @@ from attrs import field as _attrs_field
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
-    from ..models.observation_write import ObservationWrite
+    from ..models.observation_read import ObservationRead
 
 
-T = TypeVar("T", bound="PaginatedObservationWriteList")
+T = TypeVar("T", bound="PaginatedObservationReadList")
 
 
 @_attrs_define
-class PaginatedObservationWriteList:
+class PaginatedObservationReadList:
     """
     Attributes:
         count (int):  Example: 123.
-        results (list['ObservationWrite']):
+        results (list['ObservationRead']):
         next_ (Union[None, Unset, str]):  Example: http://api.example.org/accounts/?offset=400&limit=100.
         previous (Union[None, Unset, str]):  Example: http://api.example.org/accounts/?offset=200&limit=100.
     """
 
     count: int
-    results: list["ObservationWrite"]
+    results: list["ObservationRead"]
     next_: Union[None, Unset, str] = UNSET
     previous: Union[None, Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -66,7 +66,7 @@ class PaginatedObservationWriteList:
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
-        from ..models.observation_write import ObservationWrite
+        from ..models.observation_read import ObservationRead
 
         d = dict(src_dict)
         count = d.pop("count")
@@ -74,7 +74,7 @@ class PaginatedObservationWriteList:
         results = []
         _results = d.pop("results")
         for results_item_data in _results:
-            results_item = ObservationWrite.from_dict(results_item_data)
+            results_item = ObservationRead.from_dict(results_item_data)
 
             results.append(results_item)
 
@@ -96,15 +96,15 @@ class PaginatedObservationWriteList:
 
         previous = _parse_previous(d.pop("previous", UNSET))
 
-        paginated_observation_write_list = cls(
+        paginated_observation_read_list = cls(
             count=count,
             results=results,
             next_=next_,
             previous=previous,
         )
 
-        paginated_observation_write_list.additional_properties = d
-        return paginated_observation_write_list
+        paginated_observation_read_list.additional_properties = d
+        return paginated_observation_read_list
 
     @property
     def additional_keys(self) -> list[str]:

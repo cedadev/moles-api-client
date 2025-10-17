@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.function_enum import FunctionEnum
 from ..types import UNSET, Unset
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="PatchedOnlineResourceWrite")
 
 @_attrs_define
 class PatchedOnlineResourceWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -70,39 +69,6 @@ class PatchedOnlineResourceWrite:
             field_dict["relatedTo"] = related_to
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.function, Unset):
-            if isinstance(self.function, FunctionEnum):
-                files.append(("function", (None, str(self.function.value).encode(), "text/plain")))
-            elif isinstance(self.function, BlankEnum):
-                files.append(("function", (None, str(self.function.value).encode(), "text/plain")))
-            elif self.function is None:
-                files.append(("function", (None, str(self.function).encode(), "text/plain")))
-            else:
-                files.append(("function", (None, str(self.function).encode(), "text/plain")))
-
-        if not isinstance(self.linkage, Unset):
-            files.append(("linkage", (None, str(self.linkage).encode(), "text/plain")))
-
-        if not isinstance(self.name, Unset):
-            if isinstance(self.name, str):
-                files.append(("name", (None, str(self.name).encode(), "text/plain")))
-            else:
-                files.append(("name", (None, str(self.name).encode(), "text/plain")))
-
-        if not isinstance(self.related_to, Unset):
-            files.append(("relatedTo", (None, str(self.related_to).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

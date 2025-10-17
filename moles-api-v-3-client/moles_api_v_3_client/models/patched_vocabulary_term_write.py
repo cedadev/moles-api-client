@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.vocab_service_enum import VocabServiceEnum
 from ..types import UNSET, Unset
 
@@ -13,8 +12,8 @@ T = TypeVar("T", bound="PatchedVocabularyTermWrite")
 
 @_attrs_define
 class PatchedVocabularyTermWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -58,29 +57,6 @@ class PatchedVocabularyTermWrite:
             field_dict["resolvedTerm"] = resolved_term
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.vocab_service, Unset):
-            files.append(("vocabService", (None, str(self.vocab_service.value).encode(), "text/plain")))
-
-        if not isinstance(self.uri, Unset):
-            files.append(("uri", (None, str(self.uri).encode(), "text/plain")))
-
-        if not isinstance(self.resolved_term, Unset):
-            if isinstance(self.resolved_term, str):
-                files.append(("resolvedTerm", (None, str(self.resolved_term).encode(), "text/plain")))
-            else:
-                files.append(("resolvedTerm", (None, str(self.resolved_term).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

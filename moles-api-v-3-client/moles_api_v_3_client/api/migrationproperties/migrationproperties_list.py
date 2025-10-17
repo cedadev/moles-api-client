@@ -370,7 +370,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/migrationproperties/",
+        "url": "/api/v3/migrationproperties/",
         "params": params,
     }
 

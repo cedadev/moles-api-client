@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.curation_category_enum import CurationCategoryEnum
 from ..models.storage_location_enum import StorageLocationEnum
@@ -16,8 +15,8 @@ T = TypeVar("T", bound="ResultWrite")
 
 @_attrs_define
 class ResultWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -113,50 +112,6 @@ class ResultWrite:
             field_dict["oldDataPath"] = old_data_path
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        files.append(("dataPath", (None, str(self.data_path).encode(), "text/plain")))
-
-        if not isinstance(self.curation_category, Unset):
-            if isinstance(self.curation_category, CurationCategoryEnum):
-                files.append(("curationCategory", (None, str(self.curation_category.value).encode(), "text/plain")))
-            else:
-                files.append(("curationCategory", (None, str(self.curation_category.value).encode(), "text/plain")))
-
-        if not isinstance(self.number_of_files, Unset):
-            files.append(("numberOfFiles", (None, str(self.number_of_files).encode(), "text/plain")))
-
-        if not isinstance(self.volume, Unset):
-            files.append(("volume", (None, str(self.volume).encode(), "text/plain")))
-
-        if not isinstance(self.file_format, Unset):
-            if isinstance(self.file_format, str):
-                files.append(("fileFormat", (None, str(self.file_format).encode(), "text/plain")))
-            else:
-                files.append(("fileFormat", (None, str(self.file_format).encode(), "text/plain")))
-
-        if not isinstance(self.storage_status, Unset):
-            files.append(("storageStatus", (None, str(self.storage_status.value).encode(), "text/plain")))
-
-        if not isinstance(self.storage_location, Unset):
-            files.append(("storageLocation", (None, str(self.storage_location.value).encode(), "text/plain")))
-
-        if not isinstance(self.old_data_path, Unset):
-            for old_data_path_item_element in self.old_data_path:
-                files.append(("oldDataPath", (None, str(old_data_path_item_element).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

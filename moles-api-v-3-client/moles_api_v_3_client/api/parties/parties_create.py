@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        PartyWrite,
-        PartyWrite,
-        PartyWrite,
-    ],
+    body: PartyWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/parties/",
+        "url": "/api/v3/parties/",
     }
 
-    if isinstance(body, PartyWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, PartyWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, PartyWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -65,26 +52,15 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PartyWrite,
-        PartyWrite,
-        PartyWrite,
-    ],
+    body: PartyWrite,
 ) -> Response[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -108,26 +84,15 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PartyWrite,
-        PartyWrite,
-        PartyWrite,
-    ],
+    body: PartyWrite,
 ) -> Optional[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -146,26 +111,15 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PartyWrite,
-        PartyWrite,
-        PartyWrite,
-    ],
+    body: PartyWrite,
 ) -> Response[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -187,26 +141,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PartyWrite,
-        PartyWrite,
-        PartyWrite,
-    ],
+    body: PartyWrite,
 ) -> Optional[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
-        body (PartyWrite): A mixin that allows specifying which fields to include in the
-            serializer
-            via the 'fields' keyword argument.
+        body (PartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

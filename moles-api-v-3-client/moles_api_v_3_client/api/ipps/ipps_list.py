@@ -224,7 +224,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/ipps/",
+        "url": "/api/v3/ipps/",
         "params": params,
     }
 

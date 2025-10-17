@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.relation_type_enum import RelationTypeEnum
 from ..types import UNSET, Unset
 
@@ -13,8 +12,8 @@ T = TypeVar("T", bound="PatchedRelatedObservationInfoWrite")
 
 @_attrs_define
 class PatchedRelatedObservationInfoWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -61,26 +60,6 @@ class PatchedRelatedObservationInfoWrite:
             field_dict["objectObservation"] = object_observation
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.subject_observation, Unset):
-            files.append(("subjectObservation", (None, str(self.subject_observation).encode(), "text/plain")))
-
-        if not isinstance(self.relation_type, Unset):
-            files.append(("relationType", (None, str(self.relation_type.value).encode(), "text/plain")))
-
-        if not isinstance(self.object_observation, Unset):
-            files.append(("objectObservation", (None, str(self.object_observation).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

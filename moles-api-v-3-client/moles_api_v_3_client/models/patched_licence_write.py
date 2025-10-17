@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PatchedLicenceWrite")
@@ -12,8 +11,8 @@ T = TypeVar("T", bound="PatchedLicenceWrite")
 
 @_attrs_define
 class PatchedLicenceWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -46,26 +45,6 @@ class PatchedLicenceWrite:
             field_dict["licenceClassifications"] = licence_classifications
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.licence_url, Unset):
-            files.append(("licenceURL", (None, str(self.licence_url).encode(), "text/plain")))
-
-        if not isinstance(self.licence_classifications, Unset):
-            for licence_classifications_item_element in self.licence_classifications:
-                files.append(
-                    ("licenceClassifications", (None, str(licence_classifications_item_element).encode(), "text/plain"))
-                )
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

@@ -168,7 +168,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/licences/",
+        "url": "/api/v3/licences/",
         "params": params,
     }
 

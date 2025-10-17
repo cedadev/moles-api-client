@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.project_write_publication_state_enum import ProjectWritePublicationStateEnum
 from ..models.status_enum import StatusEnum
@@ -15,8 +14,8 @@ T = TypeVar("T", bound="ProjectWrite")
 
 @_attrs_define
 class ProjectWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -115,58 +114,6 @@ class ProjectWrite:
             field_dict["imageDetails"] = image_details
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        for observation_collection_item_element in self.observation_collection:
-            files.append(
-                ("observationCollection", (None, str(observation_collection_item_element).encode(), "text/plain"))
-            )
-
-        if not isinstance(self.abstract, Unset):
-            if isinstance(self.abstract, str):
-                files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-            else:
-                files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.publication_state, Unset):
-            if isinstance(self.publication_state, ProjectWritePublicationStateEnum):
-                files.append(("publicationState", (None, str(self.publication_state.value).encode(), "text/plain")))
-            else:
-                files.append(("publicationState", (None, str(self.publication_state.value).encode(), "text/plain")))
-
-        if not isinstance(self.parent_project, Unset):
-            if isinstance(self.parent_project, int):
-                files.append(("parentProject", (None, str(self.parent_project).encode(), "text/plain")))
-            else:
-                files.append(("parentProject", (None, str(self.parent_project).encode(), "text/plain")))
-
-        if not isinstance(self.keywords, Unset):
-            files.append(("keywords", (None, str(self.keywords).encode(), "text/plain")))
-
-        if not isinstance(self.status, Unset):
-            if isinstance(self.status, StatusEnum):
-                files.append(("status", (None, str(self.status.value).encode(), "text/plain")))
-            else:
-                files.append(("status", (None, str(self.status.value).encode(), "text/plain")))
-
-        if not isinstance(self.image_details, Unset):
-            for image_details_item_element in self.image_details:
-                files.append(("imageDetails", (None, str(image_details_item_element).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

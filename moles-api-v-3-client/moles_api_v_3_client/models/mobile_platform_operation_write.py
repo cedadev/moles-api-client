@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.status_enum import StatusEnum
 from ..types import UNSET, Unset
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="MobilePlatformOperationWrite")
 
 @_attrs_define
 class MobilePlatformOperationWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -104,51 +103,6 @@ class MobilePlatformOperationWrite:
             field_dict["childOperation"] = child_operation
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        files.append(("platform_field", (None, str(self.platform_field).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.location, Unset):
-            if isinstance(self.location, int):
-                files.append(("location", (None, str(self.location).encode(), "text/plain")))
-            else:
-                files.append(("location", (None, str(self.location).encode(), "text/plain")))
-
-        if not isinstance(self.status, Unset):
-            if isinstance(self.status, StatusEnum):
-                files.append(("status", (None, str(self.status.value).encode(), "text/plain")))
-            else:
-                files.append(("status", (None, str(self.status.value).encode(), "text/plain")))
-
-        if not isinstance(self.operation_time, Unset):
-            if isinstance(self.operation_time, int):
-                files.append(("operationTime", (None, str(self.operation_time).encode(), "text/plain")))
-            else:
-                files.append(("operationTime", (None, str(self.operation_time).encode(), "text/plain")))
-
-        if not isinstance(self.child_operation, Unset):
-            if isinstance(self.child_operation, int):
-                files.append(("childOperation", (None, str(self.child_operation).encode(), "text/plain")))
-            else:
-                files.append(("childOperation", (None, str(self.child_operation).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.access_category_enum import AccessCategoryEnum
 from ..types import UNSET, Unset
 
@@ -13,8 +12,8 @@ T = TypeVar("T", bound="PatchedConstraintsWrite")
 
 @_attrs_define
 class PatchedConstraintsWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -83,44 +82,6 @@ class PatchedConstraintsWrite:
             field_dict["licence"] = licence
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.access_constraints, Unset):
-            if isinstance(self.access_constraints, str):
-                files.append(("accessConstraints", (None, str(self.access_constraints).encode(), "text/plain")))
-            else:
-                files.append(("accessConstraints", (None, str(self.access_constraints).encode(), "text/plain")))
-
-        if not isinstance(self.access_category, Unset):
-            files.append(("accessCategory", (None, str(self.access_category.value).encode(), "text/plain")))
-
-        if not isinstance(self.access_roles, Unset):
-            if isinstance(self.access_roles, str):
-                files.append(("accessRoles", (None, str(self.access_roles).encode(), "text/plain")))
-            else:
-                files.append(("accessRoles", (None, str(self.access_roles).encode(), "text/plain")))
-
-        if not isinstance(self.label, Unset):
-            if isinstance(self.label, str):
-                files.append(("label", (None, str(self.label).encode(), "text/plain")))
-            else:
-                files.append(("label", (None, str(self.label).encode(), "text/plain")))
-
-        if not isinstance(self.licence, Unset):
-            if isinstance(self.licence, int):
-                files.append(("licence", (None, str(self.licence).encode(), "text/plain")))
-            else:
-                files.append(("licence", (None, str(self.licence).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

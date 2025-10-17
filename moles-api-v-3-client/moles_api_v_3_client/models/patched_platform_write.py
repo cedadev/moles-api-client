@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.platform_type_enum import PlatformTypeEnum
 from ..types import UNSET, Unset
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="PatchedPlatformWrite")
 
 @_attrs_define
 class PatchedPlatformWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -78,39 +77,6 @@ class PatchedPlatformWrite:
             field_dict["location"] = location
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.title, Unset):
-            files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.keywords, Unset):
-            files.append(("keywords", (None, str(self.keywords).encode(), "text/plain")))
-
-        if not isinstance(self.child_platform, Unset):
-            for child_platform_item_element in self.child_platform:
-                files.append(("childPlatform", (None, str(child_platform_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.platform_type, Unset):
-            if isinstance(self.platform_type, PlatformTypeEnum):
-                files.append(("platformType", (None, str(self.platform_type.value).encode(), "text/plain")))
-            else:
-                files.append(("platformType", (None, str(self.platform_type.value).encode(), "text/plain")))
-
-        if not isinstance(self.location, Unset):
-            files.append(("location", (None, str(self.location).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

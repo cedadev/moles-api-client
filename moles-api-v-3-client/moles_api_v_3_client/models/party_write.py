@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.party_type_enum import PartyTypeEnum
 from ..types import UNSET, Unset
 
@@ -13,16 +12,16 @@ T = TypeVar("T", bound="PartyWrite")
 
 @_attrs_define
 class PartyWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
             last_name (str):
-            address_line_1 (str):
             delivery_point (str):
-            address_line_2 (str):
             administrative_area (str):
+            address_line_1 (str):
+            address_line_2 (str):
             first_name (Union[Unset, str]):
             party_type (Union[Unset, PartyTypeEnum]): * `individual` - Individual
                 * `organisation` - Organisation
@@ -37,10 +36,10 @@ class PartyWrite:
 
     ob_id: int
     last_name: str
-    address_line_1: str
     delivery_point: str
-    address_line_2: str
     administrative_area: str
+    address_line_1: str
+    address_line_2: str
     first_name: Union[Unset, str] = UNSET
     party_type: Union[Unset, PartyTypeEnum] = UNSET
     description: Union[Unset, str] = UNSET
@@ -57,13 +56,13 @@ class PartyWrite:
 
         last_name = self.last_name
 
-        address_line_1 = self.address_line_1
-
         delivery_point = self.delivery_point
 
-        address_line_2 = self.address_line_2
-
         administrative_area = self.administrative_area
+
+        address_line_1 = self.address_line_1
+
+        address_line_2 = self.address_line_2
 
         first_name = self.first_name
 
@@ -91,10 +90,10 @@ class PartyWrite:
             {
                 "ob_id": ob_id,
                 "lastName": last_name,
-                "addressLine1": address_line_1,
                 "deliveryPoint": delivery_point,
-                "addressLine2": address_line_2,
                 "administrativeArea": administrative_area,
+                "addressLine1": address_line_1,
+                "addressLine2": address_line_2,
             }
         )
         if first_name is not UNSET:
@@ -118,53 +117,6 @@ class PartyWrite:
 
         return field_dict
 
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("lastName", (None, str(self.last_name).encode(), "text/plain")))
-
-        files.append(("addressLine1", (None, str(self.address_line_1).encode(), "text/plain")))
-
-        files.append(("deliveryPoint", (None, str(self.delivery_point).encode(), "text/plain")))
-
-        files.append(("addressLine2", (None, str(self.address_line_2).encode(), "text/plain")))
-
-        files.append(("administrativeArea", (None, str(self.administrative_area).encode(), "text/plain")))
-
-        if not isinstance(self.first_name, Unset):
-            files.append(("firstName", (None, str(self.first_name).encode(), "text/plain")))
-
-        if not isinstance(self.party_type, Unset):
-            files.append(("partyType", (None, str(self.party_type.value).encode(), "text/plain")))
-
-        if not isinstance(self.description, Unset):
-            files.append(("description", (None, str(self.description).encode(), "text/plain")))
-
-        if not isinstance(self.city, Unset):
-            files.append(("city", (None, str(self.city).encode(), "text/plain")))
-
-        if not isinstance(self.country, Unset):
-            files.append(("country", (None, str(self.country).encode(), "text/plain")))
-
-        if not isinstance(self.postal_code, Unset):
-            files.append(("postalCode", (None, str(self.postal_code).encode(), "text/plain")))
-
-        if not isinstance(self.electronic_email_address, Unset):
-            files.append(("electronicEmailAddress", (None, str(self.electronic_email_address).encode(), "text/plain")))
-
-        if not isinstance(self.phone, Unset):
-            files.append(("phone", (None, str(self.phone).encode(), "text/plain")))
-
-        if not isinstance(self.online_resource, Unset):
-            files.append(("onlineResource", (None, str(self.online_resource).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
-
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
@@ -172,13 +124,13 @@ class PartyWrite:
 
         last_name = d.pop("lastName")
 
-        address_line_1 = d.pop("addressLine1")
-
         delivery_point = d.pop("deliveryPoint")
 
-        address_line_2 = d.pop("addressLine2")
-
         administrative_area = d.pop("administrativeArea")
+
+        address_line_1 = d.pop("addressLine1")
+
+        address_line_2 = d.pop("addressLine2")
 
         first_name = d.pop("firstName", UNSET)
 
@@ -206,10 +158,10 @@ class PartyWrite:
         party_write = cls(
             ob_id=ob_id,
             last_name=last_name,
-            address_line_1=address_line_1,
             delivery_point=delivery_point,
-            address_line_2=address_line_2,
             administrative_area=administrative_area,
+            address_line_1=address_line_1,
+            address_line_2=address_line_2,
             first_name=first_name,
             party_type=party_type,
             description=description,

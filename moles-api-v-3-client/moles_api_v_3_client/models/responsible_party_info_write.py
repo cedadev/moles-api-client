@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.role_enum import RoleEnum
 from ..types import UNSET, Unset
 
@@ -13,8 +12,8 @@ T = TypeVar("T", bound="ResponsiblePartyInfoWrite")
 
 @_attrs_define
 class ResponsiblePartyInfoWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -72,28 +71,6 @@ class ResponsiblePartyInfoWrite:
             field_dict["priority"] = priority
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("party", (None, str(self.party).encode(), "text/plain")))
-
-        files.append(("role", (None, str(self.role.value).encode(), "text/plain")))
-
-        files.append(("relatedTo", (None, str(self.related_to).encode(), "text/plain")))
-
-        if not isinstance(self.priority, Unset):
-            if isinstance(self.priority, int):
-                files.append(("priority", (None, str(self.priority).encode(), "text/plain")))
-            else:
-                files.append(("priority", (None, str(self.priority).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

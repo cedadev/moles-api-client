@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ProcedureAcquisitionWrite")
@@ -12,8 +11,8 @@ T = TypeVar("T", bound="ProcedureAcquisitionWrite")
 
 @_attrs_define
 class ProcedureAcquisitionWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -89,50 +88,6 @@ class ProcedureAcquisitionWrite:
             field_dict["mobilePlatformOperation"] = mobile_platform_operation
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.output_description, Unset):
-            if isinstance(self.output_description, int):
-                files.append(("outputDescription", (None, str(self.output_description).encode(), "text/plain")))
-            else:
-                files.append(("outputDescription", (None, str(self.output_description).encode(), "text/plain")))
-
-        if not isinstance(self.image_details, Unset):
-            for image_details_item_element in self.image_details:
-                files.append(("imageDetails", (None, str(image_details_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.independent_instrument, Unset):
-            for independent_instrument_item_element in self.independent_instrument:
-                files.append(
-                    ("independentInstrument", (None, str(independent_instrument_item_element).encode(), "text/plain"))
-                )
-
-        if not isinstance(self.mobile_platform_operation, Unset):
-            for mobile_platform_operation_item_element in self.mobile_platform_operation:
-                files.append(
-                    (
-                        "mobilePlatformOperation",
-                        (None, str(mobile_platform_operation_item_element).encode(), "text/plain"),
-                    )
-                )
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

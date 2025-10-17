@@ -1,11 +1,9 @@
-import json
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 if TYPE_CHECKING:
@@ -22,12 +20,12 @@ class PatchedPhenomenon:
     and reorders them to the top.
 
         Attributes:
-            ob_id (Union[Unset, str]):
+            ob_id (Union[Unset, int]):
             names (Union[Unset, list['PhenomenonName']]):
             terms (Union[Unset, list['PhenomenonTerm']]):
     """
 
-    ob_id: Union[Unset, str] = UNSET
+    ob_id: Union[Unset, int] = UNSET
     names: Union[Unset, list["PhenomenonName"]] = UNSET
     terms: Union[Unset, list["PhenomenonTerm"]] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -60,25 +58,6 @@ class PatchedPhenomenon:
             field_dict["terms"] = terms
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.names, Unset):
-            for names_item_element in self.names:
-                files.append(("names", (None, json.dumps(names_item_element.to_dict()).encode(), "application/json")))
-
-        if not isinstance(self.terms, Unset):
-            for terms_item_element in self.terms:
-                files.append(("terms", (None, json.dumps(terms_item_element.to_dict()).encode(), "application/json")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

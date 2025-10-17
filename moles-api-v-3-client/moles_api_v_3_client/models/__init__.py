@@ -3,30 +3,39 @@
 from .access_category_enum import AccessCategoryEnum
 from .blank_enum import BlankEnum
 from .constraints_list_access_category import ConstraintsListAccessCategory
+from .constraints_read import ConstraintsRead
 from .constraints_write import ConstraintsWrite
 from .curation_category_enum import CurationCategoryEnum
+from .discovery_service_id_read import DiscoveryServiceIdRead
 from .discovery_service_id_write import DiscoveryServiceIdWrite
+from .dq_conformance_result_read import DQConformanceResultRead
 from .dq_conformance_result_write import DQConformanceResultWrite
 from .drs_dataset_write import DRSDatasetWrite
 from .function_enum import FunctionEnum
+from .geographic_bounding_box_read import GeographicBoundingBoxRead
 from .geographic_bounding_box_write import GeographicBoundingBoxWrite
 from .identifier_type_enum import IdentifierTypeEnum
 from .identifier_write import IdentifierWrite
 from .identifiers_list_identifier_type import IdentifiersListIdentifierType
 from .image_details_write import ImageDetailsWrite
 from .input_output_description_write import InputOutputDescriptionWrite
+from .inspire_theme_read import InspireThemeRead
 from .inspire_theme_write import InspireThemeWrite
 from .instrument_platform_pair_write import InstrumentPlatformPairWrite
 from .instrument_type_enum import InstrumentTypeEnum
 from .instrument_write import InstrumentWrite
 from .instruments_list_instrument_type import InstrumentsListInstrumentType
+from .label_enum import LabelEnum
 from .language_enum import LanguageEnum
+from .licence_classification_read import LicenceClassificationRead
 from .licence_classification_write import LicenceClassificationWrite
+from .licence_read import LicenceRead
 from .licence_write import LicenceWrite
 from .migration_property_write import MigrationPropertyWrite
 from .mobile_platform_operation_write import MobilePlatformOperationWrite
 from .mpos_list_status import MposListStatus
 from .observation_collection_write import ObservationCollectionWrite
+from .observation_read import ObservationRead
 from .observation_write import ObservationWrite
 from .observationcollections_list_publication_state import ObservationcollectionsListPublicationState
 from .observations_list_access_category import ObservationsListAccessCategory
@@ -56,7 +65,7 @@ from .paginated_licence_write_list import PaginatedLicenceWriteList
 from .paginated_migration_property_write_list import PaginatedMigrationPropertyWriteList
 from .paginated_mobile_platform_operation_write_list import PaginatedMobilePlatformOperationWriteList
 from .paginated_observation_collection_write_list import PaginatedObservationCollectionWriteList
-from .paginated_observation_write_list import PaginatedObservationWriteList
+from .paginated_observation_read_list import PaginatedObservationReadList
 from .paginated_online_resource_write_list import PaginatedOnlineResourceWriteList
 from .paginated_party_write_list import PaginatedPartyWriteList
 from .paginated_phenomenon_list import PaginatedPhenomenonList
@@ -125,6 +134,7 @@ from .projects_list_publication_state import ProjectsListPublicationState
 from .publication_state_cbb_enum import PublicationStateCbbEnum
 from .referenceable import Referenceable
 from .related_observation_info_write import RelatedObservationInfoWrite
+from .related_result import RelatedResult
 from .relatedobservationinfos_list_relation_type_between_subject_and_object_obs import (
     RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs,
 )
@@ -141,10 +151,14 @@ from .status_enum import StatusEnum
 from .storage_location_enum import StorageLocationEnum
 from .storage_status_enum import StorageStatusEnum
 from .time_period import TimePeriod
+from .topic_category_read import TopicCategoryRead
 from .topic_category_write import TopicCategoryWrite
 from .update_frequency_enum import UpdateFrequencyEnum
+from .vertical_extent_read import VerticalExtentRead
 from .vertical_extent_write import VerticalExtentWrite
 from .vocab_service_enum import VocabServiceEnum
+from .vocabulary_enum import VocabularyEnum
+from .vocabulary_term_read import VocabularyTermRead
 from .vocabulary_term_write import VocabularyTermWrite
 from .vocabularyterms_list_vocabulary_service import VocabularytermsListVocabularyService
 
@@ -152,31 +166,40 @@ __all__ = (
     "AccessCategoryEnum",
     "BlankEnum",
     "ConstraintsListAccessCategory",
+    "ConstraintsRead",
     "ConstraintsWrite",
     "CurationCategoryEnum",
+    "DiscoveryServiceIdRead",
     "DiscoveryServiceIdWrite",
+    "DQConformanceResultRead",
     "DQConformanceResultWrite",
     "DRSDatasetWrite",
     "FunctionEnum",
+    "GeographicBoundingBoxRead",
     "GeographicBoundingBoxWrite",
     "IdentifiersListIdentifierType",
     "IdentifierTypeEnum",
     "IdentifierWrite",
     "ImageDetailsWrite",
     "InputOutputDescriptionWrite",
+    "InspireThemeRead",
     "InspireThemeWrite",
     "InstrumentPlatformPairWrite",
     "InstrumentsListInstrumentType",
     "InstrumentTypeEnum",
     "InstrumentWrite",
+    "LabelEnum",
     "LanguageEnum",
+    "LicenceClassificationRead",
     "LicenceClassificationWrite",
+    "LicenceRead",
     "LicenceWrite",
     "MigrationPropertyWrite",
     "MobilePlatformOperationWrite",
     "MposListStatus",
     "ObservationcollectionsListPublicationState",
     "ObservationCollectionWrite",
+    "ObservationRead",
     "ObservationsListAccessCategory",
     "ObservationsListDataStatus",
     "ObservationsListDataUpdateFrequency",
@@ -205,7 +228,7 @@ __all__ = (
     "PaginatedMigrationPropertyWriteList",
     "PaginatedMobilePlatformOperationWriteList",
     "PaginatedObservationCollectionWriteList",
-    "PaginatedObservationWriteList",
+    "PaginatedObservationReadList",
     "PaginatedOnlineResourceWriteList",
     "PaginatedPartyWriteList",
     "PaginatedPhenomenonList",
@@ -275,6 +298,7 @@ __all__ = (
     "Referenceable",
     "RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs",
     "RelatedObservationInfoWrite",
+    "RelatedResult",
     "RelationTypeEnum",
     "ResponsiblePartyInfoWrite",
     "ResultsListCEDACurationCategory",
@@ -288,10 +312,14 @@ __all__ = (
     "StorageLocationEnum",
     "StorageStatusEnum",
     "TimePeriod",
+    "TopicCategoryRead",
     "TopicCategoryWrite",
     "UpdateFrequencyEnum",
+    "VerticalExtentRead",
     "VerticalExtentWrite",
     "VocabServiceEnum",
+    "VocabularyEnum",
+    "VocabularyTermRead",
     "VocabularytermsListVocabularyService",
     "VocabularyTermWrite",
 )

@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-    ],
+    body: ProcedureComputationWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/computations/",
+        "url": "/api/v3/computations/",
     }
 
-    if isinstance(body, ProcedureComputationWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, ProcedureComputationWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, ProcedureComputationWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -69,25 +56,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-    ],
+    body: ProcedureComputationWrite,
 ) -> Response[ProcedureComputationWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureComputationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -111,25 +87,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-    ],
+    body: ProcedureComputationWrite,
 ) -> Optional[ProcedureComputationWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureComputationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -148,25 +113,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-    ],
+    body: ProcedureComputationWrite,
 ) -> Response[ProcedureComputationWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureComputationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -188,25 +142,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-        ProcedureComputationWrite,
-    ],
+    body: ProcedureComputationWrite,
 ) -> Optional[ProcedureComputationWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureComputationWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureComputationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

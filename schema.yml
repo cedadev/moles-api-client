@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: Description
 paths:
-  /v3/acquisitions/:
+  /api/v3/acquisitions/:
     get:
       operationId: acquisitions_list
       description: Get a list of ProcedureAcquisition objects. ProcedureAcquisitions
@@ -548,12 +548,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureAcquisitionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureAcquisitionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureAcquisitionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -564,7 +558,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureAcquisitionWrite'
           description: ''
-  /v3/acquisitions/{ob_id}/:
+  /api/v3/acquisitions/{ob_id}/:
     get:
       operationId: acquisitions_retrieve
       description: Get a list of ProcedureAcquisition objects. ProcedureAcquisitions
@@ -607,12 +601,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureAcquisitionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureAcquisitionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureAcquisitionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -640,12 +628,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureAcquisitionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureAcquisitionWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedProcedureAcquisitionWrite'
       security:
@@ -680,7 +662,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureAcquisitionWrite'
           description: ''
-  /v3/bboxes/:
+  /api/v3/bboxes/:
     get:
       operationId: bboxes_list
       description: Get a list of geographic bounding box objects. GeographicBoundingBoxes
@@ -1282,12 +1264,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeographicBoundingBoxWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/GeographicBoundingBoxWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/GeographicBoundingBoxWrite'
       security:
       - jwtAuth: []
       responses:
@@ -1297,7 +1273,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeographicBoundingBoxWrite'
           description: ''
-  /v3/bboxes/{ob_id}/:
+  /api/v3/bboxes/{ob_id}/:
     get:
       operationId: bboxes_retrieve
       description: Get a list of geographic bounding box objects. GeographicBoundingBoxes
@@ -1340,12 +1316,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeographicBoundingBoxWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/GeographicBoundingBoxWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/GeographicBoundingBoxWrite'
       security:
       - jwtAuth: []
       responses:
@@ -1372,12 +1342,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedGeographicBoundingBoxWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedGeographicBoundingBoxWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedGeographicBoundingBoxWrite'
       security:
@@ -1412,7 +1376,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/GeographicBoundingBoxWrite'
           description: ''
-  /v3/composites/:
+  /api/v3/composites/:
     get:
       operationId: composites_list
       description: |-
@@ -1963,12 +1927,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
         required: true
       security:
       - jwtAuth: []
@@ -1979,7 +1937,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
           description: ''
-  /v3/composites/{ob_id}/:
+  /api/v3/composites/{ob_id}/:
     get:
       operationId: composites_retrieve
       description: |-
@@ -2026,12 +1984,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
         required: true
       security:
       - jwtAuth: []
@@ -2061,12 +2013,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureCompositeProcessWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureCompositeProcessWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedProcedureCompositeProcessWrite'
       security:
@@ -2103,7 +2049,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureCompositeProcessWrite'
           description: ''
-  /v3/computations/:
+  /api/v3/computations/:
     get:
       operationId: computations_list
       description: Get a list of ProcedureComputation objects. ProcedureComputations
@@ -2777,12 +2723,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureComputationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureComputationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureComputationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -2793,7 +2733,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureComputationWrite'
           description: ''
-  /v3/computations/{ob_id}/:
+  /api/v3/computations/{ob_id}/:
     get:
       operationId: computations_retrieve
       description: Get a list of ProcedureComputation objects. ProcedureComputations
@@ -2836,12 +2776,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProcedureComputationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProcedureComputationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProcedureComputationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -2869,12 +2803,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureComputationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProcedureComputationWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedProcedureComputationWrite'
       security:
@@ -2909,7 +2837,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcedureComputationWrite'
           description: ''
-  /v3/constraints/:
+  /api/v3/constraints/:
     get:
       operationId: constraints_list
       description: Get a list of Constraints objects.
@@ -3498,12 +3426,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConstraintsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ConstraintsWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ConstraintsWrite'
       security:
       - jwtAuth: []
       responses:
@@ -3513,7 +3435,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ConstraintsWrite'
           description: ''
-  /v3/constraints/{ob_id}/:
+  /api/v3/constraints/{ob_id}/:
     get:
       operationId: constraints_retrieve
       description: Get a list of Constraints objects.
@@ -3554,12 +3476,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConstraintsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ConstraintsWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ConstraintsWrite'
       security:
       - jwtAuth: []
       responses:
@@ -3585,12 +3501,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedConstraintsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedConstraintsWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedConstraintsWrite'
       security:
@@ -3624,7 +3534,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ConstraintsWrite'
           description: ''
-  /v3/discoveryserviceids/:
+  /api/v3/discoveryserviceids/:
     get:
       operationId: discoveryserviceids_list
       description: Get a list of DiscoveryServiceId objects.
@@ -3828,12 +3738,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DiscoveryServiceIdWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DiscoveryServiceIdWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DiscoveryServiceIdWrite'
         required: true
       security:
       - jwtAuth: []
@@ -3844,7 +3748,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiscoveryServiceIdWrite'
           description: ''
-  /v3/discoveryserviceids/{ob_id}/:
+  /api/v3/discoveryserviceids/{ob_id}/:
     get:
       operationId: discoveryserviceids_retrieve
       description: Get a list of DiscoveryServiceId objects.
@@ -3887,12 +3791,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DiscoveryServiceIdWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DiscoveryServiceIdWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DiscoveryServiceIdWrite'
         required: true
       security:
       - jwtAuth: []
@@ -3920,12 +3818,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedDiscoveryServiceIdWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedDiscoveryServiceIdWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedDiscoveryServiceIdWrite'
       security:
@@ -3960,7 +3852,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DiscoveryServiceIdWrite'
           description: ''
-  /v3/dqconformanceresults/:
+  /api/v3/dqconformanceresults/:
     get:
       operationId: dqconformanceresults_list
       description: Get a list of DQConformanceResult objects.
@@ -4451,12 +4343,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DQConformanceResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DQConformanceResultWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DQConformanceResultWrite'
         required: true
       security:
       - jwtAuth: []
@@ -4467,7 +4353,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DQConformanceResultWrite'
           description: ''
-  /v3/dqconformanceresults/{ob_id}/:
+  /api/v3/dqconformanceresults/{ob_id}/:
     get:
       operationId: dqconformanceresults_retrieve
       description: Get a list of DQConformanceResult objects.
@@ -4510,12 +4396,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DQConformanceResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DQConformanceResultWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DQConformanceResultWrite'
         required: true
       security:
       - jwtAuth: []
@@ -4543,12 +4423,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedDQConformanceResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedDQConformanceResultWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedDQConformanceResultWrite'
       security:
@@ -4583,7 +4457,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DQConformanceResultWrite'
           description: ''
-  /v3/drsdatasets/:
+  /api/v3/drsdatasets/:
     get:
       operationId: drsdatasets_list
       description: Get a list of DRSDataset objects.
@@ -5008,12 +4882,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DRSDatasetWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DRSDatasetWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DRSDatasetWrite'
         required: true
       security:
       - jwtAuth: []
@@ -5024,7 +4892,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DRSDatasetWrite'
           description: ''
-  /v3/drsdatasets/{ob_id}/:
+  /api/v3/drsdatasets/{ob_id}/:
     get:
       operationId: drsdatasets_retrieve
       description: Get a list of DRSDataset objects.
@@ -5065,12 +4933,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DRSDatasetWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/DRSDatasetWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/DRSDatasetWrite'
         required: true
       security:
       - jwtAuth: []
@@ -5097,12 +4959,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedDRSDatasetWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedDRSDatasetWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedDRSDatasetWrite'
       security:
@@ -5136,7 +4992,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DRSDatasetWrite'
           description: ''
-  /v3/identifiers/:
+  /api/v3/identifiers/:
     get:
       operationId: identifiers_list
       description: Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping
@@ -5575,12 +5431,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/IdentifierWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/IdentifierWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/IdentifierWrite'
         required: true
       security:
       - jwtAuth: []
@@ -5591,7 +5441,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdentifierWrite'
           description: ''
-  /v3/identifiers/{ob_id}/:
+  /api/v3/identifiers/{ob_id}/:
     get:
       operationId: identifiers_retrieve
       description: Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping
@@ -5634,12 +5484,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/IdentifierWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/IdentifierWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/IdentifierWrite'
         required: true
       security:
       - jwtAuth: []
@@ -5667,12 +5511,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedIdentifierWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedIdentifierWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedIdentifierWrite'
       security:
@@ -5707,7 +5545,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/IdentifierWrite'
           description: ''
-  /v3/imagedetails/:
+  /api/v3/imagedetails/:
     get:
       operationId: imagedetails_list
       description: Get a list of ImageDetails objects.
@@ -6106,12 +5944,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ImageDetailsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ImageDetailsWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ImageDetailsWrite'
         required: true
       security:
       - jwtAuth: []
@@ -6122,7 +5954,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ImageDetailsWrite'
           description: ''
-  /v3/imagedetails/{ob_id}/:
+  /api/v3/imagedetails/{ob_id}/:
     get:
       operationId: imagedetails_retrieve
       description: Get a list of ImageDetails objects.
@@ -6163,12 +5995,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ImageDetailsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ImageDetailsWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ImageDetailsWrite'
         required: true
       security:
       - jwtAuth: []
@@ -6195,12 +6021,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedImageDetailsWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedImageDetailsWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedImageDetailsWrite'
       security:
@@ -6234,7 +6054,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ImageDetailsWrite'
           description: ''
-  /v3/inspirethemes/:
+  /api/v3/inspirethemes/:
     get:
       operationId: inspirethemes_list
       description: Get a list of InspireTheme objects.
@@ -6438,12 +6258,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InspireThemeWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InspireThemeWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InspireThemeWrite'
         required: true
       security:
       - jwtAuth: []
@@ -6454,7 +6268,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InspireThemeWrite'
           description: ''
-  /v3/inspirethemes/{ob_id}/:
+  /api/v3/inspirethemes/{ob_id}/:
     get:
       operationId: inspirethemes_retrieve
       description: Get a list of InspireTheme objects.
@@ -6495,12 +6309,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InspireThemeWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InspireThemeWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InspireThemeWrite'
         required: true
       security:
       - jwtAuth: []
@@ -6527,12 +6335,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedInspireThemeWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedInspireThemeWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedInspireThemeWrite'
       security:
@@ -6566,7 +6368,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InspireThemeWrite'
           description: ''
-  /v3/instruments/:
+  /api/v3/instruments/:
     get:
       operationId: instruments_list
       description: Get a list of Instrument objects. Instruments have a 1:1 mapping
@@ -7246,12 +7048,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InstrumentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InstrumentWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InstrumentWrite'
         required: true
       security:
       - jwtAuth: []
@@ -7262,7 +7058,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InstrumentWrite'
           description: ''
-  /v3/instruments/{ob_id}/:
+  /api/v3/instruments/{ob_id}/:
     get:
       operationId: instruments_retrieve
       description: Get a list of Instrument objects. Instruments have a 1:1 mapping
@@ -7305,12 +7101,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InstrumentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InstrumentWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InstrumentWrite'
         required: true
       security:
       - jwtAuth: []
@@ -7338,12 +7128,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedInstrumentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedInstrumentWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedInstrumentWrite'
       security:
@@ -7378,7 +7162,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InstrumentWrite'
           description: ''
-  /v3/iods/:
+  /api/v3/iods/:
     get:
       operationId: iods_list
       description: Get a list of InputOutputDescription objects.
@@ -7660,12 +7444,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputOutputDescriptionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InputOutputDescriptionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InputOutputDescriptionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -7676,7 +7454,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InputOutputDescriptionWrite'
           description: ''
-  /v3/iods/{ob_id}/:
+  /api/v3/iods/{ob_id}/:
     get:
       operationId: iods_retrieve
       description: Get a list of InputOutputDescription objects.
@@ -7717,12 +7495,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputOutputDescriptionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InputOutputDescriptionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InputOutputDescriptionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -7749,12 +7521,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedInputOutputDescriptionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedInputOutputDescriptionWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedInputOutputDescriptionWrite'
       security:
@@ -7788,7 +7554,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InputOutputDescriptionWrite'
           description: ''
-  /v3/ipps/:
+  /api/v3/ipps/:
     get:
       operationId: ipps_list
       description: |-
@@ -8113,12 +7879,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InstrumentPlatformPairWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InstrumentPlatformPairWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InstrumentPlatformPairWrite'
         required: true
       security:
       - jwtAuth: []
@@ -8129,7 +7889,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InstrumentPlatformPairWrite'
           description: ''
-  /v3/ipps/{ob_id}/:
+  /api/v3/ipps/{ob_id}/:
     get:
       operationId: ipps_retrieve
       description: |-
@@ -8174,12 +7934,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InstrumentPlatformPairWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/InstrumentPlatformPairWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/InstrumentPlatformPairWrite'
         required: true
       security:
       - jwtAuth: []
@@ -8208,12 +7962,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedInstrumentPlatformPairWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedInstrumentPlatformPairWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedInstrumentPlatformPairWrite'
       security:
@@ -8249,7 +7997,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/InstrumentPlatformPairWrite'
           description: ''
-  /v3/licenceclassifications/:
+  /api/v3/licenceclassifications/:
     get:
       operationId: licenceclassifications_list
       description: Get a list of LicenceClassification objects.
@@ -8453,12 +8201,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/LicenceClassificationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/LicenceClassificationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/LicenceClassificationWrite'
       security:
       - jwtAuth: []
       responses:
@@ -8468,7 +8210,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/LicenceClassificationWrite'
           description: ''
-  /v3/licenceclassifications/{ob_id}/:
+  /api/v3/licenceclassifications/{ob_id}/:
     get:
       operationId: licenceclassifications_retrieve
       description: Get a list of LicenceClassification objects.
@@ -8509,12 +8251,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/LicenceClassificationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/LicenceClassificationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/LicenceClassificationWrite'
       security:
       - jwtAuth: []
       responses:
@@ -8540,12 +8276,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedLicenceClassificationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedLicenceClassificationWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedLicenceClassificationWrite'
       security:
@@ -8579,7 +8309,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/LicenceClassificationWrite'
           description: ''
-  /v3/licences/:
+  /api/v3/licences/:
     get:
       operationId: licences_list
       description: Get a list of Licence objects.
@@ -8809,12 +8539,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/LicenceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/LicenceWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/LicenceWrite'
       security:
       - jwtAuth: []
       responses:
@@ -8824,7 +8548,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/LicenceWrite'
           description: ''
-  /v3/licences/{ob_id}/:
+  /api/v3/licences/{ob_id}/:
     get:
       operationId: licences_retrieve
       description: Get a list of Licence objects.
@@ -8865,12 +8589,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/LicenceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/LicenceWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/LicenceWrite'
       security:
       - jwtAuth: []
       responses:
@@ -8896,12 +8614,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedLicenceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedLicenceWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedLicenceWrite'
       security:
@@ -8935,7 +8647,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/LicenceWrite'
           description: ''
-  /v3/migrationproperties/:
+  /api/v3/migrationproperties/:
     get:
       operationId: migrationproperties_list
       description: Get a list of MigrationProperty objects.
@@ -9377,7 +9089,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedMigrationPropertyWriteList'
           description: ''
-  /v3/migrationproperties/{id}/:
+  /api/v3/migrationproperties/{id}/:
     get:
       operationId: migrationproperties_retrieve
       description: Get a list of MigrationProperty objects.
@@ -9420,7 +9132,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/MigrationPropertyWrite'
           description: ''
-  /v3/mpos/:
+  /api/v3/mpos/:
     get:
       operationId: mpos_list
       description: Get a list of Mobile Platform Operation objects.
@@ -10423,12 +10135,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MobilePlatformOperationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/MobilePlatformOperationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/MobilePlatformOperationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -10439,7 +10145,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/MobilePlatformOperationWrite'
           description: ''
-  /v3/mpos/{ob_id}/:
+  /api/v3/mpos/{ob_id}/:
     get:
       operationId: mpos_retrieve
       description: Get a list of Mobile Platform Operation objects.
@@ -10480,12 +10186,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MobilePlatformOperationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/MobilePlatformOperationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/MobilePlatformOperationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -10512,12 +10212,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedMobilePlatformOperationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedMobilePlatformOperationWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedMobilePlatformOperationWrite'
       security:
@@ -10551,7 +10245,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/MobilePlatformOperationWrite'
           description: ''
-  /v3/observationcollections/:
+  /api/v3/observationcollections/:
     get:
       operationId: observationcollections_list
       description: Get a list of Project objects. Projects have a 1:1 mapping with
@@ -11619,12 +11313,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ObservationCollectionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ObservationCollectionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ObservationCollectionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -11635,7 +11323,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ObservationCollectionWrite'
           description: ''
-  /v3/observationcollections/{ob_id}/:
+  /api/v3/observationcollections/{ob_id}/:
     get:
       operationId: observationcollections_retrieve
       description: Get a list of Project objects. Projects have a 1:1 mapping with
@@ -11678,12 +11366,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ObservationCollectionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ObservationCollectionWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ObservationCollectionWrite'
         required: true
       security:
       - jwtAuth: []
@@ -11711,12 +11393,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedObservationCollectionWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedObservationCollectionWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedObservationCollectionWrite'
       security:
@@ -11751,7 +11427,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ObservationCollectionWrite'
           description: ''
-  /v3/observations/:
+  /api/v3/observations/:
     get:
       operationId: observations_list
       description: Get a list of Observation objects.
@@ -15016,7 +14692,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaginatedObservationWriteList'
+                $ref: '#/components/schemas/PaginatedObservationReadList'
           description: ''
     post:
       operationId: observations_create
@@ -15028,12 +14704,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ObservationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ObservationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ObservationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -15042,9 +14712,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ObservationWrite'
+                $ref: '#/components/schemas/ObservationRead'
           description: ''
-  /v3/observations/{ob_id}/:
+  /api/v3/observations/{ob_id}/:
     get:
       operationId: observations_retrieve
       description: Get a list of Observation objects.
@@ -15065,7 +14735,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ObservationWrite'
+                $ref: '#/components/schemas/ObservationRead'
           description: ''
     put:
       operationId: observations_update
@@ -15085,12 +14755,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ObservationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ObservationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ObservationWrite'
         required: true
       security:
       - jwtAuth: []
@@ -15099,7 +14763,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ObservationWrite'
+                $ref: '#/components/schemas/ObservationRead'
           description: ''
     patch:
       operationId: observations_partial_update
@@ -15119,12 +14783,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PatchedObservationWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedObservationWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedObservationWrite'
       security:
       - jwtAuth: []
       responses:
@@ -15132,7 +14790,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ObservationWrite'
+                $ref: '#/components/schemas/ObservationRead'
           description: ''
     delete:
       operationId: observations_destroy
@@ -15154,9 +14812,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ObservationWrite'
+                $ref: '#/components/schemas/ObservationRead'
           description: ''
-  /v3/onlineresources/:
+  /api/v3/onlineresources/:
     get:
       operationId: onlineresources_list
       description: Get a list of Instrument objects. Instruments have a 1:1 mapping
@@ -15868,12 +15526,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OnlineResourceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/OnlineResourceWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/OnlineResourceWrite'
         required: true
       security:
       - jwtAuth: []
@@ -15884,7 +15536,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/OnlineResourceWrite'
           description: ''
-  /v3/onlineresources/{ob_id}/:
+  /api/v3/onlineresources/{ob_id}/:
     get:
       operationId: onlineresources_retrieve
       description: Get a list of Instrument objects. Instruments have a 1:1 mapping
@@ -15927,12 +15579,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/OnlineResourceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/OnlineResourceWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/OnlineResourceWrite'
         required: true
       security:
       - jwtAuth: []
@@ -15960,12 +15606,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedOnlineResourceWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedOnlineResourceWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedOnlineResourceWrite'
       security:
@@ -16000,7 +15640,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/OnlineResourceWrite'
           description: ''
-  /v3/parties/:
+  /api/v3/parties/:
     get:
       operationId: parties_list
       description: |-
@@ -17075,12 +16715,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PartyWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PartyWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PartyWrite'
         required: true
       security:
       - jwtAuth: []
@@ -17091,7 +16725,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PartyWrite'
           description: ''
-  /v3/parties/{ob_id}/:
+  /api/v3/parties/{ob_id}/:
     get:
       operationId: parties_retrieve
       description: |-
@@ -17138,12 +16772,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PartyWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PartyWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PartyWrite'
         required: true
       security:
       - jwtAuth: []
@@ -17173,12 +16801,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedPartyWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedPartyWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedPartyWrite'
       security:
@@ -17215,7 +16837,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PartyWrite'
           description: ''
-  /v3/phenomona/:
+  /api/v3/phenomona/:
     get:
       operationId: phenomona_list
       description: Get a list of Phenomenon objects. Phenomena have many to many mapping
@@ -17428,12 +17050,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Phenomenon'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Phenomenon'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Phenomenon'
       security:
       - jwtAuth: []
       responses:
@@ -17443,7 +17059,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Phenomenon'
           description: ''
-  /v3/phenomona/{ob_id}/:
+  /api/v3/phenomona/{ob_id}/:
     get:
       operationId: phenomona_retrieve
       description: Get a list of Phenomenon objects. Phenomena have many to many mapping
@@ -17486,12 +17102,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Phenomenon'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Phenomenon'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Phenomenon'
       security:
       - jwtAuth: []
       responses:
@@ -17518,12 +17128,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedPhenomenon'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedPhenomenon'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedPhenomenon'
       security:
@@ -17558,7 +17162,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Phenomenon'
           description: ''
-  /v3/platforms/:
+  /api/v3/platforms/:
     get:
       operationId: platforms_list
       description: Get a list of Platform objects. Platforms have a 1:1 mapping with
@@ -18412,12 +18016,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PlatformWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PlatformWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PlatformWrite'
         required: true
       security:
       - jwtAuth: []
@@ -18428,7 +18026,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PlatformWrite'
           description: ''
-  /v3/platforms/{ob_id}/:
+  /api/v3/platforms/{ob_id}/:
     get:
       operationId: platforms_retrieve
       description: Get a list of Platform objects. Platforms have a 1:1 mapping with
@@ -18471,12 +18069,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PlatformWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PlatformWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PlatformWrite'
         required: true
       security:
       - jwtAuth: []
@@ -18504,12 +18096,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedPlatformWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedPlatformWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedPlatformWrite'
       security:
@@ -18544,7 +18130,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PlatformWrite'
           description: ''
-  /v3/projects/:
+  /api/v3/projects/:
     get:
       operationId: projects_list
       description: Get a list of Project objects. Projects have a 1:1 mapping with
@@ -19417,12 +19003,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProjectWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProjectWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProjectWrite'
         required: true
       security:
       - jwtAuth: []
@@ -19433,7 +19013,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProjectWrite'
           description: ''
-  /v3/projects/{ob_id}/:
+  /api/v3/projects/{ob_id}/:
     get:
       operationId: projects_retrieve
       description: Get a list of Project objects. Projects have a 1:1 mapping with
@@ -19476,12 +19056,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ProjectWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ProjectWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ProjectWrite'
         required: true
       security:
       - jwtAuth: []
@@ -19509,12 +19083,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProjectWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProjectWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedProjectWrite'
       security:
@@ -19549,7 +19117,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProjectWrite'
           description: ''
-  /v3/referenceables/:
+  /api/v3/referenceables/:
     get:
       operationId: referenceables_list
       description: Get a list of Referenceable objects. This is the base class for
@@ -19822,7 +19390,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/PaginatedReferenceableList'
           description: ''
-  /v3/referenceables/{ob_id}/:
+  /api/v3/referenceables/{ob_id}/:
     get:
       operationId: referenceables_retrieve
       description: Get a list of Referenceable objects. This is the base class for
@@ -19846,7 +19414,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Referenceable'
           description: ''
-  /v3/relatedobservationinfos/:
+  /api/v3/relatedobservationinfos/:
     get:
       operationId: relatedobservationinfos_list
       description: Get a list of RelatedObservationInfo objects.
@@ -20188,12 +19756,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RelatedObservationInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/RelatedObservationInfoWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/RelatedObservationInfoWrite'
         required: true
       security:
       - jwtAuth: []
@@ -20204,7 +19766,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RelatedObservationInfoWrite'
           description: ''
-  /v3/relatedobservationinfos/{ob_id}/:
+  /api/v3/relatedobservationinfos/{ob_id}/:
     get:
       operationId: relatedobservationinfos_retrieve
       description: Get a list of RelatedObservationInfo objects.
@@ -20245,12 +19807,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RelatedObservationInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/RelatedObservationInfoWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/RelatedObservationInfoWrite'
         required: true
       security:
       - jwtAuth: []
@@ -20277,12 +19833,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedRelatedObservationInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedRelatedObservationInfoWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedRelatedObservationInfoWrite'
       security:
@@ -20316,7 +19866,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RelatedObservationInfoWrite'
           description: ''
-  /v3/results/:
+  /api/v3/results/:
     get:
       operationId: results_list
       description: Get a list of Result objects. Results have a 1:1 mapping with Observations.
@@ -21240,12 +20790,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ResultWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ResultWrite'
         required: true
       security:
       - jwtAuth: []
@@ -21256,7 +20800,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResultWrite'
           description: ''
-  /v3/results/{ob_id}/:
+  /api/v3/results/{ob_id}/:
     get:
       operationId: results_retrieve
       description: Get a list of Result objects. Results have a 1:1 mapping with Observations.
@@ -21297,12 +20841,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ResultWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ResultWrite'
         required: true
       security:
       - jwtAuth: []
@@ -21329,12 +20867,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedResultWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedResultWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedResultWrite'
       security:
@@ -21368,7 +20900,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResultWrite'
           description: ''
-  /v3/rpis/:
+  /api/v3/rpis/:
     get:
       operationId: rpis_list
       description: |-
@@ -21853,12 +21385,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
         required: true
       security:
       - jwtAuth: []
@@ -21869,7 +21395,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
           description: ''
-  /v3/rpis/{ob_id}/:
+  /api/v3/rpis/{ob_id}/:
     get:
       operationId: rpis_retrieve
       description: |-
@@ -21920,12 +21446,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
         required: true
       security:
       - jwtAuth: []
@@ -21957,12 +21477,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedResponsiblePartyInfoWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedResponsiblePartyInfoWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedResponsiblePartyInfoWrite'
       security:
@@ -22001,7 +21515,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResponsiblePartyInfoWrite'
           description: ''
-  /v3/times/:
+  /api/v3/times/:
     get:
       operationId: times_list
       description: Get a list of TimePeriod objects. TimePeriods have a 1:1 use with
@@ -22435,12 +21949,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TimePeriod'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/TimePeriod'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TimePeriod'
         required: true
       security:
       - jwtAuth: []
@@ -22451,7 +21959,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/TimePeriod'
           description: ''
-  /v3/times/{ob_id}/:
+  /api/v3/times/{ob_id}/:
     get:
       operationId: times_retrieve
       description: Get a list of TimePeriod objects. TimePeriods have a 1:1 use with
@@ -22494,12 +22002,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TimePeriod'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/TimePeriod'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TimePeriod'
         required: true
       security:
       - jwtAuth: []
@@ -22527,12 +22029,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedTimePeriod'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedTimePeriod'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedTimePeriod'
       security:
@@ -22567,7 +22063,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/TimePeriod'
           description: ''
-  /v3/topiccategories/:
+  /api/v3/topiccategories/:
     get:
       operationId: topiccategories_list
       description: Get a list of TopicCategory objects.
@@ -22771,12 +22267,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TopicCategoryWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/TopicCategoryWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TopicCategoryWrite'
         required: true
       security:
       - jwtAuth: []
@@ -22787,7 +22277,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/TopicCategoryWrite'
           description: ''
-  /v3/topiccategories/{ob_id}/:
+  /api/v3/topiccategories/{ob_id}/:
     get:
       operationId: topiccategories_retrieve
       description: Get a list of TopicCategory objects.
@@ -22828,12 +22318,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TopicCategoryWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/TopicCategoryWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/TopicCategoryWrite'
         required: true
       security:
       - jwtAuth: []
@@ -22860,12 +22344,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedTopicCategoryWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedTopicCategoryWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedTopicCategoryWrite'
       security:
@@ -22899,7 +22377,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/TopicCategoryWrite'
           description: ''
-  /v3/verticalextents/:
+  /api/v3/verticalextents/:
     get:
       operationId: verticalextents_list
       description: Get a list of VerticalExtent objects.
@@ -23301,12 +22779,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/VerticalExtentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/VerticalExtentWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/VerticalExtentWrite'
       security:
       - jwtAuth: []
       responses:
@@ -23316,7 +22788,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/VerticalExtentWrite'
           description: ''
-  /v3/verticalextents/{ob_id}/:
+  /api/v3/verticalextents/{ob_id}/:
     get:
       operationId: verticalextents_retrieve
       description: Get a list of VerticalExtent objects.
@@ -23357,12 +22829,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/VerticalExtentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/VerticalExtentWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/VerticalExtentWrite'
       security:
       - jwtAuth: []
       responses:
@@ -23388,12 +22854,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedVerticalExtentWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedVerticalExtentWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedVerticalExtentWrite'
       security:
@@ -23427,7 +22887,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/VerticalExtentWrite'
           description: ''
-  /v3/vocabularyterms/:
+  /api/v3/vocabularyterms/:
     get:
       operationId: vocabularyterms_list
       description: Get a list of Vocabulary terms objects.
@@ -23794,12 +23254,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/VocabularyTermWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/VocabularyTermWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/VocabularyTermWrite'
         required: true
       security:
       - jwtAuth: []
@@ -23810,7 +23264,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/VocabularyTermWrite'
           description: ''
-  /v3/vocabularyterms/{ob_id}/:
+  /api/v3/vocabularyterms/{ob_id}/:
     get:
       operationId: vocabularyterms_retrieve
       description: Get a list of Vocabulary terms objects.
@@ -23851,12 +23305,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/VocabularyTermWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/VocabularyTermWrite'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/VocabularyTermWrite'
         required: true
       security:
       - jwtAuth: []
@@ -23883,12 +23331,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedVocabularyTermWrite'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedVocabularyTermWrite'
-          multipart/form-data:
             schema:
               $ref: '#/components/schemas/PatchedVocabularyTermWrite'
       security:
@@ -23937,11 +23379,11 @@ components:
     BlankEnum:
       enum:
       - ''
-    ConstraintsWrite:
+    ConstraintsRead:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -23968,16 +23410,50 @@ components:
           nullable: true
           title: Permissions Label
         licence:
-          type: integer
-          title: Internal identifier (ob_id)
+          allOf:
+          - $ref: '#/components/schemas/LicenceRead'
           readOnly: true
-          nullable: true
       required:
       - accessCategory
       - accessConstraints
       - accessRoles
       - label
       - licence
+      - ob_id
+    ConstraintsWrite:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        accessConstraints:
+          type: string
+          nullable: true
+          title: Access Constraints
+          maxLength: 1000
+        accessCategory:
+          allOf:
+          - $ref: '#/components/schemas/AccessCategoryEnum'
+          title: Access Category
+        accessRoles:
+          type: string
+          nullable: true
+          title: Access Roles (space-separated)
+          maxLength: 500
+        label:
+          type: string
+          nullable: true
+          title: Permissions Label
+          maxLength: 200
+        licence:
+          type: integer
+          title: Internal identifier (ob_id)
+          nullable: true
+      required:
       - ob_id
     CurationCategoryEnum:
       enum:
@@ -23989,11 +23465,44 @@ components:
         * `A` - Primary Archive
         * `B` - Secondary Archive
         * `C` - Facilitation Mode
+    DQConformanceResultRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        explanation:
+          type: string
+          readOnly: true
+          title: Explanation of Data Quality Conformance Test
+        passesTest:
+          type: boolean
+          readOnly: true
+          title: Passes Test?
+        resultTitle:
+          type: string
+          readOnly: true
+          title: Title of Data Quality Conformance Test
+        date:
+          type: string
+          format: date
+          readOnly: true
+          title: Date of Data Quality Conformance Test
+      required:
+      - date
+      - explanation
+      - ob_id
+      - passesTest
+      - resultTitle
     DQConformanceResultWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24020,8 +23529,8 @@ components:
     DRSDatasetWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24046,11 +23555,28 @@ components:
       - ob_id
       - relatedTo
       - version
+    DiscoveryServiceIdRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        name:
+          type: string
+          readOnly: true
+          title: Name code for discovery service
+      required:
+      - name
+      - ob_id
     DiscoveryServiceIdWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24087,11 +23613,52 @@ components:
         * `offlineAccess` - Offline Access
         * `search` - Search
         * `externalCitation` - External Citation
+    GeographicBoundingBoxRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        bboxName:
+          type: string
+          readOnly: true
+          title: Useful Name for Bounding Box
+        eastBoundLongitude:
+          type: number
+          format: double
+          readOnly: true
+          title: East
+        westBoundLongitude:
+          type: number
+          format: double
+          readOnly: true
+          title: West
+        southBoundLatitude:
+          type: number
+          format: double
+          readOnly: true
+          title: South
+        northBoundLatitude:
+          type: number
+          format: double
+          readOnly: true
+          title: North
+      required:
+      - bboxName
+      - eastBoundLongitude
+      - northBoundLatitude
+      - ob_id
+      - southBoundLatitude
+      - westBoundLongitude
     GeographicBoundingBoxWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24105,10 +23672,6 @@ components:
           type: number
           format: double
           title: East
-        northBoundLatitude:
-          type: number
-          format: double
-          title: North
         westBoundLongitude:
           type: number
           format: double
@@ -24117,6 +23680,10 @@ components:
           type: number
           format: double
           title: South
+        northBoundLatitude:
+          type: number
+          format: double
+          title: North
       required:
       - ob_id
     IdentifierTypeEnum:
@@ -24136,8 +23703,8 @@ components:
     IdentifierWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24145,9 +23712,11 @@ components:
           title: Internal identifier (ob_id)
         url:
           type: string
-          maxLength: 200
+          readOnly: true
         identifierType:
-          $ref: '#/components/schemas/IdentifierTypeEnum'
+          allOf:
+          - $ref: '#/components/schemas/IdentifierTypeEnum'
+          readOnly: true
         relatedTo:
           type: string
           writeOnly: true
@@ -24163,8 +23732,8 @@ components:
     ImageDetailsWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24186,8 +23755,8 @@ components:
     InputOutputDescriptionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24202,11 +23771,28 @@ components:
       required:
       - name
       - ob_id
+    InspireThemeRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        name:
+          type: string
+          title: INSPIRE Themes
+          maxLength: 20
+      required:
+      - name
+      - ob_id
     InspireThemeWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24222,8 +23808,8 @@ components:
     InstrumentPlatformPairWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24294,8 +23880,8 @@ components:
     InstrumentWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24339,16 +23925,38 @@ components:
       - subInstrument
       - title
       - uuid
+    LabelEnum:
+      enum:
+      - units
+      - var_id
+      - standard_name
+      - long_name
+      - gcmd_keyword
+      - gcmd_url
+      - gcmd_name
+      - alt_names
+      - names
+      type: string
+      description: |-
+        * `units` - Units
+        * `var_id` - variable Id
+        * `standard_name` - Standard name
+        * `long_name` - Long name
+        * `gcmd_keyword` - GCMD keyword
+        * `gcmd_url` - GCMD URL
+        * `gcmd_name` - GCMD keyword
+        * `alt_names` - Alternative Names
+        * `names` - Names
     LanguageEnum:
       enum:
       - English
       type: string
       description: '* `English` - English'
-    LicenceClassificationWrite:
+    LicenceClassificationRead:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24361,11 +23969,52 @@ components:
       required:
       - classification
       - ob_id
+    LicenceClassificationWrite:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        classification:
+          type: string
+          readOnly: true
+          title: Licence Classification
+      required:
+      - classification
+      - ob_id
+    LicenceRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        licenceURL:
+          type: string
+          format: uri
+          readOnly: true
+          title: Link to Licence file
+        licenceClassifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/LicenceClassificationRead'
+          readOnly: true
+      required:
+      - licenceClassifications
+      - licenceURL
+      - ob_id
     LicenceWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24390,8 +24039,8 @@ components:
     MigrationPropertyWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         id:
           type: integer
@@ -24417,8 +24066,8 @@ components:
     MobilePlatformOperationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24467,8 +24116,8 @@ components:
     ObservationCollectionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -24527,22 +24176,244 @@ components:
       - ob_id
       - short_code
       - uuid
+    ObservationRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        title:
+          type: string
+          readOnly: true
+        abstract:
+          type: string
+          readOnly: true
+        creationDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Creation date
+        lastUpdatedDate:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Last updated date
+        latestDataUpdateTime:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Latest Data Update
+        updateFrequency:
+          allOf:
+          - $ref: '#/components/schemas/UpdateFrequencyEnum'
+          readOnly: true
+          title: Data update Frequency
+        dataLineage:
+          type: string
+          readOnly: true
+          title: Data Lineage
+        removedDataReason:
+          type: string
+          readOnly: true
+          title: Reason for Dataset Removal
+        keywords:
+          type: string
+          readOnly: true
+        publicationState:
+          allOf:
+          - $ref: '#/components/schemas/PublicationStateCbbEnum'
+          readOnly: true
+          title: Publication State
+        nonGeographicFlag:
+          type: boolean
+          readOnly: true
+        dontHarvestFromProjects:
+          type: boolean
+          readOnly: true
+        geographicExtent:
+          allOf:
+          - $ref: '#/components/schemas/GeographicBoundingBoxRead'
+          readOnly: true
+          nullable: true
+        language:
+          allOf:
+          - $ref: '#/components/schemas/LanguageEnum'
+          readOnly: true
+        resolution:
+          type: string
+          readOnly: true
+          title: Horizontal Resolution
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          readOnly: true
+          title: Data Status
+        verticalExtent:
+          allOf:
+          - $ref: '#/components/schemas/VerticalExtentRead'
+          readOnly: true
+          nullable: true
+        result_field:
+          $ref: '#/components/schemas/RelatedResult'
+        timePeriod:
+          allOf:
+          - $ref: '#/components/schemas/TimePeriod'
+          readOnly: true
+          nullable: true
+        resultQuality:
+          allOf:
+          - $ref: '#/components/schemas/DQConformanceResultRead'
+          readOnly: true
+          nullable: true
+        dataPublishedTime:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Data publication date
+        doiPublishedTime:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: DOI Publication Time
+        removedDataTime:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+          title: Removed Data Time
+        validTimePeriod:
+          allOf:
+          - $ref: '#/components/schemas/TimePeriod'
+          readOnly: true
+          nullable: true
+        procedureAcquisition:
+          allOf:
+          - $ref: '#/components/schemas/Referenceable'
+          readOnly: true
+          nullable: true
+        procedureComputation:
+          allOf:
+          - $ref: '#/components/schemas/Referenceable'
+          readOnly: true
+          nullable: true
+        procedureCompositeProcess:
+          allOf:
+          - $ref: '#/components/schemas/Referenceable'
+          readOnly: true
+          nullable: true
+        imageDetails:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+          readOnly: true
+        discoveryKeywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiscoveryServiceIdRead'
+          readOnly: true
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConstraintsRead'
+          readOnly: true
+        projects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Referenceable'
+          readOnly: true
+        inspireTheme:
+          type: array
+          items:
+            $ref: '#/components/schemas/InspireThemeRead'
+          readOnly: true
+        topicCategory:
+          type: array
+          items:
+            $ref: '#/components/schemas/TopicCategoryRead'
+          readOnly: true
+        vocabularyKeywords:
+          type: array
+          items:
+            $ref: '#/components/schemas/VocabularyTermRead'
+          readOnly: true
+        responsiblepartyinfo_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+          readOnly: true
+        observationcollection_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+          readOnly: true
+        phenomena:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+          readOnly: true
+        identifier_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+          readOnly: true
+        uuid:
+          type: string
+          maxLength: 40
+      required:
+      - abstract
+      - creationDate
+      - dataLineage
+      - dataPublishedTime
+      - discoveryKeywords
+      - doiPublishedTime
+      - dontHarvestFromProjects
+      - geographicExtent
+      - identifier_set
+      - imageDetails
+      - inspireTheme
+      - keywords
+      - language
+      - lastUpdatedDate
+      - latestDataUpdateTime
+      - nonGeographicFlag
+      - observationcollection_set
+      - permissions
+      - phenomena
+      - procedureAcquisition
+      - procedureCompositeProcess
+      - procedureComputation
+      - projects
+      - publicationState
+      - removedDataReason
+      - removedDataTime
+      - resolution
+      - responsiblepartyinfo_set
+      - resultQuality
+      - result_field
+      - status
+      - timePeriod
+      - title
+      - topicCategory
+      - updateFrequency
+      - validTimePeriod
+      - verticalExtent
+      - vocabularyKeywords
     ObservationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
-        ob_id:
-          type: integer
-          readOnly: true
-          title: Internal identifier (ob_id)
-        uuid:
-          type: string
-          readOnly: true
-        short_code:
-          type: string
-          readOnly: true
         title:
           type: string
           maxLength: 512
@@ -24694,16 +24565,13 @@ components:
             title: Vocabulary Keywords
           title: Vocabulary Keywords
       required:
-      - ob_id
-      - short_code
       - status
       - title
-      - uuid
     OnlineResourceWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25099,7 +24967,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ObservationCollectionWrite'
-    PaginatedObservationWriteList:
+    PaginatedObservationReadList:
       type: object
       required:
       - count
@@ -25121,7 +24989,7 @@ components:
         results:
           type: array
           items:
-            $ref: '#/components/schemas/ObservationWrite'
+            $ref: '#/components/schemas/ObservationRead'
     PaginatedOnlineResourceWriteList:
       type: object
       required:
@@ -25501,8 +25369,8 @@ components:
     PartyWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25522,16 +25390,10 @@ components:
           title: Type
         description:
           type: string
-        addressLine1:
-          type: string
-          writeOnly: true
         deliveryPoint:
           type: string
           readOnly: true
           title: Address Line 1
-        addressLine2:
-          type: string
-          writeOnly: true
         administrativeArea:
           type: string
           readOnly: true
@@ -25560,6 +25422,12 @@ components:
           format: uri
           title: URL to online resource
           maxLength: 200
+        addressLine1:
+          type: string
+          writeOnly: true
+        addressLine2:
+          type: string
+          writeOnly: true
       required:
       - addressLine1
       - addressLine2
@@ -25570,8 +25438,8 @@ components:
     PatchedConstraintsWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25579,34 +25447,32 @@ components:
           title: Internal identifier (ob_id)
         accessConstraints:
           type: string
-          readOnly: true
           nullable: true
           title: Access Constraints
+          maxLength: 1000
         accessCategory:
           allOf:
           - $ref: '#/components/schemas/AccessCategoryEnum'
-          readOnly: true
           title: Access Category
         accessRoles:
           type: string
-          readOnly: true
           nullable: true
           title: Access Roles (space-separated)
+          maxLength: 500
         label:
           type: string
-          readOnly: true
           nullable: true
           title: Permissions Label
+          maxLength: 200
         licence:
           type: integer
           title: Internal identifier (ob_id)
-          readOnly: true
           nullable: true
     PatchedDQConformanceResultWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25630,8 +25496,8 @@ components:
     PatchedDRSDatasetWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25653,8 +25519,8 @@ components:
     PatchedDiscoveryServiceIdWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25667,8 +25533,8 @@ components:
     PatchedGeographicBoundingBoxWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25682,10 +25548,6 @@ components:
           type: number
           format: double
           title: East
-        northBoundLatitude:
-          type: number
-          format: double
-          title: North
         westBoundLongitude:
           type: number
           format: double
@@ -25694,11 +25556,15 @@ components:
           type: number
           format: double
           title: South
+        northBoundLatitude:
+          type: number
+          format: double
+          title: North
     PatchedIdentifierWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25706,9 +25572,11 @@ components:
           title: Internal identifier (ob_id)
         url:
           type: string
-          maxLength: 200
+          readOnly: true
         identifierType:
-          $ref: '#/components/schemas/IdentifierTypeEnum'
+          allOf:
+          - $ref: '#/components/schemas/IdentifierTypeEnum'
+          readOnly: true
         relatedTo:
           type: string
           writeOnly: true
@@ -25718,8 +25586,8 @@ components:
     PatchedImageDetailsWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25737,8 +25605,8 @@ components:
     PatchedInputOutputDescriptionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25753,8 +25621,8 @@ components:
     PatchedInspireThemeWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25767,8 +25635,8 @@ components:
     PatchedInstrumentPlatformPairWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25788,8 +25656,8 @@ components:
     PatchedInstrumentWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25830,8 +25698,8 @@ components:
     PatchedLicenceClassificationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25844,8 +25712,8 @@ components:
     PatchedLicenceWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25866,8 +25734,8 @@ components:
     PatchedMobilePlatformOperationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25907,8 +25775,8 @@ components:
     PatchedObservationCollectionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -25965,19 +25833,9 @@ components:
     PatchedObservationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
-        ob_id:
-          type: integer
-          readOnly: true
-          title: Internal identifier (ob_id)
-        uuid:
-          type: string
-          readOnly: true
-        short_code:
-          type: string
-          readOnly: true
         title:
           type: string
           maxLength: 512
@@ -26131,8 +25989,8 @@ components:
     PatchedOnlineResourceWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26159,8 +26017,8 @@ components:
     PatchedPartyWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26180,16 +26038,10 @@ components:
           title: Type
         description:
           type: string
-        addressLine1:
-          type: string
-          writeOnly: true
         deliveryPoint:
           type: string
           readOnly: true
           title: Address Line 1
-        addressLine2:
-          type: string
-          writeOnly: true
         administrativeArea:
           type: string
           readOnly: true
@@ -26218,6 +26070,12 @@ components:
           format: uri
           title: URL to online resource
           maxLength: 200
+        addressLine1:
+          type: string
+          writeOnly: true
+        addressLine2:
+          type: string
+          writeOnly: true
     PatchedPhenomenon:
       type: object
       description: |-
@@ -26225,8 +26083,9 @@ components:
         and reorders them to the top.
       properties:
         ob_id:
-          type: string
+          type: integer
           readOnly: true
+          title: Internal identifier (ob_id)
         names:
           type: array
           items:
@@ -26240,8 +26099,8 @@ components:
     PatchedPlatformWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26273,8 +26132,8 @@ components:
     PatchedProcedureAcquisitionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26316,8 +26175,8 @@ components:
     PatchedProcedureCompositeProcessWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26351,8 +26210,8 @@ components:
     PatchedProcedureComputationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26393,8 +26252,8 @@ components:
     PatchedProjectWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26444,8 +26303,8 @@ components:
     PatchedRelatedObservationInfoWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26464,8 +26323,8 @@ components:
     PatchedResponsiblePartyInfoWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26486,8 +26345,8 @@ components:
     PatchedResultWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26542,8 +26401,8 @@ components:
     PatchedTimePeriod:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26561,8 +26420,8 @@ components:
     PatchedTopicCategoryWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26575,8 +26434,8 @@ components:
     PatchedVerticalExtentWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26597,8 +26456,8 @@ components:
     PatchedVocabularyTermWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26625,8 +26484,9 @@ components:
         and reorders them to the top.
       properties:
         ob_id:
-          type: string
+          type: integer
           readOnly: true
+          title: Internal identifier (ob_id)
         names:
           type: array
           items:
@@ -26648,11 +26508,12 @@ components:
         and reorders them to the top.
       properties:
         ob_id:
-          type: string
+          type: integer
           readOnly: true
+          title: Internal identifier (ob_id)
         name:
           type: string
-          readOnly: true
+          maxLength: 1000
       required:
       - name
       - ob_id
@@ -26663,22 +26524,22 @@ components:
         and reorders them to the top.
       properties:
         ob_id:
-          type: string
+          type: integer
           readOnly: true
+          title: Internal identifier (ob_id)
         label:
-          type: string
-          readOnly: true
+          $ref: '#/components/schemas/LabelEnum'
         value:
           type: string
-          readOnly: true
+          maxLength: 1000
         vocabulary:
-          type: string
-          readOnly: true
+          oneOf:
+          - $ref: '#/components/schemas/VocabularyEnum'
+          - $ref: '#/components/schemas/BlankEnum'
       required:
       - label
       - ob_id
       - value
-      - vocabulary
     PlatformTypeEnum:
       enum:
       - UNDEFINED
@@ -26710,8 +26571,8 @@ components:
     PlatformWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26748,8 +26609,8 @@ components:
     ProcedureAcquisitionWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26796,8 +26657,8 @@ components:
     ProcedureCompositeProcessWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26838,8 +26699,8 @@ components:
     ProcedureComputationWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26885,8 +26746,8 @@ components:
     ProjectWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -26976,23 +26837,23 @@ components:
         and reorders them to the top.
       properties:
         ob_id:
-          type: string
+          type: integer
           readOnly: true
+          title: Internal identifier (ob_id)
         uuid:
           type: string
-          readOnly: true
+          maxLength: 40
         short_code:
           type: string
-          readOnly: true
+          maxLength: 10
       required:
       - ob_id
       - short_code
-      - uuid
     RelatedObservationInfoWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27013,6 +26874,50 @@ components:
       - objectObservation
       - relationType
       - subjectObservation
+    RelatedResult:
+      type: object
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        dataPath:
+          type: string
+          title: Data Path
+          maxLength: 800
+        oldDataPath:
+          type: array
+          items:
+            type: integer
+            title: Old Data Paths
+          title: Old Data Paths
+        storageLocation:
+          allOf:
+          - $ref: '#/components/schemas/StorageLocationEnum'
+          title: Storage Location
+        storageStatus:
+          allOf:
+          - $ref: '#/components/schemas/StorageStatusEnum'
+          title: Storage Status
+        volume:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+          title: Volume (bytes)
+        numberOfFiles:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+          title: Number Of Files
+        fileFormat:
+          type: string
+          nullable: true
+          title: File Format
+          maxLength: 16000
+      required:
+      - dataPath
+      - ob_id
     RelationTypeEnum:
       enum:
       - IsSupplementTo
@@ -27038,8 +26943,8 @@ components:
     ResponsiblePartyInfoWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27065,8 +26970,8 @@ components:
     ResultWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27204,8 +27109,8 @@ components:
     TimePeriod:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27223,11 +27128,28 @@ components:
       required:
       - ob_id
       - startTime
+    TopicCategoryRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        name:
+          type: string
+          readOnly: true
+          title: Topic Category
+      required:
+      - name
+      - ob_id
     TopicCategoryWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27268,11 +27190,40 @@ components:
         * `irregular` - irregular
         * `notPlanned` - not planned
         * `unknown` - unknown
+    VerticalExtentRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        highestLevelBound:
+          type: number
+          format: double
+          title: Highest Level Bound
+          readOnly: true
+        lowestLevelBound:
+          type: number
+          format: double
+          title: Lowest Level Bound
+          readOnly: true
+        units:
+          type: string
+          title: Units of Vertical Extent
+          readOnly: true
+      required:
+      - highestLevelBound
+      - lowestLevelBound
+      - ob_id
+      - units
     VerticalExtentWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer
@@ -27300,11 +27251,49 @@ components:
       description: |-
         * `clipc_skos_vocab` - CLIPC SKOS Vocabulary Service
         * `nerc_skos_vocab` - NERC SKOS Vocabulary Service
+    VocabularyEnum:
+      enum:
+      - cf_standard_names
+      - gcmd_keyword
+      type: string
+      description: |-
+        * `cf_standard_names` - cf_standard_names
+        * `gcmd_keyword` - gcmd_keyword
+    VocabularyTermRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        vocabService:
+          allOf:
+          - $ref: '#/components/schemas/VocabServiceEnum'
+          readOnly: true
+          title: Vocabulary Service
+        uri:
+          type: string
+          format: uri
+          readOnly: true
+          title: Vocabulary Term URL
+        resolvedTerm:
+          type: string
+          readOnly: true
+          nullable: true
+          title: Resolved Vocabulary Term
+      required:
+      - ob_id
+      - resolvedTerm
+      - uri
+      - vocabService
     VocabularyTermWrite:
       type: object
       description: |-
-        A mixin that allows specifying which fields to include in the serializer
-        via the 'fields' keyword argument.
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
       properties:
         ob_id:
           type: integer

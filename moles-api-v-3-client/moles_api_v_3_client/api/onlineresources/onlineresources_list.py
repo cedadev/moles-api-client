@@ -505,7 +505,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/onlineresources/",
+        "url": "/api/v3/onlineresources/",
         "params": params,
     }
 

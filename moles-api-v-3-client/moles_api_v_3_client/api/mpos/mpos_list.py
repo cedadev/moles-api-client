@@ -723,7 +723,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/mpos/",
+        "url": "/api/v3/mpos/",
         "params": params,
     }
 

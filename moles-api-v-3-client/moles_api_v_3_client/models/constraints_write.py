@@ -4,134 +4,134 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.access_category_enum import AccessCategoryEnum
+from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="ConstraintsWrite")
 
 
 @_attrs_define
 class ConstraintsWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
-            access_constraints (Union[None, str]):
-            access_category (AccessCategoryEnum): * `public` - Public access no restriction
+            access_constraints (Union[None, Unset, str]):
+            access_category (Union[Unset, AccessCategoryEnum]): * `public` - Public access no restriction
                 * `registered` - Available to any registered user (no dataset registration required)
                 * `restricted` - Dataset registration required
-            access_roles (Union[None, str]):
-            label (Union[None, str]):
-            licence (Union[None, int]):
+            access_roles (Union[None, Unset, str]):
+            label (Union[None, Unset, str]):
+            licence (Union[None, Unset, int]):
     """
 
     ob_id: int
-    access_constraints: Union[None, str]
-    access_category: AccessCategoryEnum
-    access_roles: Union[None, str]
-    label: Union[None, str]
-    licence: Union[None, int]
+    access_constraints: Union[None, Unset, str] = UNSET
+    access_category: Union[Unset, AccessCategoryEnum] = UNSET
+    access_roles: Union[None, Unset, str] = UNSET
+    label: Union[None, Unset, str] = UNSET
+    licence: Union[None, Unset, int] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
 
-        access_constraints: Union[None, str]
-        access_constraints = self.access_constraints
+        access_constraints: Union[None, Unset, str]
+        if isinstance(self.access_constraints, Unset):
+            access_constraints = UNSET
+        else:
+            access_constraints = self.access_constraints
 
-        access_category = self.access_category.value
+        access_category: Union[Unset, str] = UNSET
+        if not isinstance(self.access_category, Unset):
+            access_category = self.access_category.value
 
-        access_roles: Union[None, str]
-        access_roles = self.access_roles
+        access_roles: Union[None, Unset, str]
+        if isinstance(self.access_roles, Unset):
+            access_roles = UNSET
+        else:
+            access_roles = self.access_roles
 
-        label: Union[None, str]
-        label = self.label
+        label: Union[None, Unset, str]
+        if isinstance(self.label, Unset):
+            label = UNSET
+        else:
+            label = self.label
 
-        licence: Union[None, int]
-        licence = self.licence
+        licence: Union[None, Unset, int]
+        if isinstance(self.licence, Unset):
+            licence = UNSET
+        else:
+            licence = self.licence
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "ob_id": ob_id,
-                "accessConstraints": access_constraints,
-                "accessCategory": access_category,
-                "accessRoles": access_roles,
-                "label": label,
-                "licence": licence,
             }
         )
+        if access_constraints is not UNSET:
+            field_dict["accessConstraints"] = access_constraints
+        if access_category is not UNSET:
+            field_dict["accessCategory"] = access_category
+        if access_roles is not UNSET:
+            field_dict["accessRoles"] = access_roles
+        if label is not UNSET:
+            field_dict["label"] = label
+        if licence is not UNSET:
+            field_dict["licence"] = licence
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if isinstance(self.access_constraints, str):
-            files.append(("accessConstraints", (None, str(self.access_constraints).encode(), "text/plain")))
-        else:
-            files.append(("accessConstraints", (None, str(self.access_constraints).encode(), "text/plain")))
-
-        files.append(("accessCategory", (None, str(self.access_category.value).encode(), "text/plain")))
-
-        if isinstance(self.access_roles, str):
-            files.append(("accessRoles", (None, str(self.access_roles).encode(), "text/plain")))
-        else:
-            files.append(("accessRoles", (None, str(self.access_roles).encode(), "text/plain")))
-
-        if isinstance(self.label, str):
-            files.append(("label", (None, str(self.label).encode(), "text/plain")))
-        else:
-            files.append(("label", (None, str(self.label).encode(), "text/plain")))
-
-        if isinstance(self.licence, int):
-            files.append(("licence", (None, str(self.licence).encode(), "text/plain")))
-        else:
-            files.append(("licence", (None, str(self.licence).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        def _parse_access_constraints(data: object) -> Union[None, str]:
+        def _parse_access_constraints(data: object) -> Union[None, Unset, str]:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
 
-        access_constraints = _parse_access_constraints(d.pop("accessConstraints"))
+        access_constraints = _parse_access_constraints(d.pop("accessConstraints", UNSET))
 
-        access_category = AccessCategoryEnum(d.pop("accessCategory"))
+        _access_category = d.pop("accessCategory", UNSET)
+        access_category: Union[Unset, AccessCategoryEnum]
+        if isinstance(_access_category, Unset):
+            access_category = UNSET
+        else:
+            access_category = AccessCategoryEnum(_access_category)
 
-        def _parse_access_roles(data: object) -> Union[None, str]:
+        def _parse_access_roles(data: object) -> Union[None, Unset, str]:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
 
-        access_roles = _parse_access_roles(d.pop("accessRoles"))
+        access_roles = _parse_access_roles(d.pop("accessRoles", UNSET))
 
-        def _parse_label(data: object) -> Union[None, str]:
+        def _parse_label(data: object) -> Union[None, Unset, str]:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, str], data)
 
-        label = _parse_label(d.pop("label"))
+        label = _parse_label(d.pop("label", UNSET))
 
-        def _parse_licence(data: object) -> Union[None, int]:
+        def _parse_licence(data: object) -> Union[None, Unset, int]:
             if data is None:
                 return data
-            return cast(Union[None, int], data)
+            if isinstance(data, Unset):
+                return data
+            return cast(Union[None, Unset, int], data)
 
-        licence = _parse_licence(d.pop("licence"))
+        licence = _parse_licence(d.pop("licence", UNSET))
 
         constraints_write = cls(
             ob_id=ob_id,

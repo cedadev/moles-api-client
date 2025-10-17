@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        Phenomenon,
-        Phenomenon,
-        Phenomenon,
-    ],
+    body: Phenomenon,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/phenomona/",
+        "url": "/api/v3/phenomona/",
     }
 
-    if isinstance(body, Phenomenon):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, Phenomenon):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, Phenomenon):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -65,19 +52,11 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        Phenomenon,
-        Phenomenon,
-        Phenomenon,
-    ],
+    body: Phenomenon,
 ) -> Response[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -103,19 +82,11 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        Phenomenon,
-        Phenomenon,
-        Phenomenon,
-    ],
+    body: Phenomenon,
 ) -> Optional[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -136,19 +107,11 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        Phenomenon,
-        Phenomenon,
-        Phenomenon,
-    ],
+    body: Phenomenon,
 ) -> Response[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -172,19 +135,11 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        Phenomenon,
-        Phenomenon,
-        Phenomenon,
-    ],
+    body: Phenomenon,
 ) -> Optional[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (Phenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 

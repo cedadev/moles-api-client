@@ -13,31 +13,18 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: Union[
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-    ],
+    body: PatchedPhenomenon,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "patch",
-        "url": f"/v3/phenomona/{ob_id}/",
+        "url": f"/api/v3/phenomona/{ob_id}/",
     }
 
-    if isinstance(body, PatchedPhenomenon):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, PatchedPhenomenon):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, PatchedPhenomenon):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -68,20 +55,12 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-    ],
+    body: PatchedPhenomenon,
 ) -> Response[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -109,20 +88,12 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-    ],
+    body: PatchedPhenomenon,
 ) -> Optional[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -145,20 +116,12 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-    ],
+    body: PatchedPhenomenon,
 ) -> Response[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 
@@ -184,20 +147,12 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-        PatchedPhenomenon,
-    ],
+    body: PatchedPhenomenon,
 ) -> Optional[Phenomenon]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
-        body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
         body (PatchedPhenomenon): A mixin that adds 'simple_fields' as ReadOnlyFields
             and reorders them to the top.
 

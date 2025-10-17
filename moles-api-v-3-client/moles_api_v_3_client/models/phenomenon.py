@@ -1,11 +1,8 @@
-import json
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-
-from .. import types
 
 if TYPE_CHECKING:
     from ..models.phenomenon_name import PhenomenonName
@@ -21,12 +18,12 @@ class Phenomenon:
     and reorders them to the top.
 
         Attributes:
-            ob_id (str):
+            ob_id (int):
             names (list['PhenomenonName']):
             terms (list['PhenomenonTerm']):
     """
 
-    ob_id: str
+    ob_id: int
     names: list["PhenomenonName"]
     terms: list["PhenomenonTerm"]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -55,22 +52,6 @@ class Phenomenon:
         )
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        for names_item_element in self.names:
-            files.append(("names", (None, json.dumps(names_item_element.to_dict()).encode(), "application/json")))
-
-        for terms_item_element in self.terms:
-            files.append(("terms", (None, json.dumps(terms_item_element.to_dict()).encode(), "application/json")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

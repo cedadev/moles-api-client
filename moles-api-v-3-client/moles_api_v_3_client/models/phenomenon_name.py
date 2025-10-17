@@ -13,11 +13,11 @@ class PhenomenonName:
     and reorders them to the top.
 
         Attributes:
-            ob_id (str):
+            ob_id (int):
             name (str):
     """
 
-    ob_id: str
+    ob_id: int
     name: str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 

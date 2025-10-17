@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PatchedProcedureCompositeProcessWrite")
@@ -12,8 +11,8 @@ T = TypeVar("T", bound="PatchedProcedureCompositeProcessWrite")
 
 @_attrs_define
 class PatchedProcedureCompositeProcessWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -72,41 +71,6 @@ class PatchedProcedureCompositeProcessWrite:
             field_dict["acquisitionComponent"] = acquisition_component
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.uuid, Unset):
-            files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        if not isinstance(self.short_code, Unset):
-            files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        if not isinstance(self.title, Unset):
-            files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.computation_component, Unset):
-            for computation_component_item_element in self.computation_component:
-                files.append(
-                    ("computationComponent", (None, str(computation_component_item_element).encode(), "text/plain"))
-                )
-
-        if not isinstance(self.acquisition_component, Unset):
-            for acquisition_component_item_element in self.acquisition_component:
-                files.append(
-                    ("acquisitionComponent", (None, str(acquisition_component_item_element).encode(), "text/plain"))
-                )
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

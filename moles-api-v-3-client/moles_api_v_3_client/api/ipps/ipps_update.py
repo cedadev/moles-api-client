@@ -12,31 +12,18 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: Union[
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-    ],
+    body: InstrumentPlatformPairWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "put",
-        "url": f"/v3/ipps/{ob_id}/",
+        "url": f"/api/v3/ipps/{ob_id}/",
     }
 
-    if isinstance(body, InstrumentPlatformPairWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, InstrumentPlatformPairWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, InstrumentPlatformPairWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -71,11 +58,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-    ],
+    body: InstrumentPlatformPairWrite,
 ) -> Response[InstrumentPlatformPairWrite]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -84,15 +67,8 @@ def sync_detailed(
 
     Args:
         ob_id (int):
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (InstrumentPlatformPairWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -118,11 +94,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-    ],
+    body: InstrumentPlatformPairWrite,
 ) -> Optional[InstrumentPlatformPairWrite]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -131,15 +103,8 @@ def sync(
 
     Args:
         ob_id (int):
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (InstrumentPlatformPairWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -160,11 +125,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-    ],
+    body: InstrumentPlatformPairWrite,
 ) -> Response[InstrumentPlatformPairWrite]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -173,15 +134,8 @@ async def asyncio_detailed(
 
     Args:
         ob_id (int):
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (InstrumentPlatformPairWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -205,11 +159,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: Union[
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-        InstrumentPlatformPairWrite,
-    ],
+    body: InstrumentPlatformPairWrite,
 ) -> Optional[InstrumentPlatformPairWrite]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -218,15 +168,8 @@ async def asyncio(
 
     Args:
         ob_id (int):
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
-        body (InstrumentPlatformPairWrite): A mixin that allows specifying which fields to include
-            in the serializer
-            via the 'fields' keyword argument.
+        body (InstrumentPlatformPairWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

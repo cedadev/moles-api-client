@@ -6,7 +6,6 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="DQConformanceResultWrite")
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="DQConformanceResultWrite")
 
 @_attrs_define
 class DQConformanceResultWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -61,27 +60,6 @@ class DQConformanceResultWrite:
             field_dict["date"] = date
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("explanation", (None, str(self.explanation).encode(), "text/plain")))
-
-        if not isinstance(self.passes_test, Unset):
-            files.append(("passesTest", (None, str(self.passes_test).encode(), "text/plain")))
-
-        if not isinstance(self.result_title, Unset):
-            files.append(("resultTitle", (None, str(self.result_title).encode(), "text/plain")))
-
-        if not isinstance(self.date, Unset):
-            files.append(("date", (None, self.date.isoformat().encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

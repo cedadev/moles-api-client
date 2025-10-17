@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.party_type_enum import PartyTypeEnum
 from ..types import UNSET, Unset
 
@@ -13,8 +12,8 @@ T = TypeVar("T", bound="PatchedPartyWrite")
 
 @_attrs_define
 class PatchedPartyWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -23,9 +22,7 @@ class PatchedPartyWrite:
             party_type (Union[Unset, PartyTypeEnum]): * `individual` - Individual
                 * `organisation` - Organisation
             description (Union[Unset, str]):
-            address_line_1 (Union[Unset, str]):
             delivery_point (Union[Unset, str]):
-            address_line_2 (Union[Unset, str]):
             administrative_area (Union[Unset, str]):
             city (Union[Unset, str]):
             country (Union[Unset, str]):
@@ -33,6 +30,8 @@ class PatchedPartyWrite:
             electronic_email_address (Union[Unset, str]):
             phone (Union[Unset, str]):
             online_resource (Union[Unset, str]):
+            address_line_1 (Union[Unset, str]):
+            address_line_2 (Union[Unset, str]):
     """
 
     ob_id: Union[Unset, int] = UNSET
@@ -40,9 +39,7 @@ class PatchedPartyWrite:
     last_name: Union[Unset, str] = UNSET
     party_type: Union[Unset, PartyTypeEnum] = UNSET
     description: Union[Unset, str] = UNSET
-    address_line_1: Union[Unset, str] = UNSET
     delivery_point: Union[Unset, str] = UNSET
-    address_line_2: Union[Unset, str] = UNSET
     administrative_area: Union[Unset, str] = UNSET
     city: Union[Unset, str] = UNSET
     country: Union[Unset, str] = UNSET
@@ -50,6 +47,8 @@ class PatchedPartyWrite:
     electronic_email_address: Union[Unset, str] = UNSET
     phone: Union[Unset, str] = UNSET
     online_resource: Union[Unset, str] = UNSET
+    address_line_1: Union[Unset, str] = UNSET
+    address_line_2: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -65,11 +64,7 @@ class PatchedPartyWrite:
 
         description = self.description
 
-        address_line_1 = self.address_line_1
-
         delivery_point = self.delivery_point
-
-        address_line_2 = self.address_line_2
 
         administrative_area = self.administrative_area
 
@@ -85,6 +80,10 @@ class PatchedPartyWrite:
 
         online_resource = self.online_resource
 
+        address_line_1 = self.address_line_1
+
+        address_line_2 = self.address_line_2
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
@@ -98,12 +97,8 @@ class PatchedPartyWrite:
             field_dict["partyType"] = party_type
         if description is not UNSET:
             field_dict["description"] = description
-        if address_line_1 is not UNSET:
-            field_dict["addressLine1"] = address_line_1
         if delivery_point is not UNSET:
             field_dict["deliveryPoint"] = delivery_point
-        if address_line_2 is not UNSET:
-            field_dict["addressLine2"] = address_line_2
         if administrative_area is not UNSET:
             field_dict["administrativeArea"] = administrative_area
         if city is not UNSET:
@@ -118,61 +113,12 @@ class PatchedPartyWrite:
             field_dict["phone"] = phone
         if online_resource is not UNSET:
             field_dict["onlineResource"] = online_resource
+        if address_line_1 is not UNSET:
+            field_dict["addressLine1"] = address_line_1
+        if address_line_2 is not UNSET:
+            field_dict["addressLine2"] = address_line_2
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.first_name, Unset):
-            files.append(("firstName", (None, str(self.first_name).encode(), "text/plain")))
-
-        if not isinstance(self.last_name, Unset):
-            files.append(("lastName", (None, str(self.last_name).encode(), "text/plain")))
-
-        if not isinstance(self.party_type, Unset):
-            files.append(("partyType", (None, str(self.party_type.value).encode(), "text/plain")))
-
-        if not isinstance(self.description, Unset):
-            files.append(("description", (None, str(self.description).encode(), "text/plain")))
-
-        if not isinstance(self.address_line_1, Unset):
-            files.append(("addressLine1", (None, str(self.address_line_1).encode(), "text/plain")))
-
-        if not isinstance(self.delivery_point, Unset):
-            files.append(("deliveryPoint", (None, str(self.delivery_point).encode(), "text/plain")))
-
-        if not isinstance(self.address_line_2, Unset):
-            files.append(("addressLine2", (None, str(self.address_line_2).encode(), "text/plain")))
-
-        if not isinstance(self.administrative_area, Unset):
-            files.append(("administrativeArea", (None, str(self.administrative_area).encode(), "text/plain")))
-
-        if not isinstance(self.city, Unset):
-            files.append(("city", (None, str(self.city).encode(), "text/plain")))
-
-        if not isinstance(self.country, Unset):
-            files.append(("country", (None, str(self.country).encode(), "text/plain")))
-
-        if not isinstance(self.postal_code, Unset):
-            files.append(("postalCode", (None, str(self.postal_code).encode(), "text/plain")))
-
-        if not isinstance(self.electronic_email_address, Unset):
-            files.append(("electronicEmailAddress", (None, str(self.electronic_email_address).encode(), "text/plain")))
-
-        if not isinstance(self.phone, Unset):
-            files.append(("phone", (None, str(self.phone).encode(), "text/plain")))
-
-        if not isinstance(self.online_resource, Unset):
-            files.append(("onlineResource", (None, str(self.online_resource).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
@@ -192,11 +138,7 @@ class PatchedPartyWrite:
 
         description = d.pop("description", UNSET)
 
-        address_line_1 = d.pop("addressLine1", UNSET)
-
         delivery_point = d.pop("deliveryPoint", UNSET)
-
-        address_line_2 = d.pop("addressLine2", UNSET)
 
         administrative_area = d.pop("administrativeArea", UNSET)
 
@@ -212,15 +154,17 @@ class PatchedPartyWrite:
 
         online_resource = d.pop("onlineResource", UNSET)
 
+        address_line_1 = d.pop("addressLine1", UNSET)
+
+        address_line_2 = d.pop("addressLine2", UNSET)
+
         patched_party_write = cls(
             ob_id=ob_id,
             first_name=first_name,
             last_name=last_name,
             party_type=party_type,
             description=description,
-            address_line_1=address_line_1,
             delivery_point=delivery_point,
-            address_line_2=address_line_2,
             administrative_area=administrative_area,
             city=city,
             country=country,
@@ -228,6 +172,8 @@ class PatchedPartyWrite:
             electronic_email_address=electronic_email_address,
             phone=phone,
             online_resource=online_resource,
+            address_line_1=address_line_1,
+            address_line_2=address_line_2,
         )
 
         patched_party_write.additional_properties = d

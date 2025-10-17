@@ -402,7 +402,7 @@ def _get_kwargs(
 
     _kwargs: dict[str, Any] = {
         "method": "get",
-        "url": "/v3/composites/",
+        "url": "/api/v3/composites/",
         "params": params,
     }
 

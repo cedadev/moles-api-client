@@ -6,7 +6,6 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
-from .. import types
 from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="TimePeriod")
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="TimePeriod")
 
 @_attrs_define
 class TimePeriod:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (int):
@@ -53,24 +52,6 @@ class TimePeriod:
             field_dict["endTime"] = end_time
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        files.append(("startTime", (None, self.start_time.isoformat().encode(), "text/plain")))
-
-        if not isinstance(self.end_time, Unset):
-            if isinstance(self.end_time, datetime.datetime):
-                files.append(("endTime", (None, self.end_time.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("endTime", (None, str(self.end_time).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

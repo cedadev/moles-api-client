@@ -11,31 +11,18 @@ from ...types import Response
 
 def _get_kwargs(
     *,
-    body: Union[
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-    ],
+    body: ProcedureCompositeProcessWrite,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
     _kwargs: dict[str, Any] = {
         "method": "post",
-        "url": "/v3/composites/",
+        "url": "/api/v3/composites/",
     }
 
-    if isinstance(body, ProcedureCompositeProcessWrite):
-        _kwargs["json"] = body.to_dict()
+    _kwargs["json"] = body.to_dict()
 
-        headers["Content-Type"] = "application/json"
-    if isinstance(body, ProcedureCompositeProcessWrite):
-        _kwargs["data"] = body.to_dict()
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-    if isinstance(body, ProcedureCompositeProcessWrite):
-        _kwargs["files"] = body.to_multipart()
-
-        headers["Content-Type"] = "multipart/form-data"
+    headers["Content-Type"] = "application/json"
 
     _kwargs["headers"] = headers
     return _kwargs
@@ -69,11 +56,7 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-    ],
+    body: ProcedureCompositeProcessWrite,
 ) -> Response[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -82,15 +65,8 @@ def sync_detailed(
     The details of the underlying records have been serialised.
 
     Args:
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -114,11 +90,7 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-    ],
+    body: ProcedureCompositeProcessWrite,
 ) -> Optional[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -127,15 +99,8 @@ def sync(
     The details of the underlying records have been serialised.
 
     Args:
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -154,11 +119,7 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-    ],
+    body: ProcedureCompositeProcessWrite,
 ) -> Response[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -167,15 +128,8 @@ async def asyncio_detailed(
     The details of the underlying records have been serialised.
 
     Args:
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -197,11 +151,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: Union[
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-        ProcedureCompositeProcessWrite,
-    ],
+    body: ProcedureCompositeProcessWrite,
 ) -> Optional[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -210,15 +160,8 @@ async def asyncio(
     The details of the underlying records have been serialised.
 
     Args:
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
-        body (ProcedureCompositeProcessWrite): A mixin that allows specifying which fields to
-            include in the serializer
-            via the 'fields' keyword argument.
+        body (ProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
+            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

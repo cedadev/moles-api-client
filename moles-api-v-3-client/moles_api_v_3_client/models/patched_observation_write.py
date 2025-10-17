@@ -6,7 +6,6 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 from dateutil.parser import isoparse
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.language_enum import LanguageEnum
 from ..models.publication_state_cbb_enum import PublicationStateCbbEnum
@@ -19,13 +18,10 @@ T = TypeVar("T", bound="PatchedObservationWrite")
 
 @_attrs_define
 class PatchedObservationWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
-            ob_id (Union[Unset, int]):
-            uuid (Union[Unset, str]):
-            short_code (Union[Unset, str]):
             title (Union[Unset, str]):
             abstract (Union[Unset, str]):
             creation_date (Union[None, Unset, datetime.datetime]):
@@ -75,9 +71,6 @@ class PatchedObservationWrite:
             vocabulary_keywords (Union[Unset, list[int]]):
     """
 
-    ob_id: Union[Unset, int] = UNSET
-    uuid: Union[Unset, str] = UNSET
-    short_code: Union[Unset, str] = UNSET
     title: Union[Unset, str] = UNSET
     abstract: Union[Unset, str] = UNSET
     creation_date: Union[None, Unset, datetime.datetime] = UNSET
@@ -115,12 +108,6 @@ class PatchedObservationWrite:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        ob_id = self.ob_id
-
-        uuid = self.uuid
-
-        short_code = self.short_code
-
         title = self.title
 
         abstract = self.abstract
@@ -298,12 +285,6 @@ class PatchedObservationWrite:
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update({})
-        if ob_id is not UNSET:
-            field_dict["ob_id"] = ob_id
-        if uuid is not UNSET:
-            field_dict["uuid"] = uuid
-        if short_code is not UNSET:
-            field_dict["short_code"] = short_code
         if title is not UNSET:
             field_dict["title"] = title
         if abstract is not UNSET:
@@ -375,205 +356,9 @@ class PatchedObservationWrite:
 
         return field_dict
 
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.uuid, Unset):
-            files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        if not isinstance(self.short_code, Unset):
-            files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        if not isinstance(self.title, Unset):
-            files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.creation_date, Unset):
-            if isinstance(self.creation_date, datetime.datetime):
-                files.append(("creationDate", (None, self.creation_date.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("creationDate", (None, str(self.creation_date).encode(), "text/plain")))
-
-        if not isinstance(self.last_updated_date, Unset):
-            if isinstance(self.last_updated_date, datetime.datetime):
-                files.append(("lastUpdatedDate", (None, self.last_updated_date.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("lastUpdatedDate", (None, str(self.last_updated_date).encode(), "text/plain")))
-
-        if not isinstance(self.latest_data_update_time, Unset):
-            if isinstance(self.latest_data_update_time, datetime.datetime):
-                files.append(
-                    ("latestDataUpdateTime", (None, self.latest_data_update_time.isoformat().encode(), "text/plain"))
-                )
-            else:
-                files.append(("latestDataUpdateTime", (None, str(self.latest_data_update_time).encode(), "text/plain")))
-
-        if not isinstance(self.update_frequency, Unset):
-            if isinstance(self.update_frequency, UpdateFrequencyEnum):
-                files.append(("updateFrequency", (None, str(self.update_frequency.value).encode(), "text/plain")))
-            else:
-                files.append(("updateFrequency", (None, str(self.update_frequency.value).encode(), "text/plain")))
-
-        if not isinstance(self.data_lineage, Unset):
-            files.append(("dataLineage", (None, str(self.data_lineage).encode(), "text/plain")))
-
-        if not isinstance(self.removed_data_reason, Unset):
-            files.append(("removedDataReason", (None, str(self.removed_data_reason).encode(), "text/plain")))
-
-        if not isinstance(self.keywords, Unset):
-            files.append(("keywords", (None, str(self.keywords).encode(), "text/plain")))
-
-        if not isinstance(self.publication_state, Unset):
-            if isinstance(self.publication_state, PublicationStateCbbEnum):
-                files.append(("publicationState", (None, str(self.publication_state.value).encode(), "text/plain")))
-            else:
-                files.append(("publicationState", (None, str(self.publication_state.value).encode(), "text/plain")))
-
-        if not isinstance(self.non_geographic_flag, Unset):
-            files.append(("nonGeographicFlag", (None, str(self.non_geographic_flag).encode(), "text/plain")))
-
-        if not isinstance(self.dont_harvest_from_projects, Unset):
-            files.append(
-                ("dontHarvestFromProjects", (None, str(self.dont_harvest_from_projects).encode(), "text/plain"))
-            )
-
-        if not isinstance(self.geographic_extent, Unset):
-            if isinstance(self.geographic_extent, int):
-                files.append(("geographicExtent", (None, str(self.geographic_extent).encode(), "text/plain")))
-            else:
-                files.append(("geographicExtent", (None, str(self.geographic_extent).encode(), "text/plain")))
-
-        if not isinstance(self.language, Unset):
-            if isinstance(self.language, LanguageEnum):
-                files.append(("language", (None, str(self.language.value).encode(), "text/plain")))
-            else:
-                files.append(("language", (None, str(self.language.value).encode(), "text/plain")))
-
-        if not isinstance(self.resolution, Unset):
-            files.append(("resolution", (None, str(self.resolution).encode(), "text/plain")))
-
-        if not isinstance(self.status, Unset):
-            files.append(("status", (None, str(self.status.value).encode(), "text/plain")))
-
-        if not isinstance(self.vertical_extent, Unset):
-            if isinstance(self.vertical_extent, int):
-                files.append(("verticalExtent", (None, str(self.vertical_extent).encode(), "text/plain")))
-            else:
-                files.append(("verticalExtent", (None, str(self.vertical_extent).encode(), "text/plain")))
-
-        if not isinstance(self.result_field, Unset):
-            if isinstance(self.result_field, int):
-                files.append(("result_field", (None, str(self.result_field).encode(), "text/plain")))
-            else:
-                files.append(("result_field", (None, str(self.result_field).encode(), "text/plain")))
-
-        if not isinstance(self.time_period, Unset):
-            if isinstance(self.time_period, int):
-                files.append(("timePeriod", (None, str(self.time_period).encode(), "text/plain")))
-            else:
-                files.append(("timePeriod", (None, str(self.time_period).encode(), "text/plain")))
-
-        if not isinstance(self.result_quality, Unset):
-            if isinstance(self.result_quality, int):
-                files.append(("resultQuality", (None, str(self.result_quality).encode(), "text/plain")))
-            else:
-                files.append(("resultQuality", (None, str(self.result_quality).encode(), "text/plain")))
-
-        if not isinstance(self.data_published_time, Unset):
-            if isinstance(self.data_published_time, datetime.datetime):
-                files.append(("dataPublishedTime", (None, self.data_published_time.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("dataPublishedTime", (None, str(self.data_published_time).encode(), "text/plain")))
-
-        if not isinstance(self.doi_published_time, Unset):
-            if isinstance(self.doi_published_time, datetime.datetime):
-                files.append(("doiPublishedTime", (None, self.doi_published_time.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("doiPublishedTime", (None, str(self.doi_published_time).encode(), "text/plain")))
-
-        if not isinstance(self.removed_data_time, Unset):
-            if isinstance(self.removed_data_time, datetime.datetime):
-                files.append(("removedDataTime", (None, self.removed_data_time.isoformat().encode(), "text/plain")))
-            else:
-                files.append(("removedDataTime", (None, str(self.removed_data_time).encode(), "text/plain")))
-
-        if not isinstance(self.valid_time_period, Unset):
-            if isinstance(self.valid_time_period, int):
-                files.append(("validTimePeriod", (None, str(self.valid_time_period).encode(), "text/plain")))
-            else:
-                files.append(("validTimePeriod", (None, str(self.valid_time_period).encode(), "text/plain")))
-
-        if not isinstance(self.procedure_acquisition, Unset):
-            if isinstance(self.procedure_acquisition, int):
-                files.append(("procedureAcquisition", (None, str(self.procedure_acquisition).encode(), "text/plain")))
-            else:
-                files.append(("procedureAcquisition", (None, str(self.procedure_acquisition).encode(), "text/plain")))
-
-        if not isinstance(self.procedure_computation, Unset):
-            if isinstance(self.procedure_computation, int):
-                files.append(("procedureComputation", (None, str(self.procedure_computation).encode(), "text/plain")))
-            else:
-                files.append(("procedureComputation", (None, str(self.procedure_computation).encode(), "text/plain")))
-
-        if not isinstance(self.procedure_composite_process, Unset):
-            if isinstance(self.procedure_composite_process, int):
-                files.append(
-                    ("procedureCompositeProcess", (None, str(self.procedure_composite_process).encode(), "text/plain"))
-                )
-            else:
-                files.append(
-                    ("procedureCompositeProcess", (None, str(self.procedure_composite_process).encode(), "text/plain"))
-                )
-
-        if not isinstance(self.image_details, Unset):
-            for image_details_item_element in self.image_details:
-                files.append(("imageDetails", (None, str(image_details_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.discovery_keywords, Unset):
-            for discovery_keywords_item_element in self.discovery_keywords:
-                files.append(("discoveryKeywords", (None, str(discovery_keywords_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.permissions, Unset):
-            for permissions_item_element in self.permissions:
-                files.append(("permissions", (None, str(permissions_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.projects, Unset):
-            for projects_item_element in self.projects:
-                files.append(("projects", (None, str(projects_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.inspire_theme, Unset):
-            for inspire_theme_item_element in self.inspire_theme:
-                files.append(("inspireTheme", (None, str(inspire_theme_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.topic_category, Unset):
-            for topic_category_item_element in self.topic_category:
-                files.append(("topicCategory", (None, str(topic_category_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.vocabulary_keywords, Unset):
-            for vocabulary_keywords_item_element in self.vocabulary_keywords:
-                files.append(
-                    ("vocabularyKeywords", (None, str(vocabulary_keywords_item_element).encode(), "text/plain"))
-                )
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
-
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        ob_id = d.pop("ob_id", UNSET)
-
-        uuid = d.pop("uuid", UNSET)
-
-        short_code = d.pop("short_code", UNSET)
-
         title = d.pop("title", UNSET)
 
         abstract = d.pop("abstract", UNSET)
@@ -852,9 +637,6 @@ class PatchedObservationWrite:
         vocabulary_keywords = cast(list[int], d.pop("vocabularyKeywords", UNSET))
 
         patched_observation_write = cls(
-            ob_id=ob_id,
-            uuid=uuid,
-            short_code=short_code,
             title=title,
             abstract=abstract,
             creation_date=creation_date,

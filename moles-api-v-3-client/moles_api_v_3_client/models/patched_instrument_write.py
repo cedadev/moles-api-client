@@ -4,7 +4,6 @@ from typing import Any, TypeVar, Union, cast
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
-from .. import types
 from ..models.blank_enum import BlankEnum
 from ..models.instrument_type_enum import InstrumentTypeEnum
 from ..types import UNSET, Unset
@@ -14,8 +13,8 @@ T = TypeVar("T", bound="PatchedInstrumentWrite")
 
 @_attrs_define
 class PatchedInstrumentWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             ob_id (Union[Unset, int]):
@@ -92,46 +91,6 @@ class PatchedInstrumentWrite:
             field_dict["subInstrument"] = sub_instrument
 
         return field_dict
-
-    def to_multipart(self) -> types.RequestFiles:
-        files: types.RequestFiles = []
-
-        if not isinstance(self.ob_id, Unset):
-            files.append(("ob_id", (None, str(self.ob_id).encode(), "text/plain")))
-
-        if not isinstance(self.uuid, Unset):
-            files.append(("uuid", (None, str(self.uuid).encode(), "text/plain")))
-
-        if not isinstance(self.short_code, Unset):
-            files.append(("short_code", (None, str(self.short_code).encode(), "text/plain")))
-
-        if not isinstance(self.title, Unset):
-            files.append(("title", (None, str(self.title).encode(), "text/plain")))
-
-        if not isinstance(self.abstract, Unset):
-            files.append(("abstract", (None, str(self.abstract).encode(), "text/plain")))
-
-        if not isinstance(self.keywords, Unset):
-            files.append(("keywords", (None, str(self.keywords).encode(), "text/plain")))
-
-        if not isinstance(self.instrument_type, Unset):
-            if isinstance(self.instrument_type, InstrumentTypeEnum):
-                files.append(("instrumentType", (None, str(self.instrument_type.value).encode(), "text/plain")))
-            else:
-                files.append(("instrumentType", (None, str(self.instrument_type.value).encode(), "text/plain")))
-
-        if not isinstance(self.image_details, Unset):
-            for image_details_item_element in self.image_details:
-                files.append(("imageDetails", (None, str(image_details_item_element).encode(), "text/plain")))
-
-        if not isinstance(self.sub_instrument, Unset):
-            for sub_instrument_item_element in self.sub_instrument:
-                files.append(("subInstrument", (None, str(sub_instrument_item_element).encode(), "text/plain")))
-
-        for prop_name, prop in self.additional_properties.items():
-            files.append((prop_name, (None, str(prop).encode(), "text/plain")))
-
-        return files
 
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:

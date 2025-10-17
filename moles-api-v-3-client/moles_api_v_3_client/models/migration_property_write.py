@@ -11,8 +11,8 @@ T = TypeVar("T", bound="MigrationPropertyWrite")
 
 @_attrs_define
 class MigrationPropertyWrite:
-    """A mixin that allows specifying which fields to include in the serializer
-    via the 'fields' keyword argument.
+    """A mixin that adds 'simple_fields' as ReadOnlyFields
+    and reorders them to the top.
 
         Attributes:
             id (int):
