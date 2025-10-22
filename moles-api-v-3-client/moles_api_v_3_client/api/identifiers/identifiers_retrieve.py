@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.identifier_write import IdentifierWrite
+from ...models.identifier_read import IdentifierRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[IdentifierWrite]:
+) -> Optional[IdentifierRead]:
     if response.status_code == 200:
-        response_200 = IdentifierWrite.from_dict(response.json())
+        response_200 = IdentifierRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[IdentifierWrite]:
+) -> Response[IdentifierRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[IdentifierWrite]:
+) -> Response[IdentifierRead]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -60,7 +60,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IdentifierWrite]
+        Response[IdentifierRead]
     """
 
     kwargs = _get_kwargs(
@@ -78,7 +78,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[IdentifierWrite]:
+) -> Optional[IdentifierRead]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -89,7 +89,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IdentifierWrite
+        IdentifierRead
     """
 
     return sync_detailed(
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[IdentifierWrite]:
+) -> Response[IdentifierRead]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -113,7 +113,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[IdentifierWrite]
+        Response[IdentifierRead]
     """
 
     kwargs = _get_kwargs(
@@ -129,7 +129,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[IdentifierWrite]:
+) -> Optional[IdentifierRead]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -140,7 +140,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        IdentifierWrite
+        IdentifierRead
     """
 
     return (

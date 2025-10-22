@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.identifiers_list_identifier_type import IdentifiersListIdentifierType
-from ...models.paginated_identifier_write_list import PaginatedIdentifierWriteList
+from ...models.paginated_identifier_read_list import PaginatedIdentifierReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -325,9 +325,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedIdentifierWriteList]:
+) -> Optional[PaginatedIdentifierReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedIdentifierWriteList.from_dict(response.json())
+        response_200 = PaginatedIdentifierReadList.from_dict(response.json())
 
         return response_200
 
@@ -339,7 +339,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedIdentifierWriteList]:
+) -> Response[PaginatedIdentifierReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -434,7 +434,7 @@ def sync_detailed(
     url_range: Union[Unset, list[str]] = UNSET,
     url_regex: Union[Unset, str] = UNSET,
     url_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedIdentifierWriteList]:
+) -> Response[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -527,7 +527,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedIdentifierWriteList]
+        Response[PaginatedIdentifierReadList]
     """
 
     kwargs = _get_kwargs(
@@ -709,7 +709,7 @@ def sync(
     url_range: Union[Unset, list[str]] = UNSET,
     url_regex: Union[Unset, str] = UNSET,
     url_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedIdentifierWriteList]:
+) -> Optional[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -802,7 +802,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedIdentifierWriteList
+        PaginatedIdentifierReadList
     """
 
     return sync_detailed(
@@ -979,7 +979,7 @@ async def asyncio_detailed(
     url_range: Union[Unset, list[str]] = UNSET,
     url_regex: Union[Unset, str] = UNSET,
     url_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedIdentifierWriteList]:
+) -> Response[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -1072,7 +1072,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedIdentifierWriteList]
+        Response[PaginatedIdentifierReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1252,7 +1252,7 @@ async def asyncio(
     url_range: Union[Unset, list[str]] = UNSET,
     url_regex: Union[Unset, str] = UNSET,
     url_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedIdentifierWriteList]:
+) -> Optional[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
@@ -1345,7 +1345,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedIdentifierWriteList
+        PaginatedIdentifierReadList
     """
 
     return (

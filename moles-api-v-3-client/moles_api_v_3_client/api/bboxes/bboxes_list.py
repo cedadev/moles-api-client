@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_geographic_bounding_box_write_list import PaginatedGeographicBoundingBoxWriteList
+from ...models.paginated_geographic_bounding_box_read_list import PaginatedGeographicBoundingBoxReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -405,9 +405,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedGeographicBoundingBoxWriteList]:
+) -> Optional[PaginatedGeographicBoundingBoxReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedGeographicBoundingBoxWriteList.from_dict(response.json())
+        response_200 = PaginatedGeographicBoundingBoxReadList.from_dict(response.json())
 
         return response_200
 
@@ -419,7 +419,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedGeographicBoundingBoxWriteList]:
+) -> Response[PaginatedGeographicBoundingBoxReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -541,7 +541,7 @@ def sync_detailed(
     west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
     west_bound_longitude_regex: Union[Unset, float] = UNSET,
     west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Response[PaginatedGeographicBoundingBoxWriteList]:
+) -> Response[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -662,7 +662,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedGeographicBoundingBoxWriteList]
+        Response[PaginatedGeographicBoundingBoxReadList]
     """
 
     kwargs = _get_kwargs(
@@ -898,7 +898,7 @@ def sync(
     west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
     west_bound_longitude_regex: Union[Unset, float] = UNSET,
     west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Optional[PaginatedGeographicBoundingBoxWriteList]:
+) -> Optional[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -1019,7 +1019,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedGeographicBoundingBoxWriteList
+        PaginatedGeographicBoundingBoxReadList
     """
 
     return sync_detailed(
@@ -1250,7 +1250,7 @@ async def asyncio_detailed(
     west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
     west_bound_longitude_regex: Union[Unset, float] = UNSET,
     west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Response[PaginatedGeographicBoundingBoxWriteList]:
+) -> Response[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -1371,7 +1371,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedGeographicBoundingBoxWriteList]
+        Response[PaginatedGeographicBoundingBoxReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1605,7 +1605,7 @@ async def asyncio(
     west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
     west_bound_longitude_regex: Union[Unset, float] = UNSET,
     west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Optional[PaginatedGeographicBoundingBoxWriteList]:
+) -> Optional[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -1726,7 +1726,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedGeographicBoundingBoxWriteList
+        PaginatedGeographicBoundingBoxReadList
     """
 
     return (

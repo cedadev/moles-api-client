@@ -18,12 +18,12 @@ class Phenomenon:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
+            ob_id (str):
             names (list['PhenomenonName']):
             terms (list['PhenomenonTerm']):
     """
 
-    ob_id: int
+    ob_id: str
     names: list["PhenomenonName"]
     terms: list["PhenomenonTerm"]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)

@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_procedure_composite_process_write_list import PaginatedProcedureCompositeProcessWriteList
+from ...models.paginated_procedure_composite_process_read_list import PaginatedProcedureCompositeProcessReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -411,9 +411,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedProcedureCompositeProcessWriteList]:
+) -> Optional[PaginatedProcedureCompositeProcessReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedProcedureCompositeProcessWriteList.from_dict(response.json())
+        response_200 = PaginatedProcedureCompositeProcessReadList.from_dict(response.json())
 
         return response_200
 
@@ -425,7 +425,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedProcedureCompositeProcessWriteList]:
+) -> Response[PaginatedProcedureCompositeProcessReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -545,7 +545,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProcedureCompositeProcessWriteList]:
+) -> Response[PaginatedProcedureCompositeProcessReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -667,7 +667,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProcedureCompositeProcessWriteList]
+        Response[PaginatedProcedureCompositeProcessReadList]
     """
 
     kwargs = _get_kwargs(
@@ -899,7 +899,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureCompositeProcessWriteList]:
+) -> Optional[PaginatedProcedureCompositeProcessReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -1021,7 +1021,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProcedureCompositeProcessWriteList
+        PaginatedProcedureCompositeProcessReadList
     """
 
     return sync_detailed(
@@ -1248,7 +1248,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProcedureCompositeProcessWriteList]:
+) -> Response[PaginatedProcedureCompositeProcessReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -1370,7 +1370,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProcedureCompositeProcessWriteList]
+        Response[PaginatedProcedureCompositeProcessReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1600,7 +1600,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureCompositeProcessWriteList]:
+) -> Optional[PaginatedProcedureCompositeProcessReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -1722,7 +1722,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProcedureCompositeProcessWriteList
+        PaginatedProcedureCompositeProcessReadList
     """
 
     return (

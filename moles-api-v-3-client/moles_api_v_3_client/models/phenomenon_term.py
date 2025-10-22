@@ -1,13 +1,8 @@
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-
-from ..models.blank_enum import BlankEnum
-from ..models.label_enum import LabelEnum
-from ..models.vocabulary_enum import VocabularyEnum
-from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="PhenomenonTerm")
 
@@ -18,40 +13,26 @@ class PhenomenonTerm:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            label (LabelEnum): * `units` - Units
-                * `var_id` - variable Id
-                * `standard_name` - Standard name
-                * `long_name` - Long name
-                * `gcmd_keyword` - GCMD keyword
-                * `gcmd_url` - GCMD URL
-                * `gcmd_name` - GCMD keyword
-                * `alt_names` - Alternative Names
-                * `names` - Names
+            ob_id (str):
+            label (str):
             value (str):
-            vocabulary (Union[BlankEnum, Unset, VocabularyEnum]):
+            vocabulary (str):
     """
 
-    ob_id: int
-    label: LabelEnum
+    ob_id: str
+    label: str
     value: str
-    vocabulary: Union[BlankEnum, Unset, VocabularyEnum] = UNSET
+    vocabulary: str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
 
-        label = self.label.value
+        label = self.label
 
         value = self.value
 
-        vocabulary: Union[Unset, str]
-        if isinstance(self.vocabulary, Unset):
-            vocabulary = UNSET
-        elif isinstance(self.vocabulary, VocabularyEnum):
-            vocabulary = self.vocabulary.value
-        else:
-            vocabulary = self.vocabulary.value
+        vocabulary = self.vocabulary
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -60,10 +41,9 @@ class PhenomenonTerm:
                 "ob_id": ob_id,
                 "label": label,
                 "value": value,
+                "vocabulary": vocabulary,
             }
         )
-        if vocabulary is not UNSET:
-            field_dict["vocabulary"] = vocabulary
 
         return field_dict
 
@@ -72,28 +52,11 @@ class PhenomenonTerm:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        label = LabelEnum(d.pop("label"))
+        label = d.pop("label")
 
         value = d.pop("value")
 
-        def _parse_vocabulary(data: object) -> Union[BlankEnum, Unset, VocabularyEnum]:
-            if isinstance(data, Unset):
-                return data
-            try:
-                if not isinstance(data, str):
-                    raise TypeError()
-                vocabulary_type_0 = VocabularyEnum(data)
-
-                return vocabulary_type_0
-            except:  # noqa: E722
-                pass
-            if not isinstance(data, str):
-                raise TypeError()
-            vocabulary_type_1 = BlankEnum(data)
-
-            return vocabulary_type_1
-
-        vocabulary = _parse_vocabulary(d.pop("vocabulary", UNSET))
+        vocabulary = d.pop("vocabulary")
 
         phenomenon_term = cls(
             ob_id=ob_id,

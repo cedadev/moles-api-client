@@ -9,39 +9,24 @@ T = TypeVar("T", bound="InstrumentPlatformPairWrite")
 
 @_attrs_define
 class InstrumentPlatformPairWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
-            platform (int):
-            instrument (int):
-            related_to (str):
     """
 
     ob_id: int
-    platform: int
-    instrument: int
-    related_to: str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
-
-        platform = self.platform
-
-        instrument = self.instrument
-
-        related_to = self.related_to
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "ob_id": ob_id,
-                "platform": platform,
-                "instrument": instrument,
-                "relatedTo": related_to,
             }
         )
 
@@ -52,17 +37,8 @@ class InstrumentPlatformPairWrite:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        platform = d.pop("platform")
-
-        instrument = d.pop("instrument")
-
-        related_to = d.pop("relatedTo")
-
         instrument_platform_pair_write = cls(
             ob_id=ob_id,
-            platform=platform,
-            instrument=instrument,
-            related_to=related_to,
         )
 
         instrument_platform_pair_write.additional_properties = d

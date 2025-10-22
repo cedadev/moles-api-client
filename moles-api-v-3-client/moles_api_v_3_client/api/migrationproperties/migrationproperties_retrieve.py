@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.migration_property_write import MigrationPropertyWrite
+from ...models.migration_property_read import MigrationPropertyRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[MigrationPropertyWrite]:
+) -> Optional[MigrationPropertyRead]:
     if response.status_code == 200:
-        response_200 = MigrationPropertyWrite.from_dict(response.json())
+        response_200 = MigrationPropertyRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[MigrationPropertyWrite]:
+) -> Response[MigrationPropertyRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[MigrationPropertyWrite]:
+) -> Response[MigrationPropertyRead]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -60,7 +60,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[MigrationPropertyWrite]
+        Response[MigrationPropertyRead]
     """
 
     kwargs = _get_kwargs(
@@ -78,7 +78,7 @@ def sync(
     id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[MigrationPropertyWrite]:
+) -> Optional[MigrationPropertyRead]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -89,7 +89,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        MigrationPropertyWrite
+        MigrationPropertyRead
     """
 
     return sync_detailed(
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[MigrationPropertyWrite]:
+) -> Response[MigrationPropertyRead]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -113,7 +113,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[MigrationPropertyWrite]
+        Response[MigrationPropertyRead]
     """
 
     kwargs = _get_kwargs(
@@ -129,7 +129,7 @@ async def asyncio(
     id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[MigrationPropertyWrite]:
+) -> Optional[MigrationPropertyRead]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -140,7 +140,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        MigrationPropertyWrite
+        MigrationPropertyRead
     """
 
     return (

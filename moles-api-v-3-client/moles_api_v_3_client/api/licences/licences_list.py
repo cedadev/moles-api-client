@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_licence_write_list import PaginatedLicenceWriteList
+from ...models.paginated_licence_read_list import PaginatedLicenceReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -177,9 +177,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedLicenceWriteList]:
+) -> Optional[PaginatedLicenceReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedLicenceWriteList.from_dict(response.json())
+        response_200 = PaginatedLicenceReadList.from_dict(response.json())
 
         return response_200
 
@@ -191,7 +191,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedLicenceWriteList]:
+) -> Response[PaginatedLicenceReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -245,7 +245,7 @@ def sync_detailed(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Response[PaginatedLicenceWriteList]:
+) -> Response[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
@@ -297,7 +297,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedLicenceWriteList]
+        Response[PaginatedLicenceReadList]
     """
 
     kwargs = _get_kwargs(
@@ -397,7 +397,7 @@ def sync(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedLicenceWriteList]:
+) -> Optional[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
@@ -449,7 +449,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedLicenceWriteList
+        PaginatedLicenceReadList
     """
 
     return sync_detailed(
@@ -544,7 +544,7 @@ async def asyncio_detailed(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Response[PaginatedLicenceWriteList]:
+) -> Response[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
@@ -596,7 +596,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedLicenceWriteList]
+        Response[PaginatedLicenceReadList]
     """
 
     kwargs = _get_kwargs(
@@ -694,7 +694,7 @@ async def asyncio(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedLicenceWriteList]:
+) -> Optional[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
@@ -746,7 +746,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedLicenceWriteList
+        PaginatedLicenceReadList
     """
 
     return (

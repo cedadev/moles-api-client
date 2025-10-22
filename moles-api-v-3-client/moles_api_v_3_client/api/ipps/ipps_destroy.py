@@ -5,7 +5,6 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.instrument_platform_pair_write import InstrumentPlatformPairWrite
 from ...types import Response
 
 
@@ -20,13 +19,9 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[InstrumentPlatformPairWrite]:
-    if response.status_code == 200:
-        response_200 = InstrumentPlatformPairWrite.from_dict(response.json())
-
-        return response_200
+def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[Any]:
+    if response.status_code == 204:
+        return None
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -34,9 +29,7 @@ def _parse_response(
         return None
 
 
-def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[InstrumentPlatformPairWrite]:
+def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[Any]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +42,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[InstrumentPlatformPairWrite]:
+) -> Response[Any]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -63,7 +56,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[InstrumentPlatformPairWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -77,38 +70,11 @@ def sync_detailed(
     return _build_response(client=client, response=response)
 
 
-def sync(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairWrite]:
-    """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
-    which
-    enable linking between Instruments, Platforms and Observations (though may be via
-    CompositeProcesses).
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        InstrumentPlatformPairWrite
-    """
-
-    return sync_detailed(
-        ob_id=ob_id,
-        client=client,
-    ).parsed
-
-
 async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[InstrumentPlatformPairWrite]:
+) -> Response[Any]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -122,7 +88,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[InstrumentPlatformPairWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -132,32 +98,3 @@ async def asyncio_detailed(
     response = await client.get_async_httpx_client().request(**kwargs)
 
     return _build_response(client=client, response=response)
-
-
-async def asyncio(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairWrite]:
-    """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
-    which
-    enable linking between Instruments, Platforms and Observations (though may be via
-    CompositeProcesses).
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        InstrumentPlatformPairWrite
-    """
-
-    return (
-        await asyncio_detailed(
-            ob_id=ob_id,
-            client=client,
-        )
-    ).parsed

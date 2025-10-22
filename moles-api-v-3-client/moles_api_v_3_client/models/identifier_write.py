@@ -11,8 +11,8 @@ T = TypeVar("T", bound="IdentifierWrite")
 
 @_attrs_define
 class IdentifierWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
@@ -22,14 +22,12 @@ class IdentifierWrite:
                 * `moles1_url` - MOLES1 URL
                 * `doi` - DOI
                 * `ceda_abbreviation` - CEDA Abbreviation
-            related_to (str):
             short_url (str):
     """
 
     ob_id: int
     url: str
     identifier_type: IdentifierTypeEnum
-    related_to: str
     short_url: str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -40,8 +38,6 @@ class IdentifierWrite:
 
         identifier_type = self.identifier_type.value
 
-        related_to = self.related_to
-
         short_url = self.short_url
 
         field_dict: dict[str, Any] = {}
@@ -51,7 +47,6 @@ class IdentifierWrite:
                 "ob_id": ob_id,
                 "url": url,
                 "identifierType": identifier_type,
-                "relatedTo": related_to,
                 "shortUrl": short_url,
             }
         )
@@ -67,15 +62,12 @@ class IdentifierWrite:
 
         identifier_type = IdentifierTypeEnum(d.pop("identifierType"))
 
-        related_to = d.pop("relatedTo")
-
         short_url = d.pop("shortUrl")
 
         identifier_write = cls(
             ob_id=ob_id,
             url=url,
             identifier_type=identifier_type,
-            related_to=related_to,
             short_url=short_url,
         )
 

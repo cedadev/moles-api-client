@@ -13,20 +13,18 @@ T = TypeVar("T", bound="OnlineResourceWrite")
 
 @_attrs_define
 class OnlineResourceWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             linkage (str):
-            related_to (str):
             function (Union[BlankEnum, FunctionEnum, None, Unset]):
             name (Union[None, Unset, str]):
     """
 
     ob_id: int
     linkage: str
-    related_to: str
     function: Union[BlankEnum, FunctionEnum, None, Unset] = UNSET
     name: Union[None, Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
@@ -35,8 +33,6 @@ class OnlineResourceWrite:
         ob_id = self.ob_id
 
         linkage = self.linkage
-
-        related_to = self.related_to
 
         function: Union[None, Unset, str]
         if isinstance(self.function, Unset):
@@ -60,7 +56,6 @@ class OnlineResourceWrite:
             {
                 "ob_id": ob_id,
                 "linkage": linkage,
-                "relatedTo": related_to,
             }
         )
         if function is not UNSET:
@@ -76,8 +71,6 @@ class OnlineResourceWrite:
         ob_id = d.pop("ob_id")
 
         linkage = d.pop("linkage")
-
-        related_to = d.pop("relatedTo")
 
         def _parse_function(data: object) -> Union[BlankEnum, FunctionEnum, None, Unset]:
             if data is None:
@@ -116,7 +109,6 @@ class OnlineResourceWrite:
         online_resource_write = cls(
             ob_id=ob_id,
             linkage=linkage,
-            related_to=related_to,
             function=function,
             name=name,
         )

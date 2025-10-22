@@ -6,7 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_dq_conformance_result_write_list import PaginatedDQConformanceResultWriteList
+from ...models.paginated_dq_conformance_result_read_list import PaginatedDQConformanceResultReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -413,9 +413,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedDQConformanceResultWriteList]:
+) -> Optional[PaginatedDQConformanceResultReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedDQConformanceResultWriteList.from_dict(response.json())
+        response_200 = PaginatedDQConformanceResultReadList.from_dict(response.json())
 
         return response_200
 
@@ -427,7 +427,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedDQConformanceResultWriteList]:
+) -> Response[PaginatedDQConformanceResultReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -537,7 +537,7 @@ def sync_detailed(
     result_title_range: Union[Unset, list[str]] = UNSET,
     result_title_regex: Union[Unset, str] = UNSET,
     result_title_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedDQConformanceResultWriteList]:
+) -> Response[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
@@ -645,7 +645,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedDQConformanceResultWriteList]
+        Response[PaginatedDQConformanceResultReadList]
     """
 
     kwargs = _get_kwargs(
@@ -857,7 +857,7 @@ def sync(
     result_title_range: Union[Unset, list[str]] = UNSET,
     result_title_regex: Union[Unset, str] = UNSET,
     result_title_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDQConformanceResultWriteList]:
+) -> Optional[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
@@ -965,7 +965,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedDQConformanceResultWriteList
+        PaginatedDQConformanceResultReadList
     """
 
     return sync_detailed(
@@ -1172,7 +1172,7 @@ async def asyncio_detailed(
     result_title_range: Union[Unset, list[str]] = UNSET,
     result_title_regex: Union[Unset, str] = UNSET,
     result_title_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedDQConformanceResultWriteList]:
+) -> Response[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
@@ -1280,7 +1280,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedDQConformanceResultWriteList]
+        Response[PaginatedDQConformanceResultReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1490,7 +1490,7 @@ async def asyncio(
     result_title_range: Union[Unset, list[str]] = UNSET,
     result_title_regex: Union[Unset, str] = UNSET,
     result_title_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDQConformanceResultWriteList]:
+) -> Optional[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
@@ -1598,7 +1598,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedDQConformanceResultWriteList
+        PaginatedDQConformanceResultReadList
     """
 
     return (

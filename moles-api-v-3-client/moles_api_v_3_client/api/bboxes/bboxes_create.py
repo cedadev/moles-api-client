@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.geographic_bounding_box_write import GeographicBoundingBoxWrite
+from ...models.geographic_bounding_box_write_request import GeographicBoundingBoxWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: GeographicBoundingBoxWrite,
+    body: GeographicBoundingBoxWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -31,10 +32,10 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[GeographicBoundingBoxWrite]:
-    if response.status_code == 200:
-        response_200 = GeographicBoundingBoxWrite.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = GeographicBoundingBoxWrite.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -56,14 +57,15 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: GeographicBoundingBoxWrite,
+    body: GeographicBoundingBoxWriteRequest,
 ) -> Response[GeographicBoundingBoxWrite]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        body (GeographicBoundingBoxWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (GeographicBoundingBoxWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -87,14 +89,15 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: GeographicBoundingBoxWrite,
+    body: GeographicBoundingBoxWriteRequest,
 ) -> Optional[GeographicBoundingBoxWrite]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        body (GeographicBoundingBoxWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (GeographicBoundingBoxWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -113,14 +116,15 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: GeographicBoundingBoxWrite,
+    body: GeographicBoundingBoxWriteRequest,
 ) -> Response[GeographicBoundingBoxWrite]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        body (GeographicBoundingBoxWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (GeographicBoundingBoxWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -142,14 +146,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: GeographicBoundingBoxWrite,
+    body: GeographicBoundingBoxWriteRequest,
 ) -> Optional[GeographicBoundingBoxWrite]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        body (GeographicBoundingBoxWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (GeographicBoundingBoxWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

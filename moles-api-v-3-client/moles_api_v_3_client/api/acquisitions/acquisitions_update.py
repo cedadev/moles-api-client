@@ -6,13 +6,14 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.procedure_acquisition_write import ProcedureAcquisitionWrite
+from ...models.procedure_acquisition_write_request import ProcedureAcquisitionWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: ProcedureAcquisitionWrite,
+    body: ProcedureAcquisitionWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -58,15 +59,16 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: ProcedureAcquisitionWrite,
+    body: ProcedureAcquisitionWriteRequest,
 ) -> Response[ProcedureAcquisitionWrite]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
     Args:
         ob_id (int):
-        body (ProcedureAcquisitionWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProcedureAcquisitionWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -92,15 +94,16 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: ProcedureAcquisitionWrite,
+    body: ProcedureAcquisitionWriteRequest,
 ) -> Optional[ProcedureAcquisitionWrite]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
     Args:
         ob_id (int):
-        body (ProcedureAcquisitionWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProcedureAcquisitionWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -121,15 +124,16 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: ProcedureAcquisitionWrite,
+    body: ProcedureAcquisitionWriteRequest,
 ) -> Response[ProcedureAcquisitionWrite]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
     Args:
         ob_id (int):
-        body (ProcedureAcquisitionWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProcedureAcquisitionWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,15 +157,16 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: ProcedureAcquisitionWrite,
+    body: ProcedureAcquisitionWriteRequest,
 ) -> Optional[ProcedureAcquisitionWrite]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
     Args:
         ob_id (int):
-        body (ProcedureAcquisitionWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProcedureAcquisitionWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

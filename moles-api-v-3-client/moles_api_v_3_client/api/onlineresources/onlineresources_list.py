@@ -10,7 +10,7 @@ from ...models.onlineresources_list_application_profile_file_format import (
 )
 from ...models.onlineresources_list_function import OnlineresourcesListFunction
 from ...models.onlineresources_list_internal_resource_type import OnlineresourcesListInternalResourceType
-from ...models.paginated_online_resource_write_list import PaginatedOnlineResourceWriteList
+from ...models.paginated_online_resource_read_list import PaginatedOnlineResourceReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -514,9 +514,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedOnlineResourceWriteList]:
+) -> Optional[PaginatedOnlineResourceReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedOnlineResourceWriteList.from_dict(response.json())
+        response_200 = PaginatedOnlineResourceReadList.from_dict(response.json())
 
         return response_200
 
@@ -528,7 +528,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedOnlineResourceWriteList]:
+) -> Response[PaginatedOnlineResourceReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -674,7 +674,7 @@ def sync_detailed(
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Response[PaginatedOnlineResourceWriteList]:
+) -> Response[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -818,7 +818,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedOnlineResourceWriteList]
+        Response[PaginatedOnlineResourceReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1102,7 +1102,7 @@ def sync(
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedOnlineResourceWriteList]:
+) -> Optional[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -1246,7 +1246,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedOnlineResourceWriteList
+        PaginatedOnlineResourceReadList
     """
 
     return sync_detailed(
@@ -1525,7 +1525,7 @@ async def asyncio_detailed(
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Response[PaginatedOnlineResourceWriteList]:
+) -> Response[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -1669,7 +1669,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedOnlineResourceWriteList]
+        Response[PaginatedOnlineResourceReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1951,7 +1951,7 @@ async def asyncio(
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedOnlineResourceWriteList]:
+) -> Optional[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -2095,7 +2095,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedOnlineResourceWriteList
+        PaginatedOnlineResourceReadList
     """
 
     return (

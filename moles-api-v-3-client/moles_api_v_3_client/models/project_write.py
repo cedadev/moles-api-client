@@ -5,7 +5,7 @@ from attrs import define as _attrs_define
 from attrs import field as _attrs_field
 
 from ..models.blank_enum import BlankEnum
-from ..models.project_write_publication_state_enum import ProjectWritePublicationStateEnum
+from ..models.publication_state_6f9_enum import PublicationState6F9Enum
 from ..models.status_enum import StatusEnum
 from ..types import UNSET, Unset
 
@@ -14,17 +14,16 @@ T = TypeVar("T", bound="ProjectWrite")
 
 @_attrs_define
 class ProjectWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             uuid (str):
             short_code (str):
             title (str):
-            observation_collection (list[str]):
             abstract (Union[None, Unset, str]):
-            publication_state (Union[BlankEnum, ProjectWritePublicationStateEnum, Unset]):
+            publication_state (Union[BlankEnum, PublicationState6F9Enum, Unset]):
             parent_project (Union[None, Unset, int]):
             keywords (Union[Unset, str]):
             status (Union[BlankEnum, StatusEnum, Unset]):
@@ -35,9 +34,8 @@ class ProjectWrite:
     uuid: str
     short_code: str
     title: str
-    observation_collection: list[str]
     abstract: Union[None, Unset, str] = UNSET
-    publication_state: Union[BlankEnum, ProjectWritePublicationStateEnum, Unset] = UNSET
+    publication_state: Union[BlankEnum, PublicationState6F9Enum, Unset] = UNSET
     parent_project: Union[None, Unset, int] = UNSET
     keywords: Union[Unset, str] = UNSET
     status: Union[BlankEnum, StatusEnum, Unset] = UNSET
@@ -53,8 +51,6 @@ class ProjectWrite:
 
         title = self.title
 
-        observation_collection = self.observation_collection
-
         abstract: Union[None, Unset, str]
         if isinstance(self.abstract, Unset):
             abstract = UNSET
@@ -64,7 +60,7 @@ class ProjectWrite:
         publication_state: Union[Unset, str]
         if isinstance(self.publication_state, Unset):
             publication_state = UNSET
-        elif isinstance(self.publication_state, ProjectWritePublicationStateEnum):
+        elif isinstance(self.publication_state, PublicationState6F9Enum):
             publication_state = self.publication_state.value
         else:
             publication_state = self.publication_state.value
@@ -97,7 +93,6 @@ class ProjectWrite:
                 "uuid": uuid,
                 "short_code": short_code,
                 "title": title,
-                "observationCollection": observation_collection,
             }
         )
         if abstract is not UNSET:
@@ -126,8 +121,6 @@ class ProjectWrite:
 
         title = d.pop("title")
 
-        observation_collection = cast(list[str], d.pop("observationCollection"))
-
         def _parse_abstract(data: object) -> Union[None, Unset, str]:
             if data is None:
                 return data
@@ -137,13 +130,13 @@ class ProjectWrite:
 
         abstract = _parse_abstract(d.pop("abstract", UNSET))
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, ProjectWritePublicationStateEnum, Unset]:
+        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationState6F9Enum, Unset]:
             if isinstance(data, Unset):
                 return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
-                publication_state_type_0 = ProjectWritePublicationStateEnum(data)
+                publication_state_type_0 = PublicationState6F9Enum(data)
 
                 return publication_state_type_0
             except:  # noqa: E722
@@ -193,7 +186,6 @@ class ProjectWrite:
             uuid=uuid,
             short_code=short_code,
             title=title,
-            observation_collection=observation_collection,
             abstract=abstract,
             publication_state=publication_state,
             parent_project=parent_project,

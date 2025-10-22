@@ -6,14 +6,14 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.party_write import PartyWrite
-from ...models.patched_party_write import PatchedPartyWrite
+from ...models.patched_party_write_request import PatchedPartyWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedPartyWrite,
+    body: PatchedPartyWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -55,7 +55,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPartyWrite,
+    body: PatchedPartyWriteRequest,
 ) -> Response[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -63,8 +63,9 @@ def sync_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedPartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPartyWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -90,7 +91,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPartyWrite,
+    body: PatchedPartyWriteRequest,
 ) -> Optional[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -98,8 +99,9 @@ def sync(
 
     Args:
         ob_id (int):
-        body (PatchedPartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPartyWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -120,7 +122,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPartyWrite,
+    body: PatchedPartyWriteRequest,
 ) -> Response[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -128,8 +130,9 @@ async def asyncio_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedPartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPartyWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -153,7 +156,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPartyWrite,
+    body: PatchedPartyWriteRequest,
 ) -> Optional[PartyWrite]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -161,8 +164,9 @@ async def asyncio(
 
     Args:
         ob_id (int):
-        body (PatchedPartyWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPartyWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

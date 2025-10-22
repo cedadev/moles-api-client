@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.patched_topic_category_write import PatchedTopicCategoryWrite
+from ...models.patched_topic_category_write_request import PatchedTopicCategoryWriteRequest
 from ...models.topic_category_write import TopicCategoryWrite
 from ...types import Response
 
@@ -13,7 +13,7 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedTopicCategoryWrite,
+    body: PatchedTopicCategoryWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -59,14 +59,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedTopicCategoryWrite,
+    body: PatchedTopicCategoryWriteRequest,
 ) -> Response[TopicCategoryWrite]:
     """Get a list of TopicCategory objects.
 
     Args:
         ob_id (int):
-        body (PatchedTopicCategoryWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedTopicCategoryWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -92,14 +93,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedTopicCategoryWrite,
+    body: PatchedTopicCategoryWriteRequest,
 ) -> Optional[TopicCategoryWrite]:
     """Get a list of TopicCategory objects.
 
     Args:
         ob_id (int):
-        body (PatchedTopicCategoryWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedTopicCategoryWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -120,14 +122,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedTopicCategoryWrite,
+    body: PatchedTopicCategoryWriteRequest,
 ) -> Response[TopicCategoryWrite]:
     """Get a list of TopicCategory objects.
 
     Args:
         ob_id (int):
-        body (PatchedTopicCategoryWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedTopicCategoryWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -151,14 +154,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedTopicCategoryWrite,
+    body: PatchedTopicCategoryWriteRequest,
 ) -> Optional[TopicCategoryWrite]:
     """Get a list of TopicCategory objects.
 
     Args:
         ob_id (int):
-        body (PatchedTopicCategoryWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedTopicCategoryWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

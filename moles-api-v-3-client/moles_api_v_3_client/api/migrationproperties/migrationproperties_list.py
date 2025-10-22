@@ -6,7 +6,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_migration_property_write_list import PaginatedMigrationPropertyWriteList
+from ...models.paginated_migration_property_read_list import PaginatedMigrationPropertyReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -379,9 +379,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedMigrationPropertyWriteList]:
+) -> Optional[PaginatedMigrationPropertyReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedMigrationPropertyWriteList.from_dict(response.json())
+        response_200 = PaginatedMigrationPropertyReadList.from_dict(response.json())
 
         return response_200
 
@@ -393,7 +393,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedMigrationPropertyWriteList]:
+) -> Response[PaginatedMigrationPropertyReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -493,7 +493,7 @@ def sync_detailed(
     value_range: Union[Unset, list[str]] = UNSET,
     value_regex: Union[Unset, str] = UNSET,
     value_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedMigrationPropertyWriteList]:
+) -> Response[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -591,7 +591,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedMigrationPropertyWriteList]
+        Response[PaginatedMigrationPropertyReadList]
     """
 
     kwargs = _get_kwargs(
@@ -783,7 +783,7 @@ def sync(
     value_range: Union[Unset, list[str]] = UNSET,
     value_regex: Union[Unset, str] = UNSET,
     value_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMigrationPropertyWriteList]:
+) -> Optional[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -881,7 +881,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedMigrationPropertyWriteList
+        PaginatedMigrationPropertyReadList
     """
 
     return sync_detailed(
@@ -1068,7 +1068,7 @@ async def asyncio_detailed(
     value_range: Union[Unset, list[str]] = UNSET,
     value_regex: Union[Unset, str] = UNSET,
     value_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedMigrationPropertyWriteList]:
+) -> Response[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -1166,7 +1166,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedMigrationPropertyWriteList]
+        Response[PaginatedMigrationPropertyReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1356,7 +1356,7 @@ async def asyncio(
     value_range: Union[Unset, list[str]] = UNSET,
     value_regex: Union[Unset, str] = UNSET,
     value_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMigrationPropertyWriteList]:
+) -> Optional[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
@@ -1454,7 +1454,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedMigrationPropertyWriteList
+        PaginatedMigrationPropertyReadList
     """
 
     return (

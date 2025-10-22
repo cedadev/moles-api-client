@@ -6,14 +6,14 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.mobile_platform_operation_write import MobilePlatformOperationWrite
-from ...models.patched_mobile_platform_operation_write import PatchedMobilePlatformOperationWrite
+from ...models.patched_mobile_platform_operation_write_request import PatchedMobilePlatformOperationWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedMobilePlatformOperationWrite,
+    body: PatchedMobilePlatformOperationWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -59,15 +59,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedMobilePlatformOperationWrite,
+    body: PatchedMobilePlatformOperationWriteRequest,
 ) -> Response[MobilePlatformOperationWrite]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
         ob_id (int):
-        body (PatchedMobilePlatformOperationWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedMobilePlatformOperationWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -93,15 +93,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedMobilePlatformOperationWrite,
+    body: PatchedMobilePlatformOperationWriteRequest,
 ) -> Optional[MobilePlatformOperationWrite]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
         ob_id (int):
-        body (PatchedMobilePlatformOperationWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedMobilePlatformOperationWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -122,15 +122,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedMobilePlatformOperationWrite,
+    body: PatchedMobilePlatformOperationWriteRequest,
 ) -> Response[MobilePlatformOperationWrite]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
         ob_id (int):
-        body (PatchedMobilePlatformOperationWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedMobilePlatformOperationWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -154,15 +154,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedMobilePlatformOperationWrite,
+    body: PatchedMobilePlatformOperationWriteRequest,
 ) -> Optional[MobilePlatformOperationWrite]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
         ob_id (int):
-        body (PatchedMobilePlatformOperationWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedMobilePlatformOperationWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

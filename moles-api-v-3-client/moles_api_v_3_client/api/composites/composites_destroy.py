@@ -5,7 +5,6 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.procedure_composite_process_write import ProcedureCompositeProcessWrite
 from ...types import Response
 
 
@@ -20,13 +19,9 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ProcedureCompositeProcessWrite]:
-    if response.status_code == 200:
-        response_200 = ProcedureCompositeProcessWrite.from_dict(response.json())
-
-        return response_200
+def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[Any]:
+    if response.status_code == 204:
+        return None
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -34,9 +29,7 @@ def _parse_response(
         return None
 
 
-def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ProcedureCompositeProcessWrite]:
+def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[Any]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +42,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[ProcedureCompositeProcessWrite]:
+) -> Response[Any]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -64,7 +57,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ProcedureCompositeProcessWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -78,39 +71,11 @@ def sync_detailed(
     return _build_response(client=client, response=response)
 
 
-def sync(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[ProcedureCompositeProcessWrite]:
-    """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
-    Observations where used.
-    These may have a number of 2 or more components made up of combinations of Computation and
-    Acquisition records.
-    The details of the underlying records have been serialised.
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        ProcedureCompositeProcessWrite
-    """
-
-    return sync_detailed(
-        ob_id=ob_id,
-        client=client,
-    ).parsed
-
-
 async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[ProcedureCompositeProcessWrite]:
+) -> Response[Any]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -125,7 +90,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ProcedureCompositeProcessWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -135,33 +100,3 @@ async def asyncio_detailed(
     response = await client.get_async_httpx_client().request(**kwargs)
 
     return _build_response(client=client, response=response)
-
-
-async def asyncio(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[ProcedureCompositeProcessWrite]:
-    """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
-    Observations where used.
-    These may have a number of 2 or more components made up of combinations of Computation and
-    Acquisition records.
-    The details of the underlying records have been serialised.
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        ProcedureCompositeProcessWrite
-    """
-
-    return (
-        await asyncio_detailed(
-            ob_id=ob_id,
-            client=client,
-        )
-    ).parsed

@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.time_period import TimePeriod
+from ...models.time_period_request import TimePeriodRequest
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: TimePeriod,
+    body: TimePeriodRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -29,10 +30,10 @@ def _get_kwargs(
 
 
 def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[TimePeriod]:
-    if response.status_code == 200:
-        response_200 = TimePeriod.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = TimePeriod.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -52,14 +53,15 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: TimePeriod,
+    body: TimePeriodRequest,
 ) -> Response[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
-        body (TimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (TimePeriodRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -83,14 +85,15 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: TimePeriod,
+    body: TimePeriodRequest,
 ) -> Optional[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
-        body (TimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (TimePeriodRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -109,14 +112,15 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: TimePeriod,
+    body: TimePeriodRequest,
 ) -> Response[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
-        body (TimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (TimePeriodRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -138,14 +142,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: TimePeriod,
+    body: TimePeriodRequest,
 ) -> Optional[TimePeriod]:
     """Get a list of TimePeriod objects. TimePeriods have a 1:1 use with many types of principal record
     types.
 
     Args:
-        body (TimePeriod): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (TimePeriodRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

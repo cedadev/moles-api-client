@@ -12,16 +12,14 @@ T = TypeVar("T", bound="PartyWrite")
 
 @_attrs_define
 class PartyWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             last_name (str):
             delivery_point (str):
             administrative_area (str):
-            address_line_1 (str):
-            address_line_2 (str):
             first_name (Union[Unset, str]):
             party_type (Union[Unset, PartyTypeEnum]): * `individual` - Individual
                 * `organisation` - Organisation
@@ -38,8 +36,6 @@ class PartyWrite:
     last_name: str
     delivery_point: str
     administrative_area: str
-    address_line_1: str
-    address_line_2: str
     first_name: Union[Unset, str] = UNSET
     party_type: Union[Unset, PartyTypeEnum] = UNSET
     description: Union[Unset, str] = UNSET
@@ -59,10 +55,6 @@ class PartyWrite:
         delivery_point = self.delivery_point
 
         administrative_area = self.administrative_area
-
-        address_line_1 = self.address_line_1
-
-        address_line_2 = self.address_line_2
 
         first_name = self.first_name
 
@@ -92,8 +84,6 @@ class PartyWrite:
                 "lastName": last_name,
                 "deliveryPoint": delivery_point,
                 "administrativeArea": administrative_area,
-                "addressLine1": address_line_1,
-                "addressLine2": address_line_2,
             }
         )
         if first_name is not UNSET:
@@ -128,10 +118,6 @@ class PartyWrite:
 
         administrative_area = d.pop("administrativeArea")
 
-        address_line_1 = d.pop("addressLine1")
-
-        address_line_2 = d.pop("addressLine2")
-
         first_name = d.pop("firstName", UNSET)
 
         _party_type = d.pop("partyType", UNSET)
@@ -160,8 +146,6 @@ class PartyWrite:
             last_name=last_name,
             delivery_point=delivery_point,
             administrative_area=administrative_area,
-            address_line_1=address_line_1,
-            address_line_2=address_line_2,
             first_name=first_name,
             party_type=party_type,
             description=description,

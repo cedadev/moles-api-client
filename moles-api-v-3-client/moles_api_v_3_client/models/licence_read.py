@@ -1,5 +1,5 @@
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,12 +19,12 @@ class LicenceRead:
         Attributes:
             ob_id (int):
             licence_url (str):
-            licence_classifications (list['LicenceClassificationRead']):
+            licence_classifications (Union[None, list['LicenceClassificationRead']]):
     """
 
     ob_id: int
     licence_url: str
-    licence_classifications: list["LicenceClassificationRead"]
+    licence_classifications: Union[None, list["LicenceClassificationRead"]]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,10 +32,15 @@ class LicenceRead:
 
         licence_url = self.licence_url
 
-        licence_classifications = []
-        for licence_classifications_item_data in self.licence_classifications:
-            licence_classifications_item = licence_classifications_item_data.to_dict()
-            licence_classifications.append(licence_classifications_item)
+        licence_classifications: Union[None, list[dict[str, Any]]]
+        if isinstance(self.licence_classifications, list):
+            licence_classifications = []
+            for licence_classifications_type_0_item_data in self.licence_classifications:
+                licence_classifications_type_0_item = licence_classifications_type_0_item_data.to_dict()
+                licence_classifications.append(licence_classifications_type_0_item)
+
+        else:
+            licence_classifications = self.licence_classifications
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -58,12 +63,27 @@ class LicenceRead:
 
         licence_url = d.pop("licenceURL")
 
-        licence_classifications = []
-        _licence_classifications = d.pop("licenceClassifications")
-        for licence_classifications_item_data in _licence_classifications:
-            licence_classifications_item = LicenceClassificationRead.from_dict(licence_classifications_item_data)
+        def _parse_licence_classifications(data: object) -> Union[None, list["LicenceClassificationRead"]]:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, list):
+                    raise TypeError()
+                licence_classifications_type_0 = []
+                _licence_classifications_type_0 = data
+                for licence_classifications_type_0_item_data in _licence_classifications_type_0:
+                    licence_classifications_type_0_item = LicenceClassificationRead.from_dict(
+                        licence_classifications_type_0_item_data
+                    )
 
-            licence_classifications.append(licence_classifications_item)
+                    licence_classifications_type_0.append(licence_classifications_type_0_item)
+
+                return licence_classifications_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union[None, list["LicenceClassificationRead"]], data)
+
+        licence_classifications = _parse_licence_classifications(d.pop("licenceClassifications"))
 
         licence_read = cls(
             ob_id=ob_id,

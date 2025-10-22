@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.instrument_platform_pair_write import InstrumentPlatformPairWrite
+from ...models.instrument_platform_pair_read import InstrumentPlatformPairRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[InstrumentPlatformPairWrite]:
+) -> Optional[InstrumentPlatformPairRead]:
     if response.status_code == 200:
-        response_200 = InstrumentPlatformPairWrite.from_dict(response.json())
+        response_200 = InstrumentPlatformPairRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[InstrumentPlatformPairWrite]:
+) -> Response[InstrumentPlatformPairRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[InstrumentPlatformPairWrite]:
+) -> Response[InstrumentPlatformPairRead]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -63,7 +63,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[InstrumentPlatformPairWrite]
+        Response[InstrumentPlatformPairRead]
     """
 
     kwargs = _get_kwargs(
@@ -81,7 +81,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairWrite]:
+) -> Optional[InstrumentPlatformPairRead]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -95,7 +95,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        InstrumentPlatformPairWrite
+        InstrumentPlatformPairRead
     """
 
     return sync_detailed(
@@ -108,7 +108,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[InstrumentPlatformPairWrite]:
+) -> Response[InstrumentPlatformPairRead]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -122,7 +122,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[InstrumentPlatformPairWrite]
+        Response[InstrumentPlatformPairRead]
     """
 
     kwargs = _get_kwargs(
@@ -138,7 +138,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairWrite]:
+) -> Optional[InstrumentPlatformPairRead]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -152,7 +152,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        InstrumentPlatformPairWrite
+        InstrumentPlatformPairRead
     """
 
     return (

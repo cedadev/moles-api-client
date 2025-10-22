@@ -1,5 +1,5 @@
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -11,16 +11,14 @@ T = TypeVar("T", bound="ProcedureCompositeProcessWrite")
 
 @_attrs_define
 class ProcedureCompositeProcessWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             uuid (str):
             short_code (str):
             title (str):
-            computation_component (list[int]):
-            acquisition_component (list[int]):
             abstract (Union[Unset, str]):
     """
 
@@ -28,8 +26,6 @@ class ProcedureCompositeProcessWrite:
     uuid: str
     short_code: str
     title: str
-    computation_component: list[int]
-    acquisition_component: list[int]
     abstract: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -42,10 +38,6 @@ class ProcedureCompositeProcessWrite:
 
         title = self.title
 
-        computation_component = self.computation_component
-
-        acquisition_component = self.acquisition_component
-
         abstract = self.abstract
 
         field_dict: dict[str, Any] = {}
@@ -56,8 +48,6 @@ class ProcedureCompositeProcessWrite:
                 "uuid": uuid,
                 "short_code": short_code,
                 "title": title,
-                "computationComponent": computation_component,
-                "acquisitionComponent": acquisition_component,
             }
         )
         if abstract is not UNSET:
@@ -76,10 +66,6 @@ class ProcedureCompositeProcessWrite:
 
         title = d.pop("title")
 
-        computation_component = cast(list[int], d.pop("computationComponent"))
-
-        acquisition_component = cast(list[int], d.pop("acquisitionComponent"))
-
         abstract = d.pop("abstract", UNSET)
 
         procedure_composite_process_write = cls(
@@ -87,8 +73,6 @@ class ProcedureCompositeProcessWrite:
             uuid=uuid,
             short_code=short_code,
             title=title,
-            computation_component=computation_component,
-            acquisition_component=acquisition_component,
             abstract=abstract,
         )
 

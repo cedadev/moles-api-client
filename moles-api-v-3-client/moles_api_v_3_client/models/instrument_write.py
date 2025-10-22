@@ -13,15 +13,14 @@ T = TypeVar("T", bound="InstrumentWrite")
 
 @_attrs_define
 class InstrumentWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             uuid (str):
             short_code (str):
             title (str):
-            sub_instrument (list[int]):
             abstract (Union[Unset, str]):
             keywords (Union[Unset, str]):
             instrument_type (Union[BlankEnum, InstrumentTypeEnum, Unset]):
@@ -32,7 +31,6 @@ class InstrumentWrite:
     uuid: str
     short_code: str
     title: str
-    sub_instrument: list[int]
     abstract: Union[Unset, str] = UNSET
     keywords: Union[Unset, str] = UNSET
     instrument_type: Union[BlankEnum, InstrumentTypeEnum, Unset] = UNSET
@@ -47,8 +45,6 @@ class InstrumentWrite:
         short_code = self.short_code
 
         title = self.title
-
-        sub_instrument = self.sub_instrument
 
         abstract = self.abstract
 
@@ -74,7 +70,6 @@ class InstrumentWrite:
                 "uuid": uuid,
                 "short_code": short_code,
                 "title": title,
-                "subInstrument": sub_instrument,
             }
         )
         if abstract is not UNSET:
@@ -98,8 +93,6 @@ class InstrumentWrite:
         short_code = d.pop("short_code")
 
         title = d.pop("title")
-
-        sub_instrument = cast(list[int], d.pop("subInstrument"))
 
         abstract = d.pop("abstract", UNSET)
 
@@ -131,7 +124,6 @@ class InstrumentWrite:
             uuid=uuid,
             short_code=short_code,
             title=title,
-            sub_instrument=sub_instrument,
             abstract=abstract,
             keywords=keywords,
             instrument_type=instrument_type,

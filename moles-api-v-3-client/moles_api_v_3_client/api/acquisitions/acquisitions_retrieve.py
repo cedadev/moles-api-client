@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.procedure_acquisition_write import ProcedureAcquisitionWrite
+from ...models.procedure_acquisition_read import ProcedureAcquisitionRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ProcedureAcquisitionWrite]:
+) -> Optional[ProcedureAcquisitionRead]:
     if response.status_code == 200:
-        response_200 = ProcedureAcquisitionWrite.from_dict(response.json())
+        response_200 = ProcedureAcquisitionRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ProcedureAcquisitionWrite]:
+) -> Response[ProcedureAcquisitionRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[ProcedureAcquisitionWrite]:
+) -> Response[ProcedureAcquisitionRead]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -61,7 +61,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ProcedureAcquisitionWrite]
+        Response[ProcedureAcquisitionRead]
     """
 
     kwargs = _get_kwargs(
@@ -79,7 +79,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[ProcedureAcquisitionWrite]:
+) -> Optional[ProcedureAcquisitionRead]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -91,7 +91,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ProcedureAcquisitionWrite
+        ProcedureAcquisitionRead
     """
 
     return sync_detailed(
@@ -104,7 +104,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[ProcedureAcquisitionWrite]:
+) -> Response[ProcedureAcquisitionRead]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -116,7 +116,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ProcedureAcquisitionWrite]
+        Response[ProcedureAcquisitionRead]
     """
 
     kwargs = _get_kwargs(
@@ -132,7 +132,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[ProcedureAcquisitionWrite]:
+) -> Optional[ProcedureAcquisitionRead]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -144,7 +144,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ProcedureAcquisitionWrite
+        ProcedureAcquisitionRead
     """
 
     return (

@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_procedure_acquisition_write_list import PaginatedProcedureAcquisitionWriteList
+from ...models.paginated_procedure_acquisition_read_list import PaginatedProcedureAcquisitionReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -404,9 +404,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedProcedureAcquisitionWriteList]:
+) -> Optional[PaginatedProcedureAcquisitionReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedProcedureAcquisitionWriteList.from_dict(response.json())
+        response_200 = PaginatedProcedureAcquisitionReadList.from_dict(response.json())
 
         return response_200
 
@@ -418,7 +418,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedProcedureAcquisitionWriteList]:
+) -> Response[PaginatedProcedureAcquisitionReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -537,7 +537,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProcedureAcquisitionWriteList]:
+) -> Response[PaginatedProcedureAcquisitionReadList]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -655,7 +655,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProcedureAcquisitionWriteList]
+        Response[PaginatedProcedureAcquisitionReadList]
     """
 
     kwargs = _get_kwargs(
@@ -885,7 +885,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureAcquisitionWriteList]:
+) -> Optional[PaginatedProcedureAcquisitionReadList]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -1003,7 +1003,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProcedureAcquisitionWriteList
+        PaginatedProcedureAcquisitionReadList
     """
 
     return sync_detailed(
@@ -1228,7 +1228,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProcedureAcquisitionWriteList]:
+) -> Response[PaginatedProcedureAcquisitionReadList]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -1346,7 +1346,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProcedureAcquisitionWriteList]
+        Response[PaginatedProcedureAcquisitionReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1574,7 +1574,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureAcquisitionWriteList]:
+) -> Optional[PaginatedProcedureAcquisitionReadList]:
     """Get a list of ProcedureAcquisition objects. ProcedureAcquisitions have a 1:1 mapping with
     Observations.
 
@@ -1692,7 +1692,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProcedureAcquisitionWriteList
+        PaginatedProcedureAcquisitionReadList
     """
 
     return (

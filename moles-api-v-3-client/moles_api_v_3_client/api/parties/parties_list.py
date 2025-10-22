@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_party_write_list import PaginatedPartyWriteList
+from ...models.paginated_party_read_list import PaginatedPartyReadList
 from ...models.parties_list_type import PartiesListType
 from ...types import UNSET, Response, Unset
 
@@ -811,9 +811,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedPartyWriteList]:
+) -> Optional[PaginatedPartyReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedPartyWriteList.from_dict(response.json())
+        response_200 = PaginatedPartyReadList.from_dict(response.json())
 
         return response_200
 
@@ -825,7 +825,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedPartyWriteList]:
+) -> Response[PaginatedPartyReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -1062,7 +1062,7 @@ def sync_detailed(
     postal_code_range: Union[Unset, list[str]] = UNSET,
     postal_code_regex: Union[Unset, str] = UNSET,
     postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedPartyWriteList]:
+) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -1299,7 +1299,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedPartyWriteList]
+        Response[PaginatedPartyReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1765,7 +1765,7 @@ def sync(
     postal_code_range: Union[Unset, list[str]] = UNSET,
     postal_code_regex: Union[Unset, str] = UNSET,
     postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPartyWriteList]:
+) -> Optional[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -2002,7 +2002,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedPartyWriteList
+        PaginatedPartyReadList
     """
 
     return sync_detailed(
@@ -2463,7 +2463,7 @@ async def asyncio_detailed(
     postal_code_range: Union[Unset, list[str]] = UNSET,
     postal_code_regex: Union[Unset, str] = UNSET,
     postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedPartyWriteList]:
+) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -2700,7 +2700,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedPartyWriteList]
+        Response[PaginatedPartyReadList]
     """
 
     kwargs = _get_kwargs(
@@ -3164,7 +3164,7 @@ async def asyncio(
     postal_code_range: Union[Unset, list[str]] = UNSET,
     postal_code_regex: Union[Unset, str] = UNSET,
     postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPartyWriteList]:
+) -> Optional[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -3401,7 +3401,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedPartyWriteList
+        PaginatedPartyReadList
     """
 
     return (

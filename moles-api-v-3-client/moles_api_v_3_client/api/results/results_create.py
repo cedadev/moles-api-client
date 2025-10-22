@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.result_write import ResultWrite
+from ...models.result_write_request import ResultWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: ResultWrite,
+    body: ResultWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -29,10 +30,10 @@ def _get_kwargs(
 
 
 def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[ResultWrite]:
-    if response.status_code == 200:
-        response_200 = ResultWrite.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = ResultWrite.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -52,13 +53,14 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: ResultWrite,
+    body: ResultWriteRequest,
 ) -> Response[ResultWrite]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        body (ResultWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ResultWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -82,13 +84,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: ResultWrite,
+    body: ResultWriteRequest,
 ) -> Optional[ResultWrite]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        body (ResultWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ResultWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -107,13 +110,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: ResultWrite,
+    body: ResultWriteRequest,
 ) -> Response[ResultWrite]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        body (ResultWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ResultWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -135,13 +139,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: ResultWrite,
+    body: ResultWriteRequest,
 ) -> Optional[ResultWrite]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        body (ResultWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ResultWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -13,8 +13,8 @@ T = TypeVar("T", bound="DQConformanceResultWrite")
 
 @_attrs_define
 class DQConformanceResultWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):

@@ -7,7 +7,7 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.mpos_list_status import MposListStatus
-from ...models.paginated_mobile_platform_operation_write_list import PaginatedMobilePlatformOperationWriteList
+from ...models.paginated_mobile_platform_operation_read_list import PaginatedMobilePlatformOperationReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -732,9 +732,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedMobilePlatformOperationWriteList]:
+) -> Optional[PaginatedMobilePlatformOperationReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedMobilePlatformOperationWriteList.from_dict(response.json())
+        response_200 = PaginatedMobilePlatformOperationReadList.from_dict(response.json())
 
         return response_200
 
@@ -746,7 +746,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedMobilePlatformOperationWriteList]:
+) -> Response[PaginatedMobilePlatformOperationReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -943,7 +943,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedMobilePlatformOperationWriteList]:
+) -> Response[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
@@ -1138,7 +1138,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedMobilePlatformOperationWriteList]
+        Response[PaginatedMobilePlatformOperationReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1524,7 +1524,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMobilePlatformOperationWriteList]:
+) -> Optional[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
@@ -1719,7 +1719,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedMobilePlatformOperationWriteList
+        PaginatedMobilePlatformOperationReadList
     """
 
     return sync_detailed(
@@ -2100,7 +2100,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedMobilePlatformOperationWriteList]:
+) -> Response[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
@@ -2295,7 +2295,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedMobilePlatformOperationWriteList]
+        Response[PaginatedMobilePlatformOperationReadList]
     """
 
     kwargs = _get_kwargs(
@@ -2679,7 +2679,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMobilePlatformOperationWriteList]:
+) -> Optional[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
@@ -2874,7 +2874,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedMobilePlatformOperationWriteList
+        PaginatedMobilePlatformOperationReadList
     """
 
     return (

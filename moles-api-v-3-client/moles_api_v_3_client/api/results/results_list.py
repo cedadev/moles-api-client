@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_result_write_list import PaginatedResultWriteList
+from ...models.paginated_result_read_list import PaginatedResultReadList
 from ...models.results_list_ceda_curation_category import ResultsListCEDACurationCategory
 from ...models.results_list_storage_location import ResultsListStorageLocation
 from ...models.results_list_storage_status import ResultsListStorageStatus
@@ -695,9 +695,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedResultWriteList]:
+) -> Optional[PaginatedResultReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedResultWriteList.from_dict(response.json())
+        response_200 = PaginatedResultReadList.from_dict(response.json())
 
         return response_200
 
@@ -709,7 +709,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedResultWriteList]:
+) -> Response[PaginatedResultReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -908,7 +908,7 @@ def sync_detailed(
     volume_range: Union[Unset, list[int]] = UNSET,
     volume_regex: Union[Unset, int] = UNSET,
     volume_startswith: Union[Unset, int] = UNSET,
-) -> Response[PaginatedResultWriteList]:
+) -> Response[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
@@ -1105,7 +1105,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedResultWriteList]
+        Response[PaginatedResultReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1495,7 +1495,7 @@ def sync(
     volume_range: Union[Unset, list[int]] = UNSET,
     volume_regex: Union[Unset, int] = UNSET,
     volume_startswith: Union[Unset, int] = UNSET,
-) -> Optional[PaginatedResultWriteList]:
+) -> Optional[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
@@ -1692,7 +1692,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedResultWriteList
+        PaginatedResultReadList
     """
 
     return sync_detailed(
@@ -2077,7 +2077,7 @@ async def asyncio_detailed(
     volume_range: Union[Unset, list[int]] = UNSET,
     volume_regex: Union[Unset, int] = UNSET,
     volume_startswith: Union[Unset, int] = UNSET,
-) -> Response[PaginatedResultWriteList]:
+) -> Response[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
@@ -2274,7 +2274,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedResultWriteList]
+        Response[PaginatedResultReadList]
     """
 
     kwargs = _get_kwargs(
@@ -2662,7 +2662,7 @@ async def asyncio(
     volume_range: Union[Unset, list[int]] = UNSET,
     volume_regex: Union[Unset, int] = UNSET,
     volume_startswith: Union[Unset, int] = UNSET,
-) -> Optional[PaginatedResultWriteList]:
+) -> Optional[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
@@ -2859,7 +2859,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedResultWriteList
+        PaginatedResultReadList
     """
 
     return (

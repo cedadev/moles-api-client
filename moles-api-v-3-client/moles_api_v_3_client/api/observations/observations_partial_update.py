@@ -5,15 +5,15 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.observation_read import ObservationRead
-from ...models.patched_observation_write import PatchedObservationWrite
+from ...models.observation_write import ObservationWrite
+from ...models.patched_observation_write_request import PatchedObservationWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedObservationWrite,
+    body: PatchedObservationWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -32,9 +32,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ObservationRead]:
+) -> Optional[ObservationWrite]:
     if response.status_code == 200:
-        response_200 = ObservationRead.from_dict(response.json())
+        response_200 = ObservationWrite.from_dict(response.json())
 
         return response_200
 
@@ -46,7 +46,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ObservationRead]:
+) -> Response[ObservationWrite]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -59,21 +59,22 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedObservationWrite,
-) -> Response[ObservationRead]:
+    body: PatchedObservationWriteRequest,
+) -> Response[ObservationWrite]:
     """Get a list of Observation objects.
 
     Args:
         ob_id (int):
-        body (PatchedObservationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedObservationWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ObservationRead]
+        Response[ObservationWrite]
     """
 
     kwargs = _get_kwargs(
@@ -92,21 +93,22 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedObservationWrite,
-) -> Optional[ObservationRead]:
+    body: PatchedObservationWriteRequest,
+) -> Optional[ObservationWrite]:
     """Get a list of Observation objects.
 
     Args:
         ob_id (int):
-        body (PatchedObservationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedObservationWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ObservationRead
+        ObservationWrite
     """
 
     return sync_detailed(
@@ -120,21 +122,22 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedObservationWrite,
-) -> Response[ObservationRead]:
+    body: PatchedObservationWriteRequest,
+) -> Response[ObservationWrite]:
     """Get a list of Observation objects.
 
     Args:
         ob_id (int):
-        body (PatchedObservationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedObservationWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[ObservationRead]
+        Response[ObservationWrite]
     """
 
     kwargs = _get_kwargs(
@@ -151,21 +154,22 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedObservationWrite,
-) -> Optional[ObservationRead]:
+    body: PatchedObservationWriteRequest,
+) -> Optional[ObservationWrite]:
     """Get a list of Observation objects.
 
     Args:
         ob_id (int):
-        body (PatchedObservationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedObservationWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        ObservationRead
+        ObservationWrite
     """
 
     return (

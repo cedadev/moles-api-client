@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.vocabulary_term_write import VocabularyTermWrite
+from ...models.vocabulary_term_write_request import VocabularyTermWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: VocabularyTermWrite,
+    body: VocabularyTermWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -31,10 +32,10 @@ def _get_kwargs(
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[VocabularyTermWrite]:
-    if response.status_code == 200:
-        response_200 = VocabularyTermWrite.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = VocabularyTermWrite.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -56,13 +57,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: VocabularyTermWrite,
+    body: VocabularyTermWriteRequest,
 ) -> Response[VocabularyTermWrite]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        body (VocabularyTermWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (VocabularyTermWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -86,13 +88,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: VocabularyTermWrite,
+    body: VocabularyTermWriteRequest,
 ) -> Optional[VocabularyTermWrite]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        body (VocabularyTermWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (VocabularyTermWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -111,13 +114,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: VocabularyTermWrite,
+    body: VocabularyTermWriteRequest,
 ) -> Response[VocabularyTermWrite]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        body (VocabularyTermWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (VocabularyTermWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -139,13 +143,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: VocabularyTermWrite,
+    body: VocabularyTermWriteRequest,
 ) -> Optional[VocabularyTermWrite]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        body (VocabularyTermWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (VocabularyTermWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

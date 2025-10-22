@@ -15,8 +15,8 @@ T = TypeVar("T", bound="ResultWrite")
 
 @_attrs_define
 class ResultWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
@@ -31,7 +31,6 @@ class ResultWrite:
                 * `offline` - offline
             storage_location (Union[Unset, StorageLocationEnum]): * `internal` - internal
                 * `external` - external
-            old_data_path (Union[Unset, list[int]]):
     """
 
     ob_id: int
@@ -44,7 +43,6 @@ class ResultWrite:
     file_format: Union[None, Unset, str] = UNSET
     storage_status: Union[Unset, StorageStatusEnum] = UNSET
     storage_location: Union[Unset, StorageLocationEnum] = UNSET
-    old_data_path: Union[Unset, list[int]] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -82,10 +80,6 @@ class ResultWrite:
         if not isinstance(self.storage_location, Unset):
             storage_location = self.storage_location.value
 
-        old_data_path: Union[Unset, list[int]] = UNSET
-        if not isinstance(self.old_data_path, Unset):
-            old_data_path = self.old_data_path
-
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -108,8 +102,6 @@ class ResultWrite:
             field_dict["storageStatus"] = storage_status
         if storage_location is not UNSET:
             field_dict["storageLocation"] = storage_location
-        if old_data_path is not UNSET:
-            field_dict["oldDataPath"] = old_data_path
 
         return field_dict
 
@@ -170,8 +162,6 @@ class ResultWrite:
         else:
             storage_location = StorageLocationEnum(_storage_location)
 
-        old_data_path = cast(list[int], d.pop("oldDataPath", UNSET))
-
         result_write = cls(
             ob_id=ob_id,
             uuid=uuid,
@@ -183,7 +173,6 @@ class ResultWrite:
             file_format=file_format,
             storage_status=storage_status,
             storage_location=storage_location,
-            old_data_path=old_data_path,
         )
 
         result_write.additional_properties = d

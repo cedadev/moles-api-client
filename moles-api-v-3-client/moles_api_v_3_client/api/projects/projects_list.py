@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_project_write_list import PaginatedProjectWriteList
+from ...models.paginated_project_read_list import PaginatedProjectReadList
 from ...models.projects_list_project_status import ProjectsListProjectStatus
 from ...models.projects_list_publication_state import ProjectsListPublicationState
 from ...types import UNSET, Response, Unset
@@ -630,9 +630,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedProjectWriteList]:
+) -> Optional[PaginatedProjectReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedProjectWriteList.from_dict(response.json())
+        response_200 = PaginatedProjectReadList.from_dict(response.json())
 
         return response_200
 
@@ -644,7 +644,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedProjectWriteList]:
+) -> Response[PaginatedProjectReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -823,7 +823,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProjectWriteList]:
+) -> Response[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
@@ -1000,7 +1000,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProjectWriteList]
+        Response[PaginatedProjectReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1350,7 +1350,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProjectWriteList]:
+) -> Optional[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
@@ -1527,7 +1527,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProjectWriteList
+        PaginatedProjectReadList
     """
 
     return sync_detailed(
@@ -1872,7 +1872,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedProjectWriteList]:
+) -> Response[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
@@ -2049,7 +2049,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedProjectWriteList]
+        Response[PaginatedProjectReadList]
     """
 
     kwargs = _get_kwargs(
@@ -2397,7 +2397,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProjectWriteList]:
+) -> Optional[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
@@ -2574,7 +2574,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedProjectWriteList
+        PaginatedProjectReadList
     """
 
     return (

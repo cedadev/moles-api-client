@@ -1,5 +1,5 @@
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, Union
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -13,14 +13,12 @@ T = TypeVar("T", bound="PlatformWrite")
 
 @_attrs_define
 class PlatformWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             title (str):
-            child_platform (list[str]):
-            location (int):
             abstract (Union[Unset, str]):
             keywords (Union[Unset, str]):
             platform_type (Union[BlankEnum, PlatformTypeEnum, Unset]):
@@ -28,8 +26,6 @@ class PlatformWrite:
 
     ob_id: int
     title: str
-    child_platform: list[str]
-    location: int
     abstract: Union[Unset, str] = UNSET
     keywords: Union[Unset, str] = UNSET
     platform_type: Union[BlankEnum, PlatformTypeEnum, Unset] = UNSET
@@ -39,10 +35,6 @@ class PlatformWrite:
         ob_id = self.ob_id
 
         title = self.title
-
-        child_platform = self.child_platform
-
-        location = self.location
 
         abstract = self.abstract
 
@@ -62,8 +54,6 @@ class PlatformWrite:
             {
                 "ob_id": ob_id,
                 "title": title,
-                "childPlatform": child_platform,
-                "location": location,
             }
         )
         if abstract is not UNSET:
@@ -81,10 +71,6 @@ class PlatformWrite:
         ob_id = d.pop("ob_id")
 
         title = d.pop("title")
-
-        child_platform = cast(list[str], d.pop("childPlatform"))
-
-        location = d.pop("location")
 
         abstract = d.pop("abstract", UNSET)
 
@@ -112,8 +98,6 @@ class PlatformWrite:
         platform_write = cls(
             ob_id=ob_id,
             title=title,
-            child_platform=child_platform,
-            location=location,
             abstract=abstract,
             keywords=keywords,
             platform_type=platform_type,

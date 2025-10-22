@@ -6,27 +6,17 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.licence_write import LicenceWrite
-from ...models.patched_licence_write import PatchedLicenceWrite
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
-    *,
-    body: PatchedLicenceWrite,
 ) -> dict[str, Any]:
-    headers: dict[str, Any] = {}
-
     _kwargs: dict[str, Any] = {
         "method": "patch",
         "url": f"/api/v3/licences/{ob_id}/",
     }
 
-    _kwargs["json"] = body.to_dict()
-
-    headers["Content-Type"] = "application/json"
-
-    _kwargs["headers"] = headers
     return _kwargs
 
 
@@ -55,14 +45,11 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedLicenceWrite,
 ) -> Response[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (PatchedLicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -74,7 +61,6 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         ob_id=ob_id,
-        body=body,
     )
 
     response = client.get_httpx_client().request(
@@ -88,14 +74,11 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedLicenceWrite,
 ) -> Optional[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (PatchedLicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -108,7 +91,6 @@ def sync(
     return sync_detailed(
         ob_id=ob_id,
         client=client,
-        body=body,
     ).parsed
 
 
@@ -116,14 +98,11 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedLicenceWrite,
 ) -> Response[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (PatchedLicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -135,7 +114,6 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         ob_id=ob_id,
-        body=body,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -147,14 +125,11 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedLicenceWrite,
 ) -> Optional[LicenceWrite]:
     """Get a list of Licence objects.
 
     Args:
         ob_id (int):
-        body (PatchedLicenceWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -168,6 +143,5 @@ async def asyncio(
         await asyncio_detailed(
             ob_id=ob_id,
             client=client,
-            body=body,
         )
     ).parsed

@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.vertical_extent_write import VerticalExtentWrite
+from ...models.vertical_extent_read import VerticalExtentRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[VerticalExtentWrite]:
+) -> Optional[VerticalExtentRead]:
     if response.status_code == 200:
-        response_200 = VerticalExtentWrite.from_dict(response.json())
+        response_200 = VerticalExtentRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[VerticalExtentWrite]:
+) -> Response[VerticalExtentRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[VerticalExtentWrite]:
+) -> Response[VerticalExtentRead]:
     """Get a list of VerticalExtent objects.
 
     Args:
@@ -60,7 +60,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VerticalExtentWrite]
+        Response[VerticalExtentRead]
     """
 
     kwargs = _get_kwargs(
@@ -78,7 +78,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[VerticalExtentWrite]:
+) -> Optional[VerticalExtentRead]:
     """Get a list of VerticalExtent objects.
 
     Args:
@@ -89,7 +89,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VerticalExtentWrite
+        VerticalExtentRead
     """
 
     return sync_detailed(
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[VerticalExtentWrite]:
+) -> Response[VerticalExtentRead]:
     """Get a list of VerticalExtent objects.
 
     Args:
@@ -113,7 +113,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[VerticalExtentWrite]
+        Response[VerticalExtentRead]
     """
 
     kwargs = _get_kwargs(
@@ -129,7 +129,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[VerticalExtentWrite]:
+) -> Optional[VerticalExtentRead]:
     """Get a list of VerticalExtent objects.
 
     Args:
@@ -140,7 +140,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        VerticalExtentWrite
+        VerticalExtentRead
     """
 
     return (

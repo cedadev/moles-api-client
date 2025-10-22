@@ -12,8 +12,8 @@ T = TypeVar("T", bound="ResponsiblePartyInfoWrite")
 
 @_attrs_define
 class ResponsiblePartyInfoWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):

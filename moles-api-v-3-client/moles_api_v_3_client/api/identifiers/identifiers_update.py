@@ -6,13 +6,14 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.identifier_write import IdentifierWrite
+from ...models.identifier_write_request import IdentifierWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: IdentifierWrite,
+    body: IdentifierWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -58,14 +59,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: IdentifierWrite,
+    body: IdentifierWriteRequest,
 ) -> Response[IdentifierWrite]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (IdentifierWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (IdentifierWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -91,14 +93,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: IdentifierWrite,
+    body: IdentifierWriteRequest,
 ) -> Optional[IdentifierWrite]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (IdentifierWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (IdentifierWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -119,14 +122,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: IdentifierWrite,
+    body: IdentifierWriteRequest,
 ) -> Response[IdentifierWrite]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (IdentifierWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (IdentifierWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -150,14 +154,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: IdentifierWrite,
+    body: IdentifierWriteRequest,
 ) -> Optional[IdentifierWrite]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (IdentifierWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (IdentifierWriteRequest): A mixin that allows specifying which fields to include in
+            the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

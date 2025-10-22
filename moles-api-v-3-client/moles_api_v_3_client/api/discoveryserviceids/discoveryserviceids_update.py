@@ -6,13 +6,14 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.discovery_service_id_write import DiscoveryServiceIdWrite
+from ...models.discovery_service_id_write_request import DiscoveryServiceIdWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     ob_id: int,
     *,
-    body: DiscoveryServiceIdWrite,
+    body: DiscoveryServiceIdWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -58,14 +59,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: DiscoveryServiceIdWrite,
+    body: DiscoveryServiceIdWriteRequest,
 ) -> Response[DiscoveryServiceIdWrite]:
     """Get a list of DiscoveryServiceId objects.
 
     Args:
         ob_id (int):
-        body (DiscoveryServiceIdWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (DiscoveryServiceIdWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -91,14 +93,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: DiscoveryServiceIdWrite,
+    body: DiscoveryServiceIdWriteRequest,
 ) -> Optional[DiscoveryServiceIdWrite]:
     """Get a list of DiscoveryServiceId objects.
 
     Args:
         ob_id (int):
-        body (DiscoveryServiceIdWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (DiscoveryServiceIdWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -119,14 +122,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: DiscoveryServiceIdWrite,
+    body: DiscoveryServiceIdWriteRequest,
 ) -> Response[DiscoveryServiceIdWrite]:
     """Get a list of DiscoveryServiceId objects.
 
     Args:
         ob_id (int):
-        body (DiscoveryServiceIdWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (DiscoveryServiceIdWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -150,14 +154,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: DiscoveryServiceIdWrite,
+    body: DiscoveryServiceIdWriteRequest,
 ) -> Optional[DiscoveryServiceIdWrite]:
     """Get a list of DiscoveryServiceId objects.
 
     Args:
         ob_id (int):
-        body (DiscoveryServiceIdWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (DiscoveryServiceIdWriteRequest): A mixin that allows specifying which fields to
+            include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

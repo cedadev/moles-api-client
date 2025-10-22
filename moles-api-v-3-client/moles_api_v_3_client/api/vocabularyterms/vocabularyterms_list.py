@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_vocabulary_term_write_list import PaginatedVocabularyTermWriteList
+from ...models.paginated_vocabulary_term_read_list import PaginatedVocabularyTermReadList
 from ...models.vocabularyterms_list_vocabulary_service import VocabularytermsListVocabularyService
 from ...types import UNSET, Response, Unset
 
@@ -280,9 +280,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedVocabularyTermWriteList]:
+) -> Optional[PaginatedVocabularyTermReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedVocabularyTermWriteList.from_dict(response.json())
+        response_200 = PaginatedVocabularyTermReadList.from_dict(response.json())
 
         return response_200
 
@@ -294,7 +294,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedVocabularyTermWriteList]:
+) -> Response[PaginatedVocabularyTermReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -378,7 +378,7 @@ def sync_detailed(
     vocab_service_range: Union[Unset, list[str]] = UNSET,
     vocab_service_regex: Union[Unset, str] = UNSET,
     vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedVocabularyTermWriteList]:
+) -> Response[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
@@ -460,7 +460,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedVocabularyTermWriteList]
+        Response[PaginatedVocabularyTermReadList]
     """
 
     kwargs = _get_kwargs(
@@ -620,7 +620,7 @@ def sync(
     vocab_service_range: Union[Unset, list[str]] = UNSET,
     vocab_service_regex: Union[Unset, str] = UNSET,
     vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVocabularyTermWriteList]:
+) -> Optional[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
@@ -702,7 +702,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedVocabularyTermWriteList
+        PaginatedVocabularyTermReadList
     """
 
     return sync_detailed(
@@ -857,7 +857,7 @@ async def asyncio_detailed(
     vocab_service_range: Union[Unset, list[str]] = UNSET,
     vocab_service_regex: Union[Unset, str] = UNSET,
     vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedVocabularyTermWriteList]:
+) -> Response[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
@@ -939,7 +939,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedVocabularyTermWriteList]
+        Response[PaginatedVocabularyTermReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1097,7 +1097,7 @@ async def asyncio(
     vocab_service_range: Union[Unset, list[str]] = UNSET,
     vocab_service_regex: Union[Unset, str] = UNSET,
     vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVocabularyTermWriteList]:
+) -> Optional[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
@@ -1179,7 +1179,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedVocabularyTermWriteList
+        PaginatedVocabularyTermReadList
     """
 
     return (

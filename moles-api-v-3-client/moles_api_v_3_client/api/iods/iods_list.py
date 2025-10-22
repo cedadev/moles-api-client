@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_input_output_description_write_list import PaginatedInputOutputDescriptionWriteList
+from ...models.paginated_input_output_description_read_list import PaginatedInputOutputDescriptionReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -216,9 +216,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedInputOutputDescriptionWriteList]:
+) -> Optional[PaginatedInputOutputDescriptionReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedInputOutputDescriptionWriteList.from_dict(response.json())
+        response_200 = PaginatedInputOutputDescriptionReadList.from_dict(response.json())
 
         return response_200
 
@@ -230,7 +230,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedInputOutputDescriptionWriteList]:
+) -> Response[PaginatedInputOutputDescriptionReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -297,7 +297,7 @@ def sync_detailed(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Response[PaginatedInputOutputDescriptionWriteList]:
+) -> Response[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
@@ -362,7 +362,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedInputOutputDescriptionWriteList]
+        Response[PaginatedInputOutputDescriptionReadList]
     """
 
     kwargs = _get_kwargs(
@@ -488,7 +488,7 @@ def sync(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInputOutputDescriptionWriteList]:
+) -> Optional[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
@@ -553,7 +553,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedInputOutputDescriptionWriteList
+        PaginatedInputOutputDescriptionReadList
     """
 
     return sync_detailed(
@@ -674,7 +674,7 @@ async def asyncio_detailed(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Response[PaginatedInputOutputDescriptionWriteList]:
+) -> Response[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
@@ -739,7 +739,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedInputOutputDescriptionWriteList]
+        Response[PaginatedInputOutputDescriptionReadList]
     """
 
     kwargs = _get_kwargs(
@@ -863,7 +863,7 @@ async def asyncio(
     ob_id_startswith: Union[Unset, int] = UNSET,
     offset: Union[Unset, int] = UNSET,
     ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInputOutputDescriptionWriteList]:
+) -> Optional[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
@@ -928,7 +928,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedInputOutputDescriptionWriteList
+        PaginatedInputOutputDescriptionReadList
     """
 
     return (

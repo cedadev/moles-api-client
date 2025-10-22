@@ -6,12 +6,13 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.project_write import ProjectWrite
+from ...models.project_write_request import ProjectWriteRequest
 from ...types import Response
 
 
 def _get_kwargs(
     *,
-    body: ProjectWrite,
+    body: ProjectWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -29,10 +30,10 @@ def _get_kwargs(
 
 
 def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[ProjectWrite]:
-    if response.status_code == 200:
-        response_200 = ProjectWrite.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = ProjectWrite.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -52,13 +53,14 @@ def _build_response(*, client: Union[AuthenticatedClient, Client], response: htt
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: ProjectWrite,
+    body: ProjectWriteRequest,
 ) -> Response[ProjectWrite]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        body (ProjectWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProjectWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -82,13 +84,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: ProjectWrite,
+    body: ProjectWriteRequest,
 ) -> Optional[ProjectWrite]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        body (ProjectWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProjectWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -107,13 +110,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: ProjectWrite,
+    body: ProjectWriteRequest,
 ) -> Response[ProjectWrite]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        body (ProjectWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProjectWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -135,13 +139,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: ProjectWrite,
+    body: ProjectWriteRequest,
 ) -> Optional[ProjectWrite]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        body (ProjectWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (ProjectWriteRequest): A mixin that allows specifying which fields to include in the
+            serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

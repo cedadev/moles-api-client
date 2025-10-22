@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.topic_category_write import TopicCategoryWrite
+from ...models.topic_category_read import TopicCategoryRead
 from ...types import Response
 
 
@@ -22,9 +22,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[TopicCategoryWrite]:
+) -> Optional[TopicCategoryRead]:
     if response.status_code == 200:
-        response_200 = TopicCategoryWrite.from_dict(response.json())
+        response_200 = TopicCategoryRead.from_dict(response.json())
 
         return response_200
 
@@ -36,7 +36,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[TopicCategoryWrite]:
+) -> Response[TopicCategoryRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +49,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[TopicCategoryWrite]:
+) -> Response[TopicCategoryRead]:
     """Get a list of TopicCategory objects.
 
     Args:
@@ -60,7 +60,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[TopicCategoryWrite]
+        Response[TopicCategoryRead]
     """
 
     kwargs = _get_kwargs(
@@ -78,7 +78,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[TopicCategoryWrite]:
+) -> Optional[TopicCategoryRead]:
     """Get a list of TopicCategory objects.
 
     Args:
@@ -89,7 +89,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        TopicCategoryWrite
+        TopicCategoryRead
     """
 
     return sync_detailed(
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[TopicCategoryWrite]:
+) -> Response[TopicCategoryRead]:
     """Get a list of TopicCategory objects.
 
     Args:
@@ -113,7 +113,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[TopicCategoryWrite]
+        Response[TopicCategoryRead]
     """
 
     kwargs = _get_kwargs(
@@ -129,7 +129,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[TopicCategoryWrite]:
+) -> Optional[TopicCategoryRead]:
     """Get a list of TopicCategory objects.
 
     Args:
@@ -140,7 +140,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        TopicCategoryWrite
+        TopicCategoryRead
     """
 
     return (

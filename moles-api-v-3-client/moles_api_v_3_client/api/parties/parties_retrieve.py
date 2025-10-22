@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.party_write import PartyWrite
+from ...models.party_read import PartyRead
 from ...types import Response
 
 
@@ -20,9 +20,9 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[PartyWrite]:
+def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[PartyRead]:
     if response.status_code == 200:
-        response_200 = PartyWrite.from_dict(response.json())
+        response_200 = PartyRead.from_dict(response.json())
 
         return response_200
 
@@ -32,7 +32,7 @@ def _parse_response(*, client: Union[AuthenticatedClient, Client], response: htt
         return None
 
 
-def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[PartyWrite]:
+def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[PartyRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -45,7 +45,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[PartyWrite]:
+) -> Response[PartyRead]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -58,7 +58,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PartyWrite]
+        Response[PartyRead]
     """
 
     kwargs = _get_kwargs(
@@ -76,7 +76,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[PartyWrite]:
+) -> Optional[PartyRead]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -89,7 +89,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PartyWrite
+        PartyRead
     """
 
     return sync_detailed(
@@ -102,7 +102,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[PartyWrite]:
+) -> Response[PartyRead]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -115,7 +115,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PartyWrite]
+        Response[PartyRead]
     """
 
     kwargs = _get_kwargs(
@@ -131,7 +131,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[PartyWrite]:
+) -> Optional[PartyRead]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -144,7 +144,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PartyWrite
+        PartyRead
     """
 
     return (

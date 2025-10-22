@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.patched_responsible_party_info_write import PatchedResponsiblePartyInfoWrite
+from ...models.patched_responsible_party_info_write_request import PatchedResponsiblePartyInfoWriteRequest
 from ...models.responsible_party_info_write import ResponsiblePartyInfoWrite
 from ...types import Response
 
@@ -13,7 +13,7 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedResponsiblePartyInfoWrite,
+    body: PatchedResponsiblePartyInfoWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -59,7 +59,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedResponsiblePartyInfoWrite,
+    body: PatchedResponsiblePartyInfoWriteRequest,
 ) -> Response[ResponsiblePartyInfoWrite]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -68,9 +68,9 @@ def sync_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedResponsiblePartyInfoWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedResponsiblePartyInfoWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -96,7 +96,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedResponsiblePartyInfoWrite,
+    body: PatchedResponsiblePartyInfoWriteRequest,
 ) -> Optional[ResponsiblePartyInfoWrite]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -105,9 +105,9 @@ def sync(
 
     Args:
         ob_id (int):
-        body (PatchedResponsiblePartyInfoWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedResponsiblePartyInfoWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -128,7 +128,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedResponsiblePartyInfoWrite,
+    body: PatchedResponsiblePartyInfoWriteRequest,
 ) -> Response[ResponsiblePartyInfoWrite]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -137,9 +137,9 @@ async def asyncio_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedResponsiblePartyInfoWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedResponsiblePartyInfoWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -163,7 +163,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedResponsiblePartyInfoWrite,
+    body: PatchedResponsiblePartyInfoWriteRequest,
 ) -> Optional[ResponsiblePartyInfoWrite]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -172,9 +172,9 @@ async def asyncio(
 
     Args:
         ob_id (int):
-        body (PatchedResponsiblePartyInfoWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedResponsiblePartyInfoWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

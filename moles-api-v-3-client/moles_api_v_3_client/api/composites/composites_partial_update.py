@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.patched_procedure_composite_process_write import PatchedProcedureCompositeProcessWrite
+from ...models.patched_procedure_composite_process_write_request import PatchedProcedureCompositeProcessWriteRequest
 from ...models.procedure_composite_process_write import ProcedureCompositeProcessWrite
 from ...types import Response
 
@@ -13,7 +13,7 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedProcedureCompositeProcessWrite,
+    body: PatchedProcedureCompositeProcessWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -59,7 +59,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedProcedureCompositeProcessWrite,
+    body: PatchedProcedureCompositeProcessWriteRequest,
 ) -> Response[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -69,9 +69,9 @@ def sync_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedProcedureCompositeProcessWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -97,7 +97,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedProcedureCompositeProcessWrite,
+    body: PatchedProcedureCompositeProcessWriteRequest,
 ) -> Optional[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -107,9 +107,9 @@ def sync(
 
     Args:
         ob_id (int):
-        body (PatchedProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedProcedureCompositeProcessWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -130,7 +130,7 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedProcedureCompositeProcessWrite,
+    body: PatchedProcedureCompositeProcessWriteRequest,
 ) -> Response[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -140,9 +140,9 @@ async def asyncio_detailed(
 
     Args:
         ob_id (int):
-        body (PatchedProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedProcedureCompositeProcessWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -166,7 +166,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedProcedureCompositeProcessWrite,
+    body: PatchedProcedureCompositeProcessWriteRequest,
 ) -> Optional[ProcedureCompositeProcessWrite]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
@@ -176,9 +176,9 @@ async def asyncio(
 
     Args:
         ob_id (int):
-        body (PatchedProcedureCompositeProcessWrite): A mixin that adds 'simple_fields' as
-            ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedProcedureCompositeProcessWriteRequest): A mixin that allows specifying which
+            fields to include in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

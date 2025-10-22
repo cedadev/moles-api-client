@@ -5,7 +5,6 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.geographic_bounding_box_write import GeographicBoundingBoxWrite
 from ...types import Response
 
 
@@ -20,13 +19,9 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[GeographicBoundingBoxWrite]:
-    if response.status_code == 200:
-        response_200 = GeographicBoundingBoxWrite.from_dict(response.json())
-
-        return response_200
+def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[Any]:
+    if response.status_code == 204:
+        return None
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -34,9 +29,7 @@ def _parse_response(
         return None
 
 
-def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[GeographicBoundingBoxWrite]:
+def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[Any]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -49,7 +42,7 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[GeographicBoundingBoxWrite]:
+) -> Response[Any]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -61,7 +54,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[GeographicBoundingBoxWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -75,36 +68,11 @@ def sync_detailed(
     return _build_response(client=client, response=response)
 
 
-def sync(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[GeographicBoundingBoxWrite]:
-    """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
-    Observations.
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        GeographicBoundingBoxWrite
-    """
-
-    return sync_detailed(
-        ob_id=ob_id,
-        client=client,
-    ).parsed
-
-
 async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Response[GeographicBoundingBoxWrite]:
+) -> Response[Any]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -116,7 +84,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[GeographicBoundingBoxWrite]
+        Response[Any]
     """
 
     kwargs = _get_kwargs(
@@ -126,30 +94,3 @@ async def asyncio_detailed(
     response = await client.get_async_httpx_client().request(**kwargs)
 
     return _build_response(client=client, response=response)
-
-
-async def asyncio(
-    ob_id: int,
-    *,
-    client: AuthenticatedClient,
-) -> Optional[GeographicBoundingBoxWrite]:
-    """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
-    Observations.
-
-    Args:
-        ob_id (int):
-
-    Raises:
-        errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
-        httpx.TimeoutException: If the request takes longer than Client.timeout.
-
-    Returns:
-        GeographicBoundingBoxWrite
-    """
-
-    return (
-        await asyncio_detailed(
-            ob_id=ob_id,
-            client=client,
-        )
-    ).parsed

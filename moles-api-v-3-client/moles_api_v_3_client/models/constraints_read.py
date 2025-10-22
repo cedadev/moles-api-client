@@ -26,8 +26,7 @@ class ConstraintsRead:
                 * `restricted` - Dataset registration required
             access_roles (Union[None, str]):
             label (Union[None, str]):
-            licence (LicenceRead): A mixin that adds 'simple_fields' as ReadOnlyFields
-                and reorders them to the top.
+            licence (Union['LicenceRead', None]):
     """
 
     ob_id: int
@@ -35,10 +34,12 @@ class ConstraintsRead:
     access_category: AccessCategoryEnum
     access_roles: Union[None, str]
     label: Union[None, str]
-    licence: "LicenceRead"
+    licence: Union["LicenceRead", None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        from ..models.licence_read import LicenceRead
+
         ob_id = self.ob_id
 
         access_constraints: Union[None, str]
@@ -52,7 +53,11 @@ class ConstraintsRead:
         label: Union[None, str]
         label = self.label
 
-        licence = self.licence.to_dict()
+        licence: Union[None, dict[str, Any]]
+        if isinstance(self.licence, LicenceRead):
+            licence = self.licence.to_dict()
+        else:
+            licence = self.licence
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
@@ -99,7 +104,20 @@ class ConstraintsRead:
 
         label = _parse_label(d.pop("label"))
 
-        licence = LicenceRead.from_dict(d.pop("licence"))
+        def _parse_licence(data: object) -> Union["LicenceRead", None]:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                licence_type_1 = LicenceRead.from_dict(data)
+
+                return licence_type_1
+            except:  # noqa: E722
+                pass
+            return cast(Union["LicenceRead", None], data)
+
+        licence = _parse_licence(d.pop("licence"))
 
         constraints_read = cls(
             ob_id=ob_id,

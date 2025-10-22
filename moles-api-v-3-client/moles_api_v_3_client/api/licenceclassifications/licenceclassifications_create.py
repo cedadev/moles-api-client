@@ -9,32 +9,22 @@ from ...models.licence_classification_write import LicenceClassificationWrite
 from ...types import Response
 
 
-def _get_kwargs(
-    *,
-    body: LicenceClassificationWrite,
-) -> dict[str, Any]:
-    headers: dict[str, Any] = {}
-
+def _get_kwargs() -> dict[str, Any]:
     _kwargs: dict[str, Any] = {
         "method": "post",
         "url": "/api/v3/licenceclassifications/",
     }
 
-    _kwargs["json"] = body.to_dict()
-
-    headers["Content-Type"] = "application/json"
-
-    _kwargs["headers"] = headers
     return _kwargs
 
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[LicenceClassificationWrite]:
-    if response.status_code == 200:
-        response_200 = LicenceClassificationWrite.from_dict(response.json())
+    if response.status_code == 201:
+        response_201 = LicenceClassificationWrite.from_dict(response.json())
 
-        return response_200
+        return response_201
 
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
@@ -56,13 +46,8 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    body: LicenceClassificationWrite,
 ) -> Response[LicenceClassificationWrite]:
     """Get a list of LicenceClassification objects.
-
-    Args:
-        body (LicenceClassificationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -72,9 +57,7 @@ def sync_detailed(
         Response[LicenceClassificationWrite]
     """
 
-    kwargs = _get_kwargs(
-        body=body,
-    )
+    kwargs = _get_kwargs()
 
     response = client.get_httpx_client().request(
         **kwargs,
@@ -86,13 +69,8 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    body: LicenceClassificationWrite,
 ) -> Optional[LicenceClassificationWrite]:
     """Get a list of LicenceClassification objects.
-
-    Args:
-        body (LicenceClassificationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -104,20 +82,14 @@ def sync(
 
     return sync_detailed(
         client=client,
-        body=body,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    body: LicenceClassificationWrite,
 ) -> Response[LicenceClassificationWrite]:
     """Get a list of LicenceClassification objects.
-
-    Args:
-        body (LicenceClassificationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -127,9 +99,7 @@ async def asyncio_detailed(
         Response[LicenceClassificationWrite]
     """
 
-    kwargs = _get_kwargs(
-        body=body,
-    )
+    kwargs = _get_kwargs()
 
     response = await client.get_async_httpx_client().request(**kwargs)
 
@@ -139,13 +109,8 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    body: LicenceClassificationWrite,
 ) -> Optional[LicenceClassificationWrite]:
     """Get a list of LicenceClassification objects.
-
-    Args:
-        body (LicenceClassificationWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -158,6 +123,5 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
-            body=body,
         )
     ).parsed

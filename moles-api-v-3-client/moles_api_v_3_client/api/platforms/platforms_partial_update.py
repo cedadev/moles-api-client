@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.patched_platform_write import PatchedPlatformWrite
+from ...models.patched_platform_write_request import PatchedPlatformWriteRequest
 from ...models.platform_write import PlatformWrite
 from ...types import Response
 
@@ -13,7 +13,7 @@ from ...types import Response
 def _get_kwargs(
     ob_id: int,
     *,
-    body: PatchedPlatformWrite,
+    body: PatchedPlatformWriteRequest,
 ) -> dict[str, Any]:
     headers: dict[str, Any] = {}
 
@@ -55,14 +55,15 @@ def sync_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPlatformWrite,
+    body: PatchedPlatformWriteRequest,
 ) -> Response[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPlatformWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -88,14 +89,15 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPlatformWrite,
+    body: PatchedPlatformWriteRequest,
 ) -> Optional[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPlatformWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -116,14 +118,15 @@ async def asyncio_detailed(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPlatformWrite,
+    body: PatchedPlatformWriteRequest,
 ) -> Response[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPlatformWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -147,14 +150,15 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-    body: PatchedPlatformWrite,
+    body: PatchedPlatformWriteRequest,
 ) -> Optional[PlatformWrite]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
         ob_id (int):
-        body (PatchedPlatformWrite): A mixin that adds 'simple_fields' as ReadOnlyFields
-            and reorders them to the top.
+        body (PatchedPlatformWriteRequest): A mixin that allows specifying which fields to include
+            in the serializer
+            via the 'fields' keyword argument.
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

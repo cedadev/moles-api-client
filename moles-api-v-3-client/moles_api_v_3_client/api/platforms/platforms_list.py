@@ -5,7 +5,7 @@ import httpx
 
 from ... import errors
 from ...client import AuthenticatedClient, Client
-from ...models.paginated_platform_write_list import PaginatedPlatformWriteList
+from ...models.paginated_platform_read_list import PaginatedPlatformReadList
 from ...models.platforms_list_platform_type import PlatformsListPlatformType
 from ...types import UNSET, Response, Unset
 
@@ -605,9 +605,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedPlatformWriteList]:
+) -> Optional[PaginatedPlatformReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedPlatformWriteList.from_dict(response.json())
+        response_200 = PaginatedPlatformReadList.from_dict(response.json())
 
         return response_200
 
@@ -619,7 +619,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedPlatformWriteList]:
+) -> Response[PaginatedPlatformReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -794,7 +794,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedPlatformWriteList]:
+) -> Response[PaginatedPlatformReadList]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
@@ -967,7 +967,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedPlatformWriteList]
+        Response[PaginatedPlatformReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1309,7 +1309,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPlatformWriteList]:
+) -> Optional[PaginatedPlatformReadList]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
@@ -1482,7 +1482,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedPlatformWriteList
+        PaginatedPlatformReadList
     """
 
     return sync_detailed(
@@ -1819,7 +1819,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedPlatformWriteList]:
+) -> Response[PaginatedPlatformReadList]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
@@ -1992,7 +1992,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedPlatformWriteList]
+        Response[PaginatedPlatformReadList]
     """
 
     kwargs = _get_kwargs(
@@ -2332,7 +2332,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPlatformWriteList]:
+) -> Optional[PaginatedPlatformReadList]:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
@@ -2505,7 +2505,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedPlatformWriteList
+        PaginatedPlatformReadList
     """
 
     return (

@@ -13,15 +13,14 @@ T = TypeVar("T", bound="MobilePlatformOperationWrite")
 
 @_attrs_define
 class MobilePlatformOperationWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
             ob_id (int):
             uuid (str):
             short_code (str):
             title (str):
-            platform_field (int):
             abstract (Union[Unset, str]):
             location (Union[None, Unset, int]):
             status (Union[BlankEnum, StatusEnum, Unset]):
@@ -33,7 +32,6 @@ class MobilePlatformOperationWrite:
     uuid: str
     short_code: str
     title: str
-    platform_field: int
     abstract: Union[Unset, str] = UNSET
     location: Union[None, Unset, int] = UNSET
     status: Union[BlankEnum, StatusEnum, Unset] = UNSET
@@ -49,8 +47,6 @@ class MobilePlatformOperationWrite:
         short_code = self.short_code
 
         title = self.title
-
-        platform_field = self.platform_field
 
         abstract = self.abstract
 
@@ -88,7 +84,6 @@ class MobilePlatformOperationWrite:
                 "uuid": uuid,
                 "short_code": short_code,
                 "title": title,
-                "platform_field": platform_field,
             }
         )
         if abstract is not UNSET:
@@ -114,8 +109,6 @@ class MobilePlatformOperationWrite:
         short_code = d.pop("short_code")
 
         title = d.pop("title")
-
-        platform_field = d.pop("platform_field")
 
         abstract = d.pop("abstract", UNSET)
 
@@ -170,7 +163,6 @@ class MobilePlatformOperationWrite:
             uuid=uuid,
             short_code=short_code,
             title=title,
-            platform_field=platform_field,
             abstract=abstract,
             location=location,
             status=status,

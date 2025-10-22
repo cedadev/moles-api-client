@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.instruments_list_instrument_type import InstrumentsListInstrumentType
-from ...models.paginated_instrument_write_list import PaginatedInstrumentWriteList
+from ...models.paginated_instrument_read_list import PaginatedInstrumentReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -482,9 +482,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedInstrumentWriteList]:
+) -> Optional[PaginatedInstrumentReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedInstrumentWriteList.from_dict(response.json())
+        response_200 = PaginatedInstrumentReadList.from_dict(response.json())
 
         return response_200
 
@@ -496,7 +496,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedInstrumentWriteList]:
+) -> Response[PaginatedInstrumentReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -638,7 +638,7 @@ def sync_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedInstrumentWriteList]:
+) -> Response[PaginatedInstrumentReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -778,7 +778,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedInstrumentWriteList]
+        Response[PaginatedInstrumentReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1054,7 +1054,7 @@ def sync(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInstrumentWriteList]:
+) -> Optional[PaginatedInstrumentReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -1194,7 +1194,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedInstrumentWriteList
+        PaginatedInstrumentReadList
     """
 
     return sync_detailed(
@@ -1465,7 +1465,7 @@ async def asyncio_detailed(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedInstrumentWriteList]:
+) -> Response[PaginatedInstrumentReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -1605,7 +1605,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedInstrumentWriteList]
+        Response[PaginatedInstrumentReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1879,7 +1879,7 @@ async def asyncio(
     uuid_range: Union[Unset, list[str]] = UNSET,
     uuid_regex: Union[Unset, str] = UNSET,
     uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInstrumentWriteList]:
+) -> Optional[PaginatedInstrumentReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -2019,7 +2019,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedInstrumentWriteList
+        PaginatedInstrumentReadList
     """
 
     return (

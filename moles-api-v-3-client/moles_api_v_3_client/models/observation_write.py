@@ -18,10 +18,13 @@ T = TypeVar("T", bound="ObservationWrite")
 
 @_attrs_define
 class ObservationWrite:
-    """A mixin that adds 'simple_fields' as ReadOnlyFields
-    and reorders them to the top.
+    """A mixin that allows specifying which fields to include in the serializer
+    via the 'fields' keyword argument.
 
         Attributes:
+            ob_id (int):
+            uuid (str):
+            short_code (str):
             title (str):
             status (StatusEnum): * `planned` - Planned (pre)
                 * `required` - Required (pre)
@@ -71,6 +74,9 @@ class ObservationWrite:
             vocabulary_keywords (Union[Unset, list[int]]):
     """
 
+    ob_id: int
+    uuid: str
+    short_code: str
     title: str
     status: StatusEnum
     abstract: Union[Unset, str] = UNSET
@@ -108,6 +114,12 @@ class ObservationWrite:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id = self.ob_id
+
+        uuid = self.uuid
+
+        short_code = self.short_code
+
         title = self.title
 
         status = self.status.value
@@ -284,6 +296,9 @@ class ObservationWrite:
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
+                "ob_id": ob_id,
+                "uuid": uuid,
+                "short_code": short_code,
                 "title": title,
                 "status": status,
             }
@@ -358,6 +373,12 @@ class ObservationWrite:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
+        ob_id = d.pop("ob_id")
+
+        uuid = d.pop("uuid")
+
+        short_code = d.pop("short_code")
+
         title = d.pop("title")
 
         status = StatusEnum(d.pop("status"))
@@ -631,6 +652,9 @@ class ObservationWrite:
         vocabulary_keywords = cast(list[int], d.pop("vocabularyKeywords", UNSET))
 
         observation_write = cls(
+            ob_id=ob_id,
+            uuid=uuid,
+            short_code=short_code,
             title=title,
             status=status,
             abstract=abstract,

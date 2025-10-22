@@ -6,7 +6,7 @@ import httpx
 from ... import errors
 from ...client import AuthenticatedClient, Client
 from ...models.constraints_list_access_category import ConstraintsListAccessCategory
-from ...models.paginated_constraints_write_list import PaginatedConstraintsWriteList
+from ...models.paginated_constraints_read_list import PaginatedConstraintsReadList
 from ...types import UNSET, Response, Unset
 
 
@@ -444,9 +444,9 @@ def _get_kwargs(
 
 def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedConstraintsWriteList]:
+) -> Optional[PaginatedConstraintsReadList]:
     if response.status_code == 200:
-        response_200 = PaginatedConstraintsWriteList.from_dict(response.json())
+        response_200 = PaginatedConstraintsReadList.from_dict(response.json())
 
         return response_200
 
@@ -458,7 +458,7 @@ def _parse_response(
 
 def _build_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[PaginatedConstraintsWriteList]:
+) -> Response[PaginatedConstraintsReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -588,7 +588,7 @@ def sync_detailed(
     use_limitation_range: Union[Unset, list[str]] = UNSET,
     use_limitation_regex: Union[Unset, str] = UNSET,
     use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedConstraintsWriteList]:
+) -> Response[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
@@ -716,7 +716,7 @@ def sync_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedConstraintsWriteList]
+        Response[PaginatedConstraintsReadList]
     """
 
     kwargs = _get_kwargs(
@@ -968,7 +968,7 @@ def sync(
     use_limitation_range: Union[Unset, list[str]] = UNSET,
     use_limitation_regex: Union[Unset, str] = UNSET,
     use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedConstraintsWriteList]:
+) -> Optional[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
@@ -1096,7 +1096,7 @@ def sync(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedConstraintsWriteList
+        PaginatedConstraintsReadList
     """
 
     return sync_detailed(
@@ -1343,7 +1343,7 @@ async def asyncio_detailed(
     use_limitation_range: Union[Unset, list[str]] = UNSET,
     use_limitation_regex: Union[Unset, str] = UNSET,
     use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Response[PaginatedConstraintsWriteList]:
+) -> Response[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
@@ -1471,7 +1471,7 @@ async def asyncio_detailed(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        Response[PaginatedConstraintsWriteList]
+        Response[PaginatedConstraintsReadList]
     """
 
     kwargs = _get_kwargs(
@@ -1721,7 +1721,7 @@ async def asyncio(
     use_limitation_range: Union[Unset, list[str]] = UNSET,
     use_limitation_regex: Union[Unset, str] = UNSET,
     use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedConstraintsWriteList]:
+) -> Optional[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
@@ -1849,7 +1849,7 @@ async def asyncio(
         httpx.TimeoutException: If the request takes longer than Client.timeout.
 
     Returns:
-        PaginatedConstraintsWriteList
+        PaginatedConstraintsReadList
     """
 
     return (

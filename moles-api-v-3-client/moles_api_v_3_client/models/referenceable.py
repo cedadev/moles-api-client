@@ -1,10 +1,8 @@
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
-
-from ..types import UNSET, Unset
 
 T = TypeVar("T", bound="Referenceable")
 
@@ -16,32 +14,31 @@ class Referenceable:
 
         Attributes:
             ob_id (int):
+            uuid (str):
             short_code (str):
-            uuid (Union[Unset, str]):
     """
 
     ob_id: int
+    uuid: str
     short_code: str
-    uuid: Union[Unset, str] = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
 
-        short_code = self.short_code
-
         uuid = self.uuid
+
+        short_code = self.short_code
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "ob_id": ob_id,
+                "uuid": uuid,
                 "short_code": short_code,
             }
         )
-        if uuid is not UNSET:
-            field_dict["uuid"] = uuid
 
         return field_dict
 
@@ -50,14 +47,14 @@ class Referenceable:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        short_code = d.pop("short_code")
+        uuid = d.pop("uuid")
 
-        uuid = d.pop("uuid", UNSET)
+        short_code = d.pop("short_code")
 
         referenceable = cls(
             ob_id=ob_id,
-            short_code=short_code,
             uuid=uuid,
+            short_code=short_code,
         )
 
         referenceable.additional_properties = d
