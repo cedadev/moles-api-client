@@ -14445,7 +14445,7 @@ paths:
           items:
             type: string
         description: Multiple values may be separated by commas.
-        explode: true
+        explode: false
         style: form
       - in: query
         name: uuid__iregex

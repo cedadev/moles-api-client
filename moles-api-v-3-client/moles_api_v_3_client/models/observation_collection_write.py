@@ -56,7 +56,7 @@ class ObservationCollectionWrite:
 
         short_code = self.short_code
 
-        member = self.member
+        member = ",".join(self.member)
 
         title = self.title
 
@@ -92,11 +92,11 @@ class ObservationCollectionWrite:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = self.image_details
+            image_details = ",".join(self.image_details)
 
         discovery_keywords: Union[Unset, list[int]] = UNSET
         if not isinstance(self.discovery_keywords, Unset):
-            discovery_keywords = self.discovery_keywords
+            discovery_keywords = ",".join(self.discovery_keywords)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

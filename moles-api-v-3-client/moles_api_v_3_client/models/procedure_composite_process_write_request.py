@@ -30,9 +30,9 @@ class ProcedureCompositeProcessWriteRequest:
     def to_dict(self) -> dict[str, Any]:
         title = self.title
 
-        computation_component = self.computation_component
+        computation_component = ",".join(self.computation_component)
 
-        acquisition_component = self.acquisition_component
+        acquisition_component = ",".join(self.acquisition_component)
 
         abstract = self.abstract
 

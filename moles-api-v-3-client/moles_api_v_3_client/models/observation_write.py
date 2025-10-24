@@ -266,31 +266,31 @@ class ObservationWrite:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = self.image_details
+            image_details = ",".join(self.image_details)
 
         discovery_keywords: Union[Unset, list[int]] = UNSET
         if not isinstance(self.discovery_keywords, Unset):
-            discovery_keywords = self.discovery_keywords
+            discovery_keywords = ",".join(self.discovery_keywords)
 
         permissions: Union[Unset, list[int]] = UNSET
         if not isinstance(self.permissions, Unset):
-            permissions = self.permissions
+            permissions = ",".join(self.permissions)
 
         projects: Union[Unset, list[int]] = UNSET
         if not isinstance(self.projects, Unset):
-            projects = self.projects
+            projects = ",".join(self.projects)
 
         inspire_theme: Union[Unset, list[int]] = UNSET
         if not isinstance(self.inspire_theme, Unset):
-            inspire_theme = self.inspire_theme
+            inspire_theme = ",".join(self.inspire_theme)
 
         topic_category: Union[Unset, list[int]] = UNSET
         if not isinstance(self.topic_category, Unset):
-            topic_category = self.topic_category
+            topic_category = ",".join(self.topic_category)
 
         vocabulary_keywords: Union[Unset, list[int]] = UNSET
         if not isinstance(self.vocabulary_keywords, Unset):
-            vocabulary_keywords = self.vocabulary_keywords
+            vocabulary_keywords = ",".join(self.vocabulary_keywords)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

@@ -72,7 +72,7 @@ class PatchedResultWriteRequest:
 
         old_data_path: Union[Unset, list[int]] = UNSET
         if not isinstance(self.old_data_path, Unset):
-            old_data_path = self.old_data_path
+            old_data_path = ",".join(self.old_data_path)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

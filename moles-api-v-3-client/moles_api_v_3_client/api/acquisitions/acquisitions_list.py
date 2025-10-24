@@ -139,7 +139,7 @@ def _get_kwargs(
 
     json_abstract_in: Union[Unset, list[str]] = UNSET
     if not isinstance(abstract_in, Unset):
-        json_abstract_in = abstract_in
+        json_abstract_in = ",".join(abstract_in)
 
     params["abstract__in"] = json_abstract_in
 
@@ -155,7 +155,7 @@ def _get_kwargs(
 
     json_abstract_range: Union[Unset, list[str]] = UNSET
     if not isinstance(abstract_range, Unset):
-        json_abstract_range = abstract_range
+        json_abstract_range = ",".join(abstract_range)
 
     params["abstract__range"] = json_abstract_range
 
@@ -169,7 +169,7 @@ def _get_kwargs(
 
     json_mobile_platform_operation_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(mobile_platform_operation_ob_id_in, Unset):
-        json_mobile_platform_operation_ob_id_in = mobile_platform_operation_ob_id_in
+        json_mobile_platform_operation_ob_id_in = ",".join(mobile_platform_operation_ob_id_in)
 
     params["mobilePlatformOperation__ob_id__in"] = json_mobile_platform_operation_ob_id_in
 
@@ -177,7 +177,7 @@ def _get_kwargs(
 
     json_mobile_platform_operation_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(mobile_platform_operation_uuid_in, Unset):
-        json_mobile_platform_operation_uuid_in = mobile_platform_operation_uuid_in
+        json_mobile_platform_operation_uuid_in = ",".join(mobile_platform_operation_uuid_in)
 
     params["mobilePlatformOperation__uuid__in"] = json_mobile_platform_operation_uuid_in
 
@@ -201,7 +201,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ob_id_in
+        json_ob_id_in = ",".join(ob_id_in)
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -217,7 +217,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ob_id_range
+        json_ob_id_range = ",".join(ob_id_range)
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -237,7 +237,7 @@ def _get_kwargs(
 
     json_output_description_in: Union[Unset, list[int]] = UNSET
     if not isinstance(output_description_in, Unset):
-        json_output_description_in = output_description_in
+        json_output_description_in = ",".join(output_description_in)
 
     params["outputDescription__in"] = json_output_description_in
 
@@ -255,7 +255,7 @@ def _get_kwargs(
 
     json_referenceable_ptr_in: Union[Unset, list[int]] = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
-        json_referenceable_ptr_in = referenceable_ptr_in
+        json_referenceable_ptr_in = ",".join(referenceable_ptr_in)
 
     params["referenceable_ptr__in"] = json_referenceable_ptr_in
 
@@ -283,7 +283,7 @@ def _get_kwargs(
 
     json_short_code_in: Union[Unset, list[str]] = UNSET
     if not isinstance(short_code_in, Unset):
-        json_short_code_in = short_code_in
+        json_short_code_in = ",".join(short_code_in)
 
     params["short_code__in"] = json_short_code_in
 
@@ -299,7 +299,7 @@ def _get_kwargs(
 
     json_short_code_range: Union[Unset, list[str]] = UNSET
     if not isinstance(short_code_range, Unset):
-        json_short_code_range = short_code_range
+        json_short_code_range = ",".join(short_code_range)
 
     params["short_code__range"] = json_short_code_range
 
@@ -325,7 +325,7 @@ def _get_kwargs(
 
     json_title_in: Union[Unset, list[str]] = UNSET
     if not isinstance(title_in, Unset):
-        json_title_in = title_in
+        json_title_in = ",".join(title_in)
 
     params["title__in"] = json_title_in
 
@@ -341,7 +341,7 @@ def _get_kwargs(
 
     json_title_range: Union[Unset, list[str]] = UNSET
     if not isinstance(title_range, Unset):
-        json_title_range = title_range
+        json_title_range = ",".join(title_range)
 
     params["title__range"] = json_title_range
 
@@ -367,7 +367,7 @@ def _get_kwargs(
 
     json_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(uuid_in, Unset):
-        json_uuid_in = uuid_in
+        json_uuid_in = ",".join(uuid_in)
 
     params["uuid__in"] = json_uuid_in
 
@@ -383,7 +383,7 @@ def _get_kwargs(
 
     json_uuid_range: Union[Unset, list[str]] = UNSET
     if not isinstance(uuid_range, Unset):
-        json_uuid_range = uuid_range
+        json_uuid_range = ",".join(uuid_range)
 
     params["uuid__range"] = json_uuid_range
 

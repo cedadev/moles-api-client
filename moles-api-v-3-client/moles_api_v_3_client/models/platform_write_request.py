@@ -36,7 +36,7 @@ class PlatformWriteRequest:
     def to_dict(self) -> dict[str, Any]:
         title = self.title
 
-        child_platform = self.child_platform
+        child_platform = ",".join(self.child_platform)
 
         location = self.location
 

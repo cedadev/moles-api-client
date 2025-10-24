@@ -97,7 +97,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ob_id_in
+        json_ob_id_in = ",".join(ob_id_in)
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -113,7 +113,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ob_id_range
+        json_ob_id_range = ",".join(ob_id_range)
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -129,7 +129,7 @@ def _get_kwargs(
 
     json_object_observation_in: Union[Unset, list[int]] = UNSET
     if not isinstance(object_observation_in, Unset):
-        json_object_observation_in = object_observation_in
+        json_object_observation_in = ",".join(object_observation_in)
 
     params["objectObservation__in"] = json_object_observation_in
 
@@ -143,7 +143,7 @@ def _get_kwargs(
 
     json_object_observation_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(object_observation_uuid_in, Unset):
-        json_object_observation_uuid_in = object_observation_uuid_in
+        json_object_observation_uuid_in = ",".join(object_observation_uuid_in)
 
     params["objectObservation__uuid__in"] = json_object_observation_uuid_in
 
@@ -173,7 +173,7 @@ def _get_kwargs(
 
     json_relation_type_in: Union[Unset, list[str]] = UNSET
     if not isinstance(relation_type_in, Unset):
-        json_relation_type_in = relation_type_in
+        json_relation_type_in = ",".join(relation_type_in)
 
     params["relationType__in"] = json_relation_type_in
 
@@ -189,7 +189,7 @@ def _get_kwargs(
 
     json_relation_type_range: Union[Unset, list[str]] = UNSET
     if not isinstance(relation_type_range, Unset):
-        json_relation_type_range = relation_type_range
+        json_relation_type_range = ",".join(relation_type_range)
 
     params["relationType__range"] = json_relation_type_range
 
@@ -205,7 +205,7 @@ def _get_kwargs(
 
     json_subject_observation_in: Union[Unset, list[int]] = UNSET
     if not isinstance(subject_observation_in, Unset):
-        json_subject_observation_in = subject_observation_in
+        json_subject_observation_in = ",".join(subject_observation_in)
 
     params["subjectObservation__in"] = json_subject_observation_in
 
@@ -219,7 +219,7 @@ def _get_kwargs(
 
     json_subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(subject_observation_ob_id_in, Unset):
-        json_subject_observation_ob_id_in = subject_observation_ob_id_in
+        json_subject_observation_ob_id_in = ",".join(subject_observation_ob_id_in)
 
     params["subjectObservation__ob_id__in"] = json_subject_observation_ob_id_in
 
@@ -227,7 +227,7 @@ def _get_kwargs(
 
     json_subject_observation_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(subject_observation_uuid_in, Unset):
-        json_subject_observation_uuid_in = subject_observation_uuid_in
+        json_subject_observation_uuid_in = ",".join(subject_observation_uuid_in)
 
     params["subjectObservation__uuid__in"] = json_subject_observation_uuid_in
 

@@ -111,7 +111,7 @@ def _get_kwargs(
 
     json_file_description_in: Union[Unset, list[str]] = UNSET
     if not isinstance(file_description_in, Unset):
-        json_file_description_in = file_description_in
+        json_file_description_in = ",".join(file_description_in)
 
     params["fileDescription__in"] = json_file_description_in
 
@@ -127,7 +127,7 @@ def _get_kwargs(
 
     json_file_description_range: Union[Unset, list[str]] = UNSET
     if not isinstance(file_description_range, Unset):
-        json_file_description_range = file_description_range
+        json_file_description_range = ",".join(file_description_range)
 
     params["fileDescription__range"] = json_file_description_range
 
@@ -153,7 +153,7 @@ def _get_kwargs(
 
     json_file_name_in: Union[Unset, list[str]] = UNSET
     if not isinstance(file_name_in, Unset):
-        json_file_name_in = file_name_in
+        json_file_name_in = ",".join(file_name_in)
 
     params["fileName__in"] = json_file_name_in
 
@@ -169,7 +169,7 @@ def _get_kwargs(
 
     json_file_name_range: Union[Unset, list[str]] = UNSET
     if not isinstance(file_name_range, Unset):
-        json_file_name_range = file_name_range
+        json_file_name_range = ",".join(file_name_range)
 
     params["fileName__range"] = json_file_name_range
 
@@ -185,7 +185,7 @@ def _get_kwargs(
 
     json_image_constraints_in: Union[Unset, list[int]] = UNSET
     if not isinstance(image_constraints_in, Unset):
-        json_image_constraints_in = image_constraints_in
+        json_image_constraints_in = ",".join(image_constraints_in)
 
     params["imageConstraints__in"] = json_image_constraints_in
 
@@ -215,7 +215,7 @@ def _get_kwargs(
 
     json_linkage_in: Union[Unset, list[str]] = UNSET
     if not isinstance(linkage_in, Unset):
-        json_linkage_in = linkage_in
+        json_linkage_in = ",".join(linkage_in)
 
     params["linkage__in"] = json_linkage_in
 
@@ -231,7 +231,7 @@ def _get_kwargs(
 
     json_linkage_range: Union[Unset, list[str]] = UNSET
     if not isinstance(linkage_range, Unset):
-        json_linkage_range = linkage_range
+        json_linkage_range = ",".join(linkage_range)
 
     params["linkage__range"] = json_linkage_range
 
@@ -259,7 +259,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ob_id_in
+        json_ob_id_in = ",".join(ob_id_in)
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -275,7 +275,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ob_id_range
+        json_ob_id_range = ",".join(ob_id_range)
 
     params["ob_id__range"] = json_ob_id_range
 

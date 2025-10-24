@@ -76,7 +76,7 @@ def _get_kwargs(
 
     json_instrument_in: Union[Unset, list[int]] = UNSET
     if not isinstance(instrument_in, Unset):
-        json_instrument_in = instrument_in
+        json_instrument_in = ",".join(instrument_in)
 
     params["instrument__in"] = json_instrument_in
 
@@ -90,7 +90,7 @@ def _get_kwargs(
 
     json_instrument_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(instrument_ob_id_in, Unset):
-        json_instrument_ob_id_in = instrument_ob_id_in
+        json_instrument_ob_id_in = ",".join(instrument_ob_id_in)
 
     params["instrument__ob_id__in"] = json_instrument_ob_id_in
 
@@ -98,7 +98,7 @@ def _get_kwargs(
 
     json_instrument_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(instrument_uuid_in, Unset):
-        json_instrument_uuid_in = instrument_uuid_in
+        json_instrument_uuid_in = ",".join(instrument_uuid_in)
 
     params["instrument__uuid__in"] = json_instrument_uuid_in
 
@@ -124,7 +124,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ob_id_in
+        json_ob_id_in = ",".join(ob_id_in)
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -140,7 +140,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ob_id_range
+        json_ob_id_range = ",".join(ob_id_range)
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -160,7 +160,7 @@ def _get_kwargs(
 
     json_platform_in: Union[Unset, list[int]] = UNSET
     if not isinstance(platform_in, Unset):
-        json_platform_in = platform_in
+        json_platform_in = ",".join(platform_in)
 
     params["platform__in"] = json_platform_in
 
@@ -174,7 +174,7 @@ def _get_kwargs(
 
     json_platform_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(platform_ob_id_in, Unset):
-        json_platform_ob_id_in = platform_ob_id_in
+        json_platform_ob_id_in = ",".join(platform_ob_id_in)
 
     params["platform__ob_id__in"] = json_platform_ob_id_in
 
@@ -182,7 +182,7 @@ def _get_kwargs(
 
     json_platform_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(platform_uuid_in, Unset):
-        json_platform_uuid_in = platform_uuid_in
+        json_platform_uuid_in = ",".join(platform_uuid_in)
 
     params["platform__uuid__in"] = json_platform_uuid_in
 
@@ -194,7 +194,7 @@ def _get_kwargs(
 
     json_related_to_in: Union[Unset, list[int]] = UNSET
     if not isinstance(related_to_in, Unset):
-        json_related_to_in = related_to_in
+        json_related_to_in = ",".join(related_to_in)
 
     params["relatedTo__in"] = json_related_to_in
 
@@ -208,7 +208,7 @@ def _get_kwargs(
 
     json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
-        json_related_to_ob_id_in = related_to_ob_id_in
+        json_related_to_ob_id_in = ",".join(related_to_ob_id_in)
 
     params["relatedTo__ob_id__in"] = json_related_to_ob_id_in
 
@@ -216,7 +216,7 @@ def _get_kwargs(
 
     json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(related_to_uuid_in, Unset):
-        json_related_to_uuid_in = related_to_uuid_in
+        json_related_to_uuid_in = ",".join(related_to_uuid_in)
 
     params["relatedTo__uuid__in"] = json_related_to_uuid_in
 

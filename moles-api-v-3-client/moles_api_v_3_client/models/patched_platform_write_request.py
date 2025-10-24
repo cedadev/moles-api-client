@@ -42,7 +42,7 @@ class PatchedPlatformWriteRequest:
 
         child_platform: Union[Unset, list[str]] = UNSET
         if not isinstance(self.child_platform, Unset):
-            child_platform = self.child_platform
+            child_platform = ",".join(self.child_platform)
 
         platform_type: Union[Unset, str]
         if isinstance(self.platform_type, Unset):

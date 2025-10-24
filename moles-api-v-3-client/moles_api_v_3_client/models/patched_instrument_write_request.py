@@ -50,11 +50,11 @@ class PatchedInstrumentWriteRequest:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = self.image_details
+            image_details = ",".join(self.image_details)
 
         sub_instrument: Union[Unset, list[int]] = UNSET
         if not isinstance(self.sub_instrument, Unset):
-            sub_instrument = self.sub_instrument
+            sub_instrument = ",".join(self.sub_instrument)
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
