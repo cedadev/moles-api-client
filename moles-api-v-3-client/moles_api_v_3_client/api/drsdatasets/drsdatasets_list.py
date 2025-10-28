@@ -115,7 +115,7 @@ def _get_kwargs(
 
     json_directory_in: Union[Unset, list[str]] = UNSET
     if not isinstance(directory_in, Unset):
-        json_directory_in = ",".join(directory_in)
+        json_directory_in = ",".join(map(str, directory_in))
 
     params["directory__in"] = json_directory_in
 
@@ -131,7 +131,7 @@ def _get_kwargs(
 
     json_directory_range: Union[Unset, list[str]] = UNSET
     if not isinstance(directory_range, Unset):
-        json_directory_range = ",".join(directory_range)
+        json_directory_range = ",".join(map(str, directory_range))
 
     params["directory__range"] = json_directory_range
 
@@ -157,7 +157,7 @@ def _get_kwargs(
 
     json_drs_id_in: Union[Unset, list[str]] = UNSET
     if not isinstance(drs_id_in, Unset):
-        json_drs_id_in = ",".join(drs_id_in)
+        json_drs_id_in = ",".join(map(str, drs_id_in))
 
     params["drsId__in"] = json_drs_id_in
 
@@ -173,7 +173,7 @@ def _get_kwargs(
 
     json_drs_id_range: Union[Unset, list[str]] = UNSET
     if not isinstance(drs_id_range, Unset):
-        json_drs_id_range = ",".join(drs_id_range)
+        json_drs_id_range = ",".join(map(str, drs_id_range))
 
     params["drsId__range"] = json_drs_id_range
 
@@ -203,7 +203,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -219,7 +219,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -239,7 +239,7 @@ def _get_kwargs(
 
     json_related_to_in: Union[Unset, list[int]] = UNSET
     if not isinstance(related_to_in, Unset):
-        json_related_to_in = ",".join(related_to_in)
+        json_related_to_in = ",".join(map(str, related_to_in))
 
     params["relatedTo__in"] = json_related_to_in
 
@@ -253,7 +253,7 @@ def _get_kwargs(
 
     json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
-        json_related_to_ob_id_in = ",".join(related_to_ob_id_in)
+        json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
     params["relatedTo__ob_id__in"] = json_related_to_ob_id_in
 
@@ -261,7 +261,7 @@ def _get_kwargs(
 
     json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
     if not isinstance(related_to_uuid_in, Unset):
-        json_related_to_uuid_in = ",".join(related_to_uuid_in)
+        json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
     params["relatedTo__uuid__in"] = json_related_to_uuid_in
 
@@ -283,7 +283,7 @@ def _get_kwargs(
 
     json_version_in: Union[Unset, list[str]] = UNSET
     if not isinstance(version_in, Unset):
-        json_version_in = ",".join(version_in)
+        json_version_in = ",".join(map(str, version_in))
 
     params["version__in"] = json_version_in
 
@@ -299,7 +299,7 @@ def _get_kwargs(
 
     json_version_range: Union[Unset, list[str]] = UNSET
     if not isinstance(version_range, Unset):
-        json_version_range = ",".join(version_range)
+        json_version_range = ",".join(map(str, version_range))
 
     params["version__range"] = json_version_range
 

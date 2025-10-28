@@ -258,7 +258,7 @@ def _get_kwargs(
 
     json_administrative_area_in: Union[Unset, list[str]] = UNSET
     if not isinstance(administrative_area_in, Unset):
-        json_administrative_area_in = ",".join(administrative_area_in)
+        json_administrative_area_in = ",".join(map(str, administrative_area_in))
 
     params["administrativeArea__in"] = json_administrative_area_in
 
@@ -274,7 +274,7 @@ def _get_kwargs(
 
     json_administrative_area_range: Union[Unset, list[str]] = UNSET
     if not isinstance(administrative_area_range, Unset):
-        json_administrative_area_range = ",".join(administrative_area_range)
+        json_administrative_area_range = ",".join(map(str, administrative_area_range))
 
     params["administrativeArea__range"] = json_administrative_area_range
 
@@ -300,7 +300,7 @@ def _get_kwargs(
 
     json_city_in: Union[Unset, list[str]] = UNSET
     if not isinstance(city_in, Unset):
-        json_city_in = ",".join(city_in)
+        json_city_in = ",".join(map(str, city_in))
 
     params["city__in"] = json_city_in
 
@@ -316,7 +316,7 @@ def _get_kwargs(
 
     json_city_range: Union[Unset, list[str]] = UNSET
     if not isinstance(city_range, Unset):
-        json_city_range = ",".join(city_range)
+        json_city_range = ",".join(map(str, city_range))
 
     params["city__range"] = json_city_range
 
@@ -342,7 +342,7 @@ def _get_kwargs(
 
     json_country_in: Union[Unset, list[str]] = UNSET
     if not isinstance(country_in, Unset):
-        json_country_in = ",".join(country_in)
+        json_country_in = ",".join(map(str, country_in))
 
     params["country__in"] = json_country_in
 
@@ -358,7 +358,7 @@ def _get_kwargs(
 
     json_country_range: Union[Unset, list[str]] = UNSET
     if not isinstance(country_range, Unset):
-        json_country_range = ",".join(country_range)
+        json_country_range = ",".join(map(str, country_range))
 
     params["country__range"] = json_country_range
 
@@ -384,7 +384,7 @@ def _get_kwargs(
 
     json_delivery_point_in: Union[Unset, list[str]] = UNSET
     if not isinstance(delivery_point_in, Unset):
-        json_delivery_point_in = ",".join(delivery_point_in)
+        json_delivery_point_in = ",".join(map(str, delivery_point_in))
 
     params["deliveryPoint__in"] = json_delivery_point_in
 
@@ -400,7 +400,7 @@ def _get_kwargs(
 
     json_delivery_point_range: Union[Unset, list[str]] = UNSET
     if not isinstance(delivery_point_range, Unset):
-        json_delivery_point_range = ",".join(delivery_point_range)
+        json_delivery_point_range = ",".join(map(str, delivery_point_range))
 
     params["deliveryPoint__range"] = json_delivery_point_range
 
@@ -426,7 +426,7 @@ def _get_kwargs(
 
     json_description_in: Union[Unset, list[str]] = UNSET
     if not isinstance(description_in, Unset):
-        json_description_in = ",".join(description_in)
+        json_description_in = ",".join(map(str, description_in))
 
     params["description__in"] = json_description_in
 
@@ -442,7 +442,7 @@ def _get_kwargs(
 
     json_description_range: Union[Unset, list[str]] = UNSET
     if not isinstance(description_range, Unset):
-        json_description_range = ",".join(description_range)
+        json_description_range = ",".join(map(str, description_range))
 
     params["description__range"] = json_description_range
 
@@ -468,7 +468,7 @@ def _get_kwargs(
 
     json_electronic_email_address_in: Union[Unset, list[str]] = UNSET
     if not isinstance(electronic_email_address_in, Unset):
-        json_electronic_email_address_in = ",".join(electronic_email_address_in)
+        json_electronic_email_address_in = ",".join(map(str, electronic_email_address_in))
 
     params["electronicEmailAddress__in"] = json_electronic_email_address_in
 
@@ -484,7 +484,7 @@ def _get_kwargs(
 
     json_electronic_email_address_range: Union[Unset, list[str]] = UNSET
     if not isinstance(electronic_email_address_range, Unset):
-        json_electronic_email_address_range = ",".join(electronic_email_address_range)
+        json_electronic_email_address_range = ",".join(map(str, electronic_email_address_range))
 
     params["electronicEmailAddress__range"] = json_electronic_email_address_range
 
@@ -510,7 +510,7 @@ def _get_kwargs(
 
     json_first_name_in: Union[Unset, list[str]] = UNSET
     if not isinstance(first_name_in, Unset):
-        json_first_name_in = ",".join(first_name_in)
+        json_first_name_in = ",".join(map(str, first_name_in))
 
     params["firstName__in"] = json_first_name_in
 
@@ -526,7 +526,7 @@ def _get_kwargs(
 
     json_first_name_range: Union[Unset, list[str]] = UNSET
     if not isinstance(first_name_range, Unset):
-        json_first_name_range = ",".join(first_name_range)
+        json_first_name_range = ",".join(map(str, first_name_range))
 
     params["firstName__range"] = json_first_name_range
 
@@ -552,7 +552,7 @@ def _get_kwargs(
 
     json_last_name_in: Union[Unset, list[str]] = UNSET
     if not isinstance(last_name_in, Unset):
-        json_last_name_in = ",".join(last_name_in)
+        json_last_name_in = ",".join(map(str, last_name_in))
 
     params["lastName__in"] = json_last_name_in
 
@@ -568,7 +568,7 @@ def _get_kwargs(
 
     json_last_name_range: Union[Unset, list[str]] = UNSET
     if not isinstance(last_name_range, Unset):
-        json_last_name_range = ",".join(last_name_range)
+        json_last_name_range = ",".join(map(str, last_name_range))
 
     params["lastName__range"] = json_last_name_range
 
@@ -598,7 +598,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -614,7 +614,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -642,7 +642,7 @@ def _get_kwargs(
 
     json_online_resource_in: Union[Unset, list[str]] = UNSET
     if not isinstance(online_resource_in, Unset):
-        json_online_resource_in = ",".join(online_resource_in)
+        json_online_resource_in = ",".join(map(str, online_resource_in))
 
     params["onlineResource__in"] = json_online_resource_in
 
@@ -658,7 +658,7 @@ def _get_kwargs(
 
     json_online_resource_range: Union[Unset, list[str]] = UNSET
     if not isinstance(online_resource_range, Unset):
-        json_online_resource_range = ",".join(online_resource_range)
+        json_online_resource_range = ",".join(map(str, online_resource_range))
 
     params["onlineResource__range"] = json_online_resource_range
 
@@ -690,7 +690,7 @@ def _get_kwargs(
 
     json_party_type_in: Union[Unset, list[str]] = UNSET
     if not isinstance(party_type_in, Unset):
-        json_party_type_in = ",".join(party_type_in)
+        json_party_type_in = ",".join(map(str, party_type_in))
 
     params["partyType__in"] = json_party_type_in
 
@@ -706,7 +706,7 @@ def _get_kwargs(
 
     json_party_type_range: Union[Unset, list[str]] = UNSET
     if not isinstance(party_type_range, Unset):
-        json_party_type_range = ",".join(party_type_range)
+        json_party_type_range = ",".join(map(str, party_type_range))
 
     params["partyType__range"] = json_party_type_range
 
@@ -732,7 +732,7 @@ def _get_kwargs(
 
     json_phone_in: Union[Unset, list[str]] = UNSET
     if not isinstance(phone_in, Unset):
-        json_phone_in = ",".join(phone_in)
+        json_phone_in = ",".join(map(str, phone_in))
 
     params["phone__in"] = json_phone_in
 
@@ -748,7 +748,7 @@ def _get_kwargs(
 
     json_phone_range: Union[Unset, list[str]] = UNSET
     if not isinstance(phone_range, Unset):
-        json_phone_range = ",".join(phone_range)
+        json_phone_range = ",".join(map(str, phone_range))
 
     params["phone__range"] = json_phone_range
 
@@ -774,7 +774,7 @@ def _get_kwargs(
 
     json_postal_code_in: Union[Unset, list[str]] = UNSET
     if not isinstance(postal_code_in, Unset):
-        json_postal_code_in = ",".join(postal_code_in)
+        json_postal_code_in = ",".join(map(str, postal_code_in))
 
     params["postalCode__in"] = json_postal_code_in
 
@@ -790,7 +790,7 @@ def _get_kwargs(
 
     json_postal_code_range: Union[Unset, list[str]] = UNSET
     if not isinstance(postal_code_range, Unset):
-        json_postal_code_range = ",".join(postal_code_range)
+        json_postal_code_range = ",".join(map(str, postal_code_range))
 
     params["postalCode__range"] = json_postal_code_range
 

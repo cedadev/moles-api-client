@@ -155,7 +155,7 @@ def _get_kwargs(
 
     json_access_category_in: Union[Unset, list[str]] = UNSET
     if not isinstance(access_category_in, Unset):
-        json_access_category_in = ",".join(access_category_in)
+        json_access_category_in = ",".join(map(str, access_category_in))
 
     params["accessCategory__in"] = json_access_category_in
 
@@ -171,7 +171,7 @@ def _get_kwargs(
 
     json_access_category_range: Union[Unset, list[str]] = UNSET
     if not isinstance(access_category_range, Unset):
-        json_access_category_range = ",".join(access_category_range)
+        json_access_category_range = ",".join(map(str, access_category_range))
 
     params["accessCategory__range"] = json_access_category_range
 
@@ -197,7 +197,7 @@ def _get_kwargs(
 
     json_access_constraints_in: Union[Unset, list[str]] = UNSET
     if not isinstance(access_constraints_in, Unset):
-        json_access_constraints_in = ",".join(access_constraints_in)
+        json_access_constraints_in = ",".join(map(str, access_constraints_in))
 
     params["accessConstraints__in"] = json_access_constraints_in
 
@@ -213,7 +213,7 @@ def _get_kwargs(
 
     json_access_constraints_range: Union[Unset, list[str]] = UNSET
     if not isinstance(access_constraints_range, Unset):
-        json_access_constraints_range = ",".join(access_constraints_range)
+        json_access_constraints_range = ",".join(map(str, access_constraints_range))
 
     params["accessConstraints__range"] = json_access_constraints_range
 
@@ -239,7 +239,7 @@ def _get_kwargs(
 
     json_access_roles_in: Union[Unset, list[str]] = UNSET
     if not isinstance(access_roles_in, Unset):
-        json_access_roles_in = ",".join(access_roles_in)
+        json_access_roles_in = ",".join(map(str, access_roles_in))
 
     params["accessRoles__in"] = json_access_roles_in
 
@@ -255,7 +255,7 @@ def _get_kwargs(
 
     json_access_roles_range: Union[Unset, list[str]] = UNSET
     if not isinstance(access_roles_range, Unset):
-        json_access_roles_range = ",".join(access_roles_range)
+        json_access_roles_range = ",".join(map(str, access_roles_range))
 
     params["accessRoles__range"] = json_access_roles_range
 
@@ -281,7 +281,7 @@ def _get_kwargs(
 
     json_label_in: Union[Unset, list[str]] = UNSET
     if not isinstance(label_in, Unset):
-        json_label_in = ",".join(label_in)
+        json_label_in = ",".join(map(str, label_in))
 
     params["label__in"] = json_label_in
 
@@ -297,7 +297,7 @@ def _get_kwargs(
 
     json_label_range: Union[Unset, list[str]] = UNSET
     if not isinstance(label_range, Unset):
-        json_label_range = ",".join(label_range)
+        json_label_range = ",".join(map(str, label_range))
 
     params["label__range"] = json_label_range
 
@@ -313,7 +313,7 @@ def _get_kwargs(
 
     json_licence_in: Union[Unset, list[int]] = UNSET
     if not isinstance(licence_in, Unset):
-        json_licence_in = ",".join(licence_in)
+        json_licence_in = ",".join(map(str, licence_in))
 
     params["licence__in"] = json_licence_in
 
@@ -331,7 +331,7 @@ def _get_kwargs(
 
     json_licence_licence_url_in: Union[Unset, list[str]] = UNSET
     if not isinstance(licence_licence_url_in, Unset):
-        json_licence_licence_url_in = ",".join(licence_licence_url_in)
+        json_licence_licence_url_in = ",".join(map(str, licence_licence_url_in))
 
     params["licence__licenceURL__in"] = json_licence_licence_url_in
 
@@ -361,7 +361,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -377,7 +377,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -407,7 +407,7 @@ def _get_kwargs(
 
     json_use_limitation_in: Union[Unset, list[str]] = UNSET
     if not isinstance(use_limitation_in, Unset):
-        json_use_limitation_in = ",".join(use_limitation_in)
+        json_use_limitation_in = ",".join(map(str, use_limitation_in))
 
     params["useLimitation__in"] = json_use_limitation_in
 
@@ -423,7 +423,7 @@ def _get_kwargs(
 
     json_use_limitation_range: Union[Unset, list[str]] = UNSET
     if not isinstance(use_limitation_range, Unset):
-        json_use_limitation_range = ",".join(use_limitation_range)
+        json_use_limitation_range = ",".join(map(str, use_limitation_range))
 
     params["useLimitation__range"] = json_use_limitation_range
 

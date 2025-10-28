@@ -244,7 +244,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -260,7 +260,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 

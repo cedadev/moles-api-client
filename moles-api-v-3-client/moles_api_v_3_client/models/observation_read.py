@@ -86,7 +86,7 @@ class ObservationRead:
             phenomena (list[Union[None, int]]):
             vocabulary_keywords (Union[None, list['VocabularyTermRead']]):
             identifier_set (list[Union[None, int]]):
-            observationcollection_set (list[Union[None, int]]):
+            observationcollection_set (Union[None, list['SimpleRead']]):
             responsiblepartyinfo_set (list[Union[None, int]]):
     """
 
@@ -128,7 +128,7 @@ class ObservationRead:
     phenomena: list[Union[None, int]]
     vocabulary_keywords: Union[None, list["VocabularyTermRead"]]
     identifier_set: list[Union[None, int]]
-    observationcollection_set: list[Union[None, int]]
+    observationcollection_set: Union[None, list["SimpleRead"]]
     responsiblepartyinfo_set: list[Union[None, int]]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
@@ -343,11 +343,15 @@ class ObservationRead:
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
-        observationcollection_set = []
-        for observationcollection_set_item_data in self.observationcollection_set:
-            observationcollection_set_item: Union[None, int]
-            observationcollection_set_item = observationcollection_set_item_data
-            observationcollection_set.append(observationcollection_set_item)
+        observationcollection_set: Union[None, list[dict[str, Any]]]
+        if isinstance(self.observationcollection_set, list):
+            observationcollection_set = []
+            for observationcollection_set_type_0_item_data in self.observationcollection_set:
+                observationcollection_set_type_0_item = observationcollection_set_type_0_item_data.to_dict()
+                observationcollection_set.append(observationcollection_set_type_0_item)
+
+        else:
+            observationcollection_set = self.observationcollection_set
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
@@ -865,18 +869,27 @@ class ObservationRead:
 
             identifier_set.append(identifier_set_item)
 
-        observationcollection_set = []
-        _observationcollection_set = d.pop("observationcollection_set")
-        for observationcollection_set_item_data in _observationcollection_set:
+        def _parse_observationcollection_set(data: object) -> Union[None, list["SimpleRead"]]:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, list):
+                    raise TypeError()
+                observationcollection_set_type_0 = []
+                _observationcollection_set_type_0 = data
+                for observationcollection_set_type_0_item_data in _observationcollection_set_type_0:
+                    observationcollection_set_type_0_item = SimpleRead.from_dict(
+                        observationcollection_set_type_0_item_data
+                    )
 
-            def _parse_observationcollection_set_item(data: object) -> Union[None, int]:
-                if data is None:
-                    return data
-                return cast(Union[None, int], data)
+                    observationcollection_set_type_0.append(observationcollection_set_type_0_item)
 
-            observationcollection_set_item = _parse_observationcollection_set_item(observationcollection_set_item_data)
+                return observationcollection_set_type_0
+            except:  # noqa: E722
+                pass
+            return cast(Union[None, list["SimpleRead"]], data)
 
-            observationcollection_set.append(observationcollection_set_item)
+        observationcollection_set = _parse_observationcollection_set(d.pop("observationcollection_set"))
 
         responsiblepartyinfo_set = []
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")

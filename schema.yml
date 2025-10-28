@@ -24800,10 +24800,9 @@ components:
         observationcollection_set:
           type: array
           items:
-            type: integer
-            title: Internal identifier (ob_id)
-            nullable: true
+            $ref: '#/components/schemas/SimpleRead'
           readOnly: true
+          nullable: true
         responsiblepartyinfo_set:
           type: array
           items:
@@ -28076,7 +28075,7 @@ components:
         party:
           $ref: '#/components/schemas/PartyRead'
         relatedTo:
-          $ref: '#/components/schemas/SimpleRead'
+          $ref: '#/components/schemas/Referenceable'
       required:
       - ob_id
       - party

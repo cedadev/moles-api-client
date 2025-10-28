@@ -254,31 +254,31 @@ class ObservationWriteRequest:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(self.image_details)
+            image_details = ",".join(map(str, self.image_details))
 
         discovery_keywords: Union[Unset, list[int]] = UNSET
         if not isinstance(self.discovery_keywords, Unset):
-            discovery_keywords = ",".join(self.discovery_keywords)
+            discovery_keywords = ",".join(map(str, self.discovery_keywords))
 
         permissions: Union[Unset, list[int]] = UNSET
         if not isinstance(self.permissions, Unset):
-            permissions = ",".join(self.permissions)
+            permissions = ",".join(map(str, self.permissions))
 
         projects: Union[Unset, list[int]] = UNSET
         if not isinstance(self.projects, Unset):
-            projects = ",".join(self.projects)
+            projects = ",".join(map(str, self.projects))
 
         inspire_theme: Union[Unset, list[int]] = UNSET
         if not isinstance(self.inspire_theme, Unset):
-            inspire_theme = ",".join(self.inspire_theme)
+            inspire_theme = ",".join(map(str, self.inspire_theme))
 
         topic_category: Union[Unset, list[int]] = UNSET
         if not isinstance(self.topic_category, Unset):
-            topic_category = ",".join(self.topic_category)
+            topic_category = ",".join(map(str, self.topic_category))
 
         vocabulary_keywords: Union[Unset, list[int]] = UNSET
         if not isinstance(self.vocabulary_keywords, Unset):
-            vocabulary_keywords = ",".join(self.vocabulary_keywords)
+            vocabulary_keywords = ",".join(map(str, self.vocabulary_keywords))
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

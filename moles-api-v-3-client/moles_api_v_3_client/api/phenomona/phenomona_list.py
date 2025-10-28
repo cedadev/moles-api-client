@@ -74,7 +74,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -90,7 +90,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -112,7 +112,7 @@ def _get_kwargs(
 
     json_terms_label_in: Union[Unset, list[str]] = UNSET
     if not isinstance(terms_label_in, Unset):
-        json_terms_label_in = ",".join(terms_label_in)
+        json_terms_label_in = ",".join(map(str, terms_label_in))
 
     params["terms__label__in"] = json_terms_label_in
 
@@ -122,7 +122,7 @@ def _get_kwargs(
 
     json_terms_value_in: Union[Unset, list[str]] = UNSET
     if not isinstance(terms_value_in, Unset):
-        json_terms_value_in = ",".join(terms_value_in)
+        json_terms_value_in = ",".join(map(str, terms_value_in))
 
     params["terms__value__in"] = json_terms_value_in
 
@@ -136,7 +136,7 @@ def _get_kwargs(
 
     json_terms_vocabulary_in: Union[Unset, list[str]] = UNSET
     if not isinstance(terms_vocabulary_in, Unset):
-        json_terms_vocabulary_in = ",".join(terms_vocabulary_in)
+        json_terms_vocabulary_in = ",".join(map(str, terms_vocabulary_in))
 
     params["terms__vocabulary__in"] = json_terms_vocabulary_in
 

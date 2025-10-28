@@ -44,7 +44,7 @@ class RelatedResult:
 
         old_data_path: Union[Unset, list[int]] = UNSET
         if not isinstance(self.old_data_path, Unset):
-            old_data_path = ",".join(self.old_data_path)
+            old_data_path = ",".join(map(str, self.old_data_path))
 
         storage_location: Union[Unset, str] = UNSET
         if not isinstance(self.storage_location, Unset):

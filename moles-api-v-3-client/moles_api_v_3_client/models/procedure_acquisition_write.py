@@ -56,15 +56,15 @@ class ProcedureAcquisitionWrite:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(self.image_details)
+            image_details = ",".join(map(str, self.image_details))
 
         independent_instrument: Union[Unset, list[int]] = UNSET
         if not isinstance(self.independent_instrument, Unset):
-            independent_instrument = ",".join(self.independent_instrument)
+            independent_instrument = ",".join(map(str, self.independent_instrument))
 
         mobile_platform_operation: Union[Unset, list[int]] = UNSET
         if not isinstance(self.mobile_platform_operation, Unset):
-            mobile_platform_operation = ",".join(self.mobile_platform_operation)
+            mobile_platform_operation = ",".join(map(str, self.mobile_platform_operation))
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

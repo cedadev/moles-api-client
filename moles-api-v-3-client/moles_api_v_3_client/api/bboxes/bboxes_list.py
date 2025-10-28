@@ -142,7 +142,7 @@ def _get_kwargs(
 
     json_bbox_name_in: Union[Unset, list[str]] = UNSET
     if not isinstance(bbox_name_in, Unset):
-        json_bbox_name_in = ",".join(bbox_name_in)
+        json_bbox_name_in = ",".join(map(str, bbox_name_in))
 
     params["bboxName__in"] = json_bbox_name_in
 
@@ -158,7 +158,7 @@ def _get_kwargs(
 
     json_bbox_name_range: Union[Unset, list[str]] = UNSET
     if not isinstance(bbox_name_range, Unset):
-        json_bbox_name_range = ",".join(bbox_name_range)
+        json_bbox_name_range = ",".join(map(str, bbox_name_range))
 
     params["bboxName__range"] = json_bbox_name_range
 
@@ -186,7 +186,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_in: Union[Unset, list[float]] = UNSET
     if not isinstance(east_bound_longitude_in, Unset):
-        json_east_bound_longitude_in = ",".join(east_bound_longitude_in)
+        json_east_bound_longitude_in = ",".join(map(str, east_bound_longitude_in))
 
     params["eastBoundLongitude__in"] = json_east_bound_longitude_in
 
@@ -202,7 +202,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_range: Union[Unset, list[float]] = UNSET
     if not isinstance(east_bound_longitude_range, Unset):
-        json_east_bound_longitude_range = ",".join(east_bound_longitude_range)
+        json_east_bound_longitude_range = ",".join(map(str, east_bound_longitude_range))
 
     params["eastBoundLongitude__range"] = json_east_bound_longitude_range
 
@@ -232,7 +232,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_in: Union[Unset, list[float]] = UNSET
     if not isinstance(north_bound_latitude_in, Unset):
-        json_north_bound_latitude_in = ",".join(north_bound_latitude_in)
+        json_north_bound_latitude_in = ",".join(map(str, north_bound_latitude_in))
 
     params["northBoundLatitude__in"] = json_north_bound_latitude_in
 
@@ -248,7 +248,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_range: Union[Unset, list[float]] = UNSET
     if not isinstance(north_bound_latitude_range, Unset):
-        json_north_bound_latitude_range = ",".join(north_bound_latitude_range)
+        json_north_bound_latitude_range = ",".join(map(str, north_bound_latitude_range))
 
     params["northBoundLatitude__range"] = json_north_bound_latitude_range
 
@@ -276,7 +276,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -292,7 +292,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -324,7 +324,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_in: Union[Unset, list[float]] = UNSET
     if not isinstance(south_bound_latitude_in, Unset):
-        json_south_bound_latitude_in = ",".join(south_bound_latitude_in)
+        json_south_bound_latitude_in = ",".join(map(str, south_bound_latitude_in))
 
     params["southBoundLatitude__in"] = json_south_bound_latitude_in
 
@@ -340,7 +340,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_range: Union[Unset, list[float]] = UNSET
     if not isinstance(south_bound_latitude_range, Unset):
-        json_south_bound_latitude_range = ",".join(south_bound_latitude_range)
+        json_south_bound_latitude_range = ",".join(map(str, south_bound_latitude_range))
 
     params["southBoundLatitude__range"] = json_south_bound_latitude_range
 
@@ -368,7 +368,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_in: Union[Unset, list[float]] = UNSET
     if not isinstance(west_bound_longitude_in, Unset):
-        json_west_bound_longitude_in = ",".join(west_bound_longitude_in)
+        json_west_bound_longitude_in = ",".join(map(str, west_bound_longitude_in))
 
     params["westBoundLongitude__in"] = json_west_bound_longitude_in
 
@@ -384,7 +384,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_range: Union[Unset, list[float]] = UNSET
     if not isinstance(west_bound_longitude_range, Unset):
-        json_west_bound_longitude_range = ",".join(west_bound_longitude_range)
+        json_west_bound_longitude_range = ",".join(map(str, west_bound_longitude_range))
 
     params["westBoundLongitude__range"] = json_west_bound_longitude_range
 

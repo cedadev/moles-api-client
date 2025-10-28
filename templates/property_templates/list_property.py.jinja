@@ -27,7 +27,7 @@ for {{ inner_source }} in {{ source }}:
     {{ inner_template.transform(inner_property, inner_source, inner_property.python_name, transform_method) | indent(4) }}
     {{ destination }}.append({{ inner_property.python_name }})
 {% else %}
-{{ destination }} = ",".join({{ source }})
+{{ destination }} = ",".join(map(str, {{ source }}))
 {% endif %}
 {% endmacro %}
 

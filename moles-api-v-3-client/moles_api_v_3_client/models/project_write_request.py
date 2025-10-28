@@ -73,11 +73,11 @@ class ProjectWriteRequest:
 
         image_details: Union[Unset, list[int]] = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(self.image_details)
+            image_details = ",".join(map(str, self.image_details))
 
         observation_collection: Union[Unset, list[str]] = UNSET
         if not isinstance(self.observation_collection, Unset):
-            observation_collection = ",".join(self.observation_collection)
+            observation_collection = ",".join(map(str, self.observation_collection))
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

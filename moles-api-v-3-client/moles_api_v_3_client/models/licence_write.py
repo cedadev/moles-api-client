@@ -28,7 +28,7 @@ class LicenceWrite:
 
         licence_url = self.licence_url
 
-        licence_classifications = ",".join(self.licence_classifications)
+        licence_classifications = ",".join(map(str, self.licence_classifications))
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

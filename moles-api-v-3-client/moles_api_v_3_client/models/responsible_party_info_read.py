@@ -8,7 +8,7 @@ from ..models.role_enum import RoleEnum
 
 if TYPE_CHECKING:
     from ..models.party_read import PartyRead
-    from ..models.simple_read import SimpleRead
+    from ..models.referenceable import Referenceable
 
 
 T = TypeVar("T", bound="ResponsiblePartyInfoRead")
@@ -37,7 +37,7 @@ class ResponsiblePartyInfoRead:
                 * `publisher` - Publisher
             party (PartyRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
-            related_to (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
+            related_to (Referenceable): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
@@ -45,7 +45,7 @@ class ResponsiblePartyInfoRead:
     priority: Union[None, int]
     role: RoleEnum
     party: "PartyRead"
-    related_to: "SimpleRead"
+    related_to: "Referenceable"
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -77,7 +77,7 @@ class ResponsiblePartyInfoRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         from ..models.party_read import PartyRead
-        from ..models.simple_read import SimpleRead
+        from ..models.referenceable import Referenceable
 
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
@@ -93,7 +93,7 @@ class ResponsiblePartyInfoRead:
 
         party = PartyRead.from_dict(d.pop("party"))
 
-        related_to = SimpleRead.from_dict(d.pop("relatedTo"))
+        related_to = Referenceable.from_dict(d.pop("relatedTo"))
 
         responsible_party_info_read = cls(
             ob_id=ob_id,

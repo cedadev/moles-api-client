@@ -60,7 +60,7 @@ def _get_kwargs(
 
     json_licence_classifications_classification_in: Union[Unset, list[str]] = UNSET
     if not isinstance(licence_classifications_classification_in, Unset):
-        json_licence_classifications_classification_in = ",".join(licence_classifications_classification_in)
+        json_licence_classifications_classification_in = ",".join(map(str, licence_classifications_classification_in))
 
     params["licenceClassifications__classification__in"] = json_licence_classifications_classification_in
 
@@ -68,7 +68,7 @@ def _get_kwargs(
 
     json_licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(licence_classifications_ob_id_in, Unset):
-        json_licence_classifications_ob_id_in = ",".join(licence_classifications_ob_id_in)
+        json_licence_classifications_ob_id_in = ",".join(map(str, licence_classifications_ob_id_in))
 
     params["licenceClassifications__ob_id__in"] = json_licence_classifications_ob_id_in
 
@@ -90,7 +90,7 @@ def _get_kwargs(
 
     json_licence_url_in: Union[Unset, list[str]] = UNSET
     if not isinstance(licence_url_in, Unset):
-        json_licence_url_in = ",".join(licence_url_in)
+        json_licence_url_in = ",".join(map(str, licence_url_in))
 
     params["licenceURL__in"] = json_licence_url_in
 
@@ -106,7 +106,7 @@ def _get_kwargs(
 
     json_licence_url_range: Union[Unset, list[str]] = UNSET
     if not isinstance(licence_url_range, Unset):
-        json_licence_url_range = ",".join(licence_url_range)
+        json_licence_url_range = ",".join(map(str, licence_url_range))
 
     params["licenceURL__range"] = json_licence_url_range
 
@@ -136,7 +136,7 @@ def _get_kwargs(
 
     json_ob_id_in: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(ob_id_in)
+        json_ob_id_in = ",".join(map(str, ob_id_in))
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -152,7 +152,7 @@ def _get_kwargs(
 
     json_ob_id_range: Union[Unset, list[int]] = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(ob_id_range)
+        json_ob_id_range = ",".join(map(str, ob_id_range))
 
     params["ob_id__range"] = json_ob_id_range
 
