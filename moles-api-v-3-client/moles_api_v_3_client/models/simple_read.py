@@ -17,12 +17,14 @@ class SimpleRead:
             uuid (str):
             short_code (str):
             title (str):
+            abstract (str):
     """
 
     ob_id: str
     uuid: str
     short_code: str
     title: str
+    abstract: str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -34,6 +36,8 @@ class SimpleRead:
 
         title = self.title
 
+        abstract = self.abstract
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -42,6 +46,7 @@ class SimpleRead:
                 "uuid": uuid,
                 "short_code": short_code,
                 "title": title,
+                "abstract": abstract,
             }
         )
 
@@ -58,11 +63,14 @@ class SimpleRead:
 
         title = d.pop("title")
 
+        abstract = d.pop("abstract")
+
         simple_read = cls(
             ob_id=ob_id,
             uuid=uuid,
             short_code=short_code,
             title=title,
+            abstract=abstract,
         )
 
         simple_read.additional_properties = d

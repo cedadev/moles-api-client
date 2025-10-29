@@ -4,21 +4,12 @@ import click
 import datetime
 from collections import defaultdict
 
-
 from moles_api_v_3_client.api.observations import observations_list
-from moles_api_v_3_client.client import AuthenticatedClient, Client
-
+from moles_api_v_3_client.api.observationcollections import observationcollections_list
 from moles_api_v_3_client.api.rpis import rpis_list
 from moles_api_v_3_client.models.rpis_list_role import RpisListRole
 
-from moles_api_v_3_client.api.observationcollections import observationcollections_list
-
-def get_client():
-    token = os.environ.get("API_TOKEN")
-    base_url = os.environ.get("API_URL")
-    if token:
-        return AuthenticatedClient(base_url=base_url, token=token)
-    return Client(base_url=base_url)
+from utils import get_client
 
 def input2obs(fh):
     uuids = []
@@ -76,7 +67,7 @@ def cat_filter(title, project, collection, path, state, pubfy, officer):
 
 def fetch_authors(obs):
     ob_ids = [ob.ob_id for ob in obs]
-    res = rpis_list.sync_detailed(client=CLIENT, role=RpisListRole.AUTHOR, related_to_ob_id_in=ob_ids)
+    res = rpis_list.sync_detailed(client=CLIENT, role=RpisListRole.AUTHOR, related_to_ob_id_in=ob_ids, related_to_short_code='ob')
     authors = res.parsed.results
     
     author_map = defaultdict(list)

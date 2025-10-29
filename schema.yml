@@ -21074,6 +21074,19 @@ paths:
         explode: false
         style: form
       - in: query
+        name: relatedTo__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedTo__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
         name: relatedTo__uuid
         schema:
           type: string
@@ -28359,7 +28372,11 @@ components:
         title:
           type: string
           readOnly: true
+        abstract:
+          type: string
+          readOnly: true
       required:
+      - abstract
       - ob_id
       - short_code
       - title
