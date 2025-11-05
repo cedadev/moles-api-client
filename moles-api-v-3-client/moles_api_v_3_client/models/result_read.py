@@ -37,6 +37,7 @@ class ResultRead:
             old_data_path (list['SimpleRead']):
             observation (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
+            onlineresource_set (list[Union[None, int]]):
     """
 
     ob_id: int
@@ -51,6 +52,7 @@ class ResultRead:
     storage_location: StorageLocationEnum
     old_data_path: list["SimpleRead"]
     observation: "SimpleRead"
+    onlineresource_set: list[Union[None, int]]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -86,6 +88,12 @@ class ResultRead:
 
         observation = self.observation.to_dict()
 
+        onlineresource_set = []
+        for onlineresource_set_item_data in self.onlineresource_set:
+            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item = onlineresource_set_item_data
+            onlineresource_set.append(onlineresource_set_item)
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -102,6 +110,7 @@ class ResultRead:
                 "storageLocation": storage_location,
                 "oldDataPath": old_data_path,
                 "observation": observation,
+                "onlineresource_set": onlineresource_set,
             }
         )
 
@@ -161,6 +170,19 @@ class ResultRead:
 
         observation = SimpleRead.from_dict(d.pop("observation"))
 
+        onlineresource_set = []
+        _onlineresource_set = d.pop("onlineresource_set")
+        for onlineresource_set_item_data in _onlineresource_set:
+
+            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+                if data is None:
+                    return data
+                return cast(Union[None, int], data)
+
+            onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
+
+            onlineresource_set.append(onlineresource_set_item)
+
         result_read = cls(
             ob_id=ob_id,
             uuid=uuid,
@@ -174,6 +196,7 @@ class ResultRead:
             storage_location=storage_location,
             old_data_path=old_data_path,
             observation=observation,
+            onlineresource_set=onlineresource_set,
         )
 
         result_read.additional_properties = d

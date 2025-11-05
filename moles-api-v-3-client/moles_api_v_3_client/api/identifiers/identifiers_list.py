@@ -59,6 +59,8 @@ def _get_kwargs(
     related_to_lte: Union[Unset, int] = UNSET,
     related_to_ob_id: Union[Unset, int] = UNSET,
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
+    related_to_short_code: Union[Unset, str] = UNSET,
+    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
     short_url: Union[Unset, str] = UNSET,
@@ -219,6 +221,14 @@ def _get_kwargs(
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
     params["relatedTo__ob_id__in"] = json_related_to_ob_id_in
+
+    params["relatedTo__short_code"] = related_to_short_code
+
+    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    if not isinstance(related_to_short_code_in, Unset):
+        json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
+
+    params["relatedTo__short_code__in"] = json_related_to_short_code_in
 
     params["relatedTo__uuid"] = related_to_uuid
 
@@ -398,6 +408,8 @@ def sync_detailed(
     related_to_lte: Union[Unset, int] = UNSET,
     related_to_ob_id: Union[Unset, int] = UNSET,
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
+    related_to_short_code: Union[Unset, str] = UNSET,
+    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
     short_url: Union[Unset, str] = UNSET,
@@ -485,6 +497,8 @@ def sync_detailed(
         related_to_lte (Union[Unset, int]):
         related_to_ob_id (Union[Unset, int]):
         related_to_ob_id_in (Union[Unset, list[int]]):
+        related_to_short_code (Union[Unset, str]):
+        related_to_short_code_in (Union[Unset, list[str]]):
         related_to_uuid (Union[Unset, str]):
         related_to_uuid_in (Union[Unset, list[str]]):
         short_url (Union[Unset, str]):
@@ -578,6 +592,8 @@ def sync_detailed(
         related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
+        related_to_short_code=related_to_short_code,
+        related_to_short_code_in=related_to_short_code_in,
         related_to_uuid=related_to_uuid,
         related_to_uuid_in=related_to_uuid_in,
         short_url=short_url,
@@ -673,6 +689,8 @@ def sync(
     related_to_lte: Union[Unset, int] = UNSET,
     related_to_ob_id: Union[Unset, int] = UNSET,
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
+    related_to_short_code: Union[Unset, str] = UNSET,
+    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
     short_url: Union[Unset, str] = UNSET,
@@ -760,6 +778,8 @@ def sync(
         related_to_lte (Union[Unset, int]):
         related_to_ob_id (Union[Unset, int]):
         related_to_ob_id_in (Union[Unset, list[int]]):
+        related_to_short_code (Union[Unset, str]):
+        related_to_short_code_in (Union[Unset, list[str]]):
         related_to_uuid (Union[Unset, str]):
         related_to_uuid_in (Union[Unset, list[str]]):
         short_url (Union[Unset, str]):
@@ -854,6 +874,8 @@ def sync(
         related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
+        related_to_short_code=related_to_short_code,
+        related_to_short_code_in=related_to_short_code_in,
         related_to_uuid=related_to_uuid,
         related_to_uuid_in=related_to_uuid_in,
         short_url=short_url,
@@ -943,6 +965,8 @@ async def asyncio_detailed(
     related_to_lte: Union[Unset, int] = UNSET,
     related_to_ob_id: Union[Unset, int] = UNSET,
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
+    related_to_short_code: Union[Unset, str] = UNSET,
+    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
     short_url: Union[Unset, str] = UNSET,
@@ -1030,6 +1054,8 @@ async def asyncio_detailed(
         related_to_lte (Union[Unset, int]):
         related_to_ob_id (Union[Unset, int]):
         related_to_ob_id_in (Union[Unset, list[int]]):
+        related_to_short_code (Union[Unset, str]):
+        related_to_short_code_in (Union[Unset, list[str]]):
         related_to_uuid (Union[Unset, str]):
         related_to_uuid_in (Union[Unset, list[str]]):
         short_url (Union[Unset, str]):
@@ -1123,6 +1149,8 @@ async def asyncio_detailed(
         related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
+        related_to_short_code=related_to_short_code,
+        related_to_short_code_in=related_to_short_code_in,
         related_to_uuid=related_to_uuid,
         related_to_uuid_in=related_to_uuid_in,
         short_url=short_url,
@@ -1216,6 +1244,8 @@ async def asyncio(
     related_to_lte: Union[Unset, int] = UNSET,
     related_to_ob_id: Union[Unset, int] = UNSET,
     related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
+    related_to_short_code: Union[Unset, str] = UNSET,
+    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
     related_to_uuid: Union[Unset, str] = UNSET,
     related_to_uuid_in: Union[Unset, list[str]] = UNSET,
     short_url: Union[Unset, str] = UNSET,
@@ -1303,6 +1333,8 @@ async def asyncio(
         related_to_lte (Union[Unset, int]):
         related_to_ob_id (Union[Unset, int]):
         related_to_ob_id_in (Union[Unset, list[int]]):
+        related_to_short_code (Union[Unset, str]):
+        related_to_short_code_in (Union[Unset, list[str]]):
         related_to_uuid (Union[Unset, str]):
         related_to_uuid_in (Union[Unset, list[str]]):
         short_url (Union[Unset, str]):
@@ -1398,6 +1430,8 @@ async def asyncio(
             related_to_lte=related_to_lte,
             related_to_ob_id=related_to_ob_id,
             related_to_ob_id_in=related_to_ob_id_in,
+            related_to_short_code=related_to_short_code,
+            related_to_short_code_in=related_to_short_code_in,
             related_to_uuid=related_to_uuid,
             related_to_uuid_in=related_to_uuid_in,
             short_url=short_url,

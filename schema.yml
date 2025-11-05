@@ -4728,6 +4728,19 @@ paths:
         explode: false
         style: form
       - in: query
+        name: relatedTo__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedTo__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
         name: relatedTo__uuid
         schema:
           type: string
@@ -5190,6 +5203,19 @@ paths:
           type: array
           items:
             type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedTo__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedTo__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
         description: Multiple values may be separated by commas.
         explode: false
         style: form
@@ -7773,6 +7799,19 @@ paths:
           type: array
           items:
             type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedTo__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedTo__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
         description: Multiple values may be separated by commas.
         explode: false
         style: form
@@ -15363,6 +15402,19 @@ paths:
           type: array
           items:
             type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedTo__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedTo__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
         description: Multiple values may be separated by commas.
         explode: false
         style: form
@@ -24484,6 +24536,13 @@ components:
             title: Internal identifier (ob_id)
             nullable: true
           readOnly: true
+        onlineresource_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - abstract
       - dataPublishedTime
@@ -24495,6 +24554,7 @@ components:
       - keywords
       - member
       - ob_id
+      - onlineresource_set
       - publicationState
       - responsiblepartyinfo_set
       - short_code
@@ -24823,6 +24883,13 @@ components:
             title: Internal identifier (ob_id)
             nullable: true
           readOnly: true
+        onlineresource_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - abstract
       - creationDate
@@ -24842,6 +24909,7 @@ components:
       - nonGeographicFlag
       - ob_id
       - observationcollection_set
+      - onlineresource_set
       - permissions
       - phenomena
       - procedureAcquisition
@@ -27199,6 +27267,13 @@ components:
             title: Internal identifier (ob_id)
             nullable: true
           readOnly: true
+        onlineresource_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - abstract
       - childPlatform
@@ -27207,6 +27282,7 @@ components:
       - keywords
       - location
       - ob_id
+      - onlineresource_set
       - parentPlatform
       - platformType
       - responsiblepartyinfo_set
@@ -27770,6 +27846,13 @@ components:
             title: Internal identifier (ob_id)
             nullable: true
           readOnly: true
+        onlineresource_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - abstract
       - identifier_set
@@ -27777,6 +27860,7 @@ components:
       - keywords
       - ob_id
       - observationCollection
+      - onlineresource_set
       - parentProject
       - publicationState
       - responsiblepartyinfo_set
@@ -28208,6 +28292,13 @@ components:
           allOf:
           - $ref: '#/components/schemas/SimpleRead'
           readOnly: true
+        onlineresource_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - curationCategory
       - dataPath
@@ -28216,6 +28307,7 @@ components:
       - ob_id
       - observation
       - oldDataPath
+      - onlineresource_set
       - short_code
       - storageLocation
       - storageStatus

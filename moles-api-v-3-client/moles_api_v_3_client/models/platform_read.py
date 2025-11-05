@@ -34,6 +34,7 @@ class PlatformRead:
             parent_platform (Union[None, list['SimpleRead']]):
             identifier_set (list[Union[None, int]]):
             responsiblepartyinfo_set (list[Union[None, int]]):
+            onlineresource_set (list[Union[None, int]]):
     """
 
     ob_id: int
@@ -49,6 +50,7 @@ class PlatformRead:
     parent_platform: Union[None, list["SimpleRead"]]
     identifier_set: list[Union[None, int]]
     responsiblepartyinfo_set: list[Union[None, int]]
+    onlineresource_set: list[Union[None, int]]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -116,6 +118,12 @@ class PlatformRead:
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
+        onlineresource_set = []
+        for onlineresource_set_item_data in self.onlineresource_set:
+            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item = onlineresource_set_item_data
+            onlineresource_set.append(onlineresource_set_item)
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -133,6 +141,7 @@ class PlatformRead:
                 "parentPlatform": parent_platform,
                 "identifier_set": identifier_set,
                 "responsiblepartyinfo_set": responsiblepartyinfo_set,
+                "onlineresource_set": onlineresource_set,
             }
         )
 
@@ -267,6 +276,19 @@ class PlatformRead:
 
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
+        onlineresource_set = []
+        _onlineresource_set = d.pop("onlineresource_set")
+        for onlineresource_set_item_data in _onlineresource_set:
+
+            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+                if data is None:
+                    return data
+                return cast(Union[None, int], data)
+
+            onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
+
+            onlineresource_set.append(onlineresource_set_item)
+
         platform_read = cls(
             ob_id=ob_id,
             uuid=uuid,
@@ -281,6 +303,7 @@ class PlatformRead:
             parent_platform=parent_platform,
             identifier_set=identifier_set,
             responsiblepartyinfo_set=responsiblepartyinfo_set,
+            onlineresource_set=onlineresource_set,
         )
 
         platform_read.additional_properties = d
