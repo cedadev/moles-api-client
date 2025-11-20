@@ -5,5 +5,5 @@ def get_client():
     token = os.environ.get("API_TOKEN")
     base_url = os.environ.get("API_URL")
     if token:
-        return AuthenticatedClient(base_url=base_url, token=token)
+        return AuthenticatedClient(base_url=base_url, token=token, verify_ssl=False)
     return Client(base_url=base_url)

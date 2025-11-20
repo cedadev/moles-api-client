@@ -10,49 +10,53 @@ started 18/12/2015 by G.A. Parton
 use 
 
 from moles_basic_tools import *
-
-
 """
 import sys
-from typing import TypeVar, Optional, Protocol
-
-
-
-T = TypeVar("T")
+from typing import Protocol
+from enum import Enum
 
 from scripts.utils import get_client
 from moles_api_v_3_client.client import AuthenticatedClient
 
-token = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZjhmaUpyaUtDY3hmaHhzdU5vazVEekdJdFZ4amhhTWNJa05ZX2U4MnhJIn0.eyJleHAiOjE3NjE4MjA3ODMsImlhdCI6MTc2MTU2MTU4MywianRpIjoiZTI4M2M5Y2UtZTI4Ny00MmJhLTk0ZWYtMmQ2YjEwM2M5Yzc4IiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5jZWRhLmFjLnVrL3JlYWxtcy9jZWRhIiwic3ViIjoiNzhhMzRlMzYtZjM4MC00NGY2LThmZmItNTQ3NDk0OWNjYjExIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VydmljZXMtcG9ydGFsLWNlZGEtYWMtdWsiLCJzZXNzaW9uX3N0YXRlIjoiZmMxZmE5M2QtYzFlMi00NTM0LWE0MjAtMGMxZDhkYTBhM2I0IiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgb3BlbmlkIHByb2ZpbGUgZ3JvdXBfbWVtYmVyc2hpcCIsInNpZCI6ImZjMWZhOTNkLWMxZTItNDUzNC1hNDIwLTBjMWQ4ZGEwYTNiNCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJvcGVuaWQiOiJodHRwczovL2NlZGEuYWMudWsvb3BlbmlkL0Fkcmlhbi5EZWJza2kiLCJuYW1lIjoiQWRyaWFuIERlYnNraSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkZWJza2kiLCJnaXZlbl9uYW1lIjoiQWRyaWFuIiwiZmFtaWx5X25hbWUiOiJEZWJza2kiLCJlbWFpbCI6ImFkcmlhbi5kZWJza2lAc3RmYy5hYy51ayJ9.tfi8XuXQLoHFlV4wPQ_5O185WbJ9q5UVJgv59GEucwkbCilG6kfEk0DOlEyh6X-SVFcnmpJt9-5GgyzKK8AqktG2H4lK30cfwONDAGrdjuJRxBsD1s7N38Z-eUvvabP7YDAU5kNxCodWLti3v0zUJb152cUkOkfHKhrtKKzcM__V4eYteai3tYrkEcCOQoo0935r9vAJ9w8eyIEZOJxuJgfD451bcpH1kFjBqqtipkxJGBQtIOjgsme251QGJKriswEqNN_9-GlFEH9D1U5fjQCzp2mSlUqXNo8gCuFnR9uNgkqY8nTu2OpDGHJW3ERGD2UaO28XdDLQhg602pxdWQ'
+token = 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4ZjhmaUpyaUtDY3hmaHhzdU5vazVEekdJdFZ4amhhTWNJa05ZX2U4MnhJIn0.eyJleHAiOjE3NjI2ODcyODMsImlhdCI6MTc2MjQyODA4MywianRpIjoiOTIxYWQ0NTgtZDg4OS00Mzg3LThhNTQtYjdhZDVlNThjODc1IiwiaXNzIjoiaHR0cHM6Ly9hY2NvdW50cy5jZWRhLmFjLnVrL3JlYWxtcy9jZWRhIiwic3ViIjoiNzhhMzRlMzYtZjM4MC00NGY2LThmZmItNTQ3NDk0OWNjYjExIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoic2VydmljZXMtcG9ydGFsLWNlZGEtYWMtdWsiLCJzZXNzaW9uX3N0YXRlIjoiNjI2ZGM5NzEtYTMyMC00Mzg2LWFkZmMtNDI2ZmNiMmY4NmQ5IiwiYWNyIjoiMSIsInNjb3BlIjoiZW1haWwgb3BlbmlkIHByb2ZpbGUgZ3JvdXBfbWVtYmVyc2hpcCIsInNpZCI6IjYyNmRjOTcxLWEzMjAtNDM4Ni1hZGZjLTQyNmZjYjJmODZkOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJvcGVuaWQiOiJodHRwczovL2NlZGEuYWMudWsvb3BlbmlkL0Fkcmlhbi5EZWJza2kiLCJuYW1lIjoiQWRyaWFuIERlYnNraSIsInByZWZlcnJlZF91c2VybmFtZSI6ImFkZWJza2kiLCJnaXZlbl9uYW1lIjoiQWRyaWFuIiwiZmFtaWx5X25hbWUiOiJEZWJza2kiLCJlbWFpbCI6ImFkcmlhbi5kZWJza2lAc3RmYy5hYy51ayJ9.brN4zra7fhxUYdfD_vgqUGncJGXdowEJy1lCqXjFa7hP2OKuBFF0Ce75CiR8JavkxJ71VJFqvyT3vss2L5k46nBpCT7X-nLT0rvqmj5cbQApaKdazBJX042a9bFZD_IN02GzXWDj_N2a5D6aS1UXHqBZd_JUdYzB3RBsQI0O32p6yVZ1aExfFY4n5aiUpRxv7Mo85bKtMNz9kBmmoXmQTFQpc96GcVBvhTc-2C1EHDWfItCc9vcen2eJ0PkvzJ31tUBP2DijptCrULEIxhzeoXklIczgDA4PpV6G2zKaPj-tabs848W2XMOPBjJe3JmYfZAif_9dRVerCvlbjy9fKw'
 CLIENT = AuthenticatedClient(base_url='http://localhost:8000', token=token)
 
-from moles_api_v_3_client.api.identifiers import identifiers_list
-from moles_api_v_3_client.api.referenceables import referenceables_list
-
+# --- Core API endpoints (by domain) ---
 from moles_api_v_3_client.api.acquisitions import acquisitions_list
-from moles_api_v_3_client.api.observationcollections import observationcollections_list
 from moles_api_v_3_client.api.computations import computations_list
+from moles_api_v_3_client.api.identifiers import identifiers_list, identifiers_partial_update
 from moles_api_v_3_client.api.instruments import instruments_list
 from moles_api_v_3_client.api.mpos import mpos_list
+from moles_api_v_3_client.api.observationcollections import observationcollections_list
 from moles_api_v_3_client.api.observations import observations_list
+from moles_api_v_3_client.api.onlineresources import onlineresources_list, onlineresources_create
+from moles_api_v_3_client.api.parties import parties_create, parties_list
 from moles_api_v_3_client.api.platforms import platforms_list
 from moles_api_v_3_client.api.projects import projects_list
+from moles_api_v_3_client.api.referenceables import referenceables_list
 from moles_api_v_3_client.api.results import results_list
-
-from moles_api_v_3_client.api.onlineresources import onlineresources_list, onlineresources_create
-from moles_api_v_3_client.models.online_resource_write_request import OnlineResourceWriteRequest
-from moles_api_v_3_client.models.observation_read import ObservationRead
-
-from moles_api_v_3_client.api.parties import parties_create, parties_list
-from moles_api_v_3_client.models.party_write_request import PartyWriteRequest
-from moles_api_v_3_client.models.party_read import PartyRead
-
 from moles_api_v_3_client.api.rpis import rpis_create, rpis_list
-from moles_api_v_3_client.models.responsible_party_info_write_request import ResponsiblePartyInfoWriteRequest
-from moles_api_v_3_client.models.responsible_party_info_read import ResponsiblePartyInfoRead
-from moles_api_v_3_client.models.role_enum import RoleEnum
 
+# --- Models: core data entities ---
 from moles_api_v_3_client.models.referenceable import Referenceable
+from moles_api_v_3_client.models.observation_collection_read import ObservationCollectionRead
+from moles_api_v_3_client.models.observation_read import ObservationRead
+from moles_api_v_3_client.models.result_read import ResultRead  # (optional if used)
+
+# --- Models: parties and roles ---
+from moles_api_v_3_client.models.party_read import PartyRead
+from moles_api_v_3_client.models.party_write_request import PartyWriteRequest
+from moles_api_v_3_client.models.role_enum import RoleEnum
+from moles_api_v_3_client.models.responsible_party_info_read import ResponsiblePartyInfoRead
+from moles_api_v_3_client.models.responsible_party_info_write_request import ResponsiblePartyInfoWriteRequest
+from moles_api_v_3_client.models.identifier_type_enum import IdentifierTypeEnum
+
+# --- Models: online resources ---
+from moles_api_v_3_client.models.online_resource_write_request import OnlineResourceWriteRequest
+
+# --- Models: identifiers and misc ---
+from moles_api_v_3_client.models.patched_identifier_write_request import PatchedIdentifierWriteRequest
+
 
 
 SHORT_CODES_TO_ENDPOINTS_MAP = {
@@ -76,15 +80,13 @@ log = logging.getLogger(__name__)
 class ApiReadReferenceable(Protocol):
     uuid: str
 
-
-
-def _get_role_enum(value: str) -> RoleEnum:
+def _get_value_enum(value: str, enum_class: Enum) -> Enum:
     '''
     Helper function for getting Enum value corresponding to the given string (there's no built in function in the class)
     '''
     normalized = value.strip().lower()
     
-    for role in RoleEnum:
+    for role in enum_class:
         if role.value.lower() == normalized:
             return role
         
@@ -108,7 +110,7 @@ def doi_id_checker(record: Referenceable) -> bool:
     if it has, then the record should NOT be editted
     """
     uuid = record.uuid
-    res = identifiers_list.sync_detailed(client=CLIENT, identifier_type='doi', related_to_uuid=uuid)
+    res = identifiers_list.sync_detailed(client=CLIENT, identifier_type=_get_value_enum('doi', IdentifierTypeEnum), related_to_uuid=uuid)
     
     return res.parsed.count > 0
 
@@ -191,7 +193,7 @@ def party_maker(party_first: str, party_last: str) -> PartyRead:
 def rpi_maker(role: str, party_ob_id: int, related_to: str, priority:int = 1) -> ResponsiblePartyInfoRead:
     model = ResponsiblePartyInfoWriteRequest(
         party = party_ob_id,
-        role = _get_role_enum(role),
+        role = _get_value_enum(role, RoleEnum),
         priority=priority,
         related_to=related_to
     )
@@ -242,7 +244,7 @@ def add_parties(party_dict: dict[str, list[PartyRead]], target_record_uuid: str)
                 continue
             
             model = ResponsiblePartyInfoWriteRequest(
-                role=_get_role_enum(role),
+                role=_get_value_enum(role, RoleEnum),
                 party = party.ob_id,
                 priority = priority,
                 related_to = target_record_uuid
@@ -250,3 +252,86 @@ def add_parties(party_dict: dict[str, list[PartyRead]], target_record_uuid: str)
             response = rpis_create.sync_detailed(client=CLIENT, body=model)
             
             priority += 1
+
+def copy_party_by_role(source_object: ApiReadReferenceable, target_object: ApiReadReferenceable, role: str) -> None:
+    """
+    quick function to copy parties doing a specific role from source object to target object
+    (useful when merging records)
+    """
+
+    # for each resp info in the set
+    # get party and priority
+    
+    # then check for same party in target of that role
+    # if not, then get existing instances and then 
+    # add new party info with increased priority
+    res = rpis_list.sync_detailed(client=CLIENT, role=_get_value_enum(role, RoleEnum), related_to_uuid=source_object.uuid)
+    source_parties = [rpi.party for rpi in res.parsed.results]
+    party_dict = {role: source_parties}
+    
+    add_parties(party_dict, target_object.uuid)
+   
+def move_identifiers(source_object: ApiReadReferenceable, target_object: ApiReadReferenceable) -> None:
+    """
+    Function to copy online resources from source object to target object
+    (useful when merging records)
+    """    
+    res = identifiers_list.sync_detailed(client=CLIENT, related_to_uuid=source_object.uuid)
+    s_identifiers = res.parsed.results
+    
+    for identifier in s_identifiers:
+        model = PatchedIdentifierWriteRequest(
+            related_to=target_object.uuid
+        )
+        res = identifiers_partial_update.sync_detailed(client=CLIENT, ob_id=identifier.ob_id, body=model)
+    
+def get_primary_obs_for_collection(obs_col: ObservationCollectionRead, pub_level: int = 1, unique: bool = True) -> list:
+    """
+    find observations which cite the project pointing to the collection
+    and which are either published or citable
+
+    """
+    obs_col_project_set = obs_col.project_set
+    primary_obs = []
+    
+    publication_status = ['published', 'citable']
+    if pub_level != 1:
+        publication_status += ['working', 'obsolete', 'historic']
+    
+    if not obs_col_project_set:
+        log.warning('this does not have proj set: %s',obs_col.uuid)
+        return primary_obs
+        
+        
+    res = observations_list.sync_detailed(client=CLIENT, ob_id_in=obs_col.member)
+    observations = res.parsed.results
+    
+    for ob in observations:
+        #first check is that it is a primary observation within the set, i.e. not a third party obs
+        primary_proj_listed = 0
+        
+        for ob_proj in ob.projects:
+            if ob_proj.ob_id in obs_col_project_set:
+                primary_proj_listed = 1
+                break
+        
+        
+        if not primary_proj_listed:
+            continue
+        
+        if not ob.publicationState in publication_status:
+            continue
+        
+        if not unique:
+            primary_obs.append(ob)
+            continue
+        
+        res = results_list.sync_detailed(client=CLIENT, data_path=ob.result_field.data_path)
+        if res.parsed.count != 1:
+            log.warning(ob.result_field.internalPath)
+            continue
+        
+        primary_obs.append(ob)
+                   
+                        
+    return primary_obs

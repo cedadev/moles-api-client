@@ -39,6 +39,7 @@ class ObservationCollectionRead:
             identifier_set (list[Union[None, int]]):
             responsiblepartyinfo_set (list[Union[None, int]]):
             onlineresource_set (list[Union[None, int]]):
+            project_set (list[Union[None, int]]):
     """
 
     ob_id: int
@@ -57,6 +58,7 @@ class ObservationCollectionRead:
     identifier_set: list[Union[None, int]]
     responsiblepartyinfo_set: list[Union[None, int]]
     onlineresource_set: list[Union[None, int]]
+    project_set: list[Union[None, int]]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -131,6 +133,12 @@ class ObservationCollectionRead:
             onlineresource_set_item = onlineresource_set_item_data
             onlineresource_set.append(onlineresource_set_item)
 
+        project_set = []
+        for project_set_item_data in self.project_set:
+            project_set_item: Union[None, int]
+            project_set_item = project_set_item_data
+            project_set.append(project_set_item)
+
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
@@ -151,6 +159,7 @@ class ObservationCollectionRead:
                 "identifier_set": identifier_set,
                 "responsiblepartyinfo_set": responsiblepartyinfo_set,
                 "onlineresource_set": onlineresource_set,
+                "project_set": project_set,
             }
         )
 
@@ -302,6 +311,19 @@ class ObservationCollectionRead:
 
             onlineresource_set.append(onlineresource_set_item)
 
+        project_set = []
+        _project_set = d.pop("project_set")
+        for project_set_item_data in _project_set:
+
+            def _parse_project_set_item(data: object) -> Union[None, int]:
+                if data is None:
+                    return data
+                return cast(Union[None, int], data)
+
+            project_set_item = _parse_project_set_item(project_set_item_data)
+
+            project_set.append(project_set_item)
+
         observation_collection_read = cls(
             ob_id=ob_id,
             uuid=uuid,
@@ -319,6 +341,7 @@ class ObservationCollectionRead:
             identifier_set=identifier_set,
             responsiblepartyinfo_set=responsiblepartyinfo_set,
             onlineresource_set=onlineresource_set,
+            project_set=project_set,
         )
 
         observation_collection_read.additional_properties = d

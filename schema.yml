@@ -24543,6 +24543,13 @@ components:
             title: Internal identifier (ob_id)
             nullable: true
           readOnly: true
+        project_set:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
       required:
       - abstract
       - dataPublishedTime
@@ -24555,6 +24562,7 @@ components:
       - member
       - ob_id
       - onlineresource_set
+      - project_set
       - publicationState
       - responsiblepartyinfo_set
       - short_code
