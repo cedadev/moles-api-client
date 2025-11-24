@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,21 +22,21 @@ class ConstraintsRead:
 
         Attributes:
             ob_id (int):
-            access_constraints (Union[None, str]):
+            access_constraints (None | str):
             access_category (AccessCategoryEnum): * `public` - Public access no restriction
                 * `registered` - Available to any registered user (no dataset registration required)
                 * `restricted` - Dataset registration required
-            access_roles (Union[None, str]):
-            label (Union[None, str]):
-            licence (Union['LicenceRead', None]):
+            access_roles (None | str):
+            label (None | str):
+            licence (LicenceRead | None):
     """
 
     ob_id: int
-    access_constraints: Union[None, str]
+    access_constraints: None | str
     access_category: AccessCategoryEnum
-    access_roles: Union[None, str]
-    label: Union[None, str]
-    licence: Union["LicenceRead", None]
+    access_roles: None | str
+    label: None | str
+    licence: LicenceRead | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -42,18 +44,18 @@ class ConstraintsRead:
 
         ob_id = self.ob_id
 
-        access_constraints: Union[None, str]
+        access_constraints: None | str
         access_constraints = self.access_constraints
 
         access_category = self.access_category.value
 
-        access_roles: Union[None, str]
+        access_roles: None | str
         access_roles = self.access_roles
 
-        label: Union[None, str]
+        label: None | str
         label = self.label
 
-        licence: Union[None, dict[str, Any]]
+        licence: dict[str, Any] | None
         if isinstance(self.licence, LicenceRead):
             licence = self.licence.to_dict()
         else:
@@ -81,30 +83,30 @@ class ConstraintsRead:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        def _parse_access_constraints(data: object) -> Union[None, str]:
+        def _parse_access_constraints(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         access_constraints = _parse_access_constraints(d.pop("accessConstraints"))
 
         access_category = AccessCategoryEnum(d.pop("accessCategory"))
 
-        def _parse_access_roles(data: object) -> Union[None, str]:
+        def _parse_access_roles(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         access_roles = _parse_access_roles(d.pop("accessRoles"))
 
-        def _parse_label(data: object) -> Union[None, str]:
+        def _parse_label(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         label = _parse_label(d.pop("label"))
 
-        def _parse_licence(data: object) -> Union["LicenceRead", None]:
+        def _parse_licence(data: object) -> LicenceRead | None:
             if data is None:
                 return data
             try:
@@ -113,9 +115,9 @@ class ConstraintsRead:
                 licence_type_1 = LicenceRead.from_dict(data)
 
                 return licence_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["LicenceRead", None], data)
+            return cast(LicenceRead | None, data)
 
         licence = _parse_licence(d.pop("licence"))
 

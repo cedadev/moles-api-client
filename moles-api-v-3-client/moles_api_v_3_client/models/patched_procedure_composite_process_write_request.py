@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,16 +17,16 @@ class PatchedProcedureCompositeProcessWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            title (Union[Unset, str]):
-            abstract (Union[Unset, str]):
-            computation_component (Union[Unset, list[int]]):
-            acquisition_component (Union[Unset, list[int]]):
+            title (str | Unset):
+            abstract (str | Unset):
+            computation_component (list[int] | Unset):
+            acquisition_component (list[int] | Unset):
     """
 
-    title: Union[Unset, str] = UNSET
-    abstract: Union[Unset, str] = UNSET
-    computation_component: Union[Unset, list[int]] = UNSET
-    acquisition_component: Union[Unset, list[int]] = UNSET
+    title: str | Unset = UNSET
+    abstract: str | Unset = UNSET
+    computation_component: list[int] | Unset = UNSET
+    acquisition_component: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,11 +34,11 @@ class PatchedProcedureCompositeProcessWriteRequest:
 
         abstract = self.abstract
 
-        computation_component: Union[Unset, list[int]] = UNSET
+        computation_component: list[int] | Unset = UNSET
         if not isinstance(self.computation_component, Unset):
             computation_component = ",".join(map(str, self.computation_component))
 
-        acquisition_component: Union[Unset, list[int]] = UNSET
+        acquisition_component: list[int] | Unset = UNSET
         if not isinstance(self.acquisition_component, Unset):
             acquisition_component = ",".join(map(str, self.acquisition_component))
 

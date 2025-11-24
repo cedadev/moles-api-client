@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,80 +11,80 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    highest_level_bound: Union[Unset, float] = UNSET,
-    highest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    highest_level_bound_contains: Union[Unset, float] = UNSET,
-    highest_level_bound_endswith: Union[Unset, float] = UNSET,
-    highest_level_bound_gt: Union[Unset, float] = UNSET,
-    highest_level_bound_gte: Union[Unset, float] = UNSET,
-    highest_level_bound_icontains: Union[Unset, float] = UNSET,
-    highest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    highest_level_bound_iexact: Union[Unset, float] = UNSET,
-    highest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_iregex: Union[Unset, float] = UNSET,
-    highest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    highest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    highest_level_bound_lt: Union[Unset, float] = UNSET,
-    highest_level_bound_lte: Union[Unset, float] = UNSET,
-    highest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_regex: Union[Unset, float] = UNSET,
-    highest_level_bound_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    lowest_level_bound: Union[Unset, float] = UNSET,
-    lowest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    lowest_level_bound_contains: Union[Unset, float] = UNSET,
-    lowest_level_bound_endswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_gt: Union[Unset, float] = UNSET,
-    lowest_level_bound_gte: Union[Unset, float] = UNSET,
-    lowest_level_bound_icontains: Union[Unset, float] = UNSET,
-    lowest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_iexact: Union[Unset, float] = UNSET,
-    lowest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_iregex: Union[Unset, float] = UNSET,
-    lowest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    lowest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_lt: Union[Unset, float] = UNSET,
-    lowest_level_bound_lte: Union[Unset, float] = UNSET,
-    lowest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_regex: Union[Unset, float] = UNSET,
-    lowest_level_bound_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    units: Union[Unset, str] = UNSET,
-    units_contains: Union[Unset, str] = UNSET,
-    units_endswith: Union[Unset, str] = UNSET,
-    units_gt: Union[Unset, str] = UNSET,
-    units_gte: Union[Unset, str] = UNSET,
-    units_icontains: Union[Unset, str] = UNSET,
-    units_iendswith: Union[Unset, str] = UNSET,
-    units_iexact: Union[Unset, str] = UNSET,
-    units_in: Union[Unset, list[str]] = UNSET,
-    units_iregex: Union[Unset, str] = UNSET,
-    units_isnull: Union[Unset, bool] = UNSET,
-    units_istartswith: Union[Unset, str] = UNSET,
-    units_lt: Union[Unset, str] = UNSET,
-    units_lte: Union[Unset, str] = UNSET,
-    units_range: Union[Unset, list[str]] = UNSET,
-    units_regex: Union[Unset, str] = UNSET,
-    units_startswith: Union[Unset, str] = UNSET,
+    highest_level_bound: float | Unset = UNSET,
+    highest_level_bound_contained_by: float | Unset = UNSET,
+    highest_level_bound_contains: float | Unset = UNSET,
+    highest_level_bound_endswith: float | Unset = UNSET,
+    highest_level_bound_gt: float | Unset = UNSET,
+    highest_level_bound_gte: float | Unset = UNSET,
+    highest_level_bound_icontains: float | Unset = UNSET,
+    highest_level_bound_iendswith: float | Unset = UNSET,
+    highest_level_bound_iexact: float | Unset = UNSET,
+    highest_level_bound_in: list[float] | Unset = UNSET,
+    highest_level_bound_iregex: float | Unset = UNSET,
+    highest_level_bound_isnull: bool | Unset = UNSET,
+    highest_level_bound_istartswith: float | Unset = UNSET,
+    highest_level_bound_lt: float | Unset = UNSET,
+    highest_level_bound_lte: float | Unset = UNSET,
+    highest_level_bound_range: list[float] | Unset = UNSET,
+    highest_level_bound_regex: float | Unset = UNSET,
+    highest_level_bound_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    lowest_level_bound: float | Unset = UNSET,
+    lowest_level_bound_contained_by: float | Unset = UNSET,
+    lowest_level_bound_contains: float | Unset = UNSET,
+    lowest_level_bound_endswith: float | Unset = UNSET,
+    lowest_level_bound_gt: float | Unset = UNSET,
+    lowest_level_bound_gte: float | Unset = UNSET,
+    lowest_level_bound_icontains: float | Unset = UNSET,
+    lowest_level_bound_iendswith: float | Unset = UNSET,
+    lowest_level_bound_iexact: float | Unset = UNSET,
+    lowest_level_bound_in: list[float] | Unset = UNSET,
+    lowest_level_bound_iregex: float | Unset = UNSET,
+    lowest_level_bound_isnull: bool | Unset = UNSET,
+    lowest_level_bound_istartswith: float | Unset = UNSET,
+    lowest_level_bound_lt: float | Unset = UNSET,
+    lowest_level_bound_lte: float | Unset = UNSET,
+    lowest_level_bound_range: list[float] | Unset = UNSET,
+    lowest_level_bound_regex: float | Unset = UNSET,
+    lowest_level_bound_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    units: str | Unset = UNSET,
+    units_contains: str | Unset = UNSET,
+    units_endswith: str | Unset = UNSET,
+    units_gt: str | Unset = UNSET,
+    units_gte: str | Unset = UNSET,
+    units_icontains: str | Unset = UNSET,
+    units_iendswith: str | Unset = UNSET,
+    units_iexact: str | Unset = UNSET,
+    units_in: list[str] | Unset = UNSET,
+    units_iregex: str | Unset = UNSET,
+    units_isnull: bool | Unset = UNSET,
+    units_istartswith: str | Unset = UNSET,
+    units_lt: str | Unset = UNSET,
+    units_lte: str | Unset = UNSET,
+    units_range: list[str] | Unset = UNSET,
+    units_regex: str | Unset = UNSET,
+    units_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -106,7 +106,7 @@ def _get_kwargs(
 
     params["highestLevelBound__iexact"] = highest_level_bound_iexact
 
-    json_highest_level_bound_in: Union[Unset, list[float]] = UNSET
+    json_highest_level_bound_in: list[float] | Unset = UNSET
     if not isinstance(highest_level_bound_in, Unset):
         json_highest_level_bound_in = ",".join(map(str, highest_level_bound_in))
 
@@ -122,7 +122,7 @@ def _get_kwargs(
 
     params["highestLevelBound__lte"] = highest_level_bound_lte
 
-    json_highest_level_bound_range: Union[Unset, list[float]] = UNSET
+    json_highest_level_bound_range: list[float] | Unset = UNSET
     if not isinstance(highest_level_bound_range, Unset):
         json_highest_level_bound_range = ",".join(map(str, highest_level_bound_range))
 
@@ -152,7 +152,7 @@ def _get_kwargs(
 
     params["lowestLevelBound__iexact"] = lowest_level_bound_iexact
 
-    json_lowest_level_bound_in: Union[Unset, list[float]] = UNSET
+    json_lowest_level_bound_in: list[float] | Unset = UNSET
     if not isinstance(lowest_level_bound_in, Unset):
         json_lowest_level_bound_in = ",".join(map(str, lowest_level_bound_in))
 
@@ -168,7 +168,7 @@ def _get_kwargs(
 
     params["lowestLevelBound__lte"] = lowest_level_bound_lte
 
-    json_lowest_level_bound_range: Union[Unset, list[float]] = UNSET
+    json_lowest_level_bound_range: list[float] | Unset = UNSET
     if not isinstance(lowest_level_bound_range, Unset):
         json_lowest_level_bound_range = ",".join(map(str, lowest_level_bound_range))
 
@@ -196,7 +196,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -212,7 +212,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -242,7 +242,7 @@ def _get_kwargs(
 
     params["units__iexact"] = units_iexact
 
-    json_units_in: Union[Unset, list[str]] = UNSET
+    json_units_in: list[str] | Unset = UNSET
     if not isinstance(units_in, Unset):
         json_units_in = ",".join(map(str, units_in))
 
@@ -258,7 +258,7 @@ def _get_kwargs(
 
     params["units__lte"] = units_lte
 
-    json_units_range: Union[Unset, list[str]] = UNSET
+    json_units_range: list[str] | Unset = UNSET
     if not isinstance(units_range, Unset):
         json_units_range = ",".join(map(str, units_range))
 
@@ -280,8 +280,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedVerticalExtentReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedVerticalExtentReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedVerticalExtentReadList.from_dict(response.json())
 
@@ -294,7 +294,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedVerticalExtentReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -307,158 +307,158 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    highest_level_bound: Union[Unset, float] = UNSET,
-    highest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    highest_level_bound_contains: Union[Unset, float] = UNSET,
-    highest_level_bound_endswith: Union[Unset, float] = UNSET,
-    highest_level_bound_gt: Union[Unset, float] = UNSET,
-    highest_level_bound_gte: Union[Unset, float] = UNSET,
-    highest_level_bound_icontains: Union[Unset, float] = UNSET,
-    highest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    highest_level_bound_iexact: Union[Unset, float] = UNSET,
-    highest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_iregex: Union[Unset, float] = UNSET,
-    highest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    highest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    highest_level_bound_lt: Union[Unset, float] = UNSET,
-    highest_level_bound_lte: Union[Unset, float] = UNSET,
-    highest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_regex: Union[Unset, float] = UNSET,
-    highest_level_bound_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    lowest_level_bound: Union[Unset, float] = UNSET,
-    lowest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    lowest_level_bound_contains: Union[Unset, float] = UNSET,
-    lowest_level_bound_endswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_gt: Union[Unset, float] = UNSET,
-    lowest_level_bound_gte: Union[Unset, float] = UNSET,
-    lowest_level_bound_icontains: Union[Unset, float] = UNSET,
-    lowest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_iexact: Union[Unset, float] = UNSET,
-    lowest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_iregex: Union[Unset, float] = UNSET,
-    lowest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    lowest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_lt: Union[Unset, float] = UNSET,
-    lowest_level_bound_lte: Union[Unset, float] = UNSET,
-    lowest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_regex: Union[Unset, float] = UNSET,
-    lowest_level_bound_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    units: Union[Unset, str] = UNSET,
-    units_contains: Union[Unset, str] = UNSET,
-    units_endswith: Union[Unset, str] = UNSET,
-    units_gt: Union[Unset, str] = UNSET,
-    units_gte: Union[Unset, str] = UNSET,
-    units_icontains: Union[Unset, str] = UNSET,
-    units_iendswith: Union[Unset, str] = UNSET,
-    units_iexact: Union[Unset, str] = UNSET,
-    units_in: Union[Unset, list[str]] = UNSET,
-    units_iregex: Union[Unset, str] = UNSET,
-    units_isnull: Union[Unset, bool] = UNSET,
-    units_istartswith: Union[Unset, str] = UNSET,
-    units_lt: Union[Unset, str] = UNSET,
-    units_lte: Union[Unset, str] = UNSET,
-    units_range: Union[Unset, list[str]] = UNSET,
-    units_regex: Union[Unset, str] = UNSET,
-    units_startswith: Union[Unset, str] = UNSET,
+    highest_level_bound: float | Unset = UNSET,
+    highest_level_bound_contained_by: float | Unset = UNSET,
+    highest_level_bound_contains: float | Unset = UNSET,
+    highest_level_bound_endswith: float | Unset = UNSET,
+    highest_level_bound_gt: float | Unset = UNSET,
+    highest_level_bound_gte: float | Unset = UNSET,
+    highest_level_bound_icontains: float | Unset = UNSET,
+    highest_level_bound_iendswith: float | Unset = UNSET,
+    highest_level_bound_iexact: float | Unset = UNSET,
+    highest_level_bound_in: list[float] | Unset = UNSET,
+    highest_level_bound_iregex: float | Unset = UNSET,
+    highest_level_bound_isnull: bool | Unset = UNSET,
+    highest_level_bound_istartswith: float | Unset = UNSET,
+    highest_level_bound_lt: float | Unset = UNSET,
+    highest_level_bound_lte: float | Unset = UNSET,
+    highest_level_bound_range: list[float] | Unset = UNSET,
+    highest_level_bound_regex: float | Unset = UNSET,
+    highest_level_bound_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    lowest_level_bound: float | Unset = UNSET,
+    lowest_level_bound_contained_by: float | Unset = UNSET,
+    lowest_level_bound_contains: float | Unset = UNSET,
+    lowest_level_bound_endswith: float | Unset = UNSET,
+    lowest_level_bound_gt: float | Unset = UNSET,
+    lowest_level_bound_gte: float | Unset = UNSET,
+    lowest_level_bound_icontains: float | Unset = UNSET,
+    lowest_level_bound_iendswith: float | Unset = UNSET,
+    lowest_level_bound_iexact: float | Unset = UNSET,
+    lowest_level_bound_in: list[float] | Unset = UNSET,
+    lowest_level_bound_iregex: float | Unset = UNSET,
+    lowest_level_bound_isnull: bool | Unset = UNSET,
+    lowest_level_bound_istartswith: float | Unset = UNSET,
+    lowest_level_bound_lt: float | Unset = UNSET,
+    lowest_level_bound_lte: float | Unset = UNSET,
+    lowest_level_bound_range: list[float] | Unset = UNSET,
+    lowest_level_bound_regex: float | Unset = UNSET,
+    lowest_level_bound_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    units: str | Unset = UNSET,
+    units_contains: str | Unset = UNSET,
+    units_endswith: str | Unset = UNSET,
+    units_gt: str | Unset = UNSET,
+    units_gte: str | Unset = UNSET,
+    units_icontains: str | Unset = UNSET,
+    units_iendswith: str | Unset = UNSET,
+    units_iexact: str | Unset = UNSET,
+    units_in: list[str] | Unset = UNSET,
+    units_iregex: str | Unset = UNSET,
+    units_isnull: bool | Unset = UNSET,
+    units_istartswith: str | Unset = UNSET,
+    units_lt: str | Unset = UNSET,
+    units_lte: str | Unset = UNSET,
+    units_range: list[str] | Unset = UNSET,
+    units_regex: str | Unset = UNSET,
+    units_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedVerticalExtentReadList]:
     """Get a list of VerticalExtent objects.
 
     Args:
-        highest_level_bound (Union[Unset, float]):
-        highest_level_bound_contained_by (Union[Unset, float]):
-        highest_level_bound_contains (Union[Unset, float]):
-        highest_level_bound_endswith (Union[Unset, float]):
-        highest_level_bound_gt (Union[Unset, float]):
-        highest_level_bound_gte (Union[Unset, float]):
-        highest_level_bound_icontains (Union[Unset, float]):
-        highest_level_bound_iendswith (Union[Unset, float]):
-        highest_level_bound_iexact (Union[Unset, float]):
-        highest_level_bound_in (Union[Unset, list[float]]):
-        highest_level_bound_iregex (Union[Unset, float]):
-        highest_level_bound_isnull (Union[Unset, bool]):
-        highest_level_bound_istartswith (Union[Unset, float]):
-        highest_level_bound_lt (Union[Unset, float]):
-        highest_level_bound_lte (Union[Unset, float]):
-        highest_level_bound_range (Union[Unset, list[float]]):
-        highest_level_bound_regex (Union[Unset, float]):
-        highest_level_bound_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        lowest_level_bound (Union[Unset, float]):
-        lowest_level_bound_contained_by (Union[Unset, float]):
-        lowest_level_bound_contains (Union[Unset, float]):
-        lowest_level_bound_endswith (Union[Unset, float]):
-        lowest_level_bound_gt (Union[Unset, float]):
-        lowest_level_bound_gte (Union[Unset, float]):
-        lowest_level_bound_icontains (Union[Unset, float]):
-        lowest_level_bound_iendswith (Union[Unset, float]):
-        lowest_level_bound_iexact (Union[Unset, float]):
-        lowest_level_bound_in (Union[Unset, list[float]]):
-        lowest_level_bound_iregex (Union[Unset, float]):
-        lowest_level_bound_isnull (Union[Unset, bool]):
-        lowest_level_bound_istartswith (Union[Unset, float]):
-        lowest_level_bound_lt (Union[Unset, float]):
-        lowest_level_bound_lte (Union[Unset, float]):
-        lowest_level_bound_range (Union[Unset, list[float]]):
-        lowest_level_bound_regex (Union[Unset, float]):
-        lowest_level_bound_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        units (Union[Unset, str]):
-        units_contains (Union[Unset, str]):
-        units_endswith (Union[Unset, str]):
-        units_gt (Union[Unset, str]):
-        units_gte (Union[Unset, str]):
-        units_icontains (Union[Unset, str]):
-        units_iendswith (Union[Unset, str]):
-        units_iexact (Union[Unset, str]):
-        units_in (Union[Unset, list[str]]):
-        units_iregex (Union[Unset, str]):
-        units_isnull (Union[Unset, bool]):
-        units_istartswith (Union[Unset, str]):
-        units_lt (Union[Unset, str]):
-        units_lte (Union[Unset, str]):
-        units_range (Union[Unset, list[str]]):
-        units_regex (Union[Unset, str]):
-        units_startswith (Union[Unset, str]):
+        highest_level_bound (float | Unset):
+        highest_level_bound_contained_by (float | Unset):
+        highest_level_bound_contains (float | Unset):
+        highest_level_bound_endswith (float | Unset):
+        highest_level_bound_gt (float | Unset):
+        highest_level_bound_gte (float | Unset):
+        highest_level_bound_icontains (float | Unset):
+        highest_level_bound_iendswith (float | Unset):
+        highest_level_bound_iexact (float | Unset):
+        highest_level_bound_in (list[float] | Unset):
+        highest_level_bound_iregex (float | Unset):
+        highest_level_bound_isnull (bool | Unset):
+        highest_level_bound_istartswith (float | Unset):
+        highest_level_bound_lt (float | Unset):
+        highest_level_bound_lte (float | Unset):
+        highest_level_bound_range (list[float] | Unset):
+        highest_level_bound_regex (float | Unset):
+        highest_level_bound_startswith (float | Unset):
+        limit (int | Unset):
+        lowest_level_bound (float | Unset):
+        lowest_level_bound_contained_by (float | Unset):
+        lowest_level_bound_contains (float | Unset):
+        lowest_level_bound_endswith (float | Unset):
+        lowest_level_bound_gt (float | Unset):
+        lowest_level_bound_gte (float | Unset):
+        lowest_level_bound_icontains (float | Unset):
+        lowest_level_bound_iendswith (float | Unset):
+        lowest_level_bound_iexact (float | Unset):
+        lowest_level_bound_in (list[float] | Unset):
+        lowest_level_bound_iregex (float | Unset):
+        lowest_level_bound_isnull (bool | Unset):
+        lowest_level_bound_istartswith (float | Unset):
+        lowest_level_bound_lt (float | Unset):
+        lowest_level_bound_lte (float | Unset):
+        lowest_level_bound_range (list[float] | Unset):
+        lowest_level_bound_regex (float | Unset):
+        lowest_level_bound_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        units (str | Unset):
+        units_contains (str | Unset):
+        units_endswith (str | Unset):
+        units_gt (str | Unset):
+        units_gte (str | Unset):
+        units_icontains (str | Unset):
+        units_iendswith (str | Unset):
+        units_iexact (str | Unset):
+        units_in (list[str] | Unset):
+        units_iregex (str | Unset):
+        units_isnull (bool | Unset):
+        units_istartswith (str | Unset):
+        units_lt (str | Unset):
+        units_lte (str | Unset):
+        units_range (list[str] | Unset):
+        units_regex (str | Unset):
+        units_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -555,158 +555,158 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    highest_level_bound: Union[Unset, float] = UNSET,
-    highest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    highest_level_bound_contains: Union[Unset, float] = UNSET,
-    highest_level_bound_endswith: Union[Unset, float] = UNSET,
-    highest_level_bound_gt: Union[Unset, float] = UNSET,
-    highest_level_bound_gte: Union[Unset, float] = UNSET,
-    highest_level_bound_icontains: Union[Unset, float] = UNSET,
-    highest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    highest_level_bound_iexact: Union[Unset, float] = UNSET,
-    highest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_iregex: Union[Unset, float] = UNSET,
-    highest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    highest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    highest_level_bound_lt: Union[Unset, float] = UNSET,
-    highest_level_bound_lte: Union[Unset, float] = UNSET,
-    highest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_regex: Union[Unset, float] = UNSET,
-    highest_level_bound_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    lowest_level_bound: Union[Unset, float] = UNSET,
-    lowest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    lowest_level_bound_contains: Union[Unset, float] = UNSET,
-    lowest_level_bound_endswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_gt: Union[Unset, float] = UNSET,
-    lowest_level_bound_gte: Union[Unset, float] = UNSET,
-    lowest_level_bound_icontains: Union[Unset, float] = UNSET,
-    lowest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_iexact: Union[Unset, float] = UNSET,
-    lowest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_iregex: Union[Unset, float] = UNSET,
-    lowest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    lowest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_lt: Union[Unset, float] = UNSET,
-    lowest_level_bound_lte: Union[Unset, float] = UNSET,
-    lowest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_regex: Union[Unset, float] = UNSET,
-    lowest_level_bound_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    units: Union[Unset, str] = UNSET,
-    units_contains: Union[Unset, str] = UNSET,
-    units_endswith: Union[Unset, str] = UNSET,
-    units_gt: Union[Unset, str] = UNSET,
-    units_gte: Union[Unset, str] = UNSET,
-    units_icontains: Union[Unset, str] = UNSET,
-    units_iendswith: Union[Unset, str] = UNSET,
-    units_iexact: Union[Unset, str] = UNSET,
-    units_in: Union[Unset, list[str]] = UNSET,
-    units_iregex: Union[Unset, str] = UNSET,
-    units_isnull: Union[Unset, bool] = UNSET,
-    units_istartswith: Union[Unset, str] = UNSET,
-    units_lt: Union[Unset, str] = UNSET,
-    units_lte: Union[Unset, str] = UNSET,
-    units_range: Union[Unset, list[str]] = UNSET,
-    units_regex: Union[Unset, str] = UNSET,
-    units_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVerticalExtentReadList]:
+    highest_level_bound: float | Unset = UNSET,
+    highest_level_bound_contained_by: float | Unset = UNSET,
+    highest_level_bound_contains: float | Unset = UNSET,
+    highest_level_bound_endswith: float | Unset = UNSET,
+    highest_level_bound_gt: float | Unset = UNSET,
+    highest_level_bound_gte: float | Unset = UNSET,
+    highest_level_bound_icontains: float | Unset = UNSET,
+    highest_level_bound_iendswith: float | Unset = UNSET,
+    highest_level_bound_iexact: float | Unset = UNSET,
+    highest_level_bound_in: list[float] | Unset = UNSET,
+    highest_level_bound_iregex: float | Unset = UNSET,
+    highest_level_bound_isnull: bool | Unset = UNSET,
+    highest_level_bound_istartswith: float | Unset = UNSET,
+    highest_level_bound_lt: float | Unset = UNSET,
+    highest_level_bound_lte: float | Unset = UNSET,
+    highest_level_bound_range: list[float] | Unset = UNSET,
+    highest_level_bound_regex: float | Unset = UNSET,
+    highest_level_bound_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    lowest_level_bound: float | Unset = UNSET,
+    lowest_level_bound_contained_by: float | Unset = UNSET,
+    lowest_level_bound_contains: float | Unset = UNSET,
+    lowest_level_bound_endswith: float | Unset = UNSET,
+    lowest_level_bound_gt: float | Unset = UNSET,
+    lowest_level_bound_gte: float | Unset = UNSET,
+    lowest_level_bound_icontains: float | Unset = UNSET,
+    lowest_level_bound_iendswith: float | Unset = UNSET,
+    lowest_level_bound_iexact: float | Unset = UNSET,
+    lowest_level_bound_in: list[float] | Unset = UNSET,
+    lowest_level_bound_iregex: float | Unset = UNSET,
+    lowest_level_bound_isnull: bool | Unset = UNSET,
+    lowest_level_bound_istartswith: float | Unset = UNSET,
+    lowest_level_bound_lt: float | Unset = UNSET,
+    lowest_level_bound_lte: float | Unset = UNSET,
+    lowest_level_bound_range: list[float] | Unset = UNSET,
+    lowest_level_bound_regex: float | Unset = UNSET,
+    lowest_level_bound_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    units: str | Unset = UNSET,
+    units_contains: str | Unset = UNSET,
+    units_endswith: str | Unset = UNSET,
+    units_gt: str | Unset = UNSET,
+    units_gte: str | Unset = UNSET,
+    units_icontains: str | Unset = UNSET,
+    units_iendswith: str | Unset = UNSET,
+    units_iexact: str | Unset = UNSET,
+    units_in: list[str] | Unset = UNSET,
+    units_iregex: str | Unset = UNSET,
+    units_isnull: bool | Unset = UNSET,
+    units_istartswith: str | Unset = UNSET,
+    units_lt: str | Unset = UNSET,
+    units_lte: str | Unset = UNSET,
+    units_range: list[str] | Unset = UNSET,
+    units_regex: str | Unset = UNSET,
+    units_startswith: str | Unset = UNSET,
+) -> PaginatedVerticalExtentReadList | None:
     """Get a list of VerticalExtent objects.
 
     Args:
-        highest_level_bound (Union[Unset, float]):
-        highest_level_bound_contained_by (Union[Unset, float]):
-        highest_level_bound_contains (Union[Unset, float]):
-        highest_level_bound_endswith (Union[Unset, float]):
-        highest_level_bound_gt (Union[Unset, float]):
-        highest_level_bound_gte (Union[Unset, float]):
-        highest_level_bound_icontains (Union[Unset, float]):
-        highest_level_bound_iendswith (Union[Unset, float]):
-        highest_level_bound_iexact (Union[Unset, float]):
-        highest_level_bound_in (Union[Unset, list[float]]):
-        highest_level_bound_iregex (Union[Unset, float]):
-        highest_level_bound_isnull (Union[Unset, bool]):
-        highest_level_bound_istartswith (Union[Unset, float]):
-        highest_level_bound_lt (Union[Unset, float]):
-        highest_level_bound_lte (Union[Unset, float]):
-        highest_level_bound_range (Union[Unset, list[float]]):
-        highest_level_bound_regex (Union[Unset, float]):
-        highest_level_bound_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        lowest_level_bound (Union[Unset, float]):
-        lowest_level_bound_contained_by (Union[Unset, float]):
-        lowest_level_bound_contains (Union[Unset, float]):
-        lowest_level_bound_endswith (Union[Unset, float]):
-        lowest_level_bound_gt (Union[Unset, float]):
-        lowest_level_bound_gte (Union[Unset, float]):
-        lowest_level_bound_icontains (Union[Unset, float]):
-        lowest_level_bound_iendswith (Union[Unset, float]):
-        lowest_level_bound_iexact (Union[Unset, float]):
-        lowest_level_bound_in (Union[Unset, list[float]]):
-        lowest_level_bound_iregex (Union[Unset, float]):
-        lowest_level_bound_isnull (Union[Unset, bool]):
-        lowest_level_bound_istartswith (Union[Unset, float]):
-        lowest_level_bound_lt (Union[Unset, float]):
-        lowest_level_bound_lte (Union[Unset, float]):
-        lowest_level_bound_range (Union[Unset, list[float]]):
-        lowest_level_bound_regex (Union[Unset, float]):
-        lowest_level_bound_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        units (Union[Unset, str]):
-        units_contains (Union[Unset, str]):
-        units_endswith (Union[Unset, str]):
-        units_gt (Union[Unset, str]):
-        units_gte (Union[Unset, str]):
-        units_icontains (Union[Unset, str]):
-        units_iendswith (Union[Unset, str]):
-        units_iexact (Union[Unset, str]):
-        units_in (Union[Unset, list[str]]):
-        units_iregex (Union[Unset, str]):
-        units_isnull (Union[Unset, bool]):
-        units_istartswith (Union[Unset, str]):
-        units_lt (Union[Unset, str]):
-        units_lte (Union[Unset, str]):
-        units_range (Union[Unset, list[str]]):
-        units_regex (Union[Unset, str]):
-        units_startswith (Union[Unset, str]):
+        highest_level_bound (float | Unset):
+        highest_level_bound_contained_by (float | Unset):
+        highest_level_bound_contains (float | Unset):
+        highest_level_bound_endswith (float | Unset):
+        highest_level_bound_gt (float | Unset):
+        highest_level_bound_gte (float | Unset):
+        highest_level_bound_icontains (float | Unset):
+        highest_level_bound_iendswith (float | Unset):
+        highest_level_bound_iexact (float | Unset):
+        highest_level_bound_in (list[float] | Unset):
+        highest_level_bound_iregex (float | Unset):
+        highest_level_bound_isnull (bool | Unset):
+        highest_level_bound_istartswith (float | Unset):
+        highest_level_bound_lt (float | Unset):
+        highest_level_bound_lte (float | Unset):
+        highest_level_bound_range (list[float] | Unset):
+        highest_level_bound_regex (float | Unset):
+        highest_level_bound_startswith (float | Unset):
+        limit (int | Unset):
+        lowest_level_bound (float | Unset):
+        lowest_level_bound_contained_by (float | Unset):
+        lowest_level_bound_contains (float | Unset):
+        lowest_level_bound_endswith (float | Unset):
+        lowest_level_bound_gt (float | Unset):
+        lowest_level_bound_gte (float | Unset):
+        lowest_level_bound_icontains (float | Unset):
+        lowest_level_bound_iendswith (float | Unset):
+        lowest_level_bound_iexact (float | Unset):
+        lowest_level_bound_in (list[float] | Unset):
+        lowest_level_bound_iregex (float | Unset):
+        lowest_level_bound_isnull (bool | Unset):
+        lowest_level_bound_istartswith (float | Unset):
+        lowest_level_bound_lt (float | Unset):
+        lowest_level_bound_lte (float | Unset):
+        lowest_level_bound_range (list[float] | Unset):
+        lowest_level_bound_regex (float | Unset):
+        lowest_level_bound_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        units (str | Unset):
+        units_contains (str | Unset):
+        units_endswith (str | Unset):
+        units_gt (str | Unset):
+        units_gte (str | Unset):
+        units_icontains (str | Unset):
+        units_iendswith (str | Unset):
+        units_iexact (str | Unset):
+        units_in (list[str] | Unset):
+        units_iregex (str | Unset):
+        units_isnull (bool | Unset):
+        units_istartswith (str | Unset):
+        units_lt (str | Unset):
+        units_lte (str | Unset):
+        units_range (list[str] | Unset):
+        units_regex (str | Unset):
+        units_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -798,158 +798,158 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    highest_level_bound: Union[Unset, float] = UNSET,
-    highest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    highest_level_bound_contains: Union[Unset, float] = UNSET,
-    highest_level_bound_endswith: Union[Unset, float] = UNSET,
-    highest_level_bound_gt: Union[Unset, float] = UNSET,
-    highest_level_bound_gte: Union[Unset, float] = UNSET,
-    highest_level_bound_icontains: Union[Unset, float] = UNSET,
-    highest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    highest_level_bound_iexact: Union[Unset, float] = UNSET,
-    highest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_iregex: Union[Unset, float] = UNSET,
-    highest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    highest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    highest_level_bound_lt: Union[Unset, float] = UNSET,
-    highest_level_bound_lte: Union[Unset, float] = UNSET,
-    highest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_regex: Union[Unset, float] = UNSET,
-    highest_level_bound_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    lowest_level_bound: Union[Unset, float] = UNSET,
-    lowest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    lowest_level_bound_contains: Union[Unset, float] = UNSET,
-    lowest_level_bound_endswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_gt: Union[Unset, float] = UNSET,
-    lowest_level_bound_gte: Union[Unset, float] = UNSET,
-    lowest_level_bound_icontains: Union[Unset, float] = UNSET,
-    lowest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_iexact: Union[Unset, float] = UNSET,
-    lowest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_iregex: Union[Unset, float] = UNSET,
-    lowest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    lowest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_lt: Union[Unset, float] = UNSET,
-    lowest_level_bound_lte: Union[Unset, float] = UNSET,
-    lowest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_regex: Union[Unset, float] = UNSET,
-    lowest_level_bound_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    units: Union[Unset, str] = UNSET,
-    units_contains: Union[Unset, str] = UNSET,
-    units_endswith: Union[Unset, str] = UNSET,
-    units_gt: Union[Unset, str] = UNSET,
-    units_gte: Union[Unset, str] = UNSET,
-    units_icontains: Union[Unset, str] = UNSET,
-    units_iendswith: Union[Unset, str] = UNSET,
-    units_iexact: Union[Unset, str] = UNSET,
-    units_in: Union[Unset, list[str]] = UNSET,
-    units_iregex: Union[Unset, str] = UNSET,
-    units_isnull: Union[Unset, bool] = UNSET,
-    units_istartswith: Union[Unset, str] = UNSET,
-    units_lt: Union[Unset, str] = UNSET,
-    units_lte: Union[Unset, str] = UNSET,
-    units_range: Union[Unset, list[str]] = UNSET,
-    units_regex: Union[Unset, str] = UNSET,
-    units_startswith: Union[Unset, str] = UNSET,
+    highest_level_bound: float | Unset = UNSET,
+    highest_level_bound_contained_by: float | Unset = UNSET,
+    highest_level_bound_contains: float | Unset = UNSET,
+    highest_level_bound_endswith: float | Unset = UNSET,
+    highest_level_bound_gt: float | Unset = UNSET,
+    highest_level_bound_gte: float | Unset = UNSET,
+    highest_level_bound_icontains: float | Unset = UNSET,
+    highest_level_bound_iendswith: float | Unset = UNSET,
+    highest_level_bound_iexact: float | Unset = UNSET,
+    highest_level_bound_in: list[float] | Unset = UNSET,
+    highest_level_bound_iregex: float | Unset = UNSET,
+    highest_level_bound_isnull: bool | Unset = UNSET,
+    highest_level_bound_istartswith: float | Unset = UNSET,
+    highest_level_bound_lt: float | Unset = UNSET,
+    highest_level_bound_lte: float | Unset = UNSET,
+    highest_level_bound_range: list[float] | Unset = UNSET,
+    highest_level_bound_regex: float | Unset = UNSET,
+    highest_level_bound_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    lowest_level_bound: float | Unset = UNSET,
+    lowest_level_bound_contained_by: float | Unset = UNSET,
+    lowest_level_bound_contains: float | Unset = UNSET,
+    lowest_level_bound_endswith: float | Unset = UNSET,
+    lowest_level_bound_gt: float | Unset = UNSET,
+    lowest_level_bound_gte: float | Unset = UNSET,
+    lowest_level_bound_icontains: float | Unset = UNSET,
+    lowest_level_bound_iendswith: float | Unset = UNSET,
+    lowest_level_bound_iexact: float | Unset = UNSET,
+    lowest_level_bound_in: list[float] | Unset = UNSET,
+    lowest_level_bound_iregex: float | Unset = UNSET,
+    lowest_level_bound_isnull: bool | Unset = UNSET,
+    lowest_level_bound_istartswith: float | Unset = UNSET,
+    lowest_level_bound_lt: float | Unset = UNSET,
+    lowest_level_bound_lte: float | Unset = UNSET,
+    lowest_level_bound_range: list[float] | Unset = UNSET,
+    lowest_level_bound_regex: float | Unset = UNSET,
+    lowest_level_bound_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    units: str | Unset = UNSET,
+    units_contains: str | Unset = UNSET,
+    units_endswith: str | Unset = UNSET,
+    units_gt: str | Unset = UNSET,
+    units_gte: str | Unset = UNSET,
+    units_icontains: str | Unset = UNSET,
+    units_iendswith: str | Unset = UNSET,
+    units_iexact: str | Unset = UNSET,
+    units_in: list[str] | Unset = UNSET,
+    units_iregex: str | Unset = UNSET,
+    units_isnull: bool | Unset = UNSET,
+    units_istartswith: str | Unset = UNSET,
+    units_lt: str | Unset = UNSET,
+    units_lte: str | Unset = UNSET,
+    units_range: list[str] | Unset = UNSET,
+    units_regex: str | Unset = UNSET,
+    units_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedVerticalExtentReadList]:
     """Get a list of VerticalExtent objects.
 
     Args:
-        highest_level_bound (Union[Unset, float]):
-        highest_level_bound_contained_by (Union[Unset, float]):
-        highest_level_bound_contains (Union[Unset, float]):
-        highest_level_bound_endswith (Union[Unset, float]):
-        highest_level_bound_gt (Union[Unset, float]):
-        highest_level_bound_gte (Union[Unset, float]):
-        highest_level_bound_icontains (Union[Unset, float]):
-        highest_level_bound_iendswith (Union[Unset, float]):
-        highest_level_bound_iexact (Union[Unset, float]):
-        highest_level_bound_in (Union[Unset, list[float]]):
-        highest_level_bound_iregex (Union[Unset, float]):
-        highest_level_bound_isnull (Union[Unset, bool]):
-        highest_level_bound_istartswith (Union[Unset, float]):
-        highest_level_bound_lt (Union[Unset, float]):
-        highest_level_bound_lte (Union[Unset, float]):
-        highest_level_bound_range (Union[Unset, list[float]]):
-        highest_level_bound_regex (Union[Unset, float]):
-        highest_level_bound_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        lowest_level_bound (Union[Unset, float]):
-        lowest_level_bound_contained_by (Union[Unset, float]):
-        lowest_level_bound_contains (Union[Unset, float]):
-        lowest_level_bound_endswith (Union[Unset, float]):
-        lowest_level_bound_gt (Union[Unset, float]):
-        lowest_level_bound_gte (Union[Unset, float]):
-        lowest_level_bound_icontains (Union[Unset, float]):
-        lowest_level_bound_iendswith (Union[Unset, float]):
-        lowest_level_bound_iexact (Union[Unset, float]):
-        lowest_level_bound_in (Union[Unset, list[float]]):
-        lowest_level_bound_iregex (Union[Unset, float]):
-        lowest_level_bound_isnull (Union[Unset, bool]):
-        lowest_level_bound_istartswith (Union[Unset, float]):
-        lowest_level_bound_lt (Union[Unset, float]):
-        lowest_level_bound_lte (Union[Unset, float]):
-        lowest_level_bound_range (Union[Unset, list[float]]):
-        lowest_level_bound_regex (Union[Unset, float]):
-        lowest_level_bound_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        units (Union[Unset, str]):
-        units_contains (Union[Unset, str]):
-        units_endswith (Union[Unset, str]):
-        units_gt (Union[Unset, str]):
-        units_gte (Union[Unset, str]):
-        units_icontains (Union[Unset, str]):
-        units_iendswith (Union[Unset, str]):
-        units_iexact (Union[Unset, str]):
-        units_in (Union[Unset, list[str]]):
-        units_iregex (Union[Unset, str]):
-        units_isnull (Union[Unset, bool]):
-        units_istartswith (Union[Unset, str]):
-        units_lt (Union[Unset, str]):
-        units_lte (Union[Unset, str]):
-        units_range (Union[Unset, list[str]]):
-        units_regex (Union[Unset, str]):
-        units_startswith (Union[Unset, str]):
+        highest_level_bound (float | Unset):
+        highest_level_bound_contained_by (float | Unset):
+        highest_level_bound_contains (float | Unset):
+        highest_level_bound_endswith (float | Unset):
+        highest_level_bound_gt (float | Unset):
+        highest_level_bound_gte (float | Unset):
+        highest_level_bound_icontains (float | Unset):
+        highest_level_bound_iendswith (float | Unset):
+        highest_level_bound_iexact (float | Unset):
+        highest_level_bound_in (list[float] | Unset):
+        highest_level_bound_iregex (float | Unset):
+        highest_level_bound_isnull (bool | Unset):
+        highest_level_bound_istartswith (float | Unset):
+        highest_level_bound_lt (float | Unset):
+        highest_level_bound_lte (float | Unset):
+        highest_level_bound_range (list[float] | Unset):
+        highest_level_bound_regex (float | Unset):
+        highest_level_bound_startswith (float | Unset):
+        limit (int | Unset):
+        lowest_level_bound (float | Unset):
+        lowest_level_bound_contained_by (float | Unset):
+        lowest_level_bound_contains (float | Unset):
+        lowest_level_bound_endswith (float | Unset):
+        lowest_level_bound_gt (float | Unset):
+        lowest_level_bound_gte (float | Unset):
+        lowest_level_bound_icontains (float | Unset):
+        lowest_level_bound_iendswith (float | Unset):
+        lowest_level_bound_iexact (float | Unset):
+        lowest_level_bound_in (list[float] | Unset):
+        lowest_level_bound_iregex (float | Unset):
+        lowest_level_bound_isnull (bool | Unset):
+        lowest_level_bound_istartswith (float | Unset):
+        lowest_level_bound_lt (float | Unset):
+        lowest_level_bound_lte (float | Unset):
+        lowest_level_bound_range (list[float] | Unset):
+        lowest_level_bound_regex (float | Unset):
+        lowest_level_bound_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        units (str | Unset):
+        units_contains (str | Unset):
+        units_endswith (str | Unset):
+        units_gt (str | Unset):
+        units_gte (str | Unset):
+        units_icontains (str | Unset):
+        units_iendswith (str | Unset):
+        units_iexact (str | Unset):
+        units_in (list[str] | Unset):
+        units_iregex (str | Unset):
+        units_isnull (bool | Unset):
+        units_istartswith (str | Unset):
+        units_lt (str | Unset):
+        units_lte (str | Unset):
+        units_range (list[str] | Unset):
+        units_regex (str | Unset):
+        units_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1044,158 +1044,158 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    highest_level_bound: Union[Unset, float] = UNSET,
-    highest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    highest_level_bound_contains: Union[Unset, float] = UNSET,
-    highest_level_bound_endswith: Union[Unset, float] = UNSET,
-    highest_level_bound_gt: Union[Unset, float] = UNSET,
-    highest_level_bound_gte: Union[Unset, float] = UNSET,
-    highest_level_bound_icontains: Union[Unset, float] = UNSET,
-    highest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    highest_level_bound_iexact: Union[Unset, float] = UNSET,
-    highest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_iregex: Union[Unset, float] = UNSET,
-    highest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    highest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    highest_level_bound_lt: Union[Unset, float] = UNSET,
-    highest_level_bound_lte: Union[Unset, float] = UNSET,
-    highest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    highest_level_bound_regex: Union[Unset, float] = UNSET,
-    highest_level_bound_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    lowest_level_bound: Union[Unset, float] = UNSET,
-    lowest_level_bound_contained_by: Union[Unset, float] = UNSET,
-    lowest_level_bound_contains: Union[Unset, float] = UNSET,
-    lowest_level_bound_endswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_gt: Union[Unset, float] = UNSET,
-    lowest_level_bound_gte: Union[Unset, float] = UNSET,
-    lowest_level_bound_icontains: Union[Unset, float] = UNSET,
-    lowest_level_bound_iendswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_iexact: Union[Unset, float] = UNSET,
-    lowest_level_bound_in: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_iregex: Union[Unset, float] = UNSET,
-    lowest_level_bound_isnull: Union[Unset, bool] = UNSET,
-    lowest_level_bound_istartswith: Union[Unset, float] = UNSET,
-    lowest_level_bound_lt: Union[Unset, float] = UNSET,
-    lowest_level_bound_lte: Union[Unset, float] = UNSET,
-    lowest_level_bound_range: Union[Unset, list[float]] = UNSET,
-    lowest_level_bound_regex: Union[Unset, float] = UNSET,
-    lowest_level_bound_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    units: Union[Unset, str] = UNSET,
-    units_contains: Union[Unset, str] = UNSET,
-    units_endswith: Union[Unset, str] = UNSET,
-    units_gt: Union[Unset, str] = UNSET,
-    units_gte: Union[Unset, str] = UNSET,
-    units_icontains: Union[Unset, str] = UNSET,
-    units_iendswith: Union[Unset, str] = UNSET,
-    units_iexact: Union[Unset, str] = UNSET,
-    units_in: Union[Unset, list[str]] = UNSET,
-    units_iregex: Union[Unset, str] = UNSET,
-    units_isnull: Union[Unset, bool] = UNSET,
-    units_istartswith: Union[Unset, str] = UNSET,
-    units_lt: Union[Unset, str] = UNSET,
-    units_lte: Union[Unset, str] = UNSET,
-    units_range: Union[Unset, list[str]] = UNSET,
-    units_regex: Union[Unset, str] = UNSET,
-    units_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVerticalExtentReadList]:
+    highest_level_bound: float | Unset = UNSET,
+    highest_level_bound_contained_by: float | Unset = UNSET,
+    highest_level_bound_contains: float | Unset = UNSET,
+    highest_level_bound_endswith: float | Unset = UNSET,
+    highest_level_bound_gt: float | Unset = UNSET,
+    highest_level_bound_gte: float | Unset = UNSET,
+    highest_level_bound_icontains: float | Unset = UNSET,
+    highest_level_bound_iendswith: float | Unset = UNSET,
+    highest_level_bound_iexact: float | Unset = UNSET,
+    highest_level_bound_in: list[float] | Unset = UNSET,
+    highest_level_bound_iregex: float | Unset = UNSET,
+    highest_level_bound_isnull: bool | Unset = UNSET,
+    highest_level_bound_istartswith: float | Unset = UNSET,
+    highest_level_bound_lt: float | Unset = UNSET,
+    highest_level_bound_lte: float | Unset = UNSET,
+    highest_level_bound_range: list[float] | Unset = UNSET,
+    highest_level_bound_regex: float | Unset = UNSET,
+    highest_level_bound_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    lowest_level_bound: float | Unset = UNSET,
+    lowest_level_bound_contained_by: float | Unset = UNSET,
+    lowest_level_bound_contains: float | Unset = UNSET,
+    lowest_level_bound_endswith: float | Unset = UNSET,
+    lowest_level_bound_gt: float | Unset = UNSET,
+    lowest_level_bound_gte: float | Unset = UNSET,
+    lowest_level_bound_icontains: float | Unset = UNSET,
+    lowest_level_bound_iendswith: float | Unset = UNSET,
+    lowest_level_bound_iexact: float | Unset = UNSET,
+    lowest_level_bound_in: list[float] | Unset = UNSET,
+    lowest_level_bound_iregex: float | Unset = UNSET,
+    lowest_level_bound_isnull: bool | Unset = UNSET,
+    lowest_level_bound_istartswith: float | Unset = UNSET,
+    lowest_level_bound_lt: float | Unset = UNSET,
+    lowest_level_bound_lte: float | Unset = UNSET,
+    lowest_level_bound_range: list[float] | Unset = UNSET,
+    lowest_level_bound_regex: float | Unset = UNSET,
+    lowest_level_bound_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    units: str | Unset = UNSET,
+    units_contains: str | Unset = UNSET,
+    units_endswith: str | Unset = UNSET,
+    units_gt: str | Unset = UNSET,
+    units_gte: str | Unset = UNSET,
+    units_icontains: str | Unset = UNSET,
+    units_iendswith: str | Unset = UNSET,
+    units_iexact: str | Unset = UNSET,
+    units_in: list[str] | Unset = UNSET,
+    units_iregex: str | Unset = UNSET,
+    units_isnull: bool | Unset = UNSET,
+    units_istartswith: str | Unset = UNSET,
+    units_lt: str | Unset = UNSET,
+    units_lte: str | Unset = UNSET,
+    units_range: list[str] | Unset = UNSET,
+    units_regex: str | Unset = UNSET,
+    units_startswith: str | Unset = UNSET,
+) -> PaginatedVerticalExtentReadList | None:
     """Get a list of VerticalExtent objects.
 
     Args:
-        highest_level_bound (Union[Unset, float]):
-        highest_level_bound_contained_by (Union[Unset, float]):
-        highest_level_bound_contains (Union[Unset, float]):
-        highest_level_bound_endswith (Union[Unset, float]):
-        highest_level_bound_gt (Union[Unset, float]):
-        highest_level_bound_gte (Union[Unset, float]):
-        highest_level_bound_icontains (Union[Unset, float]):
-        highest_level_bound_iendswith (Union[Unset, float]):
-        highest_level_bound_iexact (Union[Unset, float]):
-        highest_level_bound_in (Union[Unset, list[float]]):
-        highest_level_bound_iregex (Union[Unset, float]):
-        highest_level_bound_isnull (Union[Unset, bool]):
-        highest_level_bound_istartswith (Union[Unset, float]):
-        highest_level_bound_lt (Union[Unset, float]):
-        highest_level_bound_lte (Union[Unset, float]):
-        highest_level_bound_range (Union[Unset, list[float]]):
-        highest_level_bound_regex (Union[Unset, float]):
-        highest_level_bound_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        lowest_level_bound (Union[Unset, float]):
-        lowest_level_bound_contained_by (Union[Unset, float]):
-        lowest_level_bound_contains (Union[Unset, float]):
-        lowest_level_bound_endswith (Union[Unset, float]):
-        lowest_level_bound_gt (Union[Unset, float]):
-        lowest_level_bound_gte (Union[Unset, float]):
-        lowest_level_bound_icontains (Union[Unset, float]):
-        lowest_level_bound_iendswith (Union[Unset, float]):
-        lowest_level_bound_iexact (Union[Unset, float]):
-        lowest_level_bound_in (Union[Unset, list[float]]):
-        lowest_level_bound_iregex (Union[Unset, float]):
-        lowest_level_bound_isnull (Union[Unset, bool]):
-        lowest_level_bound_istartswith (Union[Unset, float]):
-        lowest_level_bound_lt (Union[Unset, float]):
-        lowest_level_bound_lte (Union[Unset, float]):
-        lowest_level_bound_range (Union[Unset, list[float]]):
-        lowest_level_bound_regex (Union[Unset, float]):
-        lowest_level_bound_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        units (Union[Unset, str]):
-        units_contains (Union[Unset, str]):
-        units_endswith (Union[Unset, str]):
-        units_gt (Union[Unset, str]):
-        units_gte (Union[Unset, str]):
-        units_icontains (Union[Unset, str]):
-        units_iendswith (Union[Unset, str]):
-        units_iexact (Union[Unset, str]):
-        units_in (Union[Unset, list[str]]):
-        units_iregex (Union[Unset, str]):
-        units_isnull (Union[Unset, bool]):
-        units_istartswith (Union[Unset, str]):
-        units_lt (Union[Unset, str]):
-        units_lte (Union[Unset, str]):
-        units_range (Union[Unset, list[str]]):
-        units_regex (Union[Unset, str]):
-        units_startswith (Union[Unset, str]):
+        highest_level_bound (float | Unset):
+        highest_level_bound_contained_by (float | Unset):
+        highest_level_bound_contains (float | Unset):
+        highest_level_bound_endswith (float | Unset):
+        highest_level_bound_gt (float | Unset):
+        highest_level_bound_gte (float | Unset):
+        highest_level_bound_icontains (float | Unset):
+        highest_level_bound_iendswith (float | Unset):
+        highest_level_bound_iexact (float | Unset):
+        highest_level_bound_in (list[float] | Unset):
+        highest_level_bound_iregex (float | Unset):
+        highest_level_bound_isnull (bool | Unset):
+        highest_level_bound_istartswith (float | Unset):
+        highest_level_bound_lt (float | Unset):
+        highest_level_bound_lte (float | Unset):
+        highest_level_bound_range (list[float] | Unset):
+        highest_level_bound_regex (float | Unset):
+        highest_level_bound_startswith (float | Unset):
+        limit (int | Unset):
+        lowest_level_bound (float | Unset):
+        lowest_level_bound_contained_by (float | Unset):
+        lowest_level_bound_contains (float | Unset):
+        lowest_level_bound_endswith (float | Unset):
+        lowest_level_bound_gt (float | Unset):
+        lowest_level_bound_gte (float | Unset):
+        lowest_level_bound_icontains (float | Unset):
+        lowest_level_bound_iendswith (float | Unset):
+        lowest_level_bound_iexact (float | Unset):
+        lowest_level_bound_in (list[float] | Unset):
+        lowest_level_bound_iregex (float | Unset):
+        lowest_level_bound_isnull (bool | Unset):
+        lowest_level_bound_istartswith (float | Unset):
+        lowest_level_bound_lt (float | Unset):
+        lowest_level_bound_lte (float | Unset):
+        lowest_level_bound_range (list[float] | Unset):
+        lowest_level_bound_regex (float | Unset):
+        lowest_level_bound_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        units (str | Unset):
+        units_contains (str | Unset):
+        units_endswith (str | Unset):
+        units_gt (str | Unset):
+        units_gte (str | Unset):
+        units_icontains (str | Unset):
+        units_iendswith (str | Unset):
+        units_iexact (str | Unset):
+        units_in (list[str] | Unset):
+        units_iregex (str | Unset):
+        units_isnull (bool | Unset):
+        units_istartswith (str | Unset):
+        units_lt (str | Unset):
+        units_lte (str | Unset):
+        units_range (list[str] | Unset):
+        units_regex (str | Unset):
+        units_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

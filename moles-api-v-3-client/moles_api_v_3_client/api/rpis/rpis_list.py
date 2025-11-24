@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -13,90 +13,90 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party: Union[Unset, int] = UNSET,
-    party_first_name: Union[Unset, str] = UNSET,
-    party_first_name_in: Union[Unset, list[str]] = UNSET,
-    party_gt: Union[Unset, int] = UNSET,
-    party_gte: Union[Unset, int] = UNSET,
-    party_in: Union[Unset, list[int]] = UNSET,
-    party_isnull: Union[Unset, bool] = UNSET,
-    party_last_name: Union[Unset, str] = UNSET,
-    party_last_name_in: Union[Unset, list[str]] = UNSET,
-    party_lt: Union[Unset, int] = UNSET,
-    party_lte: Union[Unset, int] = UNSET,
-    party_ob_id: Union[Unset, int] = UNSET,
-    party_ob_id_in: Union[Unset, list[int]] = UNSET,
-    party_party_type: Union[Unset, RpisListType] = UNSET,
-    party_party_type_in: Union[Unset, list[str]] = UNSET,
-    priority: Union[Unset, int] = UNSET,
-    priority_contained_by: Union[Unset, int] = UNSET,
-    priority_contains: Union[Unset, int] = UNSET,
-    priority_endswith: Union[Unset, int] = UNSET,
-    priority_gt: Union[Unset, int] = UNSET,
-    priority_gte: Union[Unset, int] = UNSET,
-    priority_icontains: Union[Unset, int] = UNSET,
-    priority_iendswith: Union[Unset, int] = UNSET,
-    priority_iexact: Union[Unset, int] = UNSET,
-    priority_in: Union[Unset, list[int]] = UNSET,
-    priority_iregex: Union[Unset, int] = UNSET,
-    priority_isnull: Union[Unset, bool] = UNSET,
-    priority_istartswith: Union[Unset, int] = UNSET,
-    priority_lt: Union[Unset, int] = UNSET,
-    priority_lte: Union[Unset, int] = UNSET,
-    priority_range: Union[Unset, list[int]] = UNSET,
-    priority_regex: Union[Unset, int] = UNSET,
-    priority_startswith: Union[Unset, int] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    role: Union[Unset, RpisListRole] = UNSET,
-    role_contains: Union[Unset, str] = UNSET,
-    role_endswith: Union[Unset, str] = UNSET,
-    role_gt: Union[Unset, str] = UNSET,
-    role_gte: Union[Unset, str] = UNSET,
-    role_icontains: Union[Unset, str] = UNSET,
-    role_iendswith: Union[Unset, str] = UNSET,
-    role_iexact: Union[Unset, str] = UNSET,
-    role_in: Union[Unset, list[str]] = UNSET,
-    role_iregex: Union[Unset, str] = UNSET,
-    role_isnull: Union[Unset, bool] = UNSET,
-    role_istartswith: Union[Unset, str] = UNSET,
-    role_lt: Union[Unset, str] = UNSET,
-    role_lte: Union[Unset, str] = UNSET,
-    role_range: Union[Unset, list[str]] = UNSET,
-    role_regex: Union[Unset, str] = UNSET,
-    role_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party: int | Unset = UNSET,
+    party_first_name: str | Unset = UNSET,
+    party_first_name_in: list[str] | Unset = UNSET,
+    party_gt: int | Unset = UNSET,
+    party_gte: int | Unset = UNSET,
+    party_in: list[int] | Unset = UNSET,
+    party_isnull: bool | Unset = UNSET,
+    party_last_name: str | Unset = UNSET,
+    party_last_name_in: list[str] | Unset = UNSET,
+    party_lt: int | Unset = UNSET,
+    party_lte: int | Unset = UNSET,
+    party_ob_id: int | Unset = UNSET,
+    party_ob_id_in: list[int] | Unset = UNSET,
+    party_party_type: RpisListType | Unset = UNSET,
+    party_party_type_in: list[str] | Unset = UNSET,
+    priority: int | Unset = UNSET,
+    priority_contained_by: int | Unset = UNSET,
+    priority_contains: int | Unset = UNSET,
+    priority_endswith: int | Unset = UNSET,
+    priority_gt: int | Unset = UNSET,
+    priority_gte: int | Unset = UNSET,
+    priority_icontains: int | Unset = UNSET,
+    priority_iendswith: int | Unset = UNSET,
+    priority_iexact: int | Unset = UNSET,
+    priority_in: list[int] | Unset = UNSET,
+    priority_iregex: int | Unset = UNSET,
+    priority_isnull: bool | Unset = UNSET,
+    priority_istartswith: int | Unset = UNSET,
+    priority_lt: int | Unset = UNSET,
+    priority_lte: int | Unset = UNSET,
+    priority_range: list[int] | Unset = UNSET,
+    priority_regex: int | Unset = UNSET,
+    priority_startswith: int | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    role: RpisListRole | Unset = UNSET,
+    role_contains: str | Unset = UNSET,
+    role_endswith: str | Unset = UNSET,
+    role_gt: str | Unset = UNSET,
+    role_gte: str | Unset = UNSET,
+    role_icontains: str | Unset = UNSET,
+    role_iendswith: str | Unset = UNSET,
+    role_iexact: str | Unset = UNSET,
+    role_in: list[str] | Unset = UNSET,
+    role_iregex: str | Unset = UNSET,
+    role_isnull: bool | Unset = UNSET,
+    role_istartswith: str | Unset = UNSET,
+    role_lt: str | Unset = UNSET,
+    role_lte: str | Unset = UNSET,
+    role_range: list[str] | Unset = UNSET,
+    role_regex: str | Unset = UNSET,
+    role_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -120,7 +120,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -136,7 +136,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -154,7 +154,7 @@ def _get_kwargs(
 
     params["party__firstName"] = party_first_name
 
-    json_party_first_name_in: Union[Unset, list[str]] = UNSET
+    json_party_first_name_in: list[str] | Unset = UNSET
     if not isinstance(party_first_name_in, Unset):
         json_party_first_name_in = ",".join(map(str, party_first_name_in))
 
@@ -164,7 +164,7 @@ def _get_kwargs(
 
     params["party__gte"] = party_gte
 
-    json_party_in: Union[Unset, list[int]] = UNSET
+    json_party_in: list[int] | Unset = UNSET
     if not isinstance(party_in, Unset):
         json_party_in = ",".join(map(str, party_in))
 
@@ -174,7 +174,7 @@ def _get_kwargs(
 
     params["party__lastName"] = party_last_name
 
-    json_party_last_name_in: Union[Unset, list[str]] = UNSET
+    json_party_last_name_in: list[str] | Unset = UNSET
     if not isinstance(party_last_name_in, Unset):
         json_party_last_name_in = ",".join(map(str, party_last_name_in))
 
@@ -186,19 +186,19 @@ def _get_kwargs(
 
     params["party__ob_id"] = party_ob_id
 
-    json_party_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_party_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(party_ob_id_in, Unset):
         json_party_ob_id_in = ",".join(map(str, party_ob_id_in))
 
     params["party__ob_id__in"] = json_party_ob_id_in
 
-    json_party_party_type: Union[Unset, str] = UNSET
+    json_party_party_type: str | Unset = UNSET
     if not isinstance(party_party_type, Unset):
         json_party_party_type = party_party_type.value
 
     params["party__partyType"] = json_party_party_type
 
-    json_party_party_type_in: Union[Unset, list[str]] = UNSET
+    json_party_party_type_in: list[str] | Unset = UNSET
     if not isinstance(party_party_type_in, Unset):
         json_party_party_type_in = ",".join(map(str, party_party_type_in))
 
@@ -222,7 +222,7 @@ def _get_kwargs(
 
     params["priority__iexact"] = priority_iexact
 
-    json_priority_in: Union[Unset, list[int]] = UNSET
+    json_priority_in: list[int] | Unset = UNSET
     if not isinstance(priority_in, Unset):
         json_priority_in = ",".join(map(str, priority_in))
 
@@ -238,7 +238,7 @@ def _get_kwargs(
 
     params["priority__lte"] = priority_lte
 
-    json_priority_range: Union[Unset, list[int]] = UNSET
+    json_priority_range: list[int] | Unset = UNSET
     if not isinstance(priority_range, Unset):
         json_priority_range = ",".join(map(str, priority_range))
 
@@ -254,7 +254,7 @@ def _get_kwargs(
 
     params["relatedTo__gte"] = related_to_gte
 
-    json_related_to_in: Union[Unset, list[int]] = UNSET
+    json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
 
@@ -268,7 +268,7 @@ def _get_kwargs(
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
-    json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
@@ -276,7 +276,7 @@ def _get_kwargs(
 
     params["relatedTo__short_code"] = related_to_short_code
 
-    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
         json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
 
@@ -284,13 +284,13 @@ def _get_kwargs(
 
     params["relatedTo__uuid"] = related_to_uuid
 
-    json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
+    json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
         json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
     params["relatedTo__uuid__in"] = json_related_to_uuid_in
 
-    json_role: Union[Unset, str] = UNSET
+    json_role: str | Unset = UNSET
     if not isinstance(role, Unset):
         json_role = role.value
 
@@ -310,7 +310,7 @@ def _get_kwargs(
 
     params["role__iexact"] = role_iexact
 
-    json_role_in: Union[Unset, list[str]] = UNSET
+    json_role_in: list[str] | Unset = UNSET
     if not isinstance(role_in, Unset):
         json_role_in = ",".join(map(str, role_in))
 
@@ -326,7 +326,7 @@ def _get_kwargs(
 
     params["role__lte"] = role_lte
 
-    json_role_range: Union[Unset, list[str]] = UNSET
+    json_role_range: list[str] | Unset = UNSET
     if not isinstance(role_range, Unset):
         json_role_range = ",".join(map(str, role_range))
 
@@ -348,8 +348,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedResponsiblePartyInfoReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedResponsiblePartyInfoReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedResponsiblePartyInfoReadList.from_dict(response.json())
 
@@ -362,7 +362,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedResponsiblePartyInfoReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -375,90 +375,90 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party: Union[Unset, int] = UNSET,
-    party_first_name: Union[Unset, str] = UNSET,
-    party_first_name_in: Union[Unset, list[str]] = UNSET,
-    party_gt: Union[Unset, int] = UNSET,
-    party_gte: Union[Unset, int] = UNSET,
-    party_in: Union[Unset, list[int]] = UNSET,
-    party_isnull: Union[Unset, bool] = UNSET,
-    party_last_name: Union[Unset, str] = UNSET,
-    party_last_name_in: Union[Unset, list[str]] = UNSET,
-    party_lt: Union[Unset, int] = UNSET,
-    party_lte: Union[Unset, int] = UNSET,
-    party_ob_id: Union[Unset, int] = UNSET,
-    party_ob_id_in: Union[Unset, list[int]] = UNSET,
-    party_party_type: Union[Unset, RpisListType] = UNSET,
-    party_party_type_in: Union[Unset, list[str]] = UNSET,
-    priority: Union[Unset, int] = UNSET,
-    priority_contained_by: Union[Unset, int] = UNSET,
-    priority_contains: Union[Unset, int] = UNSET,
-    priority_endswith: Union[Unset, int] = UNSET,
-    priority_gt: Union[Unset, int] = UNSET,
-    priority_gte: Union[Unset, int] = UNSET,
-    priority_icontains: Union[Unset, int] = UNSET,
-    priority_iendswith: Union[Unset, int] = UNSET,
-    priority_iexact: Union[Unset, int] = UNSET,
-    priority_in: Union[Unset, list[int]] = UNSET,
-    priority_iregex: Union[Unset, int] = UNSET,
-    priority_isnull: Union[Unset, bool] = UNSET,
-    priority_istartswith: Union[Unset, int] = UNSET,
-    priority_lt: Union[Unset, int] = UNSET,
-    priority_lte: Union[Unset, int] = UNSET,
-    priority_range: Union[Unset, list[int]] = UNSET,
-    priority_regex: Union[Unset, int] = UNSET,
-    priority_startswith: Union[Unset, int] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    role: Union[Unset, RpisListRole] = UNSET,
-    role_contains: Union[Unset, str] = UNSET,
-    role_endswith: Union[Unset, str] = UNSET,
-    role_gt: Union[Unset, str] = UNSET,
-    role_gte: Union[Unset, str] = UNSET,
-    role_icontains: Union[Unset, str] = UNSET,
-    role_iendswith: Union[Unset, str] = UNSET,
-    role_iexact: Union[Unset, str] = UNSET,
-    role_in: Union[Unset, list[str]] = UNSET,
-    role_iregex: Union[Unset, str] = UNSET,
-    role_isnull: Union[Unset, bool] = UNSET,
-    role_istartswith: Union[Unset, str] = UNSET,
-    role_lt: Union[Unset, str] = UNSET,
-    role_lte: Union[Unset, str] = UNSET,
-    role_range: Union[Unset, list[str]] = UNSET,
-    role_regex: Union[Unset, str] = UNSET,
-    role_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party: int | Unset = UNSET,
+    party_first_name: str | Unset = UNSET,
+    party_first_name_in: list[str] | Unset = UNSET,
+    party_gt: int | Unset = UNSET,
+    party_gte: int | Unset = UNSET,
+    party_in: list[int] | Unset = UNSET,
+    party_isnull: bool | Unset = UNSET,
+    party_last_name: str | Unset = UNSET,
+    party_last_name_in: list[str] | Unset = UNSET,
+    party_lt: int | Unset = UNSET,
+    party_lte: int | Unset = UNSET,
+    party_ob_id: int | Unset = UNSET,
+    party_ob_id_in: list[int] | Unset = UNSET,
+    party_party_type: RpisListType | Unset = UNSET,
+    party_party_type_in: list[str] | Unset = UNSET,
+    priority: int | Unset = UNSET,
+    priority_contained_by: int | Unset = UNSET,
+    priority_contains: int | Unset = UNSET,
+    priority_endswith: int | Unset = UNSET,
+    priority_gt: int | Unset = UNSET,
+    priority_gte: int | Unset = UNSET,
+    priority_icontains: int | Unset = UNSET,
+    priority_iendswith: int | Unset = UNSET,
+    priority_iexact: int | Unset = UNSET,
+    priority_in: list[int] | Unset = UNSET,
+    priority_iregex: int | Unset = UNSET,
+    priority_isnull: bool | Unset = UNSET,
+    priority_istartswith: int | Unset = UNSET,
+    priority_lt: int | Unset = UNSET,
+    priority_lte: int | Unset = UNSET,
+    priority_range: list[int] | Unset = UNSET,
+    priority_regex: int | Unset = UNSET,
+    priority_startswith: int | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    role: RpisListRole | Unset = UNSET,
+    role_contains: str | Unset = UNSET,
+    role_endswith: str | Unset = UNSET,
+    role_gt: str | Unset = UNSET,
+    role_gte: str | Unset = UNSET,
+    role_icontains: str | Unset = UNSET,
+    role_iendswith: str | Unset = UNSET,
+    role_iexact: str | Unset = UNSET,
+    role_in: list[str] | Unset = UNSET,
+    role_iregex: str | Unset = UNSET,
+    role_isnull: bool | Unset = UNSET,
+    role_istartswith: str | Unset = UNSET,
+    role_lt: str | Unset = UNSET,
+    role_lte: str | Unset = UNSET,
+    role_range: list[str] | Unset = UNSET,
+    role_regex: str | Unset = UNSET,
+    role_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedResponsiblePartyInfoReadList]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -466,90 +466,90 @@ def sync_detailed(
     that given role for the relatedTo object.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        party (Union[Unset, int]):
-        party_first_name (Union[Unset, str]):
-        party_first_name_in (Union[Unset, list[str]]):
-        party_gt (Union[Unset, int]):
-        party_gte (Union[Unset, int]):
-        party_in (Union[Unset, list[int]]):
-        party_isnull (Union[Unset, bool]):
-        party_last_name (Union[Unset, str]):
-        party_last_name_in (Union[Unset, list[str]]):
-        party_lt (Union[Unset, int]):
-        party_lte (Union[Unset, int]):
-        party_ob_id (Union[Unset, int]):
-        party_ob_id_in (Union[Unset, list[int]]):
-        party_party_type (Union[Unset, RpisListType]):
-        party_party_type_in (Union[Unset, list[str]]):
-        priority (Union[Unset, int]):
-        priority_contained_by (Union[Unset, int]):
-        priority_contains (Union[Unset, int]):
-        priority_endswith (Union[Unset, int]):
-        priority_gt (Union[Unset, int]):
-        priority_gte (Union[Unset, int]):
-        priority_icontains (Union[Unset, int]):
-        priority_iendswith (Union[Unset, int]):
-        priority_iexact (Union[Unset, int]):
-        priority_in (Union[Unset, list[int]]):
-        priority_iregex (Union[Unset, int]):
-        priority_isnull (Union[Unset, bool]):
-        priority_istartswith (Union[Unset, int]):
-        priority_lt (Union[Unset, int]):
-        priority_lte (Union[Unset, int]):
-        priority_range (Union[Unset, list[int]]):
-        priority_regex (Union[Unset, int]):
-        priority_startswith (Union[Unset, int]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        role (Union[Unset, RpisListRole]):
-        role_contains (Union[Unset, str]):
-        role_endswith (Union[Unset, str]):
-        role_gt (Union[Unset, str]):
-        role_gte (Union[Unset, str]):
-        role_icontains (Union[Unset, str]):
-        role_iendswith (Union[Unset, str]):
-        role_iexact (Union[Unset, str]):
-        role_in (Union[Unset, list[str]]):
-        role_iregex (Union[Unset, str]):
-        role_isnull (Union[Unset, bool]):
-        role_istartswith (Union[Unset, str]):
-        role_lt (Union[Unset, str]):
-        role_lte (Union[Unset, str]):
-        role_range (Union[Unset, list[str]]):
-        role_regex (Union[Unset, str]):
-        role_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        party (int | Unset):
+        party_first_name (str | Unset):
+        party_first_name_in (list[str] | Unset):
+        party_gt (int | Unset):
+        party_gte (int | Unset):
+        party_in (list[int] | Unset):
+        party_isnull (bool | Unset):
+        party_last_name (str | Unset):
+        party_last_name_in (list[str] | Unset):
+        party_lt (int | Unset):
+        party_lte (int | Unset):
+        party_ob_id (int | Unset):
+        party_ob_id_in (list[int] | Unset):
+        party_party_type (RpisListType | Unset):
+        party_party_type_in (list[str] | Unset):
+        priority (int | Unset):
+        priority_contained_by (int | Unset):
+        priority_contains (int | Unset):
+        priority_endswith (int | Unset):
+        priority_gt (int | Unset):
+        priority_gte (int | Unset):
+        priority_icontains (int | Unset):
+        priority_iendswith (int | Unset):
+        priority_iexact (int | Unset):
+        priority_in (list[int] | Unset):
+        priority_iregex (int | Unset):
+        priority_isnull (bool | Unset):
+        priority_istartswith (int | Unset):
+        priority_lt (int | Unset):
+        priority_lte (int | Unset):
+        priority_range (list[int] | Unset):
+        priority_regex (int | Unset):
+        priority_startswith (int | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        role (RpisListRole | Unset):
+        role_contains (str | Unset):
+        role_endswith (str | Unset):
+        role_gt (str | Unset):
+        role_gte (str | Unset):
+        role_icontains (str | Unset):
+        role_iendswith (str | Unset):
+        role_iexact (str | Unset):
+        role_in (list[str] | Unset):
+        role_iregex (str | Unset):
+        role_isnull (bool | Unset):
+        role_istartswith (str | Unset):
+        role_lt (str | Unset):
+        role_lte (str | Unset):
+        role_range (list[str] | Unset):
+        role_regex (str | Unset):
+        role_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -656,181 +656,181 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party: Union[Unset, int] = UNSET,
-    party_first_name: Union[Unset, str] = UNSET,
-    party_first_name_in: Union[Unset, list[str]] = UNSET,
-    party_gt: Union[Unset, int] = UNSET,
-    party_gte: Union[Unset, int] = UNSET,
-    party_in: Union[Unset, list[int]] = UNSET,
-    party_isnull: Union[Unset, bool] = UNSET,
-    party_last_name: Union[Unset, str] = UNSET,
-    party_last_name_in: Union[Unset, list[str]] = UNSET,
-    party_lt: Union[Unset, int] = UNSET,
-    party_lte: Union[Unset, int] = UNSET,
-    party_ob_id: Union[Unset, int] = UNSET,
-    party_ob_id_in: Union[Unset, list[int]] = UNSET,
-    party_party_type: Union[Unset, RpisListType] = UNSET,
-    party_party_type_in: Union[Unset, list[str]] = UNSET,
-    priority: Union[Unset, int] = UNSET,
-    priority_contained_by: Union[Unset, int] = UNSET,
-    priority_contains: Union[Unset, int] = UNSET,
-    priority_endswith: Union[Unset, int] = UNSET,
-    priority_gt: Union[Unset, int] = UNSET,
-    priority_gte: Union[Unset, int] = UNSET,
-    priority_icontains: Union[Unset, int] = UNSET,
-    priority_iendswith: Union[Unset, int] = UNSET,
-    priority_iexact: Union[Unset, int] = UNSET,
-    priority_in: Union[Unset, list[int]] = UNSET,
-    priority_iregex: Union[Unset, int] = UNSET,
-    priority_isnull: Union[Unset, bool] = UNSET,
-    priority_istartswith: Union[Unset, int] = UNSET,
-    priority_lt: Union[Unset, int] = UNSET,
-    priority_lte: Union[Unset, int] = UNSET,
-    priority_range: Union[Unset, list[int]] = UNSET,
-    priority_regex: Union[Unset, int] = UNSET,
-    priority_startswith: Union[Unset, int] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    role: Union[Unset, RpisListRole] = UNSET,
-    role_contains: Union[Unset, str] = UNSET,
-    role_endswith: Union[Unset, str] = UNSET,
-    role_gt: Union[Unset, str] = UNSET,
-    role_gte: Union[Unset, str] = UNSET,
-    role_icontains: Union[Unset, str] = UNSET,
-    role_iendswith: Union[Unset, str] = UNSET,
-    role_iexact: Union[Unset, str] = UNSET,
-    role_in: Union[Unset, list[str]] = UNSET,
-    role_iregex: Union[Unset, str] = UNSET,
-    role_isnull: Union[Unset, bool] = UNSET,
-    role_istartswith: Union[Unset, str] = UNSET,
-    role_lt: Union[Unset, str] = UNSET,
-    role_lte: Union[Unset, str] = UNSET,
-    role_range: Union[Unset, list[str]] = UNSET,
-    role_regex: Union[Unset, str] = UNSET,
-    role_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedResponsiblePartyInfoReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party: int | Unset = UNSET,
+    party_first_name: str | Unset = UNSET,
+    party_first_name_in: list[str] | Unset = UNSET,
+    party_gt: int | Unset = UNSET,
+    party_gte: int | Unset = UNSET,
+    party_in: list[int] | Unset = UNSET,
+    party_isnull: bool | Unset = UNSET,
+    party_last_name: str | Unset = UNSET,
+    party_last_name_in: list[str] | Unset = UNSET,
+    party_lt: int | Unset = UNSET,
+    party_lte: int | Unset = UNSET,
+    party_ob_id: int | Unset = UNSET,
+    party_ob_id_in: list[int] | Unset = UNSET,
+    party_party_type: RpisListType | Unset = UNSET,
+    party_party_type_in: list[str] | Unset = UNSET,
+    priority: int | Unset = UNSET,
+    priority_contained_by: int | Unset = UNSET,
+    priority_contains: int | Unset = UNSET,
+    priority_endswith: int | Unset = UNSET,
+    priority_gt: int | Unset = UNSET,
+    priority_gte: int | Unset = UNSET,
+    priority_icontains: int | Unset = UNSET,
+    priority_iendswith: int | Unset = UNSET,
+    priority_iexact: int | Unset = UNSET,
+    priority_in: list[int] | Unset = UNSET,
+    priority_iregex: int | Unset = UNSET,
+    priority_isnull: bool | Unset = UNSET,
+    priority_istartswith: int | Unset = UNSET,
+    priority_lt: int | Unset = UNSET,
+    priority_lte: int | Unset = UNSET,
+    priority_range: list[int] | Unset = UNSET,
+    priority_regex: int | Unset = UNSET,
+    priority_startswith: int | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    role: RpisListRole | Unset = UNSET,
+    role_contains: str | Unset = UNSET,
+    role_endswith: str | Unset = UNSET,
+    role_gt: str | Unset = UNSET,
+    role_gte: str | Unset = UNSET,
+    role_icontains: str | Unset = UNSET,
+    role_iendswith: str | Unset = UNSET,
+    role_iexact: str | Unset = UNSET,
+    role_in: list[str] | Unset = UNSET,
+    role_iregex: str | Unset = UNSET,
+    role_isnull: bool | Unset = UNSET,
+    role_istartswith: str | Unset = UNSET,
+    role_lt: str | Unset = UNSET,
+    role_lte: str | Unset = UNSET,
+    role_range: list[str] | Unset = UNSET,
+    role_regex: str | Unset = UNSET,
+    role_startswith: str | Unset = UNSET,
+) -> PaginatedResponsiblePartyInfoReadList | None:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
     undertaking. Additionally, the priority value indicates an ordering that may be present for
     that given role for the relatedTo object.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        party (Union[Unset, int]):
-        party_first_name (Union[Unset, str]):
-        party_first_name_in (Union[Unset, list[str]]):
-        party_gt (Union[Unset, int]):
-        party_gte (Union[Unset, int]):
-        party_in (Union[Unset, list[int]]):
-        party_isnull (Union[Unset, bool]):
-        party_last_name (Union[Unset, str]):
-        party_last_name_in (Union[Unset, list[str]]):
-        party_lt (Union[Unset, int]):
-        party_lte (Union[Unset, int]):
-        party_ob_id (Union[Unset, int]):
-        party_ob_id_in (Union[Unset, list[int]]):
-        party_party_type (Union[Unset, RpisListType]):
-        party_party_type_in (Union[Unset, list[str]]):
-        priority (Union[Unset, int]):
-        priority_contained_by (Union[Unset, int]):
-        priority_contains (Union[Unset, int]):
-        priority_endswith (Union[Unset, int]):
-        priority_gt (Union[Unset, int]):
-        priority_gte (Union[Unset, int]):
-        priority_icontains (Union[Unset, int]):
-        priority_iendswith (Union[Unset, int]):
-        priority_iexact (Union[Unset, int]):
-        priority_in (Union[Unset, list[int]]):
-        priority_iregex (Union[Unset, int]):
-        priority_isnull (Union[Unset, bool]):
-        priority_istartswith (Union[Unset, int]):
-        priority_lt (Union[Unset, int]):
-        priority_lte (Union[Unset, int]):
-        priority_range (Union[Unset, list[int]]):
-        priority_regex (Union[Unset, int]):
-        priority_startswith (Union[Unset, int]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        role (Union[Unset, RpisListRole]):
-        role_contains (Union[Unset, str]):
-        role_endswith (Union[Unset, str]):
-        role_gt (Union[Unset, str]):
-        role_gte (Union[Unset, str]):
-        role_icontains (Union[Unset, str]):
-        role_iendswith (Union[Unset, str]):
-        role_iexact (Union[Unset, str]):
-        role_in (Union[Unset, list[str]]):
-        role_iregex (Union[Unset, str]):
-        role_isnull (Union[Unset, bool]):
-        role_istartswith (Union[Unset, str]):
-        role_lt (Union[Unset, str]):
-        role_lte (Union[Unset, str]):
-        role_range (Union[Unset, list[str]]):
-        role_regex (Union[Unset, str]):
-        role_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        party (int | Unset):
+        party_first_name (str | Unset):
+        party_first_name_in (list[str] | Unset):
+        party_gt (int | Unset):
+        party_gte (int | Unset):
+        party_in (list[int] | Unset):
+        party_isnull (bool | Unset):
+        party_last_name (str | Unset):
+        party_last_name_in (list[str] | Unset):
+        party_lt (int | Unset):
+        party_lte (int | Unset):
+        party_ob_id (int | Unset):
+        party_ob_id_in (list[int] | Unset):
+        party_party_type (RpisListType | Unset):
+        party_party_type_in (list[str] | Unset):
+        priority (int | Unset):
+        priority_contained_by (int | Unset):
+        priority_contains (int | Unset):
+        priority_endswith (int | Unset):
+        priority_gt (int | Unset):
+        priority_gte (int | Unset):
+        priority_icontains (int | Unset):
+        priority_iendswith (int | Unset):
+        priority_iexact (int | Unset):
+        priority_in (list[int] | Unset):
+        priority_iregex (int | Unset):
+        priority_isnull (bool | Unset):
+        priority_istartswith (int | Unset):
+        priority_lt (int | Unset):
+        priority_lte (int | Unset):
+        priority_range (list[int] | Unset):
+        priority_regex (int | Unset):
+        priority_startswith (int | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        role (RpisListRole | Unset):
+        role_contains (str | Unset):
+        role_endswith (str | Unset):
+        role_gt (str | Unset):
+        role_gte (str | Unset):
+        role_icontains (str | Unset):
+        role_iendswith (str | Unset):
+        role_iexact (str | Unset):
+        role_in (list[str] | Unset):
+        role_iregex (str | Unset):
+        role_isnull (bool | Unset):
+        role_istartswith (str | Unset):
+        role_lt (str | Unset):
+        role_lte (str | Unset):
+        role_range (list[str] | Unset):
+        role_regex (str | Unset):
+        role_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -932,90 +932,90 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party: Union[Unset, int] = UNSET,
-    party_first_name: Union[Unset, str] = UNSET,
-    party_first_name_in: Union[Unset, list[str]] = UNSET,
-    party_gt: Union[Unset, int] = UNSET,
-    party_gte: Union[Unset, int] = UNSET,
-    party_in: Union[Unset, list[int]] = UNSET,
-    party_isnull: Union[Unset, bool] = UNSET,
-    party_last_name: Union[Unset, str] = UNSET,
-    party_last_name_in: Union[Unset, list[str]] = UNSET,
-    party_lt: Union[Unset, int] = UNSET,
-    party_lte: Union[Unset, int] = UNSET,
-    party_ob_id: Union[Unset, int] = UNSET,
-    party_ob_id_in: Union[Unset, list[int]] = UNSET,
-    party_party_type: Union[Unset, RpisListType] = UNSET,
-    party_party_type_in: Union[Unset, list[str]] = UNSET,
-    priority: Union[Unset, int] = UNSET,
-    priority_contained_by: Union[Unset, int] = UNSET,
-    priority_contains: Union[Unset, int] = UNSET,
-    priority_endswith: Union[Unset, int] = UNSET,
-    priority_gt: Union[Unset, int] = UNSET,
-    priority_gte: Union[Unset, int] = UNSET,
-    priority_icontains: Union[Unset, int] = UNSET,
-    priority_iendswith: Union[Unset, int] = UNSET,
-    priority_iexact: Union[Unset, int] = UNSET,
-    priority_in: Union[Unset, list[int]] = UNSET,
-    priority_iregex: Union[Unset, int] = UNSET,
-    priority_isnull: Union[Unset, bool] = UNSET,
-    priority_istartswith: Union[Unset, int] = UNSET,
-    priority_lt: Union[Unset, int] = UNSET,
-    priority_lte: Union[Unset, int] = UNSET,
-    priority_range: Union[Unset, list[int]] = UNSET,
-    priority_regex: Union[Unset, int] = UNSET,
-    priority_startswith: Union[Unset, int] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    role: Union[Unset, RpisListRole] = UNSET,
-    role_contains: Union[Unset, str] = UNSET,
-    role_endswith: Union[Unset, str] = UNSET,
-    role_gt: Union[Unset, str] = UNSET,
-    role_gte: Union[Unset, str] = UNSET,
-    role_icontains: Union[Unset, str] = UNSET,
-    role_iendswith: Union[Unset, str] = UNSET,
-    role_iexact: Union[Unset, str] = UNSET,
-    role_in: Union[Unset, list[str]] = UNSET,
-    role_iregex: Union[Unset, str] = UNSET,
-    role_isnull: Union[Unset, bool] = UNSET,
-    role_istartswith: Union[Unset, str] = UNSET,
-    role_lt: Union[Unset, str] = UNSET,
-    role_lte: Union[Unset, str] = UNSET,
-    role_range: Union[Unset, list[str]] = UNSET,
-    role_regex: Union[Unset, str] = UNSET,
-    role_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party: int | Unset = UNSET,
+    party_first_name: str | Unset = UNSET,
+    party_first_name_in: list[str] | Unset = UNSET,
+    party_gt: int | Unset = UNSET,
+    party_gte: int | Unset = UNSET,
+    party_in: list[int] | Unset = UNSET,
+    party_isnull: bool | Unset = UNSET,
+    party_last_name: str | Unset = UNSET,
+    party_last_name_in: list[str] | Unset = UNSET,
+    party_lt: int | Unset = UNSET,
+    party_lte: int | Unset = UNSET,
+    party_ob_id: int | Unset = UNSET,
+    party_ob_id_in: list[int] | Unset = UNSET,
+    party_party_type: RpisListType | Unset = UNSET,
+    party_party_type_in: list[str] | Unset = UNSET,
+    priority: int | Unset = UNSET,
+    priority_contained_by: int | Unset = UNSET,
+    priority_contains: int | Unset = UNSET,
+    priority_endswith: int | Unset = UNSET,
+    priority_gt: int | Unset = UNSET,
+    priority_gte: int | Unset = UNSET,
+    priority_icontains: int | Unset = UNSET,
+    priority_iendswith: int | Unset = UNSET,
+    priority_iexact: int | Unset = UNSET,
+    priority_in: list[int] | Unset = UNSET,
+    priority_iregex: int | Unset = UNSET,
+    priority_isnull: bool | Unset = UNSET,
+    priority_istartswith: int | Unset = UNSET,
+    priority_lt: int | Unset = UNSET,
+    priority_lte: int | Unset = UNSET,
+    priority_range: list[int] | Unset = UNSET,
+    priority_regex: int | Unset = UNSET,
+    priority_startswith: int | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    role: RpisListRole | Unset = UNSET,
+    role_contains: str | Unset = UNSET,
+    role_endswith: str | Unset = UNSET,
+    role_gt: str | Unset = UNSET,
+    role_gte: str | Unset = UNSET,
+    role_icontains: str | Unset = UNSET,
+    role_iendswith: str | Unset = UNSET,
+    role_iexact: str | Unset = UNSET,
+    role_in: list[str] | Unset = UNSET,
+    role_iregex: str | Unset = UNSET,
+    role_isnull: bool | Unset = UNSET,
+    role_istartswith: str | Unset = UNSET,
+    role_lt: str | Unset = UNSET,
+    role_lte: str | Unset = UNSET,
+    role_range: list[str] | Unset = UNSET,
+    role_regex: str | Unset = UNSET,
+    role_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedResponsiblePartyInfoReadList]:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
@@ -1023,90 +1023,90 @@ async def asyncio_detailed(
     that given role for the relatedTo object.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        party (Union[Unset, int]):
-        party_first_name (Union[Unset, str]):
-        party_first_name_in (Union[Unset, list[str]]):
-        party_gt (Union[Unset, int]):
-        party_gte (Union[Unset, int]):
-        party_in (Union[Unset, list[int]]):
-        party_isnull (Union[Unset, bool]):
-        party_last_name (Union[Unset, str]):
-        party_last_name_in (Union[Unset, list[str]]):
-        party_lt (Union[Unset, int]):
-        party_lte (Union[Unset, int]):
-        party_ob_id (Union[Unset, int]):
-        party_ob_id_in (Union[Unset, list[int]]):
-        party_party_type (Union[Unset, RpisListType]):
-        party_party_type_in (Union[Unset, list[str]]):
-        priority (Union[Unset, int]):
-        priority_contained_by (Union[Unset, int]):
-        priority_contains (Union[Unset, int]):
-        priority_endswith (Union[Unset, int]):
-        priority_gt (Union[Unset, int]):
-        priority_gte (Union[Unset, int]):
-        priority_icontains (Union[Unset, int]):
-        priority_iendswith (Union[Unset, int]):
-        priority_iexact (Union[Unset, int]):
-        priority_in (Union[Unset, list[int]]):
-        priority_iregex (Union[Unset, int]):
-        priority_isnull (Union[Unset, bool]):
-        priority_istartswith (Union[Unset, int]):
-        priority_lt (Union[Unset, int]):
-        priority_lte (Union[Unset, int]):
-        priority_range (Union[Unset, list[int]]):
-        priority_regex (Union[Unset, int]):
-        priority_startswith (Union[Unset, int]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        role (Union[Unset, RpisListRole]):
-        role_contains (Union[Unset, str]):
-        role_endswith (Union[Unset, str]):
-        role_gt (Union[Unset, str]):
-        role_gte (Union[Unset, str]):
-        role_icontains (Union[Unset, str]):
-        role_iendswith (Union[Unset, str]):
-        role_iexact (Union[Unset, str]):
-        role_in (Union[Unset, list[str]]):
-        role_iregex (Union[Unset, str]):
-        role_isnull (Union[Unset, bool]):
-        role_istartswith (Union[Unset, str]):
-        role_lt (Union[Unset, str]):
-        role_lte (Union[Unset, str]):
-        role_range (Union[Unset, list[str]]):
-        role_regex (Union[Unset, str]):
-        role_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        party (int | Unset):
+        party_first_name (str | Unset):
+        party_first_name_in (list[str] | Unset):
+        party_gt (int | Unset):
+        party_gte (int | Unset):
+        party_in (list[int] | Unset):
+        party_isnull (bool | Unset):
+        party_last_name (str | Unset):
+        party_last_name_in (list[str] | Unset):
+        party_lt (int | Unset):
+        party_lte (int | Unset):
+        party_ob_id (int | Unset):
+        party_ob_id_in (list[int] | Unset):
+        party_party_type (RpisListType | Unset):
+        party_party_type_in (list[str] | Unset):
+        priority (int | Unset):
+        priority_contained_by (int | Unset):
+        priority_contains (int | Unset):
+        priority_endswith (int | Unset):
+        priority_gt (int | Unset):
+        priority_gte (int | Unset):
+        priority_icontains (int | Unset):
+        priority_iendswith (int | Unset):
+        priority_iexact (int | Unset):
+        priority_in (list[int] | Unset):
+        priority_iregex (int | Unset):
+        priority_isnull (bool | Unset):
+        priority_istartswith (int | Unset):
+        priority_lt (int | Unset):
+        priority_lte (int | Unset):
+        priority_range (list[int] | Unset):
+        priority_regex (int | Unset):
+        priority_startswith (int | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        role (RpisListRole | Unset):
+        role_contains (str | Unset):
+        role_endswith (str | Unset):
+        role_gt (str | Unset):
+        role_gte (str | Unset):
+        role_icontains (str | Unset):
+        role_iendswith (str | Unset):
+        role_iexact (str | Unset):
+        role_in (list[str] | Unset):
+        role_iregex (str | Unset):
+        role_isnull (bool | Unset):
+        role_istartswith (str | Unset):
+        role_lt (str | Unset):
+        role_lte (str | Unset):
+        role_range (list[str] | Unset):
+        role_regex (str | Unset):
+        role_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1211,181 +1211,181 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party: Union[Unset, int] = UNSET,
-    party_first_name: Union[Unset, str] = UNSET,
-    party_first_name_in: Union[Unset, list[str]] = UNSET,
-    party_gt: Union[Unset, int] = UNSET,
-    party_gte: Union[Unset, int] = UNSET,
-    party_in: Union[Unset, list[int]] = UNSET,
-    party_isnull: Union[Unset, bool] = UNSET,
-    party_last_name: Union[Unset, str] = UNSET,
-    party_last_name_in: Union[Unset, list[str]] = UNSET,
-    party_lt: Union[Unset, int] = UNSET,
-    party_lte: Union[Unset, int] = UNSET,
-    party_ob_id: Union[Unset, int] = UNSET,
-    party_ob_id_in: Union[Unset, list[int]] = UNSET,
-    party_party_type: Union[Unset, RpisListType] = UNSET,
-    party_party_type_in: Union[Unset, list[str]] = UNSET,
-    priority: Union[Unset, int] = UNSET,
-    priority_contained_by: Union[Unset, int] = UNSET,
-    priority_contains: Union[Unset, int] = UNSET,
-    priority_endswith: Union[Unset, int] = UNSET,
-    priority_gt: Union[Unset, int] = UNSET,
-    priority_gte: Union[Unset, int] = UNSET,
-    priority_icontains: Union[Unset, int] = UNSET,
-    priority_iendswith: Union[Unset, int] = UNSET,
-    priority_iexact: Union[Unset, int] = UNSET,
-    priority_in: Union[Unset, list[int]] = UNSET,
-    priority_iregex: Union[Unset, int] = UNSET,
-    priority_isnull: Union[Unset, bool] = UNSET,
-    priority_istartswith: Union[Unset, int] = UNSET,
-    priority_lt: Union[Unset, int] = UNSET,
-    priority_lte: Union[Unset, int] = UNSET,
-    priority_range: Union[Unset, list[int]] = UNSET,
-    priority_regex: Union[Unset, int] = UNSET,
-    priority_startswith: Union[Unset, int] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    role: Union[Unset, RpisListRole] = UNSET,
-    role_contains: Union[Unset, str] = UNSET,
-    role_endswith: Union[Unset, str] = UNSET,
-    role_gt: Union[Unset, str] = UNSET,
-    role_gte: Union[Unset, str] = UNSET,
-    role_icontains: Union[Unset, str] = UNSET,
-    role_iendswith: Union[Unset, str] = UNSET,
-    role_iexact: Union[Unset, str] = UNSET,
-    role_in: Union[Unset, list[str]] = UNSET,
-    role_iregex: Union[Unset, str] = UNSET,
-    role_isnull: Union[Unset, bool] = UNSET,
-    role_istartswith: Union[Unset, str] = UNSET,
-    role_lt: Union[Unset, str] = UNSET,
-    role_lte: Union[Unset, str] = UNSET,
-    role_range: Union[Unset, list[str]] = UNSET,
-    role_regex: Union[Unset, str] = UNSET,
-    role_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedResponsiblePartyInfoReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party: int | Unset = UNSET,
+    party_first_name: str | Unset = UNSET,
+    party_first_name_in: list[str] | Unset = UNSET,
+    party_gt: int | Unset = UNSET,
+    party_gte: int | Unset = UNSET,
+    party_in: list[int] | Unset = UNSET,
+    party_isnull: bool | Unset = UNSET,
+    party_last_name: str | Unset = UNSET,
+    party_last_name_in: list[str] | Unset = UNSET,
+    party_lt: int | Unset = UNSET,
+    party_lte: int | Unset = UNSET,
+    party_ob_id: int | Unset = UNSET,
+    party_ob_id_in: list[int] | Unset = UNSET,
+    party_party_type: RpisListType | Unset = UNSET,
+    party_party_type_in: list[str] | Unset = UNSET,
+    priority: int | Unset = UNSET,
+    priority_contained_by: int | Unset = UNSET,
+    priority_contains: int | Unset = UNSET,
+    priority_endswith: int | Unset = UNSET,
+    priority_gt: int | Unset = UNSET,
+    priority_gte: int | Unset = UNSET,
+    priority_icontains: int | Unset = UNSET,
+    priority_iendswith: int | Unset = UNSET,
+    priority_iexact: int | Unset = UNSET,
+    priority_in: list[int] | Unset = UNSET,
+    priority_iregex: int | Unset = UNSET,
+    priority_isnull: bool | Unset = UNSET,
+    priority_istartswith: int | Unset = UNSET,
+    priority_lt: int | Unset = UNSET,
+    priority_lte: int | Unset = UNSET,
+    priority_range: list[int] | Unset = UNSET,
+    priority_regex: int | Unset = UNSET,
+    priority_startswith: int | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    role: RpisListRole | Unset = UNSET,
+    role_contains: str | Unset = UNSET,
+    role_endswith: str | Unset = UNSET,
+    role_gt: str | Unset = UNSET,
+    role_gte: str | Unset = UNSET,
+    role_icontains: str | Unset = UNSET,
+    role_iendswith: str | Unset = UNSET,
+    role_iexact: str | Unset = UNSET,
+    role_in: list[str] | Unset = UNSET,
+    role_iregex: str | Unset = UNSET,
+    role_isnull: bool | Unset = UNSET,
+    role_istartswith: str | Unset = UNSET,
+    role_lt: str | Unset = UNSET,
+    role_lte: str | Unset = UNSET,
+    role_range: list[str] | Unset = UNSET,
+    role_regex: str | Unset = UNSET,
+    role_startswith: str | Unset = UNSET,
+) -> PaginatedResponsiblePartyInfoReadList | None:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
     undertaking. Additionally, the priority value indicates an ordering that may be present for
     that given role for the relatedTo object.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        party (Union[Unset, int]):
-        party_first_name (Union[Unset, str]):
-        party_first_name_in (Union[Unset, list[str]]):
-        party_gt (Union[Unset, int]):
-        party_gte (Union[Unset, int]):
-        party_in (Union[Unset, list[int]]):
-        party_isnull (Union[Unset, bool]):
-        party_last_name (Union[Unset, str]):
-        party_last_name_in (Union[Unset, list[str]]):
-        party_lt (Union[Unset, int]):
-        party_lte (Union[Unset, int]):
-        party_ob_id (Union[Unset, int]):
-        party_ob_id_in (Union[Unset, list[int]]):
-        party_party_type (Union[Unset, RpisListType]):
-        party_party_type_in (Union[Unset, list[str]]):
-        priority (Union[Unset, int]):
-        priority_contained_by (Union[Unset, int]):
-        priority_contains (Union[Unset, int]):
-        priority_endswith (Union[Unset, int]):
-        priority_gt (Union[Unset, int]):
-        priority_gte (Union[Unset, int]):
-        priority_icontains (Union[Unset, int]):
-        priority_iendswith (Union[Unset, int]):
-        priority_iexact (Union[Unset, int]):
-        priority_in (Union[Unset, list[int]]):
-        priority_iregex (Union[Unset, int]):
-        priority_isnull (Union[Unset, bool]):
-        priority_istartswith (Union[Unset, int]):
-        priority_lt (Union[Unset, int]):
-        priority_lte (Union[Unset, int]):
-        priority_range (Union[Unset, list[int]]):
-        priority_regex (Union[Unset, int]):
-        priority_startswith (Union[Unset, int]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        role (Union[Unset, RpisListRole]):
-        role_contains (Union[Unset, str]):
-        role_endswith (Union[Unset, str]):
-        role_gt (Union[Unset, str]):
-        role_gte (Union[Unset, str]):
-        role_icontains (Union[Unset, str]):
-        role_iendswith (Union[Unset, str]):
-        role_iexact (Union[Unset, str]):
-        role_in (Union[Unset, list[str]]):
-        role_iregex (Union[Unset, str]):
-        role_isnull (Union[Unset, bool]):
-        role_istartswith (Union[Unset, str]):
-        role_lt (Union[Unset, str]):
-        role_lte (Union[Unset, str]):
-        role_range (Union[Unset, list[str]]):
-        role_regex (Union[Unset, str]):
-        role_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        party (int | Unset):
+        party_first_name (str | Unset):
+        party_first_name_in (list[str] | Unset):
+        party_gt (int | Unset):
+        party_gte (int | Unset):
+        party_in (list[int] | Unset):
+        party_isnull (bool | Unset):
+        party_last_name (str | Unset):
+        party_last_name_in (list[str] | Unset):
+        party_lt (int | Unset):
+        party_lte (int | Unset):
+        party_ob_id (int | Unset):
+        party_ob_id_in (list[int] | Unset):
+        party_party_type (RpisListType | Unset):
+        party_party_type_in (list[str] | Unset):
+        priority (int | Unset):
+        priority_contained_by (int | Unset):
+        priority_contains (int | Unset):
+        priority_endswith (int | Unset):
+        priority_gt (int | Unset):
+        priority_gte (int | Unset):
+        priority_icontains (int | Unset):
+        priority_iendswith (int | Unset):
+        priority_iexact (int | Unset):
+        priority_in (list[int] | Unset):
+        priority_iregex (int | Unset):
+        priority_isnull (bool | Unset):
+        priority_istartswith (int | Unset):
+        priority_lt (int | Unset):
+        priority_lte (int | Unset):
+        priority_range (list[int] | Unset):
+        priority_regex (int | Unset):
+        priority_startswith (int | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        role (RpisListRole | Unset):
+        role_contains (str | Unset):
+        role_endswith (str | Unset):
+        role_gt (str | Unset):
+        role_gte (str | Unset):
+        role_icontains (str | Unset):
+        role_iendswith (str | Unset):
+        role_iexact (str | Unset):
+        role_in (list[str] | Unset):
+        role_iregex (str | Unset):
+        role_isnull (bool | Unset):
+        role_istartswith (str | Unset):
+        role_lt (str | Unset):
+        role_lte (str | Unset):
+        role_range (list[str] | Unset):
+        role_regex (str | Unset):
+        role_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

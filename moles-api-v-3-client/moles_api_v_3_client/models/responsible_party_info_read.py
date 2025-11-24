@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,7 +23,7 @@ class ResponsiblePartyInfoRead:
 
         Attributes:
             ob_id (int):
-            priority (Union[None, int]):
+            priority (int | None):
             role (RoleEnum): * `author` - Author
                 * `ceda_officer` - CEDA Officer
                 * `co_investigator` - Co-Investigator
@@ -42,16 +44,16 @@ class ResponsiblePartyInfoRead:
     """
 
     ob_id: int
-    priority: Union[None, int]
+    priority: int | None
     role: RoleEnum
-    party: "PartyRead"
-    related_to: "Referenceable"
+    party: PartyRead
+    related_to: Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
 
-        priority: Union[None, int]
+        priority: int | None
         priority = self.priority
 
         role = self.role.value
@@ -82,10 +84,10 @@ class ResponsiblePartyInfoRead:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        def _parse_priority(data: object) -> Union[None, int]:
+        def _parse_priority(data: object) -> int | None:
             if data is None:
                 return data
-            return cast(Union[None, int], data)
+            return cast(int | None, data)
 
         priority = _parse_priority(d.pop("priority"))
 

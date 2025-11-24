@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -13,173 +13,173 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_collection_ob_id: Union[Unset, int] = UNSET,
-    observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_collection_title: Union[Unset, str] = UNSET,
-    observation_collection_title_contains: Union[Unset, str] = UNSET,
-    observation_collection_uuid: Union[Unset, str] = UNSET,
-    observation_collection_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    parent_project: Union[Unset, int] = UNSET,
-    parent_project_gt: Union[Unset, int] = UNSET,
-    parent_project_gte: Union[Unset, int] = UNSET,
-    parent_project_in: Union[Unset, list[int]] = UNSET,
-    parent_project_isnull: Union[Unset, bool] = UNSET,
-    parent_project_lt: Union[Unset, int] = UNSET,
-    parent_project_lte: Union[Unset, int] = UNSET,
-    publication_state: Union[Unset, ProjectsListPublicationState] = UNSET,
-    publication_state_contains: Union[Unset, str] = UNSET,
-    publication_state_endswith: Union[Unset, str] = UNSET,
-    publication_state_gt: Union[Unset, str] = UNSET,
-    publication_state_gte: Union[Unset, str] = UNSET,
-    publication_state_icontains: Union[Unset, str] = UNSET,
-    publication_state_iendswith: Union[Unset, str] = UNSET,
-    publication_state_iexact: Union[Unset, str] = UNSET,
-    publication_state_in: Union[Unset, list[str]] = UNSET,
-    publication_state_iregex: Union[Unset, str] = UNSET,
-    publication_state_isnull: Union[Unset, bool] = UNSET,
-    publication_state_istartswith: Union[Unset, str] = UNSET,
-    publication_state_lt: Union[Unset, str] = UNSET,
-    publication_state_lte: Union[Unset, str] = UNSET,
-    publication_state_range: Union[Unset, list[str]] = UNSET,
-    publication_state_regex: Union[Unset, str] = UNSET,
-    publication_state_startswith: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, ProjectsListProjectStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    sub_project_ob_id: Union[Unset, int] = UNSET,
-    sub_project_ob_id_in: Union[Unset, list[int]] = UNSET,
-    sub_project_title: Union[Unset, str] = UNSET,
-    sub_project_title_contains: Union[Unset, str] = UNSET,
-    sub_project_title_in: Union[Unset, list[str]] = UNSET,
-    sub_project_uuid: Union[Unset, str] = UNSET,
-    sub_project_uuid_in: Union[Unset, list[str]] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_collection_ob_id: int | Unset = UNSET,
+    observation_collection_ob_id_in: list[int] | Unset = UNSET,
+    observation_collection_title: str | Unset = UNSET,
+    observation_collection_title_contains: str | Unset = UNSET,
+    observation_collection_uuid: str | Unset = UNSET,
+    observation_collection_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    parent_project: int | Unset = UNSET,
+    parent_project_gt: int | Unset = UNSET,
+    parent_project_gte: int | Unset = UNSET,
+    parent_project_in: list[int] | Unset = UNSET,
+    parent_project_isnull: bool | Unset = UNSET,
+    parent_project_lt: int | Unset = UNSET,
+    parent_project_lte: int | Unset = UNSET,
+    publication_state: ProjectsListPublicationState | Unset = UNSET,
+    publication_state_contains: str | Unset = UNSET,
+    publication_state_endswith: str | Unset = UNSET,
+    publication_state_gt: str | Unset = UNSET,
+    publication_state_gte: str | Unset = UNSET,
+    publication_state_icontains: str | Unset = UNSET,
+    publication_state_iendswith: str | Unset = UNSET,
+    publication_state_iexact: str | Unset = UNSET,
+    publication_state_in: list[str] | Unset = UNSET,
+    publication_state_iregex: str | Unset = UNSET,
+    publication_state_isnull: bool | Unset = UNSET,
+    publication_state_istartswith: str | Unset = UNSET,
+    publication_state_lt: str | Unset = UNSET,
+    publication_state_lte: str | Unset = UNSET,
+    publication_state_range: list[str] | Unset = UNSET,
+    publication_state_regex: str | Unset = UNSET,
+    publication_state_startswith: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: ProjectsListProjectStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    sub_project_ob_id: int | Unset = UNSET,
+    sub_project_ob_id_in: list[int] | Unset = UNSET,
+    sub_project_title: str | Unset = UNSET,
+    sub_project_title_contains: str | Unset = UNSET,
+    sub_project_title_in: list[str] | Unset = UNSET,
+    sub_project_uuid: str | Unset = UNSET,
+    sub_project_uuid_in: list[str] | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -199,7 +199,7 @@ def _get_kwargs(
 
     params["abstract__iexact"] = abstract_iexact
 
-    json_abstract_in: Union[Unset, list[str]] = UNSET
+    json_abstract_in: list[str] | Unset = UNSET
     if not isinstance(abstract_in, Unset):
         json_abstract_in = ",".join(map(str, abstract_in))
 
@@ -215,7 +215,7 @@ def _get_kwargs(
 
     params["abstract__lte"] = abstract_lte
 
-    json_abstract_range: Union[Unset, list[str]] = UNSET
+    json_abstract_range: list[str] | Unset = UNSET
     if not isinstance(abstract_range, Unset):
         json_abstract_range = ",".join(map(str, abstract_range))
 
@@ -241,7 +241,7 @@ def _get_kwargs(
 
     params["keywords__iexact"] = keywords_iexact
 
-    json_keywords_in: Union[Unset, list[str]] = UNSET
+    json_keywords_in: list[str] | Unset = UNSET
     if not isinstance(keywords_in, Unset):
         json_keywords_in = ",".join(map(str, keywords_in))
 
@@ -257,7 +257,7 @@ def _get_kwargs(
 
     params["keywords__lte"] = keywords_lte
 
-    json_keywords_range: Union[Unset, list[str]] = UNSET
+    json_keywords_range: list[str] | Unset = UNSET
     if not isinstance(keywords_range, Unset):
         json_keywords_range = ",".join(map(str, keywords_range))
 
@@ -287,7 +287,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -303,7 +303,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -315,7 +315,7 @@ def _get_kwargs(
 
     params["observationCollection__ob_id"] = observation_collection_ob_id
 
-    json_observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_observation_collection_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(observation_collection_ob_id_in, Unset):
         json_observation_collection_ob_id_in = ",".join(map(str, observation_collection_ob_id_in))
 
@@ -327,7 +327,7 @@ def _get_kwargs(
 
     params["observationCollection__uuid"] = observation_collection_uuid
 
-    json_observation_collection_uuid_in: Union[Unset, list[str]] = UNSET
+    json_observation_collection_uuid_in: list[str] | Unset = UNSET
     if not isinstance(observation_collection_uuid_in, Unset):
         json_observation_collection_uuid_in = ",".join(map(str, observation_collection_uuid_in))
 
@@ -343,7 +343,7 @@ def _get_kwargs(
 
     params["parentProject__gte"] = parent_project_gte
 
-    json_parent_project_in: Union[Unset, list[int]] = UNSET
+    json_parent_project_in: list[int] | Unset = UNSET
     if not isinstance(parent_project_in, Unset):
         json_parent_project_in = ",".join(map(str, parent_project_in))
 
@@ -355,7 +355,7 @@ def _get_kwargs(
 
     params["parentProject__lte"] = parent_project_lte
 
-    json_publication_state: Union[Unset, str] = UNSET
+    json_publication_state: str | Unset = UNSET
     if not isinstance(publication_state, Unset):
         json_publication_state = publication_state.value
 
@@ -375,7 +375,7 @@ def _get_kwargs(
 
     params["publicationState__iexact"] = publication_state_iexact
 
-    json_publication_state_in: Union[Unset, list[str]] = UNSET
+    json_publication_state_in: list[str] | Unset = UNSET
     if not isinstance(publication_state_in, Unset):
         json_publication_state_in = ",".join(map(str, publication_state_in))
 
@@ -391,7 +391,7 @@ def _get_kwargs(
 
     params["publicationState__lte"] = publication_state_lte
 
-    json_publication_state_range: Union[Unset, list[str]] = UNSET
+    json_publication_state_range: list[str] | Unset = UNSET
     if not isinstance(publication_state_range, Unset):
         json_publication_state_range = ",".join(map(str, publication_state_range))
 
@@ -407,7 +407,7 @@ def _get_kwargs(
 
     params["referenceable_ptr__gte"] = referenceable_ptr_gte
 
-    json_referenceable_ptr_in: Union[Unset, list[int]] = UNSET
+    json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
         json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
 
@@ -435,7 +435,7 @@ def _get_kwargs(
 
     params["short_code__iexact"] = short_code_iexact
 
-    json_short_code_in: Union[Unset, list[str]] = UNSET
+    json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
         json_short_code_in = ",".join(map(str, short_code_in))
 
@@ -451,7 +451,7 @@ def _get_kwargs(
 
     params["short_code__lte"] = short_code_lte
 
-    json_short_code_range: Union[Unset, list[str]] = UNSET
+    json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
         json_short_code_range = ",".join(map(str, short_code_range))
 
@@ -461,7 +461,7 @@ def _get_kwargs(
 
     params["short_code__startswith"] = short_code_startswith
 
-    json_status: Union[Unset, str] = UNSET
+    json_status: str | Unset = UNSET
     if not isinstance(status, Unset):
         json_status = status.value
 
@@ -481,7 +481,7 @@ def _get_kwargs(
 
     params["status__iexact"] = status_iexact
 
-    json_status_in: Union[Unset, list[str]] = UNSET
+    json_status_in: list[str] | Unset = UNSET
     if not isinstance(status_in, Unset):
         json_status_in = ",".join(map(str, status_in))
 
@@ -497,7 +497,7 @@ def _get_kwargs(
 
     params["status__lte"] = status_lte
 
-    json_status_range: Union[Unset, list[str]] = UNSET
+    json_status_range: list[str] | Unset = UNSET
     if not isinstance(status_range, Unset):
         json_status_range = ",".join(map(str, status_range))
 
@@ -509,7 +509,7 @@ def _get_kwargs(
 
     params["subProject__ob_id"] = sub_project_ob_id
 
-    json_sub_project_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_sub_project_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(sub_project_ob_id_in, Unset):
         json_sub_project_ob_id_in = ",".join(map(str, sub_project_ob_id_in))
 
@@ -519,7 +519,7 @@ def _get_kwargs(
 
     params["subProject__title__contains"] = sub_project_title_contains
 
-    json_sub_project_title_in: Union[Unset, list[str]] = UNSET
+    json_sub_project_title_in: list[str] | Unset = UNSET
     if not isinstance(sub_project_title_in, Unset):
         json_sub_project_title_in = ",".join(map(str, sub_project_title_in))
 
@@ -527,7 +527,7 @@ def _get_kwargs(
 
     params["subProject__uuid"] = sub_project_uuid
 
-    json_sub_project_uuid_in: Union[Unset, list[str]] = UNSET
+    json_sub_project_uuid_in: list[str] | Unset = UNSET
     if not isinstance(sub_project_uuid_in, Unset):
         json_sub_project_uuid_in = ",".join(map(str, sub_project_uuid_in))
 
@@ -549,7 +549,7 @@ def _get_kwargs(
 
     params["title__iexact"] = title_iexact
 
-    json_title_in: Union[Unset, list[str]] = UNSET
+    json_title_in: list[str] | Unset = UNSET
     if not isinstance(title_in, Unset):
         json_title_in = ",".join(map(str, title_in))
 
@@ -565,7 +565,7 @@ def _get_kwargs(
 
     params["title__lte"] = title_lte
 
-    json_title_range: Union[Unset, list[str]] = UNSET
+    json_title_range: list[str] | Unset = UNSET
     if not isinstance(title_range, Unset):
         json_title_range = ",".join(map(str, title_range))
 
@@ -591,7 +591,7 @@ def _get_kwargs(
 
     params["uuid__iexact"] = uuid_iexact
 
-    json_uuid_in: Union[Unset, list[str]] = UNSET
+    json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
         json_uuid_in = ",".join(map(str, uuid_in))
 
@@ -607,7 +607,7 @@ def _get_kwargs(
 
     params["uuid__lte"] = uuid_lte
 
-    json_uuid_range: Union[Unset, list[str]] = UNSET
+    json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
         json_uuid_range = ",".join(map(str, uuid_range))
 
@@ -629,8 +629,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedProjectReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedProjectReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedProjectReadList.from_dict(response.json())
 
@@ -643,7 +643,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedProjectReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -656,344 +656,344 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_collection_ob_id: Union[Unset, int] = UNSET,
-    observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_collection_title: Union[Unset, str] = UNSET,
-    observation_collection_title_contains: Union[Unset, str] = UNSET,
-    observation_collection_uuid: Union[Unset, str] = UNSET,
-    observation_collection_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    parent_project: Union[Unset, int] = UNSET,
-    parent_project_gt: Union[Unset, int] = UNSET,
-    parent_project_gte: Union[Unset, int] = UNSET,
-    parent_project_in: Union[Unset, list[int]] = UNSET,
-    parent_project_isnull: Union[Unset, bool] = UNSET,
-    parent_project_lt: Union[Unset, int] = UNSET,
-    parent_project_lte: Union[Unset, int] = UNSET,
-    publication_state: Union[Unset, ProjectsListPublicationState] = UNSET,
-    publication_state_contains: Union[Unset, str] = UNSET,
-    publication_state_endswith: Union[Unset, str] = UNSET,
-    publication_state_gt: Union[Unset, str] = UNSET,
-    publication_state_gte: Union[Unset, str] = UNSET,
-    publication_state_icontains: Union[Unset, str] = UNSET,
-    publication_state_iendswith: Union[Unset, str] = UNSET,
-    publication_state_iexact: Union[Unset, str] = UNSET,
-    publication_state_in: Union[Unset, list[str]] = UNSET,
-    publication_state_iregex: Union[Unset, str] = UNSET,
-    publication_state_isnull: Union[Unset, bool] = UNSET,
-    publication_state_istartswith: Union[Unset, str] = UNSET,
-    publication_state_lt: Union[Unset, str] = UNSET,
-    publication_state_lte: Union[Unset, str] = UNSET,
-    publication_state_range: Union[Unset, list[str]] = UNSET,
-    publication_state_regex: Union[Unset, str] = UNSET,
-    publication_state_startswith: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, ProjectsListProjectStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    sub_project_ob_id: Union[Unset, int] = UNSET,
-    sub_project_ob_id_in: Union[Unset, list[int]] = UNSET,
-    sub_project_title: Union[Unset, str] = UNSET,
-    sub_project_title_contains: Union[Unset, str] = UNSET,
-    sub_project_title_in: Union[Unset, list[str]] = UNSET,
-    sub_project_uuid: Union[Unset, str] = UNSET,
-    sub_project_uuid_in: Union[Unset, list[str]] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_collection_ob_id: int | Unset = UNSET,
+    observation_collection_ob_id_in: list[int] | Unset = UNSET,
+    observation_collection_title: str | Unset = UNSET,
+    observation_collection_title_contains: str | Unset = UNSET,
+    observation_collection_uuid: str | Unset = UNSET,
+    observation_collection_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    parent_project: int | Unset = UNSET,
+    parent_project_gt: int | Unset = UNSET,
+    parent_project_gte: int | Unset = UNSET,
+    parent_project_in: list[int] | Unset = UNSET,
+    parent_project_isnull: bool | Unset = UNSET,
+    parent_project_lt: int | Unset = UNSET,
+    parent_project_lte: int | Unset = UNSET,
+    publication_state: ProjectsListPublicationState | Unset = UNSET,
+    publication_state_contains: str | Unset = UNSET,
+    publication_state_endswith: str | Unset = UNSET,
+    publication_state_gt: str | Unset = UNSET,
+    publication_state_gte: str | Unset = UNSET,
+    publication_state_icontains: str | Unset = UNSET,
+    publication_state_iendswith: str | Unset = UNSET,
+    publication_state_iexact: str | Unset = UNSET,
+    publication_state_in: list[str] | Unset = UNSET,
+    publication_state_iregex: str | Unset = UNSET,
+    publication_state_isnull: bool | Unset = UNSET,
+    publication_state_istartswith: str | Unset = UNSET,
+    publication_state_lt: str | Unset = UNSET,
+    publication_state_lte: str | Unset = UNSET,
+    publication_state_range: list[str] | Unset = UNSET,
+    publication_state_regex: str | Unset = UNSET,
+    publication_state_startswith: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: ProjectsListProjectStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    sub_project_ob_id: int | Unset = UNSET,
+    sub_project_ob_id_in: list[int] | Unset = UNSET,
+    sub_project_title: str | Unset = UNSET,
+    sub_project_title_contains: str | Unset = UNSET,
+    sub_project_title_in: list[str] | Unset = UNSET,
+    sub_project_uuid: str | Unset = UNSET,
+    sub_project_uuid_in: list[str] | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_collection_ob_id (Union[Unset, int]):
-        observation_collection_ob_id_in (Union[Unset, list[int]]):
-        observation_collection_title (Union[Unset, str]):
-        observation_collection_title_contains (Union[Unset, str]):
-        observation_collection_uuid (Union[Unset, str]):
-        observation_collection_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        parent_project (Union[Unset, int]):
-        parent_project_gt (Union[Unset, int]):
-        parent_project_gte (Union[Unset, int]):
-        parent_project_in (Union[Unset, list[int]]):
-        parent_project_isnull (Union[Unset, bool]):
-        parent_project_lt (Union[Unset, int]):
-        parent_project_lte (Union[Unset, int]):
-        publication_state (Union[Unset, ProjectsListPublicationState]):
-        publication_state_contains (Union[Unset, str]):
-        publication_state_endswith (Union[Unset, str]):
-        publication_state_gt (Union[Unset, str]):
-        publication_state_gte (Union[Unset, str]):
-        publication_state_icontains (Union[Unset, str]):
-        publication_state_iendswith (Union[Unset, str]):
-        publication_state_iexact (Union[Unset, str]):
-        publication_state_in (Union[Unset, list[str]]):
-        publication_state_iregex (Union[Unset, str]):
-        publication_state_isnull (Union[Unset, bool]):
-        publication_state_istartswith (Union[Unset, str]):
-        publication_state_lt (Union[Unset, str]):
-        publication_state_lte (Union[Unset, str]):
-        publication_state_range (Union[Unset, list[str]]):
-        publication_state_regex (Union[Unset, str]):
-        publication_state_startswith (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, ProjectsListProjectStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        sub_project_ob_id (Union[Unset, int]):
-        sub_project_ob_id_in (Union[Unset, list[int]]):
-        sub_project_title (Union[Unset, str]):
-        sub_project_title_contains (Union[Unset, str]):
-        sub_project_title_in (Union[Unset, list[str]]):
-        sub_project_uuid (Union[Unset, str]):
-        sub_project_uuid_in (Union[Unset, list[str]]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_collection_ob_id (int | Unset):
+        observation_collection_ob_id_in (list[int] | Unset):
+        observation_collection_title (str | Unset):
+        observation_collection_title_contains (str | Unset):
+        observation_collection_uuid (str | Unset):
+        observation_collection_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        parent_project (int | Unset):
+        parent_project_gt (int | Unset):
+        parent_project_gte (int | Unset):
+        parent_project_in (list[int] | Unset):
+        parent_project_isnull (bool | Unset):
+        parent_project_lt (int | Unset):
+        parent_project_lte (int | Unset):
+        publication_state (ProjectsListPublicationState | Unset):
+        publication_state_contains (str | Unset):
+        publication_state_endswith (str | Unset):
+        publication_state_gt (str | Unset):
+        publication_state_gte (str | Unset):
+        publication_state_icontains (str | Unset):
+        publication_state_iendswith (str | Unset):
+        publication_state_iexact (str | Unset):
+        publication_state_in (list[str] | Unset):
+        publication_state_iregex (str | Unset):
+        publication_state_isnull (bool | Unset):
+        publication_state_istartswith (str | Unset):
+        publication_state_lt (str | Unset):
+        publication_state_lte (str | Unset):
+        publication_state_range (list[str] | Unset):
+        publication_state_regex (str | Unset):
+        publication_state_startswith (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (ProjectsListProjectStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        sub_project_ob_id (int | Unset):
+        sub_project_ob_id_in (list[int] | Unset):
+        sub_project_title (str | Unset):
+        sub_project_title_contains (str | Unset):
+        sub_project_title_in (list[str] | Unset):
+        sub_project_uuid (str | Unset):
+        sub_project_uuid_in (list[str] | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1183,344 +1183,344 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_collection_ob_id: Union[Unset, int] = UNSET,
-    observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_collection_title: Union[Unset, str] = UNSET,
-    observation_collection_title_contains: Union[Unset, str] = UNSET,
-    observation_collection_uuid: Union[Unset, str] = UNSET,
-    observation_collection_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    parent_project: Union[Unset, int] = UNSET,
-    parent_project_gt: Union[Unset, int] = UNSET,
-    parent_project_gte: Union[Unset, int] = UNSET,
-    parent_project_in: Union[Unset, list[int]] = UNSET,
-    parent_project_isnull: Union[Unset, bool] = UNSET,
-    parent_project_lt: Union[Unset, int] = UNSET,
-    parent_project_lte: Union[Unset, int] = UNSET,
-    publication_state: Union[Unset, ProjectsListPublicationState] = UNSET,
-    publication_state_contains: Union[Unset, str] = UNSET,
-    publication_state_endswith: Union[Unset, str] = UNSET,
-    publication_state_gt: Union[Unset, str] = UNSET,
-    publication_state_gte: Union[Unset, str] = UNSET,
-    publication_state_icontains: Union[Unset, str] = UNSET,
-    publication_state_iendswith: Union[Unset, str] = UNSET,
-    publication_state_iexact: Union[Unset, str] = UNSET,
-    publication_state_in: Union[Unset, list[str]] = UNSET,
-    publication_state_iregex: Union[Unset, str] = UNSET,
-    publication_state_isnull: Union[Unset, bool] = UNSET,
-    publication_state_istartswith: Union[Unset, str] = UNSET,
-    publication_state_lt: Union[Unset, str] = UNSET,
-    publication_state_lte: Union[Unset, str] = UNSET,
-    publication_state_range: Union[Unset, list[str]] = UNSET,
-    publication_state_regex: Union[Unset, str] = UNSET,
-    publication_state_startswith: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, ProjectsListProjectStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    sub_project_ob_id: Union[Unset, int] = UNSET,
-    sub_project_ob_id_in: Union[Unset, list[int]] = UNSET,
-    sub_project_title: Union[Unset, str] = UNSET,
-    sub_project_title_contains: Union[Unset, str] = UNSET,
-    sub_project_title_in: Union[Unset, list[str]] = UNSET,
-    sub_project_uuid: Union[Unset, str] = UNSET,
-    sub_project_uuid_in: Union[Unset, list[str]] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProjectReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_collection_ob_id: int | Unset = UNSET,
+    observation_collection_ob_id_in: list[int] | Unset = UNSET,
+    observation_collection_title: str | Unset = UNSET,
+    observation_collection_title_contains: str | Unset = UNSET,
+    observation_collection_uuid: str | Unset = UNSET,
+    observation_collection_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    parent_project: int | Unset = UNSET,
+    parent_project_gt: int | Unset = UNSET,
+    parent_project_gte: int | Unset = UNSET,
+    parent_project_in: list[int] | Unset = UNSET,
+    parent_project_isnull: bool | Unset = UNSET,
+    parent_project_lt: int | Unset = UNSET,
+    parent_project_lte: int | Unset = UNSET,
+    publication_state: ProjectsListPublicationState | Unset = UNSET,
+    publication_state_contains: str | Unset = UNSET,
+    publication_state_endswith: str | Unset = UNSET,
+    publication_state_gt: str | Unset = UNSET,
+    publication_state_gte: str | Unset = UNSET,
+    publication_state_icontains: str | Unset = UNSET,
+    publication_state_iendswith: str | Unset = UNSET,
+    publication_state_iexact: str | Unset = UNSET,
+    publication_state_in: list[str] | Unset = UNSET,
+    publication_state_iregex: str | Unset = UNSET,
+    publication_state_isnull: bool | Unset = UNSET,
+    publication_state_istartswith: str | Unset = UNSET,
+    publication_state_lt: str | Unset = UNSET,
+    publication_state_lte: str | Unset = UNSET,
+    publication_state_range: list[str] | Unset = UNSET,
+    publication_state_regex: str | Unset = UNSET,
+    publication_state_startswith: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: ProjectsListProjectStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    sub_project_ob_id: int | Unset = UNSET,
+    sub_project_ob_id_in: list[int] | Unset = UNSET,
+    sub_project_title: str | Unset = UNSET,
+    sub_project_title_contains: str | Unset = UNSET,
+    sub_project_title_in: list[str] | Unset = UNSET,
+    sub_project_uuid: str | Unset = UNSET,
+    sub_project_uuid_in: list[str] | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedProjectReadList | None:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_collection_ob_id (Union[Unset, int]):
-        observation_collection_ob_id_in (Union[Unset, list[int]]):
-        observation_collection_title (Union[Unset, str]):
-        observation_collection_title_contains (Union[Unset, str]):
-        observation_collection_uuid (Union[Unset, str]):
-        observation_collection_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        parent_project (Union[Unset, int]):
-        parent_project_gt (Union[Unset, int]):
-        parent_project_gte (Union[Unset, int]):
-        parent_project_in (Union[Unset, list[int]]):
-        parent_project_isnull (Union[Unset, bool]):
-        parent_project_lt (Union[Unset, int]):
-        parent_project_lte (Union[Unset, int]):
-        publication_state (Union[Unset, ProjectsListPublicationState]):
-        publication_state_contains (Union[Unset, str]):
-        publication_state_endswith (Union[Unset, str]):
-        publication_state_gt (Union[Unset, str]):
-        publication_state_gte (Union[Unset, str]):
-        publication_state_icontains (Union[Unset, str]):
-        publication_state_iendswith (Union[Unset, str]):
-        publication_state_iexact (Union[Unset, str]):
-        publication_state_in (Union[Unset, list[str]]):
-        publication_state_iregex (Union[Unset, str]):
-        publication_state_isnull (Union[Unset, bool]):
-        publication_state_istartswith (Union[Unset, str]):
-        publication_state_lt (Union[Unset, str]):
-        publication_state_lte (Union[Unset, str]):
-        publication_state_range (Union[Unset, list[str]]):
-        publication_state_regex (Union[Unset, str]):
-        publication_state_startswith (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, ProjectsListProjectStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        sub_project_ob_id (Union[Unset, int]):
-        sub_project_ob_id_in (Union[Unset, list[int]]):
-        sub_project_title (Union[Unset, str]):
-        sub_project_title_contains (Union[Unset, str]):
-        sub_project_title_in (Union[Unset, list[str]]):
-        sub_project_uuid (Union[Unset, str]):
-        sub_project_uuid_in (Union[Unset, list[str]]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_collection_ob_id (int | Unset):
+        observation_collection_ob_id_in (list[int] | Unset):
+        observation_collection_title (str | Unset):
+        observation_collection_title_contains (str | Unset):
+        observation_collection_uuid (str | Unset):
+        observation_collection_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        parent_project (int | Unset):
+        parent_project_gt (int | Unset):
+        parent_project_gte (int | Unset):
+        parent_project_in (list[int] | Unset):
+        parent_project_isnull (bool | Unset):
+        parent_project_lt (int | Unset):
+        parent_project_lte (int | Unset):
+        publication_state (ProjectsListPublicationState | Unset):
+        publication_state_contains (str | Unset):
+        publication_state_endswith (str | Unset):
+        publication_state_gt (str | Unset):
+        publication_state_gte (str | Unset):
+        publication_state_icontains (str | Unset):
+        publication_state_iendswith (str | Unset):
+        publication_state_iexact (str | Unset):
+        publication_state_in (list[str] | Unset):
+        publication_state_iregex (str | Unset):
+        publication_state_isnull (bool | Unset):
+        publication_state_istartswith (str | Unset):
+        publication_state_lt (str | Unset):
+        publication_state_lte (str | Unset):
+        publication_state_range (list[str] | Unset):
+        publication_state_regex (str | Unset):
+        publication_state_startswith (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (ProjectsListProjectStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        sub_project_ob_id (int | Unset):
+        sub_project_ob_id_in (list[int] | Unset):
+        sub_project_title (str | Unset):
+        sub_project_title_contains (str | Unset):
+        sub_project_title_in (list[str] | Unset):
+        sub_project_uuid (str | Unset):
+        sub_project_uuid_in (list[str] | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1705,344 +1705,344 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_collection_ob_id: Union[Unset, int] = UNSET,
-    observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_collection_title: Union[Unset, str] = UNSET,
-    observation_collection_title_contains: Union[Unset, str] = UNSET,
-    observation_collection_uuid: Union[Unset, str] = UNSET,
-    observation_collection_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    parent_project: Union[Unset, int] = UNSET,
-    parent_project_gt: Union[Unset, int] = UNSET,
-    parent_project_gte: Union[Unset, int] = UNSET,
-    parent_project_in: Union[Unset, list[int]] = UNSET,
-    parent_project_isnull: Union[Unset, bool] = UNSET,
-    parent_project_lt: Union[Unset, int] = UNSET,
-    parent_project_lte: Union[Unset, int] = UNSET,
-    publication_state: Union[Unset, ProjectsListPublicationState] = UNSET,
-    publication_state_contains: Union[Unset, str] = UNSET,
-    publication_state_endswith: Union[Unset, str] = UNSET,
-    publication_state_gt: Union[Unset, str] = UNSET,
-    publication_state_gte: Union[Unset, str] = UNSET,
-    publication_state_icontains: Union[Unset, str] = UNSET,
-    publication_state_iendswith: Union[Unset, str] = UNSET,
-    publication_state_iexact: Union[Unset, str] = UNSET,
-    publication_state_in: Union[Unset, list[str]] = UNSET,
-    publication_state_iregex: Union[Unset, str] = UNSET,
-    publication_state_isnull: Union[Unset, bool] = UNSET,
-    publication_state_istartswith: Union[Unset, str] = UNSET,
-    publication_state_lt: Union[Unset, str] = UNSET,
-    publication_state_lte: Union[Unset, str] = UNSET,
-    publication_state_range: Union[Unset, list[str]] = UNSET,
-    publication_state_regex: Union[Unset, str] = UNSET,
-    publication_state_startswith: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, ProjectsListProjectStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    sub_project_ob_id: Union[Unset, int] = UNSET,
-    sub_project_ob_id_in: Union[Unset, list[int]] = UNSET,
-    sub_project_title: Union[Unset, str] = UNSET,
-    sub_project_title_contains: Union[Unset, str] = UNSET,
-    sub_project_title_in: Union[Unset, list[str]] = UNSET,
-    sub_project_uuid: Union[Unset, str] = UNSET,
-    sub_project_uuid_in: Union[Unset, list[str]] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_collection_ob_id: int | Unset = UNSET,
+    observation_collection_ob_id_in: list[int] | Unset = UNSET,
+    observation_collection_title: str | Unset = UNSET,
+    observation_collection_title_contains: str | Unset = UNSET,
+    observation_collection_uuid: str | Unset = UNSET,
+    observation_collection_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    parent_project: int | Unset = UNSET,
+    parent_project_gt: int | Unset = UNSET,
+    parent_project_gte: int | Unset = UNSET,
+    parent_project_in: list[int] | Unset = UNSET,
+    parent_project_isnull: bool | Unset = UNSET,
+    parent_project_lt: int | Unset = UNSET,
+    parent_project_lte: int | Unset = UNSET,
+    publication_state: ProjectsListPublicationState | Unset = UNSET,
+    publication_state_contains: str | Unset = UNSET,
+    publication_state_endswith: str | Unset = UNSET,
+    publication_state_gt: str | Unset = UNSET,
+    publication_state_gte: str | Unset = UNSET,
+    publication_state_icontains: str | Unset = UNSET,
+    publication_state_iendswith: str | Unset = UNSET,
+    publication_state_iexact: str | Unset = UNSET,
+    publication_state_in: list[str] | Unset = UNSET,
+    publication_state_iregex: str | Unset = UNSET,
+    publication_state_isnull: bool | Unset = UNSET,
+    publication_state_istartswith: str | Unset = UNSET,
+    publication_state_lt: str | Unset = UNSET,
+    publication_state_lte: str | Unset = UNSET,
+    publication_state_range: list[str] | Unset = UNSET,
+    publication_state_regex: str | Unset = UNSET,
+    publication_state_startswith: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: ProjectsListProjectStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    sub_project_ob_id: int | Unset = UNSET,
+    sub_project_ob_id_in: list[int] | Unset = UNSET,
+    sub_project_title: str | Unset = UNSET,
+    sub_project_title_contains: str | Unset = UNSET,
+    sub_project_title_in: list[str] | Unset = UNSET,
+    sub_project_uuid: str | Unset = UNSET,
+    sub_project_uuid_in: list[str] | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedProjectReadList]:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_collection_ob_id (Union[Unset, int]):
-        observation_collection_ob_id_in (Union[Unset, list[int]]):
-        observation_collection_title (Union[Unset, str]):
-        observation_collection_title_contains (Union[Unset, str]):
-        observation_collection_uuid (Union[Unset, str]):
-        observation_collection_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        parent_project (Union[Unset, int]):
-        parent_project_gt (Union[Unset, int]):
-        parent_project_gte (Union[Unset, int]):
-        parent_project_in (Union[Unset, list[int]]):
-        parent_project_isnull (Union[Unset, bool]):
-        parent_project_lt (Union[Unset, int]):
-        parent_project_lte (Union[Unset, int]):
-        publication_state (Union[Unset, ProjectsListPublicationState]):
-        publication_state_contains (Union[Unset, str]):
-        publication_state_endswith (Union[Unset, str]):
-        publication_state_gt (Union[Unset, str]):
-        publication_state_gte (Union[Unset, str]):
-        publication_state_icontains (Union[Unset, str]):
-        publication_state_iendswith (Union[Unset, str]):
-        publication_state_iexact (Union[Unset, str]):
-        publication_state_in (Union[Unset, list[str]]):
-        publication_state_iregex (Union[Unset, str]):
-        publication_state_isnull (Union[Unset, bool]):
-        publication_state_istartswith (Union[Unset, str]):
-        publication_state_lt (Union[Unset, str]):
-        publication_state_lte (Union[Unset, str]):
-        publication_state_range (Union[Unset, list[str]]):
-        publication_state_regex (Union[Unset, str]):
-        publication_state_startswith (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, ProjectsListProjectStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        sub_project_ob_id (Union[Unset, int]):
-        sub_project_ob_id_in (Union[Unset, list[int]]):
-        sub_project_title (Union[Unset, str]):
-        sub_project_title_contains (Union[Unset, str]):
-        sub_project_title_in (Union[Unset, list[str]]):
-        sub_project_uuid (Union[Unset, str]):
-        sub_project_uuid_in (Union[Unset, list[str]]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_collection_ob_id (int | Unset):
+        observation_collection_ob_id_in (list[int] | Unset):
+        observation_collection_title (str | Unset):
+        observation_collection_title_contains (str | Unset):
+        observation_collection_uuid (str | Unset):
+        observation_collection_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        parent_project (int | Unset):
+        parent_project_gt (int | Unset):
+        parent_project_gte (int | Unset):
+        parent_project_in (list[int] | Unset):
+        parent_project_isnull (bool | Unset):
+        parent_project_lt (int | Unset):
+        parent_project_lte (int | Unset):
+        publication_state (ProjectsListPublicationState | Unset):
+        publication_state_contains (str | Unset):
+        publication_state_endswith (str | Unset):
+        publication_state_gt (str | Unset):
+        publication_state_gte (str | Unset):
+        publication_state_icontains (str | Unset):
+        publication_state_iendswith (str | Unset):
+        publication_state_iexact (str | Unset):
+        publication_state_in (list[str] | Unset):
+        publication_state_iregex (str | Unset):
+        publication_state_isnull (bool | Unset):
+        publication_state_istartswith (str | Unset):
+        publication_state_lt (str | Unset):
+        publication_state_lte (str | Unset):
+        publication_state_range (list[str] | Unset):
+        publication_state_regex (str | Unset):
+        publication_state_startswith (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (ProjectsListProjectStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        sub_project_ob_id (int | Unset):
+        sub_project_ob_id_in (list[int] | Unset):
+        sub_project_title (str | Unset):
+        sub_project_title_contains (str | Unset):
+        sub_project_title_in (list[str] | Unset):
+        sub_project_uuid (str | Unset):
+        sub_project_uuid_in (list[str] | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2230,344 +2230,344 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_collection_ob_id: Union[Unset, int] = UNSET,
-    observation_collection_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_collection_title: Union[Unset, str] = UNSET,
-    observation_collection_title_contains: Union[Unset, str] = UNSET,
-    observation_collection_uuid: Union[Unset, str] = UNSET,
-    observation_collection_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    parent_project: Union[Unset, int] = UNSET,
-    parent_project_gt: Union[Unset, int] = UNSET,
-    parent_project_gte: Union[Unset, int] = UNSET,
-    parent_project_in: Union[Unset, list[int]] = UNSET,
-    parent_project_isnull: Union[Unset, bool] = UNSET,
-    parent_project_lt: Union[Unset, int] = UNSET,
-    parent_project_lte: Union[Unset, int] = UNSET,
-    publication_state: Union[Unset, ProjectsListPublicationState] = UNSET,
-    publication_state_contains: Union[Unset, str] = UNSET,
-    publication_state_endswith: Union[Unset, str] = UNSET,
-    publication_state_gt: Union[Unset, str] = UNSET,
-    publication_state_gte: Union[Unset, str] = UNSET,
-    publication_state_icontains: Union[Unset, str] = UNSET,
-    publication_state_iendswith: Union[Unset, str] = UNSET,
-    publication_state_iexact: Union[Unset, str] = UNSET,
-    publication_state_in: Union[Unset, list[str]] = UNSET,
-    publication_state_iregex: Union[Unset, str] = UNSET,
-    publication_state_isnull: Union[Unset, bool] = UNSET,
-    publication_state_istartswith: Union[Unset, str] = UNSET,
-    publication_state_lt: Union[Unset, str] = UNSET,
-    publication_state_lte: Union[Unset, str] = UNSET,
-    publication_state_range: Union[Unset, list[str]] = UNSET,
-    publication_state_regex: Union[Unset, str] = UNSET,
-    publication_state_startswith: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, ProjectsListProjectStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    sub_project_ob_id: Union[Unset, int] = UNSET,
-    sub_project_ob_id_in: Union[Unset, list[int]] = UNSET,
-    sub_project_title: Union[Unset, str] = UNSET,
-    sub_project_title_contains: Union[Unset, str] = UNSET,
-    sub_project_title_in: Union[Unset, list[str]] = UNSET,
-    sub_project_uuid: Union[Unset, str] = UNSET,
-    sub_project_uuid_in: Union[Unset, list[str]] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProjectReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_collection_ob_id: int | Unset = UNSET,
+    observation_collection_ob_id_in: list[int] | Unset = UNSET,
+    observation_collection_title: str | Unset = UNSET,
+    observation_collection_title_contains: str | Unset = UNSET,
+    observation_collection_uuid: str | Unset = UNSET,
+    observation_collection_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    parent_project: int | Unset = UNSET,
+    parent_project_gt: int | Unset = UNSET,
+    parent_project_gte: int | Unset = UNSET,
+    parent_project_in: list[int] | Unset = UNSET,
+    parent_project_isnull: bool | Unset = UNSET,
+    parent_project_lt: int | Unset = UNSET,
+    parent_project_lte: int | Unset = UNSET,
+    publication_state: ProjectsListPublicationState | Unset = UNSET,
+    publication_state_contains: str | Unset = UNSET,
+    publication_state_endswith: str | Unset = UNSET,
+    publication_state_gt: str | Unset = UNSET,
+    publication_state_gte: str | Unset = UNSET,
+    publication_state_icontains: str | Unset = UNSET,
+    publication_state_iendswith: str | Unset = UNSET,
+    publication_state_iexact: str | Unset = UNSET,
+    publication_state_in: list[str] | Unset = UNSET,
+    publication_state_iregex: str | Unset = UNSET,
+    publication_state_isnull: bool | Unset = UNSET,
+    publication_state_istartswith: str | Unset = UNSET,
+    publication_state_lt: str | Unset = UNSET,
+    publication_state_lte: str | Unset = UNSET,
+    publication_state_range: list[str] | Unset = UNSET,
+    publication_state_regex: str | Unset = UNSET,
+    publication_state_startswith: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: ProjectsListProjectStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    sub_project_ob_id: int | Unset = UNSET,
+    sub_project_ob_id_in: list[int] | Unset = UNSET,
+    sub_project_title: str | Unset = UNSET,
+    sub_project_title_contains: str | Unset = UNSET,
+    sub_project_title_in: list[str] | Unset = UNSET,
+    sub_project_uuid: str | Unset = UNSET,
+    sub_project_uuid_in: list[str] | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedProjectReadList | None:
     """Get a list of Project objects. Projects have a 1:1 mapping with Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_collection_ob_id (Union[Unset, int]):
-        observation_collection_ob_id_in (Union[Unset, list[int]]):
-        observation_collection_title (Union[Unset, str]):
-        observation_collection_title_contains (Union[Unset, str]):
-        observation_collection_uuid (Union[Unset, str]):
-        observation_collection_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        parent_project (Union[Unset, int]):
-        parent_project_gt (Union[Unset, int]):
-        parent_project_gte (Union[Unset, int]):
-        parent_project_in (Union[Unset, list[int]]):
-        parent_project_isnull (Union[Unset, bool]):
-        parent_project_lt (Union[Unset, int]):
-        parent_project_lte (Union[Unset, int]):
-        publication_state (Union[Unset, ProjectsListPublicationState]):
-        publication_state_contains (Union[Unset, str]):
-        publication_state_endswith (Union[Unset, str]):
-        publication_state_gt (Union[Unset, str]):
-        publication_state_gte (Union[Unset, str]):
-        publication_state_icontains (Union[Unset, str]):
-        publication_state_iendswith (Union[Unset, str]):
-        publication_state_iexact (Union[Unset, str]):
-        publication_state_in (Union[Unset, list[str]]):
-        publication_state_iregex (Union[Unset, str]):
-        publication_state_isnull (Union[Unset, bool]):
-        publication_state_istartswith (Union[Unset, str]):
-        publication_state_lt (Union[Unset, str]):
-        publication_state_lte (Union[Unset, str]):
-        publication_state_range (Union[Unset, list[str]]):
-        publication_state_regex (Union[Unset, str]):
-        publication_state_startswith (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, ProjectsListProjectStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        sub_project_ob_id (Union[Unset, int]):
-        sub_project_ob_id_in (Union[Unset, list[int]]):
-        sub_project_title (Union[Unset, str]):
-        sub_project_title_contains (Union[Unset, str]):
-        sub_project_title_in (Union[Unset, list[str]]):
-        sub_project_uuid (Union[Unset, str]):
-        sub_project_uuid_in (Union[Unset, list[str]]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_collection_ob_id (int | Unset):
+        observation_collection_ob_id_in (list[int] | Unset):
+        observation_collection_title (str | Unset):
+        observation_collection_title_contains (str | Unset):
+        observation_collection_uuid (str | Unset):
+        observation_collection_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        parent_project (int | Unset):
+        parent_project_gt (int | Unset):
+        parent_project_gte (int | Unset):
+        parent_project_in (list[int] | Unset):
+        parent_project_isnull (bool | Unset):
+        parent_project_lt (int | Unset):
+        parent_project_lte (int | Unset):
+        publication_state (ProjectsListPublicationState | Unset):
+        publication_state_contains (str | Unset):
+        publication_state_endswith (str | Unset):
+        publication_state_gt (str | Unset):
+        publication_state_gte (str | Unset):
+        publication_state_icontains (str | Unset):
+        publication_state_iendswith (str | Unset):
+        publication_state_iexact (str | Unset):
+        publication_state_in (list[str] | Unset):
+        publication_state_iregex (str | Unset):
+        publication_state_isnull (bool | Unset):
+        publication_state_istartswith (str | Unset):
+        publication_state_lt (str | Unset):
+        publication_state_lte (str | Unset):
+        publication_state_range (list[str] | Unset):
+        publication_state_regex (str | Unset):
+        publication_state_startswith (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (ProjectsListProjectStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        sub_project_ob_id (int | Unset):
+        sub_project_ob_id_in (list[int] | Unset):
+        sub_project_title (str | Unset):
+        sub_project_title_contains (str | Unset):
+        sub_project_title_in (list[str] | Unset):
+        sub_project_uuid (str | Unset):
+        sub_project_uuid_in (list[str] | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

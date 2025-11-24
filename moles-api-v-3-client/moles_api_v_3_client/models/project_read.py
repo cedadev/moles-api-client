@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,34 +27,34 @@ class ProjectRead:
             uuid (str):
             short_code (str):
             title (str):
-            abstract (Union[None, str]):
-            publication_state (Union[BlankEnum, PublicationState6F9Enum]):
+            abstract (None | str):
+            publication_state (BlankEnum | PublicationState6F9Enum):
             keywords (str):
-            status (Union[BlankEnum, StatusEnum]):
-            parent_project (Union['SimpleRead', None]):
-            sub_project (Union[None, list['SimpleRead']]):
-            image_details (list[Union[None, int]]):
-            observation_collection (Union[None, list['SimpleRead']]):
-            identifier_set (list[Union[None, int]]):
-            responsiblepartyinfo_set (list[Union[None, int]]):
-            onlineresource_set (list[Union[None, int]]):
+            status (BlankEnum | StatusEnum):
+            parent_project (None | SimpleRead):
+            sub_project (list[SimpleRead] | None):
+            image_details (list[int | None]):
+            observation_collection (list[SimpleRead] | None):
+            identifier_set (list[int | None]):
+            responsiblepartyinfo_set (list[int | None]):
+            onlineresource_set (list[int | None]):
     """
 
     ob_id: int
     uuid: str
     short_code: str
     title: str
-    abstract: Union[None, str]
-    publication_state: Union[BlankEnum, PublicationState6F9Enum]
+    abstract: None | str
+    publication_state: BlankEnum | PublicationState6F9Enum
     keywords: str
-    status: Union[BlankEnum, StatusEnum]
-    parent_project: Union["SimpleRead", None]
-    sub_project: Union[None, list["SimpleRead"]]
-    image_details: list[Union[None, int]]
-    observation_collection: Union[None, list["SimpleRead"]]
-    identifier_set: list[Union[None, int]]
-    responsiblepartyinfo_set: list[Union[None, int]]
-    onlineresource_set: list[Union[None, int]]
+    status: BlankEnum | StatusEnum
+    parent_project: None | SimpleRead
+    sub_project: list[SimpleRead] | None
+    image_details: list[int | None]
+    observation_collection: list[SimpleRead] | None
+    identifier_set: list[int | None]
+    responsiblepartyinfo_set: list[int | None]
+    onlineresource_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -66,7 +68,7 @@ class ProjectRead:
 
         title = self.title
 
-        abstract: Union[None, str]
+        abstract: None | str
         abstract = self.abstract
 
         publication_state: str
@@ -83,13 +85,13 @@ class ProjectRead:
         else:
             status = self.status.value
 
-        parent_project: Union[None, dict[str, Any]]
+        parent_project: dict[str, Any] | None
         if isinstance(self.parent_project, SimpleRead):
             parent_project = self.parent_project.to_dict()
         else:
             parent_project = self.parent_project
 
-        sub_project: Union[None, list[dict[str, Any]]]
+        sub_project: list[dict[str, Any]] | None
         if isinstance(self.sub_project, list):
             sub_project = []
             for sub_project_type_0_item_data in self.sub_project:
@@ -101,11 +103,11 @@ class ProjectRead:
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
-        observation_collection: Union[None, list[dict[str, Any]]]
+        observation_collection: list[dict[str, Any]] | None
         if isinstance(self.observation_collection, list):
             observation_collection = []
             for observation_collection_type_0_item_data in self.observation_collection:
@@ -117,19 +119,19 @@ class ProjectRead:
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
-            responsiblepartyinfo_set_item: Union[None, int]
+            responsiblepartyinfo_set_item: int | None
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
         onlineresource_set = []
         for onlineresource_set_item_data in self.onlineresource_set:
-            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item: int | None
             onlineresource_set_item = onlineresource_set_item_data
             onlineresource_set.append(onlineresource_set_item)
 
@@ -170,21 +172,21 @@ class ProjectRead:
 
         title = d.pop("title")
 
-        def _parse_abstract(data: object) -> Union[None, str]:
+        def _parse_abstract(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         abstract = _parse_abstract(d.pop("abstract"))
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationState6F9Enum]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationState6F9Enum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 publication_state_type_0 = PublicationState6F9Enum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -196,14 +198,14 @@ class ProjectRead:
 
         keywords = d.pop("keywords")
 
-        def _parse_status(data: object) -> Union[BlankEnum, StatusEnum]:
+        def _parse_status(data: object) -> BlankEnum | StatusEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 status_type_0 = StatusEnum(data)
 
                 return status_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -213,7 +215,7 @@ class ProjectRead:
 
         status = _parse_status(d.pop("status"))
 
-        def _parse_parent_project(data: object) -> Union["SimpleRead", None]:
+        def _parse_parent_project(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -222,13 +224,13 @@ class ProjectRead:
                 parent_project_type_1 = SimpleRead.from_dict(data)
 
                 return parent_project_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         parent_project = _parse_parent_project(d.pop("parentProject"))
 
-        def _parse_sub_project(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_sub_project(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -242,9 +244,9 @@ class ProjectRead:
                     sub_project_type_0.append(sub_project_type_0_item)
 
                 return sub_project_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         sub_project = _parse_sub_project(d.pop("subProject"))
 
@@ -252,16 +254,16 @@ class ProjectRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
             image_details.append(image_details_item)
 
-        def _parse_observation_collection(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_observation_collection(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -275,9 +277,9 @@ class ProjectRead:
                     observation_collection_type_0.append(observation_collection_type_0_item)
 
                 return observation_collection_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         observation_collection = _parse_observation_collection(d.pop("observationCollection"))
 
@@ -285,10 +287,10 @@ class ProjectRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 
@@ -298,10 +300,10 @@ class ProjectRead:
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")
         for responsiblepartyinfo_set_item_data in _responsiblepartyinfo_set:
 
-            def _parse_responsiblepartyinfo_set_item(data: object) -> Union[None, int]:
+            def _parse_responsiblepartyinfo_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             responsiblepartyinfo_set_item = _parse_responsiblepartyinfo_set_item(responsiblepartyinfo_set_item_data)
 
@@ -311,10 +313,10 @@ class ProjectRead:
         _onlineresource_set = d.pop("onlineresource_set")
         for onlineresource_set_item_data in _onlineresource_set:
 
-            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+            def _parse_onlineresource_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
 

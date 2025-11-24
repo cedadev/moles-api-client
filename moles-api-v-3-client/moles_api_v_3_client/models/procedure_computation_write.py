@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,24 +21,24 @@ class ProcedureComputationWrite:
             uuid (str):
             short_code (str):
             title (str):
-            abstract (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            input_description (Union[None, Unset, int]):
-            output_description (Union[None, Unset, int]):
-            software_reference (Union[None, Unset, int]):
-            image_details (Union[Unset, list[int]]):
+            abstract (str | Unset):
+            keywords (str | Unset):
+            input_description (int | None | Unset):
+            output_description (int | None | Unset):
+            software_reference (int | None | Unset):
+            image_details (list[int] | Unset):
     """
 
     ob_id: int
     uuid: str
     short_code: str
     title: str
-    abstract: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    input_description: Union[None, Unset, int] = UNSET
-    output_description: Union[None, Unset, int] = UNSET
-    software_reference: Union[None, Unset, int] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
+    abstract: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    input_description: int | None | Unset = UNSET
+    output_description: int | None | Unset = UNSET
+    software_reference: int | None | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -52,25 +54,25 @@ class ProcedureComputationWrite:
 
         keywords = self.keywords
 
-        input_description: Union[None, Unset, int]
+        input_description: int | None | Unset
         if isinstance(self.input_description, Unset):
             input_description = UNSET
         else:
             input_description = self.input_description
 
-        output_description: Union[None, Unset, int]
+        output_description: int | None | Unset
         if isinstance(self.output_description, Unset):
             output_description = UNSET
         else:
             output_description = self.output_description
 
-        software_reference: Union[None, Unset, int]
+        software_reference: int | None | Unset
         if isinstance(self.software_reference, Unset):
             software_reference = UNSET
         else:
             software_reference = self.software_reference
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
@@ -114,30 +116,30 @@ class ProcedureComputationWrite:
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_input_description(data: object) -> Union[None, Unset, int]:
+        def _parse_input_description(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         input_description = _parse_input_description(d.pop("inputDescription", UNSET))
 
-        def _parse_output_description(data: object) -> Union[None, Unset, int]:
+        def _parse_output_description(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         output_description = _parse_output_description(d.pop("outputDescription", UNSET))
 
-        def _parse_software_reference(data: object) -> Union[None, Unset, int]:
+        def _parse_software_reference(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         software_reference = _parse_software_reference(d.pop("softwareReference", UNSET))
 

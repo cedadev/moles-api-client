@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -39,17 +41,17 @@ class ObservationRead:
             uuid (str):
             title (str):
             abstract (str):
-            creation_date (Union[None, datetime.datetime]):
-            last_updated_date (Union[None, datetime.datetime]):
-            latest_data_update_time (Union[None, datetime.datetime]):
-            update_frequency (Union[BlankEnum, UpdateFrequencyEnum]):
+            creation_date (datetime.datetime | None):
+            last_updated_date (datetime.datetime | None):
+            latest_data_update_time (datetime.datetime | None):
+            update_frequency (BlankEnum | UpdateFrequencyEnum):
             data_lineage (str):
             removed_data_reason (str):
             keywords (str):
-            publication_state (Union[BlankEnum, PublicationStateCbbEnum]):
+            publication_state (BlankEnum | PublicationStateCbbEnum):
             non_geographic_flag (bool):
             dont_harvest_from_projects (bool):
-            language (Union[BlankEnum, LanguageEnum]):
+            language (BlankEnum | LanguageEnum):
             resolution (str):
             status (StatusEnum): * `planned` - Planned (pre)
                 * `required` - Required (pre)
@@ -65,73 +67,73 @@ class ObservationRead:
                 * `historicalArchive` - Historical Archive (past)
                 * `retired` - Retired (past)
                 * `deprecated` - Deprecated (past)
-            data_published_time (Union[None, datetime.datetime]):
-            doi_published_time (Union[None, datetime.datetime]):
-            removed_data_time (Union[None, datetime.datetime]):
-            geographic_extent (Union['GeographicBoundingBoxRead', None]):
-            vertical_extent (Union['VerticalExtentRead', None]):
+            data_published_time (datetime.datetime | None):
+            doi_published_time (datetime.datetime | None):
+            removed_data_time (datetime.datetime | None):
+            geographic_extent (GeographicBoundingBoxRead | None):
+            vertical_extent (None | VerticalExtentRead):
             result_field (RelatedResult):
-            time_period (Union['TimePeriod', None]):
-            result_quality (Union['DQConformanceResultRead', None]):
-            valid_time_period (Union['TimePeriod', None]):
-            procedure_acquisition (Union['SimpleRead', None]):
-            procedure_computation (Union['SimpleRead', None]):
-            procedure_composite_process (Union['SimpleRead', None]):
-            image_details (list[Union[None, int]]):
-            discovery_keywords (Union[None, list['DiscoveryServiceIdRead']]):
-            permissions (Union[None, list['ConstraintsRead']]):
-            projects (Union[None, list['SimpleRead']]):
-            inspire_theme (Union[None, list['InspireThemeRead']]):
-            topic_category (Union[None, list['TopicCategoryRead']]):
-            phenomena (list[Union[None, int]]):
-            vocabulary_keywords (Union[None, list['VocabularyTermRead']]):
-            identifier_set (list[Union[None, int]]):
-            observationcollection_set (Union[None, list['SimpleRead']]):
-            responsiblepartyinfo_set (list[Union[None, int]]):
-            onlineresource_set (list[Union[None, int]]):
+            time_period (None | TimePeriod):
+            result_quality (DQConformanceResultRead | None):
+            valid_time_period (None | TimePeriod):
+            procedure_acquisition (None | SimpleRead):
+            procedure_computation (None | SimpleRead):
+            procedure_composite_process (None | SimpleRead):
+            image_details (list[int | None]):
+            discovery_keywords (list[DiscoveryServiceIdRead] | None):
+            permissions (list[ConstraintsRead] | None):
+            projects (list[SimpleRead] | None):
+            inspire_theme (list[InspireThemeRead] | None):
+            topic_category (list[TopicCategoryRead] | None):
+            phenomena (list[int | None]):
+            vocabulary_keywords (list[VocabularyTermRead] | None):
+            identifier_set (list[int | None]):
+            observationcollection_set (list[SimpleRead] | None):
+            responsiblepartyinfo_set (list[int | None]):
+            onlineresource_set (list[int | None]):
     """
 
     ob_id: int
     uuid: str
     title: str
     abstract: str
-    creation_date: Union[None, datetime.datetime]
-    last_updated_date: Union[None, datetime.datetime]
-    latest_data_update_time: Union[None, datetime.datetime]
-    update_frequency: Union[BlankEnum, UpdateFrequencyEnum]
+    creation_date: datetime.datetime | None
+    last_updated_date: datetime.datetime | None
+    latest_data_update_time: datetime.datetime | None
+    update_frequency: BlankEnum | UpdateFrequencyEnum
     data_lineage: str
     removed_data_reason: str
     keywords: str
-    publication_state: Union[BlankEnum, PublicationStateCbbEnum]
+    publication_state: BlankEnum | PublicationStateCbbEnum
     non_geographic_flag: bool
     dont_harvest_from_projects: bool
-    language: Union[BlankEnum, LanguageEnum]
+    language: BlankEnum | LanguageEnum
     resolution: str
     status: StatusEnum
-    data_published_time: Union[None, datetime.datetime]
-    doi_published_time: Union[None, datetime.datetime]
-    removed_data_time: Union[None, datetime.datetime]
-    geographic_extent: Union["GeographicBoundingBoxRead", None]
-    vertical_extent: Union["VerticalExtentRead", None]
-    result_field: "RelatedResult"
-    time_period: Union["TimePeriod", None]
-    result_quality: Union["DQConformanceResultRead", None]
-    valid_time_period: Union["TimePeriod", None]
-    procedure_acquisition: Union["SimpleRead", None]
-    procedure_computation: Union["SimpleRead", None]
-    procedure_composite_process: Union["SimpleRead", None]
-    image_details: list[Union[None, int]]
-    discovery_keywords: Union[None, list["DiscoveryServiceIdRead"]]
-    permissions: Union[None, list["ConstraintsRead"]]
-    projects: Union[None, list["SimpleRead"]]
-    inspire_theme: Union[None, list["InspireThemeRead"]]
-    topic_category: Union[None, list["TopicCategoryRead"]]
-    phenomena: list[Union[None, int]]
-    vocabulary_keywords: Union[None, list["VocabularyTermRead"]]
-    identifier_set: list[Union[None, int]]
-    observationcollection_set: Union[None, list["SimpleRead"]]
-    responsiblepartyinfo_set: list[Union[None, int]]
-    onlineresource_set: list[Union[None, int]]
+    data_published_time: datetime.datetime | None
+    doi_published_time: datetime.datetime | None
+    removed_data_time: datetime.datetime | None
+    geographic_extent: GeographicBoundingBoxRead | None
+    vertical_extent: None | VerticalExtentRead
+    result_field: RelatedResult
+    time_period: None | TimePeriod
+    result_quality: DQConformanceResultRead | None
+    valid_time_period: None | TimePeriod
+    procedure_acquisition: None | SimpleRead
+    procedure_computation: None | SimpleRead
+    procedure_composite_process: None | SimpleRead
+    image_details: list[int | None]
+    discovery_keywords: list[DiscoveryServiceIdRead] | None
+    permissions: list[ConstraintsRead] | None
+    projects: list[SimpleRead] | None
+    inspire_theme: list[InspireThemeRead] | None
+    topic_category: list[TopicCategoryRead] | None
+    phenomena: list[int | None]
+    vocabulary_keywords: list[VocabularyTermRead] | None
+    identifier_set: list[int | None]
+    observationcollection_set: list[SimpleRead] | None
+    responsiblepartyinfo_set: list[int | None]
+    onlineresource_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -149,19 +151,19 @@ class ObservationRead:
 
         abstract = self.abstract
 
-        creation_date: Union[None, str]
+        creation_date: None | str
         if isinstance(self.creation_date, datetime.datetime):
             creation_date = self.creation_date.isoformat()
         else:
             creation_date = self.creation_date
 
-        last_updated_date: Union[None, str]
+        last_updated_date: None | str
         if isinstance(self.last_updated_date, datetime.datetime):
             last_updated_date = self.last_updated_date.isoformat()
         else:
             last_updated_date = self.last_updated_date
 
-        latest_data_update_time: Union[None, str]
+        latest_data_update_time: None | str
         if isinstance(self.latest_data_update_time, datetime.datetime):
             latest_data_update_time = self.latest_data_update_time.isoformat()
         else:
@@ -199,31 +201,31 @@ class ObservationRead:
 
         status = self.status.value
 
-        data_published_time: Union[None, str]
+        data_published_time: None | str
         if isinstance(self.data_published_time, datetime.datetime):
             data_published_time = self.data_published_time.isoformat()
         else:
             data_published_time = self.data_published_time
 
-        doi_published_time: Union[None, str]
+        doi_published_time: None | str
         if isinstance(self.doi_published_time, datetime.datetime):
             doi_published_time = self.doi_published_time.isoformat()
         else:
             doi_published_time = self.doi_published_time
 
-        removed_data_time: Union[None, str]
+        removed_data_time: None | str
         if isinstance(self.removed_data_time, datetime.datetime):
             removed_data_time = self.removed_data_time.isoformat()
         else:
             removed_data_time = self.removed_data_time
 
-        geographic_extent: Union[None, dict[str, Any]]
+        geographic_extent: dict[str, Any] | None
         if isinstance(self.geographic_extent, GeographicBoundingBoxRead):
             geographic_extent = self.geographic_extent.to_dict()
         else:
             geographic_extent = self.geographic_extent
 
-        vertical_extent: Union[None, dict[str, Any]]
+        vertical_extent: dict[str, Any] | None
         if isinstance(self.vertical_extent, VerticalExtentRead):
             vertical_extent = self.vertical_extent.to_dict()
         else:
@@ -231,37 +233,37 @@ class ObservationRead:
 
         result_field = self.result_field.to_dict()
 
-        time_period: Union[None, dict[str, Any]]
+        time_period: dict[str, Any] | None
         if isinstance(self.time_period, TimePeriod):
             time_period = self.time_period.to_dict()
         else:
             time_period = self.time_period
 
-        result_quality: Union[None, dict[str, Any]]
+        result_quality: dict[str, Any] | None
         if isinstance(self.result_quality, DQConformanceResultRead):
             result_quality = self.result_quality.to_dict()
         else:
             result_quality = self.result_quality
 
-        valid_time_period: Union[None, dict[str, Any]]
+        valid_time_period: dict[str, Any] | None
         if isinstance(self.valid_time_period, TimePeriod):
             valid_time_period = self.valid_time_period.to_dict()
         else:
             valid_time_period = self.valid_time_period
 
-        procedure_acquisition: Union[None, dict[str, Any]]
+        procedure_acquisition: dict[str, Any] | None
         if isinstance(self.procedure_acquisition, SimpleRead):
             procedure_acquisition = self.procedure_acquisition.to_dict()
         else:
             procedure_acquisition = self.procedure_acquisition
 
-        procedure_computation: Union[None, dict[str, Any]]
+        procedure_computation: dict[str, Any] | None
         if isinstance(self.procedure_computation, SimpleRead):
             procedure_computation = self.procedure_computation.to_dict()
         else:
             procedure_computation = self.procedure_computation
 
-        procedure_composite_process: Union[None, dict[str, Any]]
+        procedure_composite_process: dict[str, Any] | None
         if isinstance(self.procedure_composite_process, SimpleRead):
             procedure_composite_process = self.procedure_composite_process.to_dict()
         else:
@@ -269,11 +271,11 @@ class ObservationRead:
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
-        discovery_keywords: Union[None, list[dict[str, Any]]]
+        discovery_keywords: list[dict[str, Any]] | None
         if isinstance(self.discovery_keywords, list):
             discovery_keywords = []
             for discovery_keywords_type_0_item_data in self.discovery_keywords:
@@ -283,7 +285,7 @@ class ObservationRead:
         else:
             discovery_keywords = self.discovery_keywords
 
-        permissions: Union[None, list[dict[str, Any]]]
+        permissions: list[dict[str, Any]] | None
         if isinstance(self.permissions, list):
             permissions = []
             for permissions_type_0_item_data in self.permissions:
@@ -293,7 +295,7 @@ class ObservationRead:
         else:
             permissions = self.permissions
 
-        projects: Union[None, list[dict[str, Any]]]
+        projects: list[dict[str, Any]] | None
         if isinstance(self.projects, list):
             projects = []
             for projects_type_0_item_data in self.projects:
@@ -303,7 +305,7 @@ class ObservationRead:
         else:
             projects = self.projects
 
-        inspire_theme: Union[None, list[dict[str, Any]]]
+        inspire_theme: list[dict[str, Any]] | None
         if isinstance(self.inspire_theme, list):
             inspire_theme = []
             for inspire_theme_type_0_item_data in self.inspire_theme:
@@ -313,7 +315,7 @@ class ObservationRead:
         else:
             inspire_theme = self.inspire_theme
 
-        topic_category: Union[None, list[dict[str, Any]]]
+        topic_category: list[dict[str, Any]] | None
         if isinstance(self.topic_category, list):
             topic_category = []
             for topic_category_type_0_item_data in self.topic_category:
@@ -325,11 +327,11 @@ class ObservationRead:
 
         phenomena = []
         for phenomena_item_data in self.phenomena:
-            phenomena_item: Union[None, int]
+            phenomena_item: int | None
             phenomena_item = phenomena_item_data
             phenomena.append(phenomena_item)
 
-        vocabulary_keywords: Union[None, list[dict[str, Any]]]
+        vocabulary_keywords: list[dict[str, Any]] | None
         if isinstance(self.vocabulary_keywords, list):
             vocabulary_keywords = []
             for vocabulary_keywords_type_0_item_data in self.vocabulary_keywords:
@@ -341,11 +343,11 @@ class ObservationRead:
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
-        observationcollection_set: Union[None, list[dict[str, Any]]]
+        observationcollection_set: list[dict[str, Any]] | None
         if isinstance(self.observationcollection_set, list):
             observationcollection_set = []
             for observationcollection_set_type_0_item_data in self.observationcollection_set:
@@ -357,13 +359,13 @@ class ObservationRead:
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
-            responsiblepartyinfo_set_item: Union[None, int]
+            responsiblepartyinfo_set_item: int | None
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
         onlineresource_set = []
         for onlineresource_set_item_data in self.onlineresource_set:
-            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item: int | None
             onlineresource_set_item = onlineresource_set_item_data
             onlineresource_set.append(onlineresource_set_item)
 
@@ -440,7 +442,7 @@ class ObservationRead:
 
         abstract = d.pop("abstract")
 
-        def _parse_creation_date(data: object) -> Union[None, datetime.datetime]:
+        def _parse_creation_date(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -449,13 +451,13 @@ class ObservationRead:
                 creation_date_type_0 = isoparse(data)
 
                 return creation_date_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         creation_date = _parse_creation_date(d.pop("creationDate"))
 
-        def _parse_last_updated_date(data: object) -> Union[None, datetime.datetime]:
+        def _parse_last_updated_date(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -464,13 +466,13 @@ class ObservationRead:
                 last_updated_date_type_0 = isoparse(data)
 
                 return last_updated_date_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         last_updated_date = _parse_last_updated_date(d.pop("lastUpdatedDate"))
 
-        def _parse_latest_data_update_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_latest_data_update_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -479,20 +481,20 @@ class ObservationRead:
                 latest_data_update_time_type_0 = isoparse(data)
 
                 return latest_data_update_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         latest_data_update_time = _parse_latest_data_update_time(d.pop("latestDataUpdateTime"))
 
-        def _parse_update_frequency(data: object) -> Union[BlankEnum, UpdateFrequencyEnum]:
+        def _parse_update_frequency(data: object) -> BlankEnum | UpdateFrequencyEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 update_frequency_type_0 = UpdateFrequencyEnum(data)
 
                 return update_frequency_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -508,14 +510,14 @@ class ObservationRead:
 
         keywords = d.pop("keywords")
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationStateCbbEnum]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 publication_state_type_0 = PublicationStateCbbEnum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -529,14 +531,14 @@ class ObservationRead:
 
         dont_harvest_from_projects = d.pop("dontHarvestFromProjects")
 
-        def _parse_language(data: object) -> Union[BlankEnum, LanguageEnum]:
+        def _parse_language(data: object) -> BlankEnum | LanguageEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 language_type_0 = LanguageEnum(data)
 
                 return language_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -550,7 +552,7 @@ class ObservationRead:
 
         status = StatusEnum(d.pop("status"))
 
-        def _parse_data_published_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_data_published_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -559,13 +561,13 @@ class ObservationRead:
                 data_published_time_type_0 = isoparse(data)
 
                 return data_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         data_published_time = _parse_data_published_time(d.pop("dataPublishedTime"))
 
-        def _parse_doi_published_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_doi_published_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -574,13 +576,13 @@ class ObservationRead:
                 doi_published_time_type_0 = isoparse(data)
 
                 return doi_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         doi_published_time = _parse_doi_published_time(d.pop("doiPublishedTime"))
 
-        def _parse_removed_data_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_removed_data_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -589,13 +591,13 @@ class ObservationRead:
                 removed_data_time_type_0 = isoparse(data)
 
                 return removed_data_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         removed_data_time = _parse_removed_data_time(d.pop("removedDataTime"))
 
-        def _parse_geographic_extent(data: object) -> Union["GeographicBoundingBoxRead", None]:
+        def _parse_geographic_extent(data: object) -> GeographicBoundingBoxRead | None:
             if data is None:
                 return data
             try:
@@ -604,13 +606,13 @@ class ObservationRead:
                 geographic_extent_type_1 = GeographicBoundingBoxRead.from_dict(data)
 
                 return geographic_extent_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["GeographicBoundingBoxRead", None], data)
+            return cast(GeographicBoundingBoxRead | None, data)
 
         geographic_extent = _parse_geographic_extent(d.pop("geographicExtent"))
 
-        def _parse_vertical_extent(data: object) -> Union["VerticalExtentRead", None]:
+        def _parse_vertical_extent(data: object) -> None | VerticalExtentRead:
             if data is None:
                 return data
             try:
@@ -619,15 +621,15 @@ class ObservationRead:
                 vertical_extent_type_1 = VerticalExtentRead.from_dict(data)
 
                 return vertical_extent_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["VerticalExtentRead", None], data)
+            return cast(None | VerticalExtentRead, data)
 
         vertical_extent = _parse_vertical_extent(d.pop("verticalExtent"))
 
         result_field = RelatedResult.from_dict(d.pop("result_field"))
 
-        def _parse_time_period(data: object) -> Union["TimePeriod", None]:
+        def _parse_time_period(data: object) -> None | TimePeriod:
             if data is None:
                 return data
             try:
@@ -636,13 +638,13 @@ class ObservationRead:
                 time_period_type_1 = TimePeriod.from_dict(data)
 
                 return time_period_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["TimePeriod", None], data)
+            return cast(None | TimePeriod, data)
 
         time_period = _parse_time_period(d.pop("timePeriod"))
 
-        def _parse_result_quality(data: object) -> Union["DQConformanceResultRead", None]:
+        def _parse_result_quality(data: object) -> DQConformanceResultRead | None:
             if data is None:
                 return data
             try:
@@ -651,13 +653,13 @@ class ObservationRead:
                 result_quality_type_1 = DQConformanceResultRead.from_dict(data)
 
                 return result_quality_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["DQConformanceResultRead", None], data)
+            return cast(DQConformanceResultRead | None, data)
 
         result_quality = _parse_result_quality(d.pop("resultQuality"))
 
-        def _parse_valid_time_period(data: object) -> Union["TimePeriod", None]:
+        def _parse_valid_time_period(data: object) -> None | TimePeriod:
             if data is None:
                 return data
             try:
@@ -666,13 +668,13 @@ class ObservationRead:
                 valid_time_period_type_1 = TimePeriod.from_dict(data)
 
                 return valid_time_period_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["TimePeriod", None], data)
+            return cast(None | TimePeriod, data)
 
         valid_time_period = _parse_valid_time_period(d.pop("validTimePeriod"))
 
-        def _parse_procedure_acquisition(data: object) -> Union["SimpleRead", None]:
+        def _parse_procedure_acquisition(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -681,13 +683,13 @@ class ObservationRead:
                 procedure_acquisition_type_1 = SimpleRead.from_dict(data)
 
                 return procedure_acquisition_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         procedure_acquisition = _parse_procedure_acquisition(d.pop("procedureAcquisition"))
 
-        def _parse_procedure_computation(data: object) -> Union["SimpleRead", None]:
+        def _parse_procedure_computation(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -696,13 +698,13 @@ class ObservationRead:
                 procedure_computation_type_1 = SimpleRead.from_dict(data)
 
                 return procedure_computation_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         procedure_computation = _parse_procedure_computation(d.pop("procedureComputation"))
 
-        def _parse_procedure_composite_process(data: object) -> Union["SimpleRead", None]:
+        def _parse_procedure_composite_process(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -711,9 +713,9 @@ class ObservationRead:
                 procedure_composite_process_type_1 = SimpleRead.from_dict(data)
 
                 return procedure_composite_process_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         procedure_composite_process = _parse_procedure_composite_process(d.pop("procedureCompositeProcess"))
 
@@ -721,16 +723,16 @@ class ObservationRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
             image_details.append(image_details_item)
 
-        def _parse_discovery_keywords(data: object) -> Union[None, list["DiscoveryServiceIdRead"]]:
+        def _parse_discovery_keywords(data: object) -> list[DiscoveryServiceIdRead] | None:
             if data is None:
                 return data
             try:
@@ -746,13 +748,13 @@ class ObservationRead:
                     discovery_keywords_type_0.append(discovery_keywords_type_0_item)
 
                 return discovery_keywords_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["DiscoveryServiceIdRead"]], data)
+            return cast(list[DiscoveryServiceIdRead] | None, data)
 
         discovery_keywords = _parse_discovery_keywords(d.pop("discoveryKeywords"))
 
-        def _parse_permissions(data: object) -> Union[None, list["ConstraintsRead"]]:
+        def _parse_permissions(data: object) -> list[ConstraintsRead] | None:
             if data is None:
                 return data
             try:
@@ -766,13 +768,13 @@ class ObservationRead:
                     permissions_type_0.append(permissions_type_0_item)
 
                 return permissions_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["ConstraintsRead"]], data)
+            return cast(list[ConstraintsRead] | None, data)
 
         permissions = _parse_permissions(d.pop("permissions"))
 
-        def _parse_projects(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_projects(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -786,13 +788,13 @@ class ObservationRead:
                     projects_type_0.append(projects_type_0_item)
 
                 return projects_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         projects = _parse_projects(d.pop("projects"))
 
-        def _parse_inspire_theme(data: object) -> Union[None, list["InspireThemeRead"]]:
+        def _parse_inspire_theme(data: object) -> list[InspireThemeRead] | None:
             if data is None:
                 return data
             try:
@@ -806,13 +808,13 @@ class ObservationRead:
                     inspire_theme_type_0.append(inspire_theme_type_0_item)
 
                 return inspire_theme_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["InspireThemeRead"]], data)
+            return cast(list[InspireThemeRead] | None, data)
 
         inspire_theme = _parse_inspire_theme(d.pop("inspireTheme"))
 
-        def _parse_topic_category(data: object) -> Union[None, list["TopicCategoryRead"]]:
+        def _parse_topic_category(data: object) -> list[TopicCategoryRead] | None:
             if data is None:
                 return data
             try:
@@ -826,9 +828,9 @@ class ObservationRead:
                     topic_category_type_0.append(topic_category_type_0_item)
 
                 return topic_category_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["TopicCategoryRead"]], data)
+            return cast(list[TopicCategoryRead] | None, data)
 
         topic_category = _parse_topic_category(d.pop("topicCategory"))
 
@@ -836,16 +838,16 @@ class ObservationRead:
         _phenomena = d.pop("phenomena")
         for phenomena_item_data in _phenomena:
 
-            def _parse_phenomena_item(data: object) -> Union[None, int]:
+            def _parse_phenomena_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             phenomena_item = _parse_phenomena_item(phenomena_item_data)
 
             phenomena.append(phenomena_item)
 
-        def _parse_vocabulary_keywords(data: object) -> Union[None, list["VocabularyTermRead"]]:
+        def _parse_vocabulary_keywords(data: object) -> list[VocabularyTermRead] | None:
             if data is None:
                 return data
             try:
@@ -859,9 +861,9 @@ class ObservationRead:
                     vocabulary_keywords_type_0.append(vocabulary_keywords_type_0_item)
 
                 return vocabulary_keywords_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["VocabularyTermRead"]], data)
+            return cast(list[VocabularyTermRead] | None, data)
 
         vocabulary_keywords = _parse_vocabulary_keywords(d.pop("vocabularyKeywords"))
 
@@ -869,16 +871,16 @@ class ObservationRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 
             identifier_set.append(identifier_set_item)
 
-        def _parse_observationcollection_set(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_observationcollection_set(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -894,9 +896,9 @@ class ObservationRead:
                     observationcollection_set_type_0.append(observationcollection_set_type_0_item)
 
                 return observationcollection_set_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         observationcollection_set = _parse_observationcollection_set(d.pop("observationcollection_set"))
 
@@ -904,10 +906,10 @@ class ObservationRead:
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")
         for responsiblepartyinfo_set_item_data in _responsiblepartyinfo_set:
 
-            def _parse_responsiblepartyinfo_set_item(data: object) -> Union[None, int]:
+            def _parse_responsiblepartyinfo_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             responsiblepartyinfo_set_item = _parse_responsiblepartyinfo_set_item(responsiblepartyinfo_set_item_data)
 
@@ -917,10 +919,10 @@ class ObservationRead:
         _onlineresource_set = d.pop("onlineresource_set")
         for onlineresource_set_item_data in _onlineresource_set:
 
-            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+            def _parse_onlineresource_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
 

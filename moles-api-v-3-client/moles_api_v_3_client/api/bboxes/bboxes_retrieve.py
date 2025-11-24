@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -21,8 +21,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[GeographicBoundingBoxRead]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> GeographicBoundingBoxRead | None:
     if response.status_code == 200:
         response_200 = GeographicBoundingBoxRead.from_dict(response.json())
 
@@ -35,7 +35,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[GeographicBoundingBoxRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -79,7 +79,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[GeographicBoundingBoxRead]:
+) -> GeographicBoundingBoxRead | None:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
@@ -132,7 +132,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[GeographicBoundingBoxRead]:
+) -> GeographicBoundingBoxRead | None:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,231 +12,231 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    administrative_area: Union[Unset, str] = UNSET,
-    administrative_area_contains: Union[Unset, str] = UNSET,
-    administrative_area_endswith: Union[Unset, str] = UNSET,
-    administrative_area_gt: Union[Unset, str] = UNSET,
-    administrative_area_gte: Union[Unset, str] = UNSET,
-    administrative_area_icontains: Union[Unset, str] = UNSET,
-    administrative_area_iendswith: Union[Unset, str] = UNSET,
-    administrative_area_iexact: Union[Unset, str] = UNSET,
-    administrative_area_in: Union[Unset, list[str]] = UNSET,
-    administrative_area_iregex: Union[Unset, str] = UNSET,
-    administrative_area_isnull: Union[Unset, bool] = UNSET,
-    administrative_area_istartswith: Union[Unset, str] = UNSET,
-    administrative_area_lt: Union[Unset, str] = UNSET,
-    administrative_area_lte: Union[Unset, str] = UNSET,
-    administrative_area_range: Union[Unset, list[str]] = UNSET,
-    administrative_area_regex: Union[Unset, str] = UNSET,
-    administrative_area_startswith: Union[Unset, str] = UNSET,
-    city: Union[Unset, str] = UNSET,
-    city_contains: Union[Unset, str] = UNSET,
-    city_endswith: Union[Unset, str] = UNSET,
-    city_gt: Union[Unset, str] = UNSET,
-    city_gte: Union[Unset, str] = UNSET,
-    city_icontains: Union[Unset, str] = UNSET,
-    city_iendswith: Union[Unset, str] = UNSET,
-    city_iexact: Union[Unset, str] = UNSET,
-    city_in: Union[Unset, list[str]] = UNSET,
-    city_iregex: Union[Unset, str] = UNSET,
-    city_isnull: Union[Unset, bool] = UNSET,
-    city_istartswith: Union[Unset, str] = UNSET,
-    city_lt: Union[Unset, str] = UNSET,
-    city_lte: Union[Unset, str] = UNSET,
-    city_range: Union[Unset, list[str]] = UNSET,
-    city_regex: Union[Unset, str] = UNSET,
-    city_startswith: Union[Unset, str] = UNSET,
-    country: Union[Unset, str] = UNSET,
-    country_contains: Union[Unset, str] = UNSET,
-    country_endswith: Union[Unset, str] = UNSET,
-    country_gt: Union[Unset, str] = UNSET,
-    country_gte: Union[Unset, str] = UNSET,
-    country_icontains: Union[Unset, str] = UNSET,
-    country_iendswith: Union[Unset, str] = UNSET,
-    country_iexact: Union[Unset, str] = UNSET,
-    country_in: Union[Unset, list[str]] = UNSET,
-    country_iregex: Union[Unset, str] = UNSET,
-    country_isnull: Union[Unset, bool] = UNSET,
-    country_istartswith: Union[Unset, str] = UNSET,
-    country_lt: Union[Unset, str] = UNSET,
-    country_lte: Union[Unset, str] = UNSET,
-    country_range: Union[Unset, list[str]] = UNSET,
-    country_regex: Union[Unset, str] = UNSET,
-    country_startswith: Union[Unset, str] = UNSET,
-    delivery_point: Union[Unset, str] = UNSET,
-    delivery_point_contains: Union[Unset, str] = UNSET,
-    delivery_point_endswith: Union[Unset, str] = UNSET,
-    delivery_point_gt: Union[Unset, str] = UNSET,
-    delivery_point_gte: Union[Unset, str] = UNSET,
-    delivery_point_icontains: Union[Unset, str] = UNSET,
-    delivery_point_iendswith: Union[Unset, str] = UNSET,
-    delivery_point_iexact: Union[Unset, str] = UNSET,
-    delivery_point_in: Union[Unset, list[str]] = UNSET,
-    delivery_point_iregex: Union[Unset, str] = UNSET,
-    delivery_point_isnull: Union[Unset, bool] = UNSET,
-    delivery_point_istartswith: Union[Unset, str] = UNSET,
-    delivery_point_lt: Union[Unset, str] = UNSET,
-    delivery_point_lte: Union[Unset, str] = UNSET,
-    delivery_point_range: Union[Unset, list[str]] = UNSET,
-    delivery_point_regex: Union[Unset, str] = UNSET,
-    delivery_point_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    electronic_email_address: Union[Unset, str] = UNSET,
-    electronic_email_address_contains: Union[Unset, str] = UNSET,
-    electronic_email_address_endswith: Union[Unset, str] = UNSET,
-    electronic_email_address_gt: Union[Unset, str] = UNSET,
-    electronic_email_address_gte: Union[Unset, str] = UNSET,
-    electronic_email_address_icontains: Union[Unset, str] = UNSET,
-    electronic_email_address_iendswith: Union[Unset, str] = UNSET,
-    electronic_email_address_iexact: Union[Unset, str] = UNSET,
-    electronic_email_address_in: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_iregex: Union[Unset, str] = UNSET,
-    electronic_email_address_isnull: Union[Unset, bool] = UNSET,
-    electronic_email_address_istartswith: Union[Unset, str] = UNSET,
-    electronic_email_address_lt: Union[Unset, str] = UNSET,
-    electronic_email_address_lte: Union[Unset, str] = UNSET,
-    electronic_email_address_range: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_regex: Union[Unset, str] = UNSET,
-    electronic_email_address_startswith: Union[Unset, str] = UNSET,
-    first_name: Union[Unset, str] = UNSET,
-    first_name_contains: Union[Unset, str] = UNSET,
-    first_name_endswith: Union[Unset, str] = UNSET,
-    first_name_gt: Union[Unset, str] = UNSET,
-    first_name_gte: Union[Unset, str] = UNSET,
-    first_name_icontains: Union[Unset, str] = UNSET,
-    first_name_iendswith: Union[Unset, str] = UNSET,
-    first_name_iexact: Union[Unset, str] = UNSET,
-    first_name_in: Union[Unset, list[str]] = UNSET,
-    first_name_iregex: Union[Unset, str] = UNSET,
-    first_name_isnull: Union[Unset, bool] = UNSET,
-    first_name_istartswith: Union[Unset, str] = UNSET,
-    first_name_lt: Union[Unset, str] = UNSET,
-    first_name_lte: Union[Unset, str] = UNSET,
-    first_name_range: Union[Unset, list[str]] = UNSET,
-    first_name_regex: Union[Unset, str] = UNSET,
-    first_name_startswith: Union[Unset, str] = UNSET,
-    last_name: Union[Unset, str] = UNSET,
-    last_name_contains: Union[Unset, str] = UNSET,
-    last_name_endswith: Union[Unset, str] = UNSET,
-    last_name_gt: Union[Unset, str] = UNSET,
-    last_name_gte: Union[Unset, str] = UNSET,
-    last_name_icontains: Union[Unset, str] = UNSET,
-    last_name_iendswith: Union[Unset, str] = UNSET,
-    last_name_iexact: Union[Unset, str] = UNSET,
-    last_name_in: Union[Unset, list[str]] = UNSET,
-    last_name_iregex: Union[Unset, str] = UNSET,
-    last_name_isnull: Union[Unset, bool] = UNSET,
-    last_name_istartswith: Union[Unset, str] = UNSET,
-    last_name_lt: Union[Unset, str] = UNSET,
-    last_name_lte: Union[Unset, str] = UNSET,
-    last_name_range: Union[Unset, list[str]] = UNSET,
-    last_name_regex: Union[Unset, str] = UNSET,
-    last_name_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    online_resource: Union[Unset, str] = UNSET,
-    online_resource_contains: Union[Unset, str] = UNSET,
-    online_resource_endswith: Union[Unset, str] = UNSET,
-    online_resource_gt: Union[Unset, str] = UNSET,
-    online_resource_gte: Union[Unset, str] = UNSET,
-    online_resource_icontains: Union[Unset, str] = UNSET,
-    online_resource_iendswith: Union[Unset, str] = UNSET,
-    online_resource_iexact: Union[Unset, str] = UNSET,
-    online_resource_in: Union[Unset, list[str]] = UNSET,
-    online_resource_iregex: Union[Unset, str] = UNSET,
-    online_resource_isnull: Union[Unset, bool] = UNSET,
-    online_resource_istartswith: Union[Unset, str] = UNSET,
-    online_resource_lt: Union[Unset, str] = UNSET,
-    online_resource_lte: Union[Unset, str] = UNSET,
-    online_resource_range: Union[Unset, list[str]] = UNSET,
-    online_resource_regex: Union[Unset, str] = UNSET,
-    online_resource_startswith: Union[Unset, str] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party_type: Union[Unset, PartiesListType] = UNSET,
-    party_type_contains: Union[Unset, str] = UNSET,
-    party_type_endswith: Union[Unset, str] = UNSET,
-    party_type_gt: Union[Unset, str] = UNSET,
-    party_type_gte: Union[Unset, str] = UNSET,
-    party_type_icontains: Union[Unset, str] = UNSET,
-    party_type_iendswith: Union[Unset, str] = UNSET,
-    party_type_iexact: Union[Unset, str] = UNSET,
-    party_type_in: Union[Unset, list[str]] = UNSET,
-    party_type_iregex: Union[Unset, str] = UNSET,
-    party_type_isnull: Union[Unset, bool] = UNSET,
-    party_type_istartswith: Union[Unset, str] = UNSET,
-    party_type_lt: Union[Unset, str] = UNSET,
-    party_type_lte: Union[Unset, str] = UNSET,
-    party_type_range: Union[Unset, list[str]] = UNSET,
-    party_type_regex: Union[Unset, str] = UNSET,
-    party_type_startswith: Union[Unset, str] = UNSET,
-    phone: Union[Unset, str] = UNSET,
-    phone_contains: Union[Unset, str] = UNSET,
-    phone_endswith: Union[Unset, str] = UNSET,
-    phone_gt: Union[Unset, str] = UNSET,
-    phone_gte: Union[Unset, str] = UNSET,
-    phone_icontains: Union[Unset, str] = UNSET,
-    phone_iendswith: Union[Unset, str] = UNSET,
-    phone_iexact: Union[Unset, str] = UNSET,
-    phone_in: Union[Unset, list[str]] = UNSET,
-    phone_iregex: Union[Unset, str] = UNSET,
-    phone_isnull: Union[Unset, bool] = UNSET,
-    phone_istartswith: Union[Unset, str] = UNSET,
-    phone_lt: Union[Unset, str] = UNSET,
-    phone_lte: Union[Unset, str] = UNSET,
-    phone_range: Union[Unset, list[str]] = UNSET,
-    phone_regex: Union[Unset, str] = UNSET,
-    phone_startswith: Union[Unset, str] = UNSET,
-    postal_code: Union[Unset, str] = UNSET,
-    postal_code_contains: Union[Unset, str] = UNSET,
-    postal_code_endswith: Union[Unset, str] = UNSET,
-    postal_code_gt: Union[Unset, str] = UNSET,
-    postal_code_gte: Union[Unset, str] = UNSET,
-    postal_code_icontains: Union[Unset, str] = UNSET,
-    postal_code_iendswith: Union[Unset, str] = UNSET,
-    postal_code_iexact: Union[Unset, str] = UNSET,
-    postal_code_in: Union[Unset, list[str]] = UNSET,
-    postal_code_iregex: Union[Unset, str] = UNSET,
-    postal_code_isnull: Union[Unset, bool] = UNSET,
-    postal_code_istartswith: Union[Unset, str] = UNSET,
-    postal_code_lt: Union[Unset, str] = UNSET,
-    postal_code_lte: Union[Unset, str] = UNSET,
-    postal_code_range: Union[Unset, list[str]] = UNSET,
-    postal_code_regex: Union[Unset, str] = UNSET,
-    postal_code_startswith: Union[Unset, str] = UNSET,
+    administrative_area: str | Unset = UNSET,
+    administrative_area_contains: str | Unset = UNSET,
+    administrative_area_endswith: str | Unset = UNSET,
+    administrative_area_gt: str | Unset = UNSET,
+    administrative_area_gte: str | Unset = UNSET,
+    administrative_area_icontains: str | Unset = UNSET,
+    administrative_area_iendswith: str | Unset = UNSET,
+    administrative_area_iexact: str | Unset = UNSET,
+    administrative_area_in: list[str] | Unset = UNSET,
+    administrative_area_iregex: str | Unset = UNSET,
+    administrative_area_isnull: bool | Unset = UNSET,
+    administrative_area_istartswith: str | Unset = UNSET,
+    administrative_area_lt: str | Unset = UNSET,
+    administrative_area_lte: str | Unset = UNSET,
+    administrative_area_range: list[str] | Unset = UNSET,
+    administrative_area_regex: str | Unset = UNSET,
+    administrative_area_startswith: str | Unset = UNSET,
+    city: str | Unset = UNSET,
+    city_contains: str | Unset = UNSET,
+    city_endswith: str | Unset = UNSET,
+    city_gt: str | Unset = UNSET,
+    city_gte: str | Unset = UNSET,
+    city_icontains: str | Unset = UNSET,
+    city_iendswith: str | Unset = UNSET,
+    city_iexact: str | Unset = UNSET,
+    city_in: list[str] | Unset = UNSET,
+    city_iregex: str | Unset = UNSET,
+    city_isnull: bool | Unset = UNSET,
+    city_istartswith: str | Unset = UNSET,
+    city_lt: str | Unset = UNSET,
+    city_lte: str | Unset = UNSET,
+    city_range: list[str] | Unset = UNSET,
+    city_regex: str | Unset = UNSET,
+    city_startswith: str | Unset = UNSET,
+    country: str | Unset = UNSET,
+    country_contains: str | Unset = UNSET,
+    country_endswith: str | Unset = UNSET,
+    country_gt: str | Unset = UNSET,
+    country_gte: str | Unset = UNSET,
+    country_icontains: str | Unset = UNSET,
+    country_iendswith: str | Unset = UNSET,
+    country_iexact: str | Unset = UNSET,
+    country_in: list[str] | Unset = UNSET,
+    country_iregex: str | Unset = UNSET,
+    country_isnull: bool | Unset = UNSET,
+    country_istartswith: str | Unset = UNSET,
+    country_lt: str | Unset = UNSET,
+    country_lte: str | Unset = UNSET,
+    country_range: list[str] | Unset = UNSET,
+    country_regex: str | Unset = UNSET,
+    country_startswith: str | Unset = UNSET,
+    delivery_point: str | Unset = UNSET,
+    delivery_point_contains: str | Unset = UNSET,
+    delivery_point_endswith: str | Unset = UNSET,
+    delivery_point_gt: str | Unset = UNSET,
+    delivery_point_gte: str | Unset = UNSET,
+    delivery_point_icontains: str | Unset = UNSET,
+    delivery_point_iendswith: str | Unset = UNSET,
+    delivery_point_iexact: str | Unset = UNSET,
+    delivery_point_in: list[str] | Unset = UNSET,
+    delivery_point_iregex: str | Unset = UNSET,
+    delivery_point_isnull: bool | Unset = UNSET,
+    delivery_point_istartswith: str | Unset = UNSET,
+    delivery_point_lt: str | Unset = UNSET,
+    delivery_point_lte: str | Unset = UNSET,
+    delivery_point_range: list[str] | Unset = UNSET,
+    delivery_point_regex: str | Unset = UNSET,
+    delivery_point_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    electronic_email_address: str | Unset = UNSET,
+    electronic_email_address_contains: str | Unset = UNSET,
+    electronic_email_address_endswith: str | Unset = UNSET,
+    electronic_email_address_gt: str | Unset = UNSET,
+    electronic_email_address_gte: str | Unset = UNSET,
+    electronic_email_address_icontains: str | Unset = UNSET,
+    electronic_email_address_iendswith: str | Unset = UNSET,
+    electronic_email_address_iexact: str | Unset = UNSET,
+    electronic_email_address_in: list[str] | Unset = UNSET,
+    electronic_email_address_iregex: str | Unset = UNSET,
+    electronic_email_address_isnull: bool | Unset = UNSET,
+    electronic_email_address_istartswith: str | Unset = UNSET,
+    electronic_email_address_lt: str | Unset = UNSET,
+    electronic_email_address_lte: str | Unset = UNSET,
+    electronic_email_address_range: list[str] | Unset = UNSET,
+    electronic_email_address_regex: str | Unset = UNSET,
+    electronic_email_address_startswith: str | Unset = UNSET,
+    first_name: str | Unset = UNSET,
+    first_name_contains: str | Unset = UNSET,
+    first_name_endswith: str | Unset = UNSET,
+    first_name_gt: str | Unset = UNSET,
+    first_name_gte: str | Unset = UNSET,
+    first_name_icontains: str | Unset = UNSET,
+    first_name_iendswith: str | Unset = UNSET,
+    first_name_iexact: str | Unset = UNSET,
+    first_name_in: list[str] | Unset = UNSET,
+    first_name_iregex: str | Unset = UNSET,
+    first_name_isnull: bool | Unset = UNSET,
+    first_name_istartswith: str | Unset = UNSET,
+    first_name_lt: str | Unset = UNSET,
+    first_name_lte: str | Unset = UNSET,
+    first_name_range: list[str] | Unset = UNSET,
+    first_name_regex: str | Unset = UNSET,
+    first_name_startswith: str | Unset = UNSET,
+    last_name: str | Unset = UNSET,
+    last_name_contains: str | Unset = UNSET,
+    last_name_endswith: str | Unset = UNSET,
+    last_name_gt: str | Unset = UNSET,
+    last_name_gte: str | Unset = UNSET,
+    last_name_icontains: str | Unset = UNSET,
+    last_name_iendswith: str | Unset = UNSET,
+    last_name_iexact: str | Unset = UNSET,
+    last_name_in: list[str] | Unset = UNSET,
+    last_name_iregex: str | Unset = UNSET,
+    last_name_isnull: bool | Unset = UNSET,
+    last_name_istartswith: str | Unset = UNSET,
+    last_name_lt: str | Unset = UNSET,
+    last_name_lte: str | Unset = UNSET,
+    last_name_range: list[str] | Unset = UNSET,
+    last_name_regex: str | Unset = UNSET,
+    last_name_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    online_resource: str | Unset = UNSET,
+    online_resource_contains: str | Unset = UNSET,
+    online_resource_endswith: str | Unset = UNSET,
+    online_resource_gt: str | Unset = UNSET,
+    online_resource_gte: str | Unset = UNSET,
+    online_resource_icontains: str | Unset = UNSET,
+    online_resource_iendswith: str | Unset = UNSET,
+    online_resource_iexact: str | Unset = UNSET,
+    online_resource_in: list[str] | Unset = UNSET,
+    online_resource_iregex: str | Unset = UNSET,
+    online_resource_isnull: bool | Unset = UNSET,
+    online_resource_istartswith: str | Unset = UNSET,
+    online_resource_lt: str | Unset = UNSET,
+    online_resource_lte: str | Unset = UNSET,
+    online_resource_range: list[str] | Unset = UNSET,
+    online_resource_regex: str | Unset = UNSET,
+    online_resource_startswith: str | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party_type: PartiesListType | Unset = UNSET,
+    party_type_contains: str | Unset = UNSET,
+    party_type_endswith: str | Unset = UNSET,
+    party_type_gt: str | Unset = UNSET,
+    party_type_gte: str | Unset = UNSET,
+    party_type_icontains: str | Unset = UNSET,
+    party_type_iendswith: str | Unset = UNSET,
+    party_type_iexact: str | Unset = UNSET,
+    party_type_in: list[str] | Unset = UNSET,
+    party_type_iregex: str | Unset = UNSET,
+    party_type_isnull: bool | Unset = UNSET,
+    party_type_istartswith: str | Unset = UNSET,
+    party_type_lt: str | Unset = UNSET,
+    party_type_lte: str | Unset = UNSET,
+    party_type_range: list[str] | Unset = UNSET,
+    party_type_regex: str | Unset = UNSET,
+    party_type_startswith: str | Unset = UNSET,
+    phone: str | Unset = UNSET,
+    phone_contains: str | Unset = UNSET,
+    phone_endswith: str | Unset = UNSET,
+    phone_gt: str | Unset = UNSET,
+    phone_gte: str | Unset = UNSET,
+    phone_icontains: str | Unset = UNSET,
+    phone_iendswith: str | Unset = UNSET,
+    phone_iexact: str | Unset = UNSET,
+    phone_in: list[str] | Unset = UNSET,
+    phone_iregex: str | Unset = UNSET,
+    phone_isnull: bool | Unset = UNSET,
+    phone_istartswith: str | Unset = UNSET,
+    phone_lt: str | Unset = UNSET,
+    phone_lte: str | Unset = UNSET,
+    phone_range: list[str] | Unset = UNSET,
+    phone_regex: str | Unset = UNSET,
+    phone_startswith: str | Unset = UNSET,
+    postal_code: str | Unset = UNSET,
+    postal_code_contains: str | Unset = UNSET,
+    postal_code_endswith: str | Unset = UNSET,
+    postal_code_gt: str | Unset = UNSET,
+    postal_code_gte: str | Unset = UNSET,
+    postal_code_icontains: str | Unset = UNSET,
+    postal_code_iendswith: str | Unset = UNSET,
+    postal_code_iexact: str | Unset = UNSET,
+    postal_code_in: list[str] | Unset = UNSET,
+    postal_code_iregex: str | Unset = UNSET,
+    postal_code_isnull: bool | Unset = UNSET,
+    postal_code_istartswith: str | Unset = UNSET,
+    postal_code_lt: str | Unset = UNSET,
+    postal_code_lte: str | Unset = UNSET,
+    postal_code_range: list[str] | Unset = UNSET,
+    postal_code_regex: str | Unset = UNSET,
+    postal_code_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -256,7 +256,7 @@ def _get_kwargs(
 
     params["administrativeArea__iexact"] = administrative_area_iexact
 
-    json_administrative_area_in: Union[Unset, list[str]] = UNSET
+    json_administrative_area_in: list[str] | Unset = UNSET
     if not isinstance(administrative_area_in, Unset):
         json_administrative_area_in = ",".join(map(str, administrative_area_in))
 
@@ -272,7 +272,7 @@ def _get_kwargs(
 
     params["administrativeArea__lte"] = administrative_area_lte
 
-    json_administrative_area_range: Union[Unset, list[str]] = UNSET
+    json_administrative_area_range: list[str] | Unset = UNSET
     if not isinstance(administrative_area_range, Unset):
         json_administrative_area_range = ",".join(map(str, administrative_area_range))
 
@@ -298,7 +298,7 @@ def _get_kwargs(
 
     params["city__iexact"] = city_iexact
 
-    json_city_in: Union[Unset, list[str]] = UNSET
+    json_city_in: list[str] | Unset = UNSET
     if not isinstance(city_in, Unset):
         json_city_in = ",".join(map(str, city_in))
 
@@ -314,7 +314,7 @@ def _get_kwargs(
 
     params["city__lte"] = city_lte
 
-    json_city_range: Union[Unset, list[str]] = UNSET
+    json_city_range: list[str] | Unset = UNSET
     if not isinstance(city_range, Unset):
         json_city_range = ",".join(map(str, city_range))
 
@@ -340,7 +340,7 @@ def _get_kwargs(
 
     params["country__iexact"] = country_iexact
 
-    json_country_in: Union[Unset, list[str]] = UNSET
+    json_country_in: list[str] | Unset = UNSET
     if not isinstance(country_in, Unset):
         json_country_in = ",".join(map(str, country_in))
 
@@ -356,7 +356,7 @@ def _get_kwargs(
 
     params["country__lte"] = country_lte
 
-    json_country_range: Union[Unset, list[str]] = UNSET
+    json_country_range: list[str] | Unset = UNSET
     if not isinstance(country_range, Unset):
         json_country_range = ",".join(map(str, country_range))
 
@@ -382,7 +382,7 @@ def _get_kwargs(
 
     params["deliveryPoint__iexact"] = delivery_point_iexact
 
-    json_delivery_point_in: Union[Unset, list[str]] = UNSET
+    json_delivery_point_in: list[str] | Unset = UNSET
     if not isinstance(delivery_point_in, Unset):
         json_delivery_point_in = ",".join(map(str, delivery_point_in))
 
@@ -398,7 +398,7 @@ def _get_kwargs(
 
     params["deliveryPoint__lte"] = delivery_point_lte
 
-    json_delivery_point_range: Union[Unset, list[str]] = UNSET
+    json_delivery_point_range: list[str] | Unset = UNSET
     if not isinstance(delivery_point_range, Unset):
         json_delivery_point_range = ",".join(map(str, delivery_point_range))
 
@@ -424,7 +424,7 @@ def _get_kwargs(
 
     params["description__iexact"] = description_iexact
 
-    json_description_in: Union[Unset, list[str]] = UNSET
+    json_description_in: list[str] | Unset = UNSET
     if not isinstance(description_in, Unset):
         json_description_in = ",".join(map(str, description_in))
 
@@ -440,7 +440,7 @@ def _get_kwargs(
 
     params["description__lte"] = description_lte
 
-    json_description_range: Union[Unset, list[str]] = UNSET
+    json_description_range: list[str] | Unset = UNSET
     if not isinstance(description_range, Unset):
         json_description_range = ",".join(map(str, description_range))
 
@@ -466,7 +466,7 @@ def _get_kwargs(
 
     params["electronicEmailAddress__iexact"] = electronic_email_address_iexact
 
-    json_electronic_email_address_in: Union[Unset, list[str]] = UNSET
+    json_electronic_email_address_in: list[str] | Unset = UNSET
     if not isinstance(electronic_email_address_in, Unset):
         json_electronic_email_address_in = ",".join(map(str, electronic_email_address_in))
 
@@ -482,7 +482,7 @@ def _get_kwargs(
 
     params["electronicEmailAddress__lte"] = electronic_email_address_lte
 
-    json_electronic_email_address_range: Union[Unset, list[str]] = UNSET
+    json_electronic_email_address_range: list[str] | Unset = UNSET
     if not isinstance(electronic_email_address_range, Unset):
         json_electronic_email_address_range = ",".join(map(str, electronic_email_address_range))
 
@@ -508,7 +508,7 @@ def _get_kwargs(
 
     params["firstName__iexact"] = first_name_iexact
 
-    json_first_name_in: Union[Unset, list[str]] = UNSET
+    json_first_name_in: list[str] | Unset = UNSET
     if not isinstance(first_name_in, Unset):
         json_first_name_in = ",".join(map(str, first_name_in))
 
@@ -524,7 +524,7 @@ def _get_kwargs(
 
     params["firstName__lte"] = first_name_lte
 
-    json_first_name_range: Union[Unset, list[str]] = UNSET
+    json_first_name_range: list[str] | Unset = UNSET
     if not isinstance(first_name_range, Unset):
         json_first_name_range = ",".join(map(str, first_name_range))
 
@@ -550,7 +550,7 @@ def _get_kwargs(
 
     params["lastName__iexact"] = last_name_iexact
 
-    json_last_name_in: Union[Unset, list[str]] = UNSET
+    json_last_name_in: list[str] | Unset = UNSET
     if not isinstance(last_name_in, Unset):
         json_last_name_in = ",".join(map(str, last_name_in))
 
@@ -566,7 +566,7 @@ def _get_kwargs(
 
     params["lastName__lte"] = last_name_lte
 
-    json_last_name_range: Union[Unset, list[str]] = UNSET
+    json_last_name_range: list[str] | Unset = UNSET
     if not isinstance(last_name_range, Unset):
         json_last_name_range = ",".join(map(str, last_name_range))
 
@@ -596,7 +596,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -612,7 +612,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -640,7 +640,7 @@ def _get_kwargs(
 
     params["onlineResource__iexact"] = online_resource_iexact
 
-    json_online_resource_in: Union[Unset, list[str]] = UNSET
+    json_online_resource_in: list[str] | Unset = UNSET
     if not isinstance(online_resource_in, Unset):
         json_online_resource_in = ",".join(map(str, online_resource_in))
 
@@ -656,7 +656,7 @@ def _get_kwargs(
 
     params["onlineResource__lte"] = online_resource_lte
 
-    json_online_resource_range: Union[Unset, list[str]] = UNSET
+    json_online_resource_range: list[str] | Unset = UNSET
     if not isinstance(online_resource_range, Unset):
         json_online_resource_range = ",".join(map(str, online_resource_range))
 
@@ -668,7 +668,7 @@ def _get_kwargs(
 
     params["ordering"] = ordering
 
-    json_party_type: Union[Unset, str] = UNSET
+    json_party_type: str | Unset = UNSET
     if not isinstance(party_type, Unset):
         json_party_type = party_type.value
 
@@ -688,7 +688,7 @@ def _get_kwargs(
 
     params["partyType__iexact"] = party_type_iexact
 
-    json_party_type_in: Union[Unset, list[str]] = UNSET
+    json_party_type_in: list[str] | Unset = UNSET
     if not isinstance(party_type_in, Unset):
         json_party_type_in = ",".join(map(str, party_type_in))
 
@@ -704,7 +704,7 @@ def _get_kwargs(
 
     params["partyType__lte"] = party_type_lte
 
-    json_party_type_range: Union[Unset, list[str]] = UNSET
+    json_party_type_range: list[str] | Unset = UNSET
     if not isinstance(party_type_range, Unset):
         json_party_type_range = ",".join(map(str, party_type_range))
 
@@ -730,7 +730,7 @@ def _get_kwargs(
 
     params["phone__iexact"] = phone_iexact
 
-    json_phone_in: Union[Unset, list[str]] = UNSET
+    json_phone_in: list[str] | Unset = UNSET
     if not isinstance(phone_in, Unset):
         json_phone_in = ",".join(map(str, phone_in))
 
@@ -746,7 +746,7 @@ def _get_kwargs(
 
     params["phone__lte"] = phone_lte
 
-    json_phone_range: Union[Unset, list[str]] = UNSET
+    json_phone_range: list[str] | Unset = UNSET
     if not isinstance(phone_range, Unset):
         json_phone_range = ",".join(map(str, phone_range))
 
@@ -772,7 +772,7 @@ def _get_kwargs(
 
     params["postalCode__iexact"] = postal_code_iexact
 
-    json_postal_code_in: Union[Unset, list[str]] = UNSET
+    json_postal_code_in: list[str] | Unset = UNSET
     if not isinstance(postal_code_in, Unset):
         json_postal_code_in = ",".join(map(str, postal_code_in))
 
@@ -788,7 +788,7 @@ def _get_kwargs(
 
     params["postalCode__lte"] = postal_code_lte
 
-    json_postal_code_range: Union[Unset, list[str]] = UNSET
+    json_postal_code_range: list[str] | Unset = UNSET
     if not isinstance(postal_code_range, Unset):
         json_postal_code_range = ",".join(map(str, postal_code_range))
 
@@ -809,9 +809,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedPartyReadList]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> PaginatedPartyReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedPartyReadList.from_dict(response.json())
 
@@ -824,7 +822,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedPartyReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -837,462 +835,462 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    administrative_area: Union[Unset, str] = UNSET,
-    administrative_area_contains: Union[Unset, str] = UNSET,
-    administrative_area_endswith: Union[Unset, str] = UNSET,
-    administrative_area_gt: Union[Unset, str] = UNSET,
-    administrative_area_gte: Union[Unset, str] = UNSET,
-    administrative_area_icontains: Union[Unset, str] = UNSET,
-    administrative_area_iendswith: Union[Unset, str] = UNSET,
-    administrative_area_iexact: Union[Unset, str] = UNSET,
-    administrative_area_in: Union[Unset, list[str]] = UNSET,
-    administrative_area_iregex: Union[Unset, str] = UNSET,
-    administrative_area_isnull: Union[Unset, bool] = UNSET,
-    administrative_area_istartswith: Union[Unset, str] = UNSET,
-    administrative_area_lt: Union[Unset, str] = UNSET,
-    administrative_area_lte: Union[Unset, str] = UNSET,
-    administrative_area_range: Union[Unset, list[str]] = UNSET,
-    administrative_area_regex: Union[Unset, str] = UNSET,
-    administrative_area_startswith: Union[Unset, str] = UNSET,
-    city: Union[Unset, str] = UNSET,
-    city_contains: Union[Unset, str] = UNSET,
-    city_endswith: Union[Unset, str] = UNSET,
-    city_gt: Union[Unset, str] = UNSET,
-    city_gte: Union[Unset, str] = UNSET,
-    city_icontains: Union[Unset, str] = UNSET,
-    city_iendswith: Union[Unset, str] = UNSET,
-    city_iexact: Union[Unset, str] = UNSET,
-    city_in: Union[Unset, list[str]] = UNSET,
-    city_iregex: Union[Unset, str] = UNSET,
-    city_isnull: Union[Unset, bool] = UNSET,
-    city_istartswith: Union[Unset, str] = UNSET,
-    city_lt: Union[Unset, str] = UNSET,
-    city_lte: Union[Unset, str] = UNSET,
-    city_range: Union[Unset, list[str]] = UNSET,
-    city_regex: Union[Unset, str] = UNSET,
-    city_startswith: Union[Unset, str] = UNSET,
-    country: Union[Unset, str] = UNSET,
-    country_contains: Union[Unset, str] = UNSET,
-    country_endswith: Union[Unset, str] = UNSET,
-    country_gt: Union[Unset, str] = UNSET,
-    country_gte: Union[Unset, str] = UNSET,
-    country_icontains: Union[Unset, str] = UNSET,
-    country_iendswith: Union[Unset, str] = UNSET,
-    country_iexact: Union[Unset, str] = UNSET,
-    country_in: Union[Unset, list[str]] = UNSET,
-    country_iregex: Union[Unset, str] = UNSET,
-    country_isnull: Union[Unset, bool] = UNSET,
-    country_istartswith: Union[Unset, str] = UNSET,
-    country_lt: Union[Unset, str] = UNSET,
-    country_lte: Union[Unset, str] = UNSET,
-    country_range: Union[Unset, list[str]] = UNSET,
-    country_regex: Union[Unset, str] = UNSET,
-    country_startswith: Union[Unset, str] = UNSET,
-    delivery_point: Union[Unset, str] = UNSET,
-    delivery_point_contains: Union[Unset, str] = UNSET,
-    delivery_point_endswith: Union[Unset, str] = UNSET,
-    delivery_point_gt: Union[Unset, str] = UNSET,
-    delivery_point_gte: Union[Unset, str] = UNSET,
-    delivery_point_icontains: Union[Unset, str] = UNSET,
-    delivery_point_iendswith: Union[Unset, str] = UNSET,
-    delivery_point_iexact: Union[Unset, str] = UNSET,
-    delivery_point_in: Union[Unset, list[str]] = UNSET,
-    delivery_point_iregex: Union[Unset, str] = UNSET,
-    delivery_point_isnull: Union[Unset, bool] = UNSET,
-    delivery_point_istartswith: Union[Unset, str] = UNSET,
-    delivery_point_lt: Union[Unset, str] = UNSET,
-    delivery_point_lte: Union[Unset, str] = UNSET,
-    delivery_point_range: Union[Unset, list[str]] = UNSET,
-    delivery_point_regex: Union[Unset, str] = UNSET,
-    delivery_point_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    electronic_email_address: Union[Unset, str] = UNSET,
-    electronic_email_address_contains: Union[Unset, str] = UNSET,
-    electronic_email_address_endswith: Union[Unset, str] = UNSET,
-    electronic_email_address_gt: Union[Unset, str] = UNSET,
-    electronic_email_address_gte: Union[Unset, str] = UNSET,
-    electronic_email_address_icontains: Union[Unset, str] = UNSET,
-    electronic_email_address_iendswith: Union[Unset, str] = UNSET,
-    electronic_email_address_iexact: Union[Unset, str] = UNSET,
-    electronic_email_address_in: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_iregex: Union[Unset, str] = UNSET,
-    electronic_email_address_isnull: Union[Unset, bool] = UNSET,
-    electronic_email_address_istartswith: Union[Unset, str] = UNSET,
-    electronic_email_address_lt: Union[Unset, str] = UNSET,
-    electronic_email_address_lte: Union[Unset, str] = UNSET,
-    electronic_email_address_range: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_regex: Union[Unset, str] = UNSET,
-    electronic_email_address_startswith: Union[Unset, str] = UNSET,
-    first_name: Union[Unset, str] = UNSET,
-    first_name_contains: Union[Unset, str] = UNSET,
-    first_name_endswith: Union[Unset, str] = UNSET,
-    first_name_gt: Union[Unset, str] = UNSET,
-    first_name_gte: Union[Unset, str] = UNSET,
-    first_name_icontains: Union[Unset, str] = UNSET,
-    first_name_iendswith: Union[Unset, str] = UNSET,
-    first_name_iexact: Union[Unset, str] = UNSET,
-    first_name_in: Union[Unset, list[str]] = UNSET,
-    first_name_iregex: Union[Unset, str] = UNSET,
-    first_name_isnull: Union[Unset, bool] = UNSET,
-    first_name_istartswith: Union[Unset, str] = UNSET,
-    first_name_lt: Union[Unset, str] = UNSET,
-    first_name_lte: Union[Unset, str] = UNSET,
-    first_name_range: Union[Unset, list[str]] = UNSET,
-    first_name_regex: Union[Unset, str] = UNSET,
-    first_name_startswith: Union[Unset, str] = UNSET,
-    last_name: Union[Unset, str] = UNSET,
-    last_name_contains: Union[Unset, str] = UNSET,
-    last_name_endswith: Union[Unset, str] = UNSET,
-    last_name_gt: Union[Unset, str] = UNSET,
-    last_name_gte: Union[Unset, str] = UNSET,
-    last_name_icontains: Union[Unset, str] = UNSET,
-    last_name_iendswith: Union[Unset, str] = UNSET,
-    last_name_iexact: Union[Unset, str] = UNSET,
-    last_name_in: Union[Unset, list[str]] = UNSET,
-    last_name_iregex: Union[Unset, str] = UNSET,
-    last_name_isnull: Union[Unset, bool] = UNSET,
-    last_name_istartswith: Union[Unset, str] = UNSET,
-    last_name_lt: Union[Unset, str] = UNSET,
-    last_name_lte: Union[Unset, str] = UNSET,
-    last_name_range: Union[Unset, list[str]] = UNSET,
-    last_name_regex: Union[Unset, str] = UNSET,
-    last_name_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    online_resource: Union[Unset, str] = UNSET,
-    online_resource_contains: Union[Unset, str] = UNSET,
-    online_resource_endswith: Union[Unset, str] = UNSET,
-    online_resource_gt: Union[Unset, str] = UNSET,
-    online_resource_gte: Union[Unset, str] = UNSET,
-    online_resource_icontains: Union[Unset, str] = UNSET,
-    online_resource_iendswith: Union[Unset, str] = UNSET,
-    online_resource_iexact: Union[Unset, str] = UNSET,
-    online_resource_in: Union[Unset, list[str]] = UNSET,
-    online_resource_iregex: Union[Unset, str] = UNSET,
-    online_resource_isnull: Union[Unset, bool] = UNSET,
-    online_resource_istartswith: Union[Unset, str] = UNSET,
-    online_resource_lt: Union[Unset, str] = UNSET,
-    online_resource_lte: Union[Unset, str] = UNSET,
-    online_resource_range: Union[Unset, list[str]] = UNSET,
-    online_resource_regex: Union[Unset, str] = UNSET,
-    online_resource_startswith: Union[Unset, str] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party_type: Union[Unset, PartiesListType] = UNSET,
-    party_type_contains: Union[Unset, str] = UNSET,
-    party_type_endswith: Union[Unset, str] = UNSET,
-    party_type_gt: Union[Unset, str] = UNSET,
-    party_type_gte: Union[Unset, str] = UNSET,
-    party_type_icontains: Union[Unset, str] = UNSET,
-    party_type_iendswith: Union[Unset, str] = UNSET,
-    party_type_iexact: Union[Unset, str] = UNSET,
-    party_type_in: Union[Unset, list[str]] = UNSET,
-    party_type_iregex: Union[Unset, str] = UNSET,
-    party_type_isnull: Union[Unset, bool] = UNSET,
-    party_type_istartswith: Union[Unset, str] = UNSET,
-    party_type_lt: Union[Unset, str] = UNSET,
-    party_type_lte: Union[Unset, str] = UNSET,
-    party_type_range: Union[Unset, list[str]] = UNSET,
-    party_type_regex: Union[Unset, str] = UNSET,
-    party_type_startswith: Union[Unset, str] = UNSET,
-    phone: Union[Unset, str] = UNSET,
-    phone_contains: Union[Unset, str] = UNSET,
-    phone_endswith: Union[Unset, str] = UNSET,
-    phone_gt: Union[Unset, str] = UNSET,
-    phone_gte: Union[Unset, str] = UNSET,
-    phone_icontains: Union[Unset, str] = UNSET,
-    phone_iendswith: Union[Unset, str] = UNSET,
-    phone_iexact: Union[Unset, str] = UNSET,
-    phone_in: Union[Unset, list[str]] = UNSET,
-    phone_iregex: Union[Unset, str] = UNSET,
-    phone_isnull: Union[Unset, bool] = UNSET,
-    phone_istartswith: Union[Unset, str] = UNSET,
-    phone_lt: Union[Unset, str] = UNSET,
-    phone_lte: Union[Unset, str] = UNSET,
-    phone_range: Union[Unset, list[str]] = UNSET,
-    phone_regex: Union[Unset, str] = UNSET,
-    phone_startswith: Union[Unset, str] = UNSET,
-    postal_code: Union[Unset, str] = UNSET,
-    postal_code_contains: Union[Unset, str] = UNSET,
-    postal_code_endswith: Union[Unset, str] = UNSET,
-    postal_code_gt: Union[Unset, str] = UNSET,
-    postal_code_gte: Union[Unset, str] = UNSET,
-    postal_code_icontains: Union[Unset, str] = UNSET,
-    postal_code_iendswith: Union[Unset, str] = UNSET,
-    postal_code_iexact: Union[Unset, str] = UNSET,
-    postal_code_in: Union[Unset, list[str]] = UNSET,
-    postal_code_iregex: Union[Unset, str] = UNSET,
-    postal_code_isnull: Union[Unset, bool] = UNSET,
-    postal_code_istartswith: Union[Unset, str] = UNSET,
-    postal_code_lt: Union[Unset, str] = UNSET,
-    postal_code_lte: Union[Unset, str] = UNSET,
-    postal_code_range: Union[Unset, list[str]] = UNSET,
-    postal_code_regex: Union[Unset, str] = UNSET,
-    postal_code_startswith: Union[Unset, str] = UNSET,
+    administrative_area: str | Unset = UNSET,
+    administrative_area_contains: str | Unset = UNSET,
+    administrative_area_endswith: str | Unset = UNSET,
+    administrative_area_gt: str | Unset = UNSET,
+    administrative_area_gte: str | Unset = UNSET,
+    administrative_area_icontains: str | Unset = UNSET,
+    administrative_area_iendswith: str | Unset = UNSET,
+    administrative_area_iexact: str | Unset = UNSET,
+    administrative_area_in: list[str] | Unset = UNSET,
+    administrative_area_iregex: str | Unset = UNSET,
+    administrative_area_isnull: bool | Unset = UNSET,
+    administrative_area_istartswith: str | Unset = UNSET,
+    administrative_area_lt: str | Unset = UNSET,
+    administrative_area_lte: str | Unset = UNSET,
+    administrative_area_range: list[str] | Unset = UNSET,
+    administrative_area_regex: str | Unset = UNSET,
+    administrative_area_startswith: str | Unset = UNSET,
+    city: str | Unset = UNSET,
+    city_contains: str | Unset = UNSET,
+    city_endswith: str | Unset = UNSET,
+    city_gt: str | Unset = UNSET,
+    city_gte: str | Unset = UNSET,
+    city_icontains: str | Unset = UNSET,
+    city_iendswith: str | Unset = UNSET,
+    city_iexact: str | Unset = UNSET,
+    city_in: list[str] | Unset = UNSET,
+    city_iregex: str | Unset = UNSET,
+    city_isnull: bool | Unset = UNSET,
+    city_istartswith: str | Unset = UNSET,
+    city_lt: str | Unset = UNSET,
+    city_lte: str | Unset = UNSET,
+    city_range: list[str] | Unset = UNSET,
+    city_regex: str | Unset = UNSET,
+    city_startswith: str | Unset = UNSET,
+    country: str | Unset = UNSET,
+    country_contains: str | Unset = UNSET,
+    country_endswith: str | Unset = UNSET,
+    country_gt: str | Unset = UNSET,
+    country_gte: str | Unset = UNSET,
+    country_icontains: str | Unset = UNSET,
+    country_iendswith: str | Unset = UNSET,
+    country_iexact: str | Unset = UNSET,
+    country_in: list[str] | Unset = UNSET,
+    country_iregex: str | Unset = UNSET,
+    country_isnull: bool | Unset = UNSET,
+    country_istartswith: str | Unset = UNSET,
+    country_lt: str | Unset = UNSET,
+    country_lte: str | Unset = UNSET,
+    country_range: list[str] | Unset = UNSET,
+    country_regex: str | Unset = UNSET,
+    country_startswith: str | Unset = UNSET,
+    delivery_point: str | Unset = UNSET,
+    delivery_point_contains: str | Unset = UNSET,
+    delivery_point_endswith: str | Unset = UNSET,
+    delivery_point_gt: str | Unset = UNSET,
+    delivery_point_gte: str | Unset = UNSET,
+    delivery_point_icontains: str | Unset = UNSET,
+    delivery_point_iendswith: str | Unset = UNSET,
+    delivery_point_iexact: str | Unset = UNSET,
+    delivery_point_in: list[str] | Unset = UNSET,
+    delivery_point_iregex: str | Unset = UNSET,
+    delivery_point_isnull: bool | Unset = UNSET,
+    delivery_point_istartswith: str | Unset = UNSET,
+    delivery_point_lt: str | Unset = UNSET,
+    delivery_point_lte: str | Unset = UNSET,
+    delivery_point_range: list[str] | Unset = UNSET,
+    delivery_point_regex: str | Unset = UNSET,
+    delivery_point_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    electronic_email_address: str | Unset = UNSET,
+    electronic_email_address_contains: str | Unset = UNSET,
+    electronic_email_address_endswith: str | Unset = UNSET,
+    electronic_email_address_gt: str | Unset = UNSET,
+    electronic_email_address_gte: str | Unset = UNSET,
+    electronic_email_address_icontains: str | Unset = UNSET,
+    electronic_email_address_iendswith: str | Unset = UNSET,
+    electronic_email_address_iexact: str | Unset = UNSET,
+    electronic_email_address_in: list[str] | Unset = UNSET,
+    electronic_email_address_iregex: str | Unset = UNSET,
+    electronic_email_address_isnull: bool | Unset = UNSET,
+    electronic_email_address_istartswith: str | Unset = UNSET,
+    electronic_email_address_lt: str | Unset = UNSET,
+    electronic_email_address_lte: str | Unset = UNSET,
+    electronic_email_address_range: list[str] | Unset = UNSET,
+    electronic_email_address_regex: str | Unset = UNSET,
+    electronic_email_address_startswith: str | Unset = UNSET,
+    first_name: str | Unset = UNSET,
+    first_name_contains: str | Unset = UNSET,
+    first_name_endswith: str | Unset = UNSET,
+    first_name_gt: str | Unset = UNSET,
+    first_name_gte: str | Unset = UNSET,
+    first_name_icontains: str | Unset = UNSET,
+    first_name_iendswith: str | Unset = UNSET,
+    first_name_iexact: str | Unset = UNSET,
+    first_name_in: list[str] | Unset = UNSET,
+    first_name_iregex: str | Unset = UNSET,
+    first_name_isnull: bool | Unset = UNSET,
+    first_name_istartswith: str | Unset = UNSET,
+    first_name_lt: str | Unset = UNSET,
+    first_name_lte: str | Unset = UNSET,
+    first_name_range: list[str] | Unset = UNSET,
+    first_name_regex: str | Unset = UNSET,
+    first_name_startswith: str | Unset = UNSET,
+    last_name: str | Unset = UNSET,
+    last_name_contains: str | Unset = UNSET,
+    last_name_endswith: str | Unset = UNSET,
+    last_name_gt: str | Unset = UNSET,
+    last_name_gte: str | Unset = UNSET,
+    last_name_icontains: str | Unset = UNSET,
+    last_name_iendswith: str | Unset = UNSET,
+    last_name_iexact: str | Unset = UNSET,
+    last_name_in: list[str] | Unset = UNSET,
+    last_name_iregex: str | Unset = UNSET,
+    last_name_isnull: bool | Unset = UNSET,
+    last_name_istartswith: str | Unset = UNSET,
+    last_name_lt: str | Unset = UNSET,
+    last_name_lte: str | Unset = UNSET,
+    last_name_range: list[str] | Unset = UNSET,
+    last_name_regex: str | Unset = UNSET,
+    last_name_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    online_resource: str | Unset = UNSET,
+    online_resource_contains: str | Unset = UNSET,
+    online_resource_endswith: str | Unset = UNSET,
+    online_resource_gt: str | Unset = UNSET,
+    online_resource_gte: str | Unset = UNSET,
+    online_resource_icontains: str | Unset = UNSET,
+    online_resource_iendswith: str | Unset = UNSET,
+    online_resource_iexact: str | Unset = UNSET,
+    online_resource_in: list[str] | Unset = UNSET,
+    online_resource_iregex: str | Unset = UNSET,
+    online_resource_isnull: bool | Unset = UNSET,
+    online_resource_istartswith: str | Unset = UNSET,
+    online_resource_lt: str | Unset = UNSET,
+    online_resource_lte: str | Unset = UNSET,
+    online_resource_range: list[str] | Unset = UNSET,
+    online_resource_regex: str | Unset = UNSET,
+    online_resource_startswith: str | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party_type: PartiesListType | Unset = UNSET,
+    party_type_contains: str | Unset = UNSET,
+    party_type_endswith: str | Unset = UNSET,
+    party_type_gt: str | Unset = UNSET,
+    party_type_gte: str | Unset = UNSET,
+    party_type_icontains: str | Unset = UNSET,
+    party_type_iendswith: str | Unset = UNSET,
+    party_type_iexact: str | Unset = UNSET,
+    party_type_in: list[str] | Unset = UNSET,
+    party_type_iregex: str | Unset = UNSET,
+    party_type_isnull: bool | Unset = UNSET,
+    party_type_istartswith: str | Unset = UNSET,
+    party_type_lt: str | Unset = UNSET,
+    party_type_lte: str | Unset = UNSET,
+    party_type_range: list[str] | Unset = UNSET,
+    party_type_regex: str | Unset = UNSET,
+    party_type_startswith: str | Unset = UNSET,
+    phone: str | Unset = UNSET,
+    phone_contains: str | Unset = UNSET,
+    phone_endswith: str | Unset = UNSET,
+    phone_gt: str | Unset = UNSET,
+    phone_gte: str | Unset = UNSET,
+    phone_icontains: str | Unset = UNSET,
+    phone_iendswith: str | Unset = UNSET,
+    phone_iexact: str | Unset = UNSET,
+    phone_in: list[str] | Unset = UNSET,
+    phone_iregex: str | Unset = UNSET,
+    phone_isnull: bool | Unset = UNSET,
+    phone_istartswith: str | Unset = UNSET,
+    phone_lt: str | Unset = UNSET,
+    phone_lte: str | Unset = UNSET,
+    phone_range: list[str] | Unset = UNSET,
+    phone_regex: str | Unset = UNSET,
+    phone_startswith: str | Unset = UNSET,
+    postal_code: str | Unset = UNSET,
+    postal_code_contains: str | Unset = UNSET,
+    postal_code_endswith: str | Unset = UNSET,
+    postal_code_gt: str | Unset = UNSET,
+    postal_code_gte: str | Unset = UNSET,
+    postal_code_icontains: str | Unset = UNSET,
+    postal_code_iendswith: str | Unset = UNSET,
+    postal_code_iexact: str | Unset = UNSET,
+    postal_code_in: list[str] | Unset = UNSET,
+    postal_code_iregex: str | Unset = UNSET,
+    postal_code_isnull: bool | Unset = UNSET,
+    postal_code_istartswith: str | Unset = UNSET,
+    postal_code_lt: str | Unset = UNSET,
+    postal_code_lte: str | Unset = UNSET,
+    postal_code_range: list[str] | Unset = UNSET,
+    postal_code_regex: str | Unset = UNSET,
+    postal_code_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        administrative_area (Union[Unset, str]):
-        administrative_area_contains (Union[Unset, str]):
-        administrative_area_endswith (Union[Unset, str]):
-        administrative_area_gt (Union[Unset, str]):
-        administrative_area_gte (Union[Unset, str]):
-        administrative_area_icontains (Union[Unset, str]):
-        administrative_area_iendswith (Union[Unset, str]):
-        administrative_area_iexact (Union[Unset, str]):
-        administrative_area_in (Union[Unset, list[str]]):
-        administrative_area_iregex (Union[Unset, str]):
-        administrative_area_isnull (Union[Unset, bool]):
-        administrative_area_istartswith (Union[Unset, str]):
-        administrative_area_lt (Union[Unset, str]):
-        administrative_area_lte (Union[Unset, str]):
-        administrative_area_range (Union[Unset, list[str]]):
-        administrative_area_regex (Union[Unset, str]):
-        administrative_area_startswith (Union[Unset, str]):
-        city (Union[Unset, str]):
-        city_contains (Union[Unset, str]):
-        city_endswith (Union[Unset, str]):
-        city_gt (Union[Unset, str]):
-        city_gte (Union[Unset, str]):
-        city_icontains (Union[Unset, str]):
-        city_iendswith (Union[Unset, str]):
-        city_iexact (Union[Unset, str]):
-        city_in (Union[Unset, list[str]]):
-        city_iregex (Union[Unset, str]):
-        city_isnull (Union[Unset, bool]):
-        city_istartswith (Union[Unset, str]):
-        city_lt (Union[Unset, str]):
-        city_lte (Union[Unset, str]):
-        city_range (Union[Unset, list[str]]):
-        city_regex (Union[Unset, str]):
-        city_startswith (Union[Unset, str]):
-        country (Union[Unset, str]):
-        country_contains (Union[Unset, str]):
-        country_endswith (Union[Unset, str]):
-        country_gt (Union[Unset, str]):
-        country_gte (Union[Unset, str]):
-        country_icontains (Union[Unset, str]):
-        country_iendswith (Union[Unset, str]):
-        country_iexact (Union[Unset, str]):
-        country_in (Union[Unset, list[str]]):
-        country_iregex (Union[Unset, str]):
-        country_isnull (Union[Unset, bool]):
-        country_istartswith (Union[Unset, str]):
-        country_lt (Union[Unset, str]):
-        country_lte (Union[Unset, str]):
-        country_range (Union[Unset, list[str]]):
-        country_regex (Union[Unset, str]):
-        country_startswith (Union[Unset, str]):
-        delivery_point (Union[Unset, str]):
-        delivery_point_contains (Union[Unset, str]):
-        delivery_point_endswith (Union[Unset, str]):
-        delivery_point_gt (Union[Unset, str]):
-        delivery_point_gte (Union[Unset, str]):
-        delivery_point_icontains (Union[Unset, str]):
-        delivery_point_iendswith (Union[Unset, str]):
-        delivery_point_iexact (Union[Unset, str]):
-        delivery_point_in (Union[Unset, list[str]]):
-        delivery_point_iregex (Union[Unset, str]):
-        delivery_point_isnull (Union[Unset, bool]):
-        delivery_point_istartswith (Union[Unset, str]):
-        delivery_point_lt (Union[Unset, str]):
-        delivery_point_lte (Union[Unset, str]):
-        delivery_point_range (Union[Unset, list[str]]):
-        delivery_point_regex (Union[Unset, str]):
-        delivery_point_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        electronic_email_address (Union[Unset, str]):
-        electronic_email_address_contains (Union[Unset, str]):
-        electronic_email_address_endswith (Union[Unset, str]):
-        electronic_email_address_gt (Union[Unset, str]):
-        electronic_email_address_gte (Union[Unset, str]):
-        electronic_email_address_icontains (Union[Unset, str]):
-        electronic_email_address_iendswith (Union[Unset, str]):
-        electronic_email_address_iexact (Union[Unset, str]):
-        electronic_email_address_in (Union[Unset, list[str]]):
-        electronic_email_address_iregex (Union[Unset, str]):
-        electronic_email_address_isnull (Union[Unset, bool]):
-        electronic_email_address_istartswith (Union[Unset, str]):
-        electronic_email_address_lt (Union[Unset, str]):
-        electronic_email_address_lte (Union[Unset, str]):
-        electronic_email_address_range (Union[Unset, list[str]]):
-        electronic_email_address_regex (Union[Unset, str]):
-        electronic_email_address_startswith (Union[Unset, str]):
-        first_name (Union[Unset, str]):
-        first_name_contains (Union[Unset, str]):
-        first_name_endswith (Union[Unset, str]):
-        first_name_gt (Union[Unset, str]):
-        first_name_gte (Union[Unset, str]):
-        first_name_icontains (Union[Unset, str]):
-        first_name_iendswith (Union[Unset, str]):
-        first_name_iexact (Union[Unset, str]):
-        first_name_in (Union[Unset, list[str]]):
-        first_name_iregex (Union[Unset, str]):
-        first_name_isnull (Union[Unset, bool]):
-        first_name_istartswith (Union[Unset, str]):
-        first_name_lt (Union[Unset, str]):
-        first_name_lte (Union[Unset, str]):
-        first_name_range (Union[Unset, list[str]]):
-        first_name_regex (Union[Unset, str]):
-        first_name_startswith (Union[Unset, str]):
-        last_name (Union[Unset, str]):
-        last_name_contains (Union[Unset, str]):
-        last_name_endswith (Union[Unset, str]):
-        last_name_gt (Union[Unset, str]):
-        last_name_gte (Union[Unset, str]):
-        last_name_icontains (Union[Unset, str]):
-        last_name_iendswith (Union[Unset, str]):
-        last_name_iexact (Union[Unset, str]):
-        last_name_in (Union[Unset, list[str]]):
-        last_name_iregex (Union[Unset, str]):
-        last_name_isnull (Union[Unset, bool]):
-        last_name_istartswith (Union[Unset, str]):
-        last_name_lt (Union[Unset, str]):
-        last_name_lte (Union[Unset, str]):
-        last_name_range (Union[Unset, list[str]]):
-        last_name_regex (Union[Unset, str]):
-        last_name_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        online_resource (Union[Unset, str]):
-        online_resource_contains (Union[Unset, str]):
-        online_resource_endswith (Union[Unset, str]):
-        online_resource_gt (Union[Unset, str]):
-        online_resource_gte (Union[Unset, str]):
-        online_resource_icontains (Union[Unset, str]):
-        online_resource_iendswith (Union[Unset, str]):
-        online_resource_iexact (Union[Unset, str]):
-        online_resource_in (Union[Unset, list[str]]):
-        online_resource_iregex (Union[Unset, str]):
-        online_resource_isnull (Union[Unset, bool]):
-        online_resource_istartswith (Union[Unset, str]):
-        online_resource_lt (Union[Unset, str]):
-        online_resource_lte (Union[Unset, str]):
-        online_resource_range (Union[Unset, list[str]]):
-        online_resource_regex (Union[Unset, str]):
-        online_resource_startswith (Union[Unset, str]):
-        ordering (Union[Unset, str]):
-        party_type (Union[Unset, PartiesListType]):
-        party_type_contains (Union[Unset, str]):
-        party_type_endswith (Union[Unset, str]):
-        party_type_gt (Union[Unset, str]):
-        party_type_gte (Union[Unset, str]):
-        party_type_icontains (Union[Unset, str]):
-        party_type_iendswith (Union[Unset, str]):
-        party_type_iexact (Union[Unset, str]):
-        party_type_in (Union[Unset, list[str]]):
-        party_type_iregex (Union[Unset, str]):
-        party_type_isnull (Union[Unset, bool]):
-        party_type_istartswith (Union[Unset, str]):
-        party_type_lt (Union[Unset, str]):
-        party_type_lte (Union[Unset, str]):
-        party_type_range (Union[Unset, list[str]]):
-        party_type_regex (Union[Unset, str]):
-        party_type_startswith (Union[Unset, str]):
-        phone (Union[Unset, str]):
-        phone_contains (Union[Unset, str]):
-        phone_endswith (Union[Unset, str]):
-        phone_gt (Union[Unset, str]):
-        phone_gte (Union[Unset, str]):
-        phone_icontains (Union[Unset, str]):
-        phone_iendswith (Union[Unset, str]):
-        phone_iexact (Union[Unset, str]):
-        phone_in (Union[Unset, list[str]]):
-        phone_iregex (Union[Unset, str]):
-        phone_isnull (Union[Unset, bool]):
-        phone_istartswith (Union[Unset, str]):
-        phone_lt (Union[Unset, str]):
-        phone_lte (Union[Unset, str]):
-        phone_range (Union[Unset, list[str]]):
-        phone_regex (Union[Unset, str]):
-        phone_startswith (Union[Unset, str]):
-        postal_code (Union[Unset, str]):
-        postal_code_contains (Union[Unset, str]):
-        postal_code_endswith (Union[Unset, str]):
-        postal_code_gt (Union[Unset, str]):
-        postal_code_gte (Union[Unset, str]):
-        postal_code_icontains (Union[Unset, str]):
-        postal_code_iendswith (Union[Unset, str]):
-        postal_code_iexact (Union[Unset, str]):
-        postal_code_in (Union[Unset, list[str]]):
-        postal_code_iregex (Union[Unset, str]):
-        postal_code_isnull (Union[Unset, bool]):
-        postal_code_istartswith (Union[Unset, str]):
-        postal_code_lt (Union[Unset, str]):
-        postal_code_lte (Union[Unset, str]):
-        postal_code_range (Union[Unset, list[str]]):
-        postal_code_regex (Union[Unset, str]):
-        postal_code_startswith (Union[Unset, str]):
+        administrative_area (str | Unset):
+        administrative_area_contains (str | Unset):
+        administrative_area_endswith (str | Unset):
+        administrative_area_gt (str | Unset):
+        administrative_area_gte (str | Unset):
+        administrative_area_icontains (str | Unset):
+        administrative_area_iendswith (str | Unset):
+        administrative_area_iexact (str | Unset):
+        administrative_area_in (list[str] | Unset):
+        administrative_area_iregex (str | Unset):
+        administrative_area_isnull (bool | Unset):
+        administrative_area_istartswith (str | Unset):
+        administrative_area_lt (str | Unset):
+        administrative_area_lte (str | Unset):
+        administrative_area_range (list[str] | Unset):
+        administrative_area_regex (str | Unset):
+        administrative_area_startswith (str | Unset):
+        city (str | Unset):
+        city_contains (str | Unset):
+        city_endswith (str | Unset):
+        city_gt (str | Unset):
+        city_gte (str | Unset):
+        city_icontains (str | Unset):
+        city_iendswith (str | Unset):
+        city_iexact (str | Unset):
+        city_in (list[str] | Unset):
+        city_iregex (str | Unset):
+        city_isnull (bool | Unset):
+        city_istartswith (str | Unset):
+        city_lt (str | Unset):
+        city_lte (str | Unset):
+        city_range (list[str] | Unset):
+        city_regex (str | Unset):
+        city_startswith (str | Unset):
+        country (str | Unset):
+        country_contains (str | Unset):
+        country_endswith (str | Unset):
+        country_gt (str | Unset):
+        country_gte (str | Unset):
+        country_icontains (str | Unset):
+        country_iendswith (str | Unset):
+        country_iexact (str | Unset):
+        country_in (list[str] | Unset):
+        country_iregex (str | Unset):
+        country_isnull (bool | Unset):
+        country_istartswith (str | Unset):
+        country_lt (str | Unset):
+        country_lte (str | Unset):
+        country_range (list[str] | Unset):
+        country_regex (str | Unset):
+        country_startswith (str | Unset):
+        delivery_point (str | Unset):
+        delivery_point_contains (str | Unset):
+        delivery_point_endswith (str | Unset):
+        delivery_point_gt (str | Unset):
+        delivery_point_gte (str | Unset):
+        delivery_point_icontains (str | Unset):
+        delivery_point_iendswith (str | Unset):
+        delivery_point_iexact (str | Unset):
+        delivery_point_in (list[str] | Unset):
+        delivery_point_iregex (str | Unset):
+        delivery_point_isnull (bool | Unset):
+        delivery_point_istartswith (str | Unset):
+        delivery_point_lt (str | Unset):
+        delivery_point_lte (str | Unset):
+        delivery_point_range (list[str] | Unset):
+        delivery_point_regex (str | Unset):
+        delivery_point_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        electronic_email_address (str | Unset):
+        electronic_email_address_contains (str | Unset):
+        electronic_email_address_endswith (str | Unset):
+        electronic_email_address_gt (str | Unset):
+        electronic_email_address_gte (str | Unset):
+        electronic_email_address_icontains (str | Unset):
+        electronic_email_address_iendswith (str | Unset):
+        electronic_email_address_iexact (str | Unset):
+        electronic_email_address_in (list[str] | Unset):
+        electronic_email_address_iregex (str | Unset):
+        electronic_email_address_isnull (bool | Unset):
+        electronic_email_address_istartswith (str | Unset):
+        electronic_email_address_lt (str | Unset):
+        electronic_email_address_lte (str | Unset):
+        electronic_email_address_range (list[str] | Unset):
+        electronic_email_address_regex (str | Unset):
+        electronic_email_address_startswith (str | Unset):
+        first_name (str | Unset):
+        first_name_contains (str | Unset):
+        first_name_endswith (str | Unset):
+        first_name_gt (str | Unset):
+        first_name_gte (str | Unset):
+        first_name_icontains (str | Unset):
+        first_name_iendswith (str | Unset):
+        first_name_iexact (str | Unset):
+        first_name_in (list[str] | Unset):
+        first_name_iregex (str | Unset):
+        first_name_isnull (bool | Unset):
+        first_name_istartswith (str | Unset):
+        first_name_lt (str | Unset):
+        first_name_lte (str | Unset):
+        first_name_range (list[str] | Unset):
+        first_name_regex (str | Unset):
+        first_name_startswith (str | Unset):
+        last_name (str | Unset):
+        last_name_contains (str | Unset):
+        last_name_endswith (str | Unset):
+        last_name_gt (str | Unset):
+        last_name_gte (str | Unset):
+        last_name_icontains (str | Unset):
+        last_name_iendswith (str | Unset):
+        last_name_iexact (str | Unset):
+        last_name_in (list[str] | Unset):
+        last_name_iregex (str | Unset):
+        last_name_isnull (bool | Unset):
+        last_name_istartswith (str | Unset):
+        last_name_lt (str | Unset):
+        last_name_lte (str | Unset):
+        last_name_range (list[str] | Unset):
+        last_name_regex (str | Unset):
+        last_name_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        online_resource (str | Unset):
+        online_resource_contains (str | Unset):
+        online_resource_endswith (str | Unset):
+        online_resource_gt (str | Unset):
+        online_resource_gte (str | Unset):
+        online_resource_icontains (str | Unset):
+        online_resource_iendswith (str | Unset):
+        online_resource_iexact (str | Unset):
+        online_resource_in (list[str] | Unset):
+        online_resource_iregex (str | Unset):
+        online_resource_isnull (bool | Unset):
+        online_resource_istartswith (str | Unset):
+        online_resource_lt (str | Unset):
+        online_resource_lte (str | Unset):
+        online_resource_range (list[str] | Unset):
+        online_resource_regex (str | Unset):
+        online_resource_startswith (str | Unset):
+        ordering (str | Unset):
+        party_type (PartiesListType | Unset):
+        party_type_contains (str | Unset):
+        party_type_endswith (str | Unset):
+        party_type_gt (str | Unset):
+        party_type_gte (str | Unset):
+        party_type_icontains (str | Unset):
+        party_type_iendswith (str | Unset):
+        party_type_iexact (str | Unset):
+        party_type_in (list[str] | Unset):
+        party_type_iregex (str | Unset):
+        party_type_isnull (bool | Unset):
+        party_type_istartswith (str | Unset):
+        party_type_lt (str | Unset):
+        party_type_lte (str | Unset):
+        party_type_range (list[str] | Unset):
+        party_type_regex (str | Unset):
+        party_type_startswith (str | Unset):
+        phone (str | Unset):
+        phone_contains (str | Unset):
+        phone_endswith (str | Unset):
+        phone_gt (str | Unset):
+        phone_gte (str | Unset):
+        phone_icontains (str | Unset):
+        phone_iendswith (str | Unset):
+        phone_iexact (str | Unset):
+        phone_in (list[str] | Unset):
+        phone_iregex (str | Unset):
+        phone_isnull (bool | Unset):
+        phone_istartswith (str | Unset):
+        phone_lt (str | Unset):
+        phone_lte (str | Unset):
+        phone_range (list[str] | Unset):
+        phone_regex (str | Unset):
+        phone_startswith (str | Unset):
+        postal_code (str | Unset):
+        postal_code_contains (str | Unset):
+        postal_code_endswith (str | Unset):
+        postal_code_gt (str | Unset):
+        postal_code_gte (str | Unset):
+        postal_code_icontains (str | Unset):
+        postal_code_iendswith (str | Unset):
+        postal_code_iexact (str | Unset):
+        postal_code_in (list[str] | Unset):
+        postal_code_iregex (str | Unset):
+        postal_code_isnull (bool | Unset):
+        postal_code_istartswith (str | Unset):
+        postal_code_lt (str | Unset):
+        postal_code_lte (str | Unset):
+        postal_code_range (list[str] | Unset):
+        postal_code_regex (str | Unset):
+        postal_code_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1540,462 +1538,462 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    administrative_area: Union[Unset, str] = UNSET,
-    administrative_area_contains: Union[Unset, str] = UNSET,
-    administrative_area_endswith: Union[Unset, str] = UNSET,
-    administrative_area_gt: Union[Unset, str] = UNSET,
-    administrative_area_gte: Union[Unset, str] = UNSET,
-    administrative_area_icontains: Union[Unset, str] = UNSET,
-    administrative_area_iendswith: Union[Unset, str] = UNSET,
-    administrative_area_iexact: Union[Unset, str] = UNSET,
-    administrative_area_in: Union[Unset, list[str]] = UNSET,
-    administrative_area_iregex: Union[Unset, str] = UNSET,
-    administrative_area_isnull: Union[Unset, bool] = UNSET,
-    administrative_area_istartswith: Union[Unset, str] = UNSET,
-    administrative_area_lt: Union[Unset, str] = UNSET,
-    administrative_area_lte: Union[Unset, str] = UNSET,
-    administrative_area_range: Union[Unset, list[str]] = UNSET,
-    administrative_area_regex: Union[Unset, str] = UNSET,
-    administrative_area_startswith: Union[Unset, str] = UNSET,
-    city: Union[Unset, str] = UNSET,
-    city_contains: Union[Unset, str] = UNSET,
-    city_endswith: Union[Unset, str] = UNSET,
-    city_gt: Union[Unset, str] = UNSET,
-    city_gte: Union[Unset, str] = UNSET,
-    city_icontains: Union[Unset, str] = UNSET,
-    city_iendswith: Union[Unset, str] = UNSET,
-    city_iexact: Union[Unset, str] = UNSET,
-    city_in: Union[Unset, list[str]] = UNSET,
-    city_iregex: Union[Unset, str] = UNSET,
-    city_isnull: Union[Unset, bool] = UNSET,
-    city_istartswith: Union[Unset, str] = UNSET,
-    city_lt: Union[Unset, str] = UNSET,
-    city_lte: Union[Unset, str] = UNSET,
-    city_range: Union[Unset, list[str]] = UNSET,
-    city_regex: Union[Unset, str] = UNSET,
-    city_startswith: Union[Unset, str] = UNSET,
-    country: Union[Unset, str] = UNSET,
-    country_contains: Union[Unset, str] = UNSET,
-    country_endswith: Union[Unset, str] = UNSET,
-    country_gt: Union[Unset, str] = UNSET,
-    country_gte: Union[Unset, str] = UNSET,
-    country_icontains: Union[Unset, str] = UNSET,
-    country_iendswith: Union[Unset, str] = UNSET,
-    country_iexact: Union[Unset, str] = UNSET,
-    country_in: Union[Unset, list[str]] = UNSET,
-    country_iregex: Union[Unset, str] = UNSET,
-    country_isnull: Union[Unset, bool] = UNSET,
-    country_istartswith: Union[Unset, str] = UNSET,
-    country_lt: Union[Unset, str] = UNSET,
-    country_lte: Union[Unset, str] = UNSET,
-    country_range: Union[Unset, list[str]] = UNSET,
-    country_regex: Union[Unset, str] = UNSET,
-    country_startswith: Union[Unset, str] = UNSET,
-    delivery_point: Union[Unset, str] = UNSET,
-    delivery_point_contains: Union[Unset, str] = UNSET,
-    delivery_point_endswith: Union[Unset, str] = UNSET,
-    delivery_point_gt: Union[Unset, str] = UNSET,
-    delivery_point_gte: Union[Unset, str] = UNSET,
-    delivery_point_icontains: Union[Unset, str] = UNSET,
-    delivery_point_iendswith: Union[Unset, str] = UNSET,
-    delivery_point_iexact: Union[Unset, str] = UNSET,
-    delivery_point_in: Union[Unset, list[str]] = UNSET,
-    delivery_point_iregex: Union[Unset, str] = UNSET,
-    delivery_point_isnull: Union[Unset, bool] = UNSET,
-    delivery_point_istartswith: Union[Unset, str] = UNSET,
-    delivery_point_lt: Union[Unset, str] = UNSET,
-    delivery_point_lte: Union[Unset, str] = UNSET,
-    delivery_point_range: Union[Unset, list[str]] = UNSET,
-    delivery_point_regex: Union[Unset, str] = UNSET,
-    delivery_point_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    electronic_email_address: Union[Unset, str] = UNSET,
-    electronic_email_address_contains: Union[Unset, str] = UNSET,
-    electronic_email_address_endswith: Union[Unset, str] = UNSET,
-    electronic_email_address_gt: Union[Unset, str] = UNSET,
-    electronic_email_address_gte: Union[Unset, str] = UNSET,
-    electronic_email_address_icontains: Union[Unset, str] = UNSET,
-    electronic_email_address_iendswith: Union[Unset, str] = UNSET,
-    electronic_email_address_iexact: Union[Unset, str] = UNSET,
-    electronic_email_address_in: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_iregex: Union[Unset, str] = UNSET,
-    electronic_email_address_isnull: Union[Unset, bool] = UNSET,
-    electronic_email_address_istartswith: Union[Unset, str] = UNSET,
-    electronic_email_address_lt: Union[Unset, str] = UNSET,
-    electronic_email_address_lte: Union[Unset, str] = UNSET,
-    electronic_email_address_range: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_regex: Union[Unset, str] = UNSET,
-    electronic_email_address_startswith: Union[Unset, str] = UNSET,
-    first_name: Union[Unset, str] = UNSET,
-    first_name_contains: Union[Unset, str] = UNSET,
-    first_name_endswith: Union[Unset, str] = UNSET,
-    first_name_gt: Union[Unset, str] = UNSET,
-    first_name_gte: Union[Unset, str] = UNSET,
-    first_name_icontains: Union[Unset, str] = UNSET,
-    first_name_iendswith: Union[Unset, str] = UNSET,
-    first_name_iexact: Union[Unset, str] = UNSET,
-    first_name_in: Union[Unset, list[str]] = UNSET,
-    first_name_iregex: Union[Unset, str] = UNSET,
-    first_name_isnull: Union[Unset, bool] = UNSET,
-    first_name_istartswith: Union[Unset, str] = UNSET,
-    first_name_lt: Union[Unset, str] = UNSET,
-    first_name_lte: Union[Unset, str] = UNSET,
-    first_name_range: Union[Unset, list[str]] = UNSET,
-    first_name_regex: Union[Unset, str] = UNSET,
-    first_name_startswith: Union[Unset, str] = UNSET,
-    last_name: Union[Unset, str] = UNSET,
-    last_name_contains: Union[Unset, str] = UNSET,
-    last_name_endswith: Union[Unset, str] = UNSET,
-    last_name_gt: Union[Unset, str] = UNSET,
-    last_name_gte: Union[Unset, str] = UNSET,
-    last_name_icontains: Union[Unset, str] = UNSET,
-    last_name_iendswith: Union[Unset, str] = UNSET,
-    last_name_iexact: Union[Unset, str] = UNSET,
-    last_name_in: Union[Unset, list[str]] = UNSET,
-    last_name_iregex: Union[Unset, str] = UNSET,
-    last_name_isnull: Union[Unset, bool] = UNSET,
-    last_name_istartswith: Union[Unset, str] = UNSET,
-    last_name_lt: Union[Unset, str] = UNSET,
-    last_name_lte: Union[Unset, str] = UNSET,
-    last_name_range: Union[Unset, list[str]] = UNSET,
-    last_name_regex: Union[Unset, str] = UNSET,
-    last_name_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    online_resource: Union[Unset, str] = UNSET,
-    online_resource_contains: Union[Unset, str] = UNSET,
-    online_resource_endswith: Union[Unset, str] = UNSET,
-    online_resource_gt: Union[Unset, str] = UNSET,
-    online_resource_gte: Union[Unset, str] = UNSET,
-    online_resource_icontains: Union[Unset, str] = UNSET,
-    online_resource_iendswith: Union[Unset, str] = UNSET,
-    online_resource_iexact: Union[Unset, str] = UNSET,
-    online_resource_in: Union[Unset, list[str]] = UNSET,
-    online_resource_iregex: Union[Unset, str] = UNSET,
-    online_resource_isnull: Union[Unset, bool] = UNSET,
-    online_resource_istartswith: Union[Unset, str] = UNSET,
-    online_resource_lt: Union[Unset, str] = UNSET,
-    online_resource_lte: Union[Unset, str] = UNSET,
-    online_resource_range: Union[Unset, list[str]] = UNSET,
-    online_resource_regex: Union[Unset, str] = UNSET,
-    online_resource_startswith: Union[Unset, str] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party_type: Union[Unset, PartiesListType] = UNSET,
-    party_type_contains: Union[Unset, str] = UNSET,
-    party_type_endswith: Union[Unset, str] = UNSET,
-    party_type_gt: Union[Unset, str] = UNSET,
-    party_type_gte: Union[Unset, str] = UNSET,
-    party_type_icontains: Union[Unset, str] = UNSET,
-    party_type_iendswith: Union[Unset, str] = UNSET,
-    party_type_iexact: Union[Unset, str] = UNSET,
-    party_type_in: Union[Unset, list[str]] = UNSET,
-    party_type_iregex: Union[Unset, str] = UNSET,
-    party_type_isnull: Union[Unset, bool] = UNSET,
-    party_type_istartswith: Union[Unset, str] = UNSET,
-    party_type_lt: Union[Unset, str] = UNSET,
-    party_type_lte: Union[Unset, str] = UNSET,
-    party_type_range: Union[Unset, list[str]] = UNSET,
-    party_type_regex: Union[Unset, str] = UNSET,
-    party_type_startswith: Union[Unset, str] = UNSET,
-    phone: Union[Unset, str] = UNSET,
-    phone_contains: Union[Unset, str] = UNSET,
-    phone_endswith: Union[Unset, str] = UNSET,
-    phone_gt: Union[Unset, str] = UNSET,
-    phone_gte: Union[Unset, str] = UNSET,
-    phone_icontains: Union[Unset, str] = UNSET,
-    phone_iendswith: Union[Unset, str] = UNSET,
-    phone_iexact: Union[Unset, str] = UNSET,
-    phone_in: Union[Unset, list[str]] = UNSET,
-    phone_iregex: Union[Unset, str] = UNSET,
-    phone_isnull: Union[Unset, bool] = UNSET,
-    phone_istartswith: Union[Unset, str] = UNSET,
-    phone_lt: Union[Unset, str] = UNSET,
-    phone_lte: Union[Unset, str] = UNSET,
-    phone_range: Union[Unset, list[str]] = UNSET,
-    phone_regex: Union[Unset, str] = UNSET,
-    phone_startswith: Union[Unset, str] = UNSET,
-    postal_code: Union[Unset, str] = UNSET,
-    postal_code_contains: Union[Unset, str] = UNSET,
-    postal_code_endswith: Union[Unset, str] = UNSET,
-    postal_code_gt: Union[Unset, str] = UNSET,
-    postal_code_gte: Union[Unset, str] = UNSET,
-    postal_code_icontains: Union[Unset, str] = UNSET,
-    postal_code_iendswith: Union[Unset, str] = UNSET,
-    postal_code_iexact: Union[Unset, str] = UNSET,
-    postal_code_in: Union[Unset, list[str]] = UNSET,
-    postal_code_iregex: Union[Unset, str] = UNSET,
-    postal_code_isnull: Union[Unset, bool] = UNSET,
-    postal_code_istartswith: Union[Unset, str] = UNSET,
-    postal_code_lt: Union[Unset, str] = UNSET,
-    postal_code_lte: Union[Unset, str] = UNSET,
-    postal_code_range: Union[Unset, list[str]] = UNSET,
-    postal_code_regex: Union[Unset, str] = UNSET,
-    postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPartyReadList]:
+    administrative_area: str | Unset = UNSET,
+    administrative_area_contains: str | Unset = UNSET,
+    administrative_area_endswith: str | Unset = UNSET,
+    administrative_area_gt: str | Unset = UNSET,
+    administrative_area_gte: str | Unset = UNSET,
+    administrative_area_icontains: str | Unset = UNSET,
+    administrative_area_iendswith: str | Unset = UNSET,
+    administrative_area_iexact: str | Unset = UNSET,
+    administrative_area_in: list[str] | Unset = UNSET,
+    administrative_area_iregex: str | Unset = UNSET,
+    administrative_area_isnull: bool | Unset = UNSET,
+    administrative_area_istartswith: str | Unset = UNSET,
+    administrative_area_lt: str | Unset = UNSET,
+    administrative_area_lte: str | Unset = UNSET,
+    administrative_area_range: list[str] | Unset = UNSET,
+    administrative_area_regex: str | Unset = UNSET,
+    administrative_area_startswith: str | Unset = UNSET,
+    city: str | Unset = UNSET,
+    city_contains: str | Unset = UNSET,
+    city_endswith: str | Unset = UNSET,
+    city_gt: str | Unset = UNSET,
+    city_gte: str | Unset = UNSET,
+    city_icontains: str | Unset = UNSET,
+    city_iendswith: str | Unset = UNSET,
+    city_iexact: str | Unset = UNSET,
+    city_in: list[str] | Unset = UNSET,
+    city_iregex: str | Unset = UNSET,
+    city_isnull: bool | Unset = UNSET,
+    city_istartswith: str | Unset = UNSET,
+    city_lt: str | Unset = UNSET,
+    city_lte: str | Unset = UNSET,
+    city_range: list[str] | Unset = UNSET,
+    city_regex: str | Unset = UNSET,
+    city_startswith: str | Unset = UNSET,
+    country: str | Unset = UNSET,
+    country_contains: str | Unset = UNSET,
+    country_endswith: str | Unset = UNSET,
+    country_gt: str | Unset = UNSET,
+    country_gte: str | Unset = UNSET,
+    country_icontains: str | Unset = UNSET,
+    country_iendswith: str | Unset = UNSET,
+    country_iexact: str | Unset = UNSET,
+    country_in: list[str] | Unset = UNSET,
+    country_iregex: str | Unset = UNSET,
+    country_isnull: bool | Unset = UNSET,
+    country_istartswith: str | Unset = UNSET,
+    country_lt: str | Unset = UNSET,
+    country_lte: str | Unset = UNSET,
+    country_range: list[str] | Unset = UNSET,
+    country_regex: str | Unset = UNSET,
+    country_startswith: str | Unset = UNSET,
+    delivery_point: str | Unset = UNSET,
+    delivery_point_contains: str | Unset = UNSET,
+    delivery_point_endswith: str | Unset = UNSET,
+    delivery_point_gt: str | Unset = UNSET,
+    delivery_point_gte: str | Unset = UNSET,
+    delivery_point_icontains: str | Unset = UNSET,
+    delivery_point_iendswith: str | Unset = UNSET,
+    delivery_point_iexact: str | Unset = UNSET,
+    delivery_point_in: list[str] | Unset = UNSET,
+    delivery_point_iregex: str | Unset = UNSET,
+    delivery_point_isnull: bool | Unset = UNSET,
+    delivery_point_istartswith: str | Unset = UNSET,
+    delivery_point_lt: str | Unset = UNSET,
+    delivery_point_lte: str | Unset = UNSET,
+    delivery_point_range: list[str] | Unset = UNSET,
+    delivery_point_regex: str | Unset = UNSET,
+    delivery_point_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    electronic_email_address: str | Unset = UNSET,
+    electronic_email_address_contains: str | Unset = UNSET,
+    electronic_email_address_endswith: str | Unset = UNSET,
+    electronic_email_address_gt: str | Unset = UNSET,
+    electronic_email_address_gte: str | Unset = UNSET,
+    electronic_email_address_icontains: str | Unset = UNSET,
+    electronic_email_address_iendswith: str | Unset = UNSET,
+    electronic_email_address_iexact: str | Unset = UNSET,
+    electronic_email_address_in: list[str] | Unset = UNSET,
+    electronic_email_address_iregex: str | Unset = UNSET,
+    electronic_email_address_isnull: bool | Unset = UNSET,
+    electronic_email_address_istartswith: str | Unset = UNSET,
+    electronic_email_address_lt: str | Unset = UNSET,
+    electronic_email_address_lte: str | Unset = UNSET,
+    electronic_email_address_range: list[str] | Unset = UNSET,
+    electronic_email_address_regex: str | Unset = UNSET,
+    electronic_email_address_startswith: str | Unset = UNSET,
+    first_name: str | Unset = UNSET,
+    first_name_contains: str | Unset = UNSET,
+    first_name_endswith: str | Unset = UNSET,
+    first_name_gt: str | Unset = UNSET,
+    first_name_gte: str | Unset = UNSET,
+    first_name_icontains: str | Unset = UNSET,
+    first_name_iendswith: str | Unset = UNSET,
+    first_name_iexact: str | Unset = UNSET,
+    first_name_in: list[str] | Unset = UNSET,
+    first_name_iregex: str | Unset = UNSET,
+    first_name_isnull: bool | Unset = UNSET,
+    first_name_istartswith: str | Unset = UNSET,
+    first_name_lt: str | Unset = UNSET,
+    first_name_lte: str | Unset = UNSET,
+    first_name_range: list[str] | Unset = UNSET,
+    first_name_regex: str | Unset = UNSET,
+    first_name_startswith: str | Unset = UNSET,
+    last_name: str | Unset = UNSET,
+    last_name_contains: str | Unset = UNSET,
+    last_name_endswith: str | Unset = UNSET,
+    last_name_gt: str | Unset = UNSET,
+    last_name_gte: str | Unset = UNSET,
+    last_name_icontains: str | Unset = UNSET,
+    last_name_iendswith: str | Unset = UNSET,
+    last_name_iexact: str | Unset = UNSET,
+    last_name_in: list[str] | Unset = UNSET,
+    last_name_iregex: str | Unset = UNSET,
+    last_name_isnull: bool | Unset = UNSET,
+    last_name_istartswith: str | Unset = UNSET,
+    last_name_lt: str | Unset = UNSET,
+    last_name_lte: str | Unset = UNSET,
+    last_name_range: list[str] | Unset = UNSET,
+    last_name_regex: str | Unset = UNSET,
+    last_name_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    online_resource: str | Unset = UNSET,
+    online_resource_contains: str | Unset = UNSET,
+    online_resource_endswith: str | Unset = UNSET,
+    online_resource_gt: str | Unset = UNSET,
+    online_resource_gte: str | Unset = UNSET,
+    online_resource_icontains: str | Unset = UNSET,
+    online_resource_iendswith: str | Unset = UNSET,
+    online_resource_iexact: str | Unset = UNSET,
+    online_resource_in: list[str] | Unset = UNSET,
+    online_resource_iregex: str | Unset = UNSET,
+    online_resource_isnull: bool | Unset = UNSET,
+    online_resource_istartswith: str | Unset = UNSET,
+    online_resource_lt: str | Unset = UNSET,
+    online_resource_lte: str | Unset = UNSET,
+    online_resource_range: list[str] | Unset = UNSET,
+    online_resource_regex: str | Unset = UNSET,
+    online_resource_startswith: str | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party_type: PartiesListType | Unset = UNSET,
+    party_type_contains: str | Unset = UNSET,
+    party_type_endswith: str | Unset = UNSET,
+    party_type_gt: str | Unset = UNSET,
+    party_type_gte: str | Unset = UNSET,
+    party_type_icontains: str | Unset = UNSET,
+    party_type_iendswith: str | Unset = UNSET,
+    party_type_iexact: str | Unset = UNSET,
+    party_type_in: list[str] | Unset = UNSET,
+    party_type_iregex: str | Unset = UNSET,
+    party_type_isnull: bool | Unset = UNSET,
+    party_type_istartswith: str | Unset = UNSET,
+    party_type_lt: str | Unset = UNSET,
+    party_type_lte: str | Unset = UNSET,
+    party_type_range: list[str] | Unset = UNSET,
+    party_type_regex: str | Unset = UNSET,
+    party_type_startswith: str | Unset = UNSET,
+    phone: str | Unset = UNSET,
+    phone_contains: str | Unset = UNSET,
+    phone_endswith: str | Unset = UNSET,
+    phone_gt: str | Unset = UNSET,
+    phone_gte: str | Unset = UNSET,
+    phone_icontains: str | Unset = UNSET,
+    phone_iendswith: str | Unset = UNSET,
+    phone_iexact: str | Unset = UNSET,
+    phone_in: list[str] | Unset = UNSET,
+    phone_iregex: str | Unset = UNSET,
+    phone_isnull: bool | Unset = UNSET,
+    phone_istartswith: str | Unset = UNSET,
+    phone_lt: str | Unset = UNSET,
+    phone_lte: str | Unset = UNSET,
+    phone_range: list[str] | Unset = UNSET,
+    phone_regex: str | Unset = UNSET,
+    phone_startswith: str | Unset = UNSET,
+    postal_code: str | Unset = UNSET,
+    postal_code_contains: str | Unset = UNSET,
+    postal_code_endswith: str | Unset = UNSET,
+    postal_code_gt: str | Unset = UNSET,
+    postal_code_gte: str | Unset = UNSET,
+    postal_code_icontains: str | Unset = UNSET,
+    postal_code_iendswith: str | Unset = UNSET,
+    postal_code_iexact: str | Unset = UNSET,
+    postal_code_in: list[str] | Unset = UNSET,
+    postal_code_iregex: str | Unset = UNSET,
+    postal_code_isnull: bool | Unset = UNSET,
+    postal_code_istartswith: str | Unset = UNSET,
+    postal_code_lt: str | Unset = UNSET,
+    postal_code_lte: str | Unset = UNSET,
+    postal_code_range: list[str] | Unset = UNSET,
+    postal_code_regex: str | Unset = UNSET,
+    postal_code_startswith: str | Unset = UNSET,
+) -> PaginatedPartyReadList | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        administrative_area (Union[Unset, str]):
-        administrative_area_contains (Union[Unset, str]):
-        administrative_area_endswith (Union[Unset, str]):
-        administrative_area_gt (Union[Unset, str]):
-        administrative_area_gte (Union[Unset, str]):
-        administrative_area_icontains (Union[Unset, str]):
-        administrative_area_iendswith (Union[Unset, str]):
-        administrative_area_iexact (Union[Unset, str]):
-        administrative_area_in (Union[Unset, list[str]]):
-        administrative_area_iregex (Union[Unset, str]):
-        administrative_area_isnull (Union[Unset, bool]):
-        administrative_area_istartswith (Union[Unset, str]):
-        administrative_area_lt (Union[Unset, str]):
-        administrative_area_lte (Union[Unset, str]):
-        administrative_area_range (Union[Unset, list[str]]):
-        administrative_area_regex (Union[Unset, str]):
-        administrative_area_startswith (Union[Unset, str]):
-        city (Union[Unset, str]):
-        city_contains (Union[Unset, str]):
-        city_endswith (Union[Unset, str]):
-        city_gt (Union[Unset, str]):
-        city_gte (Union[Unset, str]):
-        city_icontains (Union[Unset, str]):
-        city_iendswith (Union[Unset, str]):
-        city_iexact (Union[Unset, str]):
-        city_in (Union[Unset, list[str]]):
-        city_iregex (Union[Unset, str]):
-        city_isnull (Union[Unset, bool]):
-        city_istartswith (Union[Unset, str]):
-        city_lt (Union[Unset, str]):
-        city_lte (Union[Unset, str]):
-        city_range (Union[Unset, list[str]]):
-        city_regex (Union[Unset, str]):
-        city_startswith (Union[Unset, str]):
-        country (Union[Unset, str]):
-        country_contains (Union[Unset, str]):
-        country_endswith (Union[Unset, str]):
-        country_gt (Union[Unset, str]):
-        country_gte (Union[Unset, str]):
-        country_icontains (Union[Unset, str]):
-        country_iendswith (Union[Unset, str]):
-        country_iexact (Union[Unset, str]):
-        country_in (Union[Unset, list[str]]):
-        country_iregex (Union[Unset, str]):
-        country_isnull (Union[Unset, bool]):
-        country_istartswith (Union[Unset, str]):
-        country_lt (Union[Unset, str]):
-        country_lte (Union[Unset, str]):
-        country_range (Union[Unset, list[str]]):
-        country_regex (Union[Unset, str]):
-        country_startswith (Union[Unset, str]):
-        delivery_point (Union[Unset, str]):
-        delivery_point_contains (Union[Unset, str]):
-        delivery_point_endswith (Union[Unset, str]):
-        delivery_point_gt (Union[Unset, str]):
-        delivery_point_gte (Union[Unset, str]):
-        delivery_point_icontains (Union[Unset, str]):
-        delivery_point_iendswith (Union[Unset, str]):
-        delivery_point_iexact (Union[Unset, str]):
-        delivery_point_in (Union[Unset, list[str]]):
-        delivery_point_iregex (Union[Unset, str]):
-        delivery_point_isnull (Union[Unset, bool]):
-        delivery_point_istartswith (Union[Unset, str]):
-        delivery_point_lt (Union[Unset, str]):
-        delivery_point_lte (Union[Unset, str]):
-        delivery_point_range (Union[Unset, list[str]]):
-        delivery_point_regex (Union[Unset, str]):
-        delivery_point_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        electronic_email_address (Union[Unset, str]):
-        electronic_email_address_contains (Union[Unset, str]):
-        electronic_email_address_endswith (Union[Unset, str]):
-        electronic_email_address_gt (Union[Unset, str]):
-        electronic_email_address_gte (Union[Unset, str]):
-        electronic_email_address_icontains (Union[Unset, str]):
-        electronic_email_address_iendswith (Union[Unset, str]):
-        electronic_email_address_iexact (Union[Unset, str]):
-        electronic_email_address_in (Union[Unset, list[str]]):
-        electronic_email_address_iregex (Union[Unset, str]):
-        electronic_email_address_isnull (Union[Unset, bool]):
-        electronic_email_address_istartswith (Union[Unset, str]):
-        electronic_email_address_lt (Union[Unset, str]):
-        electronic_email_address_lte (Union[Unset, str]):
-        electronic_email_address_range (Union[Unset, list[str]]):
-        electronic_email_address_regex (Union[Unset, str]):
-        electronic_email_address_startswith (Union[Unset, str]):
-        first_name (Union[Unset, str]):
-        first_name_contains (Union[Unset, str]):
-        first_name_endswith (Union[Unset, str]):
-        first_name_gt (Union[Unset, str]):
-        first_name_gte (Union[Unset, str]):
-        first_name_icontains (Union[Unset, str]):
-        first_name_iendswith (Union[Unset, str]):
-        first_name_iexact (Union[Unset, str]):
-        first_name_in (Union[Unset, list[str]]):
-        first_name_iregex (Union[Unset, str]):
-        first_name_isnull (Union[Unset, bool]):
-        first_name_istartswith (Union[Unset, str]):
-        first_name_lt (Union[Unset, str]):
-        first_name_lte (Union[Unset, str]):
-        first_name_range (Union[Unset, list[str]]):
-        first_name_regex (Union[Unset, str]):
-        first_name_startswith (Union[Unset, str]):
-        last_name (Union[Unset, str]):
-        last_name_contains (Union[Unset, str]):
-        last_name_endswith (Union[Unset, str]):
-        last_name_gt (Union[Unset, str]):
-        last_name_gte (Union[Unset, str]):
-        last_name_icontains (Union[Unset, str]):
-        last_name_iendswith (Union[Unset, str]):
-        last_name_iexact (Union[Unset, str]):
-        last_name_in (Union[Unset, list[str]]):
-        last_name_iregex (Union[Unset, str]):
-        last_name_isnull (Union[Unset, bool]):
-        last_name_istartswith (Union[Unset, str]):
-        last_name_lt (Union[Unset, str]):
-        last_name_lte (Union[Unset, str]):
-        last_name_range (Union[Unset, list[str]]):
-        last_name_regex (Union[Unset, str]):
-        last_name_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        online_resource (Union[Unset, str]):
-        online_resource_contains (Union[Unset, str]):
-        online_resource_endswith (Union[Unset, str]):
-        online_resource_gt (Union[Unset, str]):
-        online_resource_gte (Union[Unset, str]):
-        online_resource_icontains (Union[Unset, str]):
-        online_resource_iendswith (Union[Unset, str]):
-        online_resource_iexact (Union[Unset, str]):
-        online_resource_in (Union[Unset, list[str]]):
-        online_resource_iregex (Union[Unset, str]):
-        online_resource_isnull (Union[Unset, bool]):
-        online_resource_istartswith (Union[Unset, str]):
-        online_resource_lt (Union[Unset, str]):
-        online_resource_lte (Union[Unset, str]):
-        online_resource_range (Union[Unset, list[str]]):
-        online_resource_regex (Union[Unset, str]):
-        online_resource_startswith (Union[Unset, str]):
-        ordering (Union[Unset, str]):
-        party_type (Union[Unset, PartiesListType]):
-        party_type_contains (Union[Unset, str]):
-        party_type_endswith (Union[Unset, str]):
-        party_type_gt (Union[Unset, str]):
-        party_type_gte (Union[Unset, str]):
-        party_type_icontains (Union[Unset, str]):
-        party_type_iendswith (Union[Unset, str]):
-        party_type_iexact (Union[Unset, str]):
-        party_type_in (Union[Unset, list[str]]):
-        party_type_iregex (Union[Unset, str]):
-        party_type_isnull (Union[Unset, bool]):
-        party_type_istartswith (Union[Unset, str]):
-        party_type_lt (Union[Unset, str]):
-        party_type_lte (Union[Unset, str]):
-        party_type_range (Union[Unset, list[str]]):
-        party_type_regex (Union[Unset, str]):
-        party_type_startswith (Union[Unset, str]):
-        phone (Union[Unset, str]):
-        phone_contains (Union[Unset, str]):
-        phone_endswith (Union[Unset, str]):
-        phone_gt (Union[Unset, str]):
-        phone_gte (Union[Unset, str]):
-        phone_icontains (Union[Unset, str]):
-        phone_iendswith (Union[Unset, str]):
-        phone_iexact (Union[Unset, str]):
-        phone_in (Union[Unset, list[str]]):
-        phone_iregex (Union[Unset, str]):
-        phone_isnull (Union[Unset, bool]):
-        phone_istartswith (Union[Unset, str]):
-        phone_lt (Union[Unset, str]):
-        phone_lte (Union[Unset, str]):
-        phone_range (Union[Unset, list[str]]):
-        phone_regex (Union[Unset, str]):
-        phone_startswith (Union[Unset, str]):
-        postal_code (Union[Unset, str]):
-        postal_code_contains (Union[Unset, str]):
-        postal_code_endswith (Union[Unset, str]):
-        postal_code_gt (Union[Unset, str]):
-        postal_code_gte (Union[Unset, str]):
-        postal_code_icontains (Union[Unset, str]):
-        postal_code_iendswith (Union[Unset, str]):
-        postal_code_iexact (Union[Unset, str]):
-        postal_code_in (Union[Unset, list[str]]):
-        postal_code_iregex (Union[Unset, str]):
-        postal_code_isnull (Union[Unset, bool]):
-        postal_code_istartswith (Union[Unset, str]):
-        postal_code_lt (Union[Unset, str]):
-        postal_code_lte (Union[Unset, str]):
-        postal_code_range (Union[Unset, list[str]]):
-        postal_code_regex (Union[Unset, str]):
-        postal_code_startswith (Union[Unset, str]):
+        administrative_area (str | Unset):
+        administrative_area_contains (str | Unset):
+        administrative_area_endswith (str | Unset):
+        administrative_area_gt (str | Unset):
+        administrative_area_gte (str | Unset):
+        administrative_area_icontains (str | Unset):
+        administrative_area_iendswith (str | Unset):
+        administrative_area_iexact (str | Unset):
+        administrative_area_in (list[str] | Unset):
+        administrative_area_iregex (str | Unset):
+        administrative_area_isnull (bool | Unset):
+        administrative_area_istartswith (str | Unset):
+        administrative_area_lt (str | Unset):
+        administrative_area_lte (str | Unset):
+        administrative_area_range (list[str] | Unset):
+        administrative_area_regex (str | Unset):
+        administrative_area_startswith (str | Unset):
+        city (str | Unset):
+        city_contains (str | Unset):
+        city_endswith (str | Unset):
+        city_gt (str | Unset):
+        city_gte (str | Unset):
+        city_icontains (str | Unset):
+        city_iendswith (str | Unset):
+        city_iexact (str | Unset):
+        city_in (list[str] | Unset):
+        city_iregex (str | Unset):
+        city_isnull (bool | Unset):
+        city_istartswith (str | Unset):
+        city_lt (str | Unset):
+        city_lte (str | Unset):
+        city_range (list[str] | Unset):
+        city_regex (str | Unset):
+        city_startswith (str | Unset):
+        country (str | Unset):
+        country_contains (str | Unset):
+        country_endswith (str | Unset):
+        country_gt (str | Unset):
+        country_gte (str | Unset):
+        country_icontains (str | Unset):
+        country_iendswith (str | Unset):
+        country_iexact (str | Unset):
+        country_in (list[str] | Unset):
+        country_iregex (str | Unset):
+        country_isnull (bool | Unset):
+        country_istartswith (str | Unset):
+        country_lt (str | Unset):
+        country_lte (str | Unset):
+        country_range (list[str] | Unset):
+        country_regex (str | Unset):
+        country_startswith (str | Unset):
+        delivery_point (str | Unset):
+        delivery_point_contains (str | Unset):
+        delivery_point_endswith (str | Unset):
+        delivery_point_gt (str | Unset):
+        delivery_point_gte (str | Unset):
+        delivery_point_icontains (str | Unset):
+        delivery_point_iendswith (str | Unset):
+        delivery_point_iexact (str | Unset):
+        delivery_point_in (list[str] | Unset):
+        delivery_point_iregex (str | Unset):
+        delivery_point_isnull (bool | Unset):
+        delivery_point_istartswith (str | Unset):
+        delivery_point_lt (str | Unset):
+        delivery_point_lte (str | Unset):
+        delivery_point_range (list[str] | Unset):
+        delivery_point_regex (str | Unset):
+        delivery_point_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        electronic_email_address (str | Unset):
+        electronic_email_address_contains (str | Unset):
+        electronic_email_address_endswith (str | Unset):
+        electronic_email_address_gt (str | Unset):
+        electronic_email_address_gte (str | Unset):
+        electronic_email_address_icontains (str | Unset):
+        electronic_email_address_iendswith (str | Unset):
+        electronic_email_address_iexact (str | Unset):
+        electronic_email_address_in (list[str] | Unset):
+        electronic_email_address_iregex (str | Unset):
+        electronic_email_address_isnull (bool | Unset):
+        electronic_email_address_istartswith (str | Unset):
+        electronic_email_address_lt (str | Unset):
+        electronic_email_address_lte (str | Unset):
+        electronic_email_address_range (list[str] | Unset):
+        electronic_email_address_regex (str | Unset):
+        electronic_email_address_startswith (str | Unset):
+        first_name (str | Unset):
+        first_name_contains (str | Unset):
+        first_name_endswith (str | Unset):
+        first_name_gt (str | Unset):
+        first_name_gte (str | Unset):
+        first_name_icontains (str | Unset):
+        first_name_iendswith (str | Unset):
+        first_name_iexact (str | Unset):
+        first_name_in (list[str] | Unset):
+        first_name_iregex (str | Unset):
+        first_name_isnull (bool | Unset):
+        first_name_istartswith (str | Unset):
+        first_name_lt (str | Unset):
+        first_name_lte (str | Unset):
+        first_name_range (list[str] | Unset):
+        first_name_regex (str | Unset):
+        first_name_startswith (str | Unset):
+        last_name (str | Unset):
+        last_name_contains (str | Unset):
+        last_name_endswith (str | Unset):
+        last_name_gt (str | Unset):
+        last_name_gte (str | Unset):
+        last_name_icontains (str | Unset):
+        last_name_iendswith (str | Unset):
+        last_name_iexact (str | Unset):
+        last_name_in (list[str] | Unset):
+        last_name_iregex (str | Unset):
+        last_name_isnull (bool | Unset):
+        last_name_istartswith (str | Unset):
+        last_name_lt (str | Unset):
+        last_name_lte (str | Unset):
+        last_name_range (list[str] | Unset):
+        last_name_regex (str | Unset):
+        last_name_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        online_resource (str | Unset):
+        online_resource_contains (str | Unset):
+        online_resource_endswith (str | Unset):
+        online_resource_gt (str | Unset):
+        online_resource_gte (str | Unset):
+        online_resource_icontains (str | Unset):
+        online_resource_iendswith (str | Unset):
+        online_resource_iexact (str | Unset):
+        online_resource_in (list[str] | Unset):
+        online_resource_iregex (str | Unset):
+        online_resource_isnull (bool | Unset):
+        online_resource_istartswith (str | Unset):
+        online_resource_lt (str | Unset):
+        online_resource_lte (str | Unset):
+        online_resource_range (list[str] | Unset):
+        online_resource_regex (str | Unset):
+        online_resource_startswith (str | Unset):
+        ordering (str | Unset):
+        party_type (PartiesListType | Unset):
+        party_type_contains (str | Unset):
+        party_type_endswith (str | Unset):
+        party_type_gt (str | Unset):
+        party_type_gte (str | Unset):
+        party_type_icontains (str | Unset):
+        party_type_iendswith (str | Unset):
+        party_type_iexact (str | Unset):
+        party_type_in (list[str] | Unset):
+        party_type_iregex (str | Unset):
+        party_type_isnull (bool | Unset):
+        party_type_istartswith (str | Unset):
+        party_type_lt (str | Unset):
+        party_type_lte (str | Unset):
+        party_type_range (list[str] | Unset):
+        party_type_regex (str | Unset):
+        party_type_startswith (str | Unset):
+        phone (str | Unset):
+        phone_contains (str | Unset):
+        phone_endswith (str | Unset):
+        phone_gt (str | Unset):
+        phone_gte (str | Unset):
+        phone_icontains (str | Unset):
+        phone_iendswith (str | Unset):
+        phone_iexact (str | Unset):
+        phone_in (list[str] | Unset):
+        phone_iregex (str | Unset):
+        phone_isnull (bool | Unset):
+        phone_istartswith (str | Unset):
+        phone_lt (str | Unset):
+        phone_lte (str | Unset):
+        phone_range (list[str] | Unset):
+        phone_regex (str | Unset):
+        phone_startswith (str | Unset):
+        postal_code (str | Unset):
+        postal_code_contains (str | Unset):
+        postal_code_endswith (str | Unset):
+        postal_code_gt (str | Unset):
+        postal_code_gte (str | Unset):
+        postal_code_icontains (str | Unset):
+        postal_code_iendswith (str | Unset):
+        postal_code_iexact (str | Unset):
+        postal_code_in (list[str] | Unset):
+        postal_code_iregex (str | Unset):
+        postal_code_isnull (bool | Unset):
+        postal_code_istartswith (str | Unset):
+        postal_code_lt (str | Unset):
+        postal_code_lte (str | Unset):
+        postal_code_range (list[str] | Unset):
+        postal_code_regex (str | Unset):
+        postal_code_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2238,462 +2236,462 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    administrative_area: Union[Unset, str] = UNSET,
-    administrative_area_contains: Union[Unset, str] = UNSET,
-    administrative_area_endswith: Union[Unset, str] = UNSET,
-    administrative_area_gt: Union[Unset, str] = UNSET,
-    administrative_area_gte: Union[Unset, str] = UNSET,
-    administrative_area_icontains: Union[Unset, str] = UNSET,
-    administrative_area_iendswith: Union[Unset, str] = UNSET,
-    administrative_area_iexact: Union[Unset, str] = UNSET,
-    administrative_area_in: Union[Unset, list[str]] = UNSET,
-    administrative_area_iregex: Union[Unset, str] = UNSET,
-    administrative_area_isnull: Union[Unset, bool] = UNSET,
-    administrative_area_istartswith: Union[Unset, str] = UNSET,
-    administrative_area_lt: Union[Unset, str] = UNSET,
-    administrative_area_lte: Union[Unset, str] = UNSET,
-    administrative_area_range: Union[Unset, list[str]] = UNSET,
-    administrative_area_regex: Union[Unset, str] = UNSET,
-    administrative_area_startswith: Union[Unset, str] = UNSET,
-    city: Union[Unset, str] = UNSET,
-    city_contains: Union[Unset, str] = UNSET,
-    city_endswith: Union[Unset, str] = UNSET,
-    city_gt: Union[Unset, str] = UNSET,
-    city_gte: Union[Unset, str] = UNSET,
-    city_icontains: Union[Unset, str] = UNSET,
-    city_iendswith: Union[Unset, str] = UNSET,
-    city_iexact: Union[Unset, str] = UNSET,
-    city_in: Union[Unset, list[str]] = UNSET,
-    city_iregex: Union[Unset, str] = UNSET,
-    city_isnull: Union[Unset, bool] = UNSET,
-    city_istartswith: Union[Unset, str] = UNSET,
-    city_lt: Union[Unset, str] = UNSET,
-    city_lte: Union[Unset, str] = UNSET,
-    city_range: Union[Unset, list[str]] = UNSET,
-    city_regex: Union[Unset, str] = UNSET,
-    city_startswith: Union[Unset, str] = UNSET,
-    country: Union[Unset, str] = UNSET,
-    country_contains: Union[Unset, str] = UNSET,
-    country_endswith: Union[Unset, str] = UNSET,
-    country_gt: Union[Unset, str] = UNSET,
-    country_gte: Union[Unset, str] = UNSET,
-    country_icontains: Union[Unset, str] = UNSET,
-    country_iendswith: Union[Unset, str] = UNSET,
-    country_iexact: Union[Unset, str] = UNSET,
-    country_in: Union[Unset, list[str]] = UNSET,
-    country_iregex: Union[Unset, str] = UNSET,
-    country_isnull: Union[Unset, bool] = UNSET,
-    country_istartswith: Union[Unset, str] = UNSET,
-    country_lt: Union[Unset, str] = UNSET,
-    country_lte: Union[Unset, str] = UNSET,
-    country_range: Union[Unset, list[str]] = UNSET,
-    country_regex: Union[Unset, str] = UNSET,
-    country_startswith: Union[Unset, str] = UNSET,
-    delivery_point: Union[Unset, str] = UNSET,
-    delivery_point_contains: Union[Unset, str] = UNSET,
-    delivery_point_endswith: Union[Unset, str] = UNSET,
-    delivery_point_gt: Union[Unset, str] = UNSET,
-    delivery_point_gte: Union[Unset, str] = UNSET,
-    delivery_point_icontains: Union[Unset, str] = UNSET,
-    delivery_point_iendswith: Union[Unset, str] = UNSET,
-    delivery_point_iexact: Union[Unset, str] = UNSET,
-    delivery_point_in: Union[Unset, list[str]] = UNSET,
-    delivery_point_iregex: Union[Unset, str] = UNSET,
-    delivery_point_isnull: Union[Unset, bool] = UNSET,
-    delivery_point_istartswith: Union[Unset, str] = UNSET,
-    delivery_point_lt: Union[Unset, str] = UNSET,
-    delivery_point_lte: Union[Unset, str] = UNSET,
-    delivery_point_range: Union[Unset, list[str]] = UNSET,
-    delivery_point_regex: Union[Unset, str] = UNSET,
-    delivery_point_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    electronic_email_address: Union[Unset, str] = UNSET,
-    electronic_email_address_contains: Union[Unset, str] = UNSET,
-    electronic_email_address_endswith: Union[Unset, str] = UNSET,
-    electronic_email_address_gt: Union[Unset, str] = UNSET,
-    electronic_email_address_gte: Union[Unset, str] = UNSET,
-    electronic_email_address_icontains: Union[Unset, str] = UNSET,
-    electronic_email_address_iendswith: Union[Unset, str] = UNSET,
-    electronic_email_address_iexact: Union[Unset, str] = UNSET,
-    electronic_email_address_in: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_iregex: Union[Unset, str] = UNSET,
-    electronic_email_address_isnull: Union[Unset, bool] = UNSET,
-    electronic_email_address_istartswith: Union[Unset, str] = UNSET,
-    electronic_email_address_lt: Union[Unset, str] = UNSET,
-    electronic_email_address_lte: Union[Unset, str] = UNSET,
-    electronic_email_address_range: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_regex: Union[Unset, str] = UNSET,
-    electronic_email_address_startswith: Union[Unset, str] = UNSET,
-    first_name: Union[Unset, str] = UNSET,
-    first_name_contains: Union[Unset, str] = UNSET,
-    first_name_endswith: Union[Unset, str] = UNSET,
-    first_name_gt: Union[Unset, str] = UNSET,
-    first_name_gte: Union[Unset, str] = UNSET,
-    first_name_icontains: Union[Unset, str] = UNSET,
-    first_name_iendswith: Union[Unset, str] = UNSET,
-    first_name_iexact: Union[Unset, str] = UNSET,
-    first_name_in: Union[Unset, list[str]] = UNSET,
-    first_name_iregex: Union[Unset, str] = UNSET,
-    first_name_isnull: Union[Unset, bool] = UNSET,
-    first_name_istartswith: Union[Unset, str] = UNSET,
-    first_name_lt: Union[Unset, str] = UNSET,
-    first_name_lte: Union[Unset, str] = UNSET,
-    first_name_range: Union[Unset, list[str]] = UNSET,
-    first_name_regex: Union[Unset, str] = UNSET,
-    first_name_startswith: Union[Unset, str] = UNSET,
-    last_name: Union[Unset, str] = UNSET,
-    last_name_contains: Union[Unset, str] = UNSET,
-    last_name_endswith: Union[Unset, str] = UNSET,
-    last_name_gt: Union[Unset, str] = UNSET,
-    last_name_gte: Union[Unset, str] = UNSET,
-    last_name_icontains: Union[Unset, str] = UNSET,
-    last_name_iendswith: Union[Unset, str] = UNSET,
-    last_name_iexact: Union[Unset, str] = UNSET,
-    last_name_in: Union[Unset, list[str]] = UNSET,
-    last_name_iregex: Union[Unset, str] = UNSET,
-    last_name_isnull: Union[Unset, bool] = UNSET,
-    last_name_istartswith: Union[Unset, str] = UNSET,
-    last_name_lt: Union[Unset, str] = UNSET,
-    last_name_lte: Union[Unset, str] = UNSET,
-    last_name_range: Union[Unset, list[str]] = UNSET,
-    last_name_regex: Union[Unset, str] = UNSET,
-    last_name_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    online_resource: Union[Unset, str] = UNSET,
-    online_resource_contains: Union[Unset, str] = UNSET,
-    online_resource_endswith: Union[Unset, str] = UNSET,
-    online_resource_gt: Union[Unset, str] = UNSET,
-    online_resource_gte: Union[Unset, str] = UNSET,
-    online_resource_icontains: Union[Unset, str] = UNSET,
-    online_resource_iendswith: Union[Unset, str] = UNSET,
-    online_resource_iexact: Union[Unset, str] = UNSET,
-    online_resource_in: Union[Unset, list[str]] = UNSET,
-    online_resource_iregex: Union[Unset, str] = UNSET,
-    online_resource_isnull: Union[Unset, bool] = UNSET,
-    online_resource_istartswith: Union[Unset, str] = UNSET,
-    online_resource_lt: Union[Unset, str] = UNSET,
-    online_resource_lte: Union[Unset, str] = UNSET,
-    online_resource_range: Union[Unset, list[str]] = UNSET,
-    online_resource_regex: Union[Unset, str] = UNSET,
-    online_resource_startswith: Union[Unset, str] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party_type: Union[Unset, PartiesListType] = UNSET,
-    party_type_contains: Union[Unset, str] = UNSET,
-    party_type_endswith: Union[Unset, str] = UNSET,
-    party_type_gt: Union[Unset, str] = UNSET,
-    party_type_gte: Union[Unset, str] = UNSET,
-    party_type_icontains: Union[Unset, str] = UNSET,
-    party_type_iendswith: Union[Unset, str] = UNSET,
-    party_type_iexact: Union[Unset, str] = UNSET,
-    party_type_in: Union[Unset, list[str]] = UNSET,
-    party_type_iregex: Union[Unset, str] = UNSET,
-    party_type_isnull: Union[Unset, bool] = UNSET,
-    party_type_istartswith: Union[Unset, str] = UNSET,
-    party_type_lt: Union[Unset, str] = UNSET,
-    party_type_lte: Union[Unset, str] = UNSET,
-    party_type_range: Union[Unset, list[str]] = UNSET,
-    party_type_regex: Union[Unset, str] = UNSET,
-    party_type_startswith: Union[Unset, str] = UNSET,
-    phone: Union[Unset, str] = UNSET,
-    phone_contains: Union[Unset, str] = UNSET,
-    phone_endswith: Union[Unset, str] = UNSET,
-    phone_gt: Union[Unset, str] = UNSET,
-    phone_gte: Union[Unset, str] = UNSET,
-    phone_icontains: Union[Unset, str] = UNSET,
-    phone_iendswith: Union[Unset, str] = UNSET,
-    phone_iexact: Union[Unset, str] = UNSET,
-    phone_in: Union[Unset, list[str]] = UNSET,
-    phone_iregex: Union[Unset, str] = UNSET,
-    phone_isnull: Union[Unset, bool] = UNSET,
-    phone_istartswith: Union[Unset, str] = UNSET,
-    phone_lt: Union[Unset, str] = UNSET,
-    phone_lte: Union[Unset, str] = UNSET,
-    phone_range: Union[Unset, list[str]] = UNSET,
-    phone_regex: Union[Unset, str] = UNSET,
-    phone_startswith: Union[Unset, str] = UNSET,
-    postal_code: Union[Unset, str] = UNSET,
-    postal_code_contains: Union[Unset, str] = UNSET,
-    postal_code_endswith: Union[Unset, str] = UNSET,
-    postal_code_gt: Union[Unset, str] = UNSET,
-    postal_code_gte: Union[Unset, str] = UNSET,
-    postal_code_icontains: Union[Unset, str] = UNSET,
-    postal_code_iendswith: Union[Unset, str] = UNSET,
-    postal_code_iexact: Union[Unset, str] = UNSET,
-    postal_code_in: Union[Unset, list[str]] = UNSET,
-    postal_code_iregex: Union[Unset, str] = UNSET,
-    postal_code_isnull: Union[Unset, bool] = UNSET,
-    postal_code_istartswith: Union[Unset, str] = UNSET,
-    postal_code_lt: Union[Unset, str] = UNSET,
-    postal_code_lte: Union[Unset, str] = UNSET,
-    postal_code_range: Union[Unset, list[str]] = UNSET,
-    postal_code_regex: Union[Unset, str] = UNSET,
-    postal_code_startswith: Union[Unset, str] = UNSET,
+    administrative_area: str | Unset = UNSET,
+    administrative_area_contains: str | Unset = UNSET,
+    administrative_area_endswith: str | Unset = UNSET,
+    administrative_area_gt: str | Unset = UNSET,
+    administrative_area_gte: str | Unset = UNSET,
+    administrative_area_icontains: str | Unset = UNSET,
+    administrative_area_iendswith: str | Unset = UNSET,
+    administrative_area_iexact: str | Unset = UNSET,
+    administrative_area_in: list[str] | Unset = UNSET,
+    administrative_area_iregex: str | Unset = UNSET,
+    administrative_area_isnull: bool | Unset = UNSET,
+    administrative_area_istartswith: str | Unset = UNSET,
+    administrative_area_lt: str | Unset = UNSET,
+    administrative_area_lte: str | Unset = UNSET,
+    administrative_area_range: list[str] | Unset = UNSET,
+    administrative_area_regex: str | Unset = UNSET,
+    administrative_area_startswith: str | Unset = UNSET,
+    city: str | Unset = UNSET,
+    city_contains: str | Unset = UNSET,
+    city_endswith: str | Unset = UNSET,
+    city_gt: str | Unset = UNSET,
+    city_gte: str | Unset = UNSET,
+    city_icontains: str | Unset = UNSET,
+    city_iendswith: str | Unset = UNSET,
+    city_iexact: str | Unset = UNSET,
+    city_in: list[str] | Unset = UNSET,
+    city_iregex: str | Unset = UNSET,
+    city_isnull: bool | Unset = UNSET,
+    city_istartswith: str | Unset = UNSET,
+    city_lt: str | Unset = UNSET,
+    city_lte: str | Unset = UNSET,
+    city_range: list[str] | Unset = UNSET,
+    city_regex: str | Unset = UNSET,
+    city_startswith: str | Unset = UNSET,
+    country: str | Unset = UNSET,
+    country_contains: str | Unset = UNSET,
+    country_endswith: str | Unset = UNSET,
+    country_gt: str | Unset = UNSET,
+    country_gte: str | Unset = UNSET,
+    country_icontains: str | Unset = UNSET,
+    country_iendswith: str | Unset = UNSET,
+    country_iexact: str | Unset = UNSET,
+    country_in: list[str] | Unset = UNSET,
+    country_iregex: str | Unset = UNSET,
+    country_isnull: bool | Unset = UNSET,
+    country_istartswith: str | Unset = UNSET,
+    country_lt: str | Unset = UNSET,
+    country_lte: str | Unset = UNSET,
+    country_range: list[str] | Unset = UNSET,
+    country_regex: str | Unset = UNSET,
+    country_startswith: str | Unset = UNSET,
+    delivery_point: str | Unset = UNSET,
+    delivery_point_contains: str | Unset = UNSET,
+    delivery_point_endswith: str | Unset = UNSET,
+    delivery_point_gt: str | Unset = UNSET,
+    delivery_point_gte: str | Unset = UNSET,
+    delivery_point_icontains: str | Unset = UNSET,
+    delivery_point_iendswith: str | Unset = UNSET,
+    delivery_point_iexact: str | Unset = UNSET,
+    delivery_point_in: list[str] | Unset = UNSET,
+    delivery_point_iregex: str | Unset = UNSET,
+    delivery_point_isnull: bool | Unset = UNSET,
+    delivery_point_istartswith: str | Unset = UNSET,
+    delivery_point_lt: str | Unset = UNSET,
+    delivery_point_lte: str | Unset = UNSET,
+    delivery_point_range: list[str] | Unset = UNSET,
+    delivery_point_regex: str | Unset = UNSET,
+    delivery_point_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    electronic_email_address: str | Unset = UNSET,
+    electronic_email_address_contains: str | Unset = UNSET,
+    electronic_email_address_endswith: str | Unset = UNSET,
+    electronic_email_address_gt: str | Unset = UNSET,
+    electronic_email_address_gte: str | Unset = UNSET,
+    electronic_email_address_icontains: str | Unset = UNSET,
+    electronic_email_address_iendswith: str | Unset = UNSET,
+    electronic_email_address_iexact: str | Unset = UNSET,
+    electronic_email_address_in: list[str] | Unset = UNSET,
+    electronic_email_address_iregex: str | Unset = UNSET,
+    electronic_email_address_isnull: bool | Unset = UNSET,
+    electronic_email_address_istartswith: str | Unset = UNSET,
+    electronic_email_address_lt: str | Unset = UNSET,
+    electronic_email_address_lte: str | Unset = UNSET,
+    electronic_email_address_range: list[str] | Unset = UNSET,
+    electronic_email_address_regex: str | Unset = UNSET,
+    electronic_email_address_startswith: str | Unset = UNSET,
+    first_name: str | Unset = UNSET,
+    first_name_contains: str | Unset = UNSET,
+    first_name_endswith: str | Unset = UNSET,
+    first_name_gt: str | Unset = UNSET,
+    first_name_gte: str | Unset = UNSET,
+    first_name_icontains: str | Unset = UNSET,
+    first_name_iendswith: str | Unset = UNSET,
+    first_name_iexact: str | Unset = UNSET,
+    first_name_in: list[str] | Unset = UNSET,
+    first_name_iregex: str | Unset = UNSET,
+    first_name_isnull: bool | Unset = UNSET,
+    first_name_istartswith: str | Unset = UNSET,
+    first_name_lt: str | Unset = UNSET,
+    first_name_lte: str | Unset = UNSET,
+    first_name_range: list[str] | Unset = UNSET,
+    first_name_regex: str | Unset = UNSET,
+    first_name_startswith: str | Unset = UNSET,
+    last_name: str | Unset = UNSET,
+    last_name_contains: str | Unset = UNSET,
+    last_name_endswith: str | Unset = UNSET,
+    last_name_gt: str | Unset = UNSET,
+    last_name_gte: str | Unset = UNSET,
+    last_name_icontains: str | Unset = UNSET,
+    last_name_iendswith: str | Unset = UNSET,
+    last_name_iexact: str | Unset = UNSET,
+    last_name_in: list[str] | Unset = UNSET,
+    last_name_iregex: str | Unset = UNSET,
+    last_name_isnull: bool | Unset = UNSET,
+    last_name_istartswith: str | Unset = UNSET,
+    last_name_lt: str | Unset = UNSET,
+    last_name_lte: str | Unset = UNSET,
+    last_name_range: list[str] | Unset = UNSET,
+    last_name_regex: str | Unset = UNSET,
+    last_name_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    online_resource: str | Unset = UNSET,
+    online_resource_contains: str | Unset = UNSET,
+    online_resource_endswith: str | Unset = UNSET,
+    online_resource_gt: str | Unset = UNSET,
+    online_resource_gte: str | Unset = UNSET,
+    online_resource_icontains: str | Unset = UNSET,
+    online_resource_iendswith: str | Unset = UNSET,
+    online_resource_iexact: str | Unset = UNSET,
+    online_resource_in: list[str] | Unset = UNSET,
+    online_resource_iregex: str | Unset = UNSET,
+    online_resource_isnull: bool | Unset = UNSET,
+    online_resource_istartswith: str | Unset = UNSET,
+    online_resource_lt: str | Unset = UNSET,
+    online_resource_lte: str | Unset = UNSET,
+    online_resource_range: list[str] | Unset = UNSET,
+    online_resource_regex: str | Unset = UNSET,
+    online_resource_startswith: str | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party_type: PartiesListType | Unset = UNSET,
+    party_type_contains: str | Unset = UNSET,
+    party_type_endswith: str | Unset = UNSET,
+    party_type_gt: str | Unset = UNSET,
+    party_type_gte: str | Unset = UNSET,
+    party_type_icontains: str | Unset = UNSET,
+    party_type_iendswith: str | Unset = UNSET,
+    party_type_iexact: str | Unset = UNSET,
+    party_type_in: list[str] | Unset = UNSET,
+    party_type_iregex: str | Unset = UNSET,
+    party_type_isnull: bool | Unset = UNSET,
+    party_type_istartswith: str | Unset = UNSET,
+    party_type_lt: str | Unset = UNSET,
+    party_type_lte: str | Unset = UNSET,
+    party_type_range: list[str] | Unset = UNSET,
+    party_type_regex: str | Unset = UNSET,
+    party_type_startswith: str | Unset = UNSET,
+    phone: str | Unset = UNSET,
+    phone_contains: str | Unset = UNSET,
+    phone_endswith: str | Unset = UNSET,
+    phone_gt: str | Unset = UNSET,
+    phone_gte: str | Unset = UNSET,
+    phone_icontains: str | Unset = UNSET,
+    phone_iendswith: str | Unset = UNSET,
+    phone_iexact: str | Unset = UNSET,
+    phone_in: list[str] | Unset = UNSET,
+    phone_iregex: str | Unset = UNSET,
+    phone_isnull: bool | Unset = UNSET,
+    phone_istartswith: str | Unset = UNSET,
+    phone_lt: str | Unset = UNSET,
+    phone_lte: str | Unset = UNSET,
+    phone_range: list[str] | Unset = UNSET,
+    phone_regex: str | Unset = UNSET,
+    phone_startswith: str | Unset = UNSET,
+    postal_code: str | Unset = UNSET,
+    postal_code_contains: str | Unset = UNSET,
+    postal_code_endswith: str | Unset = UNSET,
+    postal_code_gt: str | Unset = UNSET,
+    postal_code_gte: str | Unset = UNSET,
+    postal_code_icontains: str | Unset = UNSET,
+    postal_code_iendswith: str | Unset = UNSET,
+    postal_code_iexact: str | Unset = UNSET,
+    postal_code_in: list[str] | Unset = UNSET,
+    postal_code_iregex: str | Unset = UNSET,
+    postal_code_isnull: bool | Unset = UNSET,
+    postal_code_istartswith: str | Unset = UNSET,
+    postal_code_lt: str | Unset = UNSET,
+    postal_code_lte: str | Unset = UNSET,
+    postal_code_range: list[str] | Unset = UNSET,
+    postal_code_regex: str | Unset = UNSET,
+    postal_code_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        administrative_area (Union[Unset, str]):
-        administrative_area_contains (Union[Unset, str]):
-        administrative_area_endswith (Union[Unset, str]):
-        administrative_area_gt (Union[Unset, str]):
-        administrative_area_gte (Union[Unset, str]):
-        administrative_area_icontains (Union[Unset, str]):
-        administrative_area_iendswith (Union[Unset, str]):
-        administrative_area_iexact (Union[Unset, str]):
-        administrative_area_in (Union[Unset, list[str]]):
-        administrative_area_iregex (Union[Unset, str]):
-        administrative_area_isnull (Union[Unset, bool]):
-        administrative_area_istartswith (Union[Unset, str]):
-        administrative_area_lt (Union[Unset, str]):
-        administrative_area_lte (Union[Unset, str]):
-        administrative_area_range (Union[Unset, list[str]]):
-        administrative_area_regex (Union[Unset, str]):
-        administrative_area_startswith (Union[Unset, str]):
-        city (Union[Unset, str]):
-        city_contains (Union[Unset, str]):
-        city_endswith (Union[Unset, str]):
-        city_gt (Union[Unset, str]):
-        city_gte (Union[Unset, str]):
-        city_icontains (Union[Unset, str]):
-        city_iendswith (Union[Unset, str]):
-        city_iexact (Union[Unset, str]):
-        city_in (Union[Unset, list[str]]):
-        city_iregex (Union[Unset, str]):
-        city_isnull (Union[Unset, bool]):
-        city_istartswith (Union[Unset, str]):
-        city_lt (Union[Unset, str]):
-        city_lte (Union[Unset, str]):
-        city_range (Union[Unset, list[str]]):
-        city_regex (Union[Unset, str]):
-        city_startswith (Union[Unset, str]):
-        country (Union[Unset, str]):
-        country_contains (Union[Unset, str]):
-        country_endswith (Union[Unset, str]):
-        country_gt (Union[Unset, str]):
-        country_gte (Union[Unset, str]):
-        country_icontains (Union[Unset, str]):
-        country_iendswith (Union[Unset, str]):
-        country_iexact (Union[Unset, str]):
-        country_in (Union[Unset, list[str]]):
-        country_iregex (Union[Unset, str]):
-        country_isnull (Union[Unset, bool]):
-        country_istartswith (Union[Unset, str]):
-        country_lt (Union[Unset, str]):
-        country_lte (Union[Unset, str]):
-        country_range (Union[Unset, list[str]]):
-        country_regex (Union[Unset, str]):
-        country_startswith (Union[Unset, str]):
-        delivery_point (Union[Unset, str]):
-        delivery_point_contains (Union[Unset, str]):
-        delivery_point_endswith (Union[Unset, str]):
-        delivery_point_gt (Union[Unset, str]):
-        delivery_point_gte (Union[Unset, str]):
-        delivery_point_icontains (Union[Unset, str]):
-        delivery_point_iendswith (Union[Unset, str]):
-        delivery_point_iexact (Union[Unset, str]):
-        delivery_point_in (Union[Unset, list[str]]):
-        delivery_point_iregex (Union[Unset, str]):
-        delivery_point_isnull (Union[Unset, bool]):
-        delivery_point_istartswith (Union[Unset, str]):
-        delivery_point_lt (Union[Unset, str]):
-        delivery_point_lte (Union[Unset, str]):
-        delivery_point_range (Union[Unset, list[str]]):
-        delivery_point_regex (Union[Unset, str]):
-        delivery_point_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        electronic_email_address (Union[Unset, str]):
-        electronic_email_address_contains (Union[Unset, str]):
-        electronic_email_address_endswith (Union[Unset, str]):
-        electronic_email_address_gt (Union[Unset, str]):
-        electronic_email_address_gte (Union[Unset, str]):
-        electronic_email_address_icontains (Union[Unset, str]):
-        electronic_email_address_iendswith (Union[Unset, str]):
-        electronic_email_address_iexact (Union[Unset, str]):
-        electronic_email_address_in (Union[Unset, list[str]]):
-        electronic_email_address_iregex (Union[Unset, str]):
-        electronic_email_address_isnull (Union[Unset, bool]):
-        electronic_email_address_istartswith (Union[Unset, str]):
-        electronic_email_address_lt (Union[Unset, str]):
-        electronic_email_address_lte (Union[Unset, str]):
-        electronic_email_address_range (Union[Unset, list[str]]):
-        electronic_email_address_regex (Union[Unset, str]):
-        electronic_email_address_startswith (Union[Unset, str]):
-        first_name (Union[Unset, str]):
-        first_name_contains (Union[Unset, str]):
-        first_name_endswith (Union[Unset, str]):
-        first_name_gt (Union[Unset, str]):
-        first_name_gte (Union[Unset, str]):
-        first_name_icontains (Union[Unset, str]):
-        first_name_iendswith (Union[Unset, str]):
-        first_name_iexact (Union[Unset, str]):
-        first_name_in (Union[Unset, list[str]]):
-        first_name_iregex (Union[Unset, str]):
-        first_name_isnull (Union[Unset, bool]):
-        first_name_istartswith (Union[Unset, str]):
-        first_name_lt (Union[Unset, str]):
-        first_name_lte (Union[Unset, str]):
-        first_name_range (Union[Unset, list[str]]):
-        first_name_regex (Union[Unset, str]):
-        first_name_startswith (Union[Unset, str]):
-        last_name (Union[Unset, str]):
-        last_name_contains (Union[Unset, str]):
-        last_name_endswith (Union[Unset, str]):
-        last_name_gt (Union[Unset, str]):
-        last_name_gte (Union[Unset, str]):
-        last_name_icontains (Union[Unset, str]):
-        last_name_iendswith (Union[Unset, str]):
-        last_name_iexact (Union[Unset, str]):
-        last_name_in (Union[Unset, list[str]]):
-        last_name_iregex (Union[Unset, str]):
-        last_name_isnull (Union[Unset, bool]):
-        last_name_istartswith (Union[Unset, str]):
-        last_name_lt (Union[Unset, str]):
-        last_name_lte (Union[Unset, str]):
-        last_name_range (Union[Unset, list[str]]):
-        last_name_regex (Union[Unset, str]):
-        last_name_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        online_resource (Union[Unset, str]):
-        online_resource_contains (Union[Unset, str]):
-        online_resource_endswith (Union[Unset, str]):
-        online_resource_gt (Union[Unset, str]):
-        online_resource_gte (Union[Unset, str]):
-        online_resource_icontains (Union[Unset, str]):
-        online_resource_iendswith (Union[Unset, str]):
-        online_resource_iexact (Union[Unset, str]):
-        online_resource_in (Union[Unset, list[str]]):
-        online_resource_iregex (Union[Unset, str]):
-        online_resource_isnull (Union[Unset, bool]):
-        online_resource_istartswith (Union[Unset, str]):
-        online_resource_lt (Union[Unset, str]):
-        online_resource_lte (Union[Unset, str]):
-        online_resource_range (Union[Unset, list[str]]):
-        online_resource_regex (Union[Unset, str]):
-        online_resource_startswith (Union[Unset, str]):
-        ordering (Union[Unset, str]):
-        party_type (Union[Unset, PartiesListType]):
-        party_type_contains (Union[Unset, str]):
-        party_type_endswith (Union[Unset, str]):
-        party_type_gt (Union[Unset, str]):
-        party_type_gte (Union[Unset, str]):
-        party_type_icontains (Union[Unset, str]):
-        party_type_iendswith (Union[Unset, str]):
-        party_type_iexact (Union[Unset, str]):
-        party_type_in (Union[Unset, list[str]]):
-        party_type_iregex (Union[Unset, str]):
-        party_type_isnull (Union[Unset, bool]):
-        party_type_istartswith (Union[Unset, str]):
-        party_type_lt (Union[Unset, str]):
-        party_type_lte (Union[Unset, str]):
-        party_type_range (Union[Unset, list[str]]):
-        party_type_regex (Union[Unset, str]):
-        party_type_startswith (Union[Unset, str]):
-        phone (Union[Unset, str]):
-        phone_contains (Union[Unset, str]):
-        phone_endswith (Union[Unset, str]):
-        phone_gt (Union[Unset, str]):
-        phone_gte (Union[Unset, str]):
-        phone_icontains (Union[Unset, str]):
-        phone_iendswith (Union[Unset, str]):
-        phone_iexact (Union[Unset, str]):
-        phone_in (Union[Unset, list[str]]):
-        phone_iregex (Union[Unset, str]):
-        phone_isnull (Union[Unset, bool]):
-        phone_istartswith (Union[Unset, str]):
-        phone_lt (Union[Unset, str]):
-        phone_lte (Union[Unset, str]):
-        phone_range (Union[Unset, list[str]]):
-        phone_regex (Union[Unset, str]):
-        phone_startswith (Union[Unset, str]):
-        postal_code (Union[Unset, str]):
-        postal_code_contains (Union[Unset, str]):
-        postal_code_endswith (Union[Unset, str]):
-        postal_code_gt (Union[Unset, str]):
-        postal_code_gte (Union[Unset, str]):
-        postal_code_icontains (Union[Unset, str]):
-        postal_code_iendswith (Union[Unset, str]):
-        postal_code_iexact (Union[Unset, str]):
-        postal_code_in (Union[Unset, list[str]]):
-        postal_code_iregex (Union[Unset, str]):
-        postal_code_isnull (Union[Unset, bool]):
-        postal_code_istartswith (Union[Unset, str]):
-        postal_code_lt (Union[Unset, str]):
-        postal_code_lte (Union[Unset, str]):
-        postal_code_range (Union[Unset, list[str]]):
-        postal_code_regex (Union[Unset, str]):
-        postal_code_startswith (Union[Unset, str]):
+        administrative_area (str | Unset):
+        administrative_area_contains (str | Unset):
+        administrative_area_endswith (str | Unset):
+        administrative_area_gt (str | Unset):
+        administrative_area_gte (str | Unset):
+        administrative_area_icontains (str | Unset):
+        administrative_area_iendswith (str | Unset):
+        administrative_area_iexact (str | Unset):
+        administrative_area_in (list[str] | Unset):
+        administrative_area_iregex (str | Unset):
+        administrative_area_isnull (bool | Unset):
+        administrative_area_istartswith (str | Unset):
+        administrative_area_lt (str | Unset):
+        administrative_area_lte (str | Unset):
+        administrative_area_range (list[str] | Unset):
+        administrative_area_regex (str | Unset):
+        administrative_area_startswith (str | Unset):
+        city (str | Unset):
+        city_contains (str | Unset):
+        city_endswith (str | Unset):
+        city_gt (str | Unset):
+        city_gte (str | Unset):
+        city_icontains (str | Unset):
+        city_iendswith (str | Unset):
+        city_iexact (str | Unset):
+        city_in (list[str] | Unset):
+        city_iregex (str | Unset):
+        city_isnull (bool | Unset):
+        city_istartswith (str | Unset):
+        city_lt (str | Unset):
+        city_lte (str | Unset):
+        city_range (list[str] | Unset):
+        city_regex (str | Unset):
+        city_startswith (str | Unset):
+        country (str | Unset):
+        country_contains (str | Unset):
+        country_endswith (str | Unset):
+        country_gt (str | Unset):
+        country_gte (str | Unset):
+        country_icontains (str | Unset):
+        country_iendswith (str | Unset):
+        country_iexact (str | Unset):
+        country_in (list[str] | Unset):
+        country_iregex (str | Unset):
+        country_isnull (bool | Unset):
+        country_istartswith (str | Unset):
+        country_lt (str | Unset):
+        country_lte (str | Unset):
+        country_range (list[str] | Unset):
+        country_regex (str | Unset):
+        country_startswith (str | Unset):
+        delivery_point (str | Unset):
+        delivery_point_contains (str | Unset):
+        delivery_point_endswith (str | Unset):
+        delivery_point_gt (str | Unset):
+        delivery_point_gte (str | Unset):
+        delivery_point_icontains (str | Unset):
+        delivery_point_iendswith (str | Unset):
+        delivery_point_iexact (str | Unset):
+        delivery_point_in (list[str] | Unset):
+        delivery_point_iregex (str | Unset):
+        delivery_point_isnull (bool | Unset):
+        delivery_point_istartswith (str | Unset):
+        delivery_point_lt (str | Unset):
+        delivery_point_lte (str | Unset):
+        delivery_point_range (list[str] | Unset):
+        delivery_point_regex (str | Unset):
+        delivery_point_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        electronic_email_address (str | Unset):
+        electronic_email_address_contains (str | Unset):
+        electronic_email_address_endswith (str | Unset):
+        electronic_email_address_gt (str | Unset):
+        electronic_email_address_gte (str | Unset):
+        electronic_email_address_icontains (str | Unset):
+        electronic_email_address_iendswith (str | Unset):
+        electronic_email_address_iexact (str | Unset):
+        electronic_email_address_in (list[str] | Unset):
+        electronic_email_address_iregex (str | Unset):
+        electronic_email_address_isnull (bool | Unset):
+        electronic_email_address_istartswith (str | Unset):
+        electronic_email_address_lt (str | Unset):
+        electronic_email_address_lte (str | Unset):
+        electronic_email_address_range (list[str] | Unset):
+        electronic_email_address_regex (str | Unset):
+        electronic_email_address_startswith (str | Unset):
+        first_name (str | Unset):
+        first_name_contains (str | Unset):
+        first_name_endswith (str | Unset):
+        first_name_gt (str | Unset):
+        first_name_gte (str | Unset):
+        first_name_icontains (str | Unset):
+        first_name_iendswith (str | Unset):
+        first_name_iexact (str | Unset):
+        first_name_in (list[str] | Unset):
+        first_name_iregex (str | Unset):
+        first_name_isnull (bool | Unset):
+        first_name_istartswith (str | Unset):
+        first_name_lt (str | Unset):
+        first_name_lte (str | Unset):
+        first_name_range (list[str] | Unset):
+        first_name_regex (str | Unset):
+        first_name_startswith (str | Unset):
+        last_name (str | Unset):
+        last_name_contains (str | Unset):
+        last_name_endswith (str | Unset):
+        last_name_gt (str | Unset):
+        last_name_gte (str | Unset):
+        last_name_icontains (str | Unset):
+        last_name_iendswith (str | Unset):
+        last_name_iexact (str | Unset):
+        last_name_in (list[str] | Unset):
+        last_name_iregex (str | Unset):
+        last_name_isnull (bool | Unset):
+        last_name_istartswith (str | Unset):
+        last_name_lt (str | Unset):
+        last_name_lte (str | Unset):
+        last_name_range (list[str] | Unset):
+        last_name_regex (str | Unset):
+        last_name_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        online_resource (str | Unset):
+        online_resource_contains (str | Unset):
+        online_resource_endswith (str | Unset):
+        online_resource_gt (str | Unset):
+        online_resource_gte (str | Unset):
+        online_resource_icontains (str | Unset):
+        online_resource_iendswith (str | Unset):
+        online_resource_iexact (str | Unset):
+        online_resource_in (list[str] | Unset):
+        online_resource_iregex (str | Unset):
+        online_resource_isnull (bool | Unset):
+        online_resource_istartswith (str | Unset):
+        online_resource_lt (str | Unset):
+        online_resource_lte (str | Unset):
+        online_resource_range (list[str] | Unset):
+        online_resource_regex (str | Unset):
+        online_resource_startswith (str | Unset):
+        ordering (str | Unset):
+        party_type (PartiesListType | Unset):
+        party_type_contains (str | Unset):
+        party_type_endswith (str | Unset):
+        party_type_gt (str | Unset):
+        party_type_gte (str | Unset):
+        party_type_icontains (str | Unset):
+        party_type_iendswith (str | Unset):
+        party_type_iexact (str | Unset):
+        party_type_in (list[str] | Unset):
+        party_type_iregex (str | Unset):
+        party_type_isnull (bool | Unset):
+        party_type_istartswith (str | Unset):
+        party_type_lt (str | Unset):
+        party_type_lte (str | Unset):
+        party_type_range (list[str] | Unset):
+        party_type_regex (str | Unset):
+        party_type_startswith (str | Unset):
+        phone (str | Unset):
+        phone_contains (str | Unset):
+        phone_endswith (str | Unset):
+        phone_gt (str | Unset):
+        phone_gte (str | Unset):
+        phone_icontains (str | Unset):
+        phone_iendswith (str | Unset):
+        phone_iexact (str | Unset):
+        phone_in (list[str] | Unset):
+        phone_iregex (str | Unset):
+        phone_isnull (bool | Unset):
+        phone_istartswith (str | Unset):
+        phone_lt (str | Unset):
+        phone_lte (str | Unset):
+        phone_range (list[str] | Unset):
+        phone_regex (str | Unset):
+        phone_startswith (str | Unset):
+        postal_code (str | Unset):
+        postal_code_contains (str | Unset):
+        postal_code_endswith (str | Unset):
+        postal_code_gt (str | Unset):
+        postal_code_gte (str | Unset):
+        postal_code_icontains (str | Unset):
+        postal_code_iendswith (str | Unset):
+        postal_code_iexact (str | Unset):
+        postal_code_in (list[str] | Unset):
+        postal_code_iregex (str | Unset):
+        postal_code_isnull (bool | Unset):
+        postal_code_istartswith (str | Unset):
+        postal_code_lt (str | Unset):
+        postal_code_lte (str | Unset):
+        postal_code_range (list[str] | Unset):
+        postal_code_regex (str | Unset):
+        postal_code_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2939,462 +2937,462 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    administrative_area: Union[Unset, str] = UNSET,
-    administrative_area_contains: Union[Unset, str] = UNSET,
-    administrative_area_endswith: Union[Unset, str] = UNSET,
-    administrative_area_gt: Union[Unset, str] = UNSET,
-    administrative_area_gte: Union[Unset, str] = UNSET,
-    administrative_area_icontains: Union[Unset, str] = UNSET,
-    administrative_area_iendswith: Union[Unset, str] = UNSET,
-    administrative_area_iexact: Union[Unset, str] = UNSET,
-    administrative_area_in: Union[Unset, list[str]] = UNSET,
-    administrative_area_iregex: Union[Unset, str] = UNSET,
-    administrative_area_isnull: Union[Unset, bool] = UNSET,
-    administrative_area_istartswith: Union[Unset, str] = UNSET,
-    administrative_area_lt: Union[Unset, str] = UNSET,
-    administrative_area_lte: Union[Unset, str] = UNSET,
-    administrative_area_range: Union[Unset, list[str]] = UNSET,
-    administrative_area_regex: Union[Unset, str] = UNSET,
-    administrative_area_startswith: Union[Unset, str] = UNSET,
-    city: Union[Unset, str] = UNSET,
-    city_contains: Union[Unset, str] = UNSET,
-    city_endswith: Union[Unset, str] = UNSET,
-    city_gt: Union[Unset, str] = UNSET,
-    city_gte: Union[Unset, str] = UNSET,
-    city_icontains: Union[Unset, str] = UNSET,
-    city_iendswith: Union[Unset, str] = UNSET,
-    city_iexact: Union[Unset, str] = UNSET,
-    city_in: Union[Unset, list[str]] = UNSET,
-    city_iregex: Union[Unset, str] = UNSET,
-    city_isnull: Union[Unset, bool] = UNSET,
-    city_istartswith: Union[Unset, str] = UNSET,
-    city_lt: Union[Unset, str] = UNSET,
-    city_lte: Union[Unset, str] = UNSET,
-    city_range: Union[Unset, list[str]] = UNSET,
-    city_regex: Union[Unset, str] = UNSET,
-    city_startswith: Union[Unset, str] = UNSET,
-    country: Union[Unset, str] = UNSET,
-    country_contains: Union[Unset, str] = UNSET,
-    country_endswith: Union[Unset, str] = UNSET,
-    country_gt: Union[Unset, str] = UNSET,
-    country_gte: Union[Unset, str] = UNSET,
-    country_icontains: Union[Unset, str] = UNSET,
-    country_iendswith: Union[Unset, str] = UNSET,
-    country_iexact: Union[Unset, str] = UNSET,
-    country_in: Union[Unset, list[str]] = UNSET,
-    country_iregex: Union[Unset, str] = UNSET,
-    country_isnull: Union[Unset, bool] = UNSET,
-    country_istartswith: Union[Unset, str] = UNSET,
-    country_lt: Union[Unset, str] = UNSET,
-    country_lte: Union[Unset, str] = UNSET,
-    country_range: Union[Unset, list[str]] = UNSET,
-    country_regex: Union[Unset, str] = UNSET,
-    country_startswith: Union[Unset, str] = UNSET,
-    delivery_point: Union[Unset, str] = UNSET,
-    delivery_point_contains: Union[Unset, str] = UNSET,
-    delivery_point_endswith: Union[Unset, str] = UNSET,
-    delivery_point_gt: Union[Unset, str] = UNSET,
-    delivery_point_gte: Union[Unset, str] = UNSET,
-    delivery_point_icontains: Union[Unset, str] = UNSET,
-    delivery_point_iendswith: Union[Unset, str] = UNSET,
-    delivery_point_iexact: Union[Unset, str] = UNSET,
-    delivery_point_in: Union[Unset, list[str]] = UNSET,
-    delivery_point_iregex: Union[Unset, str] = UNSET,
-    delivery_point_isnull: Union[Unset, bool] = UNSET,
-    delivery_point_istartswith: Union[Unset, str] = UNSET,
-    delivery_point_lt: Union[Unset, str] = UNSET,
-    delivery_point_lte: Union[Unset, str] = UNSET,
-    delivery_point_range: Union[Unset, list[str]] = UNSET,
-    delivery_point_regex: Union[Unset, str] = UNSET,
-    delivery_point_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    electronic_email_address: Union[Unset, str] = UNSET,
-    electronic_email_address_contains: Union[Unset, str] = UNSET,
-    electronic_email_address_endswith: Union[Unset, str] = UNSET,
-    electronic_email_address_gt: Union[Unset, str] = UNSET,
-    electronic_email_address_gte: Union[Unset, str] = UNSET,
-    electronic_email_address_icontains: Union[Unset, str] = UNSET,
-    electronic_email_address_iendswith: Union[Unset, str] = UNSET,
-    electronic_email_address_iexact: Union[Unset, str] = UNSET,
-    electronic_email_address_in: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_iregex: Union[Unset, str] = UNSET,
-    electronic_email_address_isnull: Union[Unset, bool] = UNSET,
-    electronic_email_address_istartswith: Union[Unset, str] = UNSET,
-    electronic_email_address_lt: Union[Unset, str] = UNSET,
-    electronic_email_address_lte: Union[Unset, str] = UNSET,
-    electronic_email_address_range: Union[Unset, list[str]] = UNSET,
-    electronic_email_address_regex: Union[Unset, str] = UNSET,
-    electronic_email_address_startswith: Union[Unset, str] = UNSET,
-    first_name: Union[Unset, str] = UNSET,
-    first_name_contains: Union[Unset, str] = UNSET,
-    first_name_endswith: Union[Unset, str] = UNSET,
-    first_name_gt: Union[Unset, str] = UNSET,
-    first_name_gte: Union[Unset, str] = UNSET,
-    first_name_icontains: Union[Unset, str] = UNSET,
-    first_name_iendswith: Union[Unset, str] = UNSET,
-    first_name_iexact: Union[Unset, str] = UNSET,
-    first_name_in: Union[Unset, list[str]] = UNSET,
-    first_name_iregex: Union[Unset, str] = UNSET,
-    first_name_isnull: Union[Unset, bool] = UNSET,
-    first_name_istartswith: Union[Unset, str] = UNSET,
-    first_name_lt: Union[Unset, str] = UNSET,
-    first_name_lte: Union[Unset, str] = UNSET,
-    first_name_range: Union[Unset, list[str]] = UNSET,
-    first_name_regex: Union[Unset, str] = UNSET,
-    first_name_startswith: Union[Unset, str] = UNSET,
-    last_name: Union[Unset, str] = UNSET,
-    last_name_contains: Union[Unset, str] = UNSET,
-    last_name_endswith: Union[Unset, str] = UNSET,
-    last_name_gt: Union[Unset, str] = UNSET,
-    last_name_gte: Union[Unset, str] = UNSET,
-    last_name_icontains: Union[Unset, str] = UNSET,
-    last_name_iendswith: Union[Unset, str] = UNSET,
-    last_name_iexact: Union[Unset, str] = UNSET,
-    last_name_in: Union[Unset, list[str]] = UNSET,
-    last_name_iregex: Union[Unset, str] = UNSET,
-    last_name_isnull: Union[Unset, bool] = UNSET,
-    last_name_istartswith: Union[Unset, str] = UNSET,
-    last_name_lt: Union[Unset, str] = UNSET,
-    last_name_lte: Union[Unset, str] = UNSET,
-    last_name_range: Union[Unset, list[str]] = UNSET,
-    last_name_regex: Union[Unset, str] = UNSET,
-    last_name_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    online_resource: Union[Unset, str] = UNSET,
-    online_resource_contains: Union[Unset, str] = UNSET,
-    online_resource_endswith: Union[Unset, str] = UNSET,
-    online_resource_gt: Union[Unset, str] = UNSET,
-    online_resource_gte: Union[Unset, str] = UNSET,
-    online_resource_icontains: Union[Unset, str] = UNSET,
-    online_resource_iendswith: Union[Unset, str] = UNSET,
-    online_resource_iexact: Union[Unset, str] = UNSET,
-    online_resource_in: Union[Unset, list[str]] = UNSET,
-    online_resource_iregex: Union[Unset, str] = UNSET,
-    online_resource_isnull: Union[Unset, bool] = UNSET,
-    online_resource_istartswith: Union[Unset, str] = UNSET,
-    online_resource_lt: Union[Unset, str] = UNSET,
-    online_resource_lte: Union[Unset, str] = UNSET,
-    online_resource_range: Union[Unset, list[str]] = UNSET,
-    online_resource_regex: Union[Unset, str] = UNSET,
-    online_resource_startswith: Union[Unset, str] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    party_type: Union[Unset, PartiesListType] = UNSET,
-    party_type_contains: Union[Unset, str] = UNSET,
-    party_type_endswith: Union[Unset, str] = UNSET,
-    party_type_gt: Union[Unset, str] = UNSET,
-    party_type_gte: Union[Unset, str] = UNSET,
-    party_type_icontains: Union[Unset, str] = UNSET,
-    party_type_iendswith: Union[Unset, str] = UNSET,
-    party_type_iexact: Union[Unset, str] = UNSET,
-    party_type_in: Union[Unset, list[str]] = UNSET,
-    party_type_iregex: Union[Unset, str] = UNSET,
-    party_type_isnull: Union[Unset, bool] = UNSET,
-    party_type_istartswith: Union[Unset, str] = UNSET,
-    party_type_lt: Union[Unset, str] = UNSET,
-    party_type_lte: Union[Unset, str] = UNSET,
-    party_type_range: Union[Unset, list[str]] = UNSET,
-    party_type_regex: Union[Unset, str] = UNSET,
-    party_type_startswith: Union[Unset, str] = UNSET,
-    phone: Union[Unset, str] = UNSET,
-    phone_contains: Union[Unset, str] = UNSET,
-    phone_endswith: Union[Unset, str] = UNSET,
-    phone_gt: Union[Unset, str] = UNSET,
-    phone_gte: Union[Unset, str] = UNSET,
-    phone_icontains: Union[Unset, str] = UNSET,
-    phone_iendswith: Union[Unset, str] = UNSET,
-    phone_iexact: Union[Unset, str] = UNSET,
-    phone_in: Union[Unset, list[str]] = UNSET,
-    phone_iregex: Union[Unset, str] = UNSET,
-    phone_isnull: Union[Unset, bool] = UNSET,
-    phone_istartswith: Union[Unset, str] = UNSET,
-    phone_lt: Union[Unset, str] = UNSET,
-    phone_lte: Union[Unset, str] = UNSET,
-    phone_range: Union[Unset, list[str]] = UNSET,
-    phone_regex: Union[Unset, str] = UNSET,
-    phone_startswith: Union[Unset, str] = UNSET,
-    postal_code: Union[Unset, str] = UNSET,
-    postal_code_contains: Union[Unset, str] = UNSET,
-    postal_code_endswith: Union[Unset, str] = UNSET,
-    postal_code_gt: Union[Unset, str] = UNSET,
-    postal_code_gte: Union[Unset, str] = UNSET,
-    postal_code_icontains: Union[Unset, str] = UNSET,
-    postal_code_iendswith: Union[Unset, str] = UNSET,
-    postal_code_iexact: Union[Unset, str] = UNSET,
-    postal_code_in: Union[Unset, list[str]] = UNSET,
-    postal_code_iregex: Union[Unset, str] = UNSET,
-    postal_code_isnull: Union[Unset, bool] = UNSET,
-    postal_code_istartswith: Union[Unset, str] = UNSET,
-    postal_code_lt: Union[Unset, str] = UNSET,
-    postal_code_lte: Union[Unset, str] = UNSET,
-    postal_code_range: Union[Unset, list[str]] = UNSET,
-    postal_code_regex: Union[Unset, str] = UNSET,
-    postal_code_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedPartyReadList]:
+    administrative_area: str | Unset = UNSET,
+    administrative_area_contains: str | Unset = UNSET,
+    administrative_area_endswith: str | Unset = UNSET,
+    administrative_area_gt: str | Unset = UNSET,
+    administrative_area_gte: str | Unset = UNSET,
+    administrative_area_icontains: str | Unset = UNSET,
+    administrative_area_iendswith: str | Unset = UNSET,
+    administrative_area_iexact: str | Unset = UNSET,
+    administrative_area_in: list[str] | Unset = UNSET,
+    administrative_area_iregex: str | Unset = UNSET,
+    administrative_area_isnull: bool | Unset = UNSET,
+    administrative_area_istartswith: str | Unset = UNSET,
+    administrative_area_lt: str | Unset = UNSET,
+    administrative_area_lte: str | Unset = UNSET,
+    administrative_area_range: list[str] | Unset = UNSET,
+    administrative_area_regex: str | Unset = UNSET,
+    administrative_area_startswith: str | Unset = UNSET,
+    city: str | Unset = UNSET,
+    city_contains: str | Unset = UNSET,
+    city_endswith: str | Unset = UNSET,
+    city_gt: str | Unset = UNSET,
+    city_gte: str | Unset = UNSET,
+    city_icontains: str | Unset = UNSET,
+    city_iendswith: str | Unset = UNSET,
+    city_iexact: str | Unset = UNSET,
+    city_in: list[str] | Unset = UNSET,
+    city_iregex: str | Unset = UNSET,
+    city_isnull: bool | Unset = UNSET,
+    city_istartswith: str | Unset = UNSET,
+    city_lt: str | Unset = UNSET,
+    city_lte: str | Unset = UNSET,
+    city_range: list[str] | Unset = UNSET,
+    city_regex: str | Unset = UNSET,
+    city_startswith: str | Unset = UNSET,
+    country: str | Unset = UNSET,
+    country_contains: str | Unset = UNSET,
+    country_endswith: str | Unset = UNSET,
+    country_gt: str | Unset = UNSET,
+    country_gte: str | Unset = UNSET,
+    country_icontains: str | Unset = UNSET,
+    country_iendswith: str | Unset = UNSET,
+    country_iexact: str | Unset = UNSET,
+    country_in: list[str] | Unset = UNSET,
+    country_iregex: str | Unset = UNSET,
+    country_isnull: bool | Unset = UNSET,
+    country_istartswith: str | Unset = UNSET,
+    country_lt: str | Unset = UNSET,
+    country_lte: str | Unset = UNSET,
+    country_range: list[str] | Unset = UNSET,
+    country_regex: str | Unset = UNSET,
+    country_startswith: str | Unset = UNSET,
+    delivery_point: str | Unset = UNSET,
+    delivery_point_contains: str | Unset = UNSET,
+    delivery_point_endswith: str | Unset = UNSET,
+    delivery_point_gt: str | Unset = UNSET,
+    delivery_point_gte: str | Unset = UNSET,
+    delivery_point_icontains: str | Unset = UNSET,
+    delivery_point_iendswith: str | Unset = UNSET,
+    delivery_point_iexact: str | Unset = UNSET,
+    delivery_point_in: list[str] | Unset = UNSET,
+    delivery_point_iregex: str | Unset = UNSET,
+    delivery_point_isnull: bool | Unset = UNSET,
+    delivery_point_istartswith: str | Unset = UNSET,
+    delivery_point_lt: str | Unset = UNSET,
+    delivery_point_lte: str | Unset = UNSET,
+    delivery_point_range: list[str] | Unset = UNSET,
+    delivery_point_regex: str | Unset = UNSET,
+    delivery_point_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    electronic_email_address: str | Unset = UNSET,
+    electronic_email_address_contains: str | Unset = UNSET,
+    electronic_email_address_endswith: str | Unset = UNSET,
+    electronic_email_address_gt: str | Unset = UNSET,
+    electronic_email_address_gte: str | Unset = UNSET,
+    electronic_email_address_icontains: str | Unset = UNSET,
+    electronic_email_address_iendswith: str | Unset = UNSET,
+    electronic_email_address_iexact: str | Unset = UNSET,
+    electronic_email_address_in: list[str] | Unset = UNSET,
+    electronic_email_address_iregex: str | Unset = UNSET,
+    electronic_email_address_isnull: bool | Unset = UNSET,
+    electronic_email_address_istartswith: str | Unset = UNSET,
+    electronic_email_address_lt: str | Unset = UNSET,
+    electronic_email_address_lte: str | Unset = UNSET,
+    electronic_email_address_range: list[str] | Unset = UNSET,
+    electronic_email_address_regex: str | Unset = UNSET,
+    electronic_email_address_startswith: str | Unset = UNSET,
+    first_name: str | Unset = UNSET,
+    first_name_contains: str | Unset = UNSET,
+    first_name_endswith: str | Unset = UNSET,
+    first_name_gt: str | Unset = UNSET,
+    first_name_gte: str | Unset = UNSET,
+    first_name_icontains: str | Unset = UNSET,
+    first_name_iendswith: str | Unset = UNSET,
+    first_name_iexact: str | Unset = UNSET,
+    first_name_in: list[str] | Unset = UNSET,
+    first_name_iregex: str | Unset = UNSET,
+    first_name_isnull: bool | Unset = UNSET,
+    first_name_istartswith: str | Unset = UNSET,
+    first_name_lt: str | Unset = UNSET,
+    first_name_lte: str | Unset = UNSET,
+    first_name_range: list[str] | Unset = UNSET,
+    first_name_regex: str | Unset = UNSET,
+    first_name_startswith: str | Unset = UNSET,
+    last_name: str | Unset = UNSET,
+    last_name_contains: str | Unset = UNSET,
+    last_name_endswith: str | Unset = UNSET,
+    last_name_gt: str | Unset = UNSET,
+    last_name_gte: str | Unset = UNSET,
+    last_name_icontains: str | Unset = UNSET,
+    last_name_iendswith: str | Unset = UNSET,
+    last_name_iexact: str | Unset = UNSET,
+    last_name_in: list[str] | Unset = UNSET,
+    last_name_iregex: str | Unset = UNSET,
+    last_name_isnull: bool | Unset = UNSET,
+    last_name_istartswith: str | Unset = UNSET,
+    last_name_lt: str | Unset = UNSET,
+    last_name_lte: str | Unset = UNSET,
+    last_name_range: list[str] | Unset = UNSET,
+    last_name_regex: str | Unset = UNSET,
+    last_name_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    online_resource: str | Unset = UNSET,
+    online_resource_contains: str | Unset = UNSET,
+    online_resource_endswith: str | Unset = UNSET,
+    online_resource_gt: str | Unset = UNSET,
+    online_resource_gte: str | Unset = UNSET,
+    online_resource_icontains: str | Unset = UNSET,
+    online_resource_iendswith: str | Unset = UNSET,
+    online_resource_iexact: str | Unset = UNSET,
+    online_resource_in: list[str] | Unset = UNSET,
+    online_resource_iregex: str | Unset = UNSET,
+    online_resource_isnull: bool | Unset = UNSET,
+    online_resource_istartswith: str | Unset = UNSET,
+    online_resource_lt: str | Unset = UNSET,
+    online_resource_lte: str | Unset = UNSET,
+    online_resource_range: list[str] | Unset = UNSET,
+    online_resource_regex: str | Unset = UNSET,
+    online_resource_startswith: str | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    party_type: PartiesListType | Unset = UNSET,
+    party_type_contains: str | Unset = UNSET,
+    party_type_endswith: str | Unset = UNSET,
+    party_type_gt: str | Unset = UNSET,
+    party_type_gte: str | Unset = UNSET,
+    party_type_icontains: str | Unset = UNSET,
+    party_type_iendswith: str | Unset = UNSET,
+    party_type_iexact: str | Unset = UNSET,
+    party_type_in: list[str] | Unset = UNSET,
+    party_type_iregex: str | Unset = UNSET,
+    party_type_isnull: bool | Unset = UNSET,
+    party_type_istartswith: str | Unset = UNSET,
+    party_type_lt: str | Unset = UNSET,
+    party_type_lte: str | Unset = UNSET,
+    party_type_range: list[str] | Unset = UNSET,
+    party_type_regex: str | Unset = UNSET,
+    party_type_startswith: str | Unset = UNSET,
+    phone: str | Unset = UNSET,
+    phone_contains: str | Unset = UNSET,
+    phone_endswith: str | Unset = UNSET,
+    phone_gt: str | Unset = UNSET,
+    phone_gte: str | Unset = UNSET,
+    phone_icontains: str | Unset = UNSET,
+    phone_iendswith: str | Unset = UNSET,
+    phone_iexact: str | Unset = UNSET,
+    phone_in: list[str] | Unset = UNSET,
+    phone_iregex: str | Unset = UNSET,
+    phone_isnull: bool | Unset = UNSET,
+    phone_istartswith: str | Unset = UNSET,
+    phone_lt: str | Unset = UNSET,
+    phone_lte: str | Unset = UNSET,
+    phone_range: list[str] | Unset = UNSET,
+    phone_regex: str | Unset = UNSET,
+    phone_startswith: str | Unset = UNSET,
+    postal_code: str | Unset = UNSET,
+    postal_code_contains: str | Unset = UNSET,
+    postal_code_endswith: str | Unset = UNSET,
+    postal_code_gt: str | Unset = UNSET,
+    postal_code_gte: str | Unset = UNSET,
+    postal_code_icontains: str | Unset = UNSET,
+    postal_code_iendswith: str | Unset = UNSET,
+    postal_code_iexact: str | Unset = UNSET,
+    postal_code_in: list[str] | Unset = UNSET,
+    postal_code_iregex: str | Unset = UNSET,
+    postal_code_isnull: bool | Unset = UNSET,
+    postal_code_istartswith: str | Unset = UNSET,
+    postal_code_lt: str | Unset = UNSET,
+    postal_code_lte: str | Unset = UNSET,
+    postal_code_range: list[str] | Unset = UNSET,
+    postal_code_regex: str | Unset = UNSET,
+    postal_code_startswith: str | Unset = UNSET,
+) -> PaginatedPartyReadList | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
 
     Args:
-        administrative_area (Union[Unset, str]):
-        administrative_area_contains (Union[Unset, str]):
-        administrative_area_endswith (Union[Unset, str]):
-        administrative_area_gt (Union[Unset, str]):
-        administrative_area_gte (Union[Unset, str]):
-        administrative_area_icontains (Union[Unset, str]):
-        administrative_area_iendswith (Union[Unset, str]):
-        administrative_area_iexact (Union[Unset, str]):
-        administrative_area_in (Union[Unset, list[str]]):
-        administrative_area_iregex (Union[Unset, str]):
-        administrative_area_isnull (Union[Unset, bool]):
-        administrative_area_istartswith (Union[Unset, str]):
-        administrative_area_lt (Union[Unset, str]):
-        administrative_area_lte (Union[Unset, str]):
-        administrative_area_range (Union[Unset, list[str]]):
-        administrative_area_regex (Union[Unset, str]):
-        administrative_area_startswith (Union[Unset, str]):
-        city (Union[Unset, str]):
-        city_contains (Union[Unset, str]):
-        city_endswith (Union[Unset, str]):
-        city_gt (Union[Unset, str]):
-        city_gte (Union[Unset, str]):
-        city_icontains (Union[Unset, str]):
-        city_iendswith (Union[Unset, str]):
-        city_iexact (Union[Unset, str]):
-        city_in (Union[Unset, list[str]]):
-        city_iregex (Union[Unset, str]):
-        city_isnull (Union[Unset, bool]):
-        city_istartswith (Union[Unset, str]):
-        city_lt (Union[Unset, str]):
-        city_lte (Union[Unset, str]):
-        city_range (Union[Unset, list[str]]):
-        city_regex (Union[Unset, str]):
-        city_startswith (Union[Unset, str]):
-        country (Union[Unset, str]):
-        country_contains (Union[Unset, str]):
-        country_endswith (Union[Unset, str]):
-        country_gt (Union[Unset, str]):
-        country_gte (Union[Unset, str]):
-        country_icontains (Union[Unset, str]):
-        country_iendswith (Union[Unset, str]):
-        country_iexact (Union[Unset, str]):
-        country_in (Union[Unset, list[str]]):
-        country_iregex (Union[Unset, str]):
-        country_isnull (Union[Unset, bool]):
-        country_istartswith (Union[Unset, str]):
-        country_lt (Union[Unset, str]):
-        country_lte (Union[Unset, str]):
-        country_range (Union[Unset, list[str]]):
-        country_regex (Union[Unset, str]):
-        country_startswith (Union[Unset, str]):
-        delivery_point (Union[Unset, str]):
-        delivery_point_contains (Union[Unset, str]):
-        delivery_point_endswith (Union[Unset, str]):
-        delivery_point_gt (Union[Unset, str]):
-        delivery_point_gte (Union[Unset, str]):
-        delivery_point_icontains (Union[Unset, str]):
-        delivery_point_iendswith (Union[Unset, str]):
-        delivery_point_iexact (Union[Unset, str]):
-        delivery_point_in (Union[Unset, list[str]]):
-        delivery_point_iregex (Union[Unset, str]):
-        delivery_point_isnull (Union[Unset, bool]):
-        delivery_point_istartswith (Union[Unset, str]):
-        delivery_point_lt (Union[Unset, str]):
-        delivery_point_lte (Union[Unset, str]):
-        delivery_point_range (Union[Unset, list[str]]):
-        delivery_point_regex (Union[Unset, str]):
-        delivery_point_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        electronic_email_address (Union[Unset, str]):
-        electronic_email_address_contains (Union[Unset, str]):
-        electronic_email_address_endswith (Union[Unset, str]):
-        electronic_email_address_gt (Union[Unset, str]):
-        electronic_email_address_gte (Union[Unset, str]):
-        electronic_email_address_icontains (Union[Unset, str]):
-        electronic_email_address_iendswith (Union[Unset, str]):
-        electronic_email_address_iexact (Union[Unset, str]):
-        electronic_email_address_in (Union[Unset, list[str]]):
-        electronic_email_address_iregex (Union[Unset, str]):
-        electronic_email_address_isnull (Union[Unset, bool]):
-        electronic_email_address_istartswith (Union[Unset, str]):
-        electronic_email_address_lt (Union[Unset, str]):
-        electronic_email_address_lte (Union[Unset, str]):
-        electronic_email_address_range (Union[Unset, list[str]]):
-        electronic_email_address_regex (Union[Unset, str]):
-        electronic_email_address_startswith (Union[Unset, str]):
-        first_name (Union[Unset, str]):
-        first_name_contains (Union[Unset, str]):
-        first_name_endswith (Union[Unset, str]):
-        first_name_gt (Union[Unset, str]):
-        first_name_gte (Union[Unset, str]):
-        first_name_icontains (Union[Unset, str]):
-        first_name_iendswith (Union[Unset, str]):
-        first_name_iexact (Union[Unset, str]):
-        first_name_in (Union[Unset, list[str]]):
-        first_name_iregex (Union[Unset, str]):
-        first_name_isnull (Union[Unset, bool]):
-        first_name_istartswith (Union[Unset, str]):
-        first_name_lt (Union[Unset, str]):
-        first_name_lte (Union[Unset, str]):
-        first_name_range (Union[Unset, list[str]]):
-        first_name_regex (Union[Unset, str]):
-        first_name_startswith (Union[Unset, str]):
-        last_name (Union[Unset, str]):
-        last_name_contains (Union[Unset, str]):
-        last_name_endswith (Union[Unset, str]):
-        last_name_gt (Union[Unset, str]):
-        last_name_gte (Union[Unset, str]):
-        last_name_icontains (Union[Unset, str]):
-        last_name_iendswith (Union[Unset, str]):
-        last_name_iexact (Union[Unset, str]):
-        last_name_in (Union[Unset, list[str]]):
-        last_name_iregex (Union[Unset, str]):
-        last_name_isnull (Union[Unset, bool]):
-        last_name_istartswith (Union[Unset, str]):
-        last_name_lt (Union[Unset, str]):
-        last_name_lte (Union[Unset, str]):
-        last_name_range (Union[Unset, list[str]]):
-        last_name_regex (Union[Unset, str]):
-        last_name_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        online_resource (Union[Unset, str]):
-        online_resource_contains (Union[Unset, str]):
-        online_resource_endswith (Union[Unset, str]):
-        online_resource_gt (Union[Unset, str]):
-        online_resource_gte (Union[Unset, str]):
-        online_resource_icontains (Union[Unset, str]):
-        online_resource_iendswith (Union[Unset, str]):
-        online_resource_iexact (Union[Unset, str]):
-        online_resource_in (Union[Unset, list[str]]):
-        online_resource_iregex (Union[Unset, str]):
-        online_resource_isnull (Union[Unset, bool]):
-        online_resource_istartswith (Union[Unset, str]):
-        online_resource_lt (Union[Unset, str]):
-        online_resource_lte (Union[Unset, str]):
-        online_resource_range (Union[Unset, list[str]]):
-        online_resource_regex (Union[Unset, str]):
-        online_resource_startswith (Union[Unset, str]):
-        ordering (Union[Unset, str]):
-        party_type (Union[Unset, PartiesListType]):
-        party_type_contains (Union[Unset, str]):
-        party_type_endswith (Union[Unset, str]):
-        party_type_gt (Union[Unset, str]):
-        party_type_gte (Union[Unset, str]):
-        party_type_icontains (Union[Unset, str]):
-        party_type_iendswith (Union[Unset, str]):
-        party_type_iexact (Union[Unset, str]):
-        party_type_in (Union[Unset, list[str]]):
-        party_type_iregex (Union[Unset, str]):
-        party_type_isnull (Union[Unset, bool]):
-        party_type_istartswith (Union[Unset, str]):
-        party_type_lt (Union[Unset, str]):
-        party_type_lte (Union[Unset, str]):
-        party_type_range (Union[Unset, list[str]]):
-        party_type_regex (Union[Unset, str]):
-        party_type_startswith (Union[Unset, str]):
-        phone (Union[Unset, str]):
-        phone_contains (Union[Unset, str]):
-        phone_endswith (Union[Unset, str]):
-        phone_gt (Union[Unset, str]):
-        phone_gte (Union[Unset, str]):
-        phone_icontains (Union[Unset, str]):
-        phone_iendswith (Union[Unset, str]):
-        phone_iexact (Union[Unset, str]):
-        phone_in (Union[Unset, list[str]]):
-        phone_iregex (Union[Unset, str]):
-        phone_isnull (Union[Unset, bool]):
-        phone_istartswith (Union[Unset, str]):
-        phone_lt (Union[Unset, str]):
-        phone_lte (Union[Unset, str]):
-        phone_range (Union[Unset, list[str]]):
-        phone_regex (Union[Unset, str]):
-        phone_startswith (Union[Unset, str]):
-        postal_code (Union[Unset, str]):
-        postal_code_contains (Union[Unset, str]):
-        postal_code_endswith (Union[Unset, str]):
-        postal_code_gt (Union[Unset, str]):
-        postal_code_gte (Union[Unset, str]):
-        postal_code_icontains (Union[Unset, str]):
-        postal_code_iendswith (Union[Unset, str]):
-        postal_code_iexact (Union[Unset, str]):
-        postal_code_in (Union[Unset, list[str]]):
-        postal_code_iregex (Union[Unset, str]):
-        postal_code_isnull (Union[Unset, bool]):
-        postal_code_istartswith (Union[Unset, str]):
-        postal_code_lt (Union[Unset, str]):
-        postal_code_lte (Union[Unset, str]):
-        postal_code_range (Union[Unset, list[str]]):
-        postal_code_regex (Union[Unset, str]):
-        postal_code_startswith (Union[Unset, str]):
+        administrative_area (str | Unset):
+        administrative_area_contains (str | Unset):
+        administrative_area_endswith (str | Unset):
+        administrative_area_gt (str | Unset):
+        administrative_area_gte (str | Unset):
+        administrative_area_icontains (str | Unset):
+        administrative_area_iendswith (str | Unset):
+        administrative_area_iexact (str | Unset):
+        administrative_area_in (list[str] | Unset):
+        administrative_area_iregex (str | Unset):
+        administrative_area_isnull (bool | Unset):
+        administrative_area_istartswith (str | Unset):
+        administrative_area_lt (str | Unset):
+        administrative_area_lte (str | Unset):
+        administrative_area_range (list[str] | Unset):
+        administrative_area_regex (str | Unset):
+        administrative_area_startswith (str | Unset):
+        city (str | Unset):
+        city_contains (str | Unset):
+        city_endswith (str | Unset):
+        city_gt (str | Unset):
+        city_gte (str | Unset):
+        city_icontains (str | Unset):
+        city_iendswith (str | Unset):
+        city_iexact (str | Unset):
+        city_in (list[str] | Unset):
+        city_iregex (str | Unset):
+        city_isnull (bool | Unset):
+        city_istartswith (str | Unset):
+        city_lt (str | Unset):
+        city_lte (str | Unset):
+        city_range (list[str] | Unset):
+        city_regex (str | Unset):
+        city_startswith (str | Unset):
+        country (str | Unset):
+        country_contains (str | Unset):
+        country_endswith (str | Unset):
+        country_gt (str | Unset):
+        country_gte (str | Unset):
+        country_icontains (str | Unset):
+        country_iendswith (str | Unset):
+        country_iexact (str | Unset):
+        country_in (list[str] | Unset):
+        country_iregex (str | Unset):
+        country_isnull (bool | Unset):
+        country_istartswith (str | Unset):
+        country_lt (str | Unset):
+        country_lte (str | Unset):
+        country_range (list[str] | Unset):
+        country_regex (str | Unset):
+        country_startswith (str | Unset):
+        delivery_point (str | Unset):
+        delivery_point_contains (str | Unset):
+        delivery_point_endswith (str | Unset):
+        delivery_point_gt (str | Unset):
+        delivery_point_gte (str | Unset):
+        delivery_point_icontains (str | Unset):
+        delivery_point_iendswith (str | Unset):
+        delivery_point_iexact (str | Unset):
+        delivery_point_in (list[str] | Unset):
+        delivery_point_iregex (str | Unset):
+        delivery_point_isnull (bool | Unset):
+        delivery_point_istartswith (str | Unset):
+        delivery_point_lt (str | Unset):
+        delivery_point_lte (str | Unset):
+        delivery_point_range (list[str] | Unset):
+        delivery_point_regex (str | Unset):
+        delivery_point_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        electronic_email_address (str | Unset):
+        electronic_email_address_contains (str | Unset):
+        electronic_email_address_endswith (str | Unset):
+        electronic_email_address_gt (str | Unset):
+        electronic_email_address_gte (str | Unset):
+        electronic_email_address_icontains (str | Unset):
+        electronic_email_address_iendswith (str | Unset):
+        electronic_email_address_iexact (str | Unset):
+        electronic_email_address_in (list[str] | Unset):
+        electronic_email_address_iregex (str | Unset):
+        electronic_email_address_isnull (bool | Unset):
+        electronic_email_address_istartswith (str | Unset):
+        electronic_email_address_lt (str | Unset):
+        electronic_email_address_lte (str | Unset):
+        electronic_email_address_range (list[str] | Unset):
+        electronic_email_address_regex (str | Unset):
+        electronic_email_address_startswith (str | Unset):
+        first_name (str | Unset):
+        first_name_contains (str | Unset):
+        first_name_endswith (str | Unset):
+        first_name_gt (str | Unset):
+        first_name_gte (str | Unset):
+        first_name_icontains (str | Unset):
+        first_name_iendswith (str | Unset):
+        first_name_iexact (str | Unset):
+        first_name_in (list[str] | Unset):
+        first_name_iregex (str | Unset):
+        first_name_isnull (bool | Unset):
+        first_name_istartswith (str | Unset):
+        first_name_lt (str | Unset):
+        first_name_lte (str | Unset):
+        first_name_range (list[str] | Unset):
+        first_name_regex (str | Unset):
+        first_name_startswith (str | Unset):
+        last_name (str | Unset):
+        last_name_contains (str | Unset):
+        last_name_endswith (str | Unset):
+        last_name_gt (str | Unset):
+        last_name_gte (str | Unset):
+        last_name_icontains (str | Unset):
+        last_name_iendswith (str | Unset):
+        last_name_iexact (str | Unset):
+        last_name_in (list[str] | Unset):
+        last_name_iregex (str | Unset):
+        last_name_isnull (bool | Unset):
+        last_name_istartswith (str | Unset):
+        last_name_lt (str | Unset):
+        last_name_lte (str | Unset):
+        last_name_range (list[str] | Unset):
+        last_name_regex (str | Unset):
+        last_name_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        online_resource (str | Unset):
+        online_resource_contains (str | Unset):
+        online_resource_endswith (str | Unset):
+        online_resource_gt (str | Unset):
+        online_resource_gte (str | Unset):
+        online_resource_icontains (str | Unset):
+        online_resource_iendswith (str | Unset):
+        online_resource_iexact (str | Unset):
+        online_resource_in (list[str] | Unset):
+        online_resource_iregex (str | Unset):
+        online_resource_isnull (bool | Unset):
+        online_resource_istartswith (str | Unset):
+        online_resource_lt (str | Unset):
+        online_resource_lte (str | Unset):
+        online_resource_range (list[str] | Unset):
+        online_resource_regex (str | Unset):
+        online_resource_startswith (str | Unset):
+        ordering (str | Unset):
+        party_type (PartiesListType | Unset):
+        party_type_contains (str | Unset):
+        party_type_endswith (str | Unset):
+        party_type_gt (str | Unset):
+        party_type_gte (str | Unset):
+        party_type_icontains (str | Unset):
+        party_type_iendswith (str | Unset):
+        party_type_iexact (str | Unset):
+        party_type_in (list[str] | Unset):
+        party_type_iregex (str | Unset):
+        party_type_isnull (bool | Unset):
+        party_type_istartswith (str | Unset):
+        party_type_lt (str | Unset):
+        party_type_lte (str | Unset):
+        party_type_range (list[str] | Unset):
+        party_type_regex (str | Unset):
+        party_type_startswith (str | Unset):
+        phone (str | Unset):
+        phone_contains (str | Unset):
+        phone_endswith (str | Unset):
+        phone_gt (str | Unset):
+        phone_gte (str | Unset):
+        phone_icontains (str | Unset):
+        phone_iendswith (str | Unset):
+        phone_iexact (str | Unset):
+        phone_in (list[str] | Unset):
+        phone_iregex (str | Unset):
+        phone_isnull (bool | Unset):
+        phone_istartswith (str | Unset):
+        phone_lt (str | Unset):
+        phone_lte (str | Unset):
+        phone_range (list[str] | Unset):
+        phone_regex (str | Unset):
+        phone_startswith (str | Unset):
+        postal_code (str | Unset):
+        postal_code_contains (str | Unset):
+        postal_code_endswith (str | Unset):
+        postal_code_gt (str | Unset):
+        postal_code_gte (str | Unset):
+        postal_code_icontains (str | Unset):
+        postal_code_iendswith (str | Unset):
+        postal_code_iexact (str | Unset):
+        postal_code_in (list[str] | Unset):
+        postal_code_iregex (str | Unset):
+        postal_code_isnull (bool | Unset):
+        postal_code_istartswith (str | Unset):
+        postal_code_lt (str | Unset):
+        postal_code_lte (str | Unset):
+        postal_code_range (list[str] | Unset):
+        postal_code_regex (str | Unset):
+        postal_code_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

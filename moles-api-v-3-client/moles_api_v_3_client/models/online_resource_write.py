@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,14 +21,14 @@ class OnlineResourceWrite:
         Attributes:
             ob_id (int):
             linkage (str):
-            function (Union[BlankEnum, FunctionEnum, None, Unset]):
-            name (Union[None, Unset, str]):
+            function (BlankEnum | FunctionEnum | None | Unset):
+            name (None | str | Unset):
     """
 
     ob_id: int
     linkage: str
-    function: Union[BlankEnum, FunctionEnum, None, Unset] = UNSET
-    name: Union[None, Unset, str] = UNSET
+    function: BlankEnum | FunctionEnum | None | Unset = UNSET
+    name: None | str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -34,7 +36,7 @@ class OnlineResourceWrite:
 
         linkage = self.linkage
 
-        function: Union[None, Unset, str]
+        function: None | str | Unset
         if isinstance(self.function, Unset):
             function = UNSET
         elif isinstance(self.function, FunctionEnum):
@@ -44,7 +46,7 @@ class OnlineResourceWrite:
         else:
             function = self.function
 
-        name: Union[None, Unset, str]
+        name: None | str | Unset
         if isinstance(self.name, Unset):
             name = UNSET
         else:
@@ -72,7 +74,7 @@ class OnlineResourceWrite:
 
         linkage = d.pop("linkage")
 
-        def _parse_function(data: object) -> Union[BlankEnum, FunctionEnum, None, Unset]:
+        def _parse_function(data: object) -> BlankEnum | FunctionEnum | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -83,7 +85,7 @@ class OnlineResourceWrite:
                 function_type_0 = FunctionEnum(data)
 
                 return function_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             try:
                 if not isinstance(data, str):
@@ -91,18 +93,18 @@ class OnlineResourceWrite:
                 function_type_1 = BlankEnum(data)
 
                 return function_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[BlankEnum, FunctionEnum, None, Unset], data)
+            return cast(BlankEnum | FunctionEnum | None | Unset, data)
 
         function = _parse_function(d.pop("function", UNSET))
 
-        def _parse_name(data: object) -> Union[None, Unset, str]:
+        def _parse_name(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         name = _parse_name(d.pop("name", UNSET))
 

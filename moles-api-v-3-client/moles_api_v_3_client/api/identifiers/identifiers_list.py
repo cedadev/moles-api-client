@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,95 +12,95 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    identifier_type: Union[Unset, IdentifiersListIdentifierType] = UNSET,
-    identifier_type_contains: Union[Unset, str] = UNSET,
-    identifier_type_endswith: Union[Unset, str] = UNSET,
-    identifier_type_gt: Union[Unset, str] = UNSET,
-    identifier_type_gte: Union[Unset, str] = UNSET,
-    identifier_type_icontains: Union[Unset, str] = UNSET,
-    identifier_type_iendswith: Union[Unset, str] = UNSET,
-    identifier_type_iexact: Union[Unset, str] = UNSET,
-    identifier_type_in: Union[Unset, list[str]] = UNSET,
-    identifier_type_iregex: Union[Unset, str] = UNSET,
-    identifier_type_isnull: Union[Unset, bool] = UNSET,
-    identifier_type_istartswith: Union[Unset, str] = UNSET,
-    identifier_type_lt: Union[Unset, str] = UNSET,
-    identifier_type_lte: Union[Unset, str] = UNSET,
-    identifier_type_range: Union[Unset, list[str]] = UNSET,
-    identifier_type_regex: Union[Unset, str] = UNSET,
-    identifier_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    short_url: Union[Unset, str] = UNSET,
-    short_url_contains: Union[Unset, str] = UNSET,
-    short_url_endswith: Union[Unset, str] = UNSET,
-    short_url_gt: Union[Unset, str] = UNSET,
-    short_url_gte: Union[Unset, str] = UNSET,
-    short_url_icontains: Union[Unset, str] = UNSET,
-    short_url_iendswith: Union[Unset, str] = UNSET,
-    short_url_iexact: Union[Unset, str] = UNSET,
-    short_url_in: Union[Unset, list[str]] = UNSET,
-    short_url_iregex: Union[Unset, str] = UNSET,
-    short_url_isnull: Union[Unset, bool] = UNSET,
-    short_url_istartswith: Union[Unset, str] = UNSET,
-    short_url_lt: Union[Unset, str] = UNSET,
-    short_url_lte: Union[Unset, str] = UNSET,
-    short_url_range: Union[Unset, list[str]] = UNSET,
-    short_url_regex: Union[Unset, str] = UNSET,
-    short_url_startswith: Union[Unset, str] = UNSET,
-    url_query: Union[Unset, str] = UNSET,
-    url_contains: Union[Unset, str] = UNSET,
-    url_endswith: Union[Unset, str] = UNSET,
-    url_gt: Union[Unset, str] = UNSET,
-    url_gte: Union[Unset, str] = UNSET,
-    url_icontains: Union[Unset, str] = UNSET,
-    url_iendswith: Union[Unset, str] = UNSET,
-    url_iexact: Union[Unset, str] = UNSET,
-    url_in: Union[Unset, list[str]] = UNSET,
-    url_iregex: Union[Unset, str] = UNSET,
-    url_isnull: Union[Unset, bool] = UNSET,
-    url_istartswith: Union[Unset, str] = UNSET,
-    url_lt: Union[Unset, str] = UNSET,
-    url_lte: Union[Unset, str] = UNSET,
-    url_range: Union[Unset, list[str]] = UNSET,
-    url_regex: Union[Unset, str] = UNSET,
-    url_startswith: Union[Unset, str] = UNSET,
+    identifier_type: IdentifiersListIdentifierType | Unset = UNSET,
+    identifier_type_contains: str | Unset = UNSET,
+    identifier_type_endswith: str | Unset = UNSET,
+    identifier_type_gt: str | Unset = UNSET,
+    identifier_type_gte: str | Unset = UNSET,
+    identifier_type_icontains: str | Unset = UNSET,
+    identifier_type_iendswith: str | Unset = UNSET,
+    identifier_type_iexact: str | Unset = UNSET,
+    identifier_type_in: list[str] | Unset = UNSET,
+    identifier_type_iregex: str | Unset = UNSET,
+    identifier_type_isnull: bool | Unset = UNSET,
+    identifier_type_istartswith: str | Unset = UNSET,
+    identifier_type_lt: str | Unset = UNSET,
+    identifier_type_lte: str | Unset = UNSET,
+    identifier_type_range: list[str] | Unset = UNSET,
+    identifier_type_regex: str | Unset = UNSET,
+    identifier_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    short_url: str | Unset = UNSET,
+    short_url_contains: str | Unset = UNSET,
+    short_url_endswith: str | Unset = UNSET,
+    short_url_gt: str | Unset = UNSET,
+    short_url_gte: str | Unset = UNSET,
+    short_url_icontains: str | Unset = UNSET,
+    short_url_iendswith: str | Unset = UNSET,
+    short_url_iexact: str | Unset = UNSET,
+    short_url_in: list[str] | Unset = UNSET,
+    short_url_iregex: str | Unset = UNSET,
+    short_url_isnull: bool | Unset = UNSET,
+    short_url_istartswith: str | Unset = UNSET,
+    short_url_lt: str | Unset = UNSET,
+    short_url_lte: str | Unset = UNSET,
+    short_url_range: list[str] | Unset = UNSET,
+    short_url_regex: str | Unset = UNSET,
+    short_url_startswith: str | Unset = UNSET,
+    url_query: str | Unset = UNSET,
+    url_contains: str | Unset = UNSET,
+    url_endswith: str | Unset = UNSET,
+    url_gt: str | Unset = UNSET,
+    url_gte: str | Unset = UNSET,
+    url_icontains: str | Unset = UNSET,
+    url_iendswith: str | Unset = UNSET,
+    url_iexact: str | Unset = UNSET,
+    url_in: list[str] | Unset = UNSET,
+    url_iregex: str | Unset = UNSET,
+    url_isnull: bool | Unset = UNSET,
+    url_istartswith: str | Unset = UNSET,
+    url_lt: str | Unset = UNSET,
+    url_lte: str | Unset = UNSET,
+    url_range: list[str] | Unset = UNSET,
+    url_regex: str | Unset = UNSET,
+    url_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    json_identifier_type: Union[Unset, str] = UNSET
+    json_identifier_type: str | Unset = UNSET
     if not isinstance(identifier_type, Unset):
         json_identifier_type = identifier_type.value
 
@@ -120,7 +120,7 @@ def _get_kwargs(
 
     params["identifierType__iexact"] = identifier_type_iexact
 
-    json_identifier_type_in: Union[Unset, list[str]] = UNSET
+    json_identifier_type_in: list[str] | Unset = UNSET
     if not isinstance(identifier_type_in, Unset):
         json_identifier_type_in = ",".join(map(str, identifier_type_in))
 
@@ -136,7 +136,7 @@ def _get_kwargs(
 
     params["identifierType__lte"] = identifier_type_lte
 
-    json_identifier_type_range: Union[Unset, list[str]] = UNSET
+    json_identifier_type_range: list[str] | Unset = UNSET
     if not isinstance(identifier_type_range, Unset):
         json_identifier_type_range = ",".join(map(str, identifier_type_range))
 
@@ -166,7 +166,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -182,7 +182,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -202,7 +202,7 @@ def _get_kwargs(
 
     params["relatedTo__gte"] = related_to_gte
 
-    json_related_to_in: Union[Unset, list[int]] = UNSET
+    json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
 
@@ -216,7 +216,7 @@ def _get_kwargs(
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
-    json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
@@ -224,7 +224,7 @@ def _get_kwargs(
 
     params["relatedTo__short_code"] = related_to_short_code
 
-    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
         json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
 
@@ -232,7 +232,7 @@ def _get_kwargs(
 
     params["relatedTo__uuid"] = related_to_uuid
 
-    json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
+    json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
         json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
@@ -254,7 +254,7 @@ def _get_kwargs(
 
     params["shortUrl__iexact"] = short_url_iexact
 
-    json_short_url_in: Union[Unset, list[str]] = UNSET
+    json_short_url_in: list[str] | Unset = UNSET
     if not isinstance(short_url_in, Unset):
         json_short_url_in = ",".join(map(str, short_url_in))
 
@@ -270,7 +270,7 @@ def _get_kwargs(
 
     params["shortUrl__lte"] = short_url_lte
 
-    json_short_url_range: Union[Unset, list[str]] = UNSET
+    json_short_url_range: list[str] | Unset = UNSET
     if not isinstance(short_url_range, Unset):
         json_short_url_range = ",".join(map(str, short_url_range))
 
@@ -296,7 +296,7 @@ def _get_kwargs(
 
     params["url__iexact"] = url_iexact
 
-    json_url_in: Union[Unset, list[str]] = UNSET
+    json_url_in: list[str] | Unset = UNSET
     if not isinstance(url_in, Unset):
         json_url_in = ",".join(map(str, url_in))
 
@@ -312,7 +312,7 @@ def _get_kwargs(
 
     params["url__lte"] = url_lte
 
-    json_url_range: Union[Unset, list[str]] = UNSET
+    json_url_range: list[str] | Unset = UNSET
     if not isinstance(url_range, Unset):
         json_url_range = ",".join(map(str, url_range))
 
@@ -334,8 +334,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedIdentifierReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedIdentifierReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedIdentifierReadList.from_dict(response.json())
 
@@ -348,7 +348,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedIdentifierReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -361,180 +361,180 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    identifier_type: Union[Unset, IdentifiersListIdentifierType] = UNSET,
-    identifier_type_contains: Union[Unset, str] = UNSET,
-    identifier_type_endswith: Union[Unset, str] = UNSET,
-    identifier_type_gt: Union[Unset, str] = UNSET,
-    identifier_type_gte: Union[Unset, str] = UNSET,
-    identifier_type_icontains: Union[Unset, str] = UNSET,
-    identifier_type_iendswith: Union[Unset, str] = UNSET,
-    identifier_type_iexact: Union[Unset, str] = UNSET,
-    identifier_type_in: Union[Unset, list[str]] = UNSET,
-    identifier_type_iregex: Union[Unset, str] = UNSET,
-    identifier_type_isnull: Union[Unset, bool] = UNSET,
-    identifier_type_istartswith: Union[Unset, str] = UNSET,
-    identifier_type_lt: Union[Unset, str] = UNSET,
-    identifier_type_lte: Union[Unset, str] = UNSET,
-    identifier_type_range: Union[Unset, list[str]] = UNSET,
-    identifier_type_regex: Union[Unset, str] = UNSET,
-    identifier_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    short_url: Union[Unset, str] = UNSET,
-    short_url_contains: Union[Unset, str] = UNSET,
-    short_url_endswith: Union[Unset, str] = UNSET,
-    short_url_gt: Union[Unset, str] = UNSET,
-    short_url_gte: Union[Unset, str] = UNSET,
-    short_url_icontains: Union[Unset, str] = UNSET,
-    short_url_iendswith: Union[Unset, str] = UNSET,
-    short_url_iexact: Union[Unset, str] = UNSET,
-    short_url_in: Union[Unset, list[str]] = UNSET,
-    short_url_iregex: Union[Unset, str] = UNSET,
-    short_url_isnull: Union[Unset, bool] = UNSET,
-    short_url_istartswith: Union[Unset, str] = UNSET,
-    short_url_lt: Union[Unset, str] = UNSET,
-    short_url_lte: Union[Unset, str] = UNSET,
-    short_url_range: Union[Unset, list[str]] = UNSET,
-    short_url_regex: Union[Unset, str] = UNSET,
-    short_url_startswith: Union[Unset, str] = UNSET,
-    url_query: Union[Unset, str] = UNSET,
-    url_contains: Union[Unset, str] = UNSET,
-    url_endswith: Union[Unset, str] = UNSET,
-    url_gt: Union[Unset, str] = UNSET,
-    url_gte: Union[Unset, str] = UNSET,
-    url_icontains: Union[Unset, str] = UNSET,
-    url_iendswith: Union[Unset, str] = UNSET,
-    url_iexact: Union[Unset, str] = UNSET,
-    url_in: Union[Unset, list[str]] = UNSET,
-    url_iregex: Union[Unset, str] = UNSET,
-    url_isnull: Union[Unset, bool] = UNSET,
-    url_istartswith: Union[Unset, str] = UNSET,
-    url_lt: Union[Unset, str] = UNSET,
-    url_lte: Union[Unset, str] = UNSET,
-    url_range: Union[Unset, list[str]] = UNSET,
-    url_regex: Union[Unset, str] = UNSET,
-    url_startswith: Union[Unset, str] = UNSET,
+    identifier_type: IdentifiersListIdentifierType | Unset = UNSET,
+    identifier_type_contains: str | Unset = UNSET,
+    identifier_type_endswith: str | Unset = UNSET,
+    identifier_type_gt: str | Unset = UNSET,
+    identifier_type_gte: str | Unset = UNSET,
+    identifier_type_icontains: str | Unset = UNSET,
+    identifier_type_iendswith: str | Unset = UNSET,
+    identifier_type_iexact: str | Unset = UNSET,
+    identifier_type_in: list[str] | Unset = UNSET,
+    identifier_type_iregex: str | Unset = UNSET,
+    identifier_type_isnull: bool | Unset = UNSET,
+    identifier_type_istartswith: str | Unset = UNSET,
+    identifier_type_lt: str | Unset = UNSET,
+    identifier_type_lte: str | Unset = UNSET,
+    identifier_type_range: list[str] | Unset = UNSET,
+    identifier_type_regex: str | Unset = UNSET,
+    identifier_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    short_url: str | Unset = UNSET,
+    short_url_contains: str | Unset = UNSET,
+    short_url_endswith: str | Unset = UNSET,
+    short_url_gt: str | Unset = UNSET,
+    short_url_gte: str | Unset = UNSET,
+    short_url_icontains: str | Unset = UNSET,
+    short_url_iendswith: str | Unset = UNSET,
+    short_url_iexact: str | Unset = UNSET,
+    short_url_in: list[str] | Unset = UNSET,
+    short_url_iregex: str | Unset = UNSET,
+    short_url_isnull: bool | Unset = UNSET,
+    short_url_istartswith: str | Unset = UNSET,
+    short_url_lt: str | Unset = UNSET,
+    short_url_lte: str | Unset = UNSET,
+    short_url_range: list[str] | Unset = UNSET,
+    short_url_regex: str | Unset = UNSET,
+    short_url_startswith: str | Unset = UNSET,
+    url_query: str | Unset = UNSET,
+    url_contains: str | Unset = UNSET,
+    url_endswith: str | Unset = UNSET,
+    url_gt: str | Unset = UNSET,
+    url_gte: str | Unset = UNSET,
+    url_icontains: str | Unset = UNSET,
+    url_iendswith: str | Unset = UNSET,
+    url_iexact: str | Unset = UNSET,
+    url_in: list[str] | Unset = UNSET,
+    url_iregex: str | Unset = UNSET,
+    url_isnull: bool | Unset = UNSET,
+    url_istartswith: str | Unset = UNSET,
+    url_lt: str | Unset = UNSET,
+    url_lte: str | Unset = UNSET,
+    url_range: list[str] | Unset = UNSET,
+    url_regex: str | Unset = UNSET,
+    url_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
-        identifier_type (Union[Unset, IdentifiersListIdentifierType]):
-        identifier_type_contains (Union[Unset, str]):
-        identifier_type_endswith (Union[Unset, str]):
-        identifier_type_gt (Union[Unset, str]):
-        identifier_type_gte (Union[Unset, str]):
-        identifier_type_icontains (Union[Unset, str]):
-        identifier_type_iendswith (Union[Unset, str]):
-        identifier_type_iexact (Union[Unset, str]):
-        identifier_type_in (Union[Unset, list[str]]):
-        identifier_type_iregex (Union[Unset, str]):
-        identifier_type_isnull (Union[Unset, bool]):
-        identifier_type_istartswith (Union[Unset, str]):
-        identifier_type_lt (Union[Unset, str]):
-        identifier_type_lte (Union[Unset, str]):
-        identifier_type_range (Union[Unset, list[str]]):
-        identifier_type_regex (Union[Unset, str]):
-        identifier_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        short_url (Union[Unset, str]):
-        short_url_contains (Union[Unset, str]):
-        short_url_endswith (Union[Unset, str]):
-        short_url_gt (Union[Unset, str]):
-        short_url_gte (Union[Unset, str]):
-        short_url_icontains (Union[Unset, str]):
-        short_url_iendswith (Union[Unset, str]):
-        short_url_iexact (Union[Unset, str]):
-        short_url_in (Union[Unset, list[str]]):
-        short_url_iregex (Union[Unset, str]):
-        short_url_isnull (Union[Unset, bool]):
-        short_url_istartswith (Union[Unset, str]):
-        short_url_lt (Union[Unset, str]):
-        short_url_lte (Union[Unset, str]):
-        short_url_range (Union[Unset, list[str]]):
-        short_url_regex (Union[Unset, str]):
-        short_url_startswith (Union[Unset, str]):
-        url_query (Union[Unset, str]):
-        url_contains (Union[Unset, str]):
-        url_endswith (Union[Unset, str]):
-        url_gt (Union[Unset, str]):
-        url_gte (Union[Unset, str]):
-        url_icontains (Union[Unset, str]):
-        url_iendswith (Union[Unset, str]):
-        url_iexact (Union[Unset, str]):
-        url_in (Union[Unset, list[str]]):
-        url_iregex (Union[Unset, str]):
-        url_isnull (Union[Unset, bool]):
-        url_istartswith (Union[Unset, str]):
-        url_lt (Union[Unset, str]):
-        url_lte (Union[Unset, str]):
-        url_range (Union[Unset, list[str]]):
-        url_regex (Union[Unset, str]):
-        url_startswith (Union[Unset, str]):
+        identifier_type (IdentifiersListIdentifierType | Unset):
+        identifier_type_contains (str | Unset):
+        identifier_type_endswith (str | Unset):
+        identifier_type_gt (str | Unset):
+        identifier_type_gte (str | Unset):
+        identifier_type_icontains (str | Unset):
+        identifier_type_iendswith (str | Unset):
+        identifier_type_iexact (str | Unset):
+        identifier_type_in (list[str] | Unset):
+        identifier_type_iregex (str | Unset):
+        identifier_type_isnull (bool | Unset):
+        identifier_type_istartswith (str | Unset):
+        identifier_type_lt (str | Unset):
+        identifier_type_lte (str | Unset):
+        identifier_type_range (list[str] | Unset):
+        identifier_type_regex (str | Unset):
+        identifier_type_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        short_url (str | Unset):
+        short_url_contains (str | Unset):
+        short_url_endswith (str | Unset):
+        short_url_gt (str | Unset):
+        short_url_gte (str | Unset):
+        short_url_icontains (str | Unset):
+        short_url_iendswith (str | Unset):
+        short_url_iexact (str | Unset):
+        short_url_in (list[str] | Unset):
+        short_url_iregex (str | Unset):
+        short_url_isnull (bool | Unset):
+        short_url_istartswith (str | Unset):
+        short_url_lt (str | Unset):
+        short_url_lte (str | Unset):
+        short_url_range (list[str] | Unset):
+        short_url_regex (str | Unset):
+        short_url_startswith (str | Unset):
+        url_query (str | Unset):
+        url_contains (str | Unset):
+        url_endswith (str | Unset):
+        url_gt (str | Unset):
+        url_gte (str | Unset):
+        url_icontains (str | Unset):
+        url_iendswith (str | Unset):
+        url_iexact (str | Unset):
+        url_in (list[str] | Unset):
+        url_iregex (str | Unset):
+        url_isnull (bool | Unset):
+        url_istartswith (str | Unset):
+        url_lt (str | Unset):
+        url_lte (str | Unset):
+        url_range (list[str] | Unset):
+        url_regex (str | Unset):
+        url_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -642,180 +642,180 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    identifier_type: Union[Unset, IdentifiersListIdentifierType] = UNSET,
-    identifier_type_contains: Union[Unset, str] = UNSET,
-    identifier_type_endswith: Union[Unset, str] = UNSET,
-    identifier_type_gt: Union[Unset, str] = UNSET,
-    identifier_type_gte: Union[Unset, str] = UNSET,
-    identifier_type_icontains: Union[Unset, str] = UNSET,
-    identifier_type_iendswith: Union[Unset, str] = UNSET,
-    identifier_type_iexact: Union[Unset, str] = UNSET,
-    identifier_type_in: Union[Unset, list[str]] = UNSET,
-    identifier_type_iregex: Union[Unset, str] = UNSET,
-    identifier_type_isnull: Union[Unset, bool] = UNSET,
-    identifier_type_istartswith: Union[Unset, str] = UNSET,
-    identifier_type_lt: Union[Unset, str] = UNSET,
-    identifier_type_lte: Union[Unset, str] = UNSET,
-    identifier_type_range: Union[Unset, list[str]] = UNSET,
-    identifier_type_regex: Union[Unset, str] = UNSET,
-    identifier_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    short_url: Union[Unset, str] = UNSET,
-    short_url_contains: Union[Unset, str] = UNSET,
-    short_url_endswith: Union[Unset, str] = UNSET,
-    short_url_gt: Union[Unset, str] = UNSET,
-    short_url_gte: Union[Unset, str] = UNSET,
-    short_url_icontains: Union[Unset, str] = UNSET,
-    short_url_iendswith: Union[Unset, str] = UNSET,
-    short_url_iexact: Union[Unset, str] = UNSET,
-    short_url_in: Union[Unset, list[str]] = UNSET,
-    short_url_iregex: Union[Unset, str] = UNSET,
-    short_url_isnull: Union[Unset, bool] = UNSET,
-    short_url_istartswith: Union[Unset, str] = UNSET,
-    short_url_lt: Union[Unset, str] = UNSET,
-    short_url_lte: Union[Unset, str] = UNSET,
-    short_url_range: Union[Unset, list[str]] = UNSET,
-    short_url_regex: Union[Unset, str] = UNSET,
-    short_url_startswith: Union[Unset, str] = UNSET,
-    url_query: Union[Unset, str] = UNSET,
-    url_contains: Union[Unset, str] = UNSET,
-    url_endswith: Union[Unset, str] = UNSET,
-    url_gt: Union[Unset, str] = UNSET,
-    url_gte: Union[Unset, str] = UNSET,
-    url_icontains: Union[Unset, str] = UNSET,
-    url_iendswith: Union[Unset, str] = UNSET,
-    url_iexact: Union[Unset, str] = UNSET,
-    url_in: Union[Unset, list[str]] = UNSET,
-    url_iregex: Union[Unset, str] = UNSET,
-    url_isnull: Union[Unset, bool] = UNSET,
-    url_istartswith: Union[Unset, str] = UNSET,
-    url_lt: Union[Unset, str] = UNSET,
-    url_lte: Union[Unset, str] = UNSET,
-    url_range: Union[Unset, list[str]] = UNSET,
-    url_regex: Union[Unset, str] = UNSET,
-    url_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedIdentifierReadList]:
+    identifier_type: IdentifiersListIdentifierType | Unset = UNSET,
+    identifier_type_contains: str | Unset = UNSET,
+    identifier_type_endswith: str | Unset = UNSET,
+    identifier_type_gt: str | Unset = UNSET,
+    identifier_type_gte: str | Unset = UNSET,
+    identifier_type_icontains: str | Unset = UNSET,
+    identifier_type_iendswith: str | Unset = UNSET,
+    identifier_type_iexact: str | Unset = UNSET,
+    identifier_type_in: list[str] | Unset = UNSET,
+    identifier_type_iregex: str | Unset = UNSET,
+    identifier_type_isnull: bool | Unset = UNSET,
+    identifier_type_istartswith: str | Unset = UNSET,
+    identifier_type_lt: str | Unset = UNSET,
+    identifier_type_lte: str | Unset = UNSET,
+    identifier_type_range: list[str] | Unset = UNSET,
+    identifier_type_regex: str | Unset = UNSET,
+    identifier_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    short_url: str | Unset = UNSET,
+    short_url_contains: str | Unset = UNSET,
+    short_url_endswith: str | Unset = UNSET,
+    short_url_gt: str | Unset = UNSET,
+    short_url_gte: str | Unset = UNSET,
+    short_url_icontains: str | Unset = UNSET,
+    short_url_iendswith: str | Unset = UNSET,
+    short_url_iexact: str | Unset = UNSET,
+    short_url_in: list[str] | Unset = UNSET,
+    short_url_iregex: str | Unset = UNSET,
+    short_url_isnull: bool | Unset = UNSET,
+    short_url_istartswith: str | Unset = UNSET,
+    short_url_lt: str | Unset = UNSET,
+    short_url_lte: str | Unset = UNSET,
+    short_url_range: list[str] | Unset = UNSET,
+    short_url_regex: str | Unset = UNSET,
+    short_url_startswith: str | Unset = UNSET,
+    url_query: str | Unset = UNSET,
+    url_contains: str | Unset = UNSET,
+    url_endswith: str | Unset = UNSET,
+    url_gt: str | Unset = UNSET,
+    url_gte: str | Unset = UNSET,
+    url_icontains: str | Unset = UNSET,
+    url_iendswith: str | Unset = UNSET,
+    url_iexact: str | Unset = UNSET,
+    url_in: list[str] | Unset = UNSET,
+    url_iregex: str | Unset = UNSET,
+    url_isnull: bool | Unset = UNSET,
+    url_istartswith: str | Unset = UNSET,
+    url_lt: str | Unset = UNSET,
+    url_lte: str | Unset = UNSET,
+    url_range: list[str] | Unset = UNSET,
+    url_regex: str | Unset = UNSET,
+    url_startswith: str | Unset = UNSET,
+) -> PaginatedIdentifierReadList | None:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
-        identifier_type (Union[Unset, IdentifiersListIdentifierType]):
-        identifier_type_contains (Union[Unset, str]):
-        identifier_type_endswith (Union[Unset, str]):
-        identifier_type_gt (Union[Unset, str]):
-        identifier_type_gte (Union[Unset, str]):
-        identifier_type_icontains (Union[Unset, str]):
-        identifier_type_iendswith (Union[Unset, str]):
-        identifier_type_iexact (Union[Unset, str]):
-        identifier_type_in (Union[Unset, list[str]]):
-        identifier_type_iregex (Union[Unset, str]):
-        identifier_type_isnull (Union[Unset, bool]):
-        identifier_type_istartswith (Union[Unset, str]):
-        identifier_type_lt (Union[Unset, str]):
-        identifier_type_lte (Union[Unset, str]):
-        identifier_type_range (Union[Unset, list[str]]):
-        identifier_type_regex (Union[Unset, str]):
-        identifier_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        short_url (Union[Unset, str]):
-        short_url_contains (Union[Unset, str]):
-        short_url_endswith (Union[Unset, str]):
-        short_url_gt (Union[Unset, str]):
-        short_url_gte (Union[Unset, str]):
-        short_url_icontains (Union[Unset, str]):
-        short_url_iendswith (Union[Unset, str]):
-        short_url_iexact (Union[Unset, str]):
-        short_url_in (Union[Unset, list[str]]):
-        short_url_iregex (Union[Unset, str]):
-        short_url_isnull (Union[Unset, bool]):
-        short_url_istartswith (Union[Unset, str]):
-        short_url_lt (Union[Unset, str]):
-        short_url_lte (Union[Unset, str]):
-        short_url_range (Union[Unset, list[str]]):
-        short_url_regex (Union[Unset, str]):
-        short_url_startswith (Union[Unset, str]):
-        url_query (Union[Unset, str]):
-        url_contains (Union[Unset, str]):
-        url_endswith (Union[Unset, str]):
-        url_gt (Union[Unset, str]):
-        url_gte (Union[Unset, str]):
-        url_icontains (Union[Unset, str]):
-        url_iendswith (Union[Unset, str]):
-        url_iexact (Union[Unset, str]):
-        url_in (Union[Unset, list[str]]):
-        url_iregex (Union[Unset, str]):
-        url_isnull (Union[Unset, bool]):
-        url_istartswith (Union[Unset, str]):
-        url_lt (Union[Unset, str]):
-        url_lte (Union[Unset, str]):
-        url_range (Union[Unset, list[str]]):
-        url_regex (Union[Unset, str]):
-        url_startswith (Union[Unset, str]):
+        identifier_type (IdentifiersListIdentifierType | Unset):
+        identifier_type_contains (str | Unset):
+        identifier_type_endswith (str | Unset):
+        identifier_type_gt (str | Unset):
+        identifier_type_gte (str | Unset):
+        identifier_type_icontains (str | Unset):
+        identifier_type_iendswith (str | Unset):
+        identifier_type_iexact (str | Unset):
+        identifier_type_in (list[str] | Unset):
+        identifier_type_iregex (str | Unset):
+        identifier_type_isnull (bool | Unset):
+        identifier_type_istartswith (str | Unset):
+        identifier_type_lt (str | Unset):
+        identifier_type_lte (str | Unset):
+        identifier_type_range (list[str] | Unset):
+        identifier_type_regex (str | Unset):
+        identifier_type_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        short_url (str | Unset):
+        short_url_contains (str | Unset):
+        short_url_endswith (str | Unset):
+        short_url_gt (str | Unset):
+        short_url_gte (str | Unset):
+        short_url_icontains (str | Unset):
+        short_url_iendswith (str | Unset):
+        short_url_iexact (str | Unset):
+        short_url_in (list[str] | Unset):
+        short_url_iregex (str | Unset):
+        short_url_isnull (bool | Unset):
+        short_url_istartswith (str | Unset):
+        short_url_lt (str | Unset):
+        short_url_lte (str | Unset):
+        short_url_range (list[str] | Unset):
+        short_url_regex (str | Unset):
+        short_url_startswith (str | Unset):
+        url_query (str | Unset):
+        url_contains (str | Unset):
+        url_endswith (str | Unset):
+        url_gt (str | Unset):
+        url_gte (str | Unset):
+        url_icontains (str | Unset):
+        url_iendswith (str | Unset):
+        url_iexact (str | Unset):
+        url_in (list[str] | Unset):
+        url_iregex (str | Unset):
+        url_isnull (bool | Unset):
+        url_istartswith (str | Unset):
+        url_lt (str | Unset):
+        url_lte (str | Unset):
+        url_range (list[str] | Unset):
+        url_regex (str | Unset):
+        url_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -918,180 +918,180 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    identifier_type: Union[Unset, IdentifiersListIdentifierType] = UNSET,
-    identifier_type_contains: Union[Unset, str] = UNSET,
-    identifier_type_endswith: Union[Unset, str] = UNSET,
-    identifier_type_gt: Union[Unset, str] = UNSET,
-    identifier_type_gte: Union[Unset, str] = UNSET,
-    identifier_type_icontains: Union[Unset, str] = UNSET,
-    identifier_type_iendswith: Union[Unset, str] = UNSET,
-    identifier_type_iexact: Union[Unset, str] = UNSET,
-    identifier_type_in: Union[Unset, list[str]] = UNSET,
-    identifier_type_iregex: Union[Unset, str] = UNSET,
-    identifier_type_isnull: Union[Unset, bool] = UNSET,
-    identifier_type_istartswith: Union[Unset, str] = UNSET,
-    identifier_type_lt: Union[Unset, str] = UNSET,
-    identifier_type_lte: Union[Unset, str] = UNSET,
-    identifier_type_range: Union[Unset, list[str]] = UNSET,
-    identifier_type_regex: Union[Unset, str] = UNSET,
-    identifier_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    short_url: Union[Unset, str] = UNSET,
-    short_url_contains: Union[Unset, str] = UNSET,
-    short_url_endswith: Union[Unset, str] = UNSET,
-    short_url_gt: Union[Unset, str] = UNSET,
-    short_url_gte: Union[Unset, str] = UNSET,
-    short_url_icontains: Union[Unset, str] = UNSET,
-    short_url_iendswith: Union[Unset, str] = UNSET,
-    short_url_iexact: Union[Unset, str] = UNSET,
-    short_url_in: Union[Unset, list[str]] = UNSET,
-    short_url_iregex: Union[Unset, str] = UNSET,
-    short_url_isnull: Union[Unset, bool] = UNSET,
-    short_url_istartswith: Union[Unset, str] = UNSET,
-    short_url_lt: Union[Unset, str] = UNSET,
-    short_url_lte: Union[Unset, str] = UNSET,
-    short_url_range: Union[Unset, list[str]] = UNSET,
-    short_url_regex: Union[Unset, str] = UNSET,
-    short_url_startswith: Union[Unset, str] = UNSET,
-    url_query: Union[Unset, str] = UNSET,
-    url_contains: Union[Unset, str] = UNSET,
-    url_endswith: Union[Unset, str] = UNSET,
-    url_gt: Union[Unset, str] = UNSET,
-    url_gte: Union[Unset, str] = UNSET,
-    url_icontains: Union[Unset, str] = UNSET,
-    url_iendswith: Union[Unset, str] = UNSET,
-    url_iexact: Union[Unset, str] = UNSET,
-    url_in: Union[Unset, list[str]] = UNSET,
-    url_iregex: Union[Unset, str] = UNSET,
-    url_isnull: Union[Unset, bool] = UNSET,
-    url_istartswith: Union[Unset, str] = UNSET,
-    url_lt: Union[Unset, str] = UNSET,
-    url_lte: Union[Unset, str] = UNSET,
-    url_range: Union[Unset, list[str]] = UNSET,
-    url_regex: Union[Unset, str] = UNSET,
-    url_startswith: Union[Unset, str] = UNSET,
+    identifier_type: IdentifiersListIdentifierType | Unset = UNSET,
+    identifier_type_contains: str | Unset = UNSET,
+    identifier_type_endswith: str | Unset = UNSET,
+    identifier_type_gt: str | Unset = UNSET,
+    identifier_type_gte: str | Unset = UNSET,
+    identifier_type_icontains: str | Unset = UNSET,
+    identifier_type_iendswith: str | Unset = UNSET,
+    identifier_type_iexact: str | Unset = UNSET,
+    identifier_type_in: list[str] | Unset = UNSET,
+    identifier_type_iregex: str | Unset = UNSET,
+    identifier_type_isnull: bool | Unset = UNSET,
+    identifier_type_istartswith: str | Unset = UNSET,
+    identifier_type_lt: str | Unset = UNSET,
+    identifier_type_lte: str | Unset = UNSET,
+    identifier_type_range: list[str] | Unset = UNSET,
+    identifier_type_regex: str | Unset = UNSET,
+    identifier_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    short_url: str | Unset = UNSET,
+    short_url_contains: str | Unset = UNSET,
+    short_url_endswith: str | Unset = UNSET,
+    short_url_gt: str | Unset = UNSET,
+    short_url_gte: str | Unset = UNSET,
+    short_url_icontains: str | Unset = UNSET,
+    short_url_iendswith: str | Unset = UNSET,
+    short_url_iexact: str | Unset = UNSET,
+    short_url_in: list[str] | Unset = UNSET,
+    short_url_iregex: str | Unset = UNSET,
+    short_url_isnull: bool | Unset = UNSET,
+    short_url_istartswith: str | Unset = UNSET,
+    short_url_lt: str | Unset = UNSET,
+    short_url_lte: str | Unset = UNSET,
+    short_url_range: list[str] | Unset = UNSET,
+    short_url_regex: str | Unset = UNSET,
+    short_url_startswith: str | Unset = UNSET,
+    url_query: str | Unset = UNSET,
+    url_contains: str | Unset = UNSET,
+    url_endswith: str | Unset = UNSET,
+    url_gt: str | Unset = UNSET,
+    url_gte: str | Unset = UNSET,
+    url_icontains: str | Unset = UNSET,
+    url_iendswith: str | Unset = UNSET,
+    url_iexact: str | Unset = UNSET,
+    url_in: list[str] | Unset = UNSET,
+    url_iregex: str | Unset = UNSET,
+    url_isnull: bool | Unset = UNSET,
+    url_istartswith: str | Unset = UNSET,
+    url_lt: str | Unset = UNSET,
+    url_lte: str | Unset = UNSET,
+    url_range: list[str] | Unset = UNSET,
+    url_regex: str | Unset = UNSET,
+    url_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedIdentifierReadList]:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
-        identifier_type (Union[Unset, IdentifiersListIdentifierType]):
-        identifier_type_contains (Union[Unset, str]):
-        identifier_type_endswith (Union[Unset, str]):
-        identifier_type_gt (Union[Unset, str]):
-        identifier_type_gte (Union[Unset, str]):
-        identifier_type_icontains (Union[Unset, str]):
-        identifier_type_iendswith (Union[Unset, str]):
-        identifier_type_iexact (Union[Unset, str]):
-        identifier_type_in (Union[Unset, list[str]]):
-        identifier_type_iregex (Union[Unset, str]):
-        identifier_type_isnull (Union[Unset, bool]):
-        identifier_type_istartswith (Union[Unset, str]):
-        identifier_type_lt (Union[Unset, str]):
-        identifier_type_lte (Union[Unset, str]):
-        identifier_type_range (Union[Unset, list[str]]):
-        identifier_type_regex (Union[Unset, str]):
-        identifier_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        short_url (Union[Unset, str]):
-        short_url_contains (Union[Unset, str]):
-        short_url_endswith (Union[Unset, str]):
-        short_url_gt (Union[Unset, str]):
-        short_url_gte (Union[Unset, str]):
-        short_url_icontains (Union[Unset, str]):
-        short_url_iendswith (Union[Unset, str]):
-        short_url_iexact (Union[Unset, str]):
-        short_url_in (Union[Unset, list[str]]):
-        short_url_iregex (Union[Unset, str]):
-        short_url_isnull (Union[Unset, bool]):
-        short_url_istartswith (Union[Unset, str]):
-        short_url_lt (Union[Unset, str]):
-        short_url_lte (Union[Unset, str]):
-        short_url_range (Union[Unset, list[str]]):
-        short_url_regex (Union[Unset, str]):
-        short_url_startswith (Union[Unset, str]):
-        url_query (Union[Unset, str]):
-        url_contains (Union[Unset, str]):
-        url_endswith (Union[Unset, str]):
-        url_gt (Union[Unset, str]):
-        url_gte (Union[Unset, str]):
-        url_icontains (Union[Unset, str]):
-        url_iendswith (Union[Unset, str]):
-        url_iexact (Union[Unset, str]):
-        url_in (Union[Unset, list[str]]):
-        url_iregex (Union[Unset, str]):
-        url_isnull (Union[Unset, bool]):
-        url_istartswith (Union[Unset, str]):
-        url_lt (Union[Unset, str]):
-        url_lte (Union[Unset, str]):
-        url_range (Union[Unset, list[str]]):
-        url_regex (Union[Unset, str]):
-        url_startswith (Union[Unset, str]):
+        identifier_type (IdentifiersListIdentifierType | Unset):
+        identifier_type_contains (str | Unset):
+        identifier_type_endswith (str | Unset):
+        identifier_type_gt (str | Unset):
+        identifier_type_gte (str | Unset):
+        identifier_type_icontains (str | Unset):
+        identifier_type_iendswith (str | Unset):
+        identifier_type_iexact (str | Unset):
+        identifier_type_in (list[str] | Unset):
+        identifier_type_iregex (str | Unset):
+        identifier_type_isnull (bool | Unset):
+        identifier_type_istartswith (str | Unset):
+        identifier_type_lt (str | Unset):
+        identifier_type_lte (str | Unset):
+        identifier_type_range (list[str] | Unset):
+        identifier_type_regex (str | Unset):
+        identifier_type_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        short_url (str | Unset):
+        short_url_contains (str | Unset):
+        short_url_endswith (str | Unset):
+        short_url_gt (str | Unset):
+        short_url_gte (str | Unset):
+        short_url_icontains (str | Unset):
+        short_url_iendswith (str | Unset):
+        short_url_iexact (str | Unset):
+        short_url_in (list[str] | Unset):
+        short_url_iregex (str | Unset):
+        short_url_isnull (bool | Unset):
+        short_url_istartswith (str | Unset):
+        short_url_lt (str | Unset):
+        short_url_lte (str | Unset):
+        short_url_range (list[str] | Unset):
+        short_url_regex (str | Unset):
+        short_url_startswith (str | Unset):
+        url_query (str | Unset):
+        url_contains (str | Unset):
+        url_endswith (str | Unset):
+        url_gt (str | Unset):
+        url_gte (str | Unset):
+        url_icontains (str | Unset):
+        url_iendswith (str | Unset):
+        url_iexact (str | Unset):
+        url_in (list[str] | Unset):
+        url_iregex (str | Unset):
+        url_isnull (bool | Unset):
+        url_istartswith (str | Unset):
+        url_lt (str | Unset):
+        url_lte (str | Unset):
+        url_range (list[str] | Unset):
+        url_regex (str | Unset):
+        url_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1197,180 +1197,180 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    identifier_type: Union[Unset, IdentifiersListIdentifierType] = UNSET,
-    identifier_type_contains: Union[Unset, str] = UNSET,
-    identifier_type_endswith: Union[Unset, str] = UNSET,
-    identifier_type_gt: Union[Unset, str] = UNSET,
-    identifier_type_gte: Union[Unset, str] = UNSET,
-    identifier_type_icontains: Union[Unset, str] = UNSET,
-    identifier_type_iendswith: Union[Unset, str] = UNSET,
-    identifier_type_iexact: Union[Unset, str] = UNSET,
-    identifier_type_in: Union[Unset, list[str]] = UNSET,
-    identifier_type_iregex: Union[Unset, str] = UNSET,
-    identifier_type_isnull: Union[Unset, bool] = UNSET,
-    identifier_type_istartswith: Union[Unset, str] = UNSET,
-    identifier_type_lt: Union[Unset, str] = UNSET,
-    identifier_type_lte: Union[Unset, str] = UNSET,
-    identifier_type_range: Union[Unset, list[str]] = UNSET,
-    identifier_type_regex: Union[Unset, str] = UNSET,
-    identifier_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    short_url: Union[Unset, str] = UNSET,
-    short_url_contains: Union[Unset, str] = UNSET,
-    short_url_endswith: Union[Unset, str] = UNSET,
-    short_url_gt: Union[Unset, str] = UNSET,
-    short_url_gte: Union[Unset, str] = UNSET,
-    short_url_icontains: Union[Unset, str] = UNSET,
-    short_url_iendswith: Union[Unset, str] = UNSET,
-    short_url_iexact: Union[Unset, str] = UNSET,
-    short_url_in: Union[Unset, list[str]] = UNSET,
-    short_url_iregex: Union[Unset, str] = UNSET,
-    short_url_isnull: Union[Unset, bool] = UNSET,
-    short_url_istartswith: Union[Unset, str] = UNSET,
-    short_url_lt: Union[Unset, str] = UNSET,
-    short_url_lte: Union[Unset, str] = UNSET,
-    short_url_range: Union[Unset, list[str]] = UNSET,
-    short_url_regex: Union[Unset, str] = UNSET,
-    short_url_startswith: Union[Unset, str] = UNSET,
-    url_query: Union[Unset, str] = UNSET,
-    url_contains: Union[Unset, str] = UNSET,
-    url_endswith: Union[Unset, str] = UNSET,
-    url_gt: Union[Unset, str] = UNSET,
-    url_gte: Union[Unset, str] = UNSET,
-    url_icontains: Union[Unset, str] = UNSET,
-    url_iendswith: Union[Unset, str] = UNSET,
-    url_iexact: Union[Unset, str] = UNSET,
-    url_in: Union[Unset, list[str]] = UNSET,
-    url_iregex: Union[Unset, str] = UNSET,
-    url_isnull: Union[Unset, bool] = UNSET,
-    url_istartswith: Union[Unset, str] = UNSET,
-    url_lt: Union[Unset, str] = UNSET,
-    url_lte: Union[Unset, str] = UNSET,
-    url_range: Union[Unset, list[str]] = UNSET,
-    url_regex: Union[Unset, str] = UNSET,
-    url_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedIdentifierReadList]:
+    identifier_type: IdentifiersListIdentifierType | Unset = UNSET,
+    identifier_type_contains: str | Unset = UNSET,
+    identifier_type_endswith: str | Unset = UNSET,
+    identifier_type_gt: str | Unset = UNSET,
+    identifier_type_gte: str | Unset = UNSET,
+    identifier_type_icontains: str | Unset = UNSET,
+    identifier_type_iendswith: str | Unset = UNSET,
+    identifier_type_iexact: str | Unset = UNSET,
+    identifier_type_in: list[str] | Unset = UNSET,
+    identifier_type_iregex: str | Unset = UNSET,
+    identifier_type_isnull: bool | Unset = UNSET,
+    identifier_type_istartswith: str | Unset = UNSET,
+    identifier_type_lt: str | Unset = UNSET,
+    identifier_type_lte: str | Unset = UNSET,
+    identifier_type_range: list[str] | Unset = UNSET,
+    identifier_type_regex: str | Unset = UNSET,
+    identifier_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    short_url: str | Unset = UNSET,
+    short_url_contains: str | Unset = UNSET,
+    short_url_endswith: str | Unset = UNSET,
+    short_url_gt: str | Unset = UNSET,
+    short_url_gte: str | Unset = UNSET,
+    short_url_icontains: str | Unset = UNSET,
+    short_url_iendswith: str | Unset = UNSET,
+    short_url_iexact: str | Unset = UNSET,
+    short_url_in: list[str] | Unset = UNSET,
+    short_url_iregex: str | Unset = UNSET,
+    short_url_isnull: bool | Unset = UNSET,
+    short_url_istartswith: str | Unset = UNSET,
+    short_url_lt: str | Unset = UNSET,
+    short_url_lte: str | Unset = UNSET,
+    short_url_range: list[str] | Unset = UNSET,
+    short_url_regex: str | Unset = UNSET,
+    short_url_startswith: str | Unset = UNSET,
+    url_query: str | Unset = UNSET,
+    url_contains: str | Unset = UNSET,
+    url_endswith: str | Unset = UNSET,
+    url_gt: str | Unset = UNSET,
+    url_gte: str | Unset = UNSET,
+    url_icontains: str | Unset = UNSET,
+    url_iendswith: str | Unset = UNSET,
+    url_iexact: str | Unset = UNSET,
+    url_in: list[str] | Unset = UNSET,
+    url_iregex: str | Unset = UNSET,
+    url_isnull: bool | Unset = UNSET,
+    url_istartswith: str | Unset = UNSET,
+    url_lt: str | Unset = UNSET,
+    url_lte: str | Unset = UNSET,
+    url_range: list[str] | Unset = UNSET,
+    url_regex: str | Unset = UNSET,
+    url_startswith: str | Unset = UNSET,
+) -> PaginatedIdentifierReadList | None:
     """Get a list of Identifier objects. Idenfifiers have a 1..*:1 mapping with Observations.
 
     Args:
-        identifier_type (Union[Unset, IdentifiersListIdentifierType]):
-        identifier_type_contains (Union[Unset, str]):
-        identifier_type_endswith (Union[Unset, str]):
-        identifier_type_gt (Union[Unset, str]):
-        identifier_type_gte (Union[Unset, str]):
-        identifier_type_icontains (Union[Unset, str]):
-        identifier_type_iendswith (Union[Unset, str]):
-        identifier_type_iexact (Union[Unset, str]):
-        identifier_type_in (Union[Unset, list[str]]):
-        identifier_type_iregex (Union[Unset, str]):
-        identifier_type_isnull (Union[Unset, bool]):
-        identifier_type_istartswith (Union[Unset, str]):
-        identifier_type_lt (Union[Unset, str]):
-        identifier_type_lte (Union[Unset, str]):
-        identifier_type_range (Union[Unset, list[str]]):
-        identifier_type_regex (Union[Unset, str]):
-        identifier_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        short_url (Union[Unset, str]):
-        short_url_contains (Union[Unset, str]):
-        short_url_endswith (Union[Unset, str]):
-        short_url_gt (Union[Unset, str]):
-        short_url_gte (Union[Unset, str]):
-        short_url_icontains (Union[Unset, str]):
-        short_url_iendswith (Union[Unset, str]):
-        short_url_iexact (Union[Unset, str]):
-        short_url_in (Union[Unset, list[str]]):
-        short_url_iregex (Union[Unset, str]):
-        short_url_isnull (Union[Unset, bool]):
-        short_url_istartswith (Union[Unset, str]):
-        short_url_lt (Union[Unset, str]):
-        short_url_lte (Union[Unset, str]):
-        short_url_range (Union[Unset, list[str]]):
-        short_url_regex (Union[Unset, str]):
-        short_url_startswith (Union[Unset, str]):
-        url_query (Union[Unset, str]):
-        url_contains (Union[Unset, str]):
-        url_endswith (Union[Unset, str]):
-        url_gt (Union[Unset, str]):
-        url_gte (Union[Unset, str]):
-        url_icontains (Union[Unset, str]):
-        url_iendswith (Union[Unset, str]):
-        url_iexact (Union[Unset, str]):
-        url_in (Union[Unset, list[str]]):
-        url_iregex (Union[Unset, str]):
-        url_isnull (Union[Unset, bool]):
-        url_istartswith (Union[Unset, str]):
-        url_lt (Union[Unset, str]):
-        url_lte (Union[Unset, str]):
-        url_range (Union[Unset, list[str]]):
-        url_regex (Union[Unset, str]):
-        url_startswith (Union[Unset, str]):
+        identifier_type (IdentifiersListIdentifierType | Unset):
+        identifier_type_contains (str | Unset):
+        identifier_type_endswith (str | Unset):
+        identifier_type_gt (str | Unset):
+        identifier_type_gte (str | Unset):
+        identifier_type_icontains (str | Unset):
+        identifier_type_iendswith (str | Unset):
+        identifier_type_iexact (str | Unset):
+        identifier_type_in (list[str] | Unset):
+        identifier_type_iregex (str | Unset):
+        identifier_type_isnull (bool | Unset):
+        identifier_type_istartswith (str | Unset):
+        identifier_type_lt (str | Unset):
+        identifier_type_lte (str | Unset):
+        identifier_type_range (list[str] | Unset):
+        identifier_type_regex (str | Unset):
+        identifier_type_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        short_url (str | Unset):
+        short_url_contains (str | Unset):
+        short_url_endswith (str | Unset):
+        short_url_gt (str | Unset):
+        short_url_gte (str | Unset):
+        short_url_icontains (str | Unset):
+        short_url_iendswith (str | Unset):
+        short_url_iexact (str | Unset):
+        short_url_in (list[str] | Unset):
+        short_url_iregex (str | Unset):
+        short_url_isnull (bool | Unset):
+        short_url_istartswith (str | Unset):
+        short_url_lt (str | Unset):
+        short_url_lte (str | Unset):
+        short_url_range (list[str] | Unset):
+        short_url_regex (str | Unset):
+        short_url_startswith (str | Unset):
+        url_query (str | Unset):
+        url_contains (str | Unset):
+        url_endswith (str | Unset):
+        url_gt (str | Unset):
+        url_gte (str | Unset):
+        url_icontains (str | Unset):
+        url_iendswith (str | Unset):
+        url_iexact (str | Unset):
+        url_in (list[str] | Unset):
+        url_iregex (str | Unset):
+        url_isnull (bool | Unset):
+        url_istartswith (str | Unset):
+        url_lt (str | Unset):
+        url_lte (str | Unset):
+        url_range (list[str] | Unset):
+        url_regex (str | Unset):
+        url_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

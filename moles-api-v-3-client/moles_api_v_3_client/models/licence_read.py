@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,12 +21,12 @@ class LicenceRead:
         Attributes:
             ob_id (int):
             licence_url (str):
-            licence_classifications (Union[None, list['LicenceClassificationRead']]):
+            licence_classifications (list[LicenceClassificationRead] | None):
     """
 
     ob_id: int
     licence_url: str
-    licence_classifications: Union[None, list["LicenceClassificationRead"]]
+    licence_classifications: list[LicenceClassificationRead] | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -32,7 +34,7 @@ class LicenceRead:
 
         licence_url = self.licence_url
 
-        licence_classifications: Union[None, list[dict[str, Any]]]
+        licence_classifications: list[dict[str, Any]] | None
         if isinstance(self.licence_classifications, list):
             licence_classifications = []
             for licence_classifications_type_0_item_data in self.licence_classifications:
@@ -63,7 +65,7 @@ class LicenceRead:
 
         licence_url = d.pop("licenceURL")
 
-        def _parse_licence_classifications(data: object) -> Union[None, list["LicenceClassificationRead"]]:
+        def _parse_licence_classifications(data: object) -> list[LicenceClassificationRead] | None:
             if data is None:
                 return data
             try:
@@ -79,9 +81,9 @@ class LicenceRead:
                     licence_classifications_type_0.append(licence_classifications_type_0_item)
 
                 return licence_classifications_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["LicenceClassificationRead"]], data)
+            return cast(list[LicenceClassificationRead] | None, data)
 
         licence_classifications = _parse_licence_classifications(d.pop("licenceClassifications"))
 

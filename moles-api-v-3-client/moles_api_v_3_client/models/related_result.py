@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,24 +19,24 @@ class RelatedResult:
     Attributes:
         ob_id (int):
         data_path (str):
-        old_data_path (Union[Unset, list[int]]):
-        storage_location (Union[Unset, StorageLocationEnum]): * `internal` - internal
+        old_data_path (list[int] | Unset):
+        storage_location (StorageLocationEnum | Unset): * `internal` - internal
             * `external` - external
-        storage_status (Union[Unset, StorageStatusEnum]): * `online` - online
+        storage_status (StorageStatusEnum | Unset): * `online` - online
             * `offline` - offline
-        volume (Union[Unset, int]):
-        number_of_files (Union[Unset, int]):
-        file_format (Union[None, Unset, str]):
+        volume (int | Unset):
+        number_of_files (int | Unset):
+        file_format (None | str | Unset):
     """
 
     ob_id: int
     data_path: str
-    old_data_path: Union[Unset, list[int]] = UNSET
-    storage_location: Union[Unset, StorageLocationEnum] = UNSET
-    storage_status: Union[Unset, StorageStatusEnum] = UNSET
-    volume: Union[Unset, int] = UNSET
-    number_of_files: Union[Unset, int] = UNSET
-    file_format: Union[None, Unset, str] = UNSET
+    old_data_path: list[int] | Unset = UNSET
+    storage_location: StorageLocationEnum | Unset = UNSET
+    storage_status: StorageStatusEnum | Unset = UNSET
+    volume: int | Unset = UNSET
+    number_of_files: int | Unset = UNSET
+    file_format: None | str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -42,15 +44,15 @@ class RelatedResult:
 
         data_path = self.data_path
 
-        old_data_path: Union[Unset, list[int]] = UNSET
+        old_data_path: list[int] | Unset = UNSET
         if not isinstance(self.old_data_path, Unset):
             old_data_path = ",".join(map(str, self.old_data_path))
 
-        storage_location: Union[Unset, str] = UNSET
+        storage_location: str | Unset = UNSET
         if not isinstance(self.storage_location, Unset):
             storage_location = self.storage_location.value
 
-        storage_status: Union[Unset, str] = UNSET
+        storage_status: str | Unset = UNSET
         if not isinstance(self.storage_status, Unset):
             storage_status = self.storage_status.value
 
@@ -58,7 +60,7 @@ class RelatedResult:
 
         number_of_files = self.number_of_files
 
-        file_format: Union[None, Unset, str]
+        file_format: None | str | Unset
         if isinstance(self.file_format, Unset):
             file_format = UNSET
         else:
@@ -97,14 +99,14 @@ class RelatedResult:
         old_data_path = cast(list[int], d.pop("oldDataPath", UNSET))
 
         _storage_location = d.pop("storageLocation", UNSET)
-        storage_location: Union[Unset, StorageLocationEnum]
+        storage_location: StorageLocationEnum | Unset
         if isinstance(_storage_location, Unset):
             storage_location = UNSET
         else:
             storage_location = StorageLocationEnum(_storage_location)
 
         _storage_status = d.pop("storageStatus", UNSET)
-        storage_status: Union[Unset, StorageStatusEnum]
+        storage_status: StorageStatusEnum | Unset
         if isinstance(_storage_status, Unset):
             storage_status = UNSET
         else:
@@ -114,12 +116,12 @@ class RelatedResult:
 
         number_of_files = d.pop("numberOfFiles", UNSET)
 
-        def _parse_file_format(data: object) -> Union[None, Unset, str]:
+        def _parse_file_format(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         file_format = _parse_file_format(d.pop("fileFormat", UNSET))
 

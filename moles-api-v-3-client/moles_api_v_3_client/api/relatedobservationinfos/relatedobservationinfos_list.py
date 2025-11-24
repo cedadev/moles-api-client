@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -14,64 +14,64 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    object_observation: Union[Unset, int] = UNSET,
-    object_observation_gt: Union[Unset, int] = UNSET,
-    object_observation_gte: Union[Unset, int] = UNSET,
-    object_observation_in: Union[Unset, list[int]] = UNSET,
-    object_observation_isnull: Union[Unset, bool] = UNSET,
-    object_observation_lt: Union[Unset, int] = UNSET,
-    object_observation_lte: Union[Unset, int] = UNSET,
-    object_observation_uuid: Union[Unset, str] = UNSET,
-    object_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    relation_type: Union[Unset, RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs] = UNSET,
-    relation_type_contains: Union[Unset, str] = UNSET,
-    relation_type_endswith: Union[Unset, str] = UNSET,
-    relation_type_gt: Union[Unset, str] = UNSET,
-    relation_type_gte: Union[Unset, str] = UNSET,
-    relation_type_icontains: Union[Unset, str] = UNSET,
-    relation_type_iendswith: Union[Unset, str] = UNSET,
-    relation_type_iexact: Union[Unset, str] = UNSET,
-    relation_type_in: Union[Unset, list[str]] = UNSET,
-    relation_type_iregex: Union[Unset, str] = UNSET,
-    relation_type_isnull: Union[Unset, bool] = UNSET,
-    relation_type_istartswith: Union[Unset, str] = UNSET,
-    relation_type_lt: Union[Unset, str] = UNSET,
-    relation_type_lte: Union[Unset, str] = UNSET,
-    relation_type_range: Union[Unset, list[str]] = UNSET,
-    relation_type_regex: Union[Unset, str] = UNSET,
-    relation_type_startswith: Union[Unset, str] = UNSET,
-    subject_observation: Union[Unset, int] = UNSET,
-    subject_observation_gt: Union[Unset, int] = UNSET,
-    subject_observation_gte: Union[Unset, int] = UNSET,
-    subject_observation_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_isnull: Union[Unset, bool] = UNSET,
-    subject_observation_lt: Union[Unset, int] = UNSET,
-    subject_observation_lte: Union[Unset, int] = UNSET,
-    subject_observation_ob_id: Union[Unset, int] = UNSET,
-    subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_uuid: Union[Unset, str] = UNSET,
-    subject_observation_uuid_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    object_observation: int | Unset = UNSET,
+    object_observation_gt: int | Unset = UNSET,
+    object_observation_gte: int | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    object_observation_lt: int | Unset = UNSET,
+    object_observation_lte: int | Unset = UNSET,
+    object_observation_uuid: str | Unset = UNSET,
+    object_observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    relation_type: RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset = UNSET,
+    relation_type_contains: str | Unset = UNSET,
+    relation_type_endswith: str | Unset = UNSET,
+    relation_type_gt: str | Unset = UNSET,
+    relation_type_gte: str | Unset = UNSET,
+    relation_type_icontains: str | Unset = UNSET,
+    relation_type_iendswith: str | Unset = UNSET,
+    relation_type_iexact: str | Unset = UNSET,
+    relation_type_in: list[str] | Unset = UNSET,
+    relation_type_iregex: str | Unset = UNSET,
+    relation_type_isnull: bool | Unset = UNSET,
+    relation_type_istartswith: str | Unset = UNSET,
+    relation_type_lt: str | Unset = UNSET,
+    relation_type_lte: str | Unset = UNSET,
+    relation_type_range: list[str] | Unset = UNSET,
+    relation_type_regex: str | Unset = UNSET,
+    relation_type_startswith: str | Unset = UNSET,
+    subject_observation: int | Unset = UNSET,
+    subject_observation_gt: int | Unset = UNSET,
+    subject_observation_gte: int | Unset = UNSET,
+    subject_observation_in: list[int] | Unset = UNSET,
+    subject_observation_isnull: bool | Unset = UNSET,
+    subject_observation_lt: int | Unset = UNSET,
+    subject_observation_lte: int | Unset = UNSET,
+    subject_observation_ob_id: int | Unset = UNSET,
+    subject_observation_ob_id_in: list[int] | Unset = UNSET,
+    subject_observation_uuid: str | Unset = UNSET,
+    subject_observation_uuid_in: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -95,7 +95,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -111,7 +111,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -127,7 +127,7 @@ def _get_kwargs(
 
     params["objectObservation__gte"] = object_observation_gte
 
-    json_object_observation_in: Union[Unset, list[int]] = UNSET
+    json_object_observation_in: list[int] | Unset = UNSET
     if not isinstance(object_observation_in, Unset):
         json_object_observation_in = ",".join(map(str, object_observation_in))
 
@@ -141,7 +141,7 @@ def _get_kwargs(
 
     params["objectObservation__uuid"] = object_observation_uuid
 
-    json_object_observation_uuid_in: Union[Unset, list[str]] = UNSET
+    json_object_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(object_observation_uuid_in, Unset):
         json_object_observation_uuid_in = ",".join(map(str, object_observation_uuid_in))
 
@@ -151,7 +151,7 @@ def _get_kwargs(
 
     params["ordering"] = ordering
 
-    json_relation_type: Union[Unset, str] = UNSET
+    json_relation_type: str | Unset = UNSET
     if not isinstance(relation_type, Unset):
         json_relation_type = relation_type.value
 
@@ -171,7 +171,7 @@ def _get_kwargs(
 
     params["relationType__iexact"] = relation_type_iexact
 
-    json_relation_type_in: Union[Unset, list[str]] = UNSET
+    json_relation_type_in: list[str] | Unset = UNSET
     if not isinstance(relation_type_in, Unset):
         json_relation_type_in = ",".join(map(str, relation_type_in))
 
@@ -187,7 +187,7 @@ def _get_kwargs(
 
     params["relationType__lte"] = relation_type_lte
 
-    json_relation_type_range: Union[Unset, list[str]] = UNSET
+    json_relation_type_range: list[str] | Unset = UNSET
     if not isinstance(relation_type_range, Unset):
         json_relation_type_range = ",".join(map(str, relation_type_range))
 
@@ -203,7 +203,7 @@ def _get_kwargs(
 
     params["subjectObservation__gte"] = subject_observation_gte
 
-    json_subject_observation_in: Union[Unset, list[int]] = UNSET
+    json_subject_observation_in: list[int] | Unset = UNSET
     if not isinstance(subject_observation_in, Unset):
         json_subject_observation_in = ",".join(map(str, subject_observation_in))
 
@@ -217,7 +217,7 @@ def _get_kwargs(
 
     params["subjectObservation__ob_id"] = subject_observation_ob_id
 
-    json_subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_subject_observation_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(subject_observation_ob_id_in, Unset):
         json_subject_observation_ob_id_in = ",".join(map(str, subject_observation_ob_id_in))
 
@@ -225,7 +225,7 @@ def _get_kwargs(
 
     params["subjectObservation__uuid"] = subject_observation_uuid
 
-    json_subject_observation_uuid_in: Union[Unset, list[str]] = UNSET
+    json_subject_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(subject_observation_uuid_in, Unset):
         json_subject_observation_uuid_in = ",".join(map(str, subject_observation_uuid_in))
 
@@ -243,8 +243,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedRelatedObservationInfoReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedRelatedObservationInfoReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedRelatedObservationInfoReadList.from_dict(response.json())
 
@@ -257,7 +257,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedRelatedObservationInfoReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -270,127 +270,126 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    object_observation: Union[Unset, int] = UNSET,
-    object_observation_gt: Union[Unset, int] = UNSET,
-    object_observation_gte: Union[Unset, int] = UNSET,
-    object_observation_in: Union[Unset, list[int]] = UNSET,
-    object_observation_isnull: Union[Unset, bool] = UNSET,
-    object_observation_lt: Union[Unset, int] = UNSET,
-    object_observation_lte: Union[Unset, int] = UNSET,
-    object_observation_uuid: Union[Unset, str] = UNSET,
-    object_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    relation_type: Union[Unset, RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs] = UNSET,
-    relation_type_contains: Union[Unset, str] = UNSET,
-    relation_type_endswith: Union[Unset, str] = UNSET,
-    relation_type_gt: Union[Unset, str] = UNSET,
-    relation_type_gte: Union[Unset, str] = UNSET,
-    relation_type_icontains: Union[Unset, str] = UNSET,
-    relation_type_iendswith: Union[Unset, str] = UNSET,
-    relation_type_iexact: Union[Unset, str] = UNSET,
-    relation_type_in: Union[Unset, list[str]] = UNSET,
-    relation_type_iregex: Union[Unset, str] = UNSET,
-    relation_type_isnull: Union[Unset, bool] = UNSET,
-    relation_type_istartswith: Union[Unset, str] = UNSET,
-    relation_type_lt: Union[Unset, str] = UNSET,
-    relation_type_lte: Union[Unset, str] = UNSET,
-    relation_type_range: Union[Unset, list[str]] = UNSET,
-    relation_type_regex: Union[Unset, str] = UNSET,
-    relation_type_startswith: Union[Unset, str] = UNSET,
-    subject_observation: Union[Unset, int] = UNSET,
-    subject_observation_gt: Union[Unset, int] = UNSET,
-    subject_observation_gte: Union[Unset, int] = UNSET,
-    subject_observation_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_isnull: Union[Unset, bool] = UNSET,
-    subject_observation_lt: Union[Unset, int] = UNSET,
-    subject_observation_lte: Union[Unset, int] = UNSET,
-    subject_observation_ob_id: Union[Unset, int] = UNSET,
-    subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_uuid: Union[Unset, str] = UNSET,
-    subject_observation_uuid_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    object_observation: int | Unset = UNSET,
+    object_observation_gt: int | Unset = UNSET,
+    object_observation_gte: int | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    object_observation_lt: int | Unset = UNSET,
+    object_observation_lte: int | Unset = UNSET,
+    object_observation_uuid: str | Unset = UNSET,
+    object_observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    relation_type: RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset = UNSET,
+    relation_type_contains: str | Unset = UNSET,
+    relation_type_endswith: str | Unset = UNSET,
+    relation_type_gt: str | Unset = UNSET,
+    relation_type_gte: str | Unset = UNSET,
+    relation_type_icontains: str | Unset = UNSET,
+    relation_type_iendswith: str | Unset = UNSET,
+    relation_type_iexact: str | Unset = UNSET,
+    relation_type_in: list[str] | Unset = UNSET,
+    relation_type_iregex: str | Unset = UNSET,
+    relation_type_isnull: bool | Unset = UNSET,
+    relation_type_istartswith: str | Unset = UNSET,
+    relation_type_lt: str | Unset = UNSET,
+    relation_type_lte: str | Unset = UNSET,
+    relation_type_range: list[str] | Unset = UNSET,
+    relation_type_regex: str | Unset = UNSET,
+    relation_type_startswith: str | Unset = UNSET,
+    subject_observation: int | Unset = UNSET,
+    subject_observation_gt: int | Unset = UNSET,
+    subject_observation_gte: int | Unset = UNSET,
+    subject_observation_in: list[int] | Unset = UNSET,
+    subject_observation_isnull: bool | Unset = UNSET,
+    subject_observation_lt: int | Unset = UNSET,
+    subject_observation_lte: int | Unset = UNSET,
+    subject_observation_ob_id: int | Unset = UNSET,
+    subject_observation_ob_id_in: list[int] | Unset = UNSET,
+    subject_observation_uuid: str | Unset = UNSET,
+    subject_observation_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedRelatedObservationInfoReadList]:
     """Get a list of RelatedObservationInfo objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        object_observation (Union[Unset, int]):
-        object_observation_gt (Union[Unset, int]):
-        object_observation_gte (Union[Unset, int]):
-        object_observation_in (Union[Unset, list[int]]):
-        object_observation_isnull (Union[Unset, bool]):
-        object_observation_lt (Union[Unset, int]):
-        object_observation_lte (Union[Unset, int]):
-        object_observation_uuid (Union[Unset, str]):
-        object_observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        relation_type (Union[Unset,
-            RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs]):
-        relation_type_contains (Union[Unset, str]):
-        relation_type_endswith (Union[Unset, str]):
-        relation_type_gt (Union[Unset, str]):
-        relation_type_gte (Union[Unset, str]):
-        relation_type_icontains (Union[Unset, str]):
-        relation_type_iendswith (Union[Unset, str]):
-        relation_type_iexact (Union[Unset, str]):
-        relation_type_in (Union[Unset, list[str]]):
-        relation_type_iregex (Union[Unset, str]):
-        relation_type_isnull (Union[Unset, bool]):
-        relation_type_istartswith (Union[Unset, str]):
-        relation_type_lt (Union[Unset, str]):
-        relation_type_lte (Union[Unset, str]):
-        relation_type_range (Union[Unset, list[str]]):
-        relation_type_regex (Union[Unset, str]):
-        relation_type_startswith (Union[Unset, str]):
-        subject_observation (Union[Unset, int]):
-        subject_observation_gt (Union[Unset, int]):
-        subject_observation_gte (Union[Unset, int]):
-        subject_observation_in (Union[Unset, list[int]]):
-        subject_observation_isnull (Union[Unset, bool]):
-        subject_observation_lt (Union[Unset, int]):
-        subject_observation_lte (Union[Unset, int]):
-        subject_observation_ob_id (Union[Unset, int]):
-        subject_observation_ob_id_in (Union[Unset, list[int]]):
-        subject_observation_uuid (Union[Unset, str]):
-        subject_observation_uuid_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        object_observation (int | Unset):
+        object_observation_gt (int | Unset):
+        object_observation_gte (int | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        object_observation_lt (int | Unset):
+        object_observation_lte (int | Unset):
+        object_observation_uuid (str | Unset):
+        object_observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        relation_type (RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset):
+        relation_type_contains (str | Unset):
+        relation_type_endswith (str | Unset):
+        relation_type_gt (str | Unset):
+        relation_type_gte (str | Unset):
+        relation_type_icontains (str | Unset):
+        relation_type_iendswith (str | Unset):
+        relation_type_iexact (str | Unset):
+        relation_type_in (list[str] | Unset):
+        relation_type_iregex (str | Unset):
+        relation_type_isnull (bool | Unset):
+        relation_type_istartswith (str | Unset):
+        relation_type_lt (str | Unset):
+        relation_type_lte (str | Unset):
+        relation_type_range (list[str] | Unset):
+        relation_type_regex (str | Unset):
+        relation_type_startswith (str | Unset):
+        subject_observation (int | Unset):
+        subject_observation_gt (int | Unset):
+        subject_observation_gte (int | Unset):
+        subject_observation_in (list[int] | Unset):
+        subject_observation_isnull (bool | Unset):
+        subject_observation_lt (int | Unset):
+        subject_observation_lte (int | Unset):
+        subject_observation_ob_id (int | Unset):
+        subject_observation_ob_id_in (list[int] | Unset):
+        subject_observation_uuid (str | Unset):
+        subject_observation_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -471,127 +470,126 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    object_observation: Union[Unset, int] = UNSET,
-    object_observation_gt: Union[Unset, int] = UNSET,
-    object_observation_gte: Union[Unset, int] = UNSET,
-    object_observation_in: Union[Unset, list[int]] = UNSET,
-    object_observation_isnull: Union[Unset, bool] = UNSET,
-    object_observation_lt: Union[Unset, int] = UNSET,
-    object_observation_lte: Union[Unset, int] = UNSET,
-    object_observation_uuid: Union[Unset, str] = UNSET,
-    object_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    relation_type: Union[Unset, RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs] = UNSET,
-    relation_type_contains: Union[Unset, str] = UNSET,
-    relation_type_endswith: Union[Unset, str] = UNSET,
-    relation_type_gt: Union[Unset, str] = UNSET,
-    relation_type_gte: Union[Unset, str] = UNSET,
-    relation_type_icontains: Union[Unset, str] = UNSET,
-    relation_type_iendswith: Union[Unset, str] = UNSET,
-    relation_type_iexact: Union[Unset, str] = UNSET,
-    relation_type_in: Union[Unset, list[str]] = UNSET,
-    relation_type_iregex: Union[Unset, str] = UNSET,
-    relation_type_isnull: Union[Unset, bool] = UNSET,
-    relation_type_istartswith: Union[Unset, str] = UNSET,
-    relation_type_lt: Union[Unset, str] = UNSET,
-    relation_type_lte: Union[Unset, str] = UNSET,
-    relation_type_range: Union[Unset, list[str]] = UNSET,
-    relation_type_regex: Union[Unset, str] = UNSET,
-    relation_type_startswith: Union[Unset, str] = UNSET,
-    subject_observation: Union[Unset, int] = UNSET,
-    subject_observation_gt: Union[Unset, int] = UNSET,
-    subject_observation_gte: Union[Unset, int] = UNSET,
-    subject_observation_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_isnull: Union[Unset, bool] = UNSET,
-    subject_observation_lt: Union[Unset, int] = UNSET,
-    subject_observation_lte: Union[Unset, int] = UNSET,
-    subject_observation_ob_id: Union[Unset, int] = UNSET,
-    subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_uuid: Union[Unset, str] = UNSET,
-    subject_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedRelatedObservationInfoReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    object_observation: int | Unset = UNSET,
+    object_observation_gt: int | Unset = UNSET,
+    object_observation_gte: int | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    object_observation_lt: int | Unset = UNSET,
+    object_observation_lte: int | Unset = UNSET,
+    object_observation_uuid: str | Unset = UNSET,
+    object_observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    relation_type: RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset = UNSET,
+    relation_type_contains: str | Unset = UNSET,
+    relation_type_endswith: str | Unset = UNSET,
+    relation_type_gt: str | Unset = UNSET,
+    relation_type_gte: str | Unset = UNSET,
+    relation_type_icontains: str | Unset = UNSET,
+    relation_type_iendswith: str | Unset = UNSET,
+    relation_type_iexact: str | Unset = UNSET,
+    relation_type_in: list[str] | Unset = UNSET,
+    relation_type_iregex: str | Unset = UNSET,
+    relation_type_isnull: bool | Unset = UNSET,
+    relation_type_istartswith: str | Unset = UNSET,
+    relation_type_lt: str | Unset = UNSET,
+    relation_type_lte: str | Unset = UNSET,
+    relation_type_range: list[str] | Unset = UNSET,
+    relation_type_regex: str | Unset = UNSET,
+    relation_type_startswith: str | Unset = UNSET,
+    subject_observation: int | Unset = UNSET,
+    subject_observation_gt: int | Unset = UNSET,
+    subject_observation_gte: int | Unset = UNSET,
+    subject_observation_in: list[int] | Unset = UNSET,
+    subject_observation_isnull: bool | Unset = UNSET,
+    subject_observation_lt: int | Unset = UNSET,
+    subject_observation_lte: int | Unset = UNSET,
+    subject_observation_ob_id: int | Unset = UNSET,
+    subject_observation_ob_id_in: list[int] | Unset = UNSET,
+    subject_observation_uuid: str | Unset = UNSET,
+    subject_observation_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedRelatedObservationInfoReadList | None:
     """Get a list of RelatedObservationInfo objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        object_observation (Union[Unset, int]):
-        object_observation_gt (Union[Unset, int]):
-        object_observation_gte (Union[Unset, int]):
-        object_observation_in (Union[Unset, list[int]]):
-        object_observation_isnull (Union[Unset, bool]):
-        object_observation_lt (Union[Unset, int]):
-        object_observation_lte (Union[Unset, int]):
-        object_observation_uuid (Union[Unset, str]):
-        object_observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        relation_type (Union[Unset,
-            RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs]):
-        relation_type_contains (Union[Unset, str]):
-        relation_type_endswith (Union[Unset, str]):
-        relation_type_gt (Union[Unset, str]):
-        relation_type_gte (Union[Unset, str]):
-        relation_type_icontains (Union[Unset, str]):
-        relation_type_iendswith (Union[Unset, str]):
-        relation_type_iexact (Union[Unset, str]):
-        relation_type_in (Union[Unset, list[str]]):
-        relation_type_iregex (Union[Unset, str]):
-        relation_type_isnull (Union[Unset, bool]):
-        relation_type_istartswith (Union[Unset, str]):
-        relation_type_lt (Union[Unset, str]):
-        relation_type_lte (Union[Unset, str]):
-        relation_type_range (Union[Unset, list[str]]):
-        relation_type_regex (Union[Unset, str]):
-        relation_type_startswith (Union[Unset, str]):
-        subject_observation (Union[Unset, int]):
-        subject_observation_gt (Union[Unset, int]):
-        subject_observation_gte (Union[Unset, int]):
-        subject_observation_in (Union[Unset, list[int]]):
-        subject_observation_isnull (Union[Unset, bool]):
-        subject_observation_lt (Union[Unset, int]):
-        subject_observation_lte (Union[Unset, int]):
-        subject_observation_ob_id (Union[Unset, int]):
-        subject_observation_ob_id_in (Union[Unset, list[int]]):
-        subject_observation_uuid (Union[Unset, str]):
-        subject_observation_uuid_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        object_observation (int | Unset):
+        object_observation_gt (int | Unset):
+        object_observation_gte (int | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        object_observation_lt (int | Unset):
+        object_observation_lte (int | Unset):
+        object_observation_uuid (str | Unset):
+        object_observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        relation_type (RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset):
+        relation_type_contains (str | Unset):
+        relation_type_endswith (str | Unset):
+        relation_type_gt (str | Unset):
+        relation_type_gte (str | Unset):
+        relation_type_icontains (str | Unset):
+        relation_type_iendswith (str | Unset):
+        relation_type_iexact (str | Unset):
+        relation_type_in (list[str] | Unset):
+        relation_type_iregex (str | Unset):
+        relation_type_isnull (bool | Unset):
+        relation_type_istartswith (str | Unset):
+        relation_type_lt (str | Unset):
+        relation_type_lte (str | Unset):
+        relation_type_range (list[str] | Unset):
+        relation_type_regex (str | Unset):
+        relation_type_startswith (str | Unset):
+        subject_observation (int | Unset):
+        subject_observation_gt (int | Unset):
+        subject_observation_gte (int | Unset):
+        subject_observation_in (list[int] | Unset):
+        subject_observation_isnull (bool | Unset):
+        subject_observation_lt (int | Unset):
+        subject_observation_lte (int | Unset):
+        subject_observation_ob_id (int | Unset):
+        subject_observation_ob_id_in (list[int] | Unset):
+        subject_observation_uuid (str | Unset):
+        subject_observation_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -667,127 +665,126 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    object_observation: Union[Unset, int] = UNSET,
-    object_observation_gt: Union[Unset, int] = UNSET,
-    object_observation_gte: Union[Unset, int] = UNSET,
-    object_observation_in: Union[Unset, list[int]] = UNSET,
-    object_observation_isnull: Union[Unset, bool] = UNSET,
-    object_observation_lt: Union[Unset, int] = UNSET,
-    object_observation_lte: Union[Unset, int] = UNSET,
-    object_observation_uuid: Union[Unset, str] = UNSET,
-    object_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    relation_type: Union[Unset, RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs] = UNSET,
-    relation_type_contains: Union[Unset, str] = UNSET,
-    relation_type_endswith: Union[Unset, str] = UNSET,
-    relation_type_gt: Union[Unset, str] = UNSET,
-    relation_type_gte: Union[Unset, str] = UNSET,
-    relation_type_icontains: Union[Unset, str] = UNSET,
-    relation_type_iendswith: Union[Unset, str] = UNSET,
-    relation_type_iexact: Union[Unset, str] = UNSET,
-    relation_type_in: Union[Unset, list[str]] = UNSET,
-    relation_type_iregex: Union[Unset, str] = UNSET,
-    relation_type_isnull: Union[Unset, bool] = UNSET,
-    relation_type_istartswith: Union[Unset, str] = UNSET,
-    relation_type_lt: Union[Unset, str] = UNSET,
-    relation_type_lte: Union[Unset, str] = UNSET,
-    relation_type_range: Union[Unset, list[str]] = UNSET,
-    relation_type_regex: Union[Unset, str] = UNSET,
-    relation_type_startswith: Union[Unset, str] = UNSET,
-    subject_observation: Union[Unset, int] = UNSET,
-    subject_observation_gt: Union[Unset, int] = UNSET,
-    subject_observation_gte: Union[Unset, int] = UNSET,
-    subject_observation_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_isnull: Union[Unset, bool] = UNSET,
-    subject_observation_lt: Union[Unset, int] = UNSET,
-    subject_observation_lte: Union[Unset, int] = UNSET,
-    subject_observation_ob_id: Union[Unset, int] = UNSET,
-    subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_uuid: Union[Unset, str] = UNSET,
-    subject_observation_uuid_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    object_observation: int | Unset = UNSET,
+    object_observation_gt: int | Unset = UNSET,
+    object_observation_gte: int | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    object_observation_lt: int | Unset = UNSET,
+    object_observation_lte: int | Unset = UNSET,
+    object_observation_uuid: str | Unset = UNSET,
+    object_observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    relation_type: RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset = UNSET,
+    relation_type_contains: str | Unset = UNSET,
+    relation_type_endswith: str | Unset = UNSET,
+    relation_type_gt: str | Unset = UNSET,
+    relation_type_gte: str | Unset = UNSET,
+    relation_type_icontains: str | Unset = UNSET,
+    relation_type_iendswith: str | Unset = UNSET,
+    relation_type_iexact: str | Unset = UNSET,
+    relation_type_in: list[str] | Unset = UNSET,
+    relation_type_iregex: str | Unset = UNSET,
+    relation_type_isnull: bool | Unset = UNSET,
+    relation_type_istartswith: str | Unset = UNSET,
+    relation_type_lt: str | Unset = UNSET,
+    relation_type_lte: str | Unset = UNSET,
+    relation_type_range: list[str] | Unset = UNSET,
+    relation_type_regex: str | Unset = UNSET,
+    relation_type_startswith: str | Unset = UNSET,
+    subject_observation: int | Unset = UNSET,
+    subject_observation_gt: int | Unset = UNSET,
+    subject_observation_gte: int | Unset = UNSET,
+    subject_observation_in: list[int] | Unset = UNSET,
+    subject_observation_isnull: bool | Unset = UNSET,
+    subject_observation_lt: int | Unset = UNSET,
+    subject_observation_lte: int | Unset = UNSET,
+    subject_observation_ob_id: int | Unset = UNSET,
+    subject_observation_ob_id_in: list[int] | Unset = UNSET,
+    subject_observation_uuid: str | Unset = UNSET,
+    subject_observation_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedRelatedObservationInfoReadList]:
     """Get a list of RelatedObservationInfo objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        object_observation (Union[Unset, int]):
-        object_observation_gt (Union[Unset, int]):
-        object_observation_gte (Union[Unset, int]):
-        object_observation_in (Union[Unset, list[int]]):
-        object_observation_isnull (Union[Unset, bool]):
-        object_observation_lt (Union[Unset, int]):
-        object_observation_lte (Union[Unset, int]):
-        object_observation_uuid (Union[Unset, str]):
-        object_observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        relation_type (Union[Unset,
-            RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs]):
-        relation_type_contains (Union[Unset, str]):
-        relation_type_endswith (Union[Unset, str]):
-        relation_type_gt (Union[Unset, str]):
-        relation_type_gte (Union[Unset, str]):
-        relation_type_icontains (Union[Unset, str]):
-        relation_type_iendswith (Union[Unset, str]):
-        relation_type_iexact (Union[Unset, str]):
-        relation_type_in (Union[Unset, list[str]]):
-        relation_type_iregex (Union[Unset, str]):
-        relation_type_isnull (Union[Unset, bool]):
-        relation_type_istartswith (Union[Unset, str]):
-        relation_type_lt (Union[Unset, str]):
-        relation_type_lte (Union[Unset, str]):
-        relation_type_range (Union[Unset, list[str]]):
-        relation_type_regex (Union[Unset, str]):
-        relation_type_startswith (Union[Unset, str]):
-        subject_observation (Union[Unset, int]):
-        subject_observation_gt (Union[Unset, int]):
-        subject_observation_gte (Union[Unset, int]):
-        subject_observation_in (Union[Unset, list[int]]):
-        subject_observation_isnull (Union[Unset, bool]):
-        subject_observation_lt (Union[Unset, int]):
-        subject_observation_lte (Union[Unset, int]):
-        subject_observation_ob_id (Union[Unset, int]):
-        subject_observation_ob_id_in (Union[Unset, list[int]]):
-        subject_observation_uuid (Union[Unset, str]):
-        subject_observation_uuid_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        object_observation (int | Unset):
+        object_observation_gt (int | Unset):
+        object_observation_gte (int | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        object_observation_lt (int | Unset):
+        object_observation_lte (int | Unset):
+        object_observation_uuid (str | Unset):
+        object_observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        relation_type (RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset):
+        relation_type_contains (str | Unset):
+        relation_type_endswith (str | Unset):
+        relation_type_gt (str | Unset):
+        relation_type_gte (str | Unset):
+        relation_type_icontains (str | Unset):
+        relation_type_iendswith (str | Unset):
+        relation_type_iexact (str | Unset):
+        relation_type_in (list[str] | Unset):
+        relation_type_iregex (str | Unset):
+        relation_type_isnull (bool | Unset):
+        relation_type_istartswith (str | Unset):
+        relation_type_lt (str | Unset):
+        relation_type_lte (str | Unset):
+        relation_type_range (list[str] | Unset):
+        relation_type_regex (str | Unset):
+        relation_type_startswith (str | Unset):
+        subject_observation (int | Unset):
+        subject_observation_gt (int | Unset):
+        subject_observation_gte (int | Unset):
+        subject_observation_in (list[int] | Unset):
+        subject_observation_isnull (bool | Unset):
+        subject_observation_lt (int | Unset):
+        subject_observation_lte (int | Unset):
+        subject_observation_ob_id (int | Unset):
+        subject_observation_ob_id_in (list[int] | Unset):
+        subject_observation_uuid (str | Unset):
+        subject_observation_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -866,127 +863,126 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    object_observation: Union[Unset, int] = UNSET,
-    object_observation_gt: Union[Unset, int] = UNSET,
-    object_observation_gte: Union[Unset, int] = UNSET,
-    object_observation_in: Union[Unset, list[int]] = UNSET,
-    object_observation_isnull: Union[Unset, bool] = UNSET,
-    object_observation_lt: Union[Unset, int] = UNSET,
-    object_observation_lte: Union[Unset, int] = UNSET,
-    object_observation_uuid: Union[Unset, str] = UNSET,
-    object_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    relation_type: Union[Unset, RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs] = UNSET,
-    relation_type_contains: Union[Unset, str] = UNSET,
-    relation_type_endswith: Union[Unset, str] = UNSET,
-    relation_type_gt: Union[Unset, str] = UNSET,
-    relation_type_gte: Union[Unset, str] = UNSET,
-    relation_type_icontains: Union[Unset, str] = UNSET,
-    relation_type_iendswith: Union[Unset, str] = UNSET,
-    relation_type_iexact: Union[Unset, str] = UNSET,
-    relation_type_in: Union[Unset, list[str]] = UNSET,
-    relation_type_iregex: Union[Unset, str] = UNSET,
-    relation_type_isnull: Union[Unset, bool] = UNSET,
-    relation_type_istartswith: Union[Unset, str] = UNSET,
-    relation_type_lt: Union[Unset, str] = UNSET,
-    relation_type_lte: Union[Unset, str] = UNSET,
-    relation_type_range: Union[Unset, list[str]] = UNSET,
-    relation_type_regex: Union[Unset, str] = UNSET,
-    relation_type_startswith: Union[Unset, str] = UNSET,
-    subject_observation: Union[Unset, int] = UNSET,
-    subject_observation_gt: Union[Unset, int] = UNSET,
-    subject_observation_gte: Union[Unset, int] = UNSET,
-    subject_observation_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_isnull: Union[Unset, bool] = UNSET,
-    subject_observation_lt: Union[Unset, int] = UNSET,
-    subject_observation_lte: Union[Unset, int] = UNSET,
-    subject_observation_ob_id: Union[Unset, int] = UNSET,
-    subject_observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    subject_observation_uuid: Union[Unset, str] = UNSET,
-    subject_observation_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedRelatedObservationInfoReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    object_observation: int | Unset = UNSET,
+    object_observation_gt: int | Unset = UNSET,
+    object_observation_gte: int | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    object_observation_lt: int | Unset = UNSET,
+    object_observation_lte: int | Unset = UNSET,
+    object_observation_uuid: str | Unset = UNSET,
+    object_observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    relation_type: RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset = UNSET,
+    relation_type_contains: str | Unset = UNSET,
+    relation_type_endswith: str | Unset = UNSET,
+    relation_type_gt: str | Unset = UNSET,
+    relation_type_gte: str | Unset = UNSET,
+    relation_type_icontains: str | Unset = UNSET,
+    relation_type_iendswith: str | Unset = UNSET,
+    relation_type_iexact: str | Unset = UNSET,
+    relation_type_in: list[str] | Unset = UNSET,
+    relation_type_iregex: str | Unset = UNSET,
+    relation_type_isnull: bool | Unset = UNSET,
+    relation_type_istartswith: str | Unset = UNSET,
+    relation_type_lt: str | Unset = UNSET,
+    relation_type_lte: str | Unset = UNSET,
+    relation_type_range: list[str] | Unset = UNSET,
+    relation_type_regex: str | Unset = UNSET,
+    relation_type_startswith: str | Unset = UNSET,
+    subject_observation: int | Unset = UNSET,
+    subject_observation_gt: int | Unset = UNSET,
+    subject_observation_gte: int | Unset = UNSET,
+    subject_observation_in: list[int] | Unset = UNSET,
+    subject_observation_isnull: bool | Unset = UNSET,
+    subject_observation_lt: int | Unset = UNSET,
+    subject_observation_lte: int | Unset = UNSET,
+    subject_observation_ob_id: int | Unset = UNSET,
+    subject_observation_ob_id_in: list[int] | Unset = UNSET,
+    subject_observation_uuid: str | Unset = UNSET,
+    subject_observation_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedRelatedObservationInfoReadList | None:
     """Get a list of RelatedObservationInfo objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        object_observation (Union[Unset, int]):
-        object_observation_gt (Union[Unset, int]):
-        object_observation_gte (Union[Unset, int]):
-        object_observation_in (Union[Unset, list[int]]):
-        object_observation_isnull (Union[Unset, bool]):
-        object_observation_lt (Union[Unset, int]):
-        object_observation_lte (Union[Unset, int]):
-        object_observation_uuid (Union[Unset, str]):
-        object_observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        relation_type (Union[Unset,
-            RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs]):
-        relation_type_contains (Union[Unset, str]):
-        relation_type_endswith (Union[Unset, str]):
-        relation_type_gt (Union[Unset, str]):
-        relation_type_gte (Union[Unset, str]):
-        relation_type_icontains (Union[Unset, str]):
-        relation_type_iendswith (Union[Unset, str]):
-        relation_type_iexact (Union[Unset, str]):
-        relation_type_in (Union[Unset, list[str]]):
-        relation_type_iregex (Union[Unset, str]):
-        relation_type_isnull (Union[Unset, bool]):
-        relation_type_istartswith (Union[Unset, str]):
-        relation_type_lt (Union[Unset, str]):
-        relation_type_lte (Union[Unset, str]):
-        relation_type_range (Union[Unset, list[str]]):
-        relation_type_regex (Union[Unset, str]):
-        relation_type_startswith (Union[Unset, str]):
-        subject_observation (Union[Unset, int]):
-        subject_observation_gt (Union[Unset, int]):
-        subject_observation_gte (Union[Unset, int]):
-        subject_observation_in (Union[Unset, list[int]]):
-        subject_observation_isnull (Union[Unset, bool]):
-        subject_observation_lt (Union[Unset, int]):
-        subject_observation_lte (Union[Unset, int]):
-        subject_observation_ob_id (Union[Unset, int]):
-        subject_observation_ob_id_in (Union[Unset, list[int]]):
-        subject_observation_uuid (Union[Unset, str]):
-        subject_observation_uuid_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        object_observation (int | Unset):
+        object_observation_gt (int | Unset):
+        object_observation_gte (int | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        object_observation_lt (int | Unset):
+        object_observation_lte (int | Unset):
+        object_observation_uuid (str | Unset):
+        object_observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        relation_type (RelatedobservationinfosListRelationTypeBetweenSubjectAndObjectObs | Unset):
+        relation_type_contains (str | Unset):
+        relation_type_endswith (str | Unset):
+        relation_type_gt (str | Unset):
+        relation_type_gte (str | Unset):
+        relation_type_icontains (str | Unset):
+        relation_type_iendswith (str | Unset):
+        relation_type_iexact (str | Unset):
+        relation_type_in (list[str] | Unset):
+        relation_type_iregex (str | Unset):
+        relation_type_isnull (bool | Unset):
+        relation_type_istartswith (str | Unset):
+        relation_type_lt (str | Unset):
+        relation_type_lte (str | Unset):
+        relation_type_range (list[str] | Unset):
+        relation_type_regex (str | Unset):
+        relation_type_startswith (str | Unset):
+        subject_observation (int | Unset):
+        subject_observation_gt (int | Unset):
+        subject_observation_gte (int | Unset):
+        subject_observation_in (list[int] | Unset):
+        subject_observation_isnull (bool | Unset):
+        subject_observation_lt (int | Unset):
+        subject_observation_lte (int | Unset):
+        subject_observation_ob_id (int | Unset):
+        subject_observation_ob_id_in (list[int] | Unset):
+        subject_observation_uuid (str | Unset):
+        subject_observation_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

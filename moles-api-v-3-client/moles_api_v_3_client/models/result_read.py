@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -25,34 +27,34 @@ class ResultRead:
             ob_id (int):
             uuid (str):
             short_code (str):
-            curation_category (Union[BlankEnum, CurationCategoryEnum]):
+            curation_category (BlankEnum | CurationCategoryEnum):
             data_path (str):
             number_of_files (int):
             volume (int):
-            file_format (Union[None, str]):
+            file_format (None | str):
             storage_status (StorageStatusEnum): * `online` - online
                 * `offline` - offline
             storage_location (StorageLocationEnum): * `internal` - internal
                 * `external` - external
-            old_data_path (list['SimpleRead']):
+            old_data_path (list[SimpleRead]):
             observation (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
-            onlineresource_set (list[Union[None, int]]):
+            onlineresource_set (list[int | None]):
     """
 
     ob_id: int
     uuid: str
     short_code: str
-    curation_category: Union[BlankEnum, CurationCategoryEnum]
+    curation_category: BlankEnum | CurationCategoryEnum
     data_path: str
     number_of_files: int
     volume: int
-    file_format: Union[None, str]
+    file_format: None | str
     storage_status: StorageStatusEnum
     storage_location: StorageLocationEnum
-    old_data_path: list["SimpleRead"]
-    observation: "SimpleRead"
-    onlineresource_set: list[Union[None, int]]
+    old_data_path: list[SimpleRead]
+    observation: SimpleRead
+    onlineresource_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -74,7 +76,7 @@ class ResultRead:
 
         volume = self.volume
 
-        file_format: Union[None, str]
+        file_format: None | str
         file_format = self.file_format
 
         storage_status = self.storage_status.value
@@ -90,7 +92,7 @@ class ResultRead:
 
         onlineresource_set = []
         for onlineresource_set_item_data in self.onlineresource_set:
-            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item: int | None
             onlineresource_set_item = onlineresource_set_item_data
             onlineresource_set.append(onlineresource_set_item)
 
@@ -127,14 +129,14 @@ class ResultRead:
 
         short_code = d.pop("short_code")
 
-        def _parse_curation_category(data: object) -> Union[BlankEnum, CurationCategoryEnum]:
+        def _parse_curation_category(data: object) -> BlankEnum | CurationCategoryEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 curation_category_type_0 = CurationCategoryEnum(data)
 
                 return curation_category_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -150,10 +152,10 @@ class ResultRead:
 
         volume = d.pop("volume")
 
-        def _parse_file_format(data: object) -> Union[None, str]:
+        def _parse_file_format(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         file_format = _parse_file_format(d.pop("fileFormat"))
 
@@ -174,10 +176,10 @@ class ResultRead:
         _onlineresource_set = d.pop("onlineresource_set")
         for onlineresource_set_item_data in _onlineresource_set:
 
-            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+            def _parse_onlineresource_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
 

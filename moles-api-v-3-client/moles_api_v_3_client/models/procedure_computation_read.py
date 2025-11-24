@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,11 +21,11 @@ class ProcedureComputationRead:
             title (str):
             abstract (str):
             keywords (str):
-            input_description (Union[None, int]):
-            output_description (Union[None, int]):
-            software_reference (Union[None, int]):
-            image_details (list[Union[None, int]]):
-            identifier_set (list[Union[None, int]]):
+            input_description (int | None):
+            output_description (int | None):
+            software_reference (int | None):
+            image_details (list[int | None]):
+            identifier_set (list[int | None]):
     """
 
     ob_id: int
@@ -32,11 +34,11 @@ class ProcedureComputationRead:
     title: str
     abstract: str
     keywords: str
-    input_description: Union[None, int]
-    output_description: Union[None, int]
-    software_reference: Union[None, int]
-    image_details: list[Union[None, int]]
-    identifier_set: list[Union[None, int]]
+    input_description: int | None
+    output_description: int | None
+    software_reference: int | None
+    image_details: list[int | None]
+    identifier_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -52,24 +54,24 @@ class ProcedureComputationRead:
 
         keywords = self.keywords
 
-        input_description: Union[None, int]
+        input_description: int | None
         input_description = self.input_description
 
-        output_description: Union[None, int]
+        output_description: int | None
         output_description = self.output_description
 
-        software_reference: Union[None, int]
+        software_reference: int | None
         software_reference = self.software_reference
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
@@ -108,24 +110,24 @@ class ProcedureComputationRead:
 
         keywords = d.pop("keywords")
 
-        def _parse_input_description(data: object) -> Union[None, int]:
+        def _parse_input_description(data: object) -> int | None:
             if data is None:
                 return data
-            return cast(Union[None, int], data)
+            return cast(int | None, data)
 
         input_description = _parse_input_description(d.pop("inputDescription"))
 
-        def _parse_output_description(data: object) -> Union[None, int]:
+        def _parse_output_description(data: object) -> int | None:
             if data is None:
                 return data
-            return cast(Union[None, int], data)
+            return cast(int | None, data)
 
         output_description = _parse_output_description(d.pop("outputDescription"))
 
-        def _parse_software_reference(data: object) -> Union[None, int]:
+        def _parse_software_reference(data: object) -> int | None:
             if data is None:
                 return data
-            return cast(Union[None, int], data)
+            return cast(int | None, data)
 
         software_reference = _parse_software_reference(d.pop("softwareReference"))
 
@@ -133,10 +135,10 @@ class ProcedureComputationRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
@@ -146,10 +148,10 @@ class ProcedureComputationRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 

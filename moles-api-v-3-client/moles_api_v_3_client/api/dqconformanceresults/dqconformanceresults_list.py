@@ -1,6 +1,6 @@
 import datetime
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,155 +12,155 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    date: Union[Unset, datetime.date] = UNSET,
-    date_contained_by: Union[Unset, datetime.date] = UNSET,
-    date_contains: Union[Unset, datetime.date] = UNSET,
-    date_day: Union[Unset, float] = UNSET,
-    date_endswith: Union[Unset, datetime.date] = UNSET,
-    date_gt: Union[Unset, datetime.date] = UNSET,
-    date_gte: Union[Unset, datetime.date] = UNSET,
-    date_icontains: Union[Unset, datetime.date] = UNSET,
-    date_iendswith: Union[Unset, datetime.date] = UNSET,
-    date_iexact: Union[Unset, datetime.date] = UNSET,
-    date_in: Union[Unset, list[datetime.date]] = UNSET,
-    date_iregex: Union[Unset, datetime.date] = UNSET,
-    date_isnull: Union[Unset, bool] = UNSET,
-    date_iso_week_day: Union[Unset, float] = UNSET,
-    date_iso_year: Union[Unset, float] = UNSET,
-    date_istartswith: Union[Unset, datetime.date] = UNSET,
-    date_lt: Union[Unset, datetime.date] = UNSET,
-    date_lte: Union[Unset, datetime.date] = UNSET,
-    date_month: Union[Unset, float] = UNSET,
-    date_quarter: Union[Unset, float] = UNSET,
-    date_range: Union[Unset, list[datetime.date]] = UNSET,
-    date_regex: Union[Unset, datetime.date] = UNSET,
-    date_startswith: Union[Unset, datetime.date] = UNSET,
-    date_week: Union[Unset, float] = UNSET,
-    date_week_day: Union[Unset, float] = UNSET,
-    date_year: Union[Unset, float] = UNSET,
-    explanation: Union[Unset, str] = UNSET,
-    explanation_contains: Union[Unset, str] = UNSET,
-    explanation_endswith: Union[Unset, str] = UNSET,
-    explanation_gt: Union[Unset, str] = UNSET,
-    explanation_gte: Union[Unset, str] = UNSET,
-    explanation_icontains: Union[Unset, str] = UNSET,
-    explanation_iendswith: Union[Unset, str] = UNSET,
-    explanation_iexact: Union[Unset, str] = UNSET,
-    explanation_in: Union[Unset, list[str]] = UNSET,
-    explanation_iregex: Union[Unset, str] = UNSET,
-    explanation_isnull: Union[Unset, bool] = UNSET,
-    explanation_istartswith: Union[Unset, str] = UNSET,
-    explanation_lt: Union[Unset, str] = UNSET,
-    explanation_lte: Union[Unset, str] = UNSET,
-    explanation_range: Union[Unset, list[str]] = UNSET,
-    explanation_regex: Union[Unset, str] = UNSET,
-    explanation_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    passes_test: Union[Unset, bool] = UNSET,
-    passes_test_contains: Union[Unset, bool] = UNSET,
-    passes_test_endswith: Union[Unset, bool] = UNSET,
-    passes_test_gt: Union[Unset, bool] = UNSET,
-    passes_test_gte: Union[Unset, bool] = UNSET,
-    passes_test_icontains: Union[Unset, bool] = UNSET,
-    passes_test_iendswith: Union[Unset, bool] = UNSET,
-    passes_test_iexact: Union[Unset, bool] = UNSET,
-    passes_test_in: Union[Unset, list[bool]] = UNSET,
-    passes_test_iregex: Union[Unset, bool] = UNSET,
-    passes_test_isnull: Union[Unset, bool] = UNSET,
-    passes_test_istartswith: Union[Unset, bool] = UNSET,
-    passes_test_lt: Union[Unset, bool] = UNSET,
-    passes_test_lte: Union[Unset, bool] = UNSET,
-    passes_test_range: Union[Unset, list[bool]] = UNSET,
-    passes_test_regex: Union[Unset, bool] = UNSET,
-    passes_test_startswith: Union[Unset, bool] = UNSET,
-    result_title: Union[Unset, str] = UNSET,
-    result_title_contains: Union[Unset, str] = UNSET,
-    result_title_endswith: Union[Unset, str] = UNSET,
-    result_title_gt: Union[Unset, str] = UNSET,
-    result_title_gte: Union[Unset, str] = UNSET,
-    result_title_icontains: Union[Unset, str] = UNSET,
-    result_title_iendswith: Union[Unset, str] = UNSET,
-    result_title_iexact: Union[Unset, str] = UNSET,
-    result_title_in: Union[Unset, list[str]] = UNSET,
-    result_title_iregex: Union[Unset, str] = UNSET,
-    result_title_isnull: Union[Unset, bool] = UNSET,
-    result_title_istartswith: Union[Unset, str] = UNSET,
-    result_title_lt: Union[Unset, str] = UNSET,
-    result_title_lte: Union[Unset, str] = UNSET,
-    result_title_range: Union[Unset, list[str]] = UNSET,
-    result_title_regex: Union[Unset, str] = UNSET,
-    result_title_startswith: Union[Unset, str] = UNSET,
+    date: datetime.date | Unset = UNSET,
+    date_contained_by: datetime.date | Unset = UNSET,
+    date_contains: datetime.date | Unset = UNSET,
+    date_day: float | Unset = UNSET,
+    date_endswith: datetime.date | Unset = UNSET,
+    date_gt: datetime.date | Unset = UNSET,
+    date_gte: datetime.date | Unset = UNSET,
+    date_icontains: datetime.date | Unset = UNSET,
+    date_iendswith: datetime.date | Unset = UNSET,
+    date_iexact: datetime.date | Unset = UNSET,
+    date_in: list[datetime.date] | Unset = UNSET,
+    date_iregex: datetime.date | Unset = UNSET,
+    date_isnull: bool | Unset = UNSET,
+    date_iso_week_day: float | Unset = UNSET,
+    date_iso_year: float | Unset = UNSET,
+    date_istartswith: datetime.date | Unset = UNSET,
+    date_lt: datetime.date | Unset = UNSET,
+    date_lte: datetime.date | Unset = UNSET,
+    date_month: float | Unset = UNSET,
+    date_quarter: float | Unset = UNSET,
+    date_range: list[datetime.date] | Unset = UNSET,
+    date_regex: datetime.date | Unset = UNSET,
+    date_startswith: datetime.date | Unset = UNSET,
+    date_week: float | Unset = UNSET,
+    date_week_day: float | Unset = UNSET,
+    date_year: float | Unset = UNSET,
+    explanation: str | Unset = UNSET,
+    explanation_contains: str | Unset = UNSET,
+    explanation_endswith: str | Unset = UNSET,
+    explanation_gt: str | Unset = UNSET,
+    explanation_gte: str | Unset = UNSET,
+    explanation_icontains: str | Unset = UNSET,
+    explanation_iendswith: str | Unset = UNSET,
+    explanation_iexact: str | Unset = UNSET,
+    explanation_in: list[str] | Unset = UNSET,
+    explanation_iregex: str | Unset = UNSET,
+    explanation_isnull: bool | Unset = UNSET,
+    explanation_istartswith: str | Unset = UNSET,
+    explanation_lt: str | Unset = UNSET,
+    explanation_lte: str | Unset = UNSET,
+    explanation_range: list[str] | Unset = UNSET,
+    explanation_regex: str | Unset = UNSET,
+    explanation_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    passes_test: bool | Unset = UNSET,
+    passes_test_contains: bool | Unset = UNSET,
+    passes_test_endswith: bool | Unset = UNSET,
+    passes_test_gt: bool | Unset = UNSET,
+    passes_test_gte: bool | Unset = UNSET,
+    passes_test_icontains: bool | Unset = UNSET,
+    passes_test_iendswith: bool | Unset = UNSET,
+    passes_test_iexact: bool | Unset = UNSET,
+    passes_test_in: list[bool] | Unset = UNSET,
+    passes_test_iregex: bool | Unset = UNSET,
+    passes_test_isnull: bool | Unset = UNSET,
+    passes_test_istartswith: bool | Unset = UNSET,
+    passes_test_lt: bool | Unset = UNSET,
+    passes_test_lte: bool | Unset = UNSET,
+    passes_test_range: list[bool] | Unset = UNSET,
+    passes_test_regex: bool | Unset = UNSET,
+    passes_test_startswith: bool | Unset = UNSET,
+    result_title: str | Unset = UNSET,
+    result_title_contains: str | Unset = UNSET,
+    result_title_endswith: str | Unset = UNSET,
+    result_title_gt: str | Unset = UNSET,
+    result_title_gte: str | Unset = UNSET,
+    result_title_icontains: str | Unset = UNSET,
+    result_title_iendswith: str | Unset = UNSET,
+    result_title_iexact: str | Unset = UNSET,
+    result_title_in: list[str] | Unset = UNSET,
+    result_title_iregex: str | Unset = UNSET,
+    result_title_isnull: bool | Unset = UNSET,
+    result_title_istartswith: str | Unset = UNSET,
+    result_title_lt: str | Unset = UNSET,
+    result_title_lte: str | Unset = UNSET,
+    result_title_range: list[str] | Unset = UNSET,
+    result_title_regex: str | Unset = UNSET,
+    result_title_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    json_date: Union[Unset, str] = UNSET
+    json_date: str | Unset = UNSET
     if not isinstance(date, Unset):
         json_date = date.isoformat()
     params["date"] = json_date
 
-    json_date_contained_by: Union[Unset, str] = UNSET
+    json_date_contained_by: str | Unset = UNSET
     if not isinstance(date_contained_by, Unset):
         json_date_contained_by = date_contained_by.isoformat()
     params["date__contained_by"] = json_date_contained_by
 
-    json_date_contains: Union[Unset, str] = UNSET
+    json_date_contains: str | Unset = UNSET
     if not isinstance(date_contains, Unset):
         json_date_contains = date_contains.isoformat()
     params["date__contains"] = json_date_contains
 
     params["date__day"] = date_day
 
-    json_date_endswith: Union[Unset, str] = UNSET
+    json_date_endswith: str | Unset = UNSET
     if not isinstance(date_endswith, Unset):
         json_date_endswith = date_endswith.isoformat()
     params["date__endswith"] = json_date_endswith
 
-    json_date_gt: Union[Unset, str] = UNSET
+    json_date_gt: str | Unset = UNSET
     if not isinstance(date_gt, Unset):
         json_date_gt = date_gt.isoformat()
     params["date__gt"] = json_date_gt
 
-    json_date_gte: Union[Unset, str] = UNSET
+    json_date_gte: str | Unset = UNSET
     if not isinstance(date_gte, Unset):
         json_date_gte = date_gte.isoformat()
     params["date__gte"] = json_date_gte
 
-    json_date_icontains: Union[Unset, str] = UNSET
+    json_date_icontains: str | Unset = UNSET
     if not isinstance(date_icontains, Unset):
         json_date_icontains = date_icontains.isoformat()
     params["date__icontains"] = json_date_icontains
 
-    json_date_iendswith: Union[Unset, str] = UNSET
+    json_date_iendswith: str | Unset = UNSET
     if not isinstance(date_iendswith, Unset):
         json_date_iendswith = date_iendswith.isoformat()
     params["date__iendswith"] = json_date_iendswith
 
-    json_date_iexact: Union[Unset, str] = UNSET
+    json_date_iexact: str | Unset = UNSET
     if not isinstance(date_iexact, Unset):
         json_date_iexact = date_iexact.isoformat()
     params["date__iexact"] = json_date_iexact
 
-    json_date_in: Union[Unset, list[str]] = UNSET
+    json_date_in: list[str] | Unset = UNSET
     if not isinstance(date_in, Unset):
         json_date_in = []
         for date_in_item_data in date_in:
@@ -169,7 +169,7 @@ def _get_kwargs(
 
     params["date__in"] = json_date_in
 
-    json_date_iregex: Union[Unset, str] = UNSET
+    json_date_iregex: str | Unset = UNSET
     if not isinstance(date_iregex, Unset):
         json_date_iregex = date_iregex.isoformat()
     params["date__iregex"] = json_date_iregex
@@ -180,17 +180,17 @@ def _get_kwargs(
 
     params["date__iso_year"] = date_iso_year
 
-    json_date_istartswith: Union[Unset, str] = UNSET
+    json_date_istartswith: str | Unset = UNSET
     if not isinstance(date_istartswith, Unset):
         json_date_istartswith = date_istartswith.isoformat()
     params["date__istartswith"] = json_date_istartswith
 
-    json_date_lt: Union[Unset, str] = UNSET
+    json_date_lt: str | Unset = UNSET
     if not isinstance(date_lt, Unset):
         json_date_lt = date_lt.isoformat()
     params["date__lt"] = json_date_lt
 
-    json_date_lte: Union[Unset, str] = UNSET
+    json_date_lte: str | Unset = UNSET
     if not isinstance(date_lte, Unset):
         json_date_lte = date_lte.isoformat()
     params["date__lte"] = json_date_lte
@@ -199,7 +199,7 @@ def _get_kwargs(
 
     params["date__quarter"] = date_quarter
 
-    json_date_range: Union[Unset, list[str]] = UNSET
+    json_date_range: list[str] | Unset = UNSET
     if not isinstance(date_range, Unset):
         json_date_range = []
         for date_range_item_data in date_range:
@@ -208,12 +208,12 @@ def _get_kwargs(
 
     params["date__range"] = json_date_range
 
-    json_date_regex: Union[Unset, str] = UNSET
+    json_date_regex: str | Unset = UNSET
     if not isinstance(date_regex, Unset):
         json_date_regex = date_regex.isoformat()
     params["date__regex"] = json_date_regex
 
-    json_date_startswith: Union[Unset, str] = UNSET
+    json_date_startswith: str | Unset = UNSET
     if not isinstance(date_startswith, Unset):
         json_date_startswith = date_startswith.isoformat()
     params["date__startswith"] = json_date_startswith
@@ -240,7 +240,7 @@ def _get_kwargs(
 
     params["explanation__iexact"] = explanation_iexact
 
-    json_explanation_in: Union[Unset, list[str]] = UNSET
+    json_explanation_in: list[str] | Unset = UNSET
     if not isinstance(explanation_in, Unset):
         json_explanation_in = ",".join(map(str, explanation_in))
 
@@ -256,7 +256,7 @@ def _get_kwargs(
 
     params["explanation__lte"] = explanation_lte
 
-    json_explanation_range: Union[Unset, list[str]] = UNSET
+    json_explanation_range: list[str] | Unset = UNSET
     if not isinstance(explanation_range, Unset):
         json_explanation_range = ",".join(map(str, explanation_range))
 
@@ -286,7 +286,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -302,7 +302,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -332,7 +332,7 @@ def _get_kwargs(
 
     params["passesTest__iexact"] = passes_test_iexact
 
-    json_passes_test_in: Union[Unset, list[bool]] = UNSET
+    json_passes_test_in: list[bool] | Unset = UNSET
     if not isinstance(passes_test_in, Unset):
         json_passes_test_in = ",".join(map(str, passes_test_in))
 
@@ -348,7 +348,7 @@ def _get_kwargs(
 
     params["passesTest__lte"] = passes_test_lte
 
-    json_passes_test_range: Union[Unset, list[bool]] = UNSET
+    json_passes_test_range: list[bool] | Unset = UNSET
     if not isinstance(passes_test_range, Unset):
         json_passes_test_range = ",".join(map(str, passes_test_range))
 
@@ -374,7 +374,7 @@ def _get_kwargs(
 
     params["resultTitle__iexact"] = result_title_iexact
 
-    json_result_title_in: Union[Unset, list[str]] = UNSET
+    json_result_title_in: list[str] | Unset = UNSET
     if not isinstance(result_title_in, Unset):
         json_result_title_in = ",".join(map(str, result_title_in))
 
@@ -390,7 +390,7 @@ def _get_kwargs(
 
     params["resultTitle__lte"] = result_title_lte
 
-    json_result_title_range: Union[Unset, list[str]] = UNSET
+    json_result_title_range: list[str] | Unset = UNSET
     if not isinstance(result_title_range, Unset):
         json_result_title_range = ",".join(map(str, result_title_range))
 
@@ -412,8 +412,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedDQConformanceResultReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedDQConformanceResultReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedDQConformanceResultReadList.from_dict(response.json())
 
@@ -426,7 +426,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedDQConformanceResultReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -439,206 +439,206 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    date: Union[Unset, datetime.date] = UNSET,
-    date_contained_by: Union[Unset, datetime.date] = UNSET,
-    date_contains: Union[Unset, datetime.date] = UNSET,
-    date_day: Union[Unset, float] = UNSET,
-    date_endswith: Union[Unset, datetime.date] = UNSET,
-    date_gt: Union[Unset, datetime.date] = UNSET,
-    date_gte: Union[Unset, datetime.date] = UNSET,
-    date_icontains: Union[Unset, datetime.date] = UNSET,
-    date_iendswith: Union[Unset, datetime.date] = UNSET,
-    date_iexact: Union[Unset, datetime.date] = UNSET,
-    date_in: Union[Unset, list[datetime.date]] = UNSET,
-    date_iregex: Union[Unset, datetime.date] = UNSET,
-    date_isnull: Union[Unset, bool] = UNSET,
-    date_iso_week_day: Union[Unset, float] = UNSET,
-    date_iso_year: Union[Unset, float] = UNSET,
-    date_istartswith: Union[Unset, datetime.date] = UNSET,
-    date_lt: Union[Unset, datetime.date] = UNSET,
-    date_lte: Union[Unset, datetime.date] = UNSET,
-    date_month: Union[Unset, float] = UNSET,
-    date_quarter: Union[Unset, float] = UNSET,
-    date_range: Union[Unset, list[datetime.date]] = UNSET,
-    date_regex: Union[Unset, datetime.date] = UNSET,
-    date_startswith: Union[Unset, datetime.date] = UNSET,
-    date_week: Union[Unset, float] = UNSET,
-    date_week_day: Union[Unset, float] = UNSET,
-    date_year: Union[Unset, float] = UNSET,
-    explanation: Union[Unset, str] = UNSET,
-    explanation_contains: Union[Unset, str] = UNSET,
-    explanation_endswith: Union[Unset, str] = UNSET,
-    explanation_gt: Union[Unset, str] = UNSET,
-    explanation_gte: Union[Unset, str] = UNSET,
-    explanation_icontains: Union[Unset, str] = UNSET,
-    explanation_iendswith: Union[Unset, str] = UNSET,
-    explanation_iexact: Union[Unset, str] = UNSET,
-    explanation_in: Union[Unset, list[str]] = UNSET,
-    explanation_iregex: Union[Unset, str] = UNSET,
-    explanation_isnull: Union[Unset, bool] = UNSET,
-    explanation_istartswith: Union[Unset, str] = UNSET,
-    explanation_lt: Union[Unset, str] = UNSET,
-    explanation_lte: Union[Unset, str] = UNSET,
-    explanation_range: Union[Unset, list[str]] = UNSET,
-    explanation_regex: Union[Unset, str] = UNSET,
-    explanation_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    passes_test: Union[Unset, bool] = UNSET,
-    passes_test_contains: Union[Unset, bool] = UNSET,
-    passes_test_endswith: Union[Unset, bool] = UNSET,
-    passes_test_gt: Union[Unset, bool] = UNSET,
-    passes_test_gte: Union[Unset, bool] = UNSET,
-    passes_test_icontains: Union[Unset, bool] = UNSET,
-    passes_test_iendswith: Union[Unset, bool] = UNSET,
-    passes_test_iexact: Union[Unset, bool] = UNSET,
-    passes_test_in: Union[Unset, list[bool]] = UNSET,
-    passes_test_iregex: Union[Unset, bool] = UNSET,
-    passes_test_isnull: Union[Unset, bool] = UNSET,
-    passes_test_istartswith: Union[Unset, bool] = UNSET,
-    passes_test_lt: Union[Unset, bool] = UNSET,
-    passes_test_lte: Union[Unset, bool] = UNSET,
-    passes_test_range: Union[Unset, list[bool]] = UNSET,
-    passes_test_regex: Union[Unset, bool] = UNSET,
-    passes_test_startswith: Union[Unset, bool] = UNSET,
-    result_title: Union[Unset, str] = UNSET,
-    result_title_contains: Union[Unset, str] = UNSET,
-    result_title_endswith: Union[Unset, str] = UNSET,
-    result_title_gt: Union[Unset, str] = UNSET,
-    result_title_gte: Union[Unset, str] = UNSET,
-    result_title_icontains: Union[Unset, str] = UNSET,
-    result_title_iendswith: Union[Unset, str] = UNSET,
-    result_title_iexact: Union[Unset, str] = UNSET,
-    result_title_in: Union[Unset, list[str]] = UNSET,
-    result_title_iregex: Union[Unset, str] = UNSET,
-    result_title_isnull: Union[Unset, bool] = UNSET,
-    result_title_istartswith: Union[Unset, str] = UNSET,
-    result_title_lt: Union[Unset, str] = UNSET,
-    result_title_lte: Union[Unset, str] = UNSET,
-    result_title_range: Union[Unset, list[str]] = UNSET,
-    result_title_regex: Union[Unset, str] = UNSET,
-    result_title_startswith: Union[Unset, str] = UNSET,
+    date: datetime.date | Unset = UNSET,
+    date_contained_by: datetime.date | Unset = UNSET,
+    date_contains: datetime.date | Unset = UNSET,
+    date_day: float | Unset = UNSET,
+    date_endswith: datetime.date | Unset = UNSET,
+    date_gt: datetime.date | Unset = UNSET,
+    date_gte: datetime.date | Unset = UNSET,
+    date_icontains: datetime.date | Unset = UNSET,
+    date_iendswith: datetime.date | Unset = UNSET,
+    date_iexact: datetime.date | Unset = UNSET,
+    date_in: list[datetime.date] | Unset = UNSET,
+    date_iregex: datetime.date | Unset = UNSET,
+    date_isnull: bool | Unset = UNSET,
+    date_iso_week_day: float | Unset = UNSET,
+    date_iso_year: float | Unset = UNSET,
+    date_istartswith: datetime.date | Unset = UNSET,
+    date_lt: datetime.date | Unset = UNSET,
+    date_lte: datetime.date | Unset = UNSET,
+    date_month: float | Unset = UNSET,
+    date_quarter: float | Unset = UNSET,
+    date_range: list[datetime.date] | Unset = UNSET,
+    date_regex: datetime.date | Unset = UNSET,
+    date_startswith: datetime.date | Unset = UNSET,
+    date_week: float | Unset = UNSET,
+    date_week_day: float | Unset = UNSET,
+    date_year: float | Unset = UNSET,
+    explanation: str | Unset = UNSET,
+    explanation_contains: str | Unset = UNSET,
+    explanation_endswith: str | Unset = UNSET,
+    explanation_gt: str | Unset = UNSET,
+    explanation_gte: str | Unset = UNSET,
+    explanation_icontains: str | Unset = UNSET,
+    explanation_iendswith: str | Unset = UNSET,
+    explanation_iexact: str | Unset = UNSET,
+    explanation_in: list[str] | Unset = UNSET,
+    explanation_iregex: str | Unset = UNSET,
+    explanation_isnull: bool | Unset = UNSET,
+    explanation_istartswith: str | Unset = UNSET,
+    explanation_lt: str | Unset = UNSET,
+    explanation_lte: str | Unset = UNSET,
+    explanation_range: list[str] | Unset = UNSET,
+    explanation_regex: str | Unset = UNSET,
+    explanation_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    passes_test: bool | Unset = UNSET,
+    passes_test_contains: bool | Unset = UNSET,
+    passes_test_endswith: bool | Unset = UNSET,
+    passes_test_gt: bool | Unset = UNSET,
+    passes_test_gte: bool | Unset = UNSET,
+    passes_test_icontains: bool | Unset = UNSET,
+    passes_test_iendswith: bool | Unset = UNSET,
+    passes_test_iexact: bool | Unset = UNSET,
+    passes_test_in: list[bool] | Unset = UNSET,
+    passes_test_iregex: bool | Unset = UNSET,
+    passes_test_isnull: bool | Unset = UNSET,
+    passes_test_istartswith: bool | Unset = UNSET,
+    passes_test_lt: bool | Unset = UNSET,
+    passes_test_lte: bool | Unset = UNSET,
+    passes_test_range: list[bool] | Unset = UNSET,
+    passes_test_regex: bool | Unset = UNSET,
+    passes_test_startswith: bool | Unset = UNSET,
+    result_title: str | Unset = UNSET,
+    result_title_contains: str | Unset = UNSET,
+    result_title_endswith: str | Unset = UNSET,
+    result_title_gt: str | Unset = UNSET,
+    result_title_gte: str | Unset = UNSET,
+    result_title_icontains: str | Unset = UNSET,
+    result_title_iendswith: str | Unset = UNSET,
+    result_title_iexact: str | Unset = UNSET,
+    result_title_in: list[str] | Unset = UNSET,
+    result_title_iregex: str | Unset = UNSET,
+    result_title_isnull: bool | Unset = UNSET,
+    result_title_istartswith: str | Unset = UNSET,
+    result_title_lt: str | Unset = UNSET,
+    result_title_lte: str | Unset = UNSET,
+    result_title_range: list[str] | Unset = UNSET,
+    result_title_regex: str | Unset = UNSET,
+    result_title_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
-        date (Union[Unset, datetime.date]):
-        date_contained_by (Union[Unset, datetime.date]):
-        date_contains (Union[Unset, datetime.date]):
-        date_day (Union[Unset, float]):
-        date_endswith (Union[Unset, datetime.date]):
-        date_gt (Union[Unset, datetime.date]):
-        date_gte (Union[Unset, datetime.date]):
-        date_icontains (Union[Unset, datetime.date]):
-        date_iendswith (Union[Unset, datetime.date]):
-        date_iexact (Union[Unset, datetime.date]):
-        date_in (Union[Unset, list[datetime.date]]):
-        date_iregex (Union[Unset, datetime.date]):
-        date_isnull (Union[Unset, bool]):
-        date_iso_week_day (Union[Unset, float]):
-        date_iso_year (Union[Unset, float]):
-        date_istartswith (Union[Unset, datetime.date]):
-        date_lt (Union[Unset, datetime.date]):
-        date_lte (Union[Unset, datetime.date]):
-        date_month (Union[Unset, float]):
-        date_quarter (Union[Unset, float]):
-        date_range (Union[Unset, list[datetime.date]]):
-        date_regex (Union[Unset, datetime.date]):
-        date_startswith (Union[Unset, datetime.date]):
-        date_week (Union[Unset, float]):
-        date_week_day (Union[Unset, float]):
-        date_year (Union[Unset, float]):
-        explanation (Union[Unset, str]):
-        explanation_contains (Union[Unset, str]):
-        explanation_endswith (Union[Unset, str]):
-        explanation_gt (Union[Unset, str]):
-        explanation_gte (Union[Unset, str]):
-        explanation_icontains (Union[Unset, str]):
-        explanation_iendswith (Union[Unset, str]):
-        explanation_iexact (Union[Unset, str]):
-        explanation_in (Union[Unset, list[str]]):
-        explanation_iregex (Union[Unset, str]):
-        explanation_isnull (Union[Unset, bool]):
-        explanation_istartswith (Union[Unset, str]):
-        explanation_lt (Union[Unset, str]):
-        explanation_lte (Union[Unset, str]):
-        explanation_range (Union[Unset, list[str]]):
-        explanation_regex (Union[Unset, str]):
-        explanation_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        passes_test (Union[Unset, bool]):
-        passes_test_contains (Union[Unset, bool]):
-        passes_test_endswith (Union[Unset, bool]):
-        passes_test_gt (Union[Unset, bool]):
-        passes_test_gte (Union[Unset, bool]):
-        passes_test_icontains (Union[Unset, bool]):
-        passes_test_iendswith (Union[Unset, bool]):
-        passes_test_iexact (Union[Unset, bool]):
-        passes_test_in (Union[Unset, list[bool]]):
-        passes_test_iregex (Union[Unset, bool]):
-        passes_test_isnull (Union[Unset, bool]):
-        passes_test_istartswith (Union[Unset, bool]):
-        passes_test_lt (Union[Unset, bool]):
-        passes_test_lte (Union[Unset, bool]):
-        passes_test_range (Union[Unset, list[bool]]):
-        passes_test_regex (Union[Unset, bool]):
-        passes_test_startswith (Union[Unset, bool]):
-        result_title (Union[Unset, str]):
-        result_title_contains (Union[Unset, str]):
-        result_title_endswith (Union[Unset, str]):
-        result_title_gt (Union[Unset, str]):
-        result_title_gte (Union[Unset, str]):
-        result_title_icontains (Union[Unset, str]):
-        result_title_iendswith (Union[Unset, str]):
-        result_title_iexact (Union[Unset, str]):
-        result_title_in (Union[Unset, list[str]]):
-        result_title_iregex (Union[Unset, str]):
-        result_title_isnull (Union[Unset, bool]):
-        result_title_istartswith (Union[Unset, str]):
-        result_title_lt (Union[Unset, str]):
-        result_title_lte (Union[Unset, str]):
-        result_title_range (Union[Unset, list[str]]):
-        result_title_regex (Union[Unset, str]):
-        result_title_startswith (Union[Unset, str]):
+        date (datetime.date | Unset):
+        date_contained_by (datetime.date | Unset):
+        date_contains (datetime.date | Unset):
+        date_day (float | Unset):
+        date_endswith (datetime.date | Unset):
+        date_gt (datetime.date | Unset):
+        date_gte (datetime.date | Unset):
+        date_icontains (datetime.date | Unset):
+        date_iendswith (datetime.date | Unset):
+        date_iexact (datetime.date | Unset):
+        date_in (list[datetime.date] | Unset):
+        date_iregex (datetime.date | Unset):
+        date_isnull (bool | Unset):
+        date_iso_week_day (float | Unset):
+        date_iso_year (float | Unset):
+        date_istartswith (datetime.date | Unset):
+        date_lt (datetime.date | Unset):
+        date_lte (datetime.date | Unset):
+        date_month (float | Unset):
+        date_quarter (float | Unset):
+        date_range (list[datetime.date] | Unset):
+        date_regex (datetime.date | Unset):
+        date_startswith (datetime.date | Unset):
+        date_week (float | Unset):
+        date_week_day (float | Unset):
+        date_year (float | Unset):
+        explanation (str | Unset):
+        explanation_contains (str | Unset):
+        explanation_endswith (str | Unset):
+        explanation_gt (str | Unset):
+        explanation_gte (str | Unset):
+        explanation_icontains (str | Unset):
+        explanation_iendswith (str | Unset):
+        explanation_iexact (str | Unset):
+        explanation_in (list[str] | Unset):
+        explanation_iregex (str | Unset):
+        explanation_isnull (bool | Unset):
+        explanation_istartswith (str | Unset):
+        explanation_lt (str | Unset):
+        explanation_lte (str | Unset):
+        explanation_range (list[str] | Unset):
+        explanation_regex (str | Unset):
+        explanation_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        passes_test (bool | Unset):
+        passes_test_contains (bool | Unset):
+        passes_test_endswith (bool | Unset):
+        passes_test_gt (bool | Unset):
+        passes_test_gte (bool | Unset):
+        passes_test_icontains (bool | Unset):
+        passes_test_iendswith (bool | Unset):
+        passes_test_iexact (bool | Unset):
+        passes_test_in (list[bool] | Unset):
+        passes_test_iregex (bool | Unset):
+        passes_test_isnull (bool | Unset):
+        passes_test_istartswith (bool | Unset):
+        passes_test_lt (bool | Unset):
+        passes_test_lte (bool | Unset):
+        passes_test_range (list[bool] | Unset):
+        passes_test_regex (bool | Unset):
+        passes_test_startswith (bool | Unset):
+        result_title (str | Unset):
+        result_title_contains (str | Unset):
+        result_title_endswith (str | Unset):
+        result_title_gt (str | Unset):
+        result_title_gte (str | Unset):
+        result_title_icontains (str | Unset):
+        result_title_iendswith (str | Unset):
+        result_title_iexact (str | Unset):
+        result_title_in (list[str] | Unset):
+        result_title_iregex (str | Unset):
+        result_title_isnull (bool | Unset):
+        result_title_istartswith (str | Unset):
+        result_title_lt (str | Unset):
+        result_title_lte (str | Unset):
+        result_title_range (list[str] | Unset):
+        result_title_regex (str | Unset):
+        result_title_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -759,206 +759,206 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    date: Union[Unset, datetime.date] = UNSET,
-    date_contained_by: Union[Unset, datetime.date] = UNSET,
-    date_contains: Union[Unset, datetime.date] = UNSET,
-    date_day: Union[Unset, float] = UNSET,
-    date_endswith: Union[Unset, datetime.date] = UNSET,
-    date_gt: Union[Unset, datetime.date] = UNSET,
-    date_gte: Union[Unset, datetime.date] = UNSET,
-    date_icontains: Union[Unset, datetime.date] = UNSET,
-    date_iendswith: Union[Unset, datetime.date] = UNSET,
-    date_iexact: Union[Unset, datetime.date] = UNSET,
-    date_in: Union[Unset, list[datetime.date]] = UNSET,
-    date_iregex: Union[Unset, datetime.date] = UNSET,
-    date_isnull: Union[Unset, bool] = UNSET,
-    date_iso_week_day: Union[Unset, float] = UNSET,
-    date_iso_year: Union[Unset, float] = UNSET,
-    date_istartswith: Union[Unset, datetime.date] = UNSET,
-    date_lt: Union[Unset, datetime.date] = UNSET,
-    date_lte: Union[Unset, datetime.date] = UNSET,
-    date_month: Union[Unset, float] = UNSET,
-    date_quarter: Union[Unset, float] = UNSET,
-    date_range: Union[Unset, list[datetime.date]] = UNSET,
-    date_regex: Union[Unset, datetime.date] = UNSET,
-    date_startswith: Union[Unset, datetime.date] = UNSET,
-    date_week: Union[Unset, float] = UNSET,
-    date_week_day: Union[Unset, float] = UNSET,
-    date_year: Union[Unset, float] = UNSET,
-    explanation: Union[Unset, str] = UNSET,
-    explanation_contains: Union[Unset, str] = UNSET,
-    explanation_endswith: Union[Unset, str] = UNSET,
-    explanation_gt: Union[Unset, str] = UNSET,
-    explanation_gte: Union[Unset, str] = UNSET,
-    explanation_icontains: Union[Unset, str] = UNSET,
-    explanation_iendswith: Union[Unset, str] = UNSET,
-    explanation_iexact: Union[Unset, str] = UNSET,
-    explanation_in: Union[Unset, list[str]] = UNSET,
-    explanation_iregex: Union[Unset, str] = UNSET,
-    explanation_isnull: Union[Unset, bool] = UNSET,
-    explanation_istartswith: Union[Unset, str] = UNSET,
-    explanation_lt: Union[Unset, str] = UNSET,
-    explanation_lte: Union[Unset, str] = UNSET,
-    explanation_range: Union[Unset, list[str]] = UNSET,
-    explanation_regex: Union[Unset, str] = UNSET,
-    explanation_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    passes_test: Union[Unset, bool] = UNSET,
-    passes_test_contains: Union[Unset, bool] = UNSET,
-    passes_test_endswith: Union[Unset, bool] = UNSET,
-    passes_test_gt: Union[Unset, bool] = UNSET,
-    passes_test_gte: Union[Unset, bool] = UNSET,
-    passes_test_icontains: Union[Unset, bool] = UNSET,
-    passes_test_iendswith: Union[Unset, bool] = UNSET,
-    passes_test_iexact: Union[Unset, bool] = UNSET,
-    passes_test_in: Union[Unset, list[bool]] = UNSET,
-    passes_test_iregex: Union[Unset, bool] = UNSET,
-    passes_test_isnull: Union[Unset, bool] = UNSET,
-    passes_test_istartswith: Union[Unset, bool] = UNSET,
-    passes_test_lt: Union[Unset, bool] = UNSET,
-    passes_test_lte: Union[Unset, bool] = UNSET,
-    passes_test_range: Union[Unset, list[bool]] = UNSET,
-    passes_test_regex: Union[Unset, bool] = UNSET,
-    passes_test_startswith: Union[Unset, bool] = UNSET,
-    result_title: Union[Unset, str] = UNSET,
-    result_title_contains: Union[Unset, str] = UNSET,
-    result_title_endswith: Union[Unset, str] = UNSET,
-    result_title_gt: Union[Unset, str] = UNSET,
-    result_title_gte: Union[Unset, str] = UNSET,
-    result_title_icontains: Union[Unset, str] = UNSET,
-    result_title_iendswith: Union[Unset, str] = UNSET,
-    result_title_iexact: Union[Unset, str] = UNSET,
-    result_title_in: Union[Unset, list[str]] = UNSET,
-    result_title_iregex: Union[Unset, str] = UNSET,
-    result_title_isnull: Union[Unset, bool] = UNSET,
-    result_title_istartswith: Union[Unset, str] = UNSET,
-    result_title_lt: Union[Unset, str] = UNSET,
-    result_title_lte: Union[Unset, str] = UNSET,
-    result_title_range: Union[Unset, list[str]] = UNSET,
-    result_title_regex: Union[Unset, str] = UNSET,
-    result_title_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDQConformanceResultReadList]:
+    date: datetime.date | Unset = UNSET,
+    date_contained_by: datetime.date | Unset = UNSET,
+    date_contains: datetime.date | Unset = UNSET,
+    date_day: float | Unset = UNSET,
+    date_endswith: datetime.date | Unset = UNSET,
+    date_gt: datetime.date | Unset = UNSET,
+    date_gte: datetime.date | Unset = UNSET,
+    date_icontains: datetime.date | Unset = UNSET,
+    date_iendswith: datetime.date | Unset = UNSET,
+    date_iexact: datetime.date | Unset = UNSET,
+    date_in: list[datetime.date] | Unset = UNSET,
+    date_iregex: datetime.date | Unset = UNSET,
+    date_isnull: bool | Unset = UNSET,
+    date_iso_week_day: float | Unset = UNSET,
+    date_iso_year: float | Unset = UNSET,
+    date_istartswith: datetime.date | Unset = UNSET,
+    date_lt: datetime.date | Unset = UNSET,
+    date_lte: datetime.date | Unset = UNSET,
+    date_month: float | Unset = UNSET,
+    date_quarter: float | Unset = UNSET,
+    date_range: list[datetime.date] | Unset = UNSET,
+    date_regex: datetime.date | Unset = UNSET,
+    date_startswith: datetime.date | Unset = UNSET,
+    date_week: float | Unset = UNSET,
+    date_week_day: float | Unset = UNSET,
+    date_year: float | Unset = UNSET,
+    explanation: str | Unset = UNSET,
+    explanation_contains: str | Unset = UNSET,
+    explanation_endswith: str | Unset = UNSET,
+    explanation_gt: str | Unset = UNSET,
+    explanation_gte: str | Unset = UNSET,
+    explanation_icontains: str | Unset = UNSET,
+    explanation_iendswith: str | Unset = UNSET,
+    explanation_iexact: str | Unset = UNSET,
+    explanation_in: list[str] | Unset = UNSET,
+    explanation_iregex: str | Unset = UNSET,
+    explanation_isnull: bool | Unset = UNSET,
+    explanation_istartswith: str | Unset = UNSET,
+    explanation_lt: str | Unset = UNSET,
+    explanation_lte: str | Unset = UNSET,
+    explanation_range: list[str] | Unset = UNSET,
+    explanation_regex: str | Unset = UNSET,
+    explanation_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    passes_test: bool | Unset = UNSET,
+    passes_test_contains: bool | Unset = UNSET,
+    passes_test_endswith: bool | Unset = UNSET,
+    passes_test_gt: bool | Unset = UNSET,
+    passes_test_gte: bool | Unset = UNSET,
+    passes_test_icontains: bool | Unset = UNSET,
+    passes_test_iendswith: bool | Unset = UNSET,
+    passes_test_iexact: bool | Unset = UNSET,
+    passes_test_in: list[bool] | Unset = UNSET,
+    passes_test_iregex: bool | Unset = UNSET,
+    passes_test_isnull: bool | Unset = UNSET,
+    passes_test_istartswith: bool | Unset = UNSET,
+    passes_test_lt: bool | Unset = UNSET,
+    passes_test_lte: bool | Unset = UNSET,
+    passes_test_range: list[bool] | Unset = UNSET,
+    passes_test_regex: bool | Unset = UNSET,
+    passes_test_startswith: bool | Unset = UNSET,
+    result_title: str | Unset = UNSET,
+    result_title_contains: str | Unset = UNSET,
+    result_title_endswith: str | Unset = UNSET,
+    result_title_gt: str | Unset = UNSET,
+    result_title_gte: str | Unset = UNSET,
+    result_title_icontains: str | Unset = UNSET,
+    result_title_iendswith: str | Unset = UNSET,
+    result_title_iexact: str | Unset = UNSET,
+    result_title_in: list[str] | Unset = UNSET,
+    result_title_iregex: str | Unset = UNSET,
+    result_title_isnull: bool | Unset = UNSET,
+    result_title_istartswith: str | Unset = UNSET,
+    result_title_lt: str | Unset = UNSET,
+    result_title_lte: str | Unset = UNSET,
+    result_title_range: list[str] | Unset = UNSET,
+    result_title_regex: str | Unset = UNSET,
+    result_title_startswith: str | Unset = UNSET,
+) -> PaginatedDQConformanceResultReadList | None:
     """Get a list of DQConformanceResult objects.
 
     Args:
-        date (Union[Unset, datetime.date]):
-        date_contained_by (Union[Unset, datetime.date]):
-        date_contains (Union[Unset, datetime.date]):
-        date_day (Union[Unset, float]):
-        date_endswith (Union[Unset, datetime.date]):
-        date_gt (Union[Unset, datetime.date]):
-        date_gte (Union[Unset, datetime.date]):
-        date_icontains (Union[Unset, datetime.date]):
-        date_iendswith (Union[Unset, datetime.date]):
-        date_iexact (Union[Unset, datetime.date]):
-        date_in (Union[Unset, list[datetime.date]]):
-        date_iregex (Union[Unset, datetime.date]):
-        date_isnull (Union[Unset, bool]):
-        date_iso_week_day (Union[Unset, float]):
-        date_iso_year (Union[Unset, float]):
-        date_istartswith (Union[Unset, datetime.date]):
-        date_lt (Union[Unset, datetime.date]):
-        date_lte (Union[Unset, datetime.date]):
-        date_month (Union[Unset, float]):
-        date_quarter (Union[Unset, float]):
-        date_range (Union[Unset, list[datetime.date]]):
-        date_regex (Union[Unset, datetime.date]):
-        date_startswith (Union[Unset, datetime.date]):
-        date_week (Union[Unset, float]):
-        date_week_day (Union[Unset, float]):
-        date_year (Union[Unset, float]):
-        explanation (Union[Unset, str]):
-        explanation_contains (Union[Unset, str]):
-        explanation_endswith (Union[Unset, str]):
-        explanation_gt (Union[Unset, str]):
-        explanation_gte (Union[Unset, str]):
-        explanation_icontains (Union[Unset, str]):
-        explanation_iendswith (Union[Unset, str]):
-        explanation_iexact (Union[Unset, str]):
-        explanation_in (Union[Unset, list[str]]):
-        explanation_iregex (Union[Unset, str]):
-        explanation_isnull (Union[Unset, bool]):
-        explanation_istartswith (Union[Unset, str]):
-        explanation_lt (Union[Unset, str]):
-        explanation_lte (Union[Unset, str]):
-        explanation_range (Union[Unset, list[str]]):
-        explanation_regex (Union[Unset, str]):
-        explanation_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        passes_test (Union[Unset, bool]):
-        passes_test_contains (Union[Unset, bool]):
-        passes_test_endswith (Union[Unset, bool]):
-        passes_test_gt (Union[Unset, bool]):
-        passes_test_gte (Union[Unset, bool]):
-        passes_test_icontains (Union[Unset, bool]):
-        passes_test_iendswith (Union[Unset, bool]):
-        passes_test_iexact (Union[Unset, bool]):
-        passes_test_in (Union[Unset, list[bool]]):
-        passes_test_iregex (Union[Unset, bool]):
-        passes_test_isnull (Union[Unset, bool]):
-        passes_test_istartswith (Union[Unset, bool]):
-        passes_test_lt (Union[Unset, bool]):
-        passes_test_lte (Union[Unset, bool]):
-        passes_test_range (Union[Unset, list[bool]]):
-        passes_test_regex (Union[Unset, bool]):
-        passes_test_startswith (Union[Unset, bool]):
-        result_title (Union[Unset, str]):
-        result_title_contains (Union[Unset, str]):
-        result_title_endswith (Union[Unset, str]):
-        result_title_gt (Union[Unset, str]):
-        result_title_gte (Union[Unset, str]):
-        result_title_icontains (Union[Unset, str]):
-        result_title_iendswith (Union[Unset, str]):
-        result_title_iexact (Union[Unset, str]):
-        result_title_in (Union[Unset, list[str]]):
-        result_title_iregex (Union[Unset, str]):
-        result_title_isnull (Union[Unset, bool]):
-        result_title_istartswith (Union[Unset, str]):
-        result_title_lt (Union[Unset, str]):
-        result_title_lte (Union[Unset, str]):
-        result_title_range (Union[Unset, list[str]]):
-        result_title_regex (Union[Unset, str]):
-        result_title_startswith (Union[Unset, str]):
+        date (datetime.date | Unset):
+        date_contained_by (datetime.date | Unset):
+        date_contains (datetime.date | Unset):
+        date_day (float | Unset):
+        date_endswith (datetime.date | Unset):
+        date_gt (datetime.date | Unset):
+        date_gte (datetime.date | Unset):
+        date_icontains (datetime.date | Unset):
+        date_iendswith (datetime.date | Unset):
+        date_iexact (datetime.date | Unset):
+        date_in (list[datetime.date] | Unset):
+        date_iregex (datetime.date | Unset):
+        date_isnull (bool | Unset):
+        date_iso_week_day (float | Unset):
+        date_iso_year (float | Unset):
+        date_istartswith (datetime.date | Unset):
+        date_lt (datetime.date | Unset):
+        date_lte (datetime.date | Unset):
+        date_month (float | Unset):
+        date_quarter (float | Unset):
+        date_range (list[datetime.date] | Unset):
+        date_regex (datetime.date | Unset):
+        date_startswith (datetime.date | Unset):
+        date_week (float | Unset):
+        date_week_day (float | Unset):
+        date_year (float | Unset):
+        explanation (str | Unset):
+        explanation_contains (str | Unset):
+        explanation_endswith (str | Unset):
+        explanation_gt (str | Unset):
+        explanation_gte (str | Unset):
+        explanation_icontains (str | Unset):
+        explanation_iendswith (str | Unset):
+        explanation_iexact (str | Unset):
+        explanation_in (list[str] | Unset):
+        explanation_iregex (str | Unset):
+        explanation_isnull (bool | Unset):
+        explanation_istartswith (str | Unset):
+        explanation_lt (str | Unset):
+        explanation_lte (str | Unset):
+        explanation_range (list[str] | Unset):
+        explanation_regex (str | Unset):
+        explanation_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        passes_test (bool | Unset):
+        passes_test_contains (bool | Unset):
+        passes_test_endswith (bool | Unset):
+        passes_test_gt (bool | Unset):
+        passes_test_gte (bool | Unset):
+        passes_test_icontains (bool | Unset):
+        passes_test_iendswith (bool | Unset):
+        passes_test_iexact (bool | Unset):
+        passes_test_in (list[bool] | Unset):
+        passes_test_iregex (bool | Unset):
+        passes_test_isnull (bool | Unset):
+        passes_test_istartswith (bool | Unset):
+        passes_test_lt (bool | Unset):
+        passes_test_lte (bool | Unset):
+        passes_test_range (list[bool] | Unset):
+        passes_test_regex (bool | Unset):
+        passes_test_startswith (bool | Unset):
+        result_title (str | Unset):
+        result_title_contains (str | Unset):
+        result_title_endswith (str | Unset):
+        result_title_gt (str | Unset):
+        result_title_gte (str | Unset):
+        result_title_icontains (str | Unset):
+        result_title_iendswith (str | Unset):
+        result_title_iexact (str | Unset):
+        result_title_in (list[str] | Unset):
+        result_title_iregex (str | Unset):
+        result_title_isnull (bool | Unset):
+        result_title_istartswith (str | Unset):
+        result_title_lt (str | Unset):
+        result_title_lte (str | Unset):
+        result_title_range (list[str] | Unset):
+        result_title_regex (str | Unset):
+        result_title_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1074,206 +1074,206 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    date: Union[Unset, datetime.date] = UNSET,
-    date_contained_by: Union[Unset, datetime.date] = UNSET,
-    date_contains: Union[Unset, datetime.date] = UNSET,
-    date_day: Union[Unset, float] = UNSET,
-    date_endswith: Union[Unset, datetime.date] = UNSET,
-    date_gt: Union[Unset, datetime.date] = UNSET,
-    date_gte: Union[Unset, datetime.date] = UNSET,
-    date_icontains: Union[Unset, datetime.date] = UNSET,
-    date_iendswith: Union[Unset, datetime.date] = UNSET,
-    date_iexact: Union[Unset, datetime.date] = UNSET,
-    date_in: Union[Unset, list[datetime.date]] = UNSET,
-    date_iregex: Union[Unset, datetime.date] = UNSET,
-    date_isnull: Union[Unset, bool] = UNSET,
-    date_iso_week_day: Union[Unset, float] = UNSET,
-    date_iso_year: Union[Unset, float] = UNSET,
-    date_istartswith: Union[Unset, datetime.date] = UNSET,
-    date_lt: Union[Unset, datetime.date] = UNSET,
-    date_lte: Union[Unset, datetime.date] = UNSET,
-    date_month: Union[Unset, float] = UNSET,
-    date_quarter: Union[Unset, float] = UNSET,
-    date_range: Union[Unset, list[datetime.date]] = UNSET,
-    date_regex: Union[Unset, datetime.date] = UNSET,
-    date_startswith: Union[Unset, datetime.date] = UNSET,
-    date_week: Union[Unset, float] = UNSET,
-    date_week_day: Union[Unset, float] = UNSET,
-    date_year: Union[Unset, float] = UNSET,
-    explanation: Union[Unset, str] = UNSET,
-    explanation_contains: Union[Unset, str] = UNSET,
-    explanation_endswith: Union[Unset, str] = UNSET,
-    explanation_gt: Union[Unset, str] = UNSET,
-    explanation_gte: Union[Unset, str] = UNSET,
-    explanation_icontains: Union[Unset, str] = UNSET,
-    explanation_iendswith: Union[Unset, str] = UNSET,
-    explanation_iexact: Union[Unset, str] = UNSET,
-    explanation_in: Union[Unset, list[str]] = UNSET,
-    explanation_iregex: Union[Unset, str] = UNSET,
-    explanation_isnull: Union[Unset, bool] = UNSET,
-    explanation_istartswith: Union[Unset, str] = UNSET,
-    explanation_lt: Union[Unset, str] = UNSET,
-    explanation_lte: Union[Unset, str] = UNSET,
-    explanation_range: Union[Unset, list[str]] = UNSET,
-    explanation_regex: Union[Unset, str] = UNSET,
-    explanation_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    passes_test: Union[Unset, bool] = UNSET,
-    passes_test_contains: Union[Unset, bool] = UNSET,
-    passes_test_endswith: Union[Unset, bool] = UNSET,
-    passes_test_gt: Union[Unset, bool] = UNSET,
-    passes_test_gte: Union[Unset, bool] = UNSET,
-    passes_test_icontains: Union[Unset, bool] = UNSET,
-    passes_test_iendswith: Union[Unset, bool] = UNSET,
-    passes_test_iexact: Union[Unset, bool] = UNSET,
-    passes_test_in: Union[Unset, list[bool]] = UNSET,
-    passes_test_iregex: Union[Unset, bool] = UNSET,
-    passes_test_isnull: Union[Unset, bool] = UNSET,
-    passes_test_istartswith: Union[Unset, bool] = UNSET,
-    passes_test_lt: Union[Unset, bool] = UNSET,
-    passes_test_lte: Union[Unset, bool] = UNSET,
-    passes_test_range: Union[Unset, list[bool]] = UNSET,
-    passes_test_regex: Union[Unset, bool] = UNSET,
-    passes_test_startswith: Union[Unset, bool] = UNSET,
-    result_title: Union[Unset, str] = UNSET,
-    result_title_contains: Union[Unset, str] = UNSET,
-    result_title_endswith: Union[Unset, str] = UNSET,
-    result_title_gt: Union[Unset, str] = UNSET,
-    result_title_gte: Union[Unset, str] = UNSET,
-    result_title_icontains: Union[Unset, str] = UNSET,
-    result_title_iendswith: Union[Unset, str] = UNSET,
-    result_title_iexact: Union[Unset, str] = UNSET,
-    result_title_in: Union[Unset, list[str]] = UNSET,
-    result_title_iregex: Union[Unset, str] = UNSET,
-    result_title_isnull: Union[Unset, bool] = UNSET,
-    result_title_istartswith: Union[Unset, str] = UNSET,
-    result_title_lt: Union[Unset, str] = UNSET,
-    result_title_lte: Union[Unset, str] = UNSET,
-    result_title_range: Union[Unset, list[str]] = UNSET,
-    result_title_regex: Union[Unset, str] = UNSET,
-    result_title_startswith: Union[Unset, str] = UNSET,
+    date: datetime.date | Unset = UNSET,
+    date_contained_by: datetime.date | Unset = UNSET,
+    date_contains: datetime.date | Unset = UNSET,
+    date_day: float | Unset = UNSET,
+    date_endswith: datetime.date | Unset = UNSET,
+    date_gt: datetime.date | Unset = UNSET,
+    date_gte: datetime.date | Unset = UNSET,
+    date_icontains: datetime.date | Unset = UNSET,
+    date_iendswith: datetime.date | Unset = UNSET,
+    date_iexact: datetime.date | Unset = UNSET,
+    date_in: list[datetime.date] | Unset = UNSET,
+    date_iregex: datetime.date | Unset = UNSET,
+    date_isnull: bool | Unset = UNSET,
+    date_iso_week_day: float | Unset = UNSET,
+    date_iso_year: float | Unset = UNSET,
+    date_istartswith: datetime.date | Unset = UNSET,
+    date_lt: datetime.date | Unset = UNSET,
+    date_lte: datetime.date | Unset = UNSET,
+    date_month: float | Unset = UNSET,
+    date_quarter: float | Unset = UNSET,
+    date_range: list[datetime.date] | Unset = UNSET,
+    date_regex: datetime.date | Unset = UNSET,
+    date_startswith: datetime.date | Unset = UNSET,
+    date_week: float | Unset = UNSET,
+    date_week_day: float | Unset = UNSET,
+    date_year: float | Unset = UNSET,
+    explanation: str | Unset = UNSET,
+    explanation_contains: str | Unset = UNSET,
+    explanation_endswith: str | Unset = UNSET,
+    explanation_gt: str | Unset = UNSET,
+    explanation_gte: str | Unset = UNSET,
+    explanation_icontains: str | Unset = UNSET,
+    explanation_iendswith: str | Unset = UNSET,
+    explanation_iexact: str | Unset = UNSET,
+    explanation_in: list[str] | Unset = UNSET,
+    explanation_iregex: str | Unset = UNSET,
+    explanation_isnull: bool | Unset = UNSET,
+    explanation_istartswith: str | Unset = UNSET,
+    explanation_lt: str | Unset = UNSET,
+    explanation_lte: str | Unset = UNSET,
+    explanation_range: list[str] | Unset = UNSET,
+    explanation_regex: str | Unset = UNSET,
+    explanation_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    passes_test: bool | Unset = UNSET,
+    passes_test_contains: bool | Unset = UNSET,
+    passes_test_endswith: bool | Unset = UNSET,
+    passes_test_gt: bool | Unset = UNSET,
+    passes_test_gte: bool | Unset = UNSET,
+    passes_test_icontains: bool | Unset = UNSET,
+    passes_test_iendswith: bool | Unset = UNSET,
+    passes_test_iexact: bool | Unset = UNSET,
+    passes_test_in: list[bool] | Unset = UNSET,
+    passes_test_iregex: bool | Unset = UNSET,
+    passes_test_isnull: bool | Unset = UNSET,
+    passes_test_istartswith: bool | Unset = UNSET,
+    passes_test_lt: bool | Unset = UNSET,
+    passes_test_lte: bool | Unset = UNSET,
+    passes_test_range: list[bool] | Unset = UNSET,
+    passes_test_regex: bool | Unset = UNSET,
+    passes_test_startswith: bool | Unset = UNSET,
+    result_title: str | Unset = UNSET,
+    result_title_contains: str | Unset = UNSET,
+    result_title_endswith: str | Unset = UNSET,
+    result_title_gt: str | Unset = UNSET,
+    result_title_gte: str | Unset = UNSET,
+    result_title_icontains: str | Unset = UNSET,
+    result_title_iendswith: str | Unset = UNSET,
+    result_title_iexact: str | Unset = UNSET,
+    result_title_in: list[str] | Unset = UNSET,
+    result_title_iregex: str | Unset = UNSET,
+    result_title_isnull: bool | Unset = UNSET,
+    result_title_istartswith: str | Unset = UNSET,
+    result_title_lt: str | Unset = UNSET,
+    result_title_lte: str | Unset = UNSET,
+    result_title_range: list[str] | Unset = UNSET,
+    result_title_regex: str | Unset = UNSET,
+    result_title_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedDQConformanceResultReadList]:
     """Get a list of DQConformanceResult objects.
 
     Args:
-        date (Union[Unset, datetime.date]):
-        date_contained_by (Union[Unset, datetime.date]):
-        date_contains (Union[Unset, datetime.date]):
-        date_day (Union[Unset, float]):
-        date_endswith (Union[Unset, datetime.date]):
-        date_gt (Union[Unset, datetime.date]):
-        date_gte (Union[Unset, datetime.date]):
-        date_icontains (Union[Unset, datetime.date]):
-        date_iendswith (Union[Unset, datetime.date]):
-        date_iexact (Union[Unset, datetime.date]):
-        date_in (Union[Unset, list[datetime.date]]):
-        date_iregex (Union[Unset, datetime.date]):
-        date_isnull (Union[Unset, bool]):
-        date_iso_week_day (Union[Unset, float]):
-        date_iso_year (Union[Unset, float]):
-        date_istartswith (Union[Unset, datetime.date]):
-        date_lt (Union[Unset, datetime.date]):
-        date_lte (Union[Unset, datetime.date]):
-        date_month (Union[Unset, float]):
-        date_quarter (Union[Unset, float]):
-        date_range (Union[Unset, list[datetime.date]]):
-        date_regex (Union[Unset, datetime.date]):
-        date_startswith (Union[Unset, datetime.date]):
-        date_week (Union[Unset, float]):
-        date_week_day (Union[Unset, float]):
-        date_year (Union[Unset, float]):
-        explanation (Union[Unset, str]):
-        explanation_contains (Union[Unset, str]):
-        explanation_endswith (Union[Unset, str]):
-        explanation_gt (Union[Unset, str]):
-        explanation_gte (Union[Unset, str]):
-        explanation_icontains (Union[Unset, str]):
-        explanation_iendswith (Union[Unset, str]):
-        explanation_iexact (Union[Unset, str]):
-        explanation_in (Union[Unset, list[str]]):
-        explanation_iregex (Union[Unset, str]):
-        explanation_isnull (Union[Unset, bool]):
-        explanation_istartswith (Union[Unset, str]):
-        explanation_lt (Union[Unset, str]):
-        explanation_lte (Union[Unset, str]):
-        explanation_range (Union[Unset, list[str]]):
-        explanation_regex (Union[Unset, str]):
-        explanation_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        passes_test (Union[Unset, bool]):
-        passes_test_contains (Union[Unset, bool]):
-        passes_test_endswith (Union[Unset, bool]):
-        passes_test_gt (Union[Unset, bool]):
-        passes_test_gte (Union[Unset, bool]):
-        passes_test_icontains (Union[Unset, bool]):
-        passes_test_iendswith (Union[Unset, bool]):
-        passes_test_iexact (Union[Unset, bool]):
-        passes_test_in (Union[Unset, list[bool]]):
-        passes_test_iregex (Union[Unset, bool]):
-        passes_test_isnull (Union[Unset, bool]):
-        passes_test_istartswith (Union[Unset, bool]):
-        passes_test_lt (Union[Unset, bool]):
-        passes_test_lte (Union[Unset, bool]):
-        passes_test_range (Union[Unset, list[bool]]):
-        passes_test_regex (Union[Unset, bool]):
-        passes_test_startswith (Union[Unset, bool]):
-        result_title (Union[Unset, str]):
-        result_title_contains (Union[Unset, str]):
-        result_title_endswith (Union[Unset, str]):
-        result_title_gt (Union[Unset, str]):
-        result_title_gte (Union[Unset, str]):
-        result_title_icontains (Union[Unset, str]):
-        result_title_iendswith (Union[Unset, str]):
-        result_title_iexact (Union[Unset, str]):
-        result_title_in (Union[Unset, list[str]]):
-        result_title_iregex (Union[Unset, str]):
-        result_title_isnull (Union[Unset, bool]):
-        result_title_istartswith (Union[Unset, str]):
-        result_title_lt (Union[Unset, str]):
-        result_title_lte (Union[Unset, str]):
-        result_title_range (Union[Unset, list[str]]):
-        result_title_regex (Union[Unset, str]):
-        result_title_startswith (Union[Unset, str]):
+        date (datetime.date | Unset):
+        date_contained_by (datetime.date | Unset):
+        date_contains (datetime.date | Unset):
+        date_day (float | Unset):
+        date_endswith (datetime.date | Unset):
+        date_gt (datetime.date | Unset):
+        date_gte (datetime.date | Unset):
+        date_icontains (datetime.date | Unset):
+        date_iendswith (datetime.date | Unset):
+        date_iexact (datetime.date | Unset):
+        date_in (list[datetime.date] | Unset):
+        date_iregex (datetime.date | Unset):
+        date_isnull (bool | Unset):
+        date_iso_week_day (float | Unset):
+        date_iso_year (float | Unset):
+        date_istartswith (datetime.date | Unset):
+        date_lt (datetime.date | Unset):
+        date_lte (datetime.date | Unset):
+        date_month (float | Unset):
+        date_quarter (float | Unset):
+        date_range (list[datetime.date] | Unset):
+        date_regex (datetime.date | Unset):
+        date_startswith (datetime.date | Unset):
+        date_week (float | Unset):
+        date_week_day (float | Unset):
+        date_year (float | Unset):
+        explanation (str | Unset):
+        explanation_contains (str | Unset):
+        explanation_endswith (str | Unset):
+        explanation_gt (str | Unset):
+        explanation_gte (str | Unset):
+        explanation_icontains (str | Unset):
+        explanation_iendswith (str | Unset):
+        explanation_iexact (str | Unset):
+        explanation_in (list[str] | Unset):
+        explanation_iregex (str | Unset):
+        explanation_isnull (bool | Unset):
+        explanation_istartswith (str | Unset):
+        explanation_lt (str | Unset):
+        explanation_lte (str | Unset):
+        explanation_range (list[str] | Unset):
+        explanation_regex (str | Unset):
+        explanation_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        passes_test (bool | Unset):
+        passes_test_contains (bool | Unset):
+        passes_test_endswith (bool | Unset):
+        passes_test_gt (bool | Unset):
+        passes_test_gte (bool | Unset):
+        passes_test_icontains (bool | Unset):
+        passes_test_iendswith (bool | Unset):
+        passes_test_iexact (bool | Unset):
+        passes_test_in (list[bool] | Unset):
+        passes_test_iregex (bool | Unset):
+        passes_test_isnull (bool | Unset):
+        passes_test_istartswith (bool | Unset):
+        passes_test_lt (bool | Unset):
+        passes_test_lte (bool | Unset):
+        passes_test_range (list[bool] | Unset):
+        passes_test_regex (bool | Unset):
+        passes_test_startswith (bool | Unset):
+        result_title (str | Unset):
+        result_title_contains (str | Unset):
+        result_title_endswith (str | Unset):
+        result_title_gt (str | Unset):
+        result_title_gte (str | Unset):
+        result_title_icontains (str | Unset):
+        result_title_iendswith (str | Unset):
+        result_title_iexact (str | Unset):
+        result_title_in (list[str] | Unset):
+        result_title_iregex (str | Unset):
+        result_title_isnull (bool | Unset):
+        result_title_istartswith (str | Unset):
+        result_title_lt (str | Unset):
+        result_title_lte (str | Unset):
+        result_title_range (list[str] | Unset):
+        result_title_regex (str | Unset):
+        result_title_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1392,206 +1392,206 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    date: Union[Unset, datetime.date] = UNSET,
-    date_contained_by: Union[Unset, datetime.date] = UNSET,
-    date_contains: Union[Unset, datetime.date] = UNSET,
-    date_day: Union[Unset, float] = UNSET,
-    date_endswith: Union[Unset, datetime.date] = UNSET,
-    date_gt: Union[Unset, datetime.date] = UNSET,
-    date_gte: Union[Unset, datetime.date] = UNSET,
-    date_icontains: Union[Unset, datetime.date] = UNSET,
-    date_iendswith: Union[Unset, datetime.date] = UNSET,
-    date_iexact: Union[Unset, datetime.date] = UNSET,
-    date_in: Union[Unset, list[datetime.date]] = UNSET,
-    date_iregex: Union[Unset, datetime.date] = UNSET,
-    date_isnull: Union[Unset, bool] = UNSET,
-    date_iso_week_day: Union[Unset, float] = UNSET,
-    date_iso_year: Union[Unset, float] = UNSET,
-    date_istartswith: Union[Unset, datetime.date] = UNSET,
-    date_lt: Union[Unset, datetime.date] = UNSET,
-    date_lte: Union[Unset, datetime.date] = UNSET,
-    date_month: Union[Unset, float] = UNSET,
-    date_quarter: Union[Unset, float] = UNSET,
-    date_range: Union[Unset, list[datetime.date]] = UNSET,
-    date_regex: Union[Unset, datetime.date] = UNSET,
-    date_startswith: Union[Unset, datetime.date] = UNSET,
-    date_week: Union[Unset, float] = UNSET,
-    date_week_day: Union[Unset, float] = UNSET,
-    date_year: Union[Unset, float] = UNSET,
-    explanation: Union[Unset, str] = UNSET,
-    explanation_contains: Union[Unset, str] = UNSET,
-    explanation_endswith: Union[Unset, str] = UNSET,
-    explanation_gt: Union[Unset, str] = UNSET,
-    explanation_gte: Union[Unset, str] = UNSET,
-    explanation_icontains: Union[Unset, str] = UNSET,
-    explanation_iendswith: Union[Unset, str] = UNSET,
-    explanation_iexact: Union[Unset, str] = UNSET,
-    explanation_in: Union[Unset, list[str]] = UNSET,
-    explanation_iregex: Union[Unset, str] = UNSET,
-    explanation_isnull: Union[Unset, bool] = UNSET,
-    explanation_istartswith: Union[Unset, str] = UNSET,
-    explanation_lt: Union[Unset, str] = UNSET,
-    explanation_lte: Union[Unset, str] = UNSET,
-    explanation_range: Union[Unset, list[str]] = UNSET,
-    explanation_regex: Union[Unset, str] = UNSET,
-    explanation_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    passes_test: Union[Unset, bool] = UNSET,
-    passes_test_contains: Union[Unset, bool] = UNSET,
-    passes_test_endswith: Union[Unset, bool] = UNSET,
-    passes_test_gt: Union[Unset, bool] = UNSET,
-    passes_test_gte: Union[Unset, bool] = UNSET,
-    passes_test_icontains: Union[Unset, bool] = UNSET,
-    passes_test_iendswith: Union[Unset, bool] = UNSET,
-    passes_test_iexact: Union[Unset, bool] = UNSET,
-    passes_test_in: Union[Unset, list[bool]] = UNSET,
-    passes_test_iregex: Union[Unset, bool] = UNSET,
-    passes_test_isnull: Union[Unset, bool] = UNSET,
-    passes_test_istartswith: Union[Unset, bool] = UNSET,
-    passes_test_lt: Union[Unset, bool] = UNSET,
-    passes_test_lte: Union[Unset, bool] = UNSET,
-    passes_test_range: Union[Unset, list[bool]] = UNSET,
-    passes_test_regex: Union[Unset, bool] = UNSET,
-    passes_test_startswith: Union[Unset, bool] = UNSET,
-    result_title: Union[Unset, str] = UNSET,
-    result_title_contains: Union[Unset, str] = UNSET,
-    result_title_endswith: Union[Unset, str] = UNSET,
-    result_title_gt: Union[Unset, str] = UNSET,
-    result_title_gte: Union[Unset, str] = UNSET,
-    result_title_icontains: Union[Unset, str] = UNSET,
-    result_title_iendswith: Union[Unset, str] = UNSET,
-    result_title_iexact: Union[Unset, str] = UNSET,
-    result_title_in: Union[Unset, list[str]] = UNSET,
-    result_title_iregex: Union[Unset, str] = UNSET,
-    result_title_isnull: Union[Unset, bool] = UNSET,
-    result_title_istartswith: Union[Unset, str] = UNSET,
-    result_title_lt: Union[Unset, str] = UNSET,
-    result_title_lte: Union[Unset, str] = UNSET,
-    result_title_range: Union[Unset, list[str]] = UNSET,
-    result_title_regex: Union[Unset, str] = UNSET,
-    result_title_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDQConformanceResultReadList]:
+    date: datetime.date | Unset = UNSET,
+    date_contained_by: datetime.date | Unset = UNSET,
+    date_contains: datetime.date | Unset = UNSET,
+    date_day: float | Unset = UNSET,
+    date_endswith: datetime.date | Unset = UNSET,
+    date_gt: datetime.date | Unset = UNSET,
+    date_gte: datetime.date | Unset = UNSET,
+    date_icontains: datetime.date | Unset = UNSET,
+    date_iendswith: datetime.date | Unset = UNSET,
+    date_iexact: datetime.date | Unset = UNSET,
+    date_in: list[datetime.date] | Unset = UNSET,
+    date_iregex: datetime.date | Unset = UNSET,
+    date_isnull: bool | Unset = UNSET,
+    date_iso_week_day: float | Unset = UNSET,
+    date_iso_year: float | Unset = UNSET,
+    date_istartswith: datetime.date | Unset = UNSET,
+    date_lt: datetime.date | Unset = UNSET,
+    date_lte: datetime.date | Unset = UNSET,
+    date_month: float | Unset = UNSET,
+    date_quarter: float | Unset = UNSET,
+    date_range: list[datetime.date] | Unset = UNSET,
+    date_regex: datetime.date | Unset = UNSET,
+    date_startswith: datetime.date | Unset = UNSET,
+    date_week: float | Unset = UNSET,
+    date_week_day: float | Unset = UNSET,
+    date_year: float | Unset = UNSET,
+    explanation: str | Unset = UNSET,
+    explanation_contains: str | Unset = UNSET,
+    explanation_endswith: str | Unset = UNSET,
+    explanation_gt: str | Unset = UNSET,
+    explanation_gte: str | Unset = UNSET,
+    explanation_icontains: str | Unset = UNSET,
+    explanation_iendswith: str | Unset = UNSET,
+    explanation_iexact: str | Unset = UNSET,
+    explanation_in: list[str] | Unset = UNSET,
+    explanation_iregex: str | Unset = UNSET,
+    explanation_isnull: bool | Unset = UNSET,
+    explanation_istartswith: str | Unset = UNSET,
+    explanation_lt: str | Unset = UNSET,
+    explanation_lte: str | Unset = UNSET,
+    explanation_range: list[str] | Unset = UNSET,
+    explanation_regex: str | Unset = UNSET,
+    explanation_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    passes_test: bool | Unset = UNSET,
+    passes_test_contains: bool | Unset = UNSET,
+    passes_test_endswith: bool | Unset = UNSET,
+    passes_test_gt: bool | Unset = UNSET,
+    passes_test_gte: bool | Unset = UNSET,
+    passes_test_icontains: bool | Unset = UNSET,
+    passes_test_iendswith: bool | Unset = UNSET,
+    passes_test_iexact: bool | Unset = UNSET,
+    passes_test_in: list[bool] | Unset = UNSET,
+    passes_test_iregex: bool | Unset = UNSET,
+    passes_test_isnull: bool | Unset = UNSET,
+    passes_test_istartswith: bool | Unset = UNSET,
+    passes_test_lt: bool | Unset = UNSET,
+    passes_test_lte: bool | Unset = UNSET,
+    passes_test_range: list[bool] | Unset = UNSET,
+    passes_test_regex: bool | Unset = UNSET,
+    passes_test_startswith: bool | Unset = UNSET,
+    result_title: str | Unset = UNSET,
+    result_title_contains: str | Unset = UNSET,
+    result_title_endswith: str | Unset = UNSET,
+    result_title_gt: str | Unset = UNSET,
+    result_title_gte: str | Unset = UNSET,
+    result_title_icontains: str | Unset = UNSET,
+    result_title_iendswith: str | Unset = UNSET,
+    result_title_iexact: str | Unset = UNSET,
+    result_title_in: list[str] | Unset = UNSET,
+    result_title_iregex: str | Unset = UNSET,
+    result_title_isnull: bool | Unset = UNSET,
+    result_title_istartswith: str | Unset = UNSET,
+    result_title_lt: str | Unset = UNSET,
+    result_title_lte: str | Unset = UNSET,
+    result_title_range: list[str] | Unset = UNSET,
+    result_title_regex: str | Unset = UNSET,
+    result_title_startswith: str | Unset = UNSET,
+) -> PaginatedDQConformanceResultReadList | None:
     """Get a list of DQConformanceResult objects.
 
     Args:
-        date (Union[Unset, datetime.date]):
-        date_contained_by (Union[Unset, datetime.date]):
-        date_contains (Union[Unset, datetime.date]):
-        date_day (Union[Unset, float]):
-        date_endswith (Union[Unset, datetime.date]):
-        date_gt (Union[Unset, datetime.date]):
-        date_gte (Union[Unset, datetime.date]):
-        date_icontains (Union[Unset, datetime.date]):
-        date_iendswith (Union[Unset, datetime.date]):
-        date_iexact (Union[Unset, datetime.date]):
-        date_in (Union[Unset, list[datetime.date]]):
-        date_iregex (Union[Unset, datetime.date]):
-        date_isnull (Union[Unset, bool]):
-        date_iso_week_day (Union[Unset, float]):
-        date_iso_year (Union[Unset, float]):
-        date_istartswith (Union[Unset, datetime.date]):
-        date_lt (Union[Unset, datetime.date]):
-        date_lte (Union[Unset, datetime.date]):
-        date_month (Union[Unset, float]):
-        date_quarter (Union[Unset, float]):
-        date_range (Union[Unset, list[datetime.date]]):
-        date_regex (Union[Unset, datetime.date]):
-        date_startswith (Union[Unset, datetime.date]):
-        date_week (Union[Unset, float]):
-        date_week_day (Union[Unset, float]):
-        date_year (Union[Unset, float]):
-        explanation (Union[Unset, str]):
-        explanation_contains (Union[Unset, str]):
-        explanation_endswith (Union[Unset, str]):
-        explanation_gt (Union[Unset, str]):
-        explanation_gte (Union[Unset, str]):
-        explanation_icontains (Union[Unset, str]):
-        explanation_iendswith (Union[Unset, str]):
-        explanation_iexact (Union[Unset, str]):
-        explanation_in (Union[Unset, list[str]]):
-        explanation_iregex (Union[Unset, str]):
-        explanation_isnull (Union[Unset, bool]):
-        explanation_istartswith (Union[Unset, str]):
-        explanation_lt (Union[Unset, str]):
-        explanation_lte (Union[Unset, str]):
-        explanation_range (Union[Unset, list[str]]):
-        explanation_regex (Union[Unset, str]):
-        explanation_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        passes_test (Union[Unset, bool]):
-        passes_test_contains (Union[Unset, bool]):
-        passes_test_endswith (Union[Unset, bool]):
-        passes_test_gt (Union[Unset, bool]):
-        passes_test_gte (Union[Unset, bool]):
-        passes_test_icontains (Union[Unset, bool]):
-        passes_test_iendswith (Union[Unset, bool]):
-        passes_test_iexact (Union[Unset, bool]):
-        passes_test_in (Union[Unset, list[bool]]):
-        passes_test_iregex (Union[Unset, bool]):
-        passes_test_isnull (Union[Unset, bool]):
-        passes_test_istartswith (Union[Unset, bool]):
-        passes_test_lt (Union[Unset, bool]):
-        passes_test_lte (Union[Unset, bool]):
-        passes_test_range (Union[Unset, list[bool]]):
-        passes_test_regex (Union[Unset, bool]):
-        passes_test_startswith (Union[Unset, bool]):
-        result_title (Union[Unset, str]):
-        result_title_contains (Union[Unset, str]):
-        result_title_endswith (Union[Unset, str]):
-        result_title_gt (Union[Unset, str]):
-        result_title_gte (Union[Unset, str]):
-        result_title_icontains (Union[Unset, str]):
-        result_title_iendswith (Union[Unset, str]):
-        result_title_iexact (Union[Unset, str]):
-        result_title_in (Union[Unset, list[str]]):
-        result_title_iregex (Union[Unset, str]):
-        result_title_isnull (Union[Unset, bool]):
-        result_title_istartswith (Union[Unset, str]):
-        result_title_lt (Union[Unset, str]):
-        result_title_lte (Union[Unset, str]):
-        result_title_range (Union[Unset, list[str]]):
-        result_title_regex (Union[Unset, str]):
-        result_title_startswith (Union[Unset, str]):
+        date (datetime.date | Unset):
+        date_contained_by (datetime.date | Unset):
+        date_contains (datetime.date | Unset):
+        date_day (float | Unset):
+        date_endswith (datetime.date | Unset):
+        date_gt (datetime.date | Unset):
+        date_gte (datetime.date | Unset):
+        date_icontains (datetime.date | Unset):
+        date_iendswith (datetime.date | Unset):
+        date_iexact (datetime.date | Unset):
+        date_in (list[datetime.date] | Unset):
+        date_iregex (datetime.date | Unset):
+        date_isnull (bool | Unset):
+        date_iso_week_day (float | Unset):
+        date_iso_year (float | Unset):
+        date_istartswith (datetime.date | Unset):
+        date_lt (datetime.date | Unset):
+        date_lte (datetime.date | Unset):
+        date_month (float | Unset):
+        date_quarter (float | Unset):
+        date_range (list[datetime.date] | Unset):
+        date_regex (datetime.date | Unset):
+        date_startswith (datetime.date | Unset):
+        date_week (float | Unset):
+        date_week_day (float | Unset):
+        date_year (float | Unset):
+        explanation (str | Unset):
+        explanation_contains (str | Unset):
+        explanation_endswith (str | Unset):
+        explanation_gt (str | Unset):
+        explanation_gte (str | Unset):
+        explanation_icontains (str | Unset):
+        explanation_iendswith (str | Unset):
+        explanation_iexact (str | Unset):
+        explanation_in (list[str] | Unset):
+        explanation_iregex (str | Unset):
+        explanation_isnull (bool | Unset):
+        explanation_istartswith (str | Unset):
+        explanation_lt (str | Unset):
+        explanation_lte (str | Unset):
+        explanation_range (list[str] | Unset):
+        explanation_regex (str | Unset):
+        explanation_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        passes_test (bool | Unset):
+        passes_test_contains (bool | Unset):
+        passes_test_endswith (bool | Unset):
+        passes_test_gt (bool | Unset):
+        passes_test_gte (bool | Unset):
+        passes_test_icontains (bool | Unset):
+        passes_test_iendswith (bool | Unset):
+        passes_test_iexact (bool | Unset):
+        passes_test_in (list[bool] | Unset):
+        passes_test_iregex (bool | Unset):
+        passes_test_isnull (bool | Unset):
+        passes_test_istartswith (bool | Unset):
+        passes_test_lt (bool | Unset):
+        passes_test_lte (bool | Unset):
+        passes_test_range (list[bool] | Unset):
+        passes_test_regex (bool | Unset):
+        passes_test_startswith (bool | Unset):
+        result_title (str | Unset):
+        result_title_contains (str | Unset):
+        result_title_endswith (str | Unset):
+        result_title_gt (str | Unset):
+        result_title_gte (str | Unset):
+        result_title_icontains (str | Unset):
+        result_title_iendswith (str | Unset):
+        result_title_iexact (str | Unset):
+        result_title_in (list[str] | Unset):
+        result_title_iregex (str | Unset):
+        result_title_isnull (bool | Unset):
+        result_title_istartswith (str | Unset):
+        result_title_lt (str | Unset):
+        result_title_lte (str | Unset):
+        result_title_range (list[str] | Unset):
+        result_title_regex (str | Unset):
+        result_title_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,91 +11,91 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    directory: Union[Unset, str] = UNSET,
-    directory_contains: Union[Unset, str] = UNSET,
-    directory_endswith: Union[Unset, str] = UNSET,
-    directory_gt: Union[Unset, str] = UNSET,
-    directory_gte: Union[Unset, str] = UNSET,
-    directory_icontains: Union[Unset, str] = UNSET,
-    directory_iendswith: Union[Unset, str] = UNSET,
-    directory_iexact: Union[Unset, str] = UNSET,
-    directory_in: Union[Unset, list[str]] = UNSET,
-    directory_iregex: Union[Unset, str] = UNSET,
-    directory_isnull: Union[Unset, bool] = UNSET,
-    directory_istartswith: Union[Unset, str] = UNSET,
-    directory_lt: Union[Unset, str] = UNSET,
-    directory_lte: Union[Unset, str] = UNSET,
-    directory_range: Union[Unset, list[str]] = UNSET,
-    directory_regex: Union[Unset, str] = UNSET,
-    directory_startswith: Union[Unset, str] = UNSET,
-    drs_id: Union[Unset, str] = UNSET,
-    drs_id_contains: Union[Unset, str] = UNSET,
-    drs_id_endswith: Union[Unset, str] = UNSET,
-    drs_id_gt: Union[Unset, str] = UNSET,
-    drs_id_gte: Union[Unset, str] = UNSET,
-    drs_id_icontains: Union[Unset, str] = UNSET,
-    drs_id_iendswith: Union[Unset, str] = UNSET,
-    drs_id_iexact: Union[Unset, str] = UNSET,
-    drs_id_in: Union[Unset, list[str]] = UNSET,
-    drs_id_iregex: Union[Unset, str] = UNSET,
-    drs_id_isnull: Union[Unset, bool] = UNSET,
-    drs_id_istartswith: Union[Unset, str] = UNSET,
-    drs_id_lt: Union[Unset, str] = UNSET,
-    drs_id_lte: Union[Unset, str] = UNSET,
-    drs_id_range: Union[Unset, list[str]] = UNSET,
-    drs_id_regex: Union[Unset, str] = UNSET,
-    drs_id_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    version: Union[Unset, str] = UNSET,
-    version_contains: Union[Unset, str] = UNSET,
-    version_endswith: Union[Unset, str] = UNSET,
-    version_gt: Union[Unset, str] = UNSET,
-    version_gte: Union[Unset, str] = UNSET,
-    version_icontains: Union[Unset, str] = UNSET,
-    version_iendswith: Union[Unset, str] = UNSET,
-    version_iexact: Union[Unset, str] = UNSET,
-    version_in: Union[Unset, list[str]] = UNSET,
-    version_iregex: Union[Unset, str] = UNSET,
-    version_isnull: Union[Unset, bool] = UNSET,
-    version_istartswith: Union[Unset, str] = UNSET,
-    version_lt: Union[Unset, str] = UNSET,
-    version_lte: Union[Unset, str] = UNSET,
-    version_range: Union[Unset, list[str]] = UNSET,
-    version_regex: Union[Unset, str] = UNSET,
-    version_startswith: Union[Unset, str] = UNSET,
+    directory: str | Unset = UNSET,
+    directory_contains: str | Unset = UNSET,
+    directory_endswith: str | Unset = UNSET,
+    directory_gt: str | Unset = UNSET,
+    directory_gte: str | Unset = UNSET,
+    directory_icontains: str | Unset = UNSET,
+    directory_iendswith: str | Unset = UNSET,
+    directory_iexact: str | Unset = UNSET,
+    directory_in: list[str] | Unset = UNSET,
+    directory_iregex: str | Unset = UNSET,
+    directory_isnull: bool | Unset = UNSET,
+    directory_istartswith: str | Unset = UNSET,
+    directory_lt: str | Unset = UNSET,
+    directory_lte: str | Unset = UNSET,
+    directory_range: list[str] | Unset = UNSET,
+    directory_regex: str | Unset = UNSET,
+    directory_startswith: str | Unset = UNSET,
+    drs_id: str | Unset = UNSET,
+    drs_id_contains: str | Unset = UNSET,
+    drs_id_endswith: str | Unset = UNSET,
+    drs_id_gt: str | Unset = UNSET,
+    drs_id_gte: str | Unset = UNSET,
+    drs_id_icontains: str | Unset = UNSET,
+    drs_id_iendswith: str | Unset = UNSET,
+    drs_id_iexact: str | Unset = UNSET,
+    drs_id_in: list[str] | Unset = UNSET,
+    drs_id_iregex: str | Unset = UNSET,
+    drs_id_isnull: bool | Unset = UNSET,
+    drs_id_istartswith: str | Unset = UNSET,
+    drs_id_lt: str | Unset = UNSET,
+    drs_id_lte: str | Unset = UNSET,
+    drs_id_range: list[str] | Unset = UNSET,
+    drs_id_regex: str | Unset = UNSET,
+    drs_id_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    version: str | Unset = UNSET,
+    version_contains: str | Unset = UNSET,
+    version_endswith: str | Unset = UNSET,
+    version_gt: str | Unset = UNSET,
+    version_gte: str | Unset = UNSET,
+    version_icontains: str | Unset = UNSET,
+    version_iendswith: str | Unset = UNSET,
+    version_iexact: str | Unset = UNSET,
+    version_in: list[str] | Unset = UNSET,
+    version_iregex: str | Unset = UNSET,
+    version_isnull: bool | Unset = UNSET,
+    version_istartswith: str | Unset = UNSET,
+    version_lt: str | Unset = UNSET,
+    version_lte: str | Unset = UNSET,
+    version_range: list[str] | Unset = UNSET,
+    version_regex: str | Unset = UNSET,
+    version_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -115,7 +115,7 @@ def _get_kwargs(
 
     params["directory__iexact"] = directory_iexact
 
-    json_directory_in: Union[Unset, list[str]] = UNSET
+    json_directory_in: list[str] | Unset = UNSET
     if not isinstance(directory_in, Unset):
         json_directory_in = ",".join(map(str, directory_in))
 
@@ -131,7 +131,7 @@ def _get_kwargs(
 
     params["directory__lte"] = directory_lte
 
-    json_directory_range: Union[Unset, list[str]] = UNSET
+    json_directory_range: list[str] | Unset = UNSET
     if not isinstance(directory_range, Unset):
         json_directory_range = ",".join(map(str, directory_range))
 
@@ -157,7 +157,7 @@ def _get_kwargs(
 
     params["drsId__iexact"] = drs_id_iexact
 
-    json_drs_id_in: Union[Unset, list[str]] = UNSET
+    json_drs_id_in: list[str] | Unset = UNSET
     if not isinstance(drs_id_in, Unset):
         json_drs_id_in = ",".join(map(str, drs_id_in))
 
@@ -173,7 +173,7 @@ def _get_kwargs(
 
     params["drsId__lte"] = drs_id_lte
 
-    json_drs_id_range: Union[Unset, list[str]] = UNSET
+    json_drs_id_range: list[str] | Unset = UNSET
     if not isinstance(drs_id_range, Unset):
         json_drs_id_range = ",".join(map(str, drs_id_range))
 
@@ -203,7 +203,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -219,7 +219,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -239,7 +239,7 @@ def _get_kwargs(
 
     params["relatedTo__gte"] = related_to_gte
 
-    json_related_to_in: Union[Unset, list[int]] = UNSET
+    json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
 
@@ -253,7 +253,7 @@ def _get_kwargs(
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
-    json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
@@ -261,7 +261,7 @@ def _get_kwargs(
 
     params["relatedTo__short_code"] = related_to_short_code
 
-    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
         json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
 
@@ -269,7 +269,7 @@ def _get_kwargs(
 
     params["relatedTo__uuid"] = related_to_uuid
 
-    json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
+    json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
         json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
@@ -291,7 +291,7 @@ def _get_kwargs(
 
     params["version__iexact"] = version_iexact
 
-    json_version_in: Union[Unset, list[str]] = UNSET
+    json_version_in: list[str] | Unset = UNSET
     if not isinstance(version_in, Unset):
         json_version_in = ",".join(map(str, version_in))
 
@@ -307,7 +307,7 @@ def _get_kwargs(
 
     params["version__lte"] = version_lte
 
-    json_version_range: Union[Unset, list[str]] = UNSET
+    json_version_range: list[str] | Unset = UNSET
     if not isinstance(version_range, Unset):
         json_version_range = ",".join(map(str, version_range))
 
@@ -329,8 +329,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedDRSDatasetReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedDRSDatasetReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedDRSDatasetReadList.from_dict(response.json())
 
@@ -343,7 +343,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedDRSDatasetReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -356,180 +356,180 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    directory: Union[Unset, str] = UNSET,
-    directory_contains: Union[Unset, str] = UNSET,
-    directory_endswith: Union[Unset, str] = UNSET,
-    directory_gt: Union[Unset, str] = UNSET,
-    directory_gte: Union[Unset, str] = UNSET,
-    directory_icontains: Union[Unset, str] = UNSET,
-    directory_iendswith: Union[Unset, str] = UNSET,
-    directory_iexact: Union[Unset, str] = UNSET,
-    directory_in: Union[Unset, list[str]] = UNSET,
-    directory_iregex: Union[Unset, str] = UNSET,
-    directory_isnull: Union[Unset, bool] = UNSET,
-    directory_istartswith: Union[Unset, str] = UNSET,
-    directory_lt: Union[Unset, str] = UNSET,
-    directory_lte: Union[Unset, str] = UNSET,
-    directory_range: Union[Unset, list[str]] = UNSET,
-    directory_regex: Union[Unset, str] = UNSET,
-    directory_startswith: Union[Unset, str] = UNSET,
-    drs_id: Union[Unset, str] = UNSET,
-    drs_id_contains: Union[Unset, str] = UNSET,
-    drs_id_endswith: Union[Unset, str] = UNSET,
-    drs_id_gt: Union[Unset, str] = UNSET,
-    drs_id_gte: Union[Unset, str] = UNSET,
-    drs_id_icontains: Union[Unset, str] = UNSET,
-    drs_id_iendswith: Union[Unset, str] = UNSET,
-    drs_id_iexact: Union[Unset, str] = UNSET,
-    drs_id_in: Union[Unset, list[str]] = UNSET,
-    drs_id_iregex: Union[Unset, str] = UNSET,
-    drs_id_isnull: Union[Unset, bool] = UNSET,
-    drs_id_istartswith: Union[Unset, str] = UNSET,
-    drs_id_lt: Union[Unset, str] = UNSET,
-    drs_id_lte: Union[Unset, str] = UNSET,
-    drs_id_range: Union[Unset, list[str]] = UNSET,
-    drs_id_regex: Union[Unset, str] = UNSET,
-    drs_id_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    version: Union[Unset, str] = UNSET,
-    version_contains: Union[Unset, str] = UNSET,
-    version_endswith: Union[Unset, str] = UNSET,
-    version_gt: Union[Unset, str] = UNSET,
-    version_gte: Union[Unset, str] = UNSET,
-    version_icontains: Union[Unset, str] = UNSET,
-    version_iendswith: Union[Unset, str] = UNSET,
-    version_iexact: Union[Unset, str] = UNSET,
-    version_in: Union[Unset, list[str]] = UNSET,
-    version_iregex: Union[Unset, str] = UNSET,
-    version_isnull: Union[Unset, bool] = UNSET,
-    version_istartswith: Union[Unset, str] = UNSET,
-    version_lt: Union[Unset, str] = UNSET,
-    version_lte: Union[Unset, str] = UNSET,
-    version_range: Union[Unset, list[str]] = UNSET,
-    version_regex: Union[Unset, str] = UNSET,
-    version_startswith: Union[Unset, str] = UNSET,
+    directory: str | Unset = UNSET,
+    directory_contains: str | Unset = UNSET,
+    directory_endswith: str | Unset = UNSET,
+    directory_gt: str | Unset = UNSET,
+    directory_gte: str | Unset = UNSET,
+    directory_icontains: str | Unset = UNSET,
+    directory_iendswith: str | Unset = UNSET,
+    directory_iexact: str | Unset = UNSET,
+    directory_in: list[str] | Unset = UNSET,
+    directory_iregex: str | Unset = UNSET,
+    directory_isnull: bool | Unset = UNSET,
+    directory_istartswith: str | Unset = UNSET,
+    directory_lt: str | Unset = UNSET,
+    directory_lte: str | Unset = UNSET,
+    directory_range: list[str] | Unset = UNSET,
+    directory_regex: str | Unset = UNSET,
+    directory_startswith: str | Unset = UNSET,
+    drs_id: str | Unset = UNSET,
+    drs_id_contains: str | Unset = UNSET,
+    drs_id_endswith: str | Unset = UNSET,
+    drs_id_gt: str | Unset = UNSET,
+    drs_id_gte: str | Unset = UNSET,
+    drs_id_icontains: str | Unset = UNSET,
+    drs_id_iendswith: str | Unset = UNSET,
+    drs_id_iexact: str | Unset = UNSET,
+    drs_id_in: list[str] | Unset = UNSET,
+    drs_id_iregex: str | Unset = UNSET,
+    drs_id_isnull: bool | Unset = UNSET,
+    drs_id_istartswith: str | Unset = UNSET,
+    drs_id_lt: str | Unset = UNSET,
+    drs_id_lte: str | Unset = UNSET,
+    drs_id_range: list[str] | Unset = UNSET,
+    drs_id_regex: str | Unset = UNSET,
+    drs_id_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    version: str | Unset = UNSET,
+    version_contains: str | Unset = UNSET,
+    version_endswith: str | Unset = UNSET,
+    version_gt: str | Unset = UNSET,
+    version_gte: str | Unset = UNSET,
+    version_icontains: str | Unset = UNSET,
+    version_iendswith: str | Unset = UNSET,
+    version_iexact: str | Unset = UNSET,
+    version_in: list[str] | Unset = UNSET,
+    version_iregex: str | Unset = UNSET,
+    version_isnull: bool | Unset = UNSET,
+    version_istartswith: str | Unset = UNSET,
+    version_lt: str | Unset = UNSET,
+    version_lte: str | Unset = UNSET,
+    version_range: list[str] | Unset = UNSET,
+    version_regex: str | Unset = UNSET,
+    version_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedDRSDatasetReadList]:
     """Get a list of DRSDataset objects.
 
     Args:
-        directory (Union[Unset, str]):
-        directory_contains (Union[Unset, str]):
-        directory_endswith (Union[Unset, str]):
-        directory_gt (Union[Unset, str]):
-        directory_gte (Union[Unset, str]):
-        directory_icontains (Union[Unset, str]):
-        directory_iendswith (Union[Unset, str]):
-        directory_iexact (Union[Unset, str]):
-        directory_in (Union[Unset, list[str]]):
-        directory_iregex (Union[Unset, str]):
-        directory_isnull (Union[Unset, bool]):
-        directory_istartswith (Union[Unset, str]):
-        directory_lt (Union[Unset, str]):
-        directory_lte (Union[Unset, str]):
-        directory_range (Union[Unset, list[str]]):
-        directory_regex (Union[Unset, str]):
-        directory_startswith (Union[Unset, str]):
-        drs_id (Union[Unset, str]):
-        drs_id_contains (Union[Unset, str]):
-        drs_id_endswith (Union[Unset, str]):
-        drs_id_gt (Union[Unset, str]):
-        drs_id_gte (Union[Unset, str]):
-        drs_id_icontains (Union[Unset, str]):
-        drs_id_iendswith (Union[Unset, str]):
-        drs_id_iexact (Union[Unset, str]):
-        drs_id_in (Union[Unset, list[str]]):
-        drs_id_iregex (Union[Unset, str]):
-        drs_id_isnull (Union[Unset, bool]):
-        drs_id_istartswith (Union[Unset, str]):
-        drs_id_lt (Union[Unset, str]):
-        drs_id_lte (Union[Unset, str]):
-        drs_id_range (Union[Unset, list[str]]):
-        drs_id_regex (Union[Unset, str]):
-        drs_id_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        version (Union[Unset, str]):
-        version_contains (Union[Unset, str]):
-        version_endswith (Union[Unset, str]):
-        version_gt (Union[Unset, str]):
-        version_gte (Union[Unset, str]):
-        version_icontains (Union[Unset, str]):
-        version_iendswith (Union[Unset, str]):
-        version_iexact (Union[Unset, str]):
-        version_in (Union[Unset, list[str]]):
-        version_iregex (Union[Unset, str]):
-        version_isnull (Union[Unset, bool]):
-        version_istartswith (Union[Unset, str]):
-        version_lt (Union[Unset, str]):
-        version_lte (Union[Unset, str]):
-        version_range (Union[Unset, list[str]]):
-        version_regex (Union[Unset, str]):
-        version_startswith (Union[Unset, str]):
+        directory (str | Unset):
+        directory_contains (str | Unset):
+        directory_endswith (str | Unset):
+        directory_gt (str | Unset):
+        directory_gte (str | Unset):
+        directory_icontains (str | Unset):
+        directory_iendswith (str | Unset):
+        directory_iexact (str | Unset):
+        directory_in (list[str] | Unset):
+        directory_iregex (str | Unset):
+        directory_isnull (bool | Unset):
+        directory_istartswith (str | Unset):
+        directory_lt (str | Unset):
+        directory_lte (str | Unset):
+        directory_range (list[str] | Unset):
+        directory_regex (str | Unset):
+        directory_startswith (str | Unset):
+        drs_id (str | Unset):
+        drs_id_contains (str | Unset):
+        drs_id_endswith (str | Unset):
+        drs_id_gt (str | Unset):
+        drs_id_gte (str | Unset):
+        drs_id_icontains (str | Unset):
+        drs_id_iendswith (str | Unset):
+        drs_id_iexact (str | Unset):
+        drs_id_in (list[str] | Unset):
+        drs_id_iregex (str | Unset):
+        drs_id_isnull (bool | Unset):
+        drs_id_istartswith (str | Unset):
+        drs_id_lt (str | Unset):
+        drs_id_lte (str | Unset):
+        drs_id_range (list[str] | Unset):
+        drs_id_regex (str | Unset):
+        drs_id_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        version (str | Unset):
+        version_contains (str | Unset):
+        version_endswith (str | Unset):
+        version_gt (str | Unset):
+        version_gte (str | Unset):
+        version_icontains (str | Unset):
+        version_iendswith (str | Unset):
+        version_iexact (str | Unset):
+        version_in (list[str] | Unset):
+        version_iregex (str | Unset):
+        version_isnull (bool | Unset):
+        version_istartswith (str | Unset):
+        version_lt (str | Unset):
+        version_lte (str | Unset):
+        version_range (list[str] | Unset):
+        version_regex (str | Unset):
+        version_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -637,180 +637,180 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    directory: Union[Unset, str] = UNSET,
-    directory_contains: Union[Unset, str] = UNSET,
-    directory_endswith: Union[Unset, str] = UNSET,
-    directory_gt: Union[Unset, str] = UNSET,
-    directory_gte: Union[Unset, str] = UNSET,
-    directory_icontains: Union[Unset, str] = UNSET,
-    directory_iendswith: Union[Unset, str] = UNSET,
-    directory_iexact: Union[Unset, str] = UNSET,
-    directory_in: Union[Unset, list[str]] = UNSET,
-    directory_iregex: Union[Unset, str] = UNSET,
-    directory_isnull: Union[Unset, bool] = UNSET,
-    directory_istartswith: Union[Unset, str] = UNSET,
-    directory_lt: Union[Unset, str] = UNSET,
-    directory_lte: Union[Unset, str] = UNSET,
-    directory_range: Union[Unset, list[str]] = UNSET,
-    directory_regex: Union[Unset, str] = UNSET,
-    directory_startswith: Union[Unset, str] = UNSET,
-    drs_id: Union[Unset, str] = UNSET,
-    drs_id_contains: Union[Unset, str] = UNSET,
-    drs_id_endswith: Union[Unset, str] = UNSET,
-    drs_id_gt: Union[Unset, str] = UNSET,
-    drs_id_gte: Union[Unset, str] = UNSET,
-    drs_id_icontains: Union[Unset, str] = UNSET,
-    drs_id_iendswith: Union[Unset, str] = UNSET,
-    drs_id_iexact: Union[Unset, str] = UNSET,
-    drs_id_in: Union[Unset, list[str]] = UNSET,
-    drs_id_iregex: Union[Unset, str] = UNSET,
-    drs_id_isnull: Union[Unset, bool] = UNSET,
-    drs_id_istartswith: Union[Unset, str] = UNSET,
-    drs_id_lt: Union[Unset, str] = UNSET,
-    drs_id_lte: Union[Unset, str] = UNSET,
-    drs_id_range: Union[Unset, list[str]] = UNSET,
-    drs_id_regex: Union[Unset, str] = UNSET,
-    drs_id_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    version: Union[Unset, str] = UNSET,
-    version_contains: Union[Unset, str] = UNSET,
-    version_endswith: Union[Unset, str] = UNSET,
-    version_gt: Union[Unset, str] = UNSET,
-    version_gte: Union[Unset, str] = UNSET,
-    version_icontains: Union[Unset, str] = UNSET,
-    version_iendswith: Union[Unset, str] = UNSET,
-    version_iexact: Union[Unset, str] = UNSET,
-    version_in: Union[Unset, list[str]] = UNSET,
-    version_iregex: Union[Unset, str] = UNSET,
-    version_isnull: Union[Unset, bool] = UNSET,
-    version_istartswith: Union[Unset, str] = UNSET,
-    version_lt: Union[Unset, str] = UNSET,
-    version_lte: Union[Unset, str] = UNSET,
-    version_range: Union[Unset, list[str]] = UNSET,
-    version_regex: Union[Unset, str] = UNSET,
-    version_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDRSDatasetReadList]:
+    directory: str | Unset = UNSET,
+    directory_contains: str | Unset = UNSET,
+    directory_endswith: str | Unset = UNSET,
+    directory_gt: str | Unset = UNSET,
+    directory_gte: str | Unset = UNSET,
+    directory_icontains: str | Unset = UNSET,
+    directory_iendswith: str | Unset = UNSET,
+    directory_iexact: str | Unset = UNSET,
+    directory_in: list[str] | Unset = UNSET,
+    directory_iregex: str | Unset = UNSET,
+    directory_isnull: bool | Unset = UNSET,
+    directory_istartswith: str | Unset = UNSET,
+    directory_lt: str | Unset = UNSET,
+    directory_lte: str | Unset = UNSET,
+    directory_range: list[str] | Unset = UNSET,
+    directory_regex: str | Unset = UNSET,
+    directory_startswith: str | Unset = UNSET,
+    drs_id: str | Unset = UNSET,
+    drs_id_contains: str | Unset = UNSET,
+    drs_id_endswith: str | Unset = UNSET,
+    drs_id_gt: str | Unset = UNSET,
+    drs_id_gte: str | Unset = UNSET,
+    drs_id_icontains: str | Unset = UNSET,
+    drs_id_iendswith: str | Unset = UNSET,
+    drs_id_iexact: str | Unset = UNSET,
+    drs_id_in: list[str] | Unset = UNSET,
+    drs_id_iregex: str | Unset = UNSET,
+    drs_id_isnull: bool | Unset = UNSET,
+    drs_id_istartswith: str | Unset = UNSET,
+    drs_id_lt: str | Unset = UNSET,
+    drs_id_lte: str | Unset = UNSET,
+    drs_id_range: list[str] | Unset = UNSET,
+    drs_id_regex: str | Unset = UNSET,
+    drs_id_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    version: str | Unset = UNSET,
+    version_contains: str | Unset = UNSET,
+    version_endswith: str | Unset = UNSET,
+    version_gt: str | Unset = UNSET,
+    version_gte: str | Unset = UNSET,
+    version_icontains: str | Unset = UNSET,
+    version_iendswith: str | Unset = UNSET,
+    version_iexact: str | Unset = UNSET,
+    version_in: list[str] | Unset = UNSET,
+    version_iregex: str | Unset = UNSET,
+    version_isnull: bool | Unset = UNSET,
+    version_istartswith: str | Unset = UNSET,
+    version_lt: str | Unset = UNSET,
+    version_lte: str | Unset = UNSET,
+    version_range: list[str] | Unset = UNSET,
+    version_regex: str | Unset = UNSET,
+    version_startswith: str | Unset = UNSET,
+) -> PaginatedDRSDatasetReadList | None:
     """Get a list of DRSDataset objects.
 
     Args:
-        directory (Union[Unset, str]):
-        directory_contains (Union[Unset, str]):
-        directory_endswith (Union[Unset, str]):
-        directory_gt (Union[Unset, str]):
-        directory_gte (Union[Unset, str]):
-        directory_icontains (Union[Unset, str]):
-        directory_iendswith (Union[Unset, str]):
-        directory_iexact (Union[Unset, str]):
-        directory_in (Union[Unset, list[str]]):
-        directory_iregex (Union[Unset, str]):
-        directory_isnull (Union[Unset, bool]):
-        directory_istartswith (Union[Unset, str]):
-        directory_lt (Union[Unset, str]):
-        directory_lte (Union[Unset, str]):
-        directory_range (Union[Unset, list[str]]):
-        directory_regex (Union[Unset, str]):
-        directory_startswith (Union[Unset, str]):
-        drs_id (Union[Unset, str]):
-        drs_id_contains (Union[Unset, str]):
-        drs_id_endswith (Union[Unset, str]):
-        drs_id_gt (Union[Unset, str]):
-        drs_id_gte (Union[Unset, str]):
-        drs_id_icontains (Union[Unset, str]):
-        drs_id_iendswith (Union[Unset, str]):
-        drs_id_iexact (Union[Unset, str]):
-        drs_id_in (Union[Unset, list[str]]):
-        drs_id_iregex (Union[Unset, str]):
-        drs_id_isnull (Union[Unset, bool]):
-        drs_id_istartswith (Union[Unset, str]):
-        drs_id_lt (Union[Unset, str]):
-        drs_id_lte (Union[Unset, str]):
-        drs_id_range (Union[Unset, list[str]]):
-        drs_id_regex (Union[Unset, str]):
-        drs_id_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        version (Union[Unset, str]):
-        version_contains (Union[Unset, str]):
-        version_endswith (Union[Unset, str]):
-        version_gt (Union[Unset, str]):
-        version_gte (Union[Unset, str]):
-        version_icontains (Union[Unset, str]):
-        version_iendswith (Union[Unset, str]):
-        version_iexact (Union[Unset, str]):
-        version_in (Union[Unset, list[str]]):
-        version_iregex (Union[Unset, str]):
-        version_isnull (Union[Unset, bool]):
-        version_istartswith (Union[Unset, str]):
-        version_lt (Union[Unset, str]):
-        version_lte (Union[Unset, str]):
-        version_range (Union[Unset, list[str]]):
-        version_regex (Union[Unset, str]):
-        version_startswith (Union[Unset, str]):
+        directory (str | Unset):
+        directory_contains (str | Unset):
+        directory_endswith (str | Unset):
+        directory_gt (str | Unset):
+        directory_gte (str | Unset):
+        directory_icontains (str | Unset):
+        directory_iendswith (str | Unset):
+        directory_iexact (str | Unset):
+        directory_in (list[str] | Unset):
+        directory_iregex (str | Unset):
+        directory_isnull (bool | Unset):
+        directory_istartswith (str | Unset):
+        directory_lt (str | Unset):
+        directory_lte (str | Unset):
+        directory_range (list[str] | Unset):
+        directory_regex (str | Unset):
+        directory_startswith (str | Unset):
+        drs_id (str | Unset):
+        drs_id_contains (str | Unset):
+        drs_id_endswith (str | Unset):
+        drs_id_gt (str | Unset):
+        drs_id_gte (str | Unset):
+        drs_id_icontains (str | Unset):
+        drs_id_iendswith (str | Unset):
+        drs_id_iexact (str | Unset):
+        drs_id_in (list[str] | Unset):
+        drs_id_iregex (str | Unset):
+        drs_id_isnull (bool | Unset):
+        drs_id_istartswith (str | Unset):
+        drs_id_lt (str | Unset):
+        drs_id_lte (str | Unset):
+        drs_id_range (list[str] | Unset):
+        drs_id_regex (str | Unset):
+        drs_id_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        version (str | Unset):
+        version_contains (str | Unset):
+        version_endswith (str | Unset):
+        version_gt (str | Unset):
+        version_gte (str | Unset):
+        version_icontains (str | Unset):
+        version_iendswith (str | Unset):
+        version_iexact (str | Unset):
+        version_in (list[str] | Unset):
+        version_iregex (str | Unset):
+        version_isnull (bool | Unset):
+        version_istartswith (str | Unset):
+        version_lt (str | Unset):
+        version_lte (str | Unset):
+        version_range (list[str] | Unset):
+        version_regex (str | Unset):
+        version_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -913,180 +913,180 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    directory: Union[Unset, str] = UNSET,
-    directory_contains: Union[Unset, str] = UNSET,
-    directory_endswith: Union[Unset, str] = UNSET,
-    directory_gt: Union[Unset, str] = UNSET,
-    directory_gte: Union[Unset, str] = UNSET,
-    directory_icontains: Union[Unset, str] = UNSET,
-    directory_iendswith: Union[Unset, str] = UNSET,
-    directory_iexact: Union[Unset, str] = UNSET,
-    directory_in: Union[Unset, list[str]] = UNSET,
-    directory_iregex: Union[Unset, str] = UNSET,
-    directory_isnull: Union[Unset, bool] = UNSET,
-    directory_istartswith: Union[Unset, str] = UNSET,
-    directory_lt: Union[Unset, str] = UNSET,
-    directory_lte: Union[Unset, str] = UNSET,
-    directory_range: Union[Unset, list[str]] = UNSET,
-    directory_regex: Union[Unset, str] = UNSET,
-    directory_startswith: Union[Unset, str] = UNSET,
-    drs_id: Union[Unset, str] = UNSET,
-    drs_id_contains: Union[Unset, str] = UNSET,
-    drs_id_endswith: Union[Unset, str] = UNSET,
-    drs_id_gt: Union[Unset, str] = UNSET,
-    drs_id_gte: Union[Unset, str] = UNSET,
-    drs_id_icontains: Union[Unset, str] = UNSET,
-    drs_id_iendswith: Union[Unset, str] = UNSET,
-    drs_id_iexact: Union[Unset, str] = UNSET,
-    drs_id_in: Union[Unset, list[str]] = UNSET,
-    drs_id_iregex: Union[Unset, str] = UNSET,
-    drs_id_isnull: Union[Unset, bool] = UNSET,
-    drs_id_istartswith: Union[Unset, str] = UNSET,
-    drs_id_lt: Union[Unset, str] = UNSET,
-    drs_id_lte: Union[Unset, str] = UNSET,
-    drs_id_range: Union[Unset, list[str]] = UNSET,
-    drs_id_regex: Union[Unset, str] = UNSET,
-    drs_id_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    version: Union[Unset, str] = UNSET,
-    version_contains: Union[Unset, str] = UNSET,
-    version_endswith: Union[Unset, str] = UNSET,
-    version_gt: Union[Unset, str] = UNSET,
-    version_gte: Union[Unset, str] = UNSET,
-    version_icontains: Union[Unset, str] = UNSET,
-    version_iendswith: Union[Unset, str] = UNSET,
-    version_iexact: Union[Unset, str] = UNSET,
-    version_in: Union[Unset, list[str]] = UNSET,
-    version_iregex: Union[Unset, str] = UNSET,
-    version_isnull: Union[Unset, bool] = UNSET,
-    version_istartswith: Union[Unset, str] = UNSET,
-    version_lt: Union[Unset, str] = UNSET,
-    version_lte: Union[Unset, str] = UNSET,
-    version_range: Union[Unset, list[str]] = UNSET,
-    version_regex: Union[Unset, str] = UNSET,
-    version_startswith: Union[Unset, str] = UNSET,
+    directory: str | Unset = UNSET,
+    directory_contains: str | Unset = UNSET,
+    directory_endswith: str | Unset = UNSET,
+    directory_gt: str | Unset = UNSET,
+    directory_gte: str | Unset = UNSET,
+    directory_icontains: str | Unset = UNSET,
+    directory_iendswith: str | Unset = UNSET,
+    directory_iexact: str | Unset = UNSET,
+    directory_in: list[str] | Unset = UNSET,
+    directory_iregex: str | Unset = UNSET,
+    directory_isnull: bool | Unset = UNSET,
+    directory_istartswith: str | Unset = UNSET,
+    directory_lt: str | Unset = UNSET,
+    directory_lte: str | Unset = UNSET,
+    directory_range: list[str] | Unset = UNSET,
+    directory_regex: str | Unset = UNSET,
+    directory_startswith: str | Unset = UNSET,
+    drs_id: str | Unset = UNSET,
+    drs_id_contains: str | Unset = UNSET,
+    drs_id_endswith: str | Unset = UNSET,
+    drs_id_gt: str | Unset = UNSET,
+    drs_id_gte: str | Unset = UNSET,
+    drs_id_icontains: str | Unset = UNSET,
+    drs_id_iendswith: str | Unset = UNSET,
+    drs_id_iexact: str | Unset = UNSET,
+    drs_id_in: list[str] | Unset = UNSET,
+    drs_id_iregex: str | Unset = UNSET,
+    drs_id_isnull: bool | Unset = UNSET,
+    drs_id_istartswith: str | Unset = UNSET,
+    drs_id_lt: str | Unset = UNSET,
+    drs_id_lte: str | Unset = UNSET,
+    drs_id_range: list[str] | Unset = UNSET,
+    drs_id_regex: str | Unset = UNSET,
+    drs_id_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    version: str | Unset = UNSET,
+    version_contains: str | Unset = UNSET,
+    version_endswith: str | Unset = UNSET,
+    version_gt: str | Unset = UNSET,
+    version_gte: str | Unset = UNSET,
+    version_icontains: str | Unset = UNSET,
+    version_iendswith: str | Unset = UNSET,
+    version_iexact: str | Unset = UNSET,
+    version_in: list[str] | Unset = UNSET,
+    version_iregex: str | Unset = UNSET,
+    version_isnull: bool | Unset = UNSET,
+    version_istartswith: str | Unset = UNSET,
+    version_lt: str | Unset = UNSET,
+    version_lte: str | Unset = UNSET,
+    version_range: list[str] | Unset = UNSET,
+    version_regex: str | Unset = UNSET,
+    version_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedDRSDatasetReadList]:
     """Get a list of DRSDataset objects.
 
     Args:
-        directory (Union[Unset, str]):
-        directory_contains (Union[Unset, str]):
-        directory_endswith (Union[Unset, str]):
-        directory_gt (Union[Unset, str]):
-        directory_gte (Union[Unset, str]):
-        directory_icontains (Union[Unset, str]):
-        directory_iendswith (Union[Unset, str]):
-        directory_iexact (Union[Unset, str]):
-        directory_in (Union[Unset, list[str]]):
-        directory_iregex (Union[Unset, str]):
-        directory_isnull (Union[Unset, bool]):
-        directory_istartswith (Union[Unset, str]):
-        directory_lt (Union[Unset, str]):
-        directory_lte (Union[Unset, str]):
-        directory_range (Union[Unset, list[str]]):
-        directory_regex (Union[Unset, str]):
-        directory_startswith (Union[Unset, str]):
-        drs_id (Union[Unset, str]):
-        drs_id_contains (Union[Unset, str]):
-        drs_id_endswith (Union[Unset, str]):
-        drs_id_gt (Union[Unset, str]):
-        drs_id_gte (Union[Unset, str]):
-        drs_id_icontains (Union[Unset, str]):
-        drs_id_iendswith (Union[Unset, str]):
-        drs_id_iexact (Union[Unset, str]):
-        drs_id_in (Union[Unset, list[str]]):
-        drs_id_iregex (Union[Unset, str]):
-        drs_id_isnull (Union[Unset, bool]):
-        drs_id_istartswith (Union[Unset, str]):
-        drs_id_lt (Union[Unset, str]):
-        drs_id_lte (Union[Unset, str]):
-        drs_id_range (Union[Unset, list[str]]):
-        drs_id_regex (Union[Unset, str]):
-        drs_id_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        version (Union[Unset, str]):
-        version_contains (Union[Unset, str]):
-        version_endswith (Union[Unset, str]):
-        version_gt (Union[Unset, str]):
-        version_gte (Union[Unset, str]):
-        version_icontains (Union[Unset, str]):
-        version_iendswith (Union[Unset, str]):
-        version_iexact (Union[Unset, str]):
-        version_in (Union[Unset, list[str]]):
-        version_iregex (Union[Unset, str]):
-        version_isnull (Union[Unset, bool]):
-        version_istartswith (Union[Unset, str]):
-        version_lt (Union[Unset, str]):
-        version_lte (Union[Unset, str]):
-        version_range (Union[Unset, list[str]]):
-        version_regex (Union[Unset, str]):
-        version_startswith (Union[Unset, str]):
+        directory (str | Unset):
+        directory_contains (str | Unset):
+        directory_endswith (str | Unset):
+        directory_gt (str | Unset):
+        directory_gte (str | Unset):
+        directory_icontains (str | Unset):
+        directory_iendswith (str | Unset):
+        directory_iexact (str | Unset):
+        directory_in (list[str] | Unset):
+        directory_iregex (str | Unset):
+        directory_isnull (bool | Unset):
+        directory_istartswith (str | Unset):
+        directory_lt (str | Unset):
+        directory_lte (str | Unset):
+        directory_range (list[str] | Unset):
+        directory_regex (str | Unset):
+        directory_startswith (str | Unset):
+        drs_id (str | Unset):
+        drs_id_contains (str | Unset):
+        drs_id_endswith (str | Unset):
+        drs_id_gt (str | Unset):
+        drs_id_gte (str | Unset):
+        drs_id_icontains (str | Unset):
+        drs_id_iendswith (str | Unset):
+        drs_id_iexact (str | Unset):
+        drs_id_in (list[str] | Unset):
+        drs_id_iregex (str | Unset):
+        drs_id_isnull (bool | Unset):
+        drs_id_istartswith (str | Unset):
+        drs_id_lt (str | Unset):
+        drs_id_lte (str | Unset):
+        drs_id_range (list[str] | Unset):
+        drs_id_regex (str | Unset):
+        drs_id_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        version (str | Unset):
+        version_contains (str | Unset):
+        version_endswith (str | Unset):
+        version_gt (str | Unset):
+        version_gte (str | Unset):
+        version_icontains (str | Unset):
+        version_iendswith (str | Unset):
+        version_iexact (str | Unset):
+        version_in (list[str] | Unset):
+        version_iregex (str | Unset):
+        version_isnull (bool | Unset):
+        version_istartswith (str | Unset):
+        version_lt (str | Unset):
+        version_lte (str | Unset):
+        version_range (list[str] | Unset):
+        version_regex (str | Unset):
+        version_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1192,180 +1192,180 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    directory: Union[Unset, str] = UNSET,
-    directory_contains: Union[Unset, str] = UNSET,
-    directory_endswith: Union[Unset, str] = UNSET,
-    directory_gt: Union[Unset, str] = UNSET,
-    directory_gte: Union[Unset, str] = UNSET,
-    directory_icontains: Union[Unset, str] = UNSET,
-    directory_iendswith: Union[Unset, str] = UNSET,
-    directory_iexact: Union[Unset, str] = UNSET,
-    directory_in: Union[Unset, list[str]] = UNSET,
-    directory_iregex: Union[Unset, str] = UNSET,
-    directory_isnull: Union[Unset, bool] = UNSET,
-    directory_istartswith: Union[Unset, str] = UNSET,
-    directory_lt: Union[Unset, str] = UNSET,
-    directory_lte: Union[Unset, str] = UNSET,
-    directory_range: Union[Unset, list[str]] = UNSET,
-    directory_regex: Union[Unset, str] = UNSET,
-    directory_startswith: Union[Unset, str] = UNSET,
-    drs_id: Union[Unset, str] = UNSET,
-    drs_id_contains: Union[Unset, str] = UNSET,
-    drs_id_endswith: Union[Unset, str] = UNSET,
-    drs_id_gt: Union[Unset, str] = UNSET,
-    drs_id_gte: Union[Unset, str] = UNSET,
-    drs_id_icontains: Union[Unset, str] = UNSET,
-    drs_id_iendswith: Union[Unset, str] = UNSET,
-    drs_id_iexact: Union[Unset, str] = UNSET,
-    drs_id_in: Union[Unset, list[str]] = UNSET,
-    drs_id_iregex: Union[Unset, str] = UNSET,
-    drs_id_isnull: Union[Unset, bool] = UNSET,
-    drs_id_istartswith: Union[Unset, str] = UNSET,
-    drs_id_lt: Union[Unset, str] = UNSET,
-    drs_id_lte: Union[Unset, str] = UNSET,
-    drs_id_range: Union[Unset, list[str]] = UNSET,
-    drs_id_regex: Union[Unset, str] = UNSET,
-    drs_id_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-    version: Union[Unset, str] = UNSET,
-    version_contains: Union[Unset, str] = UNSET,
-    version_endswith: Union[Unset, str] = UNSET,
-    version_gt: Union[Unset, str] = UNSET,
-    version_gte: Union[Unset, str] = UNSET,
-    version_icontains: Union[Unset, str] = UNSET,
-    version_iendswith: Union[Unset, str] = UNSET,
-    version_iexact: Union[Unset, str] = UNSET,
-    version_in: Union[Unset, list[str]] = UNSET,
-    version_iregex: Union[Unset, str] = UNSET,
-    version_isnull: Union[Unset, bool] = UNSET,
-    version_istartswith: Union[Unset, str] = UNSET,
-    version_lt: Union[Unset, str] = UNSET,
-    version_lte: Union[Unset, str] = UNSET,
-    version_range: Union[Unset, list[str]] = UNSET,
-    version_regex: Union[Unset, str] = UNSET,
-    version_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedDRSDatasetReadList]:
+    directory: str | Unset = UNSET,
+    directory_contains: str | Unset = UNSET,
+    directory_endswith: str | Unset = UNSET,
+    directory_gt: str | Unset = UNSET,
+    directory_gte: str | Unset = UNSET,
+    directory_icontains: str | Unset = UNSET,
+    directory_iendswith: str | Unset = UNSET,
+    directory_iexact: str | Unset = UNSET,
+    directory_in: list[str] | Unset = UNSET,
+    directory_iregex: str | Unset = UNSET,
+    directory_isnull: bool | Unset = UNSET,
+    directory_istartswith: str | Unset = UNSET,
+    directory_lt: str | Unset = UNSET,
+    directory_lte: str | Unset = UNSET,
+    directory_range: list[str] | Unset = UNSET,
+    directory_regex: str | Unset = UNSET,
+    directory_startswith: str | Unset = UNSET,
+    drs_id: str | Unset = UNSET,
+    drs_id_contains: str | Unset = UNSET,
+    drs_id_endswith: str | Unset = UNSET,
+    drs_id_gt: str | Unset = UNSET,
+    drs_id_gte: str | Unset = UNSET,
+    drs_id_icontains: str | Unset = UNSET,
+    drs_id_iendswith: str | Unset = UNSET,
+    drs_id_iexact: str | Unset = UNSET,
+    drs_id_in: list[str] | Unset = UNSET,
+    drs_id_iregex: str | Unset = UNSET,
+    drs_id_isnull: bool | Unset = UNSET,
+    drs_id_istartswith: str | Unset = UNSET,
+    drs_id_lt: str | Unset = UNSET,
+    drs_id_lte: str | Unset = UNSET,
+    drs_id_range: list[str] | Unset = UNSET,
+    drs_id_regex: str | Unset = UNSET,
+    drs_id_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+    version: str | Unset = UNSET,
+    version_contains: str | Unset = UNSET,
+    version_endswith: str | Unset = UNSET,
+    version_gt: str | Unset = UNSET,
+    version_gte: str | Unset = UNSET,
+    version_icontains: str | Unset = UNSET,
+    version_iendswith: str | Unset = UNSET,
+    version_iexact: str | Unset = UNSET,
+    version_in: list[str] | Unset = UNSET,
+    version_iregex: str | Unset = UNSET,
+    version_isnull: bool | Unset = UNSET,
+    version_istartswith: str | Unset = UNSET,
+    version_lt: str | Unset = UNSET,
+    version_lte: str | Unset = UNSET,
+    version_range: list[str] | Unset = UNSET,
+    version_regex: str | Unset = UNSET,
+    version_startswith: str | Unset = UNSET,
+) -> PaginatedDRSDatasetReadList | None:
     """Get a list of DRSDataset objects.
 
     Args:
-        directory (Union[Unset, str]):
-        directory_contains (Union[Unset, str]):
-        directory_endswith (Union[Unset, str]):
-        directory_gt (Union[Unset, str]):
-        directory_gte (Union[Unset, str]):
-        directory_icontains (Union[Unset, str]):
-        directory_iendswith (Union[Unset, str]):
-        directory_iexact (Union[Unset, str]):
-        directory_in (Union[Unset, list[str]]):
-        directory_iregex (Union[Unset, str]):
-        directory_isnull (Union[Unset, bool]):
-        directory_istartswith (Union[Unset, str]):
-        directory_lt (Union[Unset, str]):
-        directory_lte (Union[Unset, str]):
-        directory_range (Union[Unset, list[str]]):
-        directory_regex (Union[Unset, str]):
-        directory_startswith (Union[Unset, str]):
-        drs_id (Union[Unset, str]):
-        drs_id_contains (Union[Unset, str]):
-        drs_id_endswith (Union[Unset, str]):
-        drs_id_gt (Union[Unset, str]):
-        drs_id_gte (Union[Unset, str]):
-        drs_id_icontains (Union[Unset, str]):
-        drs_id_iendswith (Union[Unset, str]):
-        drs_id_iexact (Union[Unset, str]):
-        drs_id_in (Union[Unset, list[str]]):
-        drs_id_iregex (Union[Unset, str]):
-        drs_id_isnull (Union[Unset, bool]):
-        drs_id_istartswith (Union[Unset, str]):
-        drs_id_lt (Union[Unset, str]):
-        drs_id_lte (Union[Unset, str]):
-        drs_id_range (Union[Unset, list[str]]):
-        drs_id_regex (Union[Unset, str]):
-        drs_id_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
-        version (Union[Unset, str]):
-        version_contains (Union[Unset, str]):
-        version_endswith (Union[Unset, str]):
-        version_gt (Union[Unset, str]):
-        version_gte (Union[Unset, str]):
-        version_icontains (Union[Unset, str]):
-        version_iendswith (Union[Unset, str]):
-        version_iexact (Union[Unset, str]):
-        version_in (Union[Unset, list[str]]):
-        version_iregex (Union[Unset, str]):
-        version_isnull (Union[Unset, bool]):
-        version_istartswith (Union[Unset, str]):
-        version_lt (Union[Unset, str]):
-        version_lte (Union[Unset, str]):
-        version_range (Union[Unset, list[str]]):
-        version_regex (Union[Unset, str]):
-        version_startswith (Union[Unset, str]):
+        directory (str | Unset):
+        directory_contains (str | Unset):
+        directory_endswith (str | Unset):
+        directory_gt (str | Unset):
+        directory_gte (str | Unset):
+        directory_icontains (str | Unset):
+        directory_iendswith (str | Unset):
+        directory_iexact (str | Unset):
+        directory_in (list[str] | Unset):
+        directory_iregex (str | Unset):
+        directory_isnull (bool | Unset):
+        directory_istartswith (str | Unset):
+        directory_lt (str | Unset):
+        directory_lte (str | Unset):
+        directory_range (list[str] | Unset):
+        directory_regex (str | Unset):
+        directory_startswith (str | Unset):
+        drs_id (str | Unset):
+        drs_id_contains (str | Unset):
+        drs_id_endswith (str | Unset):
+        drs_id_gt (str | Unset):
+        drs_id_gte (str | Unset):
+        drs_id_icontains (str | Unset):
+        drs_id_iendswith (str | Unset):
+        drs_id_iexact (str | Unset):
+        drs_id_in (list[str] | Unset):
+        drs_id_iregex (str | Unset):
+        drs_id_isnull (bool | Unset):
+        drs_id_istartswith (str | Unset):
+        drs_id_lt (str | Unset):
+        drs_id_lte (str | Unset):
+        drs_id_range (list[str] | Unset):
+        drs_id_regex (str | Unset):
+        drs_id_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
+        version (str | Unset):
+        version_contains (str | Unset):
+        version_endswith (str | Unset):
+        version_gt (str | Unset):
+        version_gte (str | Unset):
+        version_icontains (str | Unset):
+        version_iendswith (str | Unset):
+        version_iexact (str | Unset):
+        version_in (list[str] | Unset):
+        version_iregex (str | Unset):
+        version_isnull (bool | Unset):
+        version_istartswith (str | Unset):
+        version_lt (str | Unset):
+        version_lte (str | Unset):
+        version_range (list[str] | Unset):
+        version_regex (str | Unset):
+        version_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

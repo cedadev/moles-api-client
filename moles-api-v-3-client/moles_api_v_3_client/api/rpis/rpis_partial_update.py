@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -31,8 +31,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ResponsiblePartyInfoWrite]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> ResponsiblePartyInfoWrite | None:
     if response.status_code == 200:
         response_200 = ResponsiblePartyInfoWrite.from_dict(response.json())
 
@@ -45,7 +45,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[ResponsiblePartyInfoWrite]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -97,7 +97,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: PatchedResponsiblePartyInfoWriteRequest,
-) -> Optional[ResponsiblePartyInfoWrite]:
+) -> ResponsiblePartyInfoWrite | None:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
     undertaking. Additionally, the priority value indicates an ordering that may be present for
@@ -164,7 +164,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: PatchedResponsiblePartyInfoWriteRequest,
-) -> Optional[ResponsiblePartyInfoWrite]:
+) -> ResponsiblePartyInfoWrite | None:
     """Get a list of ResponsiblePartyInfo objects. These link a Party (individual or organisation) to
     a principal record type (e.g. Observation, Instrument, Project) and the role which the Party was
     undertaking. Additionally, the priority value indicates an ordering that may be present for

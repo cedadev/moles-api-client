@@ -6,7 +6,7 @@ from scripts.utils import get_client
 from scripts import moles_basic_tools as mbt
 
 from moles_api_v_3_client.api.parties import parties_list
-from moles_api_v_3_client.api.projects import projects_list, projects_create
+from moles_api_v_3_client.api.projects import projects_create
 from moles_api_v_3_client.api.identifiers import identifiers_list
 
 from moles_api_v_3_client.models.project_write_request import ProjectWriteRequest, PublicationState6F9Enum, StatusEnum

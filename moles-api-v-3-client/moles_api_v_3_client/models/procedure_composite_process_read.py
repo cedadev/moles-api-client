@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,20 +23,20 @@ class ProcedureCompositeProcessRead:
             uuid (str):
             title (str):
             abstract (str):
-            computation_component (Union[None, list['SimpleRead']]):
-            acquisition_component (Union[None, list['SimpleRead']]):
-            identifier_set (list[Union[None, int]]):
-            responsiblepartyinfo_set (list[Union[None, int]]):
+            computation_component (list[SimpleRead] | None):
+            acquisition_component (list[SimpleRead] | None):
+            identifier_set (list[int | None]):
+            responsiblepartyinfo_set (list[int | None]):
     """
 
     ob_id: int
     uuid: str
     title: str
     abstract: str
-    computation_component: Union[None, list["SimpleRead"]]
-    acquisition_component: Union[None, list["SimpleRead"]]
-    identifier_set: list[Union[None, int]]
-    responsiblepartyinfo_set: list[Union[None, int]]
+    computation_component: list[SimpleRead] | None
+    acquisition_component: list[SimpleRead] | None
+    identifier_set: list[int | None]
+    responsiblepartyinfo_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -46,7 +48,7 @@ class ProcedureCompositeProcessRead:
 
         abstract = self.abstract
 
-        computation_component: Union[None, list[dict[str, Any]]]
+        computation_component: list[dict[str, Any]] | None
         if isinstance(self.computation_component, list):
             computation_component = []
             for computation_component_type_0_item_data in self.computation_component:
@@ -56,7 +58,7 @@ class ProcedureCompositeProcessRead:
         else:
             computation_component = self.computation_component
 
-        acquisition_component: Union[None, list[dict[str, Any]]]
+        acquisition_component: list[dict[str, Any]] | None
         if isinstance(self.acquisition_component, list):
             acquisition_component = []
             for acquisition_component_type_0_item_data in self.acquisition_component:
@@ -68,13 +70,13 @@ class ProcedureCompositeProcessRead:
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
-            responsiblepartyinfo_set_item: Union[None, int]
+            responsiblepartyinfo_set_item: int | None
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
@@ -108,7 +110,7 @@ class ProcedureCompositeProcessRead:
 
         abstract = d.pop("abstract")
 
-        def _parse_computation_component(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_computation_component(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -122,13 +124,13 @@ class ProcedureCompositeProcessRead:
                     computation_component_type_0.append(computation_component_type_0_item)
 
                 return computation_component_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         computation_component = _parse_computation_component(d.pop("computationComponent"))
 
-        def _parse_acquisition_component(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_acquisition_component(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -142,9 +144,9 @@ class ProcedureCompositeProcessRead:
                     acquisition_component_type_0.append(acquisition_component_type_0_item)
 
                 return acquisition_component_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         acquisition_component = _parse_acquisition_component(d.pop("acquisitionComponent"))
 
@@ -152,10 +154,10 @@ class ProcedureCompositeProcessRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 
@@ -165,10 +167,10 @@ class ProcedureCompositeProcessRead:
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")
         for responsiblepartyinfo_set_item_data in _responsiblepartyinfo_set:
 
-            def _parse_responsiblepartyinfo_set_item(data: object) -> Union[None, int]:
+            def _parse_responsiblepartyinfo_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             responsiblepartyinfo_set_item = _parse_responsiblepartyinfo_set_item(responsiblepartyinfo_set_item_data)
 

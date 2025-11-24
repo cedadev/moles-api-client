@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,15 +20,15 @@ class InstrumentPlatformPairRead:
 
         Attributes:
             ob_id (int):
-            platform (Union['SimpleRead', None]):
-            instrument (Union['SimpleRead', None]):
-            related_to (Union['SimpleRead', None]):
+            platform (None | SimpleRead):
+            instrument (None | SimpleRead):
+            related_to (None | SimpleRead):
     """
 
     ob_id: int
-    platform: Union["SimpleRead", None]
-    instrument: Union["SimpleRead", None]
-    related_to: Union["SimpleRead", None]
+    platform: None | SimpleRead
+    instrument: None | SimpleRead
+    related_to: None | SimpleRead
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -34,19 +36,19 @@ class InstrumentPlatformPairRead:
 
         ob_id = self.ob_id
 
-        platform: Union[None, dict[str, Any]]
+        platform: dict[str, Any] | None
         if isinstance(self.platform, SimpleRead):
             platform = self.platform.to_dict()
         else:
             platform = self.platform
 
-        instrument: Union[None, dict[str, Any]]
+        instrument: dict[str, Any] | None
         if isinstance(self.instrument, SimpleRead):
             instrument = self.instrument.to_dict()
         else:
             instrument = self.instrument
 
-        related_to: Union[None, dict[str, Any]]
+        related_to: dict[str, Any] | None
         if isinstance(self.related_to, SimpleRead):
             related_to = self.related_to.to_dict()
         else:
@@ -72,7 +74,7 @@ class InstrumentPlatformPairRead:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        def _parse_platform(data: object) -> Union["SimpleRead", None]:
+        def _parse_platform(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -81,13 +83,13 @@ class InstrumentPlatformPairRead:
                 platform_type_1 = SimpleRead.from_dict(data)
 
                 return platform_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         platform = _parse_platform(d.pop("platform"))
 
-        def _parse_instrument(data: object) -> Union["SimpleRead", None]:
+        def _parse_instrument(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -96,13 +98,13 @@ class InstrumentPlatformPairRead:
                 instrument_type_1 = SimpleRead.from_dict(data)
 
                 return instrument_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         instrument = _parse_instrument(d.pop("instrument"))
 
-        def _parse_related_to(data: object) -> Union["SimpleRead", None]:
+        def _parse_related_to(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -111,9 +113,9 @@ class InstrumentPlatformPairRead:
                 related_to_type_1 = SimpleRead.from_dict(data)
 
                 return related_to_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         related_to = _parse_related_to(d.pop("relatedTo"))
 

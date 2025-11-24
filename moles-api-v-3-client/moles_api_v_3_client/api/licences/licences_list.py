@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,54 +11,54 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_classifications_classification_in: Union[Unset, list[str]] = UNSET,
-    licence_classifications_ob_id: Union[Unset, int] = UNSET,
-    licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET,
-    licence_url: Union[Unset, str] = UNSET,
-    licence_url_contains: Union[Unset, str] = UNSET,
-    licence_url_endswith: Union[Unset, str] = UNSET,
-    licence_url_gt: Union[Unset, str] = UNSET,
-    licence_url_gte: Union[Unset, str] = UNSET,
-    licence_url_icontains: Union[Unset, str] = UNSET,
-    licence_url_iendswith: Union[Unset, str] = UNSET,
-    licence_url_iexact: Union[Unset, str] = UNSET,
-    licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_url_iregex: Union[Unset, str] = UNSET,
-    licence_url_isnull: Union[Unset, bool] = UNSET,
-    licence_url_istartswith: Union[Unset, str] = UNSET,
-    licence_url_lt: Union[Unset, str] = UNSET,
-    licence_url_lte: Union[Unset, str] = UNSET,
-    licence_url_range: Union[Unset, list[str]] = UNSET,
-    licence_url_regex: Union[Unset, str] = UNSET,
-    licence_url_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    licence_classifications_classification: str | Unset = UNSET,
+    licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_ob_id: int | Unset = UNSET,
+    licence_classifications_ob_id_in: list[int] | Unset = UNSET,
+    licence_url: str | Unset = UNSET,
+    licence_url_contains: str | Unset = UNSET,
+    licence_url_endswith: str | Unset = UNSET,
+    licence_url_gt: str | Unset = UNSET,
+    licence_url_gte: str | Unset = UNSET,
+    licence_url_icontains: str | Unset = UNSET,
+    licence_url_iendswith: str | Unset = UNSET,
+    licence_url_iexact: str | Unset = UNSET,
+    licence_url_in: list[str] | Unset = UNSET,
+    licence_url_iregex: str | Unset = UNSET,
+    licence_url_isnull: bool | Unset = UNSET,
+    licence_url_istartswith: str | Unset = UNSET,
+    licence_url_lt: str | Unset = UNSET,
+    licence_url_lte: str | Unset = UNSET,
+    licence_url_range: list[str] | Unset = UNSET,
+    licence_url_regex: str | Unset = UNSET,
+    licence_url_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
     params["licenceClassifications__classification"] = licence_classifications_classification
 
-    json_licence_classifications_classification_in: Union[Unset, list[str]] = UNSET
+    json_licence_classifications_classification_in: list[str] | Unset = UNSET
     if not isinstance(licence_classifications_classification_in, Unset):
         json_licence_classifications_classification_in = ",".join(map(str, licence_classifications_classification_in))
 
@@ -66,7 +66,7 @@ def _get_kwargs(
 
     params["licenceClassifications__ob_id"] = licence_classifications_ob_id
 
-    json_licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_licence_classifications_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(licence_classifications_ob_id_in, Unset):
         json_licence_classifications_ob_id_in = ",".join(map(str, licence_classifications_ob_id_in))
 
@@ -88,7 +88,7 @@ def _get_kwargs(
 
     params["licenceURL__iexact"] = licence_url_iexact
 
-    json_licence_url_in: Union[Unset, list[str]] = UNSET
+    json_licence_url_in: list[str] | Unset = UNSET
     if not isinstance(licence_url_in, Unset):
         json_licence_url_in = ",".join(map(str, licence_url_in))
 
@@ -104,7 +104,7 @@ def _get_kwargs(
 
     params["licenceURL__lte"] = licence_url_lte
 
-    json_licence_url_range: Union[Unset, list[str]] = UNSET
+    json_licence_url_range: list[str] | Unset = UNSET
     if not isinstance(licence_url_range, Unset):
         json_licence_url_range = ",".join(map(str, licence_url_range))
 
@@ -134,7 +134,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -150,7 +150,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -176,8 +176,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedLicenceReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedLicenceReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedLicenceReadList.from_dict(response.json())
 
@@ -190,7 +190,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedLicenceReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -203,94 +203,94 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_classifications_classification_in: Union[Unset, list[str]] = UNSET,
-    licence_classifications_ob_id: Union[Unset, int] = UNSET,
-    licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET,
-    licence_url: Union[Unset, str] = UNSET,
-    licence_url_contains: Union[Unset, str] = UNSET,
-    licence_url_endswith: Union[Unset, str] = UNSET,
-    licence_url_gt: Union[Unset, str] = UNSET,
-    licence_url_gte: Union[Unset, str] = UNSET,
-    licence_url_icontains: Union[Unset, str] = UNSET,
-    licence_url_iendswith: Union[Unset, str] = UNSET,
-    licence_url_iexact: Union[Unset, str] = UNSET,
-    licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_url_iregex: Union[Unset, str] = UNSET,
-    licence_url_isnull: Union[Unset, bool] = UNSET,
-    licence_url_istartswith: Union[Unset, str] = UNSET,
-    licence_url_lt: Union[Unset, str] = UNSET,
-    licence_url_lte: Union[Unset, str] = UNSET,
-    licence_url_range: Union[Unset, list[str]] = UNSET,
-    licence_url_regex: Union[Unset, str] = UNSET,
-    licence_url_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    licence_classifications_classification: str | Unset = UNSET,
+    licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_ob_id: int | Unset = UNSET,
+    licence_classifications_ob_id_in: list[int] | Unset = UNSET,
+    licence_url: str | Unset = UNSET,
+    licence_url_contains: str | Unset = UNSET,
+    licence_url_endswith: str | Unset = UNSET,
+    licence_url_gt: str | Unset = UNSET,
+    licence_url_gte: str | Unset = UNSET,
+    licence_url_icontains: str | Unset = UNSET,
+    licence_url_iendswith: str | Unset = UNSET,
+    licence_url_iexact: str | Unset = UNSET,
+    licence_url_in: list[str] | Unset = UNSET,
+    licence_url_iregex: str | Unset = UNSET,
+    licence_url_isnull: bool | Unset = UNSET,
+    licence_url_istartswith: str | Unset = UNSET,
+    licence_url_lt: str | Unset = UNSET,
+    licence_url_lte: str | Unset = UNSET,
+    licence_url_range: list[str] | Unset = UNSET,
+    licence_url_regex: str | Unset = UNSET,
+    licence_url_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
-        licence_classifications_classification (Union[Unset, str]):
-        licence_classifications_classification_in (Union[Unset, list[str]]):
-        licence_classifications_ob_id (Union[Unset, int]):
-        licence_classifications_ob_id_in (Union[Unset, list[int]]):
-        licence_url (Union[Unset, str]):
-        licence_url_contains (Union[Unset, str]):
-        licence_url_endswith (Union[Unset, str]):
-        licence_url_gt (Union[Unset, str]):
-        licence_url_gte (Union[Unset, str]):
-        licence_url_icontains (Union[Unset, str]):
-        licence_url_iendswith (Union[Unset, str]):
-        licence_url_iexact (Union[Unset, str]):
-        licence_url_in (Union[Unset, list[str]]):
-        licence_url_iregex (Union[Unset, str]):
-        licence_url_isnull (Union[Unset, bool]):
-        licence_url_istartswith (Union[Unset, str]):
-        licence_url_lt (Union[Unset, str]):
-        licence_url_lte (Union[Unset, str]):
-        licence_url_range (Union[Unset, list[str]]):
-        licence_url_regex (Union[Unset, str]):
-        licence_url_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        licence_classifications_classification (str | Unset):
+        licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_ob_id (int | Unset):
+        licence_classifications_ob_id_in (list[int] | Unset):
+        licence_url (str | Unset):
+        licence_url_contains (str | Unset):
+        licence_url_endswith (str | Unset):
+        licence_url_gt (str | Unset):
+        licence_url_gte (str | Unset):
+        licence_url_icontains (str | Unset):
+        licence_url_iendswith (str | Unset):
+        licence_url_iexact (str | Unset):
+        licence_url_in (list[str] | Unset):
+        licence_url_iregex (str | Unset):
+        licence_url_isnull (bool | Unset):
+        licence_url_istartswith (str | Unset):
+        licence_url_lt (str | Unset):
+        licence_url_lte (str | Unset):
+        licence_url_range (list[str] | Unset):
+        licence_url_regex (str | Unset):
+        licence_url_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -355,94 +355,94 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_classifications_classification_in: Union[Unset, list[str]] = UNSET,
-    licence_classifications_ob_id: Union[Unset, int] = UNSET,
-    licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET,
-    licence_url: Union[Unset, str] = UNSET,
-    licence_url_contains: Union[Unset, str] = UNSET,
-    licence_url_endswith: Union[Unset, str] = UNSET,
-    licence_url_gt: Union[Unset, str] = UNSET,
-    licence_url_gte: Union[Unset, str] = UNSET,
-    licence_url_icontains: Union[Unset, str] = UNSET,
-    licence_url_iendswith: Union[Unset, str] = UNSET,
-    licence_url_iexact: Union[Unset, str] = UNSET,
-    licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_url_iregex: Union[Unset, str] = UNSET,
-    licence_url_isnull: Union[Unset, bool] = UNSET,
-    licence_url_istartswith: Union[Unset, str] = UNSET,
-    licence_url_lt: Union[Unset, str] = UNSET,
-    licence_url_lte: Union[Unset, str] = UNSET,
-    licence_url_range: Union[Unset, list[str]] = UNSET,
-    licence_url_regex: Union[Unset, str] = UNSET,
-    licence_url_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedLicenceReadList]:
+    licence_classifications_classification: str | Unset = UNSET,
+    licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_ob_id: int | Unset = UNSET,
+    licence_classifications_ob_id_in: list[int] | Unset = UNSET,
+    licence_url: str | Unset = UNSET,
+    licence_url_contains: str | Unset = UNSET,
+    licence_url_endswith: str | Unset = UNSET,
+    licence_url_gt: str | Unset = UNSET,
+    licence_url_gte: str | Unset = UNSET,
+    licence_url_icontains: str | Unset = UNSET,
+    licence_url_iendswith: str | Unset = UNSET,
+    licence_url_iexact: str | Unset = UNSET,
+    licence_url_in: list[str] | Unset = UNSET,
+    licence_url_iregex: str | Unset = UNSET,
+    licence_url_isnull: bool | Unset = UNSET,
+    licence_url_istartswith: str | Unset = UNSET,
+    licence_url_lt: str | Unset = UNSET,
+    licence_url_lte: str | Unset = UNSET,
+    licence_url_range: list[str] | Unset = UNSET,
+    licence_url_regex: str | Unset = UNSET,
+    licence_url_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedLicenceReadList | None:
     """Get a list of Licence objects.
 
     Args:
-        licence_classifications_classification (Union[Unset, str]):
-        licence_classifications_classification_in (Union[Unset, list[str]]):
-        licence_classifications_ob_id (Union[Unset, int]):
-        licence_classifications_ob_id_in (Union[Unset, list[int]]):
-        licence_url (Union[Unset, str]):
-        licence_url_contains (Union[Unset, str]):
-        licence_url_endswith (Union[Unset, str]):
-        licence_url_gt (Union[Unset, str]):
-        licence_url_gte (Union[Unset, str]):
-        licence_url_icontains (Union[Unset, str]):
-        licence_url_iendswith (Union[Unset, str]):
-        licence_url_iexact (Union[Unset, str]):
-        licence_url_in (Union[Unset, list[str]]):
-        licence_url_iregex (Union[Unset, str]):
-        licence_url_isnull (Union[Unset, bool]):
-        licence_url_istartswith (Union[Unset, str]):
-        licence_url_lt (Union[Unset, str]):
-        licence_url_lte (Union[Unset, str]):
-        licence_url_range (Union[Unset, list[str]]):
-        licence_url_regex (Union[Unset, str]):
-        licence_url_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        licence_classifications_classification (str | Unset):
+        licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_ob_id (int | Unset):
+        licence_classifications_ob_id_in (list[int] | Unset):
+        licence_url (str | Unset):
+        licence_url_contains (str | Unset):
+        licence_url_endswith (str | Unset):
+        licence_url_gt (str | Unset):
+        licence_url_gte (str | Unset):
+        licence_url_icontains (str | Unset):
+        licence_url_iendswith (str | Unset):
+        licence_url_iexact (str | Unset):
+        licence_url_in (list[str] | Unset):
+        licence_url_iregex (str | Unset):
+        licence_url_isnull (bool | Unset):
+        licence_url_istartswith (str | Unset):
+        licence_url_lt (str | Unset):
+        licence_url_lte (str | Unset):
+        licence_url_range (list[str] | Unset):
+        licence_url_regex (str | Unset):
+        licence_url_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -502,94 +502,94 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_classifications_classification_in: Union[Unset, list[str]] = UNSET,
-    licence_classifications_ob_id: Union[Unset, int] = UNSET,
-    licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET,
-    licence_url: Union[Unset, str] = UNSET,
-    licence_url_contains: Union[Unset, str] = UNSET,
-    licence_url_endswith: Union[Unset, str] = UNSET,
-    licence_url_gt: Union[Unset, str] = UNSET,
-    licence_url_gte: Union[Unset, str] = UNSET,
-    licence_url_icontains: Union[Unset, str] = UNSET,
-    licence_url_iendswith: Union[Unset, str] = UNSET,
-    licence_url_iexact: Union[Unset, str] = UNSET,
-    licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_url_iregex: Union[Unset, str] = UNSET,
-    licence_url_isnull: Union[Unset, bool] = UNSET,
-    licence_url_istartswith: Union[Unset, str] = UNSET,
-    licence_url_lt: Union[Unset, str] = UNSET,
-    licence_url_lte: Union[Unset, str] = UNSET,
-    licence_url_range: Union[Unset, list[str]] = UNSET,
-    licence_url_regex: Union[Unset, str] = UNSET,
-    licence_url_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    licence_classifications_classification: str | Unset = UNSET,
+    licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_ob_id: int | Unset = UNSET,
+    licence_classifications_ob_id_in: list[int] | Unset = UNSET,
+    licence_url: str | Unset = UNSET,
+    licence_url_contains: str | Unset = UNSET,
+    licence_url_endswith: str | Unset = UNSET,
+    licence_url_gt: str | Unset = UNSET,
+    licence_url_gte: str | Unset = UNSET,
+    licence_url_icontains: str | Unset = UNSET,
+    licence_url_iendswith: str | Unset = UNSET,
+    licence_url_iexact: str | Unset = UNSET,
+    licence_url_in: list[str] | Unset = UNSET,
+    licence_url_iregex: str | Unset = UNSET,
+    licence_url_isnull: bool | Unset = UNSET,
+    licence_url_istartswith: str | Unset = UNSET,
+    licence_url_lt: str | Unset = UNSET,
+    licence_url_lte: str | Unset = UNSET,
+    licence_url_range: list[str] | Unset = UNSET,
+    licence_url_regex: str | Unset = UNSET,
+    licence_url_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedLicenceReadList]:
     """Get a list of Licence objects.
 
     Args:
-        licence_classifications_classification (Union[Unset, str]):
-        licence_classifications_classification_in (Union[Unset, list[str]]):
-        licence_classifications_ob_id (Union[Unset, int]):
-        licence_classifications_ob_id_in (Union[Unset, list[int]]):
-        licence_url (Union[Unset, str]):
-        licence_url_contains (Union[Unset, str]):
-        licence_url_endswith (Union[Unset, str]):
-        licence_url_gt (Union[Unset, str]):
-        licence_url_gte (Union[Unset, str]):
-        licence_url_icontains (Union[Unset, str]):
-        licence_url_iendswith (Union[Unset, str]):
-        licence_url_iexact (Union[Unset, str]):
-        licence_url_in (Union[Unset, list[str]]):
-        licence_url_iregex (Union[Unset, str]):
-        licence_url_isnull (Union[Unset, bool]):
-        licence_url_istartswith (Union[Unset, str]):
-        licence_url_lt (Union[Unset, str]):
-        licence_url_lte (Union[Unset, str]):
-        licence_url_range (Union[Unset, list[str]]):
-        licence_url_regex (Union[Unset, str]):
-        licence_url_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        licence_classifications_classification (str | Unset):
+        licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_ob_id (int | Unset):
+        licence_classifications_ob_id_in (list[int] | Unset):
+        licence_url (str | Unset):
+        licence_url_contains (str | Unset):
+        licence_url_endswith (str | Unset):
+        licence_url_gt (str | Unset):
+        licence_url_gte (str | Unset):
+        licence_url_icontains (str | Unset):
+        licence_url_iendswith (str | Unset):
+        licence_url_iexact (str | Unset):
+        licence_url_in (list[str] | Unset):
+        licence_url_iregex (str | Unset):
+        licence_url_isnull (bool | Unset):
+        licence_url_istartswith (str | Unset):
+        licence_url_lt (str | Unset):
+        licence_url_lte (str | Unset):
+        licence_url_range (list[str] | Unset):
+        licence_url_regex (str | Unset):
+        licence_url_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -652,94 +652,94 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_classifications_classification_in: Union[Unset, list[str]] = UNSET,
-    licence_classifications_ob_id: Union[Unset, int] = UNSET,
-    licence_classifications_ob_id_in: Union[Unset, list[int]] = UNSET,
-    licence_url: Union[Unset, str] = UNSET,
-    licence_url_contains: Union[Unset, str] = UNSET,
-    licence_url_endswith: Union[Unset, str] = UNSET,
-    licence_url_gt: Union[Unset, str] = UNSET,
-    licence_url_gte: Union[Unset, str] = UNSET,
-    licence_url_icontains: Union[Unset, str] = UNSET,
-    licence_url_iendswith: Union[Unset, str] = UNSET,
-    licence_url_iexact: Union[Unset, str] = UNSET,
-    licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_url_iregex: Union[Unset, str] = UNSET,
-    licence_url_isnull: Union[Unset, bool] = UNSET,
-    licence_url_istartswith: Union[Unset, str] = UNSET,
-    licence_url_lt: Union[Unset, str] = UNSET,
-    licence_url_lte: Union[Unset, str] = UNSET,
-    licence_url_range: Union[Unset, list[str]] = UNSET,
-    licence_url_regex: Union[Unset, str] = UNSET,
-    licence_url_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedLicenceReadList]:
+    licence_classifications_classification: str | Unset = UNSET,
+    licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_ob_id: int | Unset = UNSET,
+    licence_classifications_ob_id_in: list[int] | Unset = UNSET,
+    licence_url: str | Unset = UNSET,
+    licence_url_contains: str | Unset = UNSET,
+    licence_url_endswith: str | Unset = UNSET,
+    licence_url_gt: str | Unset = UNSET,
+    licence_url_gte: str | Unset = UNSET,
+    licence_url_icontains: str | Unset = UNSET,
+    licence_url_iendswith: str | Unset = UNSET,
+    licence_url_iexact: str | Unset = UNSET,
+    licence_url_in: list[str] | Unset = UNSET,
+    licence_url_iregex: str | Unset = UNSET,
+    licence_url_isnull: bool | Unset = UNSET,
+    licence_url_istartswith: str | Unset = UNSET,
+    licence_url_lt: str | Unset = UNSET,
+    licence_url_lte: str | Unset = UNSET,
+    licence_url_range: list[str] | Unset = UNSET,
+    licence_url_regex: str | Unset = UNSET,
+    licence_url_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedLicenceReadList | None:
     """Get a list of Licence objects.
 
     Args:
-        licence_classifications_classification (Union[Unset, str]):
-        licence_classifications_classification_in (Union[Unset, list[str]]):
-        licence_classifications_ob_id (Union[Unset, int]):
-        licence_classifications_ob_id_in (Union[Unset, list[int]]):
-        licence_url (Union[Unset, str]):
-        licence_url_contains (Union[Unset, str]):
-        licence_url_endswith (Union[Unset, str]):
-        licence_url_gt (Union[Unset, str]):
-        licence_url_gte (Union[Unset, str]):
-        licence_url_icontains (Union[Unset, str]):
-        licence_url_iendswith (Union[Unset, str]):
-        licence_url_iexact (Union[Unset, str]):
-        licence_url_in (Union[Unset, list[str]]):
-        licence_url_iregex (Union[Unset, str]):
-        licence_url_isnull (Union[Unset, bool]):
-        licence_url_istartswith (Union[Unset, str]):
-        licence_url_lt (Union[Unset, str]):
-        licence_url_lte (Union[Unset, str]):
-        licence_url_range (Union[Unset, list[str]]):
-        licence_url_regex (Union[Unset, str]):
-        licence_url_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        licence_classifications_classification (str | Unset):
+        licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_ob_id (int | Unset):
+        licence_classifications_ob_id_in (list[int] | Unset):
+        licence_url (str | Unset):
+        licence_url_contains (str | Unset):
+        licence_url_endswith (str | Unset):
+        licence_url_gt (str | Unset):
+        licence_url_gte (str | Unset):
+        licence_url_icontains (str | Unset):
+        licence_url_iendswith (str | Unset):
+        licence_url_iexact (str | Unset):
+        licence_url_in (list[str] | Unset):
+        licence_url_iregex (str | Unset):
+        licence_url_isnull (bool | Unset):
+        licence_url_istartswith (str | Unset):
+        licence_url_lt (str | Unset):
+        licence_url_lte (str | Unset):
+        licence_url_range (list[str] | Unset):
+        licence_url_regex (str | Unset):
+        licence_url_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

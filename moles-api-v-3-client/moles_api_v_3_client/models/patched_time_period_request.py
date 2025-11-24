@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,20 +19,20 @@ class PatchedTimePeriodRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            start_time (Union[Unset, datetime.datetime]):
-            end_time (Union[None, Unset, datetime.datetime]):
+            start_time (datetime.datetime | Unset):
+            end_time (datetime.datetime | None | Unset):
     """
 
-    start_time: Union[Unset, datetime.datetime] = UNSET
-    end_time: Union[None, Unset, datetime.datetime] = UNSET
+    start_time: datetime.datetime | Unset = UNSET
+    end_time: datetime.datetime | None | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        start_time: Union[Unset, str] = UNSET
+        start_time: str | Unset = UNSET
         if not isinstance(self.start_time, Unset):
             start_time = self.start_time.isoformat()
 
-        end_time: Union[None, Unset, str]
+        end_time: None | str | Unset
         if isinstance(self.end_time, Unset):
             end_time = UNSET
         elif isinstance(self.end_time, datetime.datetime):
@@ -52,13 +54,13 @@ class PatchedTimePeriodRequest:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         _start_time = d.pop("startTime", UNSET)
-        start_time: Union[Unset, datetime.datetime]
+        start_time: datetime.datetime | Unset
         if isinstance(_start_time, Unset):
             start_time = UNSET
         else:
             start_time = isoparse(_start_time)
 
-        def _parse_end_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_end_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -69,9 +71,9 @@ class PatchedTimePeriodRequest:
                 end_time_type_0 = isoparse(data)
 
                 return end_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         end_time = _parse_end_time(d.pop("endTime", UNSET))
 

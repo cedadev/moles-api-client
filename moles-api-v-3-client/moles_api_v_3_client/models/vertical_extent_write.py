@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,15 +18,15 @@ class VerticalExtentWrite:
 
         Attributes:
             ob_id (int):
-            highest_level_bound (Union[Unset, float]):
-            lowest_level_bound (Union[Unset, float]):
-            units (Union[Unset, str]):
+            highest_level_bound (float | Unset):
+            lowest_level_bound (float | Unset):
+            units (str | Unset):
     """
 
     ob_id: int
-    highest_level_bound: Union[Unset, float] = UNSET
-    lowest_level_bound: Union[Unset, float] = UNSET
-    units: Union[Unset, str] = UNSET
+    highest_level_bound: float | Unset = UNSET
+    lowest_level_bound: float | Unset = UNSET
+    units: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

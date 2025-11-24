@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,16 +21,16 @@ class PlatformWrite:
         Attributes:
             ob_id (int):
             title (str):
-            abstract (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            platform_type (Union[BlankEnum, PlatformTypeEnum, Unset]):
+            abstract (str | Unset):
+            keywords (str | Unset):
+            platform_type (BlankEnum | PlatformTypeEnum | Unset):
     """
 
     ob_id: int
     title: str
-    abstract: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    platform_type: Union[BlankEnum, PlatformTypeEnum, Unset] = UNSET
+    abstract: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    platform_type: BlankEnum | PlatformTypeEnum | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -40,7 +42,7 @@ class PlatformWrite:
 
         keywords = self.keywords
 
-        platform_type: Union[Unset, str]
+        platform_type: str | Unset
         if isinstance(self.platform_type, Unset):
             platform_type = UNSET
         elif isinstance(self.platform_type, PlatformTypeEnum):
@@ -76,7 +78,7 @@ class PlatformWrite:
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_platform_type(data: object) -> Union[BlankEnum, PlatformTypeEnum, Unset]:
+        def _parse_platform_type(data: object) -> BlankEnum | PlatformTypeEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -85,7 +87,7 @@ class PlatformWrite:
                 platform_type_type_0 = PlatformTypeEnum(data)
 
                 return platform_type_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()

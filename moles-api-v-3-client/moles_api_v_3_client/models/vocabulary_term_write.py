@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,13 +22,13 @@ class VocabularyTermWrite:
             vocab_service (VocabServiceEnum): * `clipc_skos_vocab` - CLIPC SKOS Vocabulary Service
                 * `nerc_skos_vocab` - NERC SKOS Vocabulary Service
             uri (str):
-            resolved_term (Union[None, Unset, str]):
+            resolved_term (None | str | Unset):
     """
 
     ob_id: int
     vocab_service: VocabServiceEnum
     uri: str
-    resolved_term: Union[None, Unset, str] = UNSET
+    resolved_term: None | str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -36,7 +38,7 @@ class VocabularyTermWrite:
 
         uri = self.uri
 
-        resolved_term: Union[None, Unset, str]
+        resolved_term: None | str | Unset
         if isinstance(self.resolved_term, Unset):
             resolved_term = UNSET
         else:
@@ -65,12 +67,12 @@ class VocabularyTermWrite:
 
         uri = d.pop("uri")
 
-        def _parse_resolved_term(data: object) -> Union[None, Unset, str]:
+        def _parse_resolved_term(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         resolved_term = _parse_resolved_term(d.pop("resolvedTerm", UNSET))
 

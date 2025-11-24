@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -20,9 +20,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[InstrumentRead]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> InstrumentRead | None:
     if response.status_code == 200:
         response_200 = InstrumentRead.from_dict(response.json())
 
@@ -34,9 +32,7 @@ def _parse_response(
         return None
 
 
-def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[InstrumentRead]:
+def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Response[InstrumentRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -78,7 +74,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentRead]:
+) -> InstrumentRead | None:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
@@ -129,7 +125,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentRead]:
+) -> InstrumentRead | None:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:

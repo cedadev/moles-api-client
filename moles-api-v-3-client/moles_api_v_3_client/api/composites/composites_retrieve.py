@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -21,8 +21,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ProcedureCompositeProcessRead]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> ProcedureCompositeProcessRead | None:
     if response.status_code == 200:
         response_200 = ProcedureCompositeProcessRead.from_dict(response.json())
 
@@ -35,7 +35,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[ProcedureCompositeProcessRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -82,7 +82,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[ProcedureCompositeProcessRead]:
+) -> ProcedureCompositeProcessRead | None:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and
@@ -141,7 +141,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[ProcedureCompositeProcessRead]:
+) -> ProcedureCompositeProcessRead | None:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations where used.
     These may have a number of 2 or more components made up of combinations of Computation and

@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -17,20 +19,20 @@ class PatchedPlatformWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            title (Union[Unset, str]):
-            abstract (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            child_platform (Union[Unset, list[str]]):
-            platform_type (Union[BlankEnum, PlatformTypeEnum, Unset]):
-            location (Union[Unset, int]):
+            title (str | Unset):
+            abstract (str | Unset):
+            keywords (str | Unset):
+            child_platform (list[str] | Unset):
+            platform_type (BlankEnum | PlatformTypeEnum | Unset):
+            location (int | Unset):
     """
 
-    title: Union[Unset, str] = UNSET
-    abstract: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    child_platform: Union[Unset, list[str]] = UNSET
-    platform_type: Union[BlankEnum, PlatformTypeEnum, Unset] = UNSET
-    location: Union[Unset, int] = UNSET
+    title: str | Unset = UNSET
+    abstract: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    child_platform: list[str] | Unset = UNSET
+    platform_type: BlankEnum | PlatformTypeEnum | Unset = UNSET
+    location: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -40,11 +42,11 @@ class PatchedPlatformWriteRequest:
 
         keywords = self.keywords
 
-        child_platform: Union[Unset, list[str]] = UNSET
+        child_platform: list[str] | Unset = UNSET
         if not isinstance(self.child_platform, Unset):
             child_platform = ",".join(map(str, self.child_platform))
 
-        platform_type: Union[Unset, str]
+        platform_type: str | Unset
         if isinstance(self.platform_type, Unset):
             platform_type = UNSET
         elif isinstance(self.platform_type, PlatformTypeEnum):
@@ -83,7 +85,7 @@ class PatchedPlatformWriteRequest:
 
         child_platform = cast(list[str], d.pop("childPlatform", UNSET))
 
-        def _parse_platform_type(data: object) -> Union[BlankEnum, PlatformTypeEnum, Unset]:
+        def _parse_platform_type(data: object) -> BlankEnum | PlatformTypeEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -92,7 +94,7 @@ class PatchedPlatformWriteRequest:
                 platform_type_type_0 = PlatformTypeEnum(data)
 
                 return platform_type_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()

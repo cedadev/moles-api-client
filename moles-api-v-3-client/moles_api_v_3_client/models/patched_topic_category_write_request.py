@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,10 +17,10 @@ class PatchedTopicCategoryWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            name (Union[Unset, str]):
+            name (str | Unset):
     """
 
-    name: Union[Unset, str] = UNSET
+    name: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

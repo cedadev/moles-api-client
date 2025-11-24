@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -14,197 +14,197 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    curation_category: Union[Unset, ResultsListCEDACurationCategory] = UNSET,
-    curation_category_contains: Union[Unset, str] = UNSET,
-    curation_category_endswith: Union[Unset, str] = UNSET,
-    curation_category_gt: Union[Unset, str] = UNSET,
-    curation_category_gte: Union[Unset, str] = UNSET,
-    curation_category_icontains: Union[Unset, str] = UNSET,
-    curation_category_iendswith: Union[Unset, str] = UNSET,
-    curation_category_iexact: Union[Unset, str] = UNSET,
-    curation_category_in: Union[Unset, list[str]] = UNSET,
-    curation_category_iregex: Union[Unset, str] = UNSET,
-    curation_category_isnull: Union[Unset, bool] = UNSET,
-    curation_category_istartswith: Union[Unset, str] = UNSET,
-    curation_category_lt: Union[Unset, str] = UNSET,
-    curation_category_lte: Union[Unset, str] = UNSET,
-    curation_category_range: Union[Unset, list[str]] = UNSET,
-    curation_category_regex: Union[Unset, str] = UNSET,
-    curation_category_startswith: Union[Unset, str] = UNSET,
-    data_path: Union[Unset, str] = UNSET,
-    data_path_contains: Union[Unset, str] = UNSET,
-    data_path_endswith: Union[Unset, str] = UNSET,
-    data_path_gt: Union[Unset, str] = UNSET,
-    data_path_gte: Union[Unset, str] = UNSET,
-    data_path_icontains: Union[Unset, str] = UNSET,
-    data_path_iendswith: Union[Unset, str] = UNSET,
-    data_path_iexact: Union[Unset, str] = UNSET,
-    data_path_in: Union[Unset, list[str]] = UNSET,
-    data_path_iregex: Union[Unset, str] = UNSET,
-    data_path_isnull: Union[Unset, bool] = UNSET,
-    data_path_istartswith: Union[Unset, str] = UNSET,
-    data_path_lt: Union[Unset, str] = UNSET,
-    data_path_lte: Union[Unset, str] = UNSET,
-    data_path_range: Union[Unset, list[str]] = UNSET,
-    data_path_regex: Union[Unset, str] = UNSET,
-    data_path_startswith: Union[Unset, str] = UNSET,
-    file_format: Union[Unset, str] = UNSET,
-    file_format_contains: Union[Unset, str] = UNSET,
-    file_format_endswith: Union[Unset, str] = UNSET,
-    file_format_gt: Union[Unset, str] = UNSET,
-    file_format_gte: Union[Unset, str] = UNSET,
-    file_format_icontains: Union[Unset, str] = UNSET,
-    file_format_iendswith: Union[Unset, str] = UNSET,
-    file_format_iexact: Union[Unset, str] = UNSET,
-    file_format_in: Union[Unset, list[str]] = UNSET,
-    file_format_iregex: Union[Unset, str] = UNSET,
-    file_format_isnull: Union[Unset, bool] = UNSET,
-    file_format_istartswith: Union[Unset, str] = UNSET,
-    file_format_lt: Union[Unset, str] = UNSET,
-    file_format_lte: Union[Unset, str] = UNSET,
-    file_format_range: Union[Unset, list[str]] = UNSET,
-    file_format_regex: Union[Unset, str] = UNSET,
-    file_format_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    number_of_files: Union[Unset, int] = UNSET,
-    number_of_files_contained_by: Union[Unset, int] = UNSET,
-    number_of_files_contains: Union[Unset, int] = UNSET,
-    number_of_files_endswith: Union[Unset, int] = UNSET,
-    number_of_files_gt: Union[Unset, int] = UNSET,
-    number_of_files_gte: Union[Unset, int] = UNSET,
-    number_of_files_icontains: Union[Unset, int] = UNSET,
-    number_of_files_iendswith: Union[Unset, int] = UNSET,
-    number_of_files_iexact: Union[Unset, int] = UNSET,
-    number_of_files_in: Union[Unset, list[int]] = UNSET,
-    number_of_files_iregex: Union[Unset, int] = UNSET,
-    number_of_files_isnull: Union[Unset, bool] = UNSET,
-    number_of_files_istartswith: Union[Unset, int] = UNSET,
-    number_of_files_lt: Union[Unset, int] = UNSET,
-    number_of_files_lte: Union[Unset, int] = UNSET,
-    number_of_files_range: Union[Unset, list[int]] = UNSET,
-    number_of_files_regex: Union[Unset, int] = UNSET,
-    number_of_files_startswith: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_ob_id: Union[Unset, int] = UNSET,
-    observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_uuid: Union[Unset, str] = UNSET,
-    observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    storage_location: Union[Unset, ResultsListStorageLocation] = UNSET,
-    storage_location_contains: Union[Unset, str] = UNSET,
-    storage_location_endswith: Union[Unset, str] = UNSET,
-    storage_location_gt: Union[Unset, str] = UNSET,
-    storage_location_gte: Union[Unset, str] = UNSET,
-    storage_location_icontains: Union[Unset, str] = UNSET,
-    storage_location_iendswith: Union[Unset, str] = UNSET,
-    storage_location_iexact: Union[Unset, str] = UNSET,
-    storage_location_in: Union[Unset, list[str]] = UNSET,
-    storage_location_iregex: Union[Unset, str] = UNSET,
-    storage_location_isnull: Union[Unset, bool] = UNSET,
-    storage_location_istartswith: Union[Unset, str] = UNSET,
-    storage_location_lt: Union[Unset, str] = UNSET,
-    storage_location_lte: Union[Unset, str] = UNSET,
-    storage_location_range: Union[Unset, list[str]] = UNSET,
-    storage_location_regex: Union[Unset, str] = UNSET,
-    storage_location_startswith: Union[Unset, str] = UNSET,
-    storage_status: Union[Unset, ResultsListStorageStatus] = UNSET,
-    storage_status_contains: Union[Unset, str] = UNSET,
-    storage_status_endswith: Union[Unset, str] = UNSET,
-    storage_status_gt: Union[Unset, str] = UNSET,
-    storage_status_gte: Union[Unset, str] = UNSET,
-    storage_status_icontains: Union[Unset, str] = UNSET,
-    storage_status_iendswith: Union[Unset, str] = UNSET,
-    storage_status_iexact: Union[Unset, str] = UNSET,
-    storage_status_in: Union[Unset, list[str]] = UNSET,
-    storage_status_iregex: Union[Unset, str] = UNSET,
-    storage_status_isnull: Union[Unset, bool] = UNSET,
-    storage_status_istartswith: Union[Unset, str] = UNSET,
-    storage_status_lt: Union[Unset, str] = UNSET,
-    storage_status_lte: Union[Unset, str] = UNSET,
-    storage_status_range: Union[Unset, list[str]] = UNSET,
-    storage_status_regex: Union[Unset, str] = UNSET,
-    storage_status_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-    volume: Union[Unset, int] = UNSET,
-    volume_contained_by: Union[Unset, int] = UNSET,
-    volume_contains: Union[Unset, int] = UNSET,
-    volume_endswith: Union[Unset, int] = UNSET,
-    volume_gt: Union[Unset, int] = UNSET,
-    volume_gte: Union[Unset, int] = UNSET,
-    volume_icontains: Union[Unset, int] = UNSET,
-    volume_iendswith: Union[Unset, int] = UNSET,
-    volume_iexact: Union[Unset, int] = UNSET,
-    volume_in: Union[Unset, list[int]] = UNSET,
-    volume_iregex: Union[Unset, int] = UNSET,
-    volume_isnull: Union[Unset, bool] = UNSET,
-    volume_istartswith: Union[Unset, int] = UNSET,
-    volume_lt: Union[Unset, int] = UNSET,
-    volume_lte: Union[Unset, int] = UNSET,
-    volume_range: Union[Unset, list[int]] = UNSET,
-    volume_regex: Union[Unset, int] = UNSET,
-    volume_startswith: Union[Unset, int] = UNSET,
+    curation_category: ResultsListCEDACurationCategory | Unset = UNSET,
+    curation_category_contains: str | Unset = UNSET,
+    curation_category_endswith: str | Unset = UNSET,
+    curation_category_gt: str | Unset = UNSET,
+    curation_category_gte: str | Unset = UNSET,
+    curation_category_icontains: str | Unset = UNSET,
+    curation_category_iendswith: str | Unset = UNSET,
+    curation_category_iexact: str | Unset = UNSET,
+    curation_category_in: list[str] | Unset = UNSET,
+    curation_category_iregex: str | Unset = UNSET,
+    curation_category_isnull: bool | Unset = UNSET,
+    curation_category_istartswith: str | Unset = UNSET,
+    curation_category_lt: str | Unset = UNSET,
+    curation_category_lte: str | Unset = UNSET,
+    curation_category_range: list[str] | Unset = UNSET,
+    curation_category_regex: str | Unset = UNSET,
+    curation_category_startswith: str | Unset = UNSET,
+    data_path: str | Unset = UNSET,
+    data_path_contains: str | Unset = UNSET,
+    data_path_endswith: str | Unset = UNSET,
+    data_path_gt: str | Unset = UNSET,
+    data_path_gte: str | Unset = UNSET,
+    data_path_icontains: str | Unset = UNSET,
+    data_path_iendswith: str | Unset = UNSET,
+    data_path_iexact: str | Unset = UNSET,
+    data_path_in: list[str] | Unset = UNSET,
+    data_path_iregex: str | Unset = UNSET,
+    data_path_isnull: bool | Unset = UNSET,
+    data_path_istartswith: str | Unset = UNSET,
+    data_path_lt: str | Unset = UNSET,
+    data_path_lte: str | Unset = UNSET,
+    data_path_range: list[str] | Unset = UNSET,
+    data_path_regex: str | Unset = UNSET,
+    data_path_startswith: str | Unset = UNSET,
+    file_format: str | Unset = UNSET,
+    file_format_contains: str | Unset = UNSET,
+    file_format_endswith: str | Unset = UNSET,
+    file_format_gt: str | Unset = UNSET,
+    file_format_gte: str | Unset = UNSET,
+    file_format_icontains: str | Unset = UNSET,
+    file_format_iendswith: str | Unset = UNSET,
+    file_format_iexact: str | Unset = UNSET,
+    file_format_in: list[str] | Unset = UNSET,
+    file_format_iregex: str | Unset = UNSET,
+    file_format_isnull: bool | Unset = UNSET,
+    file_format_istartswith: str | Unset = UNSET,
+    file_format_lt: str | Unset = UNSET,
+    file_format_lte: str | Unset = UNSET,
+    file_format_range: list[str] | Unset = UNSET,
+    file_format_regex: str | Unset = UNSET,
+    file_format_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    number_of_files: int | Unset = UNSET,
+    number_of_files_contained_by: int | Unset = UNSET,
+    number_of_files_contains: int | Unset = UNSET,
+    number_of_files_endswith: int | Unset = UNSET,
+    number_of_files_gt: int | Unset = UNSET,
+    number_of_files_gte: int | Unset = UNSET,
+    number_of_files_icontains: int | Unset = UNSET,
+    number_of_files_iendswith: int | Unset = UNSET,
+    number_of_files_iexact: int | Unset = UNSET,
+    number_of_files_in: list[int] | Unset = UNSET,
+    number_of_files_iregex: int | Unset = UNSET,
+    number_of_files_isnull: bool | Unset = UNSET,
+    number_of_files_istartswith: int | Unset = UNSET,
+    number_of_files_lt: int | Unset = UNSET,
+    number_of_files_lte: int | Unset = UNSET,
+    number_of_files_range: list[int] | Unset = UNSET,
+    number_of_files_regex: int | Unset = UNSET,
+    number_of_files_startswith: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_ob_id: int | Unset = UNSET,
+    observation_ob_id_in: list[int] | Unset = UNSET,
+    observation_uuid: str | Unset = UNSET,
+    observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    storage_location: ResultsListStorageLocation | Unset = UNSET,
+    storage_location_contains: str | Unset = UNSET,
+    storage_location_endswith: str | Unset = UNSET,
+    storage_location_gt: str | Unset = UNSET,
+    storage_location_gte: str | Unset = UNSET,
+    storage_location_icontains: str | Unset = UNSET,
+    storage_location_iendswith: str | Unset = UNSET,
+    storage_location_iexact: str | Unset = UNSET,
+    storage_location_in: list[str] | Unset = UNSET,
+    storage_location_iregex: str | Unset = UNSET,
+    storage_location_isnull: bool | Unset = UNSET,
+    storage_location_istartswith: str | Unset = UNSET,
+    storage_location_lt: str | Unset = UNSET,
+    storage_location_lte: str | Unset = UNSET,
+    storage_location_range: list[str] | Unset = UNSET,
+    storage_location_regex: str | Unset = UNSET,
+    storage_location_startswith: str | Unset = UNSET,
+    storage_status: ResultsListStorageStatus | Unset = UNSET,
+    storage_status_contains: str | Unset = UNSET,
+    storage_status_endswith: str | Unset = UNSET,
+    storage_status_gt: str | Unset = UNSET,
+    storage_status_gte: str | Unset = UNSET,
+    storage_status_icontains: str | Unset = UNSET,
+    storage_status_iendswith: str | Unset = UNSET,
+    storage_status_iexact: str | Unset = UNSET,
+    storage_status_in: list[str] | Unset = UNSET,
+    storage_status_iregex: str | Unset = UNSET,
+    storage_status_isnull: bool | Unset = UNSET,
+    storage_status_istartswith: str | Unset = UNSET,
+    storage_status_lt: str | Unset = UNSET,
+    storage_status_lte: str | Unset = UNSET,
+    storage_status_range: list[str] | Unset = UNSET,
+    storage_status_regex: str | Unset = UNSET,
+    storage_status_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+    volume: int | Unset = UNSET,
+    volume_contained_by: int | Unset = UNSET,
+    volume_contains: int | Unset = UNSET,
+    volume_endswith: int | Unset = UNSET,
+    volume_gt: int | Unset = UNSET,
+    volume_gte: int | Unset = UNSET,
+    volume_icontains: int | Unset = UNSET,
+    volume_iendswith: int | Unset = UNSET,
+    volume_iexact: int | Unset = UNSET,
+    volume_in: list[int] | Unset = UNSET,
+    volume_iregex: int | Unset = UNSET,
+    volume_isnull: bool | Unset = UNSET,
+    volume_istartswith: int | Unset = UNSET,
+    volume_lt: int | Unset = UNSET,
+    volume_lte: int | Unset = UNSET,
+    volume_range: list[int] | Unset = UNSET,
+    volume_regex: int | Unset = UNSET,
+    volume_startswith: int | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    json_curation_category: Union[Unset, str] = UNSET
+    json_curation_category: str | Unset = UNSET
     if not isinstance(curation_category, Unset):
         json_curation_category = curation_category.value
 
@@ -224,7 +224,7 @@ def _get_kwargs(
 
     params["curationCategory__iexact"] = curation_category_iexact
 
-    json_curation_category_in: Union[Unset, list[str]] = UNSET
+    json_curation_category_in: list[str] | Unset = UNSET
     if not isinstance(curation_category_in, Unset):
         json_curation_category_in = ",".join(map(str, curation_category_in))
 
@@ -240,7 +240,7 @@ def _get_kwargs(
 
     params["curationCategory__lte"] = curation_category_lte
 
-    json_curation_category_range: Union[Unset, list[str]] = UNSET
+    json_curation_category_range: list[str] | Unset = UNSET
     if not isinstance(curation_category_range, Unset):
         json_curation_category_range = ",".join(map(str, curation_category_range))
 
@@ -266,7 +266,7 @@ def _get_kwargs(
 
     params["dataPath__iexact"] = data_path_iexact
 
-    json_data_path_in: Union[Unset, list[str]] = UNSET
+    json_data_path_in: list[str] | Unset = UNSET
     if not isinstance(data_path_in, Unset):
         json_data_path_in = ",".join(map(str, data_path_in))
 
@@ -282,7 +282,7 @@ def _get_kwargs(
 
     params["dataPath__lte"] = data_path_lte
 
-    json_data_path_range: Union[Unset, list[str]] = UNSET
+    json_data_path_range: list[str] | Unset = UNSET
     if not isinstance(data_path_range, Unset):
         json_data_path_range = ",".join(map(str, data_path_range))
 
@@ -308,7 +308,7 @@ def _get_kwargs(
 
     params["fileFormat__iexact"] = file_format_iexact
 
-    json_file_format_in: Union[Unset, list[str]] = UNSET
+    json_file_format_in: list[str] | Unset = UNSET
     if not isinstance(file_format_in, Unset):
         json_file_format_in = ",".join(map(str, file_format_in))
 
@@ -324,7 +324,7 @@ def _get_kwargs(
 
     params["fileFormat__lte"] = file_format_lte
 
-    json_file_format_range: Union[Unset, list[str]] = UNSET
+    json_file_format_range: list[str] | Unset = UNSET
     if not isinstance(file_format_range, Unset):
         json_file_format_range = ",".join(map(str, file_format_range))
 
@@ -354,7 +354,7 @@ def _get_kwargs(
 
     params["numberOfFiles__iexact"] = number_of_files_iexact
 
-    json_number_of_files_in: Union[Unset, list[int]] = UNSET
+    json_number_of_files_in: list[int] | Unset = UNSET
     if not isinstance(number_of_files_in, Unset):
         json_number_of_files_in = ",".join(map(str, number_of_files_in))
 
@@ -370,7 +370,7 @@ def _get_kwargs(
 
     params["numberOfFiles__lte"] = number_of_files_lte
 
-    json_number_of_files_range: Union[Unset, list[int]] = UNSET
+    json_number_of_files_range: list[int] | Unset = UNSET
     if not isinstance(number_of_files_range, Unset):
         json_number_of_files_range = ",".join(map(str, number_of_files_range))
 
@@ -398,7 +398,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -414,7 +414,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -426,7 +426,7 @@ def _get_kwargs(
 
     params["observation__ob_id"] = observation_ob_id
 
-    json_observation_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_observation_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(observation_ob_id_in, Unset):
         json_observation_ob_id_in = ",".join(map(str, observation_ob_id_in))
 
@@ -434,7 +434,7 @@ def _get_kwargs(
 
     params["observation__uuid"] = observation_uuid
 
-    json_observation_uuid_in: Union[Unset, list[str]] = UNSET
+    json_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(observation_uuid_in, Unset):
         json_observation_uuid_in = ",".join(map(str, observation_uuid_in))
 
@@ -450,7 +450,7 @@ def _get_kwargs(
 
     params["referenceable_ptr__gte"] = referenceable_ptr_gte
 
-    json_referenceable_ptr_in: Union[Unset, list[int]] = UNSET
+    json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
         json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
 
@@ -478,7 +478,7 @@ def _get_kwargs(
 
     params["short_code__iexact"] = short_code_iexact
 
-    json_short_code_in: Union[Unset, list[str]] = UNSET
+    json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
         json_short_code_in = ",".join(map(str, short_code_in))
 
@@ -494,7 +494,7 @@ def _get_kwargs(
 
     params["short_code__lte"] = short_code_lte
 
-    json_short_code_range: Union[Unset, list[str]] = UNSET
+    json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
         json_short_code_range = ",".join(map(str, short_code_range))
 
@@ -504,7 +504,7 @@ def _get_kwargs(
 
     params["short_code__startswith"] = short_code_startswith
 
-    json_storage_location: Union[Unset, str] = UNSET
+    json_storage_location: str | Unset = UNSET
     if not isinstance(storage_location, Unset):
         json_storage_location = storage_location.value
 
@@ -524,7 +524,7 @@ def _get_kwargs(
 
     params["storageLocation__iexact"] = storage_location_iexact
 
-    json_storage_location_in: Union[Unset, list[str]] = UNSET
+    json_storage_location_in: list[str] | Unset = UNSET
     if not isinstance(storage_location_in, Unset):
         json_storage_location_in = ",".join(map(str, storage_location_in))
 
@@ -540,7 +540,7 @@ def _get_kwargs(
 
     params["storageLocation__lte"] = storage_location_lte
 
-    json_storage_location_range: Union[Unset, list[str]] = UNSET
+    json_storage_location_range: list[str] | Unset = UNSET
     if not isinstance(storage_location_range, Unset):
         json_storage_location_range = ",".join(map(str, storage_location_range))
 
@@ -550,7 +550,7 @@ def _get_kwargs(
 
     params["storageLocation__startswith"] = storage_location_startswith
 
-    json_storage_status: Union[Unset, str] = UNSET
+    json_storage_status: str | Unset = UNSET
     if not isinstance(storage_status, Unset):
         json_storage_status = storage_status.value
 
@@ -570,7 +570,7 @@ def _get_kwargs(
 
     params["storageStatus__iexact"] = storage_status_iexact
 
-    json_storage_status_in: Union[Unset, list[str]] = UNSET
+    json_storage_status_in: list[str] | Unset = UNSET
     if not isinstance(storage_status_in, Unset):
         json_storage_status_in = ",".join(map(str, storage_status_in))
 
@@ -586,7 +586,7 @@ def _get_kwargs(
 
     params["storageStatus__lte"] = storage_status_lte
 
-    json_storage_status_range: Union[Unset, list[str]] = UNSET
+    json_storage_status_range: list[str] | Unset = UNSET
     if not isinstance(storage_status_range, Unset):
         json_storage_status_range = ",".join(map(str, storage_status_range))
 
@@ -612,7 +612,7 @@ def _get_kwargs(
 
     params["uuid__iexact"] = uuid_iexact
 
-    json_uuid_in: Union[Unset, list[str]] = UNSET
+    json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
         json_uuid_in = ",".join(map(str, uuid_in))
 
@@ -628,7 +628,7 @@ def _get_kwargs(
 
     params["uuid__lte"] = uuid_lte
 
-    json_uuid_range: Union[Unset, list[str]] = UNSET
+    json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
         json_uuid_range = ",".join(map(str, uuid_range))
 
@@ -656,7 +656,7 @@ def _get_kwargs(
 
     params["volume__iexact"] = volume_iexact
 
-    json_volume_in: Union[Unset, list[int]] = UNSET
+    json_volume_in: list[int] | Unset = UNSET
     if not isinstance(volume_in, Unset):
         json_volume_in = ",".join(map(str, volume_in))
 
@@ -672,7 +672,7 @@ def _get_kwargs(
 
     params["volume__lte"] = volume_lte
 
-    json_volume_range: Union[Unset, list[int]] = UNSET
+    json_volume_range: list[int] | Unset = UNSET
     if not isinstance(volume_range, Unset):
         json_volume_range = ",".join(map(str, volume_range))
 
@@ -694,8 +694,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedResultReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedResultReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedResultReadList.from_dict(response.json())
 
@@ -708,7 +708,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedResultReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -721,384 +721,384 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    curation_category: Union[Unset, ResultsListCEDACurationCategory] = UNSET,
-    curation_category_contains: Union[Unset, str] = UNSET,
-    curation_category_endswith: Union[Unset, str] = UNSET,
-    curation_category_gt: Union[Unset, str] = UNSET,
-    curation_category_gte: Union[Unset, str] = UNSET,
-    curation_category_icontains: Union[Unset, str] = UNSET,
-    curation_category_iendswith: Union[Unset, str] = UNSET,
-    curation_category_iexact: Union[Unset, str] = UNSET,
-    curation_category_in: Union[Unset, list[str]] = UNSET,
-    curation_category_iregex: Union[Unset, str] = UNSET,
-    curation_category_isnull: Union[Unset, bool] = UNSET,
-    curation_category_istartswith: Union[Unset, str] = UNSET,
-    curation_category_lt: Union[Unset, str] = UNSET,
-    curation_category_lte: Union[Unset, str] = UNSET,
-    curation_category_range: Union[Unset, list[str]] = UNSET,
-    curation_category_regex: Union[Unset, str] = UNSET,
-    curation_category_startswith: Union[Unset, str] = UNSET,
-    data_path: Union[Unset, str] = UNSET,
-    data_path_contains: Union[Unset, str] = UNSET,
-    data_path_endswith: Union[Unset, str] = UNSET,
-    data_path_gt: Union[Unset, str] = UNSET,
-    data_path_gte: Union[Unset, str] = UNSET,
-    data_path_icontains: Union[Unset, str] = UNSET,
-    data_path_iendswith: Union[Unset, str] = UNSET,
-    data_path_iexact: Union[Unset, str] = UNSET,
-    data_path_in: Union[Unset, list[str]] = UNSET,
-    data_path_iregex: Union[Unset, str] = UNSET,
-    data_path_isnull: Union[Unset, bool] = UNSET,
-    data_path_istartswith: Union[Unset, str] = UNSET,
-    data_path_lt: Union[Unset, str] = UNSET,
-    data_path_lte: Union[Unset, str] = UNSET,
-    data_path_range: Union[Unset, list[str]] = UNSET,
-    data_path_regex: Union[Unset, str] = UNSET,
-    data_path_startswith: Union[Unset, str] = UNSET,
-    file_format: Union[Unset, str] = UNSET,
-    file_format_contains: Union[Unset, str] = UNSET,
-    file_format_endswith: Union[Unset, str] = UNSET,
-    file_format_gt: Union[Unset, str] = UNSET,
-    file_format_gte: Union[Unset, str] = UNSET,
-    file_format_icontains: Union[Unset, str] = UNSET,
-    file_format_iendswith: Union[Unset, str] = UNSET,
-    file_format_iexact: Union[Unset, str] = UNSET,
-    file_format_in: Union[Unset, list[str]] = UNSET,
-    file_format_iregex: Union[Unset, str] = UNSET,
-    file_format_isnull: Union[Unset, bool] = UNSET,
-    file_format_istartswith: Union[Unset, str] = UNSET,
-    file_format_lt: Union[Unset, str] = UNSET,
-    file_format_lte: Union[Unset, str] = UNSET,
-    file_format_range: Union[Unset, list[str]] = UNSET,
-    file_format_regex: Union[Unset, str] = UNSET,
-    file_format_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    number_of_files: Union[Unset, int] = UNSET,
-    number_of_files_contained_by: Union[Unset, int] = UNSET,
-    number_of_files_contains: Union[Unset, int] = UNSET,
-    number_of_files_endswith: Union[Unset, int] = UNSET,
-    number_of_files_gt: Union[Unset, int] = UNSET,
-    number_of_files_gte: Union[Unset, int] = UNSET,
-    number_of_files_icontains: Union[Unset, int] = UNSET,
-    number_of_files_iendswith: Union[Unset, int] = UNSET,
-    number_of_files_iexact: Union[Unset, int] = UNSET,
-    number_of_files_in: Union[Unset, list[int]] = UNSET,
-    number_of_files_iregex: Union[Unset, int] = UNSET,
-    number_of_files_isnull: Union[Unset, bool] = UNSET,
-    number_of_files_istartswith: Union[Unset, int] = UNSET,
-    number_of_files_lt: Union[Unset, int] = UNSET,
-    number_of_files_lte: Union[Unset, int] = UNSET,
-    number_of_files_range: Union[Unset, list[int]] = UNSET,
-    number_of_files_regex: Union[Unset, int] = UNSET,
-    number_of_files_startswith: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_ob_id: Union[Unset, int] = UNSET,
-    observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_uuid: Union[Unset, str] = UNSET,
-    observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    storage_location: Union[Unset, ResultsListStorageLocation] = UNSET,
-    storage_location_contains: Union[Unset, str] = UNSET,
-    storage_location_endswith: Union[Unset, str] = UNSET,
-    storage_location_gt: Union[Unset, str] = UNSET,
-    storage_location_gte: Union[Unset, str] = UNSET,
-    storage_location_icontains: Union[Unset, str] = UNSET,
-    storage_location_iendswith: Union[Unset, str] = UNSET,
-    storage_location_iexact: Union[Unset, str] = UNSET,
-    storage_location_in: Union[Unset, list[str]] = UNSET,
-    storage_location_iregex: Union[Unset, str] = UNSET,
-    storage_location_isnull: Union[Unset, bool] = UNSET,
-    storage_location_istartswith: Union[Unset, str] = UNSET,
-    storage_location_lt: Union[Unset, str] = UNSET,
-    storage_location_lte: Union[Unset, str] = UNSET,
-    storage_location_range: Union[Unset, list[str]] = UNSET,
-    storage_location_regex: Union[Unset, str] = UNSET,
-    storage_location_startswith: Union[Unset, str] = UNSET,
-    storage_status: Union[Unset, ResultsListStorageStatus] = UNSET,
-    storage_status_contains: Union[Unset, str] = UNSET,
-    storage_status_endswith: Union[Unset, str] = UNSET,
-    storage_status_gt: Union[Unset, str] = UNSET,
-    storage_status_gte: Union[Unset, str] = UNSET,
-    storage_status_icontains: Union[Unset, str] = UNSET,
-    storage_status_iendswith: Union[Unset, str] = UNSET,
-    storage_status_iexact: Union[Unset, str] = UNSET,
-    storage_status_in: Union[Unset, list[str]] = UNSET,
-    storage_status_iregex: Union[Unset, str] = UNSET,
-    storage_status_isnull: Union[Unset, bool] = UNSET,
-    storage_status_istartswith: Union[Unset, str] = UNSET,
-    storage_status_lt: Union[Unset, str] = UNSET,
-    storage_status_lte: Union[Unset, str] = UNSET,
-    storage_status_range: Union[Unset, list[str]] = UNSET,
-    storage_status_regex: Union[Unset, str] = UNSET,
-    storage_status_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-    volume: Union[Unset, int] = UNSET,
-    volume_contained_by: Union[Unset, int] = UNSET,
-    volume_contains: Union[Unset, int] = UNSET,
-    volume_endswith: Union[Unset, int] = UNSET,
-    volume_gt: Union[Unset, int] = UNSET,
-    volume_gte: Union[Unset, int] = UNSET,
-    volume_icontains: Union[Unset, int] = UNSET,
-    volume_iendswith: Union[Unset, int] = UNSET,
-    volume_iexact: Union[Unset, int] = UNSET,
-    volume_in: Union[Unset, list[int]] = UNSET,
-    volume_iregex: Union[Unset, int] = UNSET,
-    volume_isnull: Union[Unset, bool] = UNSET,
-    volume_istartswith: Union[Unset, int] = UNSET,
-    volume_lt: Union[Unset, int] = UNSET,
-    volume_lte: Union[Unset, int] = UNSET,
-    volume_range: Union[Unset, list[int]] = UNSET,
-    volume_regex: Union[Unset, int] = UNSET,
-    volume_startswith: Union[Unset, int] = UNSET,
+    curation_category: ResultsListCEDACurationCategory | Unset = UNSET,
+    curation_category_contains: str | Unset = UNSET,
+    curation_category_endswith: str | Unset = UNSET,
+    curation_category_gt: str | Unset = UNSET,
+    curation_category_gte: str | Unset = UNSET,
+    curation_category_icontains: str | Unset = UNSET,
+    curation_category_iendswith: str | Unset = UNSET,
+    curation_category_iexact: str | Unset = UNSET,
+    curation_category_in: list[str] | Unset = UNSET,
+    curation_category_iregex: str | Unset = UNSET,
+    curation_category_isnull: bool | Unset = UNSET,
+    curation_category_istartswith: str | Unset = UNSET,
+    curation_category_lt: str | Unset = UNSET,
+    curation_category_lte: str | Unset = UNSET,
+    curation_category_range: list[str] | Unset = UNSET,
+    curation_category_regex: str | Unset = UNSET,
+    curation_category_startswith: str | Unset = UNSET,
+    data_path: str | Unset = UNSET,
+    data_path_contains: str | Unset = UNSET,
+    data_path_endswith: str | Unset = UNSET,
+    data_path_gt: str | Unset = UNSET,
+    data_path_gte: str | Unset = UNSET,
+    data_path_icontains: str | Unset = UNSET,
+    data_path_iendswith: str | Unset = UNSET,
+    data_path_iexact: str | Unset = UNSET,
+    data_path_in: list[str] | Unset = UNSET,
+    data_path_iregex: str | Unset = UNSET,
+    data_path_isnull: bool | Unset = UNSET,
+    data_path_istartswith: str | Unset = UNSET,
+    data_path_lt: str | Unset = UNSET,
+    data_path_lte: str | Unset = UNSET,
+    data_path_range: list[str] | Unset = UNSET,
+    data_path_regex: str | Unset = UNSET,
+    data_path_startswith: str | Unset = UNSET,
+    file_format: str | Unset = UNSET,
+    file_format_contains: str | Unset = UNSET,
+    file_format_endswith: str | Unset = UNSET,
+    file_format_gt: str | Unset = UNSET,
+    file_format_gte: str | Unset = UNSET,
+    file_format_icontains: str | Unset = UNSET,
+    file_format_iendswith: str | Unset = UNSET,
+    file_format_iexact: str | Unset = UNSET,
+    file_format_in: list[str] | Unset = UNSET,
+    file_format_iregex: str | Unset = UNSET,
+    file_format_isnull: bool | Unset = UNSET,
+    file_format_istartswith: str | Unset = UNSET,
+    file_format_lt: str | Unset = UNSET,
+    file_format_lte: str | Unset = UNSET,
+    file_format_range: list[str] | Unset = UNSET,
+    file_format_regex: str | Unset = UNSET,
+    file_format_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    number_of_files: int | Unset = UNSET,
+    number_of_files_contained_by: int | Unset = UNSET,
+    number_of_files_contains: int | Unset = UNSET,
+    number_of_files_endswith: int | Unset = UNSET,
+    number_of_files_gt: int | Unset = UNSET,
+    number_of_files_gte: int | Unset = UNSET,
+    number_of_files_icontains: int | Unset = UNSET,
+    number_of_files_iendswith: int | Unset = UNSET,
+    number_of_files_iexact: int | Unset = UNSET,
+    number_of_files_in: list[int] | Unset = UNSET,
+    number_of_files_iregex: int | Unset = UNSET,
+    number_of_files_isnull: bool | Unset = UNSET,
+    number_of_files_istartswith: int | Unset = UNSET,
+    number_of_files_lt: int | Unset = UNSET,
+    number_of_files_lte: int | Unset = UNSET,
+    number_of_files_range: list[int] | Unset = UNSET,
+    number_of_files_regex: int | Unset = UNSET,
+    number_of_files_startswith: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_ob_id: int | Unset = UNSET,
+    observation_ob_id_in: list[int] | Unset = UNSET,
+    observation_uuid: str | Unset = UNSET,
+    observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    storage_location: ResultsListStorageLocation | Unset = UNSET,
+    storage_location_contains: str | Unset = UNSET,
+    storage_location_endswith: str | Unset = UNSET,
+    storage_location_gt: str | Unset = UNSET,
+    storage_location_gte: str | Unset = UNSET,
+    storage_location_icontains: str | Unset = UNSET,
+    storage_location_iendswith: str | Unset = UNSET,
+    storage_location_iexact: str | Unset = UNSET,
+    storage_location_in: list[str] | Unset = UNSET,
+    storage_location_iregex: str | Unset = UNSET,
+    storage_location_isnull: bool | Unset = UNSET,
+    storage_location_istartswith: str | Unset = UNSET,
+    storage_location_lt: str | Unset = UNSET,
+    storage_location_lte: str | Unset = UNSET,
+    storage_location_range: list[str] | Unset = UNSET,
+    storage_location_regex: str | Unset = UNSET,
+    storage_location_startswith: str | Unset = UNSET,
+    storage_status: ResultsListStorageStatus | Unset = UNSET,
+    storage_status_contains: str | Unset = UNSET,
+    storage_status_endswith: str | Unset = UNSET,
+    storage_status_gt: str | Unset = UNSET,
+    storage_status_gte: str | Unset = UNSET,
+    storage_status_icontains: str | Unset = UNSET,
+    storage_status_iendswith: str | Unset = UNSET,
+    storage_status_iexact: str | Unset = UNSET,
+    storage_status_in: list[str] | Unset = UNSET,
+    storage_status_iregex: str | Unset = UNSET,
+    storage_status_isnull: bool | Unset = UNSET,
+    storage_status_istartswith: str | Unset = UNSET,
+    storage_status_lt: str | Unset = UNSET,
+    storage_status_lte: str | Unset = UNSET,
+    storage_status_range: list[str] | Unset = UNSET,
+    storage_status_regex: str | Unset = UNSET,
+    storage_status_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+    volume: int | Unset = UNSET,
+    volume_contained_by: int | Unset = UNSET,
+    volume_contains: int | Unset = UNSET,
+    volume_endswith: int | Unset = UNSET,
+    volume_gt: int | Unset = UNSET,
+    volume_gte: int | Unset = UNSET,
+    volume_icontains: int | Unset = UNSET,
+    volume_iendswith: int | Unset = UNSET,
+    volume_iexact: int | Unset = UNSET,
+    volume_in: list[int] | Unset = UNSET,
+    volume_iregex: int | Unset = UNSET,
+    volume_isnull: bool | Unset = UNSET,
+    volume_istartswith: int | Unset = UNSET,
+    volume_lt: int | Unset = UNSET,
+    volume_lte: int | Unset = UNSET,
+    volume_range: list[int] | Unset = UNSET,
+    volume_regex: int | Unset = UNSET,
+    volume_startswith: int | Unset = UNSET,
 ) -> Response[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        curation_category (Union[Unset, ResultsListCEDACurationCategory]):
-        curation_category_contains (Union[Unset, str]):
-        curation_category_endswith (Union[Unset, str]):
-        curation_category_gt (Union[Unset, str]):
-        curation_category_gte (Union[Unset, str]):
-        curation_category_icontains (Union[Unset, str]):
-        curation_category_iendswith (Union[Unset, str]):
-        curation_category_iexact (Union[Unset, str]):
-        curation_category_in (Union[Unset, list[str]]):
-        curation_category_iregex (Union[Unset, str]):
-        curation_category_isnull (Union[Unset, bool]):
-        curation_category_istartswith (Union[Unset, str]):
-        curation_category_lt (Union[Unset, str]):
-        curation_category_lte (Union[Unset, str]):
-        curation_category_range (Union[Unset, list[str]]):
-        curation_category_regex (Union[Unset, str]):
-        curation_category_startswith (Union[Unset, str]):
-        data_path (Union[Unset, str]):
-        data_path_contains (Union[Unset, str]):
-        data_path_endswith (Union[Unset, str]):
-        data_path_gt (Union[Unset, str]):
-        data_path_gte (Union[Unset, str]):
-        data_path_icontains (Union[Unset, str]):
-        data_path_iendswith (Union[Unset, str]):
-        data_path_iexact (Union[Unset, str]):
-        data_path_in (Union[Unset, list[str]]):
-        data_path_iregex (Union[Unset, str]):
-        data_path_isnull (Union[Unset, bool]):
-        data_path_istartswith (Union[Unset, str]):
-        data_path_lt (Union[Unset, str]):
-        data_path_lte (Union[Unset, str]):
-        data_path_range (Union[Unset, list[str]]):
-        data_path_regex (Union[Unset, str]):
-        data_path_startswith (Union[Unset, str]):
-        file_format (Union[Unset, str]):
-        file_format_contains (Union[Unset, str]):
-        file_format_endswith (Union[Unset, str]):
-        file_format_gt (Union[Unset, str]):
-        file_format_gte (Union[Unset, str]):
-        file_format_icontains (Union[Unset, str]):
-        file_format_iendswith (Union[Unset, str]):
-        file_format_iexact (Union[Unset, str]):
-        file_format_in (Union[Unset, list[str]]):
-        file_format_iregex (Union[Unset, str]):
-        file_format_isnull (Union[Unset, bool]):
-        file_format_istartswith (Union[Unset, str]):
-        file_format_lt (Union[Unset, str]):
-        file_format_lte (Union[Unset, str]):
-        file_format_range (Union[Unset, list[str]]):
-        file_format_regex (Union[Unset, str]):
-        file_format_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        number_of_files (Union[Unset, int]):
-        number_of_files_contained_by (Union[Unset, int]):
-        number_of_files_contains (Union[Unset, int]):
-        number_of_files_endswith (Union[Unset, int]):
-        number_of_files_gt (Union[Unset, int]):
-        number_of_files_gte (Union[Unset, int]):
-        number_of_files_icontains (Union[Unset, int]):
-        number_of_files_iendswith (Union[Unset, int]):
-        number_of_files_iexact (Union[Unset, int]):
-        number_of_files_in (Union[Unset, list[int]]):
-        number_of_files_iregex (Union[Unset, int]):
-        number_of_files_isnull (Union[Unset, bool]):
-        number_of_files_istartswith (Union[Unset, int]):
-        number_of_files_lt (Union[Unset, int]):
-        number_of_files_lte (Union[Unset, int]):
-        number_of_files_range (Union[Unset, list[int]]):
-        number_of_files_regex (Union[Unset, int]):
-        number_of_files_startswith (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_ob_id (Union[Unset, int]):
-        observation_ob_id_in (Union[Unset, list[int]]):
-        observation_uuid (Union[Unset, str]):
-        observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        storage_location (Union[Unset, ResultsListStorageLocation]):
-        storage_location_contains (Union[Unset, str]):
-        storage_location_endswith (Union[Unset, str]):
-        storage_location_gt (Union[Unset, str]):
-        storage_location_gte (Union[Unset, str]):
-        storage_location_icontains (Union[Unset, str]):
-        storage_location_iendswith (Union[Unset, str]):
-        storage_location_iexact (Union[Unset, str]):
-        storage_location_in (Union[Unset, list[str]]):
-        storage_location_iregex (Union[Unset, str]):
-        storage_location_isnull (Union[Unset, bool]):
-        storage_location_istartswith (Union[Unset, str]):
-        storage_location_lt (Union[Unset, str]):
-        storage_location_lte (Union[Unset, str]):
-        storage_location_range (Union[Unset, list[str]]):
-        storage_location_regex (Union[Unset, str]):
-        storage_location_startswith (Union[Unset, str]):
-        storage_status (Union[Unset, ResultsListStorageStatus]):
-        storage_status_contains (Union[Unset, str]):
-        storage_status_endswith (Union[Unset, str]):
-        storage_status_gt (Union[Unset, str]):
-        storage_status_gte (Union[Unset, str]):
-        storage_status_icontains (Union[Unset, str]):
-        storage_status_iendswith (Union[Unset, str]):
-        storage_status_iexact (Union[Unset, str]):
-        storage_status_in (Union[Unset, list[str]]):
-        storage_status_iregex (Union[Unset, str]):
-        storage_status_isnull (Union[Unset, bool]):
-        storage_status_istartswith (Union[Unset, str]):
-        storage_status_lt (Union[Unset, str]):
-        storage_status_lte (Union[Unset, str]):
-        storage_status_range (Union[Unset, list[str]]):
-        storage_status_regex (Union[Unset, str]):
-        storage_status_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
-        volume (Union[Unset, int]):
-        volume_contained_by (Union[Unset, int]):
-        volume_contains (Union[Unset, int]):
-        volume_endswith (Union[Unset, int]):
-        volume_gt (Union[Unset, int]):
-        volume_gte (Union[Unset, int]):
-        volume_icontains (Union[Unset, int]):
-        volume_iendswith (Union[Unset, int]):
-        volume_iexact (Union[Unset, int]):
-        volume_in (Union[Unset, list[int]]):
-        volume_iregex (Union[Unset, int]):
-        volume_isnull (Union[Unset, bool]):
-        volume_istartswith (Union[Unset, int]):
-        volume_lt (Union[Unset, int]):
-        volume_lte (Union[Unset, int]):
-        volume_range (Union[Unset, list[int]]):
-        volume_regex (Union[Unset, int]):
-        volume_startswith (Union[Unset, int]):
+        curation_category (ResultsListCEDACurationCategory | Unset):
+        curation_category_contains (str | Unset):
+        curation_category_endswith (str | Unset):
+        curation_category_gt (str | Unset):
+        curation_category_gte (str | Unset):
+        curation_category_icontains (str | Unset):
+        curation_category_iendswith (str | Unset):
+        curation_category_iexact (str | Unset):
+        curation_category_in (list[str] | Unset):
+        curation_category_iregex (str | Unset):
+        curation_category_isnull (bool | Unset):
+        curation_category_istartswith (str | Unset):
+        curation_category_lt (str | Unset):
+        curation_category_lte (str | Unset):
+        curation_category_range (list[str] | Unset):
+        curation_category_regex (str | Unset):
+        curation_category_startswith (str | Unset):
+        data_path (str | Unset):
+        data_path_contains (str | Unset):
+        data_path_endswith (str | Unset):
+        data_path_gt (str | Unset):
+        data_path_gte (str | Unset):
+        data_path_icontains (str | Unset):
+        data_path_iendswith (str | Unset):
+        data_path_iexact (str | Unset):
+        data_path_in (list[str] | Unset):
+        data_path_iregex (str | Unset):
+        data_path_isnull (bool | Unset):
+        data_path_istartswith (str | Unset):
+        data_path_lt (str | Unset):
+        data_path_lte (str | Unset):
+        data_path_range (list[str] | Unset):
+        data_path_regex (str | Unset):
+        data_path_startswith (str | Unset):
+        file_format (str | Unset):
+        file_format_contains (str | Unset):
+        file_format_endswith (str | Unset):
+        file_format_gt (str | Unset):
+        file_format_gte (str | Unset):
+        file_format_icontains (str | Unset):
+        file_format_iendswith (str | Unset):
+        file_format_iexact (str | Unset):
+        file_format_in (list[str] | Unset):
+        file_format_iregex (str | Unset):
+        file_format_isnull (bool | Unset):
+        file_format_istartswith (str | Unset):
+        file_format_lt (str | Unset):
+        file_format_lte (str | Unset):
+        file_format_range (list[str] | Unset):
+        file_format_regex (str | Unset):
+        file_format_startswith (str | Unset):
+        limit (int | Unset):
+        number_of_files (int | Unset):
+        number_of_files_contained_by (int | Unset):
+        number_of_files_contains (int | Unset):
+        number_of_files_endswith (int | Unset):
+        number_of_files_gt (int | Unset):
+        number_of_files_gte (int | Unset):
+        number_of_files_icontains (int | Unset):
+        number_of_files_iendswith (int | Unset):
+        number_of_files_iexact (int | Unset):
+        number_of_files_in (list[int] | Unset):
+        number_of_files_iregex (int | Unset):
+        number_of_files_isnull (bool | Unset):
+        number_of_files_istartswith (int | Unset):
+        number_of_files_lt (int | Unset):
+        number_of_files_lte (int | Unset):
+        number_of_files_range (list[int] | Unset):
+        number_of_files_regex (int | Unset):
+        number_of_files_startswith (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_ob_id (int | Unset):
+        observation_ob_id_in (list[int] | Unset):
+        observation_uuid (str | Unset):
+        observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        storage_location (ResultsListStorageLocation | Unset):
+        storage_location_contains (str | Unset):
+        storage_location_endswith (str | Unset):
+        storage_location_gt (str | Unset):
+        storage_location_gte (str | Unset):
+        storage_location_icontains (str | Unset):
+        storage_location_iendswith (str | Unset):
+        storage_location_iexact (str | Unset):
+        storage_location_in (list[str] | Unset):
+        storage_location_iregex (str | Unset):
+        storage_location_isnull (bool | Unset):
+        storage_location_istartswith (str | Unset):
+        storage_location_lt (str | Unset):
+        storage_location_lte (str | Unset):
+        storage_location_range (list[str] | Unset):
+        storage_location_regex (str | Unset):
+        storage_location_startswith (str | Unset):
+        storage_status (ResultsListStorageStatus | Unset):
+        storage_status_contains (str | Unset):
+        storage_status_endswith (str | Unset):
+        storage_status_gt (str | Unset):
+        storage_status_gte (str | Unset):
+        storage_status_icontains (str | Unset):
+        storage_status_iendswith (str | Unset):
+        storage_status_iexact (str | Unset):
+        storage_status_in (list[str] | Unset):
+        storage_status_iregex (str | Unset):
+        storage_status_isnull (bool | Unset):
+        storage_status_istartswith (str | Unset):
+        storage_status_lt (str | Unset):
+        storage_status_lte (str | Unset):
+        storage_status_range (list[str] | Unset):
+        storage_status_regex (str | Unset):
+        storage_status_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
+        volume (int | Unset):
+        volume_contained_by (int | Unset):
+        volume_contains (int | Unset):
+        volume_endswith (int | Unset):
+        volume_gt (int | Unset):
+        volume_gte (int | Unset):
+        volume_icontains (int | Unset):
+        volume_iendswith (int | Unset):
+        volume_iexact (int | Unset):
+        volume_in (list[int] | Unset):
+        volume_iregex (int | Unset):
+        volume_isnull (bool | Unset):
+        volume_istartswith (int | Unset):
+        volume_lt (int | Unset):
+        volume_lte (int | Unset):
+        volume_range (list[int] | Unset):
+        volume_regex (int | Unset):
+        volume_startswith (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1308,384 +1308,384 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    curation_category: Union[Unset, ResultsListCEDACurationCategory] = UNSET,
-    curation_category_contains: Union[Unset, str] = UNSET,
-    curation_category_endswith: Union[Unset, str] = UNSET,
-    curation_category_gt: Union[Unset, str] = UNSET,
-    curation_category_gte: Union[Unset, str] = UNSET,
-    curation_category_icontains: Union[Unset, str] = UNSET,
-    curation_category_iendswith: Union[Unset, str] = UNSET,
-    curation_category_iexact: Union[Unset, str] = UNSET,
-    curation_category_in: Union[Unset, list[str]] = UNSET,
-    curation_category_iregex: Union[Unset, str] = UNSET,
-    curation_category_isnull: Union[Unset, bool] = UNSET,
-    curation_category_istartswith: Union[Unset, str] = UNSET,
-    curation_category_lt: Union[Unset, str] = UNSET,
-    curation_category_lte: Union[Unset, str] = UNSET,
-    curation_category_range: Union[Unset, list[str]] = UNSET,
-    curation_category_regex: Union[Unset, str] = UNSET,
-    curation_category_startswith: Union[Unset, str] = UNSET,
-    data_path: Union[Unset, str] = UNSET,
-    data_path_contains: Union[Unset, str] = UNSET,
-    data_path_endswith: Union[Unset, str] = UNSET,
-    data_path_gt: Union[Unset, str] = UNSET,
-    data_path_gte: Union[Unset, str] = UNSET,
-    data_path_icontains: Union[Unset, str] = UNSET,
-    data_path_iendswith: Union[Unset, str] = UNSET,
-    data_path_iexact: Union[Unset, str] = UNSET,
-    data_path_in: Union[Unset, list[str]] = UNSET,
-    data_path_iregex: Union[Unset, str] = UNSET,
-    data_path_isnull: Union[Unset, bool] = UNSET,
-    data_path_istartswith: Union[Unset, str] = UNSET,
-    data_path_lt: Union[Unset, str] = UNSET,
-    data_path_lte: Union[Unset, str] = UNSET,
-    data_path_range: Union[Unset, list[str]] = UNSET,
-    data_path_regex: Union[Unset, str] = UNSET,
-    data_path_startswith: Union[Unset, str] = UNSET,
-    file_format: Union[Unset, str] = UNSET,
-    file_format_contains: Union[Unset, str] = UNSET,
-    file_format_endswith: Union[Unset, str] = UNSET,
-    file_format_gt: Union[Unset, str] = UNSET,
-    file_format_gte: Union[Unset, str] = UNSET,
-    file_format_icontains: Union[Unset, str] = UNSET,
-    file_format_iendswith: Union[Unset, str] = UNSET,
-    file_format_iexact: Union[Unset, str] = UNSET,
-    file_format_in: Union[Unset, list[str]] = UNSET,
-    file_format_iregex: Union[Unset, str] = UNSET,
-    file_format_isnull: Union[Unset, bool] = UNSET,
-    file_format_istartswith: Union[Unset, str] = UNSET,
-    file_format_lt: Union[Unset, str] = UNSET,
-    file_format_lte: Union[Unset, str] = UNSET,
-    file_format_range: Union[Unset, list[str]] = UNSET,
-    file_format_regex: Union[Unset, str] = UNSET,
-    file_format_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    number_of_files: Union[Unset, int] = UNSET,
-    number_of_files_contained_by: Union[Unset, int] = UNSET,
-    number_of_files_contains: Union[Unset, int] = UNSET,
-    number_of_files_endswith: Union[Unset, int] = UNSET,
-    number_of_files_gt: Union[Unset, int] = UNSET,
-    number_of_files_gte: Union[Unset, int] = UNSET,
-    number_of_files_icontains: Union[Unset, int] = UNSET,
-    number_of_files_iendswith: Union[Unset, int] = UNSET,
-    number_of_files_iexact: Union[Unset, int] = UNSET,
-    number_of_files_in: Union[Unset, list[int]] = UNSET,
-    number_of_files_iregex: Union[Unset, int] = UNSET,
-    number_of_files_isnull: Union[Unset, bool] = UNSET,
-    number_of_files_istartswith: Union[Unset, int] = UNSET,
-    number_of_files_lt: Union[Unset, int] = UNSET,
-    number_of_files_lte: Union[Unset, int] = UNSET,
-    number_of_files_range: Union[Unset, list[int]] = UNSET,
-    number_of_files_regex: Union[Unset, int] = UNSET,
-    number_of_files_startswith: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_ob_id: Union[Unset, int] = UNSET,
-    observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_uuid: Union[Unset, str] = UNSET,
-    observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    storage_location: Union[Unset, ResultsListStorageLocation] = UNSET,
-    storage_location_contains: Union[Unset, str] = UNSET,
-    storage_location_endswith: Union[Unset, str] = UNSET,
-    storage_location_gt: Union[Unset, str] = UNSET,
-    storage_location_gte: Union[Unset, str] = UNSET,
-    storage_location_icontains: Union[Unset, str] = UNSET,
-    storage_location_iendswith: Union[Unset, str] = UNSET,
-    storage_location_iexact: Union[Unset, str] = UNSET,
-    storage_location_in: Union[Unset, list[str]] = UNSET,
-    storage_location_iregex: Union[Unset, str] = UNSET,
-    storage_location_isnull: Union[Unset, bool] = UNSET,
-    storage_location_istartswith: Union[Unset, str] = UNSET,
-    storage_location_lt: Union[Unset, str] = UNSET,
-    storage_location_lte: Union[Unset, str] = UNSET,
-    storage_location_range: Union[Unset, list[str]] = UNSET,
-    storage_location_regex: Union[Unset, str] = UNSET,
-    storage_location_startswith: Union[Unset, str] = UNSET,
-    storage_status: Union[Unset, ResultsListStorageStatus] = UNSET,
-    storage_status_contains: Union[Unset, str] = UNSET,
-    storage_status_endswith: Union[Unset, str] = UNSET,
-    storage_status_gt: Union[Unset, str] = UNSET,
-    storage_status_gte: Union[Unset, str] = UNSET,
-    storage_status_icontains: Union[Unset, str] = UNSET,
-    storage_status_iendswith: Union[Unset, str] = UNSET,
-    storage_status_iexact: Union[Unset, str] = UNSET,
-    storage_status_in: Union[Unset, list[str]] = UNSET,
-    storage_status_iregex: Union[Unset, str] = UNSET,
-    storage_status_isnull: Union[Unset, bool] = UNSET,
-    storage_status_istartswith: Union[Unset, str] = UNSET,
-    storage_status_lt: Union[Unset, str] = UNSET,
-    storage_status_lte: Union[Unset, str] = UNSET,
-    storage_status_range: Union[Unset, list[str]] = UNSET,
-    storage_status_regex: Union[Unset, str] = UNSET,
-    storage_status_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-    volume: Union[Unset, int] = UNSET,
-    volume_contained_by: Union[Unset, int] = UNSET,
-    volume_contains: Union[Unset, int] = UNSET,
-    volume_endswith: Union[Unset, int] = UNSET,
-    volume_gt: Union[Unset, int] = UNSET,
-    volume_gte: Union[Unset, int] = UNSET,
-    volume_icontains: Union[Unset, int] = UNSET,
-    volume_iendswith: Union[Unset, int] = UNSET,
-    volume_iexact: Union[Unset, int] = UNSET,
-    volume_in: Union[Unset, list[int]] = UNSET,
-    volume_iregex: Union[Unset, int] = UNSET,
-    volume_isnull: Union[Unset, bool] = UNSET,
-    volume_istartswith: Union[Unset, int] = UNSET,
-    volume_lt: Union[Unset, int] = UNSET,
-    volume_lte: Union[Unset, int] = UNSET,
-    volume_range: Union[Unset, list[int]] = UNSET,
-    volume_regex: Union[Unset, int] = UNSET,
-    volume_startswith: Union[Unset, int] = UNSET,
-) -> Optional[PaginatedResultReadList]:
+    curation_category: ResultsListCEDACurationCategory | Unset = UNSET,
+    curation_category_contains: str | Unset = UNSET,
+    curation_category_endswith: str | Unset = UNSET,
+    curation_category_gt: str | Unset = UNSET,
+    curation_category_gte: str | Unset = UNSET,
+    curation_category_icontains: str | Unset = UNSET,
+    curation_category_iendswith: str | Unset = UNSET,
+    curation_category_iexact: str | Unset = UNSET,
+    curation_category_in: list[str] | Unset = UNSET,
+    curation_category_iregex: str | Unset = UNSET,
+    curation_category_isnull: bool | Unset = UNSET,
+    curation_category_istartswith: str | Unset = UNSET,
+    curation_category_lt: str | Unset = UNSET,
+    curation_category_lte: str | Unset = UNSET,
+    curation_category_range: list[str] | Unset = UNSET,
+    curation_category_regex: str | Unset = UNSET,
+    curation_category_startswith: str | Unset = UNSET,
+    data_path: str | Unset = UNSET,
+    data_path_contains: str | Unset = UNSET,
+    data_path_endswith: str | Unset = UNSET,
+    data_path_gt: str | Unset = UNSET,
+    data_path_gte: str | Unset = UNSET,
+    data_path_icontains: str | Unset = UNSET,
+    data_path_iendswith: str | Unset = UNSET,
+    data_path_iexact: str | Unset = UNSET,
+    data_path_in: list[str] | Unset = UNSET,
+    data_path_iregex: str | Unset = UNSET,
+    data_path_isnull: bool | Unset = UNSET,
+    data_path_istartswith: str | Unset = UNSET,
+    data_path_lt: str | Unset = UNSET,
+    data_path_lte: str | Unset = UNSET,
+    data_path_range: list[str] | Unset = UNSET,
+    data_path_regex: str | Unset = UNSET,
+    data_path_startswith: str | Unset = UNSET,
+    file_format: str | Unset = UNSET,
+    file_format_contains: str | Unset = UNSET,
+    file_format_endswith: str | Unset = UNSET,
+    file_format_gt: str | Unset = UNSET,
+    file_format_gte: str | Unset = UNSET,
+    file_format_icontains: str | Unset = UNSET,
+    file_format_iendswith: str | Unset = UNSET,
+    file_format_iexact: str | Unset = UNSET,
+    file_format_in: list[str] | Unset = UNSET,
+    file_format_iregex: str | Unset = UNSET,
+    file_format_isnull: bool | Unset = UNSET,
+    file_format_istartswith: str | Unset = UNSET,
+    file_format_lt: str | Unset = UNSET,
+    file_format_lte: str | Unset = UNSET,
+    file_format_range: list[str] | Unset = UNSET,
+    file_format_regex: str | Unset = UNSET,
+    file_format_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    number_of_files: int | Unset = UNSET,
+    number_of_files_contained_by: int | Unset = UNSET,
+    number_of_files_contains: int | Unset = UNSET,
+    number_of_files_endswith: int | Unset = UNSET,
+    number_of_files_gt: int | Unset = UNSET,
+    number_of_files_gte: int | Unset = UNSET,
+    number_of_files_icontains: int | Unset = UNSET,
+    number_of_files_iendswith: int | Unset = UNSET,
+    number_of_files_iexact: int | Unset = UNSET,
+    number_of_files_in: list[int] | Unset = UNSET,
+    number_of_files_iregex: int | Unset = UNSET,
+    number_of_files_isnull: bool | Unset = UNSET,
+    number_of_files_istartswith: int | Unset = UNSET,
+    number_of_files_lt: int | Unset = UNSET,
+    number_of_files_lte: int | Unset = UNSET,
+    number_of_files_range: list[int] | Unset = UNSET,
+    number_of_files_regex: int | Unset = UNSET,
+    number_of_files_startswith: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_ob_id: int | Unset = UNSET,
+    observation_ob_id_in: list[int] | Unset = UNSET,
+    observation_uuid: str | Unset = UNSET,
+    observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    storage_location: ResultsListStorageLocation | Unset = UNSET,
+    storage_location_contains: str | Unset = UNSET,
+    storage_location_endswith: str | Unset = UNSET,
+    storage_location_gt: str | Unset = UNSET,
+    storage_location_gte: str | Unset = UNSET,
+    storage_location_icontains: str | Unset = UNSET,
+    storage_location_iendswith: str | Unset = UNSET,
+    storage_location_iexact: str | Unset = UNSET,
+    storage_location_in: list[str] | Unset = UNSET,
+    storage_location_iregex: str | Unset = UNSET,
+    storage_location_isnull: bool | Unset = UNSET,
+    storage_location_istartswith: str | Unset = UNSET,
+    storage_location_lt: str | Unset = UNSET,
+    storage_location_lte: str | Unset = UNSET,
+    storage_location_range: list[str] | Unset = UNSET,
+    storage_location_regex: str | Unset = UNSET,
+    storage_location_startswith: str | Unset = UNSET,
+    storage_status: ResultsListStorageStatus | Unset = UNSET,
+    storage_status_contains: str | Unset = UNSET,
+    storage_status_endswith: str | Unset = UNSET,
+    storage_status_gt: str | Unset = UNSET,
+    storage_status_gte: str | Unset = UNSET,
+    storage_status_icontains: str | Unset = UNSET,
+    storage_status_iendswith: str | Unset = UNSET,
+    storage_status_iexact: str | Unset = UNSET,
+    storage_status_in: list[str] | Unset = UNSET,
+    storage_status_iregex: str | Unset = UNSET,
+    storage_status_isnull: bool | Unset = UNSET,
+    storage_status_istartswith: str | Unset = UNSET,
+    storage_status_lt: str | Unset = UNSET,
+    storage_status_lte: str | Unset = UNSET,
+    storage_status_range: list[str] | Unset = UNSET,
+    storage_status_regex: str | Unset = UNSET,
+    storage_status_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+    volume: int | Unset = UNSET,
+    volume_contained_by: int | Unset = UNSET,
+    volume_contains: int | Unset = UNSET,
+    volume_endswith: int | Unset = UNSET,
+    volume_gt: int | Unset = UNSET,
+    volume_gte: int | Unset = UNSET,
+    volume_icontains: int | Unset = UNSET,
+    volume_iendswith: int | Unset = UNSET,
+    volume_iexact: int | Unset = UNSET,
+    volume_in: list[int] | Unset = UNSET,
+    volume_iregex: int | Unset = UNSET,
+    volume_isnull: bool | Unset = UNSET,
+    volume_istartswith: int | Unset = UNSET,
+    volume_lt: int | Unset = UNSET,
+    volume_lte: int | Unset = UNSET,
+    volume_range: list[int] | Unset = UNSET,
+    volume_regex: int | Unset = UNSET,
+    volume_startswith: int | Unset = UNSET,
+) -> PaginatedResultReadList | None:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        curation_category (Union[Unset, ResultsListCEDACurationCategory]):
-        curation_category_contains (Union[Unset, str]):
-        curation_category_endswith (Union[Unset, str]):
-        curation_category_gt (Union[Unset, str]):
-        curation_category_gte (Union[Unset, str]):
-        curation_category_icontains (Union[Unset, str]):
-        curation_category_iendswith (Union[Unset, str]):
-        curation_category_iexact (Union[Unset, str]):
-        curation_category_in (Union[Unset, list[str]]):
-        curation_category_iregex (Union[Unset, str]):
-        curation_category_isnull (Union[Unset, bool]):
-        curation_category_istartswith (Union[Unset, str]):
-        curation_category_lt (Union[Unset, str]):
-        curation_category_lte (Union[Unset, str]):
-        curation_category_range (Union[Unset, list[str]]):
-        curation_category_regex (Union[Unset, str]):
-        curation_category_startswith (Union[Unset, str]):
-        data_path (Union[Unset, str]):
-        data_path_contains (Union[Unset, str]):
-        data_path_endswith (Union[Unset, str]):
-        data_path_gt (Union[Unset, str]):
-        data_path_gte (Union[Unset, str]):
-        data_path_icontains (Union[Unset, str]):
-        data_path_iendswith (Union[Unset, str]):
-        data_path_iexact (Union[Unset, str]):
-        data_path_in (Union[Unset, list[str]]):
-        data_path_iregex (Union[Unset, str]):
-        data_path_isnull (Union[Unset, bool]):
-        data_path_istartswith (Union[Unset, str]):
-        data_path_lt (Union[Unset, str]):
-        data_path_lte (Union[Unset, str]):
-        data_path_range (Union[Unset, list[str]]):
-        data_path_regex (Union[Unset, str]):
-        data_path_startswith (Union[Unset, str]):
-        file_format (Union[Unset, str]):
-        file_format_contains (Union[Unset, str]):
-        file_format_endswith (Union[Unset, str]):
-        file_format_gt (Union[Unset, str]):
-        file_format_gte (Union[Unset, str]):
-        file_format_icontains (Union[Unset, str]):
-        file_format_iendswith (Union[Unset, str]):
-        file_format_iexact (Union[Unset, str]):
-        file_format_in (Union[Unset, list[str]]):
-        file_format_iregex (Union[Unset, str]):
-        file_format_isnull (Union[Unset, bool]):
-        file_format_istartswith (Union[Unset, str]):
-        file_format_lt (Union[Unset, str]):
-        file_format_lte (Union[Unset, str]):
-        file_format_range (Union[Unset, list[str]]):
-        file_format_regex (Union[Unset, str]):
-        file_format_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        number_of_files (Union[Unset, int]):
-        number_of_files_contained_by (Union[Unset, int]):
-        number_of_files_contains (Union[Unset, int]):
-        number_of_files_endswith (Union[Unset, int]):
-        number_of_files_gt (Union[Unset, int]):
-        number_of_files_gte (Union[Unset, int]):
-        number_of_files_icontains (Union[Unset, int]):
-        number_of_files_iendswith (Union[Unset, int]):
-        number_of_files_iexact (Union[Unset, int]):
-        number_of_files_in (Union[Unset, list[int]]):
-        number_of_files_iregex (Union[Unset, int]):
-        number_of_files_isnull (Union[Unset, bool]):
-        number_of_files_istartswith (Union[Unset, int]):
-        number_of_files_lt (Union[Unset, int]):
-        number_of_files_lte (Union[Unset, int]):
-        number_of_files_range (Union[Unset, list[int]]):
-        number_of_files_regex (Union[Unset, int]):
-        number_of_files_startswith (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_ob_id (Union[Unset, int]):
-        observation_ob_id_in (Union[Unset, list[int]]):
-        observation_uuid (Union[Unset, str]):
-        observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        storage_location (Union[Unset, ResultsListStorageLocation]):
-        storage_location_contains (Union[Unset, str]):
-        storage_location_endswith (Union[Unset, str]):
-        storage_location_gt (Union[Unset, str]):
-        storage_location_gte (Union[Unset, str]):
-        storage_location_icontains (Union[Unset, str]):
-        storage_location_iendswith (Union[Unset, str]):
-        storage_location_iexact (Union[Unset, str]):
-        storage_location_in (Union[Unset, list[str]]):
-        storage_location_iregex (Union[Unset, str]):
-        storage_location_isnull (Union[Unset, bool]):
-        storage_location_istartswith (Union[Unset, str]):
-        storage_location_lt (Union[Unset, str]):
-        storage_location_lte (Union[Unset, str]):
-        storage_location_range (Union[Unset, list[str]]):
-        storage_location_regex (Union[Unset, str]):
-        storage_location_startswith (Union[Unset, str]):
-        storage_status (Union[Unset, ResultsListStorageStatus]):
-        storage_status_contains (Union[Unset, str]):
-        storage_status_endswith (Union[Unset, str]):
-        storage_status_gt (Union[Unset, str]):
-        storage_status_gte (Union[Unset, str]):
-        storage_status_icontains (Union[Unset, str]):
-        storage_status_iendswith (Union[Unset, str]):
-        storage_status_iexact (Union[Unset, str]):
-        storage_status_in (Union[Unset, list[str]]):
-        storage_status_iregex (Union[Unset, str]):
-        storage_status_isnull (Union[Unset, bool]):
-        storage_status_istartswith (Union[Unset, str]):
-        storage_status_lt (Union[Unset, str]):
-        storage_status_lte (Union[Unset, str]):
-        storage_status_range (Union[Unset, list[str]]):
-        storage_status_regex (Union[Unset, str]):
-        storage_status_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
-        volume (Union[Unset, int]):
-        volume_contained_by (Union[Unset, int]):
-        volume_contains (Union[Unset, int]):
-        volume_endswith (Union[Unset, int]):
-        volume_gt (Union[Unset, int]):
-        volume_gte (Union[Unset, int]):
-        volume_icontains (Union[Unset, int]):
-        volume_iendswith (Union[Unset, int]):
-        volume_iexact (Union[Unset, int]):
-        volume_in (Union[Unset, list[int]]):
-        volume_iregex (Union[Unset, int]):
-        volume_isnull (Union[Unset, bool]):
-        volume_istartswith (Union[Unset, int]):
-        volume_lt (Union[Unset, int]):
-        volume_lte (Union[Unset, int]):
-        volume_range (Union[Unset, list[int]]):
-        volume_regex (Union[Unset, int]):
-        volume_startswith (Union[Unset, int]):
+        curation_category (ResultsListCEDACurationCategory | Unset):
+        curation_category_contains (str | Unset):
+        curation_category_endswith (str | Unset):
+        curation_category_gt (str | Unset):
+        curation_category_gte (str | Unset):
+        curation_category_icontains (str | Unset):
+        curation_category_iendswith (str | Unset):
+        curation_category_iexact (str | Unset):
+        curation_category_in (list[str] | Unset):
+        curation_category_iregex (str | Unset):
+        curation_category_isnull (bool | Unset):
+        curation_category_istartswith (str | Unset):
+        curation_category_lt (str | Unset):
+        curation_category_lte (str | Unset):
+        curation_category_range (list[str] | Unset):
+        curation_category_regex (str | Unset):
+        curation_category_startswith (str | Unset):
+        data_path (str | Unset):
+        data_path_contains (str | Unset):
+        data_path_endswith (str | Unset):
+        data_path_gt (str | Unset):
+        data_path_gte (str | Unset):
+        data_path_icontains (str | Unset):
+        data_path_iendswith (str | Unset):
+        data_path_iexact (str | Unset):
+        data_path_in (list[str] | Unset):
+        data_path_iregex (str | Unset):
+        data_path_isnull (bool | Unset):
+        data_path_istartswith (str | Unset):
+        data_path_lt (str | Unset):
+        data_path_lte (str | Unset):
+        data_path_range (list[str] | Unset):
+        data_path_regex (str | Unset):
+        data_path_startswith (str | Unset):
+        file_format (str | Unset):
+        file_format_contains (str | Unset):
+        file_format_endswith (str | Unset):
+        file_format_gt (str | Unset):
+        file_format_gte (str | Unset):
+        file_format_icontains (str | Unset):
+        file_format_iendswith (str | Unset):
+        file_format_iexact (str | Unset):
+        file_format_in (list[str] | Unset):
+        file_format_iregex (str | Unset):
+        file_format_isnull (bool | Unset):
+        file_format_istartswith (str | Unset):
+        file_format_lt (str | Unset):
+        file_format_lte (str | Unset):
+        file_format_range (list[str] | Unset):
+        file_format_regex (str | Unset):
+        file_format_startswith (str | Unset):
+        limit (int | Unset):
+        number_of_files (int | Unset):
+        number_of_files_contained_by (int | Unset):
+        number_of_files_contains (int | Unset):
+        number_of_files_endswith (int | Unset):
+        number_of_files_gt (int | Unset):
+        number_of_files_gte (int | Unset):
+        number_of_files_icontains (int | Unset):
+        number_of_files_iendswith (int | Unset):
+        number_of_files_iexact (int | Unset):
+        number_of_files_in (list[int] | Unset):
+        number_of_files_iregex (int | Unset):
+        number_of_files_isnull (bool | Unset):
+        number_of_files_istartswith (int | Unset):
+        number_of_files_lt (int | Unset):
+        number_of_files_lte (int | Unset):
+        number_of_files_range (list[int] | Unset):
+        number_of_files_regex (int | Unset):
+        number_of_files_startswith (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_ob_id (int | Unset):
+        observation_ob_id_in (list[int] | Unset):
+        observation_uuid (str | Unset):
+        observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        storage_location (ResultsListStorageLocation | Unset):
+        storage_location_contains (str | Unset):
+        storage_location_endswith (str | Unset):
+        storage_location_gt (str | Unset):
+        storage_location_gte (str | Unset):
+        storage_location_icontains (str | Unset):
+        storage_location_iendswith (str | Unset):
+        storage_location_iexact (str | Unset):
+        storage_location_in (list[str] | Unset):
+        storage_location_iregex (str | Unset):
+        storage_location_isnull (bool | Unset):
+        storage_location_istartswith (str | Unset):
+        storage_location_lt (str | Unset):
+        storage_location_lte (str | Unset):
+        storage_location_range (list[str] | Unset):
+        storage_location_regex (str | Unset):
+        storage_location_startswith (str | Unset):
+        storage_status (ResultsListStorageStatus | Unset):
+        storage_status_contains (str | Unset):
+        storage_status_endswith (str | Unset):
+        storage_status_gt (str | Unset):
+        storage_status_gte (str | Unset):
+        storage_status_icontains (str | Unset):
+        storage_status_iendswith (str | Unset):
+        storage_status_iexact (str | Unset):
+        storage_status_in (list[str] | Unset):
+        storage_status_iregex (str | Unset):
+        storage_status_isnull (bool | Unset):
+        storage_status_istartswith (str | Unset):
+        storage_status_lt (str | Unset):
+        storage_status_lte (str | Unset):
+        storage_status_range (list[str] | Unset):
+        storage_status_regex (str | Unset):
+        storage_status_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
+        volume (int | Unset):
+        volume_contained_by (int | Unset):
+        volume_contains (int | Unset):
+        volume_endswith (int | Unset):
+        volume_gt (int | Unset):
+        volume_gte (int | Unset):
+        volume_icontains (int | Unset):
+        volume_iendswith (int | Unset):
+        volume_iexact (int | Unset):
+        volume_in (list[int] | Unset):
+        volume_iregex (int | Unset):
+        volume_isnull (bool | Unset):
+        volume_istartswith (int | Unset):
+        volume_lt (int | Unset):
+        volume_lte (int | Unset):
+        volume_range (list[int] | Unset):
+        volume_regex (int | Unset):
+        volume_startswith (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1890,384 +1890,384 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    curation_category: Union[Unset, ResultsListCEDACurationCategory] = UNSET,
-    curation_category_contains: Union[Unset, str] = UNSET,
-    curation_category_endswith: Union[Unset, str] = UNSET,
-    curation_category_gt: Union[Unset, str] = UNSET,
-    curation_category_gte: Union[Unset, str] = UNSET,
-    curation_category_icontains: Union[Unset, str] = UNSET,
-    curation_category_iendswith: Union[Unset, str] = UNSET,
-    curation_category_iexact: Union[Unset, str] = UNSET,
-    curation_category_in: Union[Unset, list[str]] = UNSET,
-    curation_category_iregex: Union[Unset, str] = UNSET,
-    curation_category_isnull: Union[Unset, bool] = UNSET,
-    curation_category_istartswith: Union[Unset, str] = UNSET,
-    curation_category_lt: Union[Unset, str] = UNSET,
-    curation_category_lte: Union[Unset, str] = UNSET,
-    curation_category_range: Union[Unset, list[str]] = UNSET,
-    curation_category_regex: Union[Unset, str] = UNSET,
-    curation_category_startswith: Union[Unset, str] = UNSET,
-    data_path: Union[Unset, str] = UNSET,
-    data_path_contains: Union[Unset, str] = UNSET,
-    data_path_endswith: Union[Unset, str] = UNSET,
-    data_path_gt: Union[Unset, str] = UNSET,
-    data_path_gte: Union[Unset, str] = UNSET,
-    data_path_icontains: Union[Unset, str] = UNSET,
-    data_path_iendswith: Union[Unset, str] = UNSET,
-    data_path_iexact: Union[Unset, str] = UNSET,
-    data_path_in: Union[Unset, list[str]] = UNSET,
-    data_path_iregex: Union[Unset, str] = UNSET,
-    data_path_isnull: Union[Unset, bool] = UNSET,
-    data_path_istartswith: Union[Unset, str] = UNSET,
-    data_path_lt: Union[Unset, str] = UNSET,
-    data_path_lte: Union[Unset, str] = UNSET,
-    data_path_range: Union[Unset, list[str]] = UNSET,
-    data_path_regex: Union[Unset, str] = UNSET,
-    data_path_startswith: Union[Unset, str] = UNSET,
-    file_format: Union[Unset, str] = UNSET,
-    file_format_contains: Union[Unset, str] = UNSET,
-    file_format_endswith: Union[Unset, str] = UNSET,
-    file_format_gt: Union[Unset, str] = UNSET,
-    file_format_gte: Union[Unset, str] = UNSET,
-    file_format_icontains: Union[Unset, str] = UNSET,
-    file_format_iendswith: Union[Unset, str] = UNSET,
-    file_format_iexact: Union[Unset, str] = UNSET,
-    file_format_in: Union[Unset, list[str]] = UNSET,
-    file_format_iregex: Union[Unset, str] = UNSET,
-    file_format_isnull: Union[Unset, bool] = UNSET,
-    file_format_istartswith: Union[Unset, str] = UNSET,
-    file_format_lt: Union[Unset, str] = UNSET,
-    file_format_lte: Union[Unset, str] = UNSET,
-    file_format_range: Union[Unset, list[str]] = UNSET,
-    file_format_regex: Union[Unset, str] = UNSET,
-    file_format_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    number_of_files: Union[Unset, int] = UNSET,
-    number_of_files_contained_by: Union[Unset, int] = UNSET,
-    number_of_files_contains: Union[Unset, int] = UNSET,
-    number_of_files_endswith: Union[Unset, int] = UNSET,
-    number_of_files_gt: Union[Unset, int] = UNSET,
-    number_of_files_gte: Union[Unset, int] = UNSET,
-    number_of_files_icontains: Union[Unset, int] = UNSET,
-    number_of_files_iendswith: Union[Unset, int] = UNSET,
-    number_of_files_iexact: Union[Unset, int] = UNSET,
-    number_of_files_in: Union[Unset, list[int]] = UNSET,
-    number_of_files_iregex: Union[Unset, int] = UNSET,
-    number_of_files_isnull: Union[Unset, bool] = UNSET,
-    number_of_files_istartswith: Union[Unset, int] = UNSET,
-    number_of_files_lt: Union[Unset, int] = UNSET,
-    number_of_files_lte: Union[Unset, int] = UNSET,
-    number_of_files_range: Union[Unset, list[int]] = UNSET,
-    number_of_files_regex: Union[Unset, int] = UNSET,
-    number_of_files_startswith: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_ob_id: Union[Unset, int] = UNSET,
-    observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_uuid: Union[Unset, str] = UNSET,
-    observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    storage_location: Union[Unset, ResultsListStorageLocation] = UNSET,
-    storage_location_contains: Union[Unset, str] = UNSET,
-    storage_location_endswith: Union[Unset, str] = UNSET,
-    storage_location_gt: Union[Unset, str] = UNSET,
-    storage_location_gte: Union[Unset, str] = UNSET,
-    storage_location_icontains: Union[Unset, str] = UNSET,
-    storage_location_iendswith: Union[Unset, str] = UNSET,
-    storage_location_iexact: Union[Unset, str] = UNSET,
-    storage_location_in: Union[Unset, list[str]] = UNSET,
-    storage_location_iregex: Union[Unset, str] = UNSET,
-    storage_location_isnull: Union[Unset, bool] = UNSET,
-    storage_location_istartswith: Union[Unset, str] = UNSET,
-    storage_location_lt: Union[Unset, str] = UNSET,
-    storage_location_lte: Union[Unset, str] = UNSET,
-    storage_location_range: Union[Unset, list[str]] = UNSET,
-    storage_location_regex: Union[Unset, str] = UNSET,
-    storage_location_startswith: Union[Unset, str] = UNSET,
-    storage_status: Union[Unset, ResultsListStorageStatus] = UNSET,
-    storage_status_contains: Union[Unset, str] = UNSET,
-    storage_status_endswith: Union[Unset, str] = UNSET,
-    storage_status_gt: Union[Unset, str] = UNSET,
-    storage_status_gte: Union[Unset, str] = UNSET,
-    storage_status_icontains: Union[Unset, str] = UNSET,
-    storage_status_iendswith: Union[Unset, str] = UNSET,
-    storage_status_iexact: Union[Unset, str] = UNSET,
-    storage_status_in: Union[Unset, list[str]] = UNSET,
-    storage_status_iregex: Union[Unset, str] = UNSET,
-    storage_status_isnull: Union[Unset, bool] = UNSET,
-    storage_status_istartswith: Union[Unset, str] = UNSET,
-    storage_status_lt: Union[Unset, str] = UNSET,
-    storage_status_lte: Union[Unset, str] = UNSET,
-    storage_status_range: Union[Unset, list[str]] = UNSET,
-    storage_status_regex: Union[Unset, str] = UNSET,
-    storage_status_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-    volume: Union[Unset, int] = UNSET,
-    volume_contained_by: Union[Unset, int] = UNSET,
-    volume_contains: Union[Unset, int] = UNSET,
-    volume_endswith: Union[Unset, int] = UNSET,
-    volume_gt: Union[Unset, int] = UNSET,
-    volume_gte: Union[Unset, int] = UNSET,
-    volume_icontains: Union[Unset, int] = UNSET,
-    volume_iendswith: Union[Unset, int] = UNSET,
-    volume_iexact: Union[Unset, int] = UNSET,
-    volume_in: Union[Unset, list[int]] = UNSET,
-    volume_iregex: Union[Unset, int] = UNSET,
-    volume_isnull: Union[Unset, bool] = UNSET,
-    volume_istartswith: Union[Unset, int] = UNSET,
-    volume_lt: Union[Unset, int] = UNSET,
-    volume_lte: Union[Unset, int] = UNSET,
-    volume_range: Union[Unset, list[int]] = UNSET,
-    volume_regex: Union[Unset, int] = UNSET,
-    volume_startswith: Union[Unset, int] = UNSET,
+    curation_category: ResultsListCEDACurationCategory | Unset = UNSET,
+    curation_category_contains: str | Unset = UNSET,
+    curation_category_endswith: str | Unset = UNSET,
+    curation_category_gt: str | Unset = UNSET,
+    curation_category_gte: str | Unset = UNSET,
+    curation_category_icontains: str | Unset = UNSET,
+    curation_category_iendswith: str | Unset = UNSET,
+    curation_category_iexact: str | Unset = UNSET,
+    curation_category_in: list[str] | Unset = UNSET,
+    curation_category_iregex: str | Unset = UNSET,
+    curation_category_isnull: bool | Unset = UNSET,
+    curation_category_istartswith: str | Unset = UNSET,
+    curation_category_lt: str | Unset = UNSET,
+    curation_category_lte: str | Unset = UNSET,
+    curation_category_range: list[str] | Unset = UNSET,
+    curation_category_regex: str | Unset = UNSET,
+    curation_category_startswith: str | Unset = UNSET,
+    data_path: str | Unset = UNSET,
+    data_path_contains: str | Unset = UNSET,
+    data_path_endswith: str | Unset = UNSET,
+    data_path_gt: str | Unset = UNSET,
+    data_path_gte: str | Unset = UNSET,
+    data_path_icontains: str | Unset = UNSET,
+    data_path_iendswith: str | Unset = UNSET,
+    data_path_iexact: str | Unset = UNSET,
+    data_path_in: list[str] | Unset = UNSET,
+    data_path_iregex: str | Unset = UNSET,
+    data_path_isnull: bool | Unset = UNSET,
+    data_path_istartswith: str | Unset = UNSET,
+    data_path_lt: str | Unset = UNSET,
+    data_path_lte: str | Unset = UNSET,
+    data_path_range: list[str] | Unset = UNSET,
+    data_path_regex: str | Unset = UNSET,
+    data_path_startswith: str | Unset = UNSET,
+    file_format: str | Unset = UNSET,
+    file_format_contains: str | Unset = UNSET,
+    file_format_endswith: str | Unset = UNSET,
+    file_format_gt: str | Unset = UNSET,
+    file_format_gte: str | Unset = UNSET,
+    file_format_icontains: str | Unset = UNSET,
+    file_format_iendswith: str | Unset = UNSET,
+    file_format_iexact: str | Unset = UNSET,
+    file_format_in: list[str] | Unset = UNSET,
+    file_format_iregex: str | Unset = UNSET,
+    file_format_isnull: bool | Unset = UNSET,
+    file_format_istartswith: str | Unset = UNSET,
+    file_format_lt: str | Unset = UNSET,
+    file_format_lte: str | Unset = UNSET,
+    file_format_range: list[str] | Unset = UNSET,
+    file_format_regex: str | Unset = UNSET,
+    file_format_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    number_of_files: int | Unset = UNSET,
+    number_of_files_contained_by: int | Unset = UNSET,
+    number_of_files_contains: int | Unset = UNSET,
+    number_of_files_endswith: int | Unset = UNSET,
+    number_of_files_gt: int | Unset = UNSET,
+    number_of_files_gte: int | Unset = UNSET,
+    number_of_files_icontains: int | Unset = UNSET,
+    number_of_files_iendswith: int | Unset = UNSET,
+    number_of_files_iexact: int | Unset = UNSET,
+    number_of_files_in: list[int] | Unset = UNSET,
+    number_of_files_iregex: int | Unset = UNSET,
+    number_of_files_isnull: bool | Unset = UNSET,
+    number_of_files_istartswith: int | Unset = UNSET,
+    number_of_files_lt: int | Unset = UNSET,
+    number_of_files_lte: int | Unset = UNSET,
+    number_of_files_range: list[int] | Unset = UNSET,
+    number_of_files_regex: int | Unset = UNSET,
+    number_of_files_startswith: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_ob_id: int | Unset = UNSET,
+    observation_ob_id_in: list[int] | Unset = UNSET,
+    observation_uuid: str | Unset = UNSET,
+    observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    storage_location: ResultsListStorageLocation | Unset = UNSET,
+    storage_location_contains: str | Unset = UNSET,
+    storage_location_endswith: str | Unset = UNSET,
+    storage_location_gt: str | Unset = UNSET,
+    storage_location_gte: str | Unset = UNSET,
+    storage_location_icontains: str | Unset = UNSET,
+    storage_location_iendswith: str | Unset = UNSET,
+    storage_location_iexact: str | Unset = UNSET,
+    storage_location_in: list[str] | Unset = UNSET,
+    storage_location_iregex: str | Unset = UNSET,
+    storage_location_isnull: bool | Unset = UNSET,
+    storage_location_istartswith: str | Unset = UNSET,
+    storage_location_lt: str | Unset = UNSET,
+    storage_location_lte: str | Unset = UNSET,
+    storage_location_range: list[str] | Unset = UNSET,
+    storage_location_regex: str | Unset = UNSET,
+    storage_location_startswith: str | Unset = UNSET,
+    storage_status: ResultsListStorageStatus | Unset = UNSET,
+    storage_status_contains: str | Unset = UNSET,
+    storage_status_endswith: str | Unset = UNSET,
+    storage_status_gt: str | Unset = UNSET,
+    storage_status_gte: str | Unset = UNSET,
+    storage_status_icontains: str | Unset = UNSET,
+    storage_status_iendswith: str | Unset = UNSET,
+    storage_status_iexact: str | Unset = UNSET,
+    storage_status_in: list[str] | Unset = UNSET,
+    storage_status_iregex: str | Unset = UNSET,
+    storage_status_isnull: bool | Unset = UNSET,
+    storage_status_istartswith: str | Unset = UNSET,
+    storage_status_lt: str | Unset = UNSET,
+    storage_status_lte: str | Unset = UNSET,
+    storage_status_range: list[str] | Unset = UNSET,
+    storage_status_regex: str | Unset = UNSET,
+    storage_status_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+    volume: int | Unset = UNSET,
+    volume_contained_by: int | Unset = UNSET,
+    volume_contains: int | Unset = UNSET,
+    volume_endswith: int | Unset = UNSET,
+    volume_gt: int | Unset = UNSET,
+    volume_gte: int | Unset = UNSET,
+    volume_icontains: int | Unset = UNSET,
+    volume_iendswith: int | Unset = UNSET,
+    volume_iexact: int | Unset = UNSET,
+    volume_in: list[int] | Unset = UNSET,
+    volume_iregex: int | Unset = UNSET,
+    volume_isnull: bool | Unset = UNSET,
+    volume_istartswith: int | Unset = UNSET,
+    volume_lt: int | Unset = UNSET,
+    volume_lte: int | Unset = UNSET,
+    volume_range: list[int] | Unset = UNSET,
+    volume_regex: int | Unset = UNSET,
+    volume_startswith: int | Unset = UNSET,
 ) -> Response[PaginatedResultReadList]:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        curation_category (Union[Unset, ResultsListCEDACurationCategory]):
-        curation_category_contains (Union[Unset, str]):
-        curation_category_endswith (Union[Unset, str]):
-        curation_category_gt (Union[Unset, str]):
-        curation_category_gte (Union[Unset, str]):
-        curation_category_icontains (Union[Unset, str]):
-        curation_category_iendswith (Union[Unset, str]):
-        curation_category_iexact (Union[Unset, str]):
-        curation_category_in (Union[Unset, list[str]]):
-        curation_category_iregex (Union[Unset, str]):
-        curation_category_isnull (Union[Unset, bool]):
-        curation_category_istartswith (Union[Unset, str]):
-        curation_category_lt (Union[Unset, str]):
-        curation_category_lte (Union[Unset, str]):
-        curation_category_range (Union[Unset, list[str]]):
-        curation_category_regex (Union[Unset, str]):
-        curation_category_startswith (Union[Unset, str]):
-        data_path (Union[Unset, str]):
-        data_path_contains (Union[Unset, str]):
-        data_path_endswith (Union[Unset, str]):
-        data_path_gt (Union[Unset, str]):
-        data_path_gte (Union[Unset, str]):
-        data_path_icontains (Union[Unset, str]):
-        data_path_iendswith (Union[Unset, str]):
-        data_path_iexact (Union[Unset, str]):
-        data_path_in (Union[Unset, list[str]]):
-        data_path_iregex (Union[Unset, str]):
-        data_path_isnull (Union[Unset, bool]):
-        data_path_istartswith (Union[Unset, str]):
-        data_path_lt (Union[Unset, str]):
-        data_path_lte (Union[Unset, str]):
-        data_path_range (Union[Unset, list[str]]):
-        data_path_regex (Union[Unset, str]):
-        data_path_startswith (Union[Unset, str]):
-        file_format (Union[Unset, str]):
-        file_format_contains (Union[Unset, str]):
-        file_format_endswith (Union[Unset, str]):
-        file_format_gt (Union[Unset, str]):
-        file_format_gte (Union[Unset, str]):
-        file_format_icontains (Union[Unset, str]):
-        file_format_iendswith (Union[Unset, str]):
-        file_format_iexact (Union[Unset, str]):
-        file_format_in (Union[Unset, list[str]]):
-        file_format_iregex (Union[Unset, str]):
-        file_format_isnull (Union[Unset, bool]):
-        file_format_istartswith (Union[Unset, str]):
-        file_format_lt (Union[Unset, str]):
-        file_format_lte (Union[Unset, str]):
-        file_format_range (Union[Unset, list[str]]):
-        file_format_regex (Union[Unset, str]):
-        file_format_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        number_of_files (Union[Unset, int]):
-        number_of_files_contained_by (Union[Unset, int]):
-        number_of_files_contains (Union[Unset, int]):
-        number_of_files_endswith (Union[Unset, int]):
-        number_of_files_gt (Union[Unset, int]):
-        number_of_files_gte (Union[Unset, int]):
-        number_of_files_icontains (Union[Unset, int]):
-        number_of_files_iendswith (Union[Unset, int]):
-        number_of_files_iexact (Union[Unset, int]):
-        number_of_files_in (Union[Unset, list[int]]):
-        number_of_files_iregex (Union[Unset, int]):
-        number_of_files_isnull (Union[Unset, bool]):
-        number_of_files_istartswith (Union[Unset, int]):
-        number_of_files_lt (Union[Unset, int]):
-        number_of_files_lte (Union[Unset, int]):
-        number_of_files_range (Union[Unset, list[int]]):
-        number_of_files_regex (Union[Unset, int]):
-        number_of_files_startswith (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_ob_id (Union[Unset, int]):
-        observation_ob_id_in (Union[Unset, list[int]]):
-        observation_uuid (Union[Unset, str]):
-        observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        storage_location (Union[Unset, ResultsListStorageLocation]):
-        storage_location_contains (Union[Unset, str]):
-        storage_location_endswith (Union[Unset, str]):
-        storage_location_gt (Union[Unset, str]):
-        storage_location_gte (Union[Unset, str]):
-        storage_location_icontains (Union[Unset, str]):
-        storage_location_iendswith (Union[Unset, str]):
-        storage_location_iexact (Union[Unset, str]):
-        storage_location_in (Union[Unset, list[str]]):
-        storage_location_iregex (Union[Unset, str]):
-        storage_location_isnull (Union[Unset, bool]):
-        storage_location_istartswith (Union[Unset, str]):
-        storage_location_lt (Union[Unset, str]):
-        storage_location_lte (Union[Unset, str]):
-        storage_location_range (Union[Unset, list[str]]):
-        storage_location_regex (Union[Unset, str]):
-        storage_location_startswith (Union[Unset, str]):
-        storage_status (Union[Unset, ResultsListStorageStatus]):
-        storage_status_contains (Union[Unset, str]):
-        storage_status_endswith (Union[Unset, str]):
-        storage_status_gt (Union[Unset, str]):
-        storage_status_gte (Union[Unset, str]):
-        storage_status_icontains (Union[Unset, str]):
-        storage_status_iendswith (Union[Unset, str]):
-        storage_status_iexact (Union[Unset, str]):
-        storage_status_in (Union[Unset, list[str]]):
-        storage_status_iregex (Union[Unset, str]):
-        storage_status_isnull (Union[Unset, bool]):
-        storage_status_istartswith (Union[Unset, str]):
-        storage_status_lt (Union[Unset, str]):
-        storage_status_lte (Union[Unset, str]):
-        storage_status_range (Union[Unset, list[str]]):
-        storage_status_regex (Union[Unset, str]):
-        storage_status_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
-        volume (Union[Unset, int]):
-        volume_contained_by (Union[Unset, int]):
-        volume_contains (Union[Unset, int]):
-        volume_endswith (Union[Unset, int]):
-        volume_gt (Union[Unset, int]):
-        volume_gte (Union[Unset, int]):
-        volume_icontains (Union[Unset, int]):
-        volume_iendswith (Union[Unset, int]):
-        volume_iexact (Union[Unset, int]):
-        volume_in (Union[Unset, list[int]]):
-        volume_iregex (Union[Unset, int]):
-        volume_isnull (Union[Unset, bool]):
-        volume_istartswith (Union[Unset, int]):
-        volume_lt (Union[Unset, int]):
-        volume_lte (Union[Unset, int]):
-        volume_range (Union[Unset, list[int]]):
-        volume_regex (Union[Unset, int]):
-        volume_startswith (Union[Unset, int]):
+        curation_category (ResultsListCEDACurationCategory | Unset):
+        curation_category_contains (str | Unset):
+        curation_category_endswith (str | Unset):
+        curation_category_gt (str | Unset):
+        curation_category_gte (str | Unset):
+        curation_category_icontains (str | Unset):
+        curation_category_iendswith (str | Unset):
+        curation_category_iexact (str | Unset):
+        curation_category_in (list[str] | Unset):
+        curation_category_iregex (str | Unset):
+        curation_category_isnull (bool | Unset):
+        curation_category_istartswith (str | Unset):
+        curation_category_lt (str | Unset):
+        curation_category_lte (str | Unset):
+        curation_category_range (list[str] | Unset):
+        curation_category_regex (str | Unset):
+        curation_category_startswith (str | Unset):
+        data_path (str | Unset):
+        data_path_contains (str | Unset):
+        data_path_endswith (str | Unset):
+        data_path_gt (str | Unset):
+        data_path_gte (str | Unset):
+        data_path_icontains (str | Unset):
+        data_path_iendswith (str | Unset):
+        data_path_iexact (str | Unset):
+        data_path_in (list[str] | Unset):
+        data_path_iregex (str | Unset):
+        data_path_isnull (bool | Unset):
+        data_path_istartswith (str | Unset):
+        data_path_lt (str | Unset):
+        data_path_lte (str | Unset):
+        data_path_range (list[str] | Unset):
+        data_path_regex (str | Unset):
+        data_path_startswith (str | Unset):
+        file_format (str | Unset):
+        file_format_contains (str | Unset):
+        file_format_endswith (str | Unset):
+        file_format_gt (str | Unset):
+        file_format_gte (str | Unset):
+        file_format_icontains (str | Unset):
+        file_format_iendswith (str | Unset):
+        file_format_iexact (str | Unset):
+        file_format_in (list[str] | Unset):
+        file_format_iregex (str | Unset):
+        file_format_isnull (bool | Unset):
+        file_format_istartswith (str | Unset):
+        file_format_lt (str | Unset):
+        file_format_lte (str | Unset):
+        file_format_range (list[str] | Unset):
+        file_format_regex (str | Unset):
+        file_format_startswith (str | Unset):
+        limit (int | Unset):
+        number_of_files (int | Unset):
+        number_of_files_contained_by (int | Unset):
+        number_of_files_contains (int | Unset):
+        number_of_files_endswith (int | Unset):
+        number_of_files_gt (int | Unset):
+        number_of_files_gte (int | Unset):
+        number_of_files_icontains (int | Unset):
+        number_of_files_iendswith (int | Unset):
+        number_of_files_iexact (int | Unset):
+        number_of_files_in (list[int] | Unset):
+        number_of_files_iregex (int | Unset):
+        number_of_files_isnull (bool | Unset):
+        number_of_files_istartswith (int | Unset):
+        number_of_files_lt (int | Unset):
+        number_of_files_lte (int | Unset):
+        number_of_files_range (list[int] | Unset):
+        number_of_files_regex (int | Unset):
+        number_of_files_startswith (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_ob_id (int | Unset):
+        observation_ob_id_in (list[int] | Unset):
+        observation_uuid (str | Unset):
+        observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        storage_location (ResultsListStorageLocation | Unset):
+        storage_location_contains (str | Unset):
+        storage_location_endswith (str | Unset):
+        storage_location_gt (str | Unset):
+        storage_location_gte (str | Unset):
+        storage_location_icontains (str | Unset):
+        storage_location_iendswith (str | Unset):
+        storage_location_iexact (str | Unset):
+        storage_location_in (list[str] | Unset):
+        storage_location_iregex (str | Unset):
+        storage_location_isnull (bool | Unset):
+        storage_location_istartswith (str | Unset):
+        storage_location_lt (str | Unset):
+        storage_location_lte (str | Unset):
+        storage_location_range (list[str] | Unset):
+        storage_location_regex (str | Unset):
+        storage_location_startswith (str | Unset):
+        storage_status (ResultsListStorageStatus | Unset):
+        storage_status_contains (str | Unset):
+        storage_status_endswith (str | Unset):
+        storage_status_gt (str | Unset):
+        storage_status_gte (str | Unset):
+        storage_status_icontains (str | Unset):
+        storage_status_iendswith (str | Unset):
+        storage_status_iexact (str | Unset):
+        storage_status_in (list[str] | Unset):
+        storage_status_iregex (str | Unset):
+        storage_status_isnull (bool | Unset):
+        storage_status_istartswith (str | Unset):
+        storage_status_lt (str | Unset):
+        storage_status_lte (str | Unset):
+        storage_status_range (list[str] | Unset):
+        storage_status_regex (str | Unset):
+        storage_status_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
+        volume (int | Unset):
+        volume_contained_by (int | Unset):
+        volume_contains (int | Unset):
+        volume_endswith (int | Unset):
+        volume_gt (int | Unset):
+        volume_gte (int | Unset):
+        volume_icontains (int | Unset):
+        volume_iendswith (int | Unset):
+        volume_iexact (int | Unset):
+        volume_in (list[int] | Unset):
+        volume_iregex (int | Unset):
+        volume_isnull (bool | Unset):
+        volume_istartswith (int | Unset):
+        volume_lt (int | Unset):
+        volume_lte (int | Unset):
+        volume_range (list[int] | Unset):
+        volume_regex (int | Unset):
+        volume_startswith (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2475,384 +2475,384 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    curation_category: Union[Unset, ResultsListCEDACurationCategory] = UNSET,
-    curation_category_contains: Union[Unset, str] = UNSET,
-    curation_category_endswith: Union[Unset, str] = UNSET,
-    curation_category_gt: Union[Unset, str] = UNSET,
-    curation_category_gte: Union[Unset, str] = UNSET,
-    curation_category_icontains: Union[Unset, str] = UNSET,
-    curation_category_iendswith: Union[Unset, str] = UNSET,
-    curation_category_iexact: Union[Unset, str] = UNSET,
-    curation_category_in: Union[Unset, list[str]] = UNSET,
-    curation_category_iregex: Union[Unset, str] = UNSET,
-    curation_category_isnull: Union[Unset, bool] = UNSET,
-    curation_category_istartswith: Union[Unset, str] = UNSET,
-    curation_category_lt: Union[Unset, str] = UNSET,
-    curation_category_lte: Union[Unset, str] = UNSET,
-    curation_category_range: Union[Unset, list[str]] = UNSET,
-    curation_category_regex: Union[Unset, str] = UNSET,
-    curation_category_startswith: Union[Unset, str] = UNSET,
-    data_path: Union[Unset, str] = UNSET,
-    data_path_contains: Union[Unset, str] = UNSET,
-    data_path_endswith: Union[Unset, str] = UNSET,
-    data_path_gt: Union[Unset, str] = UNSET,
-    data_path_gte: Union[Unset, str] = UNSET,
-    data_path_icontains: Union[Unset, str] = UNSET,
-    data_path_iendswith: Union[Unset, str] = UNSET,
-    data_path_iexact: Union[Unset, str] = UNSET,
-    data_path_in: Union[Unset, list[str]] = UNSET,
-    data_path_iregex: Union[Unset, str] = UNSET,
-    data_path_isnull: Union[Unset, bool] = UNSET,
-    data_path_istartswith: Union[Unset, str] = UNSET,
-    data_path_lt: Union[Unset, str] = UNSET,
-    data_path_lte: Union[Unset, str] = UNSET,
-    data_path_range: Union[Unset, list[str]] = UNSET,
-    data_path_regex: Union[Unset, str] = UNSET,
-    data_path_startswith: Union[Unset, str] = UNSET,
-    file_format: Union[Unset, str] = UNSET,
-    file_format_contains: Union[Unset, str] = UNSET,
-    file_format_endswith: Union[Unset, str] = UNSET,
-    file_format_gt: Union[Unset, str] = UNSET,
-    file_format_gte: Union[Unset, str] = UNSET,
-    file_format_icontains: Union[Unset, str] = UNSET,
-    file_format_iendswith: Union[Unset, str] = UNSET,
-    file_format_iexact: Union[Unset, str] = UNSET,
-    file_format_in: Union[Unset, list[str]] = UNSET,
-    file_format_iregex: Union[Unset, str] = UNSET,
-    file_format_isnull: Union[Unset, bool] = UNSET,
-    file_format_istartswith: Union[Unset, str] = UNSET,
-    file_format_lt: Union[Unset, str] = UNSET,
-    file_format_lte: Union[Unset, str] = UNSET,
-    file_format_range: Union[Unset, list[str]] = UNSET,
-    file_format_regex: Union[Unset, str] = UNSET,
-    file_format_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    number_of_files: Union[Unset, int] = UNSET,
-    number_of_files_contained_by: Union[Unset, int] = UNSET,
-    number_of_files_contains: Union[Unset, int] = UNSET,
-    number_of_files_endswith: Union[Unset, int] = UNSET,
-    number_of_files_gt: Union[Unset, int] = UNSET,
-    number_of_files_gte: Union[Unset, int] = UNSET,
-    number_of_files_icontains: Union[Unset, int] = UNSET,
-    number_of_files_iendswith: Union[Unset, int] = UNSET,
-    number_of_files_iexact: Union[Unset, int] = UNSET,
-    number_of_files_in: Union[Unset, list[int]] = UNSET,
-    number_of_files_iregex: Union[Unset, int] = UNSET,
-    number_of_files_isnull: Union[Unset, bool] = UNSET,
-    number_of_files_istartswith: Union[Unset, int] = UNSET,
-    number_of_files_lt: Union[Unset, int] = UNSET,
-    number_of_files_lte: Union[Unset, int] = UNSET,
-    number_of_files_range: Union[Unset, list[int]] = UNSET,
-    number_of_files_regex: Union[Unset, int] = UNSET,
-    number_of_files_startswith: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    observation_ob_id: Union[Unset, int] = UNSET,
-    observation_ob_id_in: Union[Unset, list[int]] = UNSET,
-    observation_uuid: Union[Unset, str] = UNSET,
-    observation_uuid_in: Union[Unset, list[str]] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    storage_location: Union[Unset, ResultsListStorageLocation] = UNSET,
-    storage_location_contains: Union[Unset, str] = UNSET,
-    storage_location_endswith: Union[Unset, str] = UNSET,
-    storage_location_gt: Union[Unset, str] = UNSET,
-    storage_location_gte: Union[Unset, str] = UNSET,
-    storage_location_icontains: Union[Unset, str] = UNSET,
-    storage_location_iendswith: Union[Unset, str] = UNSET,
-    storage_location_iexact: Union[Unset, str] = UNSET,
-    storage_location_in: Union[Unset, list[str]] = UNSET,
-    storage_location_iregex: Union[Unset, str] = UNSET,
-    storage_location_isnull: Union[Unset, bool] = UNSET,
-    storage_location_istartswith: Union[Unset, str] = UNSET,
-    storage_location_lt: Union[Unset, str] = UNSET,
-    storage_location_lte: Union[Unset, str] = UNSET,
-    storage_location_range: Union[Unset, list[str]] = UNSET,
-    storage_location_regex: Union[Unset, str] = UNSET,
-    storage_location_startswith: Union[Unset, str] = UNSET,
-    storage_status: Union[Unset, ResultsListStorageStatus] = UNSET,
-    storage_status_contains: Union[Unset, str] = UNSET,
-    storage_status_endswith: Union[Unset, str] = UNSET,
-    storage_status_gt: Union[Unset, str] = UNSET,
-    storage_status_gte: Union[Unset, str] = UNSET,
-    storage_status_icontains: Union[Unset, str] = UNSET,
-    storage_status_iendswith: Union[Unset, str] = UNSET,
-    storage_status_iexact: Union[Unset, str] = UNSET,
-    storage_status_in: Union[Unset, list[str]] = UNSET,
-    storage_status_iregex: Union[Unset, str] = UNSET,
-    storage_status_isnull: Union[Unset, bool] = UNSET,
-    storage_status_istartswith: Union[Unset, str] = UNSET,
-    storage_status_lt: Union[Unset, str] = UNSET,
-    storage_status_lte: Union[Unset, str] = UNSET,
-    storage_status_range: Union[Unset, list[str]] = UNSET,
-    storage_status_regex: Union[Unset, str] = UNSET,
-    storage_status_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-    volume: Union[Unset, int] = UNSET,
-    volume_contained_by: Union[Unset, int] = UNSET,
-    volume_contains: Union[Unset, int] = UNSET,
-    volume_endswith: Union[Unset, int] = UNSET,
-    volume_gt: Union[Unset, int] = UNSET,
-    volume_gte: Union[Unset, int] = UNSET,
-    volume_icontains: Union[Unset, int] = UNSET,
-    volume_iendswith: Union[Unset, int] = UNSET,
-    volume_iexact: Union[Unset, int] = UNSET,
-    volume_in: Union[Unset, list[int]] = UNSET,
-    volume_iregex: Union[Unset, int] = UNSET,
-    volume_isnull: Union[Unset, bool] = UNSET,
-    volume_istartswith: Union[Unset, int] = UNSET,
-    volume_lt: Union[Unset, int] = UNSET,
-    volume_lte: Union[Unset, int] = UNSET,
-    volume_range: Union[Unset, list[int]] = UNSET,
-    volume_regex: Union[Unset, int] = UNSET,
-    volume_startswith: Union[Unset, int] = UNSET,
-) -> Optional[PaginatedResultReadList]:
+    curation_category: ResultsListCEDACurationCategory | Unset = UNSET,
+    curation_category_contains: str | Unset = UNSET,
+    curation_category_endswith: str | Unset = UNSET,
+    curation_category_gt: str | Unset = UNSET,
+    curation_category_gte: str | Unset = UNSET,
+    curation_category_icontains: str | Unset = UNSET,
+    curation_category_iendswith: str | Unset = UNSET,
+    curation_category_iexact: str | Unset = UNSET,
+    curation_category_in: list[str] | Unset = UNSET,
+    curation_category_iregex: str | Unset = UNSET,
+    curation_category_isnull: bool | Unset = UNSET,
+    curation_category_istartswith: str | Unset = UNSET,
+    curation_category_lt: str | Unset = UNSET,
+    curation_category_lte: str | Unset = UNSET,
+    curation_category_range: list[str] | Unset = UNSET,
+    curation_category_regex: str | Unset = UNSET,
+    curation_category_startswith: str | Unset = UNSET,
+    data_path: str | Unset = UNSET,
+    data_path_contains: str | Unset = UNSET,
+    data_path_endswith: str | Unset = UNSET,
+    data_path_gt: str | Unset = UNSET,
+    data_path_gte: str | Unset = UNSET,
+    data_path_icontains: str | Unset = UNSET,
+    data_path_iendswith: str | Unset = UNSET,
+    data_path_iexact: str | Unset = UNSET,
+    data_path_in: list[str] | Unset = UNSET,
+    data_path_iregex: str | Unset = UNSET,
+    data_path_isnull: bool | Unset = UNSET,
+    data_path_istartswith: str | Unset = UNSET,
+    data_path_lt: str | Unset = UNSET,
+    data_path_lte: str | Unset = UNSET,
+    data_path_range: list[str] | Unset = UNSET,
+    data_path_regex: str | Unset = UNSET,
+    data_path_startswith: str | Unset = UNSET,
+    file_format: str | Unset = UNSET,
+    file_format_contains: str | Unset = UNSET,
+    file_format_endswith: str | Unset = UNSET,
+    file_format_gt: str | Unset = UNSET,
+    file_format_gte: str | Unset = UNSET,
+    file_format_icontains: str | Unset = UNSET,
+    file_format_iendswith: str | Unset = UNSET,
+    file_format_iexact: str | Unset = UNSET,
+    file_format_in: list[str] | Unset = UNSET,
+    file_format_iregex: str | Unset = UNSET,
+    file_format_isnull: bool | Unset = UNSET,
+    file_format_istartswith: str | Unset = UNSET,
+    file_format_lt: str | Unset = UNSET,
+    file_format_lte: str | Unset = UNSET,
+    file_format_range: list[str] | Unset = UNSET,
+    file_format_regex: str | Unset = UNSET,
+    file_format_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    number_of_files: int | Unset = UNSET,
+    number_of_files_contained_by: int | Unset = UNSET,
+    number_of_files_contains: int | Unset = UNSET,
+    number_of_files_endswith: int | Unset = UNSET,
+    number_of_files_gt: int | Unset = UNSET,
+    number_of_files_gte: int | Unset = UNSET,
+    number_of_files_icontains: int | Unset = UNSET,
+    number_of_files_iendswith: int | Unset = UNSET,
+    number_of_files_iexact: int | Unset = UNSET,
+    number_of_files_in: list[int] | Unset = UNSET,
+    number_of_files_iregex: int | Unset = UNSET,
+    number_of_files_isnull: bool | Unset = UNSET,
+    number_of_files_istartswith: int | Unset = UNSET,
+    number_of_files_lt: int | Unset = UNSET,
+    number_of_files_lte: int | Unset = UNSET,
+    number_of_files_range: list[int] | Unset = UNSET,
+    number_of_files_regex: int | Unset = UNSET,
+    number_of_files_startswith: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    observation_ob_id: int | Unset = UNSET,
+    observation_ob_id_in: list[int] | Unset = UNSET,
+    observation_uuid: str | Unset = UNSET,
+    observation_uuid_in: list[str] | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    storage_location: ResultsListStorageLocation | Unset = UNSET,
+    storage_location_contains: str | Unset = UNSET,
+    storage_location_endswith: str | Unset = UNSET,
+    storage_location_gt: str | Unset = UNSET,
+    storage_location_gte: str | Unset = UNSET,
+    storage_location_icontains: str | Unset = UNSET,
+    storage_location_iendswith: str | Unset = UNSET,
+    storage_location_iexact: str | Unset = UNSET,
+    storage_location_in: list[str] | Unset = UNSET,
+    storage_location_iregex: str | Unset = UNSET,
+    storage_location_isnull: bool | Unset = UNSET,
+    storage_location_istartswith: str | Unset = UNSET,
+    storage_location_lt: str | Unset = UNSET,
+    storage_location_lte: str | Unset = UNSET,
+    storage_location_range: list[str] | Unset = UNSET,
+    storage_location_regex: str | Unset = UNSET,
+    storage_location_startswith: str | Unset = UNSET,
+    storage_status: ResultsListStorageStatus | Unset = UNSET,
+    storage_status_contains: str | Unset = UNSET,
+    storage_status_endswith: str | Unset = UNSET,
+    storage_status_gt: str | Unset = UNSET,
+    storage_status_gte: str | Unset = UNSET,
+    storage_status_icontains: str | Unset = UNSET,
+    storage_status_iendswith: str | Unset = UNSET,
+    storage_status_iexact: str | Unset = UNSET,
+    storage_status_in: list[str] | Unset = UNSET,
+    storage_status_iregex: str | Unset = UNSET,
+    storage_status_isnull: bool | Unset = UNSET,
+    storage_status_istartswith: str | Unset = UNSET,
+    storage_status_lt: str | Unset = UNSET,
+    storage_status_lte: str | Unset = UNSET,
+    storage_status_range: list[str] | Unset = UNSET,
+    storage_status_regex: str | Unset = UNSET,
+    storage_status_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+    volume: int | Unset = UNSET,
+    volume_contained_by: int | Unset = UNSET,
+    volume_contains: int | Unset = UNSET,
+    volume_endswith: int | Unset = UNSET,
+    volume_gt: int | Unset = UNSET,
+    volume_gte: int | Unset = UNSET,
+    volume_icontains: int | Unset = UNSET,
+    volume_iendswith: int | Unset = UNSET,
+    volume_iexact: int | Unset = UNSET,
+    volume_in: list[int] | Unset = UNSET,
+    volume_iregex: int | Unset = UNSET,
+    volume_isnull: bool | Unset = UNSET,
+    volume_istartswith: int | Unset = UNSET,
+    volume_lt: int | Unset = UNSET,
+    volume_lte: int | Unset = UNSET,
+    volume_range: list[int] | Unset = UNSET,
+    volume_regex: int | Unset = UNSET,
+    volume_startswith: int | Unset = UNSET,
+) -> PaginatedResultReadList | None:
     """Get a list of Result objects. Results have a 1:1 mapping with Observations.
 
     Args:
-        curation_category (Union[Unset, ResultsListCEDACurationCategory]):
-        curation_category_contains (Union[Unset, str]):
-        curation_category_endswith (Union[Unset, str]):
-        curation_category_gt (Union[Unset, str]):
-        curation_category_gte (Union[Unset, str]):
-        curation_category_icontains (Union[Unset, str]):
-        curation_category_iendswith (Union[Unset, str]):
-        curation_category_iexact (Union[Unset, str]):
-        curation_category_in (Union[Unset, list[str]]):
-        curation_category_iregex (Union[Unset, str]):
-        curation_category_isnull (Union[Unset, bool]):
-        curation_category_istartswith (Union[Unset, str]):
-        curation_category_lt (Union[Unset, str]):
-        curation_category_lte (Union[Unset, str]):
-        curation_category_range (Union[Unset, list[str]]):
-        curation_category_regex (Union[Unset, str]):
-        curation_category_startswith (Union[Unset, str]):
-        data_path (Union[Unset, str]):
-        data_path_contains (Union[Unset, str]):
-        data_path_endswith (Union[Unset, str]):
-        data_path_gt (Union[Unset, str]):
-        data_path_gte (Union[Unset, str]):
-        data_path_icontains (Union[Unset, str]):
-        data_path_iendswith (Union[Unset, str]):
-        data_path_iexact (Union[Unset, str]):
-        data_path_in (Union[Unset, list[str]]):
-        data_path_iregex (Union[Unset, str]):
-        data_path_isnull (Union[Unset, bool]):
-        data_path_istartswith (Union[Unset, str]):
-        data_path_lt (Union[Unset, str]):
-        data_path_lte (Union[Unset, str]):
-        data_path_range (Union[Unset, list[str]]):
-        data_path_regex (Union[Unset, str]):
-        data_path_startswith (Union[Unset, str]):
-        file_format (Union[Unset, str]):
-        file_format_contains (Union[Unset, str]):
-        file_format_endswith (Union[Unset, str]):
-        file_format_gt (Union[Unset, str]):
-        file_format_gte (Union[Unset, str]):
-        file_format_icontains (Union[Unset, str]):
-        file_format_iendswith (Union[Unset, str]):
-        file_format_iexact (Union[Unset, str]):
-        file_format_in (Union[Unset, list[str]]):
-        file_format_iregex (Union[Unset, str]):
-        file_format_isnull (Union[Unset, bool]):
-        file_format_istartswith (Union[Unset, str]):
-        file_format_lt (Union[Unset, str]):
-        file_format_lte (Union[Unset, str]):
-        file_format_range (Union[Unset, list[str]]):
-        file_format_regex (Union[Unset, str]):
-        file_format_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        number_of_files (Union[Unset, int]):
-        number_of_files_contained_by (Union[Unset, int]):
-        number_of_files_contains (Union[Unset, int]):
-        number_of_files_endswith (Union[Unset, int]):
-        number_of_files_gt (Union[Unset, int]):
-        number_of_files_gte (Union[Unset, int]):
-        number_of_files_icontains (Union[Unset, int]):
-        number_of_files_iendswith (Union[Unset, int]):
-        number_of_files_iexact (Union[Unset, int]):
-        number_of_files_in (Union[Unset, list[int]]):
-        number_of_files_iregex (Union[Unset, int]):
-        number_of_files_isnull (Union[Unset, bool]):
-        number_of_files_istartswith (Union[Unset, int]):
-        number_of_files_lt (Union[Unset, int]):
-        number_of_files_lte (Union[Unset, int]):
-        number_of_files_range (Union[Unset, list[int]]):
-        number_of_files_regex (Union[Unset, int]):
-        number_of_files_startswith (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        observation_ob_id (Union[Unset, int]):
-        observation_ob_id_in (Union[Unset, list[int]]):
-        observation_uuid (Union[Unset, str]):
-        observation_uuid_in (Union[Unset, list[str]]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        storage_location (Union[Unset, ResultsListStorageLocation]):
-        storage_location_contains (Union[Unset, str]):
-        storage_location_endswith (Union[Unset, str]):
-        storage_location_gt (Union[Unset, str]):
-        storage_location_gte (Union[Unset, str]):
-        storage_location_icontains (Union[Unset, str]):
-        storage_location_iendswith (Union[Unset, str]):
-        storage_location_iexact (Union[Unset, str]):
-        storage_location_in (Union[Unset, list[str]]):
-        storage_location_iregex (Union[Unset, str]):
-        storage_location_isnull (Union[Unset, bool]):
-        storage_location_istartswith (Union[Unset, str]):
-        storage_location_lt (Union[Unset, str]):
-        storage_location_lte (Union[Unset, str]):
-        storage_location_range (Union[Unset, list[str]]):
-        storage_location_regex (Union[Unset, str]):
-        storage_location_startswith (Union[Unset, str]):
-        storage_status (Union[Unset, ResultsListStorageStatus]):
-        storage_status_contains (Union[Unset, str]):
-        storage_status_endswith (Union[Unset, str]):
-        storage_status_gt (Union[Unset, str]):
-        storage_status_gte (Union[Unset, str]):
-        storage_status_icontains (Union[Unset, str]):
-        storage_status_iendswith (Union[Unset, str]):
-        storage_status_iexact (Union[Unset, str]):
-        storage_status_in (Union[Unset, list[str]]):
-        storage_status_iregex (Union[Unset, str]):
-        storage_status_isnull (Union[Unset, bool]):
-        storage_status_istartswith (Union[Unset, str]):
-        storage_status_lt (Union[Unset, str]):
-        storage_status_lte (Union[Unset, str]):
-        storage_status_range (Union[Unset, list[str]]):
-        storage_status_regex (Union[Unset, str]):
-        storage_status_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
-        volume (Union[Unset, int]):
-        volume_contained_by (Union[Unset, int]):
-        volume_contains (Union[Unset, int]):
-        volume_endswith (Union[Unset, int]):
-        volume_gt (Union[Unset, int]):
-        volume_gte (Union[Unset, int]):
-        volume_icontains (Union[Unset, int]):
-        volume_iendswith (Union[Unset, int]):
-        volume_iexact (Union[Unset, int]):
-        volume_in (Union[Unset, list[int]]):
-        volume_iregex (Union[Unset, int]):
-        volume_isnull (Union[Unset, bool]):
-        volume_istartswith (Union[Unset, int]):
-        volume_lt (Union[Unset, int]):
-        volume_lte (Union[Unset, int]):
-        volume_range (Union[Unset, list[int]]):
-        volume_regex (Union[Unset, int]):
-        volume_startswith (Union[Unset, int]):
+        curation_category (ResultsListCEDACurationCategory | Unset):
+        curation_category_contains (str | Unset):
+        curation_category_endswith (str | Unset):
+        curation_category_gt (str | Unset):
+        curation_category_gte (str | Unset):
+        curation_category_icontains (str | Unset):
+        curation_category_iendswith (str | Unset):
+        curation_category_iexact (str | Unset):
+        curation_category_in (list[str] | Unset):
+        curation_category_iregex (str | Unset):
+        curation_category_isnull (bool | Unset):
+        curation_category_istartswith (str | Unset):
+        curation_category_lt (str | Unset):
+        curation_category_lte (str | Unset):
+        curation_category_range (list[str] | Unset):
+        curation_category_regex (str | Unset):
+        curation_category_startswith (str | Unset):
+        data_path (str | Unset):
+        data_path_contains (str | Unset):
+        data_path_endswith (str | Unset):
+        data_path_gt (str | Unset):
+        data_path_gte (str | Unset):
+        data_path_icontains (str | Unset):
+        data_path_iendswith (str | Unset):
+        data_path_iexact (str | Unset):
+        data_path_in (list[str] | Unset):
+        data_path_iregex (str | Unset):
+        data_path_isnull (bool | Unset):
+        data_path_istartswith (str | Unset):
+        data_path_lt (str | Unset):
+        data_path_lte (str | Unset):
+        data_path_range (list[str] | Unset):
+        data_path_regex (str | Unset):
+        data_path_startswith (str | Unset):
+        file_format (str | Unset):
+        file_format_contains (str | Unset):
+        file_format_endswith (str | Unset):
+        file_format_gt (str | Unset):
+        file_format_gte (str | Unset):
+        file_format_icontains (str | Unset):
+        file_format_iendswith (str | Unset):
+        file_format_iexact (str | Unset):
+        file_format_in (list[str] | Unset):
+        file_format_iregex (str | Unset):
+        file_format_isnull (bool | Unset):
+        file_format_istartswith (str | Unset):
+        file_format_lt (str | Unset):
+        file_format_lte (str | Unset):
+        file_format_range (list[str] | Unset):
+        file_format_regex (str | Unset):
+        file_format_startswith (str | Unset):
+        limit (int | Unset):
+        number_of_files (int | Unset):
+        number_of_files_contained_by (int | Unset):
+        number_of_files_contains (int | Unset):
+        number_of_files_endswith (int | Unset):
+        number_of_files_gt (int | Unset):
+        number_of_files_gte (int | Unset):
+        number_of_files_icontains (int | Unset):
+        number_of_files_iendswith (int | Unset):
+        number_of_files_iexact (int | Unset):
+        number_of_files_in (list[int] | Unset):
+        number_of_files_iregex (int | Unset):
+        number_of_files_isnull (bool | Unset):
+        number_of_files_istartswith (int | Unset):
+        number_of_files_lt (int | Unset):
+        number_of_files_lte (int | Unset):
+        number_of_files_range (list[int] | Unset):
+        number_of_files_regex (int | Unset):
+        number_of_files_startswith (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        observation_ob_id (int | Unset):
+        observation_ob_id_in (list[int] | Unset):
+        observation_uuid (str | Unset):
+        observation_uuid_in (list[str] | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        storage_location (ResultsListStorageLocation | Unset):
+        storage_location_contains (str | Unset):
+        storage_location_endswith (str | Unset):
+        storage_location_gt (str | Unset):
+        storage_location_gte (str | Unset):
+        storage_location_icontains (str | Unset):
+        storage_location_iendswith (str | Unset):
+        storage_location_iexact (str | Unset):
+        storage_location_in (list[str] | Unset):
+        storage_location_iregex (str | Unset):
+        storage_location_isnull (bool | Unset):
+        storage_location_istartswith (str | Unset):
+        storage_location_lt (str | Unset):
+        storage_location_lte (str | Unset):
+        storage_location_range (list[str] | Unset):
+        storage_location_regex (str | Unset):
+        storage_location_startswith (str | Unset):
+        storage_status (ResultsListStorageStatus | Unset):
+        storage_status_contains (str | Unset):
+        storage_status_endswith (str | Unset):
+        storage_status_gt (str | Unset):
+        storage_status_gte (str | Unset):
+        storage_status_icontains (str | Unset):
+        storage_status_iendswith (str | Unset):
+        storage_status_iexact (str | Unset):
+        storage_status_in (list[str] | Unset):
+        storage_status_iregex (str | Unset):
+        storage_status_isnull (bool | Unset):
+        storage_status_istartswith (str | Unset):
+        storage_status_lt (str | Unset):
+        storage_status_lte (str | Unset):
+        storage_status_range (list[str] | Unset):
+        storage_status_regex (str | Unset):
+        storage_status_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
+        volume (int | Unset):
+        volume_contained_by (int | Unset):
+        volume_contains (int | Unset):
+        volume_endswith (int | Unset):
+        volume_gt (int | Unset):
+        volume_gte (int | Unset):
+        volume_icontains (int | Unset):
+        volume_iendswith (int | Unset):
+        volume_iexact (int | Unset):
+        volume_in (list[int] | Unset):
+        volume_iregex (int | Unset):
+        volume_isnull (bool | Unset):
+        volume_istartswith (int | Unset):
+        volume_lt (int | Unset):
+        volume_lte (int | Unset):
+        volume_range (list[int] | Unset):
+        volume_regex (int | Unset):
+        volume_startswith (int | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

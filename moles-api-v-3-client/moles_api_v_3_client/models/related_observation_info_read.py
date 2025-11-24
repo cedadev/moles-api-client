@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any, TypeVar
 
@@ -37,8 +39,8 @@ class RelatedObservationInfoRead:
 
     ob_id: int
     relation_type: RelationTypeEnum
-    subject_observation: "SimpleRead"
-    object_observation: "SimpleRead"
+    subject_observation: SimpleRead
+    object_observation: SimpleRead
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,16 +21,16 @@ class DQConformanceResultWrite:
         Attributes:
             ob_id (int):
             explanation (str):
-            passes_test (Union[Unset, bool]):
-            result_title (Union[Unset, str]):
-            date (Union[Unset, datetime.date]):
+            passes_test (bool | Unset):
+            result_title (str | Unset):
+            date (datetime.date | Unset):
     """
 
     ob_id: int
     explanation: str
-    passes_test: Union[Unset, bool] = UNSET
-    result_title: Union[Unset, str] = UNSET
-    date: Union[Unset, datetime.date] = UNSET
+    passes_test: bool | Unset = UNSET
+    result_title: str | Unset = UNSET
+    date: datetime.date | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -40,7 +42,7 @@ class DQConformanceResultWrite:
 
         result_title = self.result_title
 
-        date: Union[Unset, str] = UNSET
+        date: str | Unset = UNSET
         if not isinstance(self.date, Unset):
             date = self.date.isoformat()
 
@@ -73,7 +75,7 @@ class DQConformanceResultWrite:
         result_title = d.pop("resultTitle", UNSET)
 
         _date = d.pop("date", UNSET)
-        date: Union[Unset, datetime.date]
+        date: datetime.date | Unset
         if isinstance(_date, Unset):
             date = UNSET
         else:

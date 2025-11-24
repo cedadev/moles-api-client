@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,35 +21,35 @@ class ProjectWriteRequest:
 
         Attributes:
             title (str):
-            abstract (Union[None, Unset, str]):
-            publication_state (Union[BlankEnum, PublicationState6F9Enum, Unset]):
-            parent_project (Union[None, Unset, int]):
-            keywords (Union[Unset, str]):
-            status (Union[BlankEnum, StatusEnum, Unset]):
-            image_details (Union[Unset, list[int]]):
-            observation_collection (Union[Unset, list[str]]):
+            abstract (None | str | Unset):
+            publication_state (BlankEnum | PublicationState6F9Enum | Unset):
+            parent_project (int | None | Unset):
+            keywords (str | Unset):
+            status (BlankEnum | StatusEnum | Unset):
+            image_details (list[int] | Unset):
+            observation_collection (list[str] | Unset):
     """
 
     title: str
-    abstract: Union[None, Unset, str] = UNSET
-    publication_state: Union[BlankEnum, PublicationState6F9Enum, Unset] = UNSET
-    parent_project: Union[None, Unset, int] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    status: Union[BlankEnum, StatusEnum, Unset] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
-    observation_collection: Union[Unset, list[str]] = UNSET
+    abstract: None | str | Unset = UNSET
+    publication_state: BlankEnum | PublicationState6F9Enum | Unset = UNSET
+    parent_project: int | None | Unset = UNSET
+    keywords: str | Unset = UNSET
+    status: BlankEnum | StatusEnum | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
+    observation_collection: list[str] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         title = self.title
 
-        abstract: Union[None, Unset, str]
+        abstract: None | str | Unset
         if isinstance(self.abstract, Unset):
             abstract = UNSET
         else:
             abstract = self.abstract
 
-        publication_state: Union[Unset, str]
+        publication_state: str | Unset
         if isinstance(self.publication_state, Unset):
             publication_state = UNSET
         elif isinstance(self.publication_state, PublicationState6F9Enum):
@@ -55,7 +57,7 @@ class ProjectWriteRequest:
         else:
             publication_state = self.publication_state.value
 
-        parent_project: Union[None, Unset, int]
+        parent_project: int | None | Unset
         if isinstance(self.parent_project, Unset):
             parent_project = UNSET
         else:
@@ -63,7 +65,7 @@ class ProjectWriteRequest:
 
         keywords = self.keywords
 
-        status: Union[Unset, str]
+        status: str | Unset
         if isinstance(self.status, Unset):
             status = UNSET
         elif isinstance(self.status, StatusEnum):
@@ -71,11 +73,11 @@ class ProjectWriteRequest:
         else:
             status = self.status.value
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
-        observation_collection: Union[Unset, list[str]] = UNSET
+        observation_collection: list[str] | Unset = UNSET
         if not isinstance(self.observation_collection, Unset):
             observation_collection = ",".join(map(str, self.observation_collection))
 
@@ -108,16 +110,16 @@ class ProjectWriteRequest:
         d = dict(src_dict)
         title = d.pop("title")
 
-        def _parse_abstract(data: object) -> Union[None, Unset, str]:
+        def _parse_abstract(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         abstract = _parse_abstract(d.pop("abstract", UNSET))
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationState6F9Enum, Unset]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationState6F9Enum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -126,7 +128,7 @@ class ProjectWriteRequest:
                 publication_state_type_0 = PublicationState6F9Enum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -136,18 +138,18 @@ class ProjectWriteRequest:
 
         publication_state = _parse_publication_state(d.pop("publicationState", UNSET))
 
-        def _parse_parent_project(data: object) -> Union[None, Unset, int]:
+        def _parse_parent_project(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         parent_project = _parse_parent_project(d.pop("parentProject", UNSET))
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_status(data: object) -> Union[BlankEnum, StatusEnum, Unset]:
+        def _parse_status(data: object) -> BlankEnum | StatusEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -156,7 +158,7 @@ class ProjectWriteRequest:
                 status_type_0 = StatusEnum(data)
 
                 return status_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()

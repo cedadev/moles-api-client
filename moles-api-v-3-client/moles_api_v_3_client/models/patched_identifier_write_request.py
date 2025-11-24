@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,24 +18,24 @@ class PatchedIdentifierWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            url (Union[Unset, str]):
-            identifier_type (Union[Unset, IdentifierTypeEnum]): * `moles3_url` - MOLES3 URL
+            url (str | Unset):
+            identifier_type (IdentifierTypeEnum | Unset): * `moles3_url` - MOLES3 URL
                 * `moles2_url` - MOLES2 URL
                 * `moles1_url` - MOLES1 URL
                 * `doi` - DOI
                 * `ceda_abbreviation` - CEDA Abbreviation
-            related_to (Union[Unset, str]):
+            related_to (str | Unset):
     """
 
-    url: Union[Unset, str] = UNSET
-    identifier_type: Union[Unset, IdentifierTypeEnum] = UNSET
-    related_to: Union[Unset, str] = UNSET
+    url: str | Unset = UNSET
+    identifier_type: IdentifierTypeEnum | Unset = UNSET
+    related_to: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         url = self.url
 
-        identifier_type: Union[Unset, str] = UNSET
+        identifier_type: str | Unset = UNSET
         if not isinstance(self.identifier_type, Unset):
             identifier_type = self.identifier_type.value
 
@@ -57,7 +59,7 @@ class PatchedIdentifierWriteRequest:
         url = d.pop("url", UNSET)
 
         _identifier_type = d.pop("identifierType", UNSET)
-        identifier_type: Union[Unset, IdentifierTypeEnum]
+        identifier_type: IdentifierTypeEnum | Unset
         if isinstance(_identifier_type, Unset):
             identifier_type = UNSET
         else:

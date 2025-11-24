@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -13,38 +13,38 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    limit: Union[Unset, int] = UNSET,
-    names_name: Union[Unset, str] = UNSET,
-    names_name_contains: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    terms_label: Union[Unset, PhenomonaListTermsLabel] = UNSET,
-    terms_label_contains: Union[Unset, str] = UNSET,
-    terms_label_in: Union[Unset, list[str]] = UNSET,
-    terms_value: Union[Unset, str] = UNSET,
-    terms_value_contains: Union[Unset, str] = UNSET,
-    terms_value_in: Union[Unset, list[str]] = UNSET,
-    terms_vocabulary: Union[Unset, PhenomonaListTermsVocabulary] = UNSET,
-    terms_vocabulary_contains: Union[Unset, str] = UNSET,
-    terms_vocabulary_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    names_name: str | Unset = UNSET,
+    names_name_contains: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    terms_label: PhenomonaListTermsLabel | Unset = UNSET,
+    terms_label_contains: str | Unset = UNSET,
+    terms_label_in: list[str] | Unset = UNSET,
+    terms_value: str | Unset = UNSET,
+    terms_value_contains: str | Unset = UNSET,
+    terms_value_in: list[str] | Unset = UNSET,
+    terms_vocabulary: PhenomonaListTermsVocabulary | Unset = UNSET,
+    terms_vocabulary_contains: str | Unset = UNSET,
+    terms_vocabulary_in: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -72,7 +72,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -88,7 +88,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -102,7 +102,7 @@ def _get_kwargs(
 
     params["ordering"] = ordering
 
-    json_terms_label: Union[Unset, str] = UNSET
+    json_terms_label: str | Unset = UNSET
     if not isinstance(terms_label, Unset):
         json_terms_label = terms_label.value
 
@@ -110,7 +110,7 @@ def _get_kwargs(
 
     params["terms__label__contains"] = terms_label_contains
 
-    json_terms_label_in: Union[Unset, list[str]] = UNSET
+    json_terms_label_in: list[str] | Unset = UNSET
     if not isinstance(terms_label_in, Unset):
         json_terms_label_in = ",".join(map(str, terms_label_in))
 
@@ -120,13 +120,13 @@ def _get_kwargs(
 
     params["terms__value__contains"] = terms_value_contains
 
-    json_terms_value_in: Union[Unset, list[str]] = UNSET
+    json_terms_value_in: list[str] | Unset = UNSET
     if not isinstance(terms_value_in, Unset):
         json_terms_value_in = ",".join(map(str, terms_value_in))
 
     params["terms__value__in"] = json_terms_value_in
 
-    json_terms_vocabulary: Union[Unset, str] = UNSET
+    json_terms_vocabulary: str | Unset = UNSET
     if not isinstance(terms_vocabulary, Unset):
         json_terms_vocabulary = terms_vocabulary.value
 
@@ -134,7 +134,7 @@ def _get_kwargs(
 
     params["terms__vocabulary__contains"] = terms_vocabulary_contains
 
-    json_terms_vocabulary_in: Union[Unset, list[str]] = UNSET
+    json_terms_vocabulary_in: list[str] | Unset = UNSET
     if not isinstance(terms_vocabulary_in, Unset):
         json_terms_vocabulary_in = ",".join(map(str, terms_vocabulary_in))
 
@@ -152,8 +152,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedPhenomenonList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedPhenomenonList | None:
     if response.status_code == 200:
         response_200 = PaginatedPhenomenonList.from_dict(response.json())
 
@@ -166,7 +166,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedPhenomenonList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -179,74 +179,74 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    names_name: Union[Unset, str] = UNSET,
-    names_name_contains: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    terms_label: Union[Unset, PhenomonaListTermsLabel] = UNSET,
-    terms_label_contains: Union[Unset, str] = UNSET,
-    terms_label_in: Union[Unset, list[str]] = UNSET,
-    terms_value: Union[Unset, str] = UNSET,
-    terms_value_contains: Union[Unset, str] = UNSET,
-    terms_value_in: Union[Unset, list[str]] = UNSET,
-    terms_vocabulary: Union[Unset, PhenomonaListTermsVocabulary] = UNSET,
-    terms_vocabulary_contains: Union[Unset, str] = UNSET,
-    terms_vocabulary_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    names_name: str | Unset = UNSET,
+    names_name_contains: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    terms_label: PhenomonaListTermsLabel | Unset = UNSET,
+    terms_label_contains: str | Unset = UNSET,
+    terms_label_in: list[str] | Unset = UNSET,
+    terms_value: str | Unset = UNSET,
+    terms_value_contains: str | Unset = UNSET,
+    terms_value_in: list[str] | Unset = UNSET,
+    terms_vocabulary: PhenomonaListTermsVocabulary | Unset = UNSET,
+    terms_vocabulary_contains: str | Unset = UNSET,
+    terms_vocabulary_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedPhenomenonList]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        limit (Union[Unset, int]):
-        names_name (Union[Unset, str]):
-        names_name_contains (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        terms_label (Union[Unset, PhenomonaListTermsLabel]):
-        terms_label_contains (Union[Unset, str]):
-        terms_label_in (Union[Unset, list[str]]):
-        terms_value (Union[Unset, str]):
-        terms_value_contains (Union[Unset, str]):
-        terms_value_in (Union[Unset, list[str]]):
-        terms_vocabulary (Union[Unset, PhenomonaListTermsVocabulary]):
-        terms_vocabulary_contains (Union[Unset, str]):
-        terms_vocabulary_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        names_name (str | Unset):
+        names_name_contains (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        terms_label (PhenomonaListTermsLabel | Unset):
+        terms_label_contains (str | Unset):
+        terms_label_in (list[str] | Unset):
+        terms_value (str | Unset):
+        terms_value_contains (str | Unset):
+        terms_value_in (list[str] | Unset):
+        terms_vocabulary (PhenomonaListTermsVocabulary | Unset):
+        terms_vocabulary_contains (str | Unset):
+        terms_vocabulary_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -301,74 +301,74 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    names_name: Union[Unset, str] = UNSET,
-    names_name_contains: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    terms_label: Union[Unset, PhenomonaListTermsLabel] = UNSET,
-    terms_label_contains: Union[Unset, str] = UNSET,
-    terms_label_in: Union[Unset, list[str]] = UNSET,
-    terms_value: Union[Unset, str] = UNSET,
-    terms_value_contains: Union[Unset, str] = UNSET,
-    terms_value_in: Union[Unset, list[str]] = UNSET,
-    terms_vocabulary: Union[Unset, PhenomonaListTermsVocabulary] = UNSET,
-    terms_vocabulary_contains: Union[Unset, str] = UNSET,
-    terms_vocabulary_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedPhenomenonList]:
+    limit: int | Unset = UNSET,
+    names_name: str | Unset = UNSET,
+    names_name_contains: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    terms_label: PhenomonaListTermsLabel | Unset = UNSET,
+    terms_label_contains: str | Unset = UNSET,
+    terms_label_in: list[str] | Unset = UNSET,
+    terms_value: str | Unset = UNSET,
+    terms_value_contains: str | Unset = UNSET,
+    terms_value_in: list[str] | Unset = UNSET,
+    terms_vocabulary: PhenomonaListTermsVocabulary | Unset = UNSET,
+    terms_vocabulary_contains: str | Unset = UNSET,
+    terms_vocabulary_in: list[str] | Unset = UNSET,
+) -> PaginatedPhenomenonList | None:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        limit (Union[Unset, int]):
-        names_name (Union[Unset, str]):
-        names_name_contains (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        terms_label (Union[Unset, PhenomonaListTermsLabel]):
-        terms_label_contains (Union[Unset, str]):
-        terms_label_in (Union[Unset, list[str]]):
-        terms_value (Union[Unset, str]):
-        terms_value_contains (Union[Unset, str]):
-        terms_value_in (Union[Unset, list[str]]):
-        terms_vocabulary (Union[Unset, PhenomonaListTermsVocabulary]):
-        terms_vocabulary_contains (Union[Unset, str]):
-        terms_vocabulary_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        names_name (str | Unset):
+        names_name_contains (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        terms_label (PhenomonaListTermsLabel | Unset):
+        terms_label_contains (str | Unset):
+        terms_label_in (list[str] | Unset):
+        terms_value (str | Unset):
+        terms_value_contains (str | Unset):
+        terms_value_in (list[str] | Unset):
+        terms_vocabulary (PhenomonaListTermsVocabulary | Unset):
+        terms_vocabulary_contains (str | Unset):
+        terms_vocabulary_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -418,74 +418,74 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    names_name: Union[Unset, str] = UNSET,
-    names_name_contains: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    terms_label: Union[Unset, PhenomonaListTermsLabel] = UNSET,
-    terms_label_contains: Union[Unset, str] = UNSET,
-    terms_label_in: Union[Unset, list[str]] = UNSET,
-    terms_value: Union[Unset, str] = UNSET,
-    terms_value_contains: Union[Unset, str] = UNSET,
-    terms_value_in: Union[Unset, list[str]] = UNSET,
-    terms_vocabulary: Union[Unset, PhenomonaListTermsVocabulary] = UNSET,
-    terms_vocabulary_contains: Union[Unset, str] = UNSET,
-    terms_vocabulary_in: Union[Unset, list[str]] = UNSET,
+    limit: int | Unset = UNSET,
+    names_name: str | Unset = UNSET,
+    names_name_contains: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    terms_label: PhenomonaListTermsLabel | Unset = UNSET,
+    terms_label_contains: str | Unset = UNSET,
+    terms_label_in: list[str] | Unset = UNSET,
+    terms_value: str | Unset = UNSET,
+    terms_value_contains: str | Unset = UNSET,
+    terms_value_in: list[str] | Unset = UNSET,
+    terms_vocabulary: PhenomonaListTermsVocabulary | Unset = UNSET,
+    terms_vocabulary_contains: str | Unset = UNSET,
+    terms_vocabulary_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedPhenomenonList]:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        limit (Union[Unset, int]):
-        names_name (Union[Unset, str]):
-        names_name_contains (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        terms_label (Union[Unset, PhenomonaListTermsLabel]):
-        terms_label_contains (Union[Unset, str]):
-        terms_label_in (Union[Unset, list[str]]):
-        terms_value (Union[Unset, str]):
-        terms_value_contains (Union[Unset, str]):
-        terms_value_in (Union[Unset, list[str]]):
-        terms_vocabulary (Union[Unset, PhenomonaListTermsVocabulary]):
-        terms_vocabulary_contains (Union[Unset, str]):
-        terms_vocabulary_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        names_name (str | Unset):
+        names_name_contains (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        terms_label (PhenomonaListTermsLabel | Unset):
+        terms_label_contains (str | Unset):
+        terms_label_in (list[str] | Unset):
+        terms_value (str | Unset):
+        terms_value_contains (str | Unset):
+        terms_value_in (list[str] | Unset):
+        terms_vocabulary (PhenomonaListTermsVocabulary | Unset):
+        terms_vocabulary_contains (str | Unset):
+        terms_vocabulary_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -538,74 +538,74 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    names_name: Union[Unset, str] = UNSET,
-    names_name_contains: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    terms_label: Union[Unset, PhenomonaListTermsLabel] = UNSET,
-    terms_label_contains: Union[Unset, str] = UNSET,
-    terms_label_in: Union[Unset, list[str]] = UNSET,
-    terms_value: Union[Unset, str] = UNSET,
-    terms_value_contains: Union[Unset, str] = UNSET,
-    terms_value_in: Union[Unset, list[str]] = UNSET,
-    terms_vocabulary: Union[Unset, PhenomonaListTermsVocabulary] = UNSET,
-    terms_vocabulary_contains: Union[Unset, str] = UNSET,
-    terms_vocabulary_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedPhenomenonList]:
+    limit: int | Unset = UNSET,
+    names_name: str | Unset = UNSET,
+    names_name_contains: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    terms_label: PhenomonaListTermsLabel | Unset = UNSET,
+    terms_label_contains: str | Unset = UNSET,
+    terms_label_in: list[str] | Unset = UNSET,
+    terms_value: str | Unset = UNSET,
+    terms_value_contains: str | Unset = UNSET,
+    terms_value_in: list[str] | Unset = UNSET,
+    terms_vocabulary: PhenomonaListTermsVocabulary | Unset = UNSET,
+    terms_vocabulary_contains: str | Unset = UNSET,
+    terms_vocabulary_in: list[str] | Unset = UNSET,
+) -> PaginatedPhenomenonList | None:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Args:
-        limit (Union[Unset, int]):
-        names_name (Union[Unset, str]):
-        names_name_contains (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        terms_label (Union[Unset, PhenomonaListTermsLabel]):
-        terms_label_contains (Union[Unset, str]):
-        terms_label_in (Union[Unset, list[str]]):
-        terms_value (Union[Unset, str]):
-        terms_value_contains (Union[Unset, str]):
-        terms_value_in (Union[Unset, list[str]]):
-        terms_vocabulary (Union[Unset, PhenomonaListTermsVocabulary]):
-        terms_vocabulary_contains (Union[Unset, str]):
-        terms_vocabulary_in (Union[Unset, list[str]]):
+        limit (int | Unset):
+        names_name (str | Unset):
+        names_name_contains (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        terms_label (PhenomonaListTermsLabel | Unset):
+        terms_label_contains (str | Unset):
+        terms_label_in (list[str] | Unset):
+        terms_value (str | Unset):
+        terms_value_contains (str | Unset):
+        terms_value_in (list[str] | Unset):
+        terms_vocabulary (PhenomonaListTermsVocabulary | Unset):
+        terms_vocabulary_contains (str | Unset):
+        terms_vocabulary_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

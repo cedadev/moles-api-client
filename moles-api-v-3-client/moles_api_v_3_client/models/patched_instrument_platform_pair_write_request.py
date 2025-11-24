@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,14 +17,14 @@ class PatchedInstrumentPlatformPairWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            platform (Union[Unset, int]):
-            instrument (Union[Unset, int]):
-            related_to (Union[Unset, str]):
+            platform (int | Unset):
+            instrument (int | Unset):
+            related_to (str | Unset):
     """
 
-    platform: Union[Unset, int] = UNSET
-    instrument: Union[Unset, int] = UNSET
-    related_to: Union[Unset, str] = UNSET
+    platform: int | Unset = UNSET
+    instrument: int | Unset = UNSET
+    related_to: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,19 +18,19 @@ class GeographicBoundingBoxWrite:
 
         Attributes:
             ob_id (int):
-            bbox_name (Union[Unset, str]):
-            east_bound_longitude (Union[Unset, float]):
-            north_bound_latitude (Union[Unset, float]):
-            west_bound_longitude (Union[Unset, float]):
-            south_bound_latitude (Union[Unset, float]):
+            bbox_name (str | Unset):
+            east_bound_longitude (float | Unset):
+            north_bound_latitude (float | Unset):
+            west_bound_longitude (float | Unset):
+            south_bound_latitude (float | Unset):
     """
 
     ob_id: int
-    bbox_name: Union[Unset, str] = UNSET
-    east_bound_longitude: Union[Unset, float] = UNSET
-    north_bound_latitude: Union[Unset, float] = UNSET
-    west_bound_longitude: Union[Unset, float] = UNSET
-    south_bound_latitude: Union[Unset, float] = UNSET
+    bbox_name: str | Unset = UNSET
+    east_bound_longitude: float | Unset = UNSET
+    north_bound_latitude: float | Unset = UNSET
+    west_bound_longitude: float | Unset = UNSET
+    south_bound_latitude: float | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

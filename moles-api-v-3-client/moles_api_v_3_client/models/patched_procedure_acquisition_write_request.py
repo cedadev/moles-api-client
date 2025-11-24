@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,20 +17,20 @@ class PatchedProcedureAcquisitionWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            title (Union[Unset, str]):
-            abstract (Union[Unset, str]):
-            output_description (Union[None, Unset, int]):
-            image_details (Union[Unset, list[int]]):
-            independent_instrument (Union[Unset, list[int]]):
-            mobile_platform_operation (Union[Unset, list[int]]):
+            title (str | Unset):
+            abstract (str | Unset):
+            output_description (int | None | Unset):
+            image_details (list[int] | Unset):
+            independent_instrument (list[int] | Unset):
+            mobile_platform_operation (list[int] | Unset):
     """
 
-    title: Union[Unset, str] = UNSET
-    abstract: Union[Unset, str] = UNSET
-    output_description: Union[None, Unset, int] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
-    independent_instrument: Union[Unset, list[int]] = UNSET
-    mobile_platform_operation: Union[Unset, list[int]] = UNSET
+    title: str | Unset = UNSET
+    abstract: str | Unset = UNSET
+    output_description: int | None | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
+    independent_instrument: list[int] | Unset = UNSET
+    mobile_platform_operation: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -36,21 +38,21 @@ class PatchedProcedureAcquisitionWriteRequest:
 
         abstract = self.abstract
 
-        output_description: Union[None, Unset, int]
+        output_description: int | None | Unset
         if isinstance(self.output_description, Unset):
             output_description = UNSET
         else:
             output_description = self.output_description
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
-        independent_instrument: Union[Unset, list[int]] = UNSET
+        independent_instrument: list[int] | Unset = UNSET
         if not isinstance(self.independent_instrument, Unset):
             independent_instrument = ",".join(map(str, self.independent_instrument))
 
-        mobile_platform_operation: Union[Unset, list[int]] = UNSET
+        mobile_platform_operation: list[int] | Unset = UNSET
         if not isinstance(self.mobile_platform_operation, Unset):
             mobile_platform_operation = ",".join(map(str, self.mobile_platform_operation))
 
@@ -79,12 +81,12 @@ class PatchedProcedureAcquisitionWriteRequest:
 
         abstract = d.pop("abstract", UNSET)
 
-        def _parse_output_description(data: object) -> Union[None, Unset, int]:
+        def _parse_output_description(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         output_description = _parse_output_description(d.pop("outputDescription", UNSET))
 

@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,14 +29,14 @@ class IdentifierRead:
                 * `doi` - DOI
                 * `ceda_abbreviation` - CEDA Abbreviation
             short_url (str):
-            related_to (Union['Referenceable', None]):
+            related_to (None | Referenceable):
     """
 
     ob_id: int
     url: str
     identifier_type: IdentifierTypeEnum
     short_url: str
-    related_to: Union["Referenceable", None]
+    related_to: None | Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -48,7 +50,7 @@ class IdentifierRead:
 
         short_url = self.short_url
 
-        related_to: Union[None, dict[str, Any]]
+        related_to: dict[str, Any] | None
         if isinstance(self.related_to, Referenceable):
             related_to = self.related_to.to_dict()
         else:
@@ -81,7 +83,7 @@ class IdentifierRead:
 
         short_url = d.pop("shortUrl")
 
-        def _parse_related_to(data: object) -> Union["Referenceable", None]:
+        def _parse_related_to(data: object) -> None | Referenceable:
             if data is None:
                 return data
             try:
@@ -90,9 +92,9 @@ class IdentifierRead:
                 related_to_type_1 = Referenceable.from_dict(data)
 
                 return related_to_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["Referenceable", None], data)
+            return cast(None | Referenceable, data)
 
         related_to = _parse_related_to(d.pop("relatedTo"))
 

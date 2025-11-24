@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,85 +11,85 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    file_description: Union[Unset, str] = UNSET,
-    file_description_contains: Union[Unset, str] = UNSET,
-    file_description_endswith: Union[Unset, str] = UNSET,
-    file_description_gt: Union[Unset, str] = UNSET,
-    file_description_gte: Union[Unset, str] = UNSET,
-    file_description_icontains: Union[Unset, str] = UNSET,
-    file_description_iendswith: Union[Unset, str] = UNSET,
-    file_description_iexact: Union[Unset, str] = UNSET,
-    file_description_in: Union[Unset, list[str]] = UNSET,
-    file_description_iregex: Union[Unset, str] = UNSET,
-    file_description_isnull: Union[Unset, bool] = UNSET,
-    file_description_istartswith: Union[Unset, str] = UNSET,
-    file_description_lt: Union[Unset, str] = UNSET,
-    file_description_lte: Union[Unset, str] = UNSET,
-    file_description_range: Union[Unset, list[str]] = UNSET,
-    file_description_regex: Union[Unset, str] = UNSET,
-    file_description_startswith: Union[Unset, str] = UNSET,
-    file_name: Union[Unset, str] = UNSET,
-    file_name_contains: Union[Unset, str] = UNSET,
-    file_name_endswith: Union[Unset, str] = UNSET,
-    file_name_gt: Union[Unset, str] = UNSET,
-    file_name_gte: Union[Unset, str] = UNSET,
-    file_name_icontains: Union[Unset, str] = UNSET,
-    file_name_iendswith: Union[Unset, str] = UNSET,
-    file_name_iexact: Union[Unset, str] = UNSET,
-    file_name_in: Union[Unset, list[str]] = UNSET,
-    file_name_iregex: Union[Unset, str] = UNSET,
-    file_name_isnull: Union[Unset, bool] = UNSET,
-    file_name_istartswith: Union[Unset, str] = UNSET,
-    file_name_lt: Union[Unset, str] = UNSET,
-    file_name_lte: Union[Unset, str] = UNSET,
-    file_name_range: Union[Unset, list[str]] = UNSET,
-    file_name_regex: Union[Unset, str] = UNSET,
-    file_name_startswith: Union[Unset, str] = UNSET,
-    image_constraints: Union[Unset, int] = UNSET,
-    image_constraints_gt: Union[Unset, int] = UNSET,
-    image_constraints_gte: Union[Unset, int] = UNSET,
-    image_constraints_in: Union[Unset, list[int]] = UNSET,
-    image_constraints_isnull: Union[Unset, bool] = UNSET,
-    image_constraints_lt: Union[Unset, int] = UNSET,
-    image_constraints_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    file_description: str | Unset = UNSET,
+    file_description_contains: str | Unset = UNSET,
+    file_description_endswith: str | Unset = UNSET,
+    file_description_gt: str | Unset = UNSET,
+    file_description_gte: str | Unset = UNSET,
+    file_description_icontains: str | Unset = UNSET,
+    file_description_iendswith: str | Unset = UNSET,
+    file_description_iexact: str | Unset = UNSET,
+    file_description_in: list[str] | Unset = UNSET,
+    file_description_iregex: str | Unset = UNSET,
+    file_description_isnull: bool | Unset = UNSET,
+    file_description_istartswith: str | Unset = UNSET,
+    file_description_lt: str | Unset = UNSET,
+    file_description_lte: str | Unset = UNSET,
+    file_description_range: list[str] | Unset = UNSET,
+    file_description_regex: str | Unset = UNSET,
+    file_description_startswith: str | Unset = UNSET,
+    file_name: str | Unset = UNSET,
+    file_name_contains: str | Unset = UNSET,
+    file_name_endswith: str | Unset = UNSET,
+    file_name_gt: str | Unset = UNSET,
+    file_name_gte: str | Unset = UNSET,
+    file_name_icontains: str | Unset = UNSET,
+    file_name_iendswith: str | Unset = UNSET,
+    file_name_iexact: str | Unset = UNSET,
+    file_name_in: list[str] | Unset = UNSET,
+    file_name_iregex: str | Unset = UNSET,
+    file_name_isnull: bool | Unset = UNSET,
+    file_name_istartswith: str | Unset = UNSET,
+    file_name_lt: str | Unset = UNSET,
+    file_name_lte: str | Unset = UNSET,
+    file_name_range: list[str] | Unset = UNSET,
+    file_name_regex: str | Unset = UNSET,
+    file_name_startswith: str | Unset = UNSET,
+    image_constraints: int | Unset = UNSET,
+    image_constraints_gt: int | Unset = UNSET,
+    image_constraints_gte: int | Unset = UNSET,
+    image_constraints_in: list[int] | Unset = UNSET,
+    image_constraints_isnull: bool | Unset = UNSET,
+    image_constraints_lt: int | Unset = UNSET,
+    image_constraints_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -109,7 +109,7 @@ def _get_kwargs(
 
     params["fileDescription__iexact"] = file_description_iexact
 
-    json_file_description_in: Union[Unset, list[str]] = UNSET
+    json_file_description_in: list[str] | Unset = UNSET
     if not isinstance(file_description_in, Unset):
         json_file_description_in = ",".join(map(str, file_description_in))
 
@@ -125,7 +125,7 @@ def _get_kwargs(
 
     params["fileDescription__lte"] = file_description_lte
 
-    json_file_description_range: Union[Unset, list[str]] = UNSET
+    json_file_description_range: list[str] | Unset = UNSET
     if not isinstance(file_description_range, Unset):
         json_file_description_range = ",".join(map(str, file_description_range))
 
@@ -151,7 +151,7 @@ def _get_kwargs(
 
     params["fileName__iexact"] = file_name_iexact
 
-    json_file_name_in: Union[Unset, list[str]] = UNSET
+    json_file_name_in: list[str] | Unset = UNSET
     if not isinstance(file_name_in, Unset):
         json_file_name_in = ",".join(map(str, file_name_in))
 
@@ -167,7 +167,7 @@ def _get_kwargs(
 
     params["fileName__lte"] = file_name_lte
 
-    json_file_name_range: Union[Unset, list[str]] = UNSET
+    json_file_name_range: list[str] | Unset = UNSET
     if not isinstance(file_name_range, Unset):
         json_file_name_range = ",".join(map(str, file_name_range))
 
@@ -183,7 +183,7 @@ def _get_kwargs(
 
     params["imageConstraints__gte"] = image_constraints_gte
 
-    json_image_constraints_in: Union[Unset, list[int]] = UNSET
+    json_image_constraints_in: list[int] | Unset = UNSET
     if not isinstance(image_constraints_in, Unset):
         json_image_constraints_in = ",".join(map(str, image_constraints_in))
 
@@ -213,7 +213,7 @@ def _get_kwargs(
 
     params["linkage__iexact"] = linkage_iexact
 
-    json_linkage_in: Union[Unset, list[str]] = UNSET
+    json_linkage_in: list[str] | Unset = UNSET
     if not isinstance(linkage_in, Unset):
         json_linkage_in = ",".join(map(str, linkage_in))
 
@@ -229,7 +229,7 @@ def _get_kwargs(
 
     params["linkage__lte"] = linkage_lte
 
-    json_linkage_range: Union[Unset, list[str]] = UNSET
+    json_linkage_range: list[str] | Unset = UNSET
     if not isinstance(linkage_range, Unset):
         json_linkage_range = ",".join(map(str, linkage_range))
 
@@ -257,7 +257,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -273,7 +273,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -299,8 +299,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedImageDetailsReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedImageDetailsReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedImageDetailsReadList.from_dict(response.json())
 
@@ -313,7 +313,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedImageDetailsReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -326,168 +326,168 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    file_description: Union[Unset, str] = UNSET,
-    file_description_contains: Union[Unset, str] = UNSET,
-    file_description_endswith: Union[Unset, str] = UNSET,
-    file_description_gt: Union[Unset, str] = UNSET,
-    file_description_gte: Union[Unset, str] = UNSET,
-    file_description_icontains: Union[Unset, str] = UNSET,
-    file_description_iendswith: Union[Unset, str] = UNSET,
-    file_description_iexact: Union[Unset, str] = UNSET,
-    file_description_in: Union[Unset, list[str]] = UNSET,
-    file_description_iregex: Union[Unset, str] = UNSET,
-    file_description_isnull: Union[Unset, bool] = UNSET,
-    file_description_istartswith: Union[Unset, str] = UNSET,
-    file_description_lt: Union[Unset, str] = UNSET,
-    file_description_lte: Union[Unset, str] = UNSET,
-    file_description_range: Union[Unset, list[str]] = UNSET,
-    file_description_regex: Union[Unset, str] = UNSET,
-    file_description_startswith: Union[Unset, str] = UNSET,
-    file_name: Union[Unset, str] = UNSET,
-    file_name_contains: Union[Unset, str] = UNSET,
-    file_name_endswith: Union[Unset, str] = UNSET,
-    file_name_gt: Union[Unset, str] = UNSET,
-    file_name_gte: Union[Unset, str] = UNSET,
-    file_name_icontains: Union[Unset, str] = UNSET,
-    file_name_iendswith: Union[Unset, str] = UNSET,
-    file_name_iexact: Union[Unset, str] = UNSET,
-    file_name_in: Union[Unset, list[str]] = UNSET,
-    file_name_iregex: Union[Unset, str] = UNSET,
-    file_name_isnull: Union[Unset, bool] = UNSET,
-    file_name_istartswith: Union[Unset, str] = UNSET,
-    file_name_lt: Union[Unset, str] = UNSET,
-    file_name_lte: Union[Unset, str] = UNSET,
-    file_name_range: Union[Unset, list[str]] = UNSET,
-    file_name_regex: Union[Unset, str] = UNSET,
-    file_name_startswith: Union[Unset, str] = UNSET,
-    image_constraints: Union[Unset, int] = UNSET,
-    image_constraints_gt: Union[Unset, int] = UNSET,
-    image_constraints_gte: Union[Unset, int] = UNSET,
-    image_constraints_in: Union[Unset, list[int]] = UNSET,
-    image_constraints_isnull: Union[Unset, bool] = UNSET,
-    image_constraints_lt: Union[Unset, int] = UNSET,
-    image_constraints_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    file_description: str | Unset = UNSET,
+    file_description_contains: str | Unset = UNSET,
+    file_description_endswith: str | Unset = UNSET,
+    file_description_gt: str | Unset = UNSET,
+    file_description_gte: str | Unset = UNSET,
+    file_description_icontains: str | Unset = UNSET,
+    file_description_iendswith: str | Unset = UNSET,
+    file_description_iexact: str | Unset = UNSET,
+    file_description_in: list[str] | Unset = UNSET,
+    file_description_iregex: str | Unset = UNSET,
+    file_description_isnull: bool | Unset = UNSET,
+    file_description_istartswith: str | Unset = UNSET,
+    file_description_lt: str | Unset = UNSET,
+    file_description_lte: str | Unset = UNSET,
+    file_description_range: list[str] | Unset = UNSET,
+    file_description_regex: str | Unset = UNSET,
+    file_description_startswith: str | Unset = UNSET,
+    file_name: str | Unset = UNSET,
+    file_name_contains: str | Unset = UNSET,
+    file_name_endswith: str | Unset = UNSET,
+    file_name_gt: str | Unset = UNSET,
+    file_name_gte: str | Unset = UNSET,
+    file_name_icontains: str | Unset = UNSET,
+    file_name_iendswith: str | Unset = UNSET,
+    file_name_iexact: str | Unset = UNSET,
+    file_name_in: list[str] | Unset = UNSET,
+    file_name_iregex: str | Unset = UNSET,
+    file_name_isnull: bool | Unset = UNSET,
+    file_name_istartswith: str | Unset = UNSET,
+    file_name_lt: str | Unset = UNSET,
+    file_name_lte: str | Unset = UNSET,
+    file_name_range: list[str] | Unset = UNSET,
+    file_name_regex: str | Unset = UNSET,
+    file_name_startswith: str | Unset = UNSET,
+    image_constraints: int | Unset = UNSET,
+    image_constraints_gt: int | Unset = UNSET,
+    image_constraints_gte: int | Unset = UNSET,
+    image_constraints_in: list[int] | Unset = UNSET,
+    image_constraints_isnull: bool | Unset = UNSET,
+    image_constraints_lt: int | Unset = UNSET,
+    image_constraints_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedImageDetailsReadList]:
     """Get a list of ImageDetails objects.
 
     Args:
-        file_description (Union[Unset, str]):
-        file_description_contains (Union[Unset, str]):
-        file_description_endswith (Union[Unset, str]):
-        file_description_gt (Union[Unset, str]):
-        file_description_gte (Union[Unset, str]):
-        file_description_icontains (Union[Unset, str]):
-        file_description_iendswith (Union[Unset, str]):
-        file_description_iexact (Union[Unset, str]):
-        file_description_in (Union[Unset, list[str]]):
-        file_description_iregex (Union[Unset, str]):
-        file_description_isnull (Union[Unset, bool]):
-        file_description_istartswith (Union[Unset, str]):
-        file_description_lt (Union[Unset, str]):
-        file_description_lte (Union[Unset, str]):
-        file_description_range (Union[Unset, list[str]]):
-        file_description_regex (Union[Unset, str]):
-        file_description_startswith (Union[Unset, str]):
-        file_name (Union[Unset, str]):
-        file_name_contains (Union[Unset, str]):
-        file_name_endswith (Union[Unset, str]):
-        file_name_gt (Union[Unset, str]):
-        file_name_gte (Union[Unset, str]):
-        file_name_icontains (Union[Unset, str]):
-        file_name_iendswith (Union[Unset, str]):
-        file_name_iexact (Union[Unset, str]):
-        file_name_in (Union[Unset, list[str]]):
-        file_name_iregex (Union[Unset, str]):
-        file_name_isnull (Union[Unset, bool]):
-        file_name_istartswith (Union[Unset, str]):
-        file_name_lt (Union[Unset, str]):
-        file_name_lte (Union[Unset, str]):
-        file_name_range (Union[Unset, list[str]]):
-        file_name_regex (Union[Unset, str]):
-        file_name_startswith (Union[Unset, str]):
-        image_constraints (Union[Unset, int]):
-        image_constraints_gt (Union[Unset, int]):
-        image_constraints_gte (Union[Unset, int]):
-        image_constraints_in (Union[Unset, list[int]]):
-        image_constraints_isnull (Union[Unset, bool]):
-        image_constraints_lt (Union[Unset, int]):
-        image_constraints_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        file_description (str | Unset):
+        file_description_contains (str | Unset):
+        file_description_endswith (str | Unset):
+        file_description_gt (str | Unset):
+        file_description_gte (str | Unset):
+        file_description_icontains (str | Unset):
+        file_description_iendswith (str | Unset):
+        file_description_iexact (str | Unset):
+        file_description_in (list[str] | Unset):
+        file_description_iregex (str | Unset):
+        file_description_isnull (bool | Unset):
+        file_description_istartswith (str | Unset):
+        file_description_lt (str | Unset):
+        file_description_lte (str | Unset):
+        file_description_range (list[str] | Unset):
+        file_description_regex (str | Unset):
+        file_description_startswith (str | Unset):
+        file_name (str | Unset):
+        file_name_contains (str | Unset):
+        file_name_endswith (str | Unset):
+        file_name_gt (str | Unset):
+        file_name_gte (str | Unset):
+        file_name_icontains (str | Unset):
+        file_name_iendswith (str | Unset):
+        file_name_iexact (str | Unset):
+        file_name_in (list[str] | Unset):
+        file_name_iregex (str | Unset):
+        file_name_isnull (bool | Unset):
+        file_name_istartswith (str | Unset):
+        file_name_lt (str | Unset):
+        file_name_lte (str | Unset):
+        file_name_range (list[str] | Unset):
+        file_name_regex (str | Unset):
+        file_name_startswith (str | Unset):
+        image_constraints (int | Unset):
+        image_constraints_gt (int | Unset):
+        image_constraints_gte (int | Unset):
+        image_constraints_in (list[int] | Unset):
+        image_constraints_isnull (bool | Unset):
+        image_constraints_lt (int | Unset):
+        image_constraints_lte (int | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -589,168 +589,168 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    file_description: Union[Unset, str] = UNSET,
-    file_description_contains: Union[Unset, str] = UNSET,
-    file_description_endswith: Union[Unset, str] = UNSET,
-    file_description_gt: Union[Unset, str] = UNSET,
-    file_description_gte: Union[Unset, str] = UNSET,
-    file_description_icontains: Union[Unset, str] = UNSET,
-    file_description_iendswith: Union[Unset, str] = UNSET,
-    file_description_iexact: Union[Unset, str] = UNSET,
-    file_description_in: Union[Unset, list[str]] = UNSET,
-    file_description_iregex: Union[Unset, str] = UNSET,
-    file_description_isnull: Union[Unset, bool] = UNSET,
-    file_description_istartswith: Union[Unset, str] = UNSET,
-    file_description_lt: Union[Unset, str] = UNSET,
-    file_description_lte: Union[Unset, str] = UNSET,
-    file_description_range: Union[Unset, list[str]] = UNSET,
-    file_description_regex: Union[Unset, str] = UNSET,
-    file_description_startswith: Union[Unset, str] = UNSET,
-    file_name: Union[Unset, str] = UNSET,
-    file_name_contains: Union[Unset, str] = UNSET,
-    file_name_endswith: Union[Unset, str] = UNSET,
-    file_name_gt: Union[Unset, str] = UNSET,
-    file_name_gte: Union[Unset, str] = UNSET,
-    file_name_icontains: Union[Unset, str] = UNSET,
-    file_name_iendswith: Union[Unset, str] = UNSET,
-    file_name_iexact: Union[Unset, str] = UNSET,
-    file_name_in: Union[Unset, list[str]] = UNSET,
-    file_name_iregex: Union[Unset, str] = UNSET,
-    file_name_isnull: Union[Unset, bool] = UNSET,
-    file_name_istartswith: Union[Unset, str] = UNSET,
-    file_name_lt: Union[Unset, str] = UNSET,
-    file_name_lte: Union[Unset, str] = UNSET,
-    file_name_range: Union[Unset, list[str]] = UNSET,
-    file_name_regex: Union[Unset, str] = UNSET,
-    file_name_startswith: Union[Unset, str] = UNSET,
-    image_constraints: Union[Unset, int] = UNSET,
-    image_constraints_gt: Union[Unset, int] = UNSET,
-    image_constraints_gte: Union[Unset, int] = UNSET,
-    image_constraints_in: Union[Unset, list[int]] = UNSET,
-    image_constraints_isnull: Union[Unset, bool] = UNSET,
-    image_constraints_lt: Union[Unset, int] = UNSET,
-    image_constraints_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedImageDetailsReadList]:
+    file_description: str | Unset = UNSET,
+    file_description_contains: str | Unset = UNSET,
+    file_description_endswith: str | Unset = UNSET,
+    file_description_gt: str | Unset = UNSET,
+    file_description_gte: str | Unset = UNSET,
+    file_description_icontains: str | Unset = UNSET,
+    file_description_iendswith: str | Unset = UNSET,
+    file_description_iexact: str | Unset = UNSET,
+    file_description_in: list[str] | Unset = UNSET,
+    file_description_iregex: str | Unset = UNSET,
+    file_description_isnull: bool | Unset = UNSET,
+    file_description_istartswith: str | Unset = UNSET,
+    file_description_lt: str | Unset = UNSET,
+    file_description_lte: str | Unset = UNSET,
+    file_description_range: list[str] | Unset = UNSET,
+    file_description_regex: str | Unset = UNSET,
+    file_description_startswith: str | Unset = UNSET,
+    file_name: str | Unset = UNSET,
+    file_name_contains: str | Unset = UNSET,
+    file_name_endswith: str | Unset = UNSET,
+    file_name_gt: str | Unset = UNSET,
+    file_name_gte: str | Unset = UNSET,
+    file_name_icontains: str | Unset = UNSET,
+    file_name_iendswith: str | Unset = UNSET,
+    file_name_iexact: str | Unset = UNSET,
+    file_name_in: list[str] | Unset = UNSET,
+    file_name_iregex: str | Unset = UNSET,
+    file_name_isnull: bool | Unset = UNSET,
+    file_name_istartswith: str | Unset = UNSET,
+    file_name_lt: str | Unset = UNSET,
+    file_name_lte: str | Unset = UNSET,
+    file_name_range: list[str] | Unset = UNSET,
+    file_name_regex: str | Unset = UNSET,
+    file_name_startswith: str | Unset = UNSET,
+    image_constraints: int | Unset = UNSET,
+    image_constraints_gt: int | Unset = UNSET,
+    image_constraints_gte: int | Unset = UNSET,
+    image_constraints_in: list[int] | Unset = UNSET,
+    image_constraints_isnull: bool | Unset = UNSET,
+    image_constraints_lt: int | Unset = UNSET,
+    image_constraints_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedImageDetailsReadList | None:
     """Get a list of ImageDetails objects.
 
     Args:
-        file_description (Union[Unset, str]):
-        file_description_contains (Union[Unset, str]):
-        file_description_endswith (Union[Unset, str]):
-        file_description_gt (Union[Unset, str]):
-        file_description_gte (Union[Unset, str]):
-        file_description_icontains (Union[Unset, str]):
-        file_description_iendswith (Union[Unset, str]):
-        file_description_iexact (Union[Unset, str]):
-        file_description_in (Union[Unset, list[str]]):
-        file_description_iregex (Union[Unset, str]):
-        file_description_isnull (Union[Unset, bool]):
-        file_description_istartswith (Union[Unset, str]):
-        file_description_lt (Union[Unset, str]):
-        file_description_lte (Union[Unset, str]):
-        file_description_range (Union[Unset, list[str]]):
-        file_description_regex (Union[Unset, str]):
-        file_description_startswith (Union[Unset, str]):
-        file_name (Union[Unset, str]):
-        file_name_contains (Union[Unset, str]):
-        file_name_endswith (Union[Unset, str]):
-        file_name_gt (Union[Unset, str]):
-        file_name_gte (Union[Unset, str]):
-        file_name_icontains (Union[Unset, str]):
-        file_name_iendswith (Union[Unset, str]):
-        file_name_iexact (Union[Unset, str]):
-        file_name_in (Union[Unset, list[str]]):
-        file_name_iregex (Union[Unset, str]):
-        file_name_isnull (Union[Unset, bool]):
-        file_name_istartswith (Union[Unset, str]):
-        file_name_lt (Union[Unset, str]):
-        file_name_lte (Union[Unset, str]):
-        file_name_range (Union[Unset, list[str]]):
-        file_name_regex (Union[Unset, str]):
-        file_name_startswith (Union[Unset, str]):
-        image_constraints (Union[Unset, int]):
-        image_constraints_gt (Union[Unset, int]):
-        image_constraints_gte (Union[Unset, int]):
-        image_constraints_in (Union[Unset, list[int]]):
-        image_constraints_isnull (Union[Unset, bool]):
-        image_constraints_lt (Union[Unset, int]):
-        image_constraints_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        file_description (str | Unset):
+        file_description_contains (str | Unset):
+        file_description_endswith (str | Unset):
+        file_description_gt (str | Unset):
+        file_description_gte (str | Unset):
+        file_description_icontains (str | Unset):
+        file_description_iendswith (str | Unset):
+        file_description_iexact (str | Unset):
+        file_description_in (list[str] | Unset):
+        file_description_iregex (str | Unset):
+        file_description_isnull (bool | Unset):
+        file_description_istartswith (str | Unset):
+        file_description_lt (str | Unset):
+        file_description_lte (str | Unset):
+        file_description_range (list[str] | Unset):
+        file_description_regex (str | Unset):
+        file_description_startswith (str | Unset):
+        file_name (str | Unset):
+        file_name_contains (str | Unset):
+        file_name_endswith (str | Unset):
+        file_name_gt (str | Unset):
+        file_name_gte (str | Unset):
+        file_name_icontains (str | Unset):
+        file_name_iendswith (str | Unset):
+        file_name_iexact (str | Unset):
+        file_name_in (list[str] | Unset):
+        file_name_iregex (str | Unset):
+        file_name_isnull (bool | Unset):
+        file_name_istartswith (str | Unset):
+        file_name_lt (str | Unset):
+        file_name_lte (str | Unset):
+        file_name_range (list[str] | Unset):
+        file_name_regex (str | Unset):
+        file_name_startswith (str | Unset):
+        image_constraints (int | Unset):
+        image_constraints_gt (int | Unset):
+        image_constraints_gte (int | Unset):
+        image_constraints_in (list[int] | Unset):
+        image_constraints_isnull (bool | Unset):
+        image_constraints_lt (int | Unset):
+        image_constraints_lte (int | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -847,168 +847,168 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    file_description: Union[Unset, str] = UNSET,
-    file_description_contains: Union[Unset, str] = UNSET,
-    file_description_endswith: Union[Unset, str] = UNSET,
-    file_description_gt: Union[Unset, str] = UNSET,
-    file_description_gte: Union[Unset, str] = UNSET,
-    file_description_icontains: Union[Unset, str] = UNSET,
-    file_description_iendswith: Union[Unset, str] = UNSET,
-    file_description_iexact: Union[Unset, str] = UNSET,
-    file_description_in: Union[Unset, list[str]] = UNSET,
-    file_description_iregex: Union[Unset, str] = UNSET,
-    file_description_isnull: Union[Unset, bool] = UNSET,
-    file_description_istartswith: Union[Unset, str] = UNSET,
-    file_description_lt: Union[Unset, str] = UNSET,
-    file_description_lte: Union[Unset, str] = UNSET,
-    file_description_range: Union[Unset, list[str]] = UNSET,
-    file_description_regex: Union[Unset, str] = UNSET,
-    file_description_startswith: Union[Unset, str] = UNSET,
-    file_name: Union[Unset, str] = UNSET,
-    file_name_contains: Union[Unset, str] = UNSET,
-    file_name_endswith: Union[Unset, str] = UNSET,
-    file_name_gt: Union[Unset, str] = UNSET,
-    file_name_gte: Union[Unset, str] = UNSET,
-    file_name_icontains: Union[Unset, str] = UNSET,
-    file_name_iendswith: Union[Unset, str] = UNSET,
-    file_name_iexact: Union[Unset, str] = UNSET,
-    file_name_in: Union[Unset, list[str]] = UNSET,
-    file_name_iregex: Union[Unset, str] = UNSET,
-    file_name_isnull: Union[Unset, bool] = UNSET,
-    file_name_istartswith: Union[Unset, str] = UNSET,
-    file_name_lt: Union[Unset, str] = UNSET,
-    file_name_lte: Union[Unset, str] = UNSET,
-    file_name_range: Union[Unset, list[str]] = UNSET,
-    file_name_regex: Union[Unset, str] = UNSET,
-    file_name_startswith: Union[Unset, str] = UNSET,
-    image_constraints: Union[Unset, int] = UNSET,
-    image_constraints_gt: Union[Unset, int] = UNSET,
-    image_constraints_gte: Union[Unset, int] = UNSET,
-    image_constraints_in: Union[Unset, list[int]] = UNSET,
-    image_constraints_isnull: Union[Unset, bool] = UNSET,
-    image_constraints_lt: Union[Unset, int] = UNSET,
-    image_constraints_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    file_description: str | Unset = UNSET,
+    file_description_contains: str | Unset = UNSET,
+    file_description_endswith: str | Unset = UNSET,
+    file_description_gt: str | Unset = UNSET,
+    file_description_gte: str | Unset = UNSET,
+    file_description_icontains: str | Unset = UNSET,
+    file_description_iendswith: str | Unset = UNSET,
+    file_description_iexact: str | Unset = UNSET,
+    file_description_in: list[str] | Unset = UNSET,
+    file_description_iregex: str | Unset = UNSET,
+    file_description_isnull: bool | Unset = UNSET,
+    file_description_istartswith: str | Unset = UNSET,
+    file_description_lt: str | Unset = UNSET,
+    file_description_lte: str | Unset = UNSET,
+    file_description_range: list[str] | Unset = UNSET,
+    file_description_regex: str | Unset = UNSET,
+    file_description_startswith: str | Unset = UNSET,
+    file_name: str | Unset = UNSET,
+    file_name_contains: str | Unset = UNSET,
+    file_name_endswith: str | Unset = UNSET,
+    file_name_gt: str | Unset = UNSET,
+    file_name_gte: str | Unset = UNSET,
+    file_name_icontains: str | Unset = UNSET,
+    file_name_iendswith: str | Unset = UNSET,
+    file_name_iexact: str | Unset = UNSET,
+    file_name_in: list[str] | Unset = UNSET,
+    file_name_iregex: str | Unset = UNSET,
+    file_name_isnull: bool | Unset = UNSET,
+    file_name_istartswith: str | Unset = UNSET,
+    file_name_lt: str | Unset = UNSET,
+    file_name_lte: str | Unset = UNSET,
+    file_name_range: list[str] | Unset = UNSET,
+    file_name_regex: str | Unset = UNSET,
+    file_name_startswith: str | Unset = UNSET,
+    image_constraints: int | Unset = UNSET,
+    image_constraints_gt: int | Unset = UNSET,
+    image_constraints_gte: int | Unset = UNSET,
+    image_constraints_in: list[int] | Unset = UNSET,
+    image_constraints_isnull: bool | Unset = UNSET,
+    image_constraints_lt: int | Unset = UNSET,
+    image_constraints_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedImageDetailsReadList]:
     """Get a list of ImageDetails objects.
 
     Args:
-        file_description (Union[Unset, str]):
-        file_description_contains (Union[Unset, str]):
-        file_description_endswith (Union[Unset, str]):
-        file_description_gt (Union[Unset, str]):
-        file_description_gte (Union[Unset, str]):
-        file_description_icontains (Union[Unset, str]):
-        file_description_iendswith (Union[Unset, str]):
-        file_description_iexact (Union[Unset, str]):
-        file_description_in (Union[Unset, list[str]]):
-        file_description_iregex (Union[Unset, str]):
-        file_description_isnull (Union[Unset, bool]):
-        file_description_istartswith (Union[Unset, str]):
-        file_description_lt (Union[Unset, str]):
-        file_description_lte (Union[Unset, str]):
-        file_description_range (Union[Unset, list[str]]):
-        file_description_regex (Union[Unset, str]):
-        file_description_startswith (Union[Unset, str]):
-        file_name (Union[Unset, str]):
-        file_name_contains (Union[Unset, str]):
-        file_name_endswith (Union[Unset, str]):
-        file_name_gt (Union[Unset, str]):
-        file_name_gte (Union[Unset, str]):
-        file_name_icontains (Union[Unset, str]):
-        file_name_iendswith (Union[Unset, str]):
-        file_name_iexact (Union[Unset, str]):
-        file_name_in (Union[Unset, list[str]]):
-        file_name_iregex (Union[Unset, str]):
-        file_name_isnull (Union[Unset, bool]):
-        file_name_istartswith (Union[Unset, str]):
-        file_name_lt (Union[Unset, str]):
-        file_name_lte (Union[Unset, str]):
-        file_name_range (Union[Unset, list[str]]):
-        file_name_regex (Union[Unset, str]):
-        file_name_startswith (Union[Unset, str]):
-        image_constraints (Union[Unset, int]):
-        image_constraints_gt (Union[Unset, int]):
-        image_constraints_gte (Union[Unset, int]):
-        image_constraints_in (Union[Unset, list[int]]):
-        image_constraints_isnull (Union[Unset, bool]):
-        image_constraints_lt (Union[Unset, int]):
-        image_constraints_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        file_description (str | Unset):
+        file_description_contains (str | Unset):
+        file_description_endswith (str | Unset):
+        file_description_gt (str | Unset):
+        file_description_gte (str | Unset):
+        file_description_icontains (str | Unset):
+        file_description_iendswith (str | Unset):
+        file_description_iexact (str | Unset):
+        file_description_in (list[str] | Unset):
+        file_description_iregex (str | Unset):
+        file_description_isnull (bool | Unset):
+        file_description_istartswith (str | Unset):
+        file_description_lt (str | Unset):
+        file_description_lte (str | Unset):
+        file_description_range (list[str] | Unset):
+        file_description_regex (str | Unset):
+        file_description_startswith (str | Unset):
+        file_name (str | Unset):
+        file_name_contains (str | Unset):
+        file_name_endswith (str | Unset):
+        file_name_gt (str | Unset):
+        file_name_gte (str | Unset):
+        file_name_icontains (str | Unset):
+        file_name_iendswith (str | Unset):
+        file_name_iexact (str | Unset):
+        file_name_in (list[str] | Unset):
+        file_name_iregex (str | Unset):
+        file_name_isnull (bool | Unset):
+        file_name_istartswith (str | Unset):
+        file_name_lt (str | Unset):
+        file_name_lte (str | Unset):
+        file_name_range (list[str] | Unset):
+        file_name_regex (str | Unset):
+        file_name_startswith (str | Unset):
+        image_constraints (int | Unset):
+        image_constraints_gt (int | Unset):
+        image_constraints_gte (int | Unset):
+        image_constraints_in (list[int] | Unset):
+        image_constraints_isnull (bool | Unset):
+        image_constraints_lt (int | Unset):
+        image_constraints_lte (int | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1108,168 +1108,168 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    file_description: Union[Unset, str] = UNSET,
-    file_description_contains: Union[Unset, str] = UNSET,
-    file_description_endswith: Union[Unset, str] = UNSET,
-    file_description_gt: Union[Unset, str] = UNSET,
-    file_description_gte: Union[Unset, str] = UNSET,
-    file_description_icontains: Union[Unset, str] = UNSET,
-    file_description_iendswith: Union[Unset, str] = UNSET,
-    file_description_iexact: Union[Unset, str] = UNSET,
-    file_description_in: Union[Unset, list[str]] = UNSET,
-    file_description_iregex: Union[Unset, str] = UNSET,
-    file_description_isnull: Union[Unset, bool] = UNSET,
-    file_description_istartswith: Union[Unset, str] = UNSET,
-    file_description_lt: Union[Unset, str] = UNSET,
-    file_description_lte: Union[Unset, str] = UNSET,
-    file_description_range: Union[Unset, list[str]] = UNSET,
-    file_description_regex: Union[Unset, str] = UNSET,
-    file_description_startswith: Union[Unset, str] = UNSET,
-    file_name: Union[Unset, str] = UNSET,
-    file_name_contains: Union[Unset, str] = UNSET,
-    file_name_endswith: Union[Unset, str] = UNSET,
-    file_name_gt: Union[Unset, str] = UNSET,
-    file_name_gte: Union[Unset, str] = UNSET,
-    file_name_icontains: Union[Unset, str] = UNSET,
-    file_name_iendswith: Union[Unset, str] = UNSET,
-    file_name_iexact: Union[Unset, str] = UNSET,
-    file_name_in: Union[Unset, list[str]] = UNSET,
-    file_name_iregex: Union[Unset, str] = UNSET,
-    file_name_isnull: Union[Unset, bool] = UNSET,
-    file_name_istartswith: Union[Unset, str] = UNSET,
-    file_name_lt: Union[Unset, str] = UNSET,
-    file_name_lte: Union[Unset, str] = UNSET,
-    file_name_range: Union[Unset, list[str]] = UNSET,
-    file_name_regex: Union[Unset, str] = UNSET,
-    file_name_startswith: Union[Unset, str] = UNSET,
-    image_constraints: Union[Unset, int] = UNSET,
-    image_constraints_gt: Union[Unset, int] = UNSET,
-    image_constraints_gte: Union[Unset, int] = UNSET,
-    image_constraints_in: Union[Unset, list[int]] = UNSET,
-    image_constraints_isnull: Union[Unset, bool] = UNSET,
-    image_constraints_lt: Union[Unset, int] = UNSET,
-    image_constraints_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedImageDetailsReadList]:
+    file_description: str | Unset = UNSET,
+    file_description_contains: str | Unset = UNSET,
+    file_description_endswith: str | Unset = UNSET,
+    file_description_gt: str | Unset = UNSET,
+    file_description_gte: str | Unset = UNSET,
+    file_description_icontains: str | Unset = UNSET,
+    file_description_iendswith: str | Unset = UNSET,
+    file_description_iexact: str | Unset = UNSET,
+    file_description_in: list[str] | Unset = UNSET,
+    file_description_iregex: str | Unset = UNSET,
+    file_description_isnull: bool | Unset = UNSET,
+    file_description_istartswith: str | Unset = UNSET,
+    file_description_lt: str | Unset = UNSET,
+    file_description_lte: str | Unset = UNSET,
+    file_description_range: list[str] | Unset = UNSET,
+    file_description_regex: str | Unset = UNSET,
+    file_description_startswith: str | Unset = UNSET,
+    file_name: str | Unset = UNSET,
+    file_name_contains: str | Unset = UNSET,
+    file_name_endswith: str | Unset = UNSET,
+    file_name_gt: str | Unset = UNSET,
+    file_name_gte: str | Unset = UNSET,
+    file_name_icontains: str | Unset = UNSET,
+    file_name_iendswith: str | Unset = UNSET,
+    file_name_iexact: str | Unset = UNSET,
+    file_name_in: list[str] | Unset = UNSET,
+    file_name_iregex: str | Unset = UNSET,
+    file_name_isnull: bool | Unset = UNSET,
+    file_name_istartswith: str | Unset = UNSET,
+    file_name_lt: str | Unset = UNSET,
+    file_name_lte: str | Unset = UNSET,
+    file_name_range: list[str] | Unset = UNSET,
+    file_name_regex: str | Unset = UNSET,
+    file_name_startswith: str | Unset = UNSET,
+    image_constraints: int | Unset = UNSET,
+    image_constraints_gt: int | Unset = UNSET,
+    image_constraints_gte: int | Unset = UNSET,
+    image_constraints_in: list[int] | Unset = UNSET,
+    image_constraints_isnull: bool | Unset = UNSET,
+    image_constraints_lt: int | Unset = UNSET,
+    image_constraints_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedImageDetailsReadList | None:
     """Get a list of ImageDetails objects.
 
     Args:
-        file_description (Union[Unset, str]):
-        file_description_contains (Union[Unset, str]):
-        file_description_endswith (Union[Unset, str]):
-        file_description_gt (Union[Unset, str]):
-        file_description_gte (Union[Unset, str]):
-        file_description_icontains (Union[Unset, str]):
-        file_description_iendswith (Union[Unset, str]):
-        file_description_iexact (Union[Unset, str]):
-        file_description_in (Union[Unset, list[str]]):
-        file_description_iregex (Union[Unset, str]):
-        file_description_isnull (Union[Unset, bool]):
-        file_description_istartswith (Union[Unset, str]):
-        file_description_lt (Union[Unset, str]):
-        file_description_lte (Union[Unset, str]):
-        file_description_range (Union[Unset, list[str]]):
-        file_description_regex (Union[Unset, str]):
-        file_description_startswith (Union[Unset, str]):
-        file_name (Union[Unset, str]):
-        file_name_contains (Union[Unset, str]):
-        file_name_endswith (Union[Unset, str]):
-        file_name_gt (Union[Unset, str]):
-        file_name_gte (Union[Unset, str]):
-        file_name_icontains (Union[Unset, str]):
-        file_name_iendswith (Union[Unset, str]):
-        file_name_iexact (Union[Unset, str]):
-        file_name_in (Union[Unset, list[str]]):
-        file_name_iregex (Union[Unset, str]):
-        file_name_isnull (Union[Unset, bool]):
-        file_name_istartswith (Union[Unset, str]):
-        file_name_lt (Union[Unset, str]):
-        file_name_lte (Union[Unset, str]):
-        file_name_range (Union[Unset, list[str]]):
-        file_name_regex (Union[Unset, str]):
-        file_name_startswith (Union[Unset, str]):
-        image_constraints (Union[Unset, int]):
-        image_constraints_gt (Union[Unset, int]):
-        image_constraints_gte (Union[Unset, int]):
-        image_constraints_in (Union[Unset, list[int]]):
-        image_constraints_isnull (Union[Unset, bool]):
-        image_constraints_lt (Union[Unset, int]):
-        image_constraints_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        file_description (str | Unset):
+        file_description_contains (str | Unset):
+        file_description_endswith (str | Unset):
+        file_description_gt (str | Unset):
+        file_description_gte (str | Unset):
+        file_description_icontains (str | Unset):
+        file_description_iendswith (str | Unset):
+        file_description_iexact (str | Unset):
+        file_description_in (list[str] | Unset):
+        file_description_iregex (str | Unset):
+        file_description_isnull (bool | Unset):
+        file_description_istartswith (str | Unset):
+        file_description_lt (str | Unset):
+        file_description_lte (str | Unset):
+        file_description_range (list[str] | Unset):
+        file_description_regex (str | Unset):
+        file_description_startswith (str | Unset):
+        file_name (str | Unset):
+        file_name_contains (str | Unset):
+        file_name_endswith (str | Unset):
+        file_name_gt (str | Unset):
+        file_name_gte (str | Unset):
+        file_name_icontains (str | Unset):
+        file_name_iendswith (str | Unset):
+        file_name_iexact (str | Unset):
+        file_name_in (list[str] | Unset):
+        file_name_iregex (str | Unset):
+        file_name_isnull (bool | Unset):
+        file_name_istartswith (str | Unset):
+        file_name_lt (str | Unset):
+        file_name_lte (str | Unset):
+        file_name_range (list[str] | Unset):
+        file_name_regex (str | Unset):
+        file_name_startswith (str | Unset):
+        image_constraints (int | Unset):
+        image_constraints_gt (int | Unset):
+        image_constraints_gte (int | Unset):
+        image_constraints_in (list[int] | Unset):
+        image_constraints_isnull (bool | Unset):
+        image_constraints_lt (int | Unset):
+        image_constraints_lte (int | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

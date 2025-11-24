@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -18,7 +18,7 @@ def _get_kwargs() -> dict[str, Any]:
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[Phenomenon]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Phenomenon | None:
     if response.status_code == 201:
         response_201 = Phenomenon.from_dict(response.json())
 
@@ -30,7 +30,7 @@ def _parse_response(*, client: Union[AuthenticatedClient, Client], response: htt
         return None
 
 
-def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[Phenomenon]:
+def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Response[Phenomenon]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -65,7 +65,7 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-) -> Optional[Phenomenon]:
+) -> Phenomenon | None:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Raises:
@@ -105,7 +105,7 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-) -> Optional[Phenomenon]:
+) -> Phenomenon | None:
     """Get a list of Phenomenon objects. Phenomena have many to many mapping with Observations.
 
     Raises:

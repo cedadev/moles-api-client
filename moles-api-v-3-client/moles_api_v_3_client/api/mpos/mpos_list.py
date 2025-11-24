@@ -1,6 +1,6 @@
 import datetime
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -13,191 +13,191 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    child_operation: Union[Unset, int] = UNSET,
-    child_operation_gt: Union[Unset, int] = UNSET,
-    child_operation_gte: Union[Unset, int] = UNSET,
-    child_operation_in: Union[Unset, list[int]] = UNSET,
-    child_operation_isnull: Union[Unset, bool] = UNSET,
-    child_operation_lt: Union[Unset, int] = UNSET,
-    child_operation_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    location: Union[Unset, int] = UNSET,
-    location_east_bound_longitude: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    location_gt: Union[Unset, int] = UNSET,
-    location_gte: Union[Unset, int] = UNSET,
-    location_in: Union[Unset, list[int]] = UNSET,
-    location_isnull: Union[Unset, bool] = UNSET,
-    location_lt: Union[Unset, int] = UNSET,
-    location_lte: Union[Unset, int] = UNSET,
-    location_north_bound_latitude: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_ob_id: Union[Unset, int] = UNSET,
-    location_ob_id_in: Union[Unset, list[int]] = UNSET,
-    location_south_bound_latitude: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_west_bound_longitude: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    operation_time: Union[Unset, int] = UNSET,
-    operation_time_end_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    operation_time_gt: Union[Unset, int] = UNSET,
-    operation_time_gte: Union[Unset, int] = UNSET,
-    operation_time_in: Union[Unset, list[int]] = UNSET,
-    operation_time_isnull: Union[Unset, bool] = UNSET,
-    operation_time_lt: Union[Unset, int] = UNSET,
-    operation_time_lte: Union[Unset, int] = UNSET,
-    operation_time_ob_id: Union[Unset, int] = UNSET,
-    operation_time_ob_id_in: Union[Unset, list[int]] = UNSET,
-    operation_time_start_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform_field: Union[Unset, int] = UNSET,
-    platform_field_gt: Union[Unset, int] = UNSET,
-    platform_field_gte: Union[Unset, int] = UNSET,
-    platform_field_in: Union[Unset, list[int]] = UNSET,
-    platform_field_isnull: Union[Unset, bool] = UNSET,
-    platform_field_lt: Union[Unset, int] = UNSET,
-    platform_field_lte: Union[Unset, int] = UNSET,
-    platform_field_ob_id: Union[Unset, int] = UNSET,
-    platform_field_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_field_uuid: Union[Unset, str] = UNSET,
-    platform_field_uuid_in: Union[Unset, list[str]] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, MposListStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    child_operation: int | Unset = UNSET,
+    child_operation_gt: int | Unset = UNSET,
+    child_operation_gte: int | Unset = UNSET,
+    child_operation_in: list[int] | Unset = UNSET,
+    child_operation_isnull: bool | Unset = UNSET,
+    child_operation_lt: int | Unset = UNSET,
+    child_operation_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    location: int | Unset = UNSET,
+    location_east_bound_longitude: float | Unset = UNSET,
+    location_east_bound_longitude_gt: float | Unset = UNSET,
+    location_east_bound_longitude_gte: float | Unset = UNSET,
+    location_east_bound_longitude_lt: float | Unset = UNSET,
+    location_east_bound_longitude_lte: float | Unset = UNSET,
+    location_east_bound_longitude_range: list[float] | Unset = UNSET,
+    location_gt: int | Unset = UNSET,
+    location_gte: int | Unset = UNSET,
+    location_in: list[int] | Unset = UNSET,
+    location_isnull: bool | Unset = UNSET,
+    location_lt: int | Unset = UNSET,
+    location_lte: int | Unset = UNSET,
+    location_north_bound_latitude: float | Unset = UNSET,
+    location_north_bound_latitude_gt: float | Unset = UNSET,
+    location_north_bound_latitude_gte: float | Unset = UNSET,
+    location_north_bound_latitude_lt: float | Unset = UNSET,
+    location_north_bound_latitude_lte: float | Unset = UNSET,
+    location_north_bound_latitude_range: list[float] | Unset = UNSET,
+    location_ob_id: int | Unset = UNSET,
+    location_ob_id_in: list[int] | Unset = UNSET,
+    location_south_bound_latitude: float | Unset = UNSET,
+    location_south_bound_latitude_gt: float | Unset = UNSET,
+    location_south_bound_latitude_gte: float | Unset = UNSET,
+    location_south_bound_latitude_lt: float | Unset = UNSET,
+    location_south_bound_latitude_lte: float | Unset = UNSET,
+    location_south_bound_latitude_range: list[float] | Unset = UNSET,
+    location_west_bound_longitude: float | Unset = UNSET,
+    location_west_bound_longitude_gt: float | Unset = UNSET,
+    location_west_bound_longitude_gte: float | Unset = UNSET,
+    location_west_bound_longitude_lt: float | Unset = UNSET,
+    location_west_bound_longitude_lte: float | Unset = UNSET,
+    location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    operation_time: int | Unset = UNSET,
+    operation_time_end_time: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_range: list[datetime.datetime] | Unset = UNSET,
+    operation_time_gt: int | Unset = UNSET,
+    operation_time_gte: int | Unset = UNSET,
+    operation_time_in: list[int] | Unset = UNSET,
+    operation_time_isnull: bool | Unset = UNSET,
+    operation_time_lt: int | Unset = UNSET,
+    operation_time_lte: int | Unset = UNSET,
+    operation_time_ob_id: int | Unset = UNSET,
+    operation_time_ob_id_in: list[int] | Unset = UNSET,
+    operation_time_start_time: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_range: list[datetime.datetime] | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform_field: int | Unset = UNSET,
+    platform_field_gt: int | Unset = UNSET,
+    platform_field_gte: int | Unset = UNSET,
+    platform_field_in: list[int] | Unset = UNSET,
+    platform_field_isnull: bool | Unset = UNSET,
+    platform_field_lt: int | Unset = UNSET,
+    platform_field_lte: int | Unset = UNSET,
+    platform_field_ob_id: int | Unset = UNSET,
+    platform_field_ob_id_in: list[int] | Unset = UNSET,
+    platform_field_uuid: str | Unset = UNSET,
+    platform_field_uuid_in: list[str] | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: MposListStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -217,7 +217,7 @@ def _get_kwargs(
 
     params["abstract__iexact"] = abstract_iexact
 
-    json_abstract_in: Union[Unset, list[str]] = UNSET
+    json_abstract_in: list[str] | Unset = UNSET
     if not isinstance(abstract_in, Unset):
         json_abstract_in = ",".join(map(str, abstract_in))
 
@@ -233,7 +233,7 @@ def _get_kwargs(
 
     params["abstract__lte"] = abstract_lte
 
-    json_abstract_range: Union[Unset, list[str]] = UNSET
+    json_abstract_range: list[str] | Unset = UNSET
     if not isinstance(abstract_range, Unset):
         json_abstract_range = ",".join(map(str, abstract_range))
 
@@ -249,7 +249,7 @@ def _get_kwargs(
 
     params["childOperation__gte"] = child_operation_gte
 
-    json_child_operation_in: Union[Unset, list[int]] = UNSET
+    json_child_operation_in: list[int] | Unset = UNSET
     if not isinstance(child_operation_in, Unset):
         json_child_operation_in = ",".join(map(str, child_operation_in))
 
@@ -275,7 +275,7 @@ def _get_kwargs(
 
     params["location__eastBoundLongitude__lte"] = location_east_bound_longitude_lte
 
-    json_location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET
+    json_location_east_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(location_east_bound_longitude_range, Unset):
         json_location_east_bound_longitude_range = ",".join(map(str, location_east_bound_longitude_range))
 
@@ -285,7 +285,7 @@ def _get_kwargs(
 
     params["location__gte"] = location_gte
 
-    json_location_in: Union[Unset, list[int]] = UNSET
+    json_location_in: list[int] | Unset = UNSET
     if not isinstance(location_in, Unset):
         json_location_in = ",".join(map(str, location_in))
 
@@ -307,7 +307,7 @@ def _get_kwargs(
 
     params["location__northBoundLatitude__lte"] = location_north_bound_latitude_lte
 
-    json_location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET
+    json_location_north_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(location_north_bound_latitude_range, Unset):
         json_location_north_bound_latitude_range = ",".join(map(str, location_north_bound_latitude_range))
 
@@ -315,7 +315,7 @@ def _get_kwargs(
 
     params["location__ob_id"] = location_ob_id
 
-    json_location_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_location_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(location_ob_id_in, Unset):
         json_location_ob_id_in = ",".join(map(str, location_ob_id_in))
 
@@ -331,7 +331,7 @@ def _get_kwargs(
 
     params["location__southBoundLatitude__lte"] = location_south_bound_latitude_lte
 
-    json_location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET
+    json_location_south_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(location_south_bound_latitude_range, Unset):
         json_location_south_bound_latitude_range = ",".join(map(str, location_south_bound_latitude_range))
 
@@ -347,7 +347,7 @@ def _get_kwargs(
 
     params["location__westBoundLongitude__lte"] = location_west_bound_longitude_lte
 
-    json_location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET
+    json_location_west_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(location_west_bound_longitude_range, Unset):
         json_location_west_bound_longitude_range = ",".join(map(str, location_west_bound_longitude_range))
 
@@ -371,7 +371,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -387,7 +387,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -401,32 +401,32 @@ def _get_kwargs(
 
     params["operationTime"] = operation_time
 
-    json_operation_time_end_time: Union[Unset, str] = UNSET
+    json_operation_time_end_time: str | Unset = UNSET
     if not isinstance(operation_time_end_time, Unset):
         json_operation_time_end_time = operation_time_end_time.isoformat()
     params["operationTime__endTime"] = json_operation_time_end_time
 
-    json_operation_time_end_time_gt: Union[Unset, str] = UNSET
+    json_operation_time_end_time_gt: str | Unset = UNSET
     if not isinstance(operation_time_end_time_gt, Unset):
         json_operation_time_end_time_gt = operation_time_end_time_gt.isoformat()
     params["operationTime__endTime__gt"] = json_operation_time_end_time_gt
 
-    json_operation_time_end_time_gte: Union[Unset, str] = UNSET
+    json_operation_time_end_time_gte: str | Unset = UNSET
     if not isinstance(operation_time_end_time_gte, Unset):
         json_operation_time_end_time_gte = operation_time_end_time_gte.isoformat()
     params["operationTime__endTime__gte"] = json_operation_time_end_time_gte
 
-    json_operation_time_end_time_lt: Union[Unset, str] = UNSET
+    json_operation_time_end_time_lt: str | Unset = UNSET
     if not isinstance(operation_time_end_time_lt, Unset):
         json_operation_time_end_time_lt = operation_time_end_time_lt.isoformat()
     params["operationTime__endTime__lt"] = json_operation_time_end_time_lt
 
-    json_operation_time_end_time_lte: Union[Unset, str] = UNSET
+    json_operation_time_end_time_lte: str | Unset = UNSET
     if not isinstance(operation_time_end_time_lte, Unset):
         json_operation_time_end_time_lte = operation_time_end_time_lte.isoformat()
     params["operationTime__endTime__lte"] = json_operation_time_end_time_lte
 
-    json_operation_time_end_time_range: Union[Unset, list[str]] = UNSET
+    json_operation_time_end_time_range: list[str] | Unset = UNSET
     if not isinstance(operation_time_end_time_range, Unset):
         json_operation_time_end_time_range = []
         for operation_time_end_time_range_item_data in operation_time_end_time_range:
@@ -439,7 +439,7 @@ def _get_kwargs(
 
     params["operationTime__gte"] = operation_time_gte
 
-    json_operation_time_in: Union[Unset, list[int]] = UNSET
+    json_operation_time_in: list[int] | Unset = UNSET
     if not isinstance(operation_time_in, Unset):
         json_operation_time_in = ",".join(map(str, operation_time_in))
 
@@ -453,38 +453,38 @@ def _get_kwargs(
 
     params["operationTime__ob_id"] = operation_time_ob_id
 
-    json_operation_time_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_operation_time_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(operation_time_ob_id_in, Unset):
         json_operation_time_ob_id_in = ",".join(map(str, operation_time_ob_id_in))
 
     params["operationTime__ob_id__in"] = json_operation_time_ob_id_in
 
-    json_operation_time_start_time: Union[Unset, str] = UNSET
+    json_operation_time_start_time: str | Unset = UNSET
     if not isinstance(operation_time_start_time, Unset):
         json_operation_time_start_time = operation_time_start_time.isoformat()
     params["operationTime__startTime"] = json_operation_time_start_time
 
-    json_operation_time_start_time_gt: Union[Unset, str] = UNSET
+    json_operation_time_start_time_gt: str | Unset = UNSET
     if not isinstance(operation_time_start_time_gt, Unset):
         json_operation_time_start_time_gt = operation_time_start_time_gt.isoformat()
     params["operationTime__startTime__gt"] = json_operation_time_start_time_gt
 
-    json_operation_time_start_time_gte: Union[Unset, str] = UNSET
+    json_operation_time_start_time_gte: str | Unset = UNSET
     if not isinstance(operation_time_start_time_gte, Unset):
         json_operation_time_start_time_gte = operation_time_start_time_gte.isoformat()
     params["operationTime__startTime__gte"] = json_operation_time_start_time_gte
 
-    json_operation_time_start_time_lt: Union[Unset, str] = UNSET
+    json_operation_time_start_time_lt: str | Unset = UNSET
     if not isinstance(operation_time_start_time_lt, Unset):
         json_operation_time_start_time_lt = operation_time_start_time_lt.isoformat()
     params["operationTime__startTime__lt"] = json_operation_time_start_time_lt
 
-    json_operation_time_start_time_lte: Union[Unset, str] = UNSET
+    json_operation_time_start_time_lte: str | Unset = UNSET
     if not isinstance(operation_time_start_time_lte, Unset):
         json_operation_time_start_time_lte = operation_time_start_time_lte.isoformat()
     params["operationTime__startTime__lte"] = json_operation_time_start_time_lte
 
-    json_operation_time_start_time_range: Union[Unset, list[str]] = UNSET
+    json_operation_time_start_time_range: list[str] | Unset = UNSET
     if not isinstance(operation_time_start_time_range, Unset):
         json_operation_time_start_time_range = []
         for operation_time_start_time_range_item_data in operation_time_start_time_range:
@@ -501,7 +501,7 @@ def _get_kwargs(
 
     params["platform_field__gte"] = platform_field_gte
 
-    json_platform_field_in: Union[Unset, list[int]] = UNSET
+    json_platform_field_in: list[int] | Unset = UNSET
     if not isinstance(platform_field_in, Unset):
         json_platform_field_in = ",".join(map(str, platform_field_in))
 
@@ -515,7 +515,7 @@ def _get_kwargs(
 
     params["platform_field__ob_id"] = platform_field_ob_id
 
-    json_platform_field_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_platform_field_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(platform_field_ob_id_in, Unset):
         json_platform_field_ob_id_in = ",".join(map(str, platform_field_ob_id_in))
 
@@ -523,7 +523,7 @@ def _get_kwargs(
 
     params["platform_field__uuid"] = platform_field_uuid
 
-    json_platform_field_uuid_in: Union[Unset, list[str]] = UNSET
+    json_platform_field_uuid_in: list[str] | Unset = UNSET
     if not isinstance(platform_field_uuid_in, Unset):
         json_platform_field_uuid_in = ",".join(map(str, platform_field_uuid_in))
 
@@ -535,7 +535,7 @@ def _get_kwargs(
 
     params["referenceable_ptr__gte"] = referenceable_ptr_gte
 
-    json_referenceable_ptr_in: Union[Unset, list[int]] = UNSET
+    json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
         json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
 
@@ -563,7 +563,7 @@ def _get_kwargs(
 
     params["short_code__iexact"] = short_code_iexact
 
-    json_short_code_in: Union[Unset, list[str]] = UNSET
+    json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
         json_short_code_in = ",".join(map(str, short_code_in))
 
@@ -579,7 +579,7 @@ def _get_kwargs(
 
     params["short_code__lte"] = short_code_lte
 
-    json_short_code_range: Union[Unset, list[str]] = UNSET
+    json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
         json_short_code_range = ",".join(map(str, short_code_range))
 
@@ -589,7 +589,7 @@ def _get_kwargs(
 
     params["short_code__startswith"] = short_code_startswith
 
-    json_status: Union[Unset, str] = UNSET
+    json_status: str | Unset = UNSET
     if not isinstance(status, Unset):
         json_status = status.value
 
@@ -609,7 +609,7 @@ def _get_kwargs(
 
     params["status__iexact"] = status_iexact
 
-    json_status_in: Union[Unset, list[str]] = UNSET
+    json_status_in: list[str] | Unset = UNSET
     if not isinstance(status_in, Unset):
         json_status_in = ",".join(map(str, status_in))
 
@@ -625,7 +625,7 @@ def _get_kwargs(
 
     params["status__lte"] = status_lte
 
-    json_status_range: Union[Unset, list[str]] = UNSET
+    json_status_range: list[str] | Unset = UNSET
     if not isinstance(status_range, Unset):
         json_status_range = ",".join(map(str, status_range))
 
@@ -651,7 +651,7 @@ def _get_kwargs(
 
     params["title__iexact"] = title_iexact
 
-    json_title_in: Union[Unset, list[str]] = UNSET
+    json_title_in: list[str] | Unset = UNSET
     if not isinstance(title_in, Unset):
         json_title_in = ",".join(map(str, title_in))
 
@@ -667,7 +667,7 @@ def _get_kwargs(
 
     params["title__lte"] = title_lte
 
-    json_title_range: Union[Unset, list[str]] = UNSET
+    json_title_range: list[str] | Unset = UNSET
     if not isinstance(title_range, Unset):
         json_title_range = ",".join(map(str, title_range))
 
@@ -693,7 +693,7 @@ def _get_kwargs(
 
     params["uuid__iexact"] = uuid_iexact
 
-    json_uuid_in: Union[Unset, list[str]] = UNSET
+    json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
         json_uuid_in = ",".join(map(str, uuid_in))
 
@@ -709,7 +709,7 @@ def _get_kwargs(
 
     params["uuid__lte"] = uuid_lte
 
-    json_uuid_range: Union[Unset, list[str]] = UNSET
+    json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
         json_uuid_range = ",".join(map(str, uuid_range))
 
@@ -731,8 +731,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedMobilePlatformOperationReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedMobilePlatformOperationReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedMobilePlatformOperationReadList.from_dict(response.json())
 
@@ -745,7 +745,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedMobilePlatformOperationReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -758,380 +758,380 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    child_operation: Union[Unset, int] = UNSET,
-    child_operation_gt: Union[Unset, int] = UNSET,
-    child_operation_gte: Union[Unset, int] = UNSET,
-    child_operation_in: Union[Unset, list[int]] = UNSET,
-    child_operation_isnull: Union[Unset, bool] = UNSET,
-    child_operation_lt: Union[Unset, int] = UNSET,
-    child_operation_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    location: Union[Unset, int] = UNSET,
-    location_east_bound_longitude: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    location_gt: Union[Unset, int] = UNSET,
-    location_gte: Union[Unset, int] = UNSET,
-    location_in: Union[Unset, list[int]] = UNSET,
-    location_isnull: Union[Unset, bool] = UNSET,
-    location_lt: Union[Unset, int] = UNSET,
-    location_lte: Union[Unset, int] = UNSET,
-    location_north_bound_latitude: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_ob_id: Union[Unset, int] = UNSET,
-    location_ob_id_in: Union[Unset, list[int]] = UNSET,
-    location_south_bound_latitude: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_west_bound_longitude: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    operation_time: Union[Unset, int] = UNSET,
-    operation_time_end_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    operation_time_gt: Union[Unset, int] = UNSET,
-    operation_time_gte: Union[Unset, int] = UNSET,
-    operation_time_in: Union[Unset, list[int]] = UNSET,
-    operation_time_isnull: Union[Unset, bool] = UNSET,
-    operation_time_lt: Union[Unset, int] = UNSET,
-    operation_time_lte: Union[Unset, int] = UNSET,
-    operation_time_ob_id: Union[Unset, int] = UNSET,
-    operation_time_ob_id_in: Union[Unset, list[int]] = UNSET,
-    operation_time_start_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform_field: Union[Unset, int] = UNSET,
-    platform_field_gt: Union[Unset, int] = UNSET,
-    platform_field_gte: Union[Unset, int] = UNSET,
-    platform_field_in: Union[Unset, list[int]] = UNSET,
-    platform_field_isnull: Union[Unset, bool] = UNSET,
-    platform_field_lt: Union[Unset, int] = UNSET,
-    platform_field_lte: Union[Unset, int] = UNSET,
-    platform_field_ob_id: Union[Unset, int] = UNSET,
-    platform_field_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_field_uuid: Union[Unset, str] = UNSET,
-    platform_field_uuid_in: Union[Unset, list[str]] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, MposListStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    child_operation: int | Unset = UNSET,
+    child_operation_gt: int | Unset = UNSET,
+    child_operation_gte: int | Unset = UNSET,
+    child_operation_in: list[int] | Unset = UNSET,
+    child_operation_isnull: bool | Unset = UNSET,
+    child_operation_lt: int | Unset = UNSET,
+    child_operation_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    location: int | Unset = UNSET,
+    location_east_bound_longitude: float | Unset = UNSET,
+    location_east_bound_longitude_gt: float | Unset = UNSET,
+    location_east_bound_longitude_gte: float | Unset = UNSET,
+    location_east_bound_longitude_lt: float | Unset = UNSET,
+    location_east_bound_longitude_lte: float | Unset = UNSET,
+    location_east_bound_longitude_range: list[float] | Unset = UNSET,
+    location_gt: int | Unset = UNSET,
+    location_gte: int | Unset = UNSET,
+    location_in: list[int] | Unset = UNSET,
+    location_isnull: bool | Unset = UNSET,
+    location_lt: int | Unset = UNSET,
+    location_lte: int | Unset = UNSET,
+    location_north_bound_latitude: float | Unset = UNSET,
+    location_north_bound_latitude_gt: float | Unset = UNSET,
+    location_north_bound_latitude_gte: float | Unset = UNSET,
+    location_north_bound_latitude_lt: float | Unset = UNSET,
+    location_north_bound_latitude_lte: float | Unset = UNSET,
+    location_north_bound_latitude_range: list[float] | Unset = UNSET,
+    location_ob_id: int | Unset = UNSET,
+    location_ob_id_in: list[int] | Unset = UNSET,
+    location_south_bound_latitude: float | Unset = UNSET,
+    location_south_bound_latitude_gt: float | Unset = UNSET,
+    location_south_bound_latitude_gte: float | Unset = UNSET,
+    location_south_bound_latitude_lt: float | Unset = UNSET,
+    location_south_bound_latitude_lte: float | Unset = UNSET,
+    location_south_bound_latitude_range: list[float] | Unset = UNSET,
+    location_west_bound_longitude: float | Unset = UNSET,
+    location_west_bound_longitude_gt: float | Unset = UNSET,
+    location_west_bound_longitude_gte: float | Unset = UNSET,
+    location_west_bound_longitude_lt: float | Unset = UNSET,
+    location_west_bound_longitude_lte: float | Unset = UNSET,
+    location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    operation_time: int | Unset = UNSET,
+    operation_time_end_time: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_range: list[datetime.datetime] | Unset = UNSET,
+    operation_time_gt: int | Unset = UNSET,
+    operation_time_gte: int | Unset = UNSET,
+    operation_time_in: list[int] | Unset = UNSET,
+    operation_time_isnull: bool | Unset = UNSET,
+    operation_time_lt: int | Unset = UNSET,
+    operation_time_lte: int | Unset = UNSET,
+    operation_time_ob_id: int | Unset = UNSET,
+    operation_time_ob_id_in: list[int] | Unset = UNSET,
+    operation_time_start_time: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_range: list[datetime.datetime] | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform_field: int | Unset = UNSET,
+    platform_field_gt: int | Unset = UNSET,
+    platform_field_gte: int | Unset = UNSET,
+    platform_field_in: list[int] | Unset = UNSET,
+    platform_field_isnull: bool | Unset = UNSET,
+    platform_field_lt: int | Unset = UNSET,
+    platform_field_lte: int | Unset = UNSET,
+    platform_field_ob_id: int | Unset = UNSET,
+    platform_field_ob_id_in: list[int] | Unset = UNSET,
+    platform_field_uuid: str | Unset = UNSET,
+    platform_field_uuid_in: list[str] | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: MposListStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        child_operation (Union[Unset, int]):
-        child_operation_gt (Union[Unset, int]):
-        child_operation_gte (Union[Unset, int]):
-        child_operation_in (Union[Unset, list[int]]):
-        child_operation_isnull (Union[Unset, bool]):
-        child_operation_lt (Union[Unset, int]):
-        child_operation_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        location (Union[Unset, int]):
-        location_east_bound_longitude (Union[Unset, float]):
-        location_east_bound_longitude_gt (Union[Unset, float]):
-        location_east_bound_longitude_gte (Union[Unset, float]):
-        location_east_bound_longitude_lt (Union[Unset, float]):
-        location_east_bound_longitude_lte (Union[Unset, float]):
-        location_east_bound_longitude_range (Union[Unset, list[float]]):
-        location_gt (Union[Unset, int]):
-        location_gte (Union[Unset, int]):
-        location_in (Union[Unset, list[int]]):
-        location_isnull (Union[Unset, bool]):
-        location_lt (Union[Unset, int]):
-        location_lte (Union[Unset, int]):
-        location_north_bound_latitude (Union[Unset, float]):
-        location_north_bound_latitude_gt (Union[Unset, float]):
-        location_north_bound_latitude_gte (Union[Unset, float]):
-        location_north_bound_latitude_lt (Union[Unset, float]):
-        location_north_bound_latitude_lte (Union[Unset, float]):
-        location_north_bound_latitude_range (Union[Unset, list[float]]):
-        location_ob_id (Union[Unset, int]):
-        location_ob_id_in (Union[Unset, list[int]]):
-        location_south_bound_latitude (Union[Unset, float]):
-        location_south_bound_latitude_gt (Union[Unset, float]):
-        location_south_bound_latitude_gte (Union[Unset, float]):
-        location_south_bound_latitude_lt (Union[Unset, float]):
-        location_south_bound_latitude_lte (Union[Unset, float]):
-        location_south_bound_latitude_range (Union[Unset, list[float]]):
-        location_west_bound_longitude (Union[Unset, float]):
-        location_west_bound_longitude_gt (Union[Unset, float]):
-        location_west_bound_longitude_gte (Union[Unset, float]):
-        location_west_bound_longitude_lt (Union[Unset, float]):
-        location_west_bound_longitude_lte (Union[Unset, float]):
-        location_west_bound_longitude_range (Union[Unset, list[float]]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        operation_time (Union[Unset, int]):
-        operation_time_end_time (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_range (Union[Unset, list[datetime.datetime]]):
-        operation_time_gt (Union[Unset, int]):
-        operation_time_gte (Union[Unset, int]):
-        operation_time_in (Union[Unset, list[int]]):
-        operation_time_isnull (Union[Unset, bool]):
-        operation_time_lt (Union[Unset, int]):
-        operation_time_lte (Union[Unset, int]):
-        operation_time_ob_id (Union[Unset, int]):
-        operation_time_ob_id_in (Union[Unset, list[int]]):
-        operation_time_start_time (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_range (Union[Unset, list[datetime.datetime]]):
-        ordering (Union[Unset, str]):
-        platform_field (Union[Unset, int]):
-        platform_field_gt (Union[Unset, int]):
-        platform_field_gte (Union[Unset, int]):
-        platform_field_in (Union[Unset, list[int]]):
-        platform_field_isnull (Union[Unset, bool]):
-        platform_field_lt (Union[Unset, int]):
-        platform_field_lte (Union[Unset, int]):
-        platform_field_ob_id (Union[Unset, int]):
-        platform_field_ob_id_in (Union[Unset, list[int]]):
-        platform_field_uuid (Union[Unset, str]):
-        platform_field_uuid_in (Union[Unset, list[str]]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, MposListStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        child_operation (int | Unset):
+        child_operation_gt (int | Unset):
+        child_operation_gte (int | Unset):
+        child_operation_in (list[int] | Unset):
+        child_operation_isnull (bool | Unset):
+        child_operation_lt (int | Unset):
+        child_operation_lte (int | Unset):
+        limit (int | Unset):
+        location (int | Unset):
+        location_east_bound_longitude (float | Unset):
+        location_east_bound_longitude_gt (float | Unset):
+        location_east_bound_longitude_gte (float | Unset):
+        location_east_bound_longitude_lt (float | Unset):
+        location_east_bound_longitude_lte (float | Unset):
+        location_east_bound_longitude_range (list[float] | Unset):
+        location_gt (int | Unset):
+        location_gte (int | Unset):
+        location_in (list[int] | Unset):
+        location_isnull (bool | Unset):
+        location_lt (int | Unset):
+        location_lte (int | Unset):
+        location_north_bound_latitude (float | Unset):
+        location_north_bound_latitude_gt (float | Unset):
+        location_north_bound_latitude_gte (float | Unset):
+        location_north_bound_latitude_lt (float | Unset):
+        location_north_bound_latitude_lte (float | Unset):
+        location_north_bound_latitude_range (list[float] | Unset):
+        location_ob_id (int | Unset):
+        location_ob_id_in (list[int] | Unset):
+        location_south_bound_latitude (float | Unset):
+        location_south_bound_latitude_gt (float | Unset):
+        location_south_bound_latitude_gte (float | Unset):
+        location_south_bound_latitude_lt (float | Unset):
+        location_south_bound_latitude_lte (float | Unset):
+        location_south_bound_latitude_range (list[float] | Unset):
+        location_west_bound_longitude (float | Unset):
+        location_west_bound_longitude_gt (float | Unset):
+        location_west_bound_longitude_gte (float | Unset):
+        location_west_bound_longitude_lt (float | Unset):
+        location_west_bound_longitude_lte (float | Unset):
+        location_west_bound_longitude_range (list[float] | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        operation_time (int | Unset):
+        operation_time_end_time (datetime.datetime | Unset):
+        operation_time_end_time_gt (datetime.datetime | Unset):
+        operation_time_end_time_gte (datetime.datetime | Unset):
+        operation_time_end_time_lt (datetime.datetime | Unset):
+        operation_time_end_time_lte (datetime.datetime | Unset):
+        operation_time_end_time_range (list[datetime.datetime] | Unset):
+        operation_time_gt (int | Unset):
+        operation_time_gte (int | Unset):
+        operation_time_in (list[int] | Unset):
+        operation_time_isnull (bool | Unset):
+        operation_time_lt (int | Unset):
+        operation_time_lte (int | Unset):
+        operation_time_ob_id (int | Unset):
+        operation_time_ob_id_in (list[int] | Unset):
+        operation_time_start_time (datetime.datetime | Unset):
+        operation_time_start_time_gt (datetime.datetime | Unset):
+        operation_time_start_time_gte (datetime.datetime | Unset):
+        operation_time_start_time_lt (datetime.datetime | Unset):
+        operation_time_start_time_lte (datetime.datetime | Unset):
+        operation_time_start_time_range (list[datetime.datetime] | Unset):
+        ordering (str | Unset):
+        platform_field (int | Unset):
+        platform_field_gt (int | Unset):
+        platform_field_gte (int | Unset):
+        platform_field_in (list[int] | Unset):
+        platform_field_isnull (bool | Unset):
+        platform_field_lt (int | Unset):
+        platform_field_lte (int | Unset):
+        platform_field_ob_id (int | Unset):
+        platform_field_ob_id_in (list[int] | Unset):
+        platform_field_uuid (str | Unset):
+        platform_field_uuid_in (list[str] | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (MposListStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1339,380 +1339,380 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    child_operation: Union[Unset, int] = UNSET,
-    child_operation_gt: Union[Unset, int] = UNSET,
-    child_operation_gte: Union[Unset, int] = UNSET,
-    child_operation_in: Union[Unset, list[int]] = UNSET,
-    child_operation_isnull: Union[Unset, bool] = UNSET,
-    child_operation_lt: Union[Unset, int] = UNSET,
-    child_operation_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    location: Union[Unset, int] = UNSET,
-    location_east_bound_longitude: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    location_gt: Union[Unset, int] = UNSET,
-    location_gte: Union[Unset, int] = UNSET,
-    location_in: Union[Unset, list[int]] = UNSET,
-    location_isnull: Union[Unset, bool] = UNSET,
-    location_lt: Union[Unset, int] = UNSET,
-    location_lte: Union[Unset, int] = UNSET,
-    location_north_bound_latitude: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_ob_id: Union[Unset, int] = UNSET,
-    location_ob_id_in: Union[Unset, list[int]] = UNSET,
-    location_south_bound_latitude: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_west_bound_longitude: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    operation_time: Union[Unset, int] = UNSET,
-    operation_time_end_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    operation_time_gt: Union[Unset, int] = UNSET,
-    operation_time_gte: Union[Unset, int] = UNSET,
-    operation_time_in: Union[Unset, list[int]] = UNSET,
-    operation_time_isnull: Union[Unset, bool] = UNSET,
-    operation_time_lt: Union[Unset, int] = UNSET,
-    operation_time_lte: Union[Unset, int] = UNSET,
-    operation_time_ob_id: Union[Unset, int] = UNSET,
-    operation_time_ob_id_in: Union[Unset, list[int]] = UNSET,
-    operation_time_start_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform_field: Union[Unset, int] = UNSET,
-    platform_field_gt: Union[Unset, int] = UNSET,
-    platform_field_gte: Union[Unset, int] = UNSET,
-    platform_field_in: Union[Unset, list[int]] = UNSET,
-    platform_field_isnull: Union[Unset, bool] = UNSET,
-    platform_field_lt: Union[Unset, int] = UNSET,
-    platform_field_lte: Union[Unset, int] = UNSET,
-    platform_field_ob_id: Union[Unset, int] = UNSET,
-    platform_field_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_field_uuid: Union[Unset, str] = UNSET,
-    platform_field_uuid_in: Union[Unset, list[str]] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, MposListStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMobilePlatformOperationReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    child_operation: int | Unset = UNSET,
+    child_operation_gt: int | Unset = UNSET,
+    child_operation_gte: int | Unset = UNSET,
+    child_operation_in: list[int] | Unset = UNSET,
+    child_operation_isnull: bool | Unset = UNSET,
+    child_operation_lt: int | Unset = UNSET,
+    child_operation_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    location: int | Unset = UNSET,
+    location_east_bound_longitude: float | Unset = UNSET,
+    location_east_bound_longitude_gt: float | Unset = UNSET,
+    location_east_bound_longitude_gte: float | Unset = UNSET,
+    location_east_bound_longitude_lt: float | Unset = UNSET,
+    location_east_bound_longitude_lte: float | Unset = UNSET,
+    location_east_bound_longitude_range: list[float] | Unset = UNSET,
+    location_gt: int | Unset = UNSET,
+    location_gte: int | Unset = UNSET,
+    location_in: list[int] | Unset = UNSET,
+    location_isnull: bool | Unset = UNSET,
+    location_lt: int | Unset = UNSET,
+    location_lte: int | Unset = UNSET,
+    location_north_bound_latitude: float | Unset = UNSET,
+    location_north_bound_latitude_gt: float | Unset = UNSET,
+    location_north_bound_latitude_gte: float | Unset = UNSET,
+    location_north_bound_latitude_lt: float | Unset = UNSET,
+    location_north_bound_latitude_lte: float | Unset = UNSET,
+    location_north_bound_latitude_range: list[float] | Unset = UNSET,
+    location_ob_id: int | Unset = UNSET,
+    location_ob_id_in: list[int] | Unset = UNSET,
+    location_south_bound_latitude: float | Unset = UNSET,
+    location_south_bound_latitude_gt: float | Unset = UNSET,
+    location_south_bound_latitude_gte: float | Unset = UNSET,
+    location_south_bound_latitude_lt: float | Unset = UNSET,
+    location_south_bound_latitude_lte: float | Unset = UNSET,
+    location_south_bound_latitude_range: list[float] | Unset = UNSET,
+    location_west_bound_longitude: float | Unset = UNSET,
+    location_west_bound_longitude_gt: float | Unset = UNSET,
+    location_west_bound_longitude_gte: float | Unset = UNSET,
+    location_west_bound_longitude_lt: float | Unset = UNSET,
+    location_west_bound_longitude_lte: float | Unset = UNSET,
+    location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    operation_time: int | Unset = UNSET,
+    operation_time_end_time: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_range: list[datetime.datetime] | Unset = UNSET,
+    operation_time_gt: int | Unset = UNSET,
+    operation_time_gte: int | Unset = UNSET,
+    operation_time_in: list[int] | Unset = UNSET,
+    operation_time_isnull: bool | Unset = UNSET,
+    operation_time_lt: int | Unset = UNSET,
+    operation_time_lte: int | Unset = UNSET,
+    operation_time_ob_id: int | Unset = UNSET,
+    operation_time_ob_id_in: list[int] | Unset = UNSET,
+    operation_time_start_time: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_range: list[datetime.datetime] | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform_field: int | Unset = UNSET,
+    platform_field_gt: int | Unset = UNSET,
+    platform_field_gte: int | Unset = UNSET,
+    platform_field_in: list[int] | Unset = UNSET,
+    platform_field_isnull: bool | Unset = UNSET,
+    platform_field_lt: int | Unset = UNSET,
+    platform_field_lte: int | Unset = UNSET,
+    platform_field_ob_id: int | Unset = UNSET,
+    platform_field_ob_id_in: list[int] | Unset = UNSET,
+    platform_field_uuid: str | Unset = UNSET,
+    platform_field_uuid_in: list[str] | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: MposListStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedMobilePlatformOperationReadList | None:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        child_operation (Union[Unset, int]):
-        child_operation_gt (Union[Unset, int]):
-        child_operation_gte (Union[Unset, int]):
-        child_operation_in (Union[Unset, list[int]]):
-        child_operation_isnull (Union[Unset, bool]):
-        child_operation_lt (Union[Unset, int]):
-        child_operation_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        location (Union[Unset, int]):
-        location_east_bound_longitude (Union[Unset, float]):
-        location_east_bound_longitude_gt (Union[Unset, float]):
-        location_east_bound_longitude_gte (Union[Unset, float]):
-        location_east_bound_longitude_lt (Union[Unset, float]):
-        location_east_bound_longitude_lte (Union[Unset, float]):
-        location_east_bound_longitude_range (Union[Unset, list[float]]):
-        location_gt (Union[Unset, int]):
-        location_gte (Union[Unset, int]):
-        location_in (Union[Unset, list[int]]):
-        location_isnull (Union[Unset, bool]):
-        location_lt (Union[Unset, int]):
-        location_lte (Union[Unset, int]):
-        location_north_bound_latitude (Union[Unset, float]):
-        location_north_bound_latitude_gt (Union[Unset, float]):
-        location_north_bound_latitude_gte (Union[Unset, float]):
-        location_north_bound_latitude_lt (Union[Unset, float]):
-        location_north_bound_latitude_lte (Union[Unset, float]):
-        location_north_bound_latitude_range (Union[Unset, list[float]]):
-        location_ob_id (Union[Unset, int]):
-        location_ob_id_in (Union[Unset, list[int]]):
-        location_south_bound_latitude (Union[Unset, float]):
-        location_south_bound_latitude_gt (Union[Unset, float]):
-        location_south_bound_latitude_gte (Union[Unset, float]):
-        location_south_bound_latitude_lt (Union[Unset, float]):
-        location_south_bound_latitude_lte (Union[Unset, float]):
-        location_south_bound_latitude_range (Union[Unset, list[float]]):
-        location_west_bound_longitude (Union[Unset, float]):
-        location_west_bound_longitude_gt (Union[Unset, float]):
-        location_west_bound_longitude_gte (Union[Unset, float]):
-        location_west_bound_longitude_lt (Union[Unset, float]):
-        location_west_bound_longitude_lte (Union[Unset, float]):
-        location_west_bound_longitude_range (Union[Unset, list[float]]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        operation_time (Union[Unset, int]):
-        operation_time_end_time (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_range (Union[Unset, list[datetime.datetime]]):
-        operation_time_gt (Union[Unset, int]):
-        operation_time_gte (Union[Unset, int]):
-        operation_time_in (Union[Unset, list[int]]):
-        operation_time_isnull (Union[Unset, bool]):
-        operation_time_lt (Union[Unset, int]):
-        operation_time_lte (Union[Unset, int]):
-        operation_time_ob_id (Union[Unset, int]):
-        operation_time_ob_id_in (Union[Unset, list[int]]):
-        operation_time_start_time (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_range (Union[Unset, list[datetime.datetime]]):
-        ordering (Union[Unset, str]):
-        platform_field (Union[Unset, int]):
-        platform_field_gt (Union[Unset, int]):
-        platform_field_gte (Union[Unset, int]):
-        platform_field_in (Union[Unset, list[int]]):
-        platform_field_isnull (Union[Unset, bool]):
-        platform_field_lt (Union[Unset, int]):
-        platform_field_lte (Union[Unset, int]):
-        platform_field_ob_id (Union[Unset, int]):
-        platform_field_ob_id_in (Union[Unset, list[int]]):
-        platform_field_uuid (Union[Unset, str]):
-        platform_field_uuid_in (Union[Unset, list[str]]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, MposListStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        child_operation (int | Unset):
+        child_operation_gt (int | Unset):
+        child_operation_gte (int | Unset):
+        child_operation_in (list[int] | Unset):
+        child_operation_isnull (bool | Unset):
+        child_operation_lt (int | Unset):
+        child_operation_lte (int | Unset):
+        limit (int | Unset):
+        location (int | Unset):
+        location_east_bound_longitude (float | Unset):
+        location_east_bound_longitude_gt (float | Unset):
+        location_east_bound_longitude_gte (float | Unset):
+        location_east_bound_longitude_lt (float | Unset):
+        location_east_bound_longitude_lte (float | Unset):
+        location_east_bound_longitude_range (list[float] | Unset):
+        location_gt (int | Unset):
+        location_gte (int | Unset):
+        location_in (list[int] | Unset):
+        location_isnull (bool | Unset):
+        location_lt (int | Unset):
+        location_lte (int | Unset):
+        location_north_bound_latitude (float | Unset):
+        location_north_bound_latitude_gt (float | Unset):
+        location_north_bound_latitude_gte (float | Unset):
+        location_north_bound_latitude_lt (float | Unset):
+        location_north_bound_latitude_lte (float | Unset):
+        location_north_bound_latitude_range (list[float] | Unset):
+        location_ob_id (int | Unset):
+        location_ob_id_in (list[int] | Unset):
+        location_south_bound_latitude (float | Unset):
+        location_south_bound_latitude_gt (float | Unset):
+        location_south_bound_latitude_gte (float | Unset):
+        location_south_bound_latitude_lt (float | Unset):
+        location_south_bound_latitude_lte (float | Unset):
+        location_south_bound_latitude_range (list[float] | Unset):
+        location_west_bound_longitude (float | Unset):
+        location_west_bound_longitude_gt (float | Unset):
+        location_west_bound_longitude_gte (float | Unset):
+        location_west_bound_longitude_lt (float | Unset):
+        location_west_bound_longitude_lte (float | Unset):
+        location_west_bound_longitude_range (list[float] | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        operation_time (int | Unset):
+        operation_time_end_time (datetime.datetime | Unset):
+        operation_time_end_time_gt (datetime.datetime | Unset):
+        operation_time_end_time_gte (datetime.datetime | Unset):
+        operation_time_end_time_lt (datetime.datetime | Unset):
+        operation_time_end_time_lte (datetime.datetime | Unset):
+        operation_time_end_time_range (list[datetime.datetime] | Unset):
+        operation_time_gt (int | Unset):
+        operation_time_gte (int | Unset):
+        operation_time_in (list[int] | Unset):
+        operation_time_isnull (bool | Unset):
+        operation_time_lt (int | Unset):
+        operation_time_lte (int | Unset):
+        operation_time_ob_id (int | Unset):
+        operation_time_ob_id_in (list[int] | Unset):
+        operation_time_start_time (datetime.datetime | Unset):
+        operation_time_start_time_gt (datetime.datetime | Unset):
+        operation_time_start_time_gte (datetime.datetime | Unset):
+        operation_time_start_time_lt (datetime.datetime | Unset):
+        operation_time_start_time_lte (datetime.datetime | Unset):
+        operation_time_start_time_range (list[datetime.datetime] | Unset):
+        ordering (str | Unset):
+        platform_field (int | Unset):
+        platform_field_gt (int | Unset):
+        platform_field_gte (int | Unset):
+        platform_field_in (list[int] | Unset):
+        platform_field_isnull (bool | Unset):
+        platform_field_lt (int | Unset):
+        platform_field_lte (int | Unset):
+        platform_field_ob_id (int | Unset):
+        platform_field_ob_id_in (list[int] | Unset):
+        platform_field_uuid (str | Unset):
+        platform_field_uuid_in (list[str] | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (MposListStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1915,380 +1915,380 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    child_operation: Union[Unset, int] = UNSET,
-    child_operation_gt: Union[Unset, int] = UNSET,
-    child_operation_gte: Union[Unset, int] = UNSET,
-    child_operation_in: Union[Unset, list[int]] = UNSET,
-    child_operation_isnull: Union[Unset, bool] = UNSET,
-    child_operation_lt: Union[Unset, int] = UNSET,
-    child_operation_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    location: Union[Unset, int] = UNSET,
-    location_east_bound_longitude: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    location_gt: Union[Unset, int] = UNSET,
-    location_gte: Union[Unset, int] = UNSET,
-    location_in: Union[Unset, list[int]] = UNSET,
-    location_isnull: Union[Unset, bool] = UNSET,
-    location_lt: Union[Unset, int] = UNSET,
-    location_lte: Union[Unset, int] = UNSET,
-    location_north_bound_latitude: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_ob_id: Union[Unset, int] = UNSET,
-    location_ob_id_in: Union[Unset, list[int]] = UNSET,
-    location_south_bound_latitude: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_west_bound_longitude: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    operation_time: Union[Unset, int] = UNSET,
-    operation_time_end_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    operation_time_gt: Union[Unset, int] = UNSET,
-    operation_time_gte: Union[Unset, int] = UNSET,
-    operation_time_in: Union[Unset, list[int]] = UNSET,
-    operation_time_isnull: Union[Unset, bool] = UNSET,
-    operation_time_lt: Union[Unset, int] = UNSET,
-    operation_time_lte: Union[Unset, int] = UNSET,
-    operation_time_ob_id: Union[Unset, int] = UNSET,
-    operation_time_ob_id_in: Union[Unset, list[int]] = UNSET,
-    operation_time_start_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform_field: Union[Unset, int] = UNSET,
-    platform_field_gt: Union[Unset, int] = UNSET,
-    platform_field_gte: Union[Unset, int] = UNSET,
-    platform_field_in: Union[Unset, list[int]] = UNSET,
-    platform_field_isnull: Union[Unset, bool] = UNSET,
-    platform_field_lt: Union[Unset, int] = UNSET,
-    platform_field_lte: Union[Unset, int] = UNSET,
-    platform_field_ob_id: Union[Unset, int] = UNSET,
-    platform_field_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_field_uuid: Union[Unset, str] = UNSET,
-    platform_field_uuid_in: Union[Unset, list[str]] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, MposListStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    child_operation: int | Unset = UNSET,
+    child_operation_gt: int | Unset = UNSET,
+    child_operation_gte: int | Unset = UNSET,
+    child_operation_in: list[int] | Unset = UNSET,
+    child_operation_isnull: bool | Unset = UNSET,
+    child_operation_lt: int | Unset = UNSET,
+    child_operation_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    location: int | Unset = UNSET,
+    location_east_bound_longitude: float | Unset = UNSET,
+    location_east_bound_longitude_gt: float | Unset = UNSET,
+    location_east_bound_longitude_gte: float | Unset = UNSET,
+    location_east_bound_longitude_lt: float | Unset = UNSET,
+    location_east_bound_longitude_lte: float | Unset = UNSET,
+    location_east_bound_longitude_range: list[float] | Unset = UNSET,
+    location_gt: int | Unset = UNSET,
+    location_gte: int | Unset = UNSET,
+    location_in: list[int] | Unset = UNSET,
+    location_isnull: bool | Unset = UNSET,
+    location_lt: int | Unset = UNSET,
+    location_lte: int | Unset = UNSET,
+    location_north_bound_latitude: float | Unset = UNSET,
+    location_north_bound_latitude_gt: float | Unset = UNSET,
+    location_north_bound_latitude_gte: float | Unset = UNSET,
+    location_north_bound_latitude_lt: float | Unset = UNSET,
+    location_north_bound_latitude_lte: float | Unset = UNSET,
+    location_north_bound_latitude_range: list[float] | Unset = UNSET,
+    location_ob_id: int | Unset = UNSET,
+    location_ob_id_in: list[int] | Unset = UNSET,
+    location_south_bound_latitude: float | Unset = UNSET,
+    location_south_bound_latitude_gt: float | Unset = UNSET,
+    location_south_bound_latitude_gte: float | Unset = UNSET,
+    location_south_bound_latitude_lt: float | Unset = UNSET,
+    location_south_bound_latitude_lte: float | Unset = UNSET,
+    location_south_bound_latitude_range: list[float] | Unset = UNSET,
+    location_west_bound_longitude: float | Unset = UNSET,
+    location_west_bound_longitude_gt: float | Unset = UNSET,
+    location_west_bound_longitude_gte: float | Unset = UNSET,
+    location_west_bound_longitude_lt: float | Unset = UNSET,
+    location_west_bound_longitude_lte: float | Unset = UNSET,
+    location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    operation_time: int | Unset = UNSET,
+    operation_time_end_time: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_range: list[datetime.datetime] | Unset = UNSET,
+    operation_time_gt: int | Unset = UNSET,
+    operation_time_gte: int | Unset = UNSET,
+    operation_time_in: list[int] | Unset = UNSET,
+    operation_time_isnull: bool | Unset = UNSET,
+    operation_time_lt: int | Unset = UNSET,
+    operation_time_lte: int | Unset = UNSET,
+    operation_time_ob_id: int | Unset = UNSET,
+    operation_time_ob_id_in: list[int] | Unset = UNSET,
+    operation_time_start_time: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_range: list[datetime.datetime] | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform_field: int | Unset = UNSET,
+    platform_field_gt: int | Unset = UNSET,
+    platform_field_gte: int | Unset = UNSET,
+    platform_field_in: list[int] | Unset = UNSET,
+    platform_field_isnull: bool | Unset = UNSET,
+    platform_field_lt: int | Unset = UNSET,
+    platform_field_lte: int | Unset = UNSET,
+    platform_field_ob_id: int | Unset = UNSET,
+    platform_field_ob_id_in: list[int] | Unset = UNSET,
+    platform_field_uuid: str | Unset = UNSET,
+    platform_field_uuid_in: list[str] | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: MposListStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedMobilePlatformOperationReadList]:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        child_operation (Union[Unset, int]):
-        child_operation_gt (Union[Unset, int]):
-        child_operation_gte (Union[Unset, int]):
-        child_operation_in (Union[Unset, list[int]]):
-        child_operation_isnull (Union[Unset, bool]):
-        child_operation_lt (Union[Unset, int]):
-        child_operation_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        location (Union[Unset, int]):
-        location_east_bound_longitude (Union[Unset, float]):
-        location_east_bound_longitude_gt (Union[Unset, float]):
-        location_east_bound_longitude_gte (Union[Unset, float]):
-        location_east_bound_longitude_lt (Union[Unset, float]):
-        location_east_bound_longitude_lte (Union[Unset, float]):
-        location_east_bound_longitude_range (Union[Unset, list[float]]):
-        location_gt (Union[Unset, int]):
-        location_gte (Union[Unset, int]):
-        location_in (Union[Unset, list[int]]):
-        location_isnull (Union[Unset, bool]):
-        location_lt (Union[Unset, int]):
-        location_lte (Union[Unset, int]):
-        location_north_bound_latitude (Union[Unset, float]):
-        location_north_bound_latitude_gt (Union[Unset, float]):
-        location_north_bound_latitude_gte (Union[Unset, float]):
-        location_north_bound_latitude_lt (Union[Unset, float]):
-        location_north_bound_latitude_lte (Union[Unset, float]):
-        location_north_bound_latitude_range (Union[Unset, list[float]]):
-        location_ob_id (Union[Unset, int]):
-        location_ob_id_in (Union[Unset, list[int]]):
-        location_south_bound_latitude (Union[Unset, float]):
-        location_south_bound_latitude_gt (Union[Unset, float]):
-        location_south_bound_latitude_gte (Union[Unset, float]):
-        location_south_bound_latitude_lt (Union[Unset, float]):
-        location_south_bound_latitude_lte (Union[Unset, float]):
-        location_south_bound_latitude_range (Union[Unset, list[float]]):
-        location_west_bound_longitude (Union[Unset, float]):
-        location_west_bound_longitude_gt (Union[Unset, float]):
-        location_west_bound_longitude_gte (Union[Unset, float]):
-        location_west_bound_longitude_lt (Union[Unset, float]):
-        location_west_bound_longitude_lte (Union[Unset, float]):
-        location_west_bound_longitude_range (Union[Unset, list[float]]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        operation_time (Union[Unset, int]):
-        operation_time_end_time (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_range (Union[Unset, list[datetime.datetime]]):
-        operation_time_gt (Union[Unset, int]):
-        operation_time_gte (Union[Unset, int]):
-        operation_time_in (Union[Unset, list[int]]):
-        operation_time_isnull (Union[Unset, bool]):
-        operation_time_lt (Union[Unset, int]):
-        operation_time_lte (Union[Unset, int]):
-        operation_time_ob_id (Union[Unset, int]):
-        operation_time_ob_id_in (Union[Unset, list[int]]):
-        operation_time_start_time (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_range (Union[Unset, list[datetime.datetime]]):
-        ordering (Union[Unset, str]):
-        platform_field (Union[Unset, int]):
-        platform_field_gt (Union[Unset, int]):
-        platform_field_gte (Union[Unset, int]):
-        platform_field_in (Union[Unset, list[int]]):
-        platform_field_isnull (Union[Unset, bool]):
-        platform_field_lt (Union[Unset, int]):
-        platform_field_lte (Union[Unset, int]):
-        platform_field_ob_id (Union[Unset, int]):
-        platform_field_ob_id_in (Union[Unset, list[int]]):
-        platform_field_uuid (Union[Unset, str]):
-        platform_field_uuid_in (Union[Unset, list[str]]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, MposListStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        child_operation (int | Unset):
+        child_operation_gt (int | Unset):
+        child_operation_gte (int | Unset):
+        child_operation_in (list[int] | Unset):
+        child_operation_isnull (bool | Unset):
+        child_operation_lt (int | Unset):
+        child_operation_lte (int | Unset):
+        limit (int | Unset):
+        location (int | Unset):
+        location_east_bound_longitude (float | Unset):
+        location_east_bound_longitude_gt (float | Unset):
+        location_east_bound_longitude_gte (float | Unset):
+        location_east_bound_longitude_lt (float | Unset):
+        location_east_bound_longitude_lte (float | Unset):
+        location_east_bound_longitude_range (list[float] | Unset):
+        location_gt (int | Unset):
+        location_gte (int | Unset):
+        location_in (list[int] | Unset):
+        location_isnull (bool | Unset):
+        location_lt (int | Unset):
+        location_lte (int | Unset):
+        location_north_bound_latitude (float | Unset):
+        location_north_bound_latitude_gt (float | Unset):
+        location_north_bound_latitude_gte (float | Unset):
+        location_north_bound_latitude_lt (float | Unset):
+        location_north_bound_latitude_lte (float | Unset):
+        location_north_bound_latitude_range (list[float] | Unset):
+        location_ob_id (int | Unset):
+        location_ob_id_in (list[int] | Unset):
+        location_south_bound_latitude (float | Unset):
+        location_south_bound_latitude_gt (float | Unset):
+        location_south_bound_latitude_gte (float | Unset):
+        location_south_bound_latitude_lt (float | Unset):
+        location_south_bound_latitude_lte (float | Unset):
+        location_south_bound_latitude_range (list[float] | Unset):
+        location_west_bound_longitude (float | Unset):
+        location_west_bound_longitude_gt (float | Unset):
+        location_west_bound_longitude_gte (float | Unset):
+        location_west_bound_longitude_lt (float | Unset):
+        location_west_bound_longitude_lte (float | Unset):
+        location_west_bound_longitude_range (list[float] | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        operation_time (int | Unset):
+        operation_time_end_time (datetime.datetime | Unset):
+        operation_time_end_time_gt (datetime.datetime | Unset):
+        operation_time_end_time_gte (datetime.datetime | Unset):
+        operation_time_end_time_lt (datetime.datetime | Unset):
+        operation_time_end_time_lte (datetime.datetime | Unset):
+        operation_time_end_time_range (list[datetime.datetime] | Unset):
+        operation_time_gt (int | Unset):
+        operation_time_gte (int | Unset):
+        operation_time_in (list[int] | Unset):
+        operation_time_isnull (bool | Unset):
+        operation_time_lt (int | Unset):
+        operation_time_lte (int | Unset):
+        operation_time_ob_id (int | Unset):
+        operation_time_ob_id_in (list[int] | Unset):
+        operation_time_start_time (datetime.datetime | Unset):
+        operation_time_start_time_gt (datetime.datetime | Unset):
+        operation_time_start_time_gte (datetime.datetime | Unset):
+        operation_time_start_time_lt (datetime.datetime | Unset):
+        operation_time_start_time_lte (datetime.datetime | Unset):
+        operation_time_start_time_range (list[datetime.datetime] | Unset):
+        ordering (str | Unset):
+        platform_field (int | Unset):
+        platform_field_gt (int | Unset):
+        platform_field_gte (int | Unset):
+        platform_field_in (list[int] | Unset):
+        platform_field_isnull (bool | Unset):
+        platform_field_lt (int | Unset):
+        platform_field_lte (int | Unset):
+        platform_field_ob_id (int | Unset):
+        platform_field_ob_id_in (list[int] | Unset):
+        platform_field_uuid (str | Unset):
+        platform_field_uuid_in (list[str] | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (MposListStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2494,380 +2494,380 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    child_operation: Union[Unset, int] = UNSET,
-    child_operation_gt: Union[Unset, int] = UNSET,
-    child_operation_gte: Union[Unset, int] = UNSET,
-    child_operation_in: Union[Unset, list[int]] = UNSET,
-    child_operation_isnull: Union[Unset, bool] = UNSET,
-    child_operation_lt: Union[Unset, int] = UNSET,
-    child_operation_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    location: Union[Unset, int] = UNSET,
-    location_east_bound_longitude: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    location_gt: Union[Unset, int] = UNSET,
-    location_gte: Union[Unset, int] = UNSET,
-    location_in: Union[Unset, list[int]] = UNSET,
-    location_isnull: Union[Unset, bool] = UNSET,
-    location_lt: Union[Unset, int] = UNSET,
-    location_lte: Union[Unset, int] = UNSET,
-    location_north_bound_latitude: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_ob_id: Union[Unset, int] = UNSET,
-    location_ob_id_in: Union[Unset, list[int]] = UNSET,
-    location_south_bound_latitude: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    location_south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    location_west_bound_longitude: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    location_west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    operation_time: Union[Unset, int] = UNSET,
-    operation_time_end_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_end_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    operation_time_gt: Union[Unset, int] = UNSET,
-    operation_time_gte: Union[Unset, int] = UNSET,
-    operation_time_in: Union[Unset, list[int]] = UNSET,
-    operation_time_isnull: Union[Unset, bool] = UNSET,
-    operation_time_lt: Union[Unset, int] = UNSET,
-    operation_time_lte: Union[Unset, int] = UNSET,
-    operation_time_ob_id: Union[Unset, int] = UNSET,
-    operation_time_ob_id_in: Union[Unset, list[int]] = UNSET,
-    operation_time_start_time: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_gte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lt: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_lte: Union[Unset, datetime.datetime] = UNSET,
-    operation_time_start_time_range: Union[Unset, list[datetime.datetime]] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform_field: Union[Unset, int] = UNSET,
-    platform_field_gt: Union[Unset, int] = UNSET,
-    platform_field_gte: Union[Unset, int] = UNSET,
-    platform_field_in: Union[Unset, list[int]] = UNSET,
-    platform_field_isnull: Union[Unset, bool] = UNSET,
-    platform_field_lt: Union[Unset, int] = UNSET,
-    platform_field_lte: Union[Unset, int] = UNSET,
-    platform_field_ob_id: Union[Unset, int] = UNSET,
-    platform_field_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_field_uuid: Union[Unset, str] = UNSET,
-    platform_field_uuid_in: Union[Unset, list[str]] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    status: Union[Unset, MposListStatus] = UNSET,
-    status_contains: Union[Unset, str] = UNSET,
-    status_endswith: Union[Unset, str] = UNSET,
-    status_gt: Union[Unset, str] = UNSET,
-    status_gte: Union[Unset, str] = UNSET,
-    status_icontains: Union[Unset, str] = UNSET,
-    status_iendswith: Union[Unset, str] = UNSET,
-    status_iexact: Union[Unset, str] = UNSET,
-    status_in: Union[Unset, list[str]] = UNSET,
-    status_iregex: Union[Unset, str] = UNSET,
-    status_isnull: Union[Unset, bool] = UNSET,
-    status_istartswith: Union[Unset, str] = UNSET,
-    status_lt: Union[Unset, str] = UNSET,
-    status_lte: Union[Unset, str] = UNSET,
-    status_range: Union[Unset, list[str]] = UNSET,
-    status_regex: Union[Unset, str] = UNSET,
-    status_startswith: Union[Unset, str] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMobilePlatformOperationReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    child_operation: int | Unset = UNSET,
+    child_operation_gt: int | Unset = UNSET,
+    child_operation_gte: int | Unset = UNSET,
+    child_operation_in: list[int] | Unset = UNSET,
+    child_operation_isnull: bool | Unset = UNSET,
+    child_operation_lt: int | Unset = UNSET,
+    child_operation_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    location: int | Unset = UNSET,
+    location_east_bound_longitude: float | Unset = UNSET,
+    location_east_bound_longitude_gt: float | Unset = UNSET,
+    location_east_bound_longitude_gte: float | Unset = UNSET,
+    location_east_bound_longitude_lt: float | Unset = UNSET,
+    location_east_bound_longitude_lte: float | Unset = UNSET,
+    location_east_bound_longitude_range: list[float] | Unset = UNSET,
+    location_gt: int | Unset = UNSET,
+    location_gte: int | Unset = UNSET,
+    location_in: list[int] | Unset = UNSET,
+    location_isnull: bool | Unset = UNSET,
+    location_lt: int | Unset = UNSET,
+    location_lte: int | Unset = UNSET,
+    location_north_bound_latitude: float | Unset = UNSET,
+    location_north_bound_latitude_gt: float | Unset = UNSET,
+    location_north_bound_latitude_gte: float | Unset = UNSET,
+    location_north_bound_latitude_lt: float | Unset = UNSET,
+    location_north_bound_latitude_lte: float | Unset = UNSET,
+    location_north_bound_latitude_range: list[float] | Unset = UNSET,
+    location_ob_id: int | Unset = UNSET,
+    location_ob_id_in: list[int] | Unset = UNSET,
+    location_south_bound_latitude: float | Unset = UNSET,
+    location_south_bound_latitude_gt: float | Unset = UNSET,
+    location_south_bound_latitude_gte: float | Unset = UNSET,
+    location_south_bound_latitude_lt: float | Unset = UNSET,
+    location_south_bound_latitude_lte: float | Unset = UNSET,
+    location_south_bound_latitude_range: list[float] | Unset = UNSET,
+    location_west_bound_longitude: float | Unset = UNSET,
+    location_west_bound_longitude_gt: float | Unset = UNSET,
+    location_west_bound_longitude_gte: float | Unset = UNSET,
+    location_west_bound_longitude_lt: float | Unset = UNSET,
+    location_west_bound_longitude_lte: float | Unset = UNSET,
+    location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    operation_time: int | Unset = UNSET,
+    operation_time_end_time: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_end_time_range: list[datetime.datetime] | Unset = UNSET,
+    operation_time_gt: int | Unset = UNSET,
+    operation_time_gte: int | Unset = UNSET,
+    operation_time_in: list[int] | Unset = UNSET,
+    operation_time_isnull: bool | Unset = UNSET,
+    operation_time_lt: int | Unset = UNSET,
+    operation_time_lte: int | Unset = UNSET,
+    operation_time_ob_id: int | Unset = UNSET,
+    operation_time_ob_id_in: list[int] | Unset = UNSET,
+    operation_time_start_time: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_gte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lt: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_lte: datetime.datetime | Unset = UNSET,
+    operation_time_start_time_range: list[datetime.datetime] | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform_field: int | Unset = UNSET,
+    platform_field_gt: int | Unset = UNSET,
+    platform_field_gte: int | Unset = UNSET,
+    platform_field_in: list[int] | Unset = UNSET,
+    platform_field_isnull: bool | Unset = UNSET,
+    platform_field_lt: int | Unset = UNSET,
+    platform_field_lte: int | Unset = UNSET,
+    platform_field_ob_id: int | Unset = UNSET,
+    platform_field_ob_id_in: list[int] | Unset = UNSET,
+    platform_field_uuid: str | Unset = UNSET,
+    platform_field_uuid_in: list[str] | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    status: MposListStatus | Unset = UNSET,
+    status_contains: str | Unset = UNSET,
+    status_endswith: str | Unset = UNSET,
+    status_gt: str | Unset = UNSET,
+    status_gte: str | Unset = UNSET,
+    status_icontains: str | Unset = UNSET,
+    status_iendswith: str | Unset = UNSET,
+    status_iexact: str | Unset = UNSET,
+    status_in: list[str] | Unset = UNSET,
+    status_iregex: str | Unset = UNSET,
+    status_isnull: bool | Unset = UNSET,
+    status_istartswith: str | Unset = UNSET,
+    status_lt: str | Unset = UNSET,
+    status_lte: str | Unset = UNSET,
+    status_range: list[str] | Unset = UNSET,
+    status_regex: str | Unset = UNSET,
+    status_startswith: str | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedMobilePlatformOperationReadList | None:
     """Get a list of Mobile Platform Operation objects.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        child_operation (Union[Unset, int]):
-        child_operation_gt (Union[Unset, int]):
-        child_operation_gte (Union[Unset, int]):
-        child_operation_in (Union[Unset, list[int]]):
-        child_operation_isnull (Union[Unset, bool]):
-        child_operation_lt (Union[Unset, int]):
-        child_operation_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        location (Union[Unset, int]):
-        location_east_bound_longitude (Union[Unset, float]):
-        location_east_bound_longitude_gt (Union[Unset, float]):
-        location_east_bound_longitude_gte (Union[Unset, float]):
-        location_east_bound_longitude_lt (Union[Unset, float]):
-        location_east_bound_longitude_lte (Union[Unset, float]):
-        location_east_bound_longitude_range (Union[Unset, list[float]]):
-        location_gt (Union[Unset, int]):
-        location_gte (Union[Unset, int]):
-        location_in (Union[Unset, list[int]]):
-        location_isnull (Union[Unset, bool]):
-        location_lt (Union[Unset, int]):
-        location_lte (Union[Unset, int]):
-        location_north_bound_latitude (Union[Unset, float]):
-        location_north_bound_latitude_gt (Union[Unset, float]):
-        location_north_bound_latitude_gte (Union[Unset, float]):
-        location_north_bound_latitude_lt (Union[Unset, float]):
-        location_north_bound_latitude_lte (Union[Unset, float]):
-        location_north_bound_latitude_range (Union[Unset, list[float]]):
-        location_ob_id (Union[Unset, int]):
-        location_ob_id_in (Union[Unset, list[int]]):
-        location_south_bound_latitude (Union[Unset, float]):
-        location_south_bound_latitude_gt (Union[Unset, float]):
-        location_south_bound_latitude_gte (Union[Unset, float]):
-        location_south_bound_latitude_lt (Union[Unset, float]):
-        location_south_bound_latitude_lte (Union[Unset, float]):
-        location_south_bound_latitude_range (Union[Unset, list[float]]):
-        location_west_bound_longitude (Union[Unset, float]):
-        location_west_bound_longitude_gt (Union[Unset, float]):
-        location_west_bound_longitude_gte (Union[Unset, float]):
-        location_west_bound_longitude_lt (Union[Unset, float]):
-        location_west_bound_longitude_lte (Union[Unset, float]):
-        location_west_bound_longitude_range (Union[Unset, list[float]]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        operation_time (Union[Unset, int]):
-        operation_time_end_time (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_end_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_end_time_range (Union[Unset, list[datetime.datetime]]):
-        operation_time_gt (Union[Unset, int]):
-        operation_time_gte (Union[Unset, int]):
-        operation_time_in (Union[Unset, list[int]]):
-        operation_time_isnull (Union[Unset, bool]):
-        operation_time_lt (Union[Unset, int]):
-        operation_time_lte (Union[Unset, int]):
-        operation_time_ob_id (Union[Unset, int]):
-        operation_time_ob_id_in (Union[Unset, list[int]]):
-        operation_time_start_time (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_gte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lt (Union[Unset, datetime.datetime]):
-        operation_time_start_time_lte (Union[Unset, datetime.datetime]):
-        operation_time_start_time_range (Union[Unset, list[datetime.datetime]]):
-        ordering (Union[Unset, str]):
-        platform_field (Union[Unset, int]):
-        platform_field_gt (Union[Unset, int]):
-        platform_field_gte (Union[Unset, int]):
-        platform_field_in (Union[Unset, list[int]]):
-        platform_field_isnull (Union[Unset, bool]):
-        platform_field_lt (Union[Unset, int]):
-        platform_field_lte (Union[Unset, int]):
-        platform_field_ob_id (Union[Unset, int]):
-        platform_field_ob_id_in (Union[Unset, list[int]]):
-        platform_field_uuid (Union[Unset, str]):
-        platform_field_uuid_in (Union[Unset, list[str]]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        status (Union[Unset, MposListStatus]):
-        status_contains (Union[Unset, str]):
-        status_endswith (Union[Unset, str]):
-        status_gt (Union[Unset, str]):
-        status_gte (Union[Unset, str]):
-        status_icontains (Union[Unset, str]):
-        status_iendswith (Union[Unset, str]):
-        status_iexact (Union[Unset, str]):
-        status_in (Union[Unset, list[str]]):
-        status_iregex (Union[Unset, str]):
-        status_isnull (Union[Unset, bool]):
-        status_istartswith (Union[Unset, str]):
-        status_lt (Union[Unset, str]):
-        status_lte (Union[Unset, str]):
-        status_range (Union[Unset, list[str]]):
-        status_regex (Union[Unset, str]):
-        status_startswith (Union[Unset, str]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        child_operation (int | Unset):
+        child_operation_gt (int | Unset):
+        child_operation_gte (int | Unset):
+        child_operation_in (list[int] | Unset):
+        child_operation_isnull (bool | Unset):
+        child_operation_lt (int | Unset):
+        child_operation_lte (int | Unset):
+        limit (int | Unset):
+        location (int | Unset):
+        location_east_bound_longitude (float | Unset):
+        location_east_bound_longitude_gt (float | Unset):
+        location_east_bound_longitude_gte (float | Unset):
+        location_east_bound_longitude_lt (float | Unset):
+        location_east_bound_longitude_lte (float | Unset):
+        location_east_bound_longitude_range (list[float] | Unset):
+        location_gt (int | Unset):
+        location_gte (int | Unset):
+        location_in (list[int] | Unset):
+        location_isnull (bool | Unset):
+        location_lt (int | Unset):
+        location_lte (int | Unset):
+        location_north_bound_latitude (float | Unset):
+        location_north_bound_latitude_gt (float | Unset):
+        location_north_bound_latitude_gte (float | Unset):
+        location_north_bound_latitude_lt (float | Unset):
+        location_north_bound_latitude_lte (float | Unset):
+        location_north_bound_latitude_range (list[float] | Unset):
+        location_ob_id (int | Unset):
+        location_ob_id_in (list[int] | Unset):
+        location_south_bound_latitude (float | Unset):
+        location_south_bound_latitude_gt (float | Unset):
+        location_south_bound_latitude_gte (float | Unset):
+        location_south_bound_latitude_lt (float | Unset):
+        location_south_bound_latitude_lte (float | Unset):
+        location_south_bound_latitude_range (list[float] | Unset):
+        location_west_bound_longitude (float | Unset):
+        location_west_bound_longitude_gt (float | Unset):
+        location_west_bound_longitude_gte (float | Unset):
+        location_west_bound_longitude_lt (float | Unset):
+        location_west_bound_longitude_lte (float | Unset):
+        location_west_bound_longitude_range (list[float] | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        operation_time (int | Unset):
+        operation_time_end_time (datetime.datetime | Unset):
+        operation_time_end_time_gt (datetime.datetime | Unset):
+        operation_time_end_time_gte (datetime.datetime | Unset):
+        operation_time_end_time_lt (datetime.datetime | Unset):
+        operation_time_end_time_lte (datetime.datetime | Unset):
+        operation_time_end_time_range (list[datetime.datetime] | Unset):
+        operation_time_gt (int | Unset):
+        operation_time_gte (int | Unset):
+        operation_time_in (list[int] | Unset):
+        operation_time_isnull (bool | Unset):
+        operation_time_lt (int | Unset):
+        operation_time_lte (int | Unset):
+        operation_time_ob_id (int | Unset):
+        operation_time_ob_id_in (list[int] | Unset):
+        operation_time_start_time (datetime.datetime | Unset):
+        operation_time_start_time_gt (datetime.datetime | Unset):
+        operation_time_start_time_gte (datetime.datetime | Unset):
+        operation_time_start_time_lt (datetime.datetime | Unset):
+        operation_time_start_time_lte (datetime.datetime | Unset):
+        operation_time_start_time_range (list[datetime.datetime] | Unset):
+        ordering (str | Unset):
+        platform_field (int | Unset):
+        platform_field_gt (int | Unset):
+        platform_field_gte (int | Unset):
+        platform_field_in (list[int] | Unset):
+        platform_field_isnull (bool | Unset):
+        platform_field_lt (int | Unset):
+        platform_field_lte (int | Unset):
+        platform_field_ob_id (int | Unset):
+        platform_field_ob_id_in (list[int] | Unset):
+        platform_field_uuid (str | Unset):
+        platform_field_uuid_in (list[str] | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        status (MposListStatus | Unset):
+        status_contains (str | Unset):
+        status_endswith (str | Unset):
+        status_gt (str | Unset):
+        status_gte (str | Unset):
+        status_icontains (str | Unset):
+        status_iendswith (str | Unset):
+        status_iexact (str | Unset):
+        status_in (list[str] | Unset):
+        status_iregex (str | Unset):
+        status_isnull (bool | Unset):
+        status_istartswith (str | Unset):
+        status_lt (str | Unset):
+        status_lte (str | Unset):
+        status_range (list[str] | Unset):
+        status_regex (str | Unset):
+        status_startswith (str | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

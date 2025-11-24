@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -37,74 +39,74 @@ class ObservationWriteRequest:
                 * `historicalArchive` - Historical Archive (past)
                 * `retired` - Retired (past)
                 * `deprecated` - Deprecated (past)
-            abstract (Union[Unset, str]):
-            creation_date (Union[None, Unset, datetime.datetime]):
-            last_updated_date (Union[None, Unset, datetime.datetime]):
-            latest_data_update_time (Union[None, Unset, datetime.datetime]):
-            update_frequency (Union[BlankEnum, Unset, UpdateFrequencyEnum]):
-            data_lineage (Union[Unset, str]):
-            removed_data_reason (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            publication_state (Union[BlankEnum, PublicationStateCbbEnum, Unset]):
-            non_geographic_flag (Union[Unset, bool]):
-            dont_harvest_from_projects (Union[Unset, bool]):
-            geographic_extent (Union[None, Unset, int]):
-            language (Union[BlankEnum, LanguageEnum, Unset]):
-            resolution (Union[Unset, str]):
-            vertical_extent (Union[None, Unset, int]):
-            result_field (Union[None, Unset, int]):
-            time_period (Union[None, Unset, int]):
-            result_quality (Union[None, Unset, int]):
-            data_published_time (Union[None, Unset, datetime.datetime]):
-            doi_published_time (Union[None, Unset, datetime.datetime]):
-            removed_data_time (Union[None, Unset, datetime.datetime]):
-            valid_time_period (Union[None, Unset, int]):
-            procedure_acquisition (Union[None, Unset, int]):
-            procedure_computation (Union[None, Unset, int]):
-            procedure_composite_process (Union[None, Unset, int]):
-            image_details (Union[Unset, list[int]]):
-            discovery_keywords (Union[Unset, list[int]]):
-            permissions (Union[Unset, list[int]]):
-            projects (Union[Unset, list[int]]):
-            inspire_theme (Union[Unset, list[int]]):
-            topic_category (Union[Unset, list[int]]):
-            vocabulary_keywords (Union[Unset, list[int]]):
+            abstract (str | Unset):
+            creation_date (datetime.datetime | None | Unset):
+            last_updated_date (datetime.datetime | None | Unset):
+            latest_data_update_time (datetime.datetime | None | Unset):
+            update_frequency (BlankEnum | Unset | UpdateFrequencyEnum):
+            data_lineage (str | Unset):
+            removed_data_reason (str | Unset):
+            keywords (str | Unset):
+            publication_state (BlankEnum | PublicationStateCbbEnum | Unset):
+            non_geographic_flag (bool | Unset):
+            dont_harvest_from_projects (bool | Unset):
+            geographic_extent (int | None | Unset):
+            language (BlankEnum | LanguageEnum | Unset):
+            resolution (str | Unset):
+            vertical_extent (int | None | Unset):
+            result_field (int | None | Unset):
+            time_period (int | None | Unset):
+            result_quality (int | None | Unset):
+            data_published_time (datetime.datetime | None | Unset):
+            doi_published_time (datetime.datetime | None | Unset):
+            removed_data_time (datetime.datetime | None | Unset):
+            valid_time_period (int | None | Unset):
+            procedure_acquisition (int | None | Unset):
+            procedure_computation (int | None | Unset):
+            procedure_composite_process (int | None | Unset):
+            image_details (list[int] | Unset):
+            discovery_keywords (list[int] | Unset):
+            permissions (list[int] | Unset):
+            projects (list[int] | Unset):
+            inspire_theme (list[int] | Unset):
+            topic_category (list[int] | Unset):
+            vocabulary_keywords (list[int] | Unset):
     """
 
     title: str
     status: StatusEnum
-    abstract: Union[Unset, str] = UNSET
-    creation_date: Union[None, Unset, datetime.datetime] = UNSET
-    last_updated_date: Union[None, Unset, datetime.datetime] = UNSET
-    latest_data_update_time: Union[None, Unset, datetime.datetime] = UNSET
-    update_frequency: Union[BlankEnum, Unset, UpdateFrequencyEnum] = UNSET
-    data_lineage: Union[Unset, str] = UNSET
-    removed_data_reason: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    publication_state: Union[BlankEnum, PublicationStateCbbEnum, Unset] = UNSET
-    non_geographic_flag: Union[Unset, bool] = UNSET
-    dont_harvest_from_projects: Union[Unset, bool] = UNSET
-    geographic_extent: Union[None, Unset, int] = UNSET
-    language: Union[BlankEnum, LanguageEnum, Unset] = UNSET
-    resolution: Union[Unset, str] = UNSET
-    vertical_extent: Union[None, Unset, int] = UNSET
-    result_field: Union[None, Unset, int] = UNSET
-    time_period: Union[None, Unset, int] = UNSET
-    result_quality: Union[None, Unset, int] = UNSET
-    data_published_time: Union[None, Unset, datetime.datetime] = UNSET
-    doi_published_time: Union[None, Unset, datetime.datetime] = UNSET
-    removed_data_time: Union[None, Unset, datetime.datetime] = UNSET
-    valid_time_period: Union[None, Unset, int] = UNSET
-    procedure_acquisition: Union[None, Unset, int] = UNSET
-    procedure_computation: Union[None, Unset, int] = UNSET
-    procedure_composite_process: Union[None, Unset, int] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
-    discovery_keywords: Union[Unset, list[int]] = UNSET
-    permissions: Union[Unset, list[int]] = UNSET
-    projects: Union[Unset, list[int]] = UNSET
-    inspire_theme: Union[Unset, list[int]] = UNSET
-    topic_category: Union[Unset, list[int]] = UNSET
-    vocabulary_keywords: Union[Unset, list[int]] = UNSET
+    abstract: str | Unset = UNSET
+    creation_date: datetime.datetime | None | Unset = UNSET
+    last_updated_date: datetime.datetime | None | Unset = UNSET
+    latest_data_update_time: datetime.datetime | None | Unset = UNSET
+    update_frequency: BlankEnum | Unset | UpdateFrequencyEnum = UNSET
+    data_lineage: str | Unset = UNSET
+    removed_data_reason: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    publication_state: BlankEnum | PublicationStateCbbEnum | Unset = UNSET
+    non_geographic_flag: bool | Unset = UNSET
+    dont_harvest_from_projects: bool | Unset = UNSET
+    geographic_extent: int | None | Unset = UNSET
+    language: BlankEnum | LanguageEnum | Unset = UNSET
+    resolution: str | Unset = UNSET
+    vertical_extent: int | None | Unset = UNSET
+    result_field: int | None | Unset = UNSET
+    time_period: int | None | Unset = UNSET
+    result_quality: int | None | Unset = UNSET
+    data_published_time: datetime.datetime | None | Unset = UNSET
+    doi_published_time: datetime.datetime | None | Unset = UNSET
+    removed_data_time: datetime.datetime | None | Unset = UNSET
+    valid_time_period: int | None | Unset = UNSET
+    procedure_acquisition: int | None | Unset = UNSET
+    procedure_computation: int | None | Unset = UNSET
+    procedure_composite_process: int | None | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
+    discovery_keywords: list[int] | Unset = UNSET
+    permissions: list[int] | Unset = UNSET
+    projects: list[int] | Unset = UNSET
+    inspire_theme: list[int] | Unset = UNSET
+    topic_category: list[int] | Unset = UNSET
+    vocabulary_keywords: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -114,7 +116,7 @@ class ObservationWriteRequest:
 
         abstract = self.abstract
 
-        creation_date: Union[None, Unset, str]
+        creation_date: None | str | Unset
         if isinstance(self.creation_date, Unset):
             creation_date = UNSET
         elif isinstance(self.creation_date, datetime.datetime):
@@ -122,7 +124,7 @@ class ObservationWriteRequest:
         else:
             creation_date = self.creation_date
 
-        last_updated_date: Union[None, Unset, str]
+        last_updated_date: None | str | Unset
         if isinstance(self.last_updated_date, Unset):
             last_updated_date = UNSET
         elif isinstance(self.last_updated_date, datetime.datetime):
@@ -130,7 +132,7 @@ class ObservationWriteRequest:
         else:
             last_updated_date = self.last_updated_date
 
-        latest_data_update_time: Union[None, Unset, str]
+        latest_data_update_time: None | str | Unset
         if isinstance(self.latest_data_update_time, Unset):
             latest_data_update_time = UNSET
         elif isinstance(self.latest_data_update_time, datetime.datetime):
@@ -138,7 +140,7 @@ class ObservationWriteRequest:
         else:
             latest_data_update_time = self.latest_data_update_time
 
-        update_frequency: Union[Unset, str]
+        update_frequency: str | Unset
         if isinstance(self.update_frequency, Unset):
             update_frequency = UNSET
         elif isinstance(self.update_frequency, UpdateFrequencyEnum):
@@ -152,7 +154,7 @@ class ObservationWriteRequest:
 
         keywords = self.keywords
 
-        publication_state: Union[Unset, str]
+        publication_state: str | Unset
         if isinstance(self.publication_state, Unset):
             publication_state = UNSET
         elif isinstance(self.publication_state, PublicationStateCbbEnum):
@@ -164,13 +166,13 @@ class ObservationWriteRequest:
 
         dont_harvest_from_projects = self.dont_harvest_from_projects
 
-        geographic_extent: Union[None, Unset, int]
+        geographic_extent: int | None | Unset
         if isinstance(self.geographic_extent, Unset):
             geographic_extent = UNSET
         else:
             geographic_extent = self.geographic_extent
 
-        language: Union[Unset, str]
+        language: str | Unset
         if isinstance(self.language, Unset):
             language = UNSET
         elif isinstance(self.language, LanguageEnum):
@@ -180,31 +182,31 @@ class ObservationWriteRequest:
 
         resolution = self.resolution
 
-        vertical_extent: Union[None, Unset, int]
+        vertical_extent: int | None | Unset
         if isinstance(self.vertical_extent, Unset):
             vertical_extent = UNSET
         else:
             vertical_extent = self.vertical_extent
 
-        result_field: Union[None, Unset, int]
+        result_field: int | None | Unset
         if isinstance(self.result_field, Unset):
             result_field = UNSET
         else:
             result_field = self.result_field
 
-        time_period: Union[None, Unset, int]
+        time_period: int | None | Unset
         if isinstance(self.time_period, Unset):
             time_period = UNSET
         else:
             time_period = self.time_period
 
-        result_quality: Union[None, Unset, int]
+        result_quality: int | None | Unset
         if isinstance(self.result_quality, Unset):
             result_quality = UNSET
         else:
             result_quality = self.result_quality
 
-        data_published_time: Union[None, Unset, str]
+        data_published_time: None | str | Unset
         if isinstance(self.data_published_time, Unset):
             data_published_time = UNSET
         elif isinstance(self.data_published_time, datetime.datetime):
@@ -212,7 +214,7 @@ class ObservationWriteRequest:
         else:
             data_published_time = self.data_published_time
 
-        doi_published_time: Union[None, Unset, str]
+        doi_published_time: None | str | Unset
         if isinstance(self.doi_published_time, Unset):
             doi_published_time = UNSET
         elif isinstance(self.doi_published_time, datetime.datetime):
@@ -220,7 +222,7 @@ class ObservationWriteRequest:
         else:
             doi_published_time = self.doi_published_time
 
-        removed_data_time: Union[None, Unset, str]
+        removed_data_time: None | str | Unset
         if isinstance(self.removed_data_time, Unset):
             removed_data_time = UNSET
         elif isinstance(self.removed_data_time, datetime.datetime):
@@ -228,55 +230,55 @@ class ObservationWriteRequest:
         else:
             removed_data_time = self.removed_data_time
 
-        valid_time_period: Union[None, Unset, int]
+        valid_time_period: int | None | Unset
         if isinstance(self.valid_time_period, Unset):
             valid_time_period = UNSET
         else:
             valid_time_period = self.valid_time_period
 
-        procedure_acquisition: Union[None, Unset, int]
+        procedure_acquisition: int | None | Unset
         if isinstance(self.procedure_acquisition, Unset):
             procedure_acquisition = UNSET
         else:
             procedure_acquisition = self.procedure_acquisition
 
-        procedure_computation: Union[None, Unset, int]
+        procedure_computation: int | None | Unset
         if isinstance(self.procedure_computation, Unset):
             procedure_computation = UNSET
         else:
             procedure_computation = self.procedure_computation
 
-        procedure_composite_process: Union[None, Unset, int]
+        procedure_composite_process: int | None | Unset
         if isinstance(self.procedure_composite_process, Unset):
             procedure_composite_process = UNSET
         else:
             procedure_composite_process = self.procedure_composite_process
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
-        discovery_keywords: Union[Unset, list[int]] = UNSET
+        discovery_keywords: list[int] | Unset = UNSET
         if not isinstance(self.discovery_keywords, Unset):
             discovery_keywords = ",".join(map(str, self.discovery_keywords))
 
-        permissions: Union[Unset, list[int]] = UNSET
+        permissions: list[int] | Unset = UNSET
         if not isinstance(self.permissions, Unset):
             permissions = ",".join(map(str, self.permissions))
 
-        projects: Union[Unset, list[int]] = UNSET
+        projects: list[int] | Unset = UNSET
         if not isinstance(self.projects, Unset):
             projects = ",".join(map(str, self.projects))
 
-        inspire_theme: Union[Unset, list[int]] = UNSET
+        inspire_theme: list[int] | Unset = UNSET
         if not isinstance(self.inspire_theme, Unset):
             inspire_theme = ",".join(map(str, self.inspire_theme))
 
-        topic_category: Union[Unset, list[int]] = UNSET
+        topic_category: list[int] | Unset = UNSET
         if not isinstance(self.topic_category, Unset):
             topic_category = ",".join(map(str, self.topic_category))
 
-        vocabulary_keywords: Union[Unset, list[int]] = UNSET
+        vocabulary_keywords: list[int] | Unset = UNSET
         if not isinstance(self.vocabulary_keywords, Unset):
             vocabulary_keywords = ",".join(map(str, self.vocabulary_keywords))
 
@@ -364,7 +366,7 @@ class ObservationWriteRequest:
 
         abstract = d.pop("abstract", UNSET)
 
-        def _parse_creation_date(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_creation_date(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -375,13 +377,13 @@ class ObservationWriteRequest:
                 creation_date_type_0 = isoparse(data)
 
                 return creation_date_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         creation_date = _parse_creation_date(d.pop("creationDate", UNSET))
 
-        def _parse_last_updated_date(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_last_updated_date(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -392,13 +394,13 @@ class ObservationWriteRequest:
                 last_updated_date_type_0 = isoparse(data)
 
                 return last_updated_date_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         last_updated_date = _parse_last_updated_date(d.pop("lastUpdatedDate", UNSET))
 
-        def _parse_latest_data_update_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_latest_data_update_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -409,13 +411,13 @@ class ObservationWriteRequest:
                 latest_data_update_time_type_0 = isoparse(data)
 
                 return latest_data_update_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         latest_data_update_time = _parse_latest_data_update_time(d.pop("latestDataUpdateTime", UNSET))
 
-        def _parse_update_frequency(data: object) -> Union[BlankEnum, Unset, UpdateFrequencyEnum]:
+        def _parse_update_frequency(data: object) -> BlankEnum | Unset | UpdateFrequencyEnum:
             if isinstance(data, Unset):
                 return data
             try:
@@ -424,7 +426,7 @@ class ObservationWriteRequest:
                 update_frequency_type_0 = UpdateFrequencyEnum(data)
 
                 return update_frequency_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -440,7 +442,7 @@ class ObservationWriteRequest:
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationStateCbbEnum, Unset]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -449,7 +451,7 @@ class ObservationWriteRequest:
                 publication_state_type_0 = PublicationStateCbbEnum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -463,16 +465,16 @@ class ObservationWriteRequest:
 
         dont_harvest_from_projects = d.pop("dontHarvestFromProjects", UNSET)
 
-        def _parse_geographic_extent(data: object) -> Union[None, Unset, int]:
+        def _parse_geographic_extent(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         geographic_extent = _parse_geographic_extent(d.pop("geographicExtent", UNSET))
 
-        def _parse_language(data: object) -> Union[BlankEnum, LanguageEnum, Unset]:
+        def _parse_language(data: object) -> BlankEnum | LanguageEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -481,7 +483,7 @@ class ObservationWriteRequest:
                 language_type_0 = LanguageEnum(data)
 
                 return language_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -493,43 +495,43 @@ class ObservationWriteRequest:
 
         resolution = d.pop("resolution", UNSET)
 
-        def _parse_vertical_extent(data: object) -> Union[None, Unset, int]:
+        def _parse_vertical_extent(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         vertical_extent = _parse_vertical_extent(d.pop("verticalExtent", UNSET))
 
-        def _parse_result_field(data: object) -> Union[None, Unset, int]:
+        def _parse_result_field(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         result_field = _parse_result_field(d.pop("result_field", UNSET))
 
-        def _parse_time_period(data: object) -> Union[None, Unset, int]:
+        def _parse_time_period(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         time_period = _parse_time_period(d.pop("timePeriod", UNSET))
 
-        def _parse_result_quality(data: object) -> Union[None, Unset, int]:
+        def _parse_result_quality(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         result_quality = _parse_result_quality(d.pop("resultQuality", UNSET))
 
-        def _parse_data_published_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_data_published_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -540,13 +542,13 @@ class ObservationWriteRequest:
                 data_published_time_type_0 = isoparse(data)
 
                 return data_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         data_published_time = _parse_data_published_time(d.pop("dataPublishedTime", UNSET))
 
-        def _parse_doi_published_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_doi_published_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -557,13 +559,13 @@ class ObservationWriteRequest:
                 doi_published_time_type_0 = isoparse(data)
 
                 return doi_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         doi_published_time = _parse_doi_published_time(d.pop("doiPublishedTime", UNSET))
 
-        def _parse_removed_data_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_removed_data_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -574,45 +576,45 @@ class ObservationWriteRequest:
                 removed_data_time_type_0 = isoparse(data)
 
                 return removed_data_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         removed_data_time = _parse_removed_data_time(d.pop("removedDataTime", UNSET))
 
-        def _parse_valid_time_period(data: object) -> Union[None, Unset, int]:
+        def _parse_valid_time_period(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         valid_time_period = _parse_valid_time_period(d.pop("validTimePeriod", UNSET))
 
-        def _parse_procedure_acquisition(data: object) -> Union[None, Unset, int]:
+        def _parse_procedure_acquisition(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         procedure_acquisition = _parse_procedure_acquisition(d.pop("procedureAcquisition", UNSET))
 
-        def _parse_procedure_computation(data: object) -> Union[None, Unset, int]:
+        def _parse_procedure_computation(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         procedure_computation = _parse_procedure_computation(d.pop("procedureComputation", UNSET))
 
-        def _parse_procedure_composite_process(data: object) -> Union[None, Unset, int]:
+        def _parse_procedure_composite_process(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         procedure_composite_process = _parse_procedure_composite_process(d.pop("procedureCompositeProcess", UNSET))
 

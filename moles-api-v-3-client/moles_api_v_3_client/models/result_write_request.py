@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,31 +22,31 @@ class ResultWriteRequest:
 
         Attributes:
             data_path (str):
-            curation_category (Union[BlankEnum, CurationCategoryEnum, Unset]):
-            number_of_files (Union[Unset, int]):
-            volume (Union[Unset, int]):
-            file_format (Union[None, Unset, str]):
-            storage_status (Union[Unset, StorageStatusEnum]): * `online` - online
+            curation_category (BlankEnum | CurationCategoryEnum | Unset):
+            number_of_files (int | Unset):
+            volume (int | Unset):
+            file_format (None | str | Unset):
+            storage_status (StorageStatusEnum | Unset): * `online` - online
                 * `offline` - offline
-            storage_location (Union[Unset, StorageLocationEnum]): * `internal` - internal
+            storage_location (StorageLocationEnum | Unset): * `internal` - internal
                 * `external` - external
-            old_data_path (Union[Unset, list[int]]):
+            old_data_path (list[int] | Unset):
     """
 
     data_path: str
-    curation_category: Union[BlankEnum, CurationCategoryEnum, Unset] = UNSET
-    number_of_files: Union[Unset, int] = UNSET
-    volume: Union[Unset, int] = UNSET
-    file_format: Union[None, Unset, str] = UNSET
-    storage_status: Union[Unset, StorageStatusEnum] = UNSET
-    storage_location: Union[Unset, StorageLocationEnum] = UNSET
-    old_data_path: Union[Unset, list[int]] = UNSET
+    curation_category: BlankEnum | CurationCategoryEnum | Unset = UNSET
+    number_of_files: int | Unset = UNSET
+    volume: int | Unset = UNSET
+    file_format: None | str | Unset = UNSET
+    storage_status: StorageStatusEnum | Unset = UNSET
+    storage_location: StorageLocationEnum | Unset = UNSET
+    old_data_path: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         data_path = self.data_path
 
-        curation_category: Union[Unset, str]
+        curation_category: str | Unset
         if isinstance(self.curation_category, Unset):
             curation_category = UNSET
         elif isinstance(self.curation_category, CurationCategoryEnum):
@@ -56,21 +58,21 @@ class ResultWriteRequest:
 
         volume = self.volume
 
-        file_format: Union[None, Unset, str]
+        file_format: None | str | Unset
         if isinstance(self.file_format, Unset):
             file_format = UNSET
         else:
             file_format = self.file_format
 
-        storage_status: Union[Unset, str] = UNSET
+        storage_status: str | Unset = UNSET
         if not isinstance(self.storage_status, Unset):
             storage_status = self.storage_status.value
 
-        storage_location: Union[Unset, str] = UNSET
+        storage_location: str | Unset = UNSET
         if not isinstance(self.storage_location, Unset):
             storage_location = self.storage_location.value
 
-        old_data_path: Union[Unset, list[int]] = UNSET
+        old_data_path: list[int] | Unset = UNSET
         if not isinstance(self.old_data_path, Unset):
             old_data_path = ",".join(map(str, self.old_data_path))
 
@@ -103,7 +105,7 @@ class ResultWriteRequest:
         d = dict(src_dict)
         data_path = d.pop("dataPath")
 
-        def _parse_curation_category(data: object) -> Union[BlankEnum, CurationCategoryEnum, Unset]:
+        def _parse_curation_category(data: object) -> BlankEnum | CurationCategoryEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -112,7 +114,7 @@ class ResultWriteRequest:
                 curation_category_type_0 = CurationCategoryEnum(data)
 
                 return curation_category_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -126,24 +128,24 @@ class ResultWriteRequest:
 
         volume = d.pop("volume", UNSET)
 
-        def _parse_file_format(data: object) -> Union[None, Unset, str]:
+        def _parse_file_format(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         file_format = _parse_file_format(d.pop("fileFormat", UNSET))
 
         _storage_status = d.pop("storageStatus", UNSET)
-        storage_status: Union[Unset, StorageStatusEnum]
+        storage_status: StorageStatusEnum | Unset
         if isinstance(_storage_status, Unset):
             storage_status = UNSET
         else:
             storage_status = StorageStatusEnum(_storage_status)
 
         _storage_location = d.pop("storageLocation", UNSET)
-        storage_location: Union[Unset, StorageLocationEnum]
+        storage_location: StorageLocationEnum | Unset
         if isinstance(_storage_location, Unset):
             storage_location = UNSET
         else:

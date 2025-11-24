@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -21,8 +21,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[InstrumentPlatformPairRead]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> InstrumentPlatformPairRead | None:
     if response.status_code == 200:
         response_200 = InstrumentPlatformPairRead.from_dict(response.json())
 
@@ -35,7 +35,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[InstrumentPlatformPairRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -81,7 +81,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairRead]:
+) -> InstrumentPlatformPairRead | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -138,7 +138,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[InstrumentPlatformPairRead]:
+) -> InstrumentPlatformPairRead | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via

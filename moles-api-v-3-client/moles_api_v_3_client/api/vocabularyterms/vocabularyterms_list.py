@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,78 +12,78 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    resolved_term: Union[Unset, str] = UNSET,
-    resolved_term_contains: Union[Unset, str] = UNSET,
-    resolved_term_endswith: Union[Unset, str] = UNSET,
-    resolved_term_gt: Union[Unset, str] = UNSET,
-    resolved_term_gte: Union[Unset, str] = UNSET,
-    resolved_term_icontains: Union[Unset, str] = UNSET,
-    resolved_term_iendswith: Union[Unset, str] = UNSET,
-    resolved_term_iexact: Union[Unset, str] = UNSET,
-    resolved_term_in: Union[Unset, list[str]] = UNSET,
-    resolved_term_iregex: Union[Unset, str] = UNSET,
-    resolved_term_isnull: Union[Unset, bool] = UNSET,
-    resolved_term_istartswith: Union[Unset, str] = UNSET,
-    resolved_term_lt: Union[Unset, str] = UNSET,
-    resolved_term_lte: Union[Unset, str] = UNSET,
-    resolved_term_range: Union[Unset, list[str]] = UNSET,
-    resolved_term_regex: Union[Unset, str] = UNSET,
-    resolved_term_startswith: Union[Unset, str] = UNSET,
-    uri: Union[Unset, str] = UNSET,
-    uri_contains: Union[Unset, str] = UNSET,
-    uri_endswith: Union[Unset, str] = UNSET,
-    uri_gt: Union[Unset, str] = UNSET,
-    uri_gte: Union[Unset, str] = UNSET,
-    uri_icontains: Union[Unset, str] = UNSET,
-    uri_iendswith: Union[Unset, str] = UNSET,
-    uri_iexact: Union[Unset, str] = UNSET,
-    uri_in: Union[Unset, list[str]] = UNSET,
-    uri_iregex: Union[Unset, str] = UNSET,
-    uri_isnull: Union[Unset, bool] = UNSET,
-    uri_istartswith: Union[Unset, str] = UNSET,
-    uri_lt: Union[Unset, str] = UNSET,
-    uri_lte: Union[Unset, str] = UNSET,
-    uri_range: Union[Unset, list[str]] = UNSET,
-    uri_regex: Union[Unset, str] = UNSET,
-    uri_startswith: Union[Unset, str] = UNSET,
-    vocab_service: Union[Unset, VocabularytermsListVocabularyService] = UNSET,
-    vocab_service_contains: Union[Unset, str] = UNSET,
-    vocab_service_endswith: Union[Unset, str] = UNSET,
-    vocab_service_gt: Union[Unset, str] = UNSET,
-    vocab_service_gte: Union[Unset, str] = UNSET,
-    vocab_service_icontains: Union[Unset, str] = UNSET,
-    vocab_service_iendswith: Union[Unset, str] = UNSET,
-    vocab_service_iexact: Union[Unset, str] = UNSET,
-    vocab_service_in: Union[Unset, list[str]] = UNSET,
-    vocab_service_iregex: Union[Unset, str] = UNSET,
-    vocab_service_isnull: Union[Unset, bool] = UNSET,
-    vocab_service_istartswith: Union[Unset, str] = UNSET,
-    vocab_service_lt: Union[Unset, str] = UNSET,
-    vocab_service_lte: Union[Unset, str] = UNSET,
-    vocab_service_range: Union[Unset, list[str]] = UNSET,
-    vocab_service_regex: Union[Unset, str] = UNSET,
-    vocab_service_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    resolved_term: str | Unset = UNSET,
+    resolved_term_contains: str | Unset = UNSET,
+    resolved_term_endswith: str | Unset = UNSET,
+    resolved_term_gt: str | Unset = UNSET,
+    resolved_term_gte: str | Unset = UNSET,
+    resolved_term_icontains: str | Unset = UNSET,
+    resolved_term_iendswith: str | Unset = UNSET,
+    resolved_term_iexact: str | Unset = UNSET,
+    resolved_term_in: list[str] | Unset = UNSET,
+    resolved_term_iregex: str | Unset = UNSET,
+    resolved_term_isnull: bool | Unset = UNSET,
+    resolved_term_istartswith: str | Unset = UNSET,
+    resolved_term_lt: str | Unset = UNSET,
+    resolved_term_lte: str | Unset = UNSET,
+    resolved_term_range: list[str] | Unset = UNSET,
+    resolved_term_regex: str | Unset = UNSET,
+    resolved_term_startswith: str | Unset = UNSET,
+    uri: str | Unset = UNSET,
+    uri_contains: str | Unset = UNSET,
+    uri_endswith: str | Unset = UNSET,
+    uri_gt: str | Unset = UNSET,
+    uri_gte: str | Unset = UNSET,
+    uri_icontains: str | Unset = UNSET,
+    uri_iendswith: str | Unset = UNSET,
+    uri_iexact: str | Unset = UNSET,
+    uri_in: list[str] | Unset = UNSET,
+    uri_iregex: str | Unset = UNSET,
+    uri_isnull: bool | Unset = UNSET,
+    uri_istartswith: str | Unset = UNSET,
+    uri_lt: str | Unset = UNSET,
+    uri_lte: str | Unset = UNSET,
+    uri_range: list[str] | Unset = UNSET,
+    uri_regex: str | Unset = UNSET,
+    uri_startswith: str | Unset = UNSET,
+    vocab_service: VocabularytermsListVocabularyService | Unset = UNSET,
+    vocab_service_contains: str | Unset = UNSET,
+    vocab_service_endswith: str | Unset = UNSET,
+    vocab_service_gt: str | Unset = UNSET,
+    vocab_service_gte: str | Unset = UNSET,
+    vocab_service_icontains: str | Unset = UNSET,
+    vocab_service_iendswith: str | Unset = UNSET,
+    vocab_service_iexact: str | Unset = UNSET,
+    vocab_service_in: list[str] | Unset = UNSET,
+    vocab_service_iregex: str | Unset = UNSET,
+    vocab_service_isnull: bool | Unset = UNSET,
+    vocab_service_istartswith: str | Unset = UNSET,
+    vocab_service_lt: str | Unset = UNSET,
+    vocab_service_lte: str | Unset = UNSET,
+    vocab_service_range: list[str] | Unset = UNSET,
+    vocab_service_regex: str | Unset = UNSET,
+    vocab_service_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -107,7 +107,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -123,7 +123,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -153,7 +153,7 @@ def _get_kwargs(
 
     params["resolvedTerm__iexact"] = resolved_term_iexact
 
-    json_resolved_term_in: Union[Unset, list[str]] = UNSET
+    json_resolved_term_in: list[str] | Unset = UNSET
     if not isinstance(resolved_term_in, Unset):
         json_resolved_term_in = ",".join(map(str, resolved_term_in))
 
@@ -169,7 +169,7 @@ def _get_kwargs(
 
     params["resolvedTerm__lte"] = resolved_term_lte
 
-    json_resolved_term_range: Union[Unset, list[str]] = UNSET
+    json_resolved_term_range: list[str] | Unset = UNSET
     if not isinstance(resolved_term_range, Unset):
         json_resolved_term_range = ",".join(map(str, resolved_term_range))
 
@@ -195,7 +195,7 @@ def _get_kwargs(
 
     params["uri__iexact"] = uri_iexact
 
-    json_uri_in: Union[Unset, list[str]] = UNSET
+    json_uri_in: list[str] | Unset = UNSET
     if not isinstance(uri_in, Unset):
         json_uri_in = ",".join(map(str, uri_in))
 
@@ -211,7 +211,7 @@ def _get_kwargs(
 
     params["uri__lte"] = uri_lte
 
-    json_uri_range: Union[Unset, list[str]] = UNSET
+    json_uri_range: list[str] | Unset = UNSET
     if not isinstance(uri_range, Unset):
         json_uri_range = ",".join(map(str, uri_range))
 
@@ -221,7 +221,7 @@ def _get_kwargs(
 
     params["uri__startswith"] = uri_startswith
 
-    json_vocab_service: Union[Unset, str] = UNSET
+    json_vocab_service: str | Unset = UNSET
     if not isinstance(vocab_service, Unset):
         json_vocab_service = vocab_service.value
 
@@ -241,7 +241,7 @@ def _get_kwargs(
 
     params["vocabService__iexact"] = vocab_service_iexact
 
-    json_vocab_service_in: Union[Unset, list[str]] = UNSET
+    json_vocab_service_in: list[str] | Unset = UNSET
     if not isinstance(vocab_service_in, Unset):
         json_vocab_service_in = ",".join(map(str, vocab_service_in))
 
@@ -257,7 +257,7 @@ def _get_kwargs(
 
     params["vocabService__lte"] = vocab_service_lte
 
-    json_vocab_service_range: Union[Unset, list[str]] = UNSET
+    json_vocab_service_range: list[str] | Unset = UNSET
     if not isinstance(vocab_service_range, Unset):
         json_vocab_service_range = ",".join(map(str, vocab_service_range))
 
@@ -279,8 +279,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedVocabularyTermReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedVocabularyTermReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedVocabularyTermReadList.from_dict(response.json())
 
@@ -293,7 +293,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedVocabularyTermReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -306,154 +306,154 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    resolved_term: Union[Unset, str] = UNSET,
-    resolved_term_contains: Union[Unset, str] = UNSET,
-    resolved_term_endswith: Union[Unset, str] = UNSET,
-    resolved_term_gt: Union[Unset, str] = UNSET,
-    resolved_term_gte: Union[Unset, str] = UNSET,
-    resolved_term_icontains: Union[Unset, str] = UNSET,
-    resolved_term_iendswith: Union[Unset, str] = UNSET,
-    resolved_term_iexact: Union[Unset, str] = UNSET,
-    resolved_term_in: Union[Unset, list[str]] = UNSET,
-    resolved_term_iregex: Union[Unset, str] = UNSET,
-    resolved_term_isnull: Union[Unset, bool] = UNSET,
-    resolved_term_istartswith: Union[Unset, str] = UNSET,
-    resolved_term_lt: Union[Unset, str] = UNSET,
-    resolved_term_lte: Union[Unset, str] = UNSET,
-    resolved_term_range: Union[Unset, list[str]] = UNSET,
-    resolved_term_regex: Union[Unset, str] = UNSET,
-    resolved_term_startswith: Union[Unset, str] = UNSET,
-    uri: Union[Unset, str] = UNSET,
-    uri_contains: Union[Unset, str] = UNSET,
-    uri_endswith: Union[Unset, str] = UNSET,
-    uri_gt: Union[Unset, str] = UNSET,
-    uri_gte: Union[Unset, str] = UNSET,
-    uri_icontains: Union[Unset, str] = UNSET,
-    uri_iendswith: Union[Unset, str] = UNSET,
-    uri_iexact: Union[Unset, str] = UNSET,
-    uri_in: Union[Unset, list[str]] = UNSET,
-    uri_iregex: Union[Unset, str] = UNSET,
-    uri_isnull: Union[Unset, bool] = UNSET,
-    uri_istartswith: Union[Unset, str] = UNSET,
-    uri_lt: Union[Unset, str] = UNSET,
-    uri_lte: Union[Unset, str] = UNSET,
-    uri_range: Union[Unset, list[str]] = UNSET,
-    uri_regex: Union[Unset, str] = UNSET,
-    uri_startswith: Union[Unset, str] = UNSET,
-    vocab_service: Union[Unset, VocabularytermsListVocabularyService] = UNSET,
-    vocab_service_contains: Union[Unset, str] = UNSET,
-    vocab_service_endswith: Union[Unset, str] = UNSET,
-    vocab_service_gt: Union[Unset, str] = UNSET,
-    vocab_service_gte: Union[Unset, str] = UNSET,
-    vocab_service_icontains: Union[Unset, str] = UNSET,
-    vocab_service_iendswith: Union[Unset, str] = UNSET,
-    vocab_service_iexact: Union[Unset, str] = UNSET,
-    vocab_service_in: Union[Unset, list[str]] = UNSET,
-    vocab_service_iregex: Union[Unset, str] = UNSET,
-    vocab_service_isnull: Union[Unset, bool] = UNSET,
-    vocab_service_istartswith: Union[Unset, str] = UNSET,
-    vocab_service_lt: Union[Unset, str] = UNSET,
-    vocab_service_lte: Union[Unset, str] = UNSET,
-    vocab_service_range: Union[Unset, list[str]] = UNSET,
-    vocab_service_regex: Union[Unset, str] = UNSET,
-    vocab_service_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    resolved_term: str | Unset = UNSET,
+    resolved_term_contains: str | Unset = UNSET,
+    resolved_term_endswith: str | Unset = UNSET,
+    resolved_term_gt: str | Unset = UNSET,
+    resolved_term_gte: str | Unset = UNSET,
+    resolved_term_icontains: str | Unset = UNSET,
+    resolved_term_iendswith: str | Unset = UNSET,
+    resolved_term_iexact: str | Unset = UNSET,
+    resolved_term_in: list[str] | Unset = UNSET,
+    resolved_term_iregex: str | Unset = UNSET,
+    resolved_term_isnull: bool | Unset = UNSET,
+    resolved_term_istartswith: str | Unset = UNSET,
+    resolved_term_lt: str | Unset = UNSET,
+    resolved_term_lte: str | Unset = UNSET,
+    resolved_term_range: list[str] | Unset = UNSET,
+    resolved_term_regex: str | Unset = UNSET,
+    resolved_term_startswith: str | Unset = UNSET,
+    uri: str | Unset = UNSET,
+    uri_contains: str | Unset = UNSET,
+    uri_endswith: str | Unset = UNSET,
+    uri_gt: str | Unset = UNSET,
+    uri_gte: str | Unset = UNSET,
+    uri_icontains: str | Unset = UNSET,
+    uri_iendswith: str | Unset = UNSET,
+    uri_iexact: str | Unset = UNSET,
+    uri_in: list[str] | Unset = UNSET,
+    uri_iregex: str | Unset = UNSET,
+    uri_isnull: bool | Unset = UNSET,
+    uri_istartswith: str | Unset = UNSET,
+    uri_lt: str | Unset = UNSET,
+    uri_lte: str | Unset = UNSET,
+    uri_range: list[str] | Unset = UNSET,
+    uri_regex: str | Unset = UNSET,
+    uri_startswith: str | Unset = UNSET,
+    vocab_service: VocabularytermsListVocabularyService | Unset = UNSET,
+    vocab_service_contains: str | Unset = UNSET,
+    vocab_service_endswith: str | Unset = UNSET,
+    vocab_service_gt: str | Unset = UNSET,
+    vocab_service_gte: str | Unset = UNSET,
+    vocab_service_icontains: str | Unset = UNSET,
+    vocab_service_iendswith: str | Unset = UNSET,
+    vocab_service_iexact: str | Unset = UNSET,
+    vocab_service_in: list[str] | Unset = UNSET,
+    vocab_service_iregex: str | Unset = UNSET,
+    vocab_service_isnull: bool | Unset = UNSET,
+    vocab_service_istartswith: str | Unset = UNSET,
+    vocab_service_lt: str | Unset = UNSET,
+    vocab_service_lte: str | Unset = UNSET,
+    vocab_service_range: list[str] | Unset = UNSET,
+    vocab_service_regex: str | Unset = UNSET,
+    vocab_service_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        resolved_term (Union[Unset, str]):
-        resolved_term_contains (Union[Unset, str]):
-        resolved_term_endswith (Union[Unset, str]):
-        resolved_term_gt (Union[Unset, str]):
-        resolved_term_gte (Union[Unset, str]):
-        resolved_term_icontains (Union[Unset, str]):
-        resolved_term_iendswith (Union[Unset, str]):
-        resolved_term_iexact (Union[Unset, str]):
-        resolved_term_in (Union[Unset, list[str]]):
-        resolved_term_iregex (Union[Unset, str]):
-        resolved_term_isnull (Union[Unset, bool]):
-        resolved_term_istartswith (Union[Unset, str]):
-        resolved_term_lt (Union[Unset, str]):
-        resolved_term_lte (Union[Unset, str]):
-        resolved_term_range (Union[Unset, list[str]]):
-        resolved_term_regex (Union[Unset, str]):
-        resolved_term_startswith (Union[Unset, str]):
-        uri (Union[Unset, str]):
-        uri_contains (Union[Unset, str]):
-        uri_endswith (Union[Unset, str]):
-        uri_gt (Union[Unset, str]):
-        uri_gte (Union[Unset, str]):
-        uri_icontains (Union[Unset, str]):
-        uri_iendswith (Union[Unset, str]):
-        uri_iexact (Union[Unset, str]):
-        uri_in (Union[Unset, list[str]]):
-        uri_iregex (Union[Unset, str]):
-        uri_isnull (Union[Unset, bool]):
-        uri_istartswith (Union[Unset, str]):
-        uri_lt (Union[Unset, str]):
-        uri_lte (Union[Unset, str]):
-        uri_range (Union[Unset, list[str]]):
-        uri_regex (Union[Unset, str]):
-        uri_startswith (Union[Unset, str]):
-        vocab_service (Union[Unset, VocabularytermsListVocabularyService]):
-        vocab_service_contains (Union[Unset, str]):
-        vocab_service_endswith (Union[Unset, str]):
-        vocab_service_gt (Union[Unset, str]):
-        vocab_service_gte (Union[Unset, str]):
-        vocab_service_icontains (Union[Unset, str]):
-        vocab_service_iendswith (Union[Unset, str]):
-        vocab_service_iexact (Union[Unset, str]):
-        vocab_service_in (Union[Unset, list[str]]):
-        vocab_service_iregex (Union[Unset, str]):
-        vocab_service_isnull (Union[Unset, bool]):
-        vocab_service_istartswith (Union[Unset, str]):
-        vocab_service_lt (Union[Unset, str]):
-        vocab_service_lte (Union[Unset, str]):
-        vocab_service_range (Union[Unset, list[str]]):
-        vocab_service_regex (Union[Unset, str]):
-        vocab_service_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        resolved_term (str | Unset):
+        resolved_term_contains (str | Unset):
+        resolved_term_endswith (str | Unset):
+        resolved_term_gt (str | Unset):
+        resolved_term_gte (str | Unset):
+        resolved_term_icontains (str | Unset):
+        resolved_term_iendswith (str | Unset):
+        resolved_term_iexact (str | Unset):
+        resolved_term_in (list[str] | Unset):
+        resolved_term_iregex (str | Unset):
+        resolved_term_isnull (bool | Unset):
+        resolved_term_istartswith (str | Unset):
+        resolved_term_lt (str | Unset):
+        resolved_term_lte (str | Unset):
+        resolved_term_range (list[str] | Unset):
+        resolved_term_regex (str | Unset):
+        resolved_term_startswith (str | Unset):
+        uri (str | Unset):
+        uri_contains (str | Unset):
+        uri_endswith (str | Unset):
+        uri_gt (str | Unset):
+        uri_gte (str | Unset):
+        uri_icontains (str | Unset):
+        uri_iendswith (str | Unset):
+        uri_iexact (str | Unset):
+        uri_in (list[str] | Unset):
+        uri_iregex (str | Unset):
+        uri_isnull (bool | Unset):
+        uri_istartswith (str | Unset):
+        uri_lt (str | Unset):
+        uri_lte (str | Unset):
+        uri_range (list[str] | Unset):
+        uri_regex (str | Unset):
+        uri_startswith (str | Unset):
+        vocab_service (VocabularytermsListVocabularyService | Unset):
+        vocab_service_contains (str | Unset):
+        vocab_service_endswith (str | Unset):
+        vocab_service_gt (str | Unset):
+        vocab_service_gte (str | Unset):
+        vocab_service_icontains (str | Unset):
+        vocab_service_iendswith (str | Unset):
+        vocab_service_iexact (str | Unset):
+        vocab_service_in (list[str] | Unset):
+        vocab_service_iregex (str | Unset):
+        vocab_service_isnull (bool | Unset):
+        vocab_service_istartswith (str | Unset):
+        vocab_service_lt (str | Unset):
+        vocab_service_lte (str | Unset):
+        vocab_service_range (list[str] | Unset):
+        vocab_service_regex (str | Unset):
+        vocab_service_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -548,154 +548,154 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    resolved_term: Union[Unset, str] = UNSET,
-    resolved_term_contains: Union[Unset, str] = UNSET,
-    resolved_term_endswith: Union[Unset, str] = UNSET,
-    resolved_term_gt: Union[Unset, str] = UNSET,
-    resolved_term_gte: Union[Unset, str] = UNSET,
-    resolved_term_icontains: Union[Unset, str] = UNSET,
-    resolved_term_iendswith: Union[Unset, str] = UNSET,
-    resolved_term_iexact: Union[Unset, str] = UNSET,
-    resolved_term_in: Union[Unset, list[str]] = UNSET,
-    resolved_term_iregex: Union[Unset, str] = UNSET,
-    resolved_term_isnull: Union[Unset, bool] = UNSET,
-    resolved_term_istartswith: Union[Unset, str] = UNSET,
-    resolved_term_lt: Union[Unset, str] = UNSET,
-    resolved_term_lte: Union[Unset, str] = UNSET,
-    resolved_term_range: Union[Unset, list[str]] = UNSET,
-    resolved_term_regex: Union[Unset, str] = UNSET,
-    resolved_term_startswith: Union[Unset, str] = UNSET,
-    uri: Union[Unset, str] = UNSET,
-    uri_contains: Union[Unset, str] = UNSET,
-    uri_endswith: Union[Unset, str] = UNSET,
-    uri_gt: Union[Unset, str] = UNSET,
-    uri_gte: Union[Unset, str] = UNSET,
-    uri_icontains: Union[Unset, str] = UNSET,
-    uri_iendswith: Union[Unset, str] = UNSET,
-    uri_iexact: Union[Unset, str] = UNSET,
-    uri_in: Union[Unset, list[str]] = UNSET,
-    uri_iregex: Union[Unset, str] = UNSET,
-    uri_isnull: Union[Unset, bool] = UNSET,
-    uri_istartswith: Union[Unset, str] = UNSET,
-    uri_lt: Union[Unset, str] = UNSET,
-    uri_lte: Union[Unset, str] = UNSET,
-    uri_range: Union[Unset, list[str]] = UNSET,
-    uri_regex: Union[Unset, str] = UNSET,
-    uri_startswith: Union[Unset, str] = UNSET,
-    vocab_service: Union[Unset, VocabularytermsListVocabularyService] = UNSET,
-    vocab_service_contains: Union[Unset, str] = UNSET,
-    vocab_service_endswith: Union[Unset, str] = UNSET,
-    vocab_service_gt: Union[Unset, str] = UNSET,
-    vocab_service_gte: Union[Unset, str] = UNSET,
-    vocab_service_icontains: Union[Unset, str] = UNSET,
-    vocab_service_iendswith: Union[Unset, str] = UNSET,
-    vocab_service_iexact: Union[Unset, str] = UNSET,
-    vocab_service_in: Union[Unset, list[str]] = UNSET,
-    vocab_service_iregex: Union[Unset, str] = UNSET,
-    vocab_service_isnull: Union[Unset, bool] = UNSET,
-    vocab_service_istartswith: Union[Unset, str] = UNSET,
-    vocab_service_lt: Union[Unset, str] = UNSET,
-    vocab_service_lte: Union[Unset, str] = UNSET,
-    vocab_service_range: Union[Unset, list[str]] = UNSET,
-    vocab_service_regex: Union[Unset, str] = UNSET,
-    vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVocabularyTermReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    resolved_term: str | Unset = UNSET,
+    resolved_term_contains: str | Unset = UNSET,
+    resolved_term_endswith: str | Unset = UNSET,
+    resolved_term_gt: str | Unset = UNSET,
+    resolved_term_gte: str | Unset = UNSET,
+    resolved_term_icontains: str | Unset = UNSET,
+    resolved_term_iendswith: str | Unset = UNSET,
+    resolved_term_iexact: str | Unset = UNSET,
+    resolved_term_in: list[str] | Unset = UNSET,
+    resolved_term_iregex: str | Unset = UNSET,
+    resolved_term_isnull: bool | Unset = UNSET,
+    resolved_term_istartswith: str | Unset = UNSET,
+    resolved_term_lt: str | Unset = UNSET,
+    resolved_term_lte: str | Unset = UNSET,
+    resolved_term_range: list[str] | Unset = UNSET,
+    resolved_term_regex: str | Unset = UNSET,
+    resolved_term_startswith: str | Unset = UNSET,
+    uri: str | Unset = UNSET,
+    uri_contains: str | Unset = UNSET,
+    uri_endswith: str | Unset = UNSET,
+    uri_gt: str | Unset = UNSET,
+    uri_gte: str | Unset = UNSET,
+    uri_icontains: str | Unset = UNSET,
+    uri_iendswith: str | Unset = UNSET,
+    uri_iexact: str | Unset = UNSET,
+    uri_in: list[str] | Unset = UNSET,
+    uri_iregex: str | Unset = UNSET,
+    uri_isnull: bool | Unset = UNSET,
+    uri_istartswith: str | Unset = UNSET,
+    uri_lt: str | Unset = UNSET,
+    uri_lte: str | Unset = UNSET,
+    uri_range: list[str] | Unset = UNSET,
+    uri_regex: str | Unset = UNSET,
+    uri_startswith: str | Unset = UNSET,
+    vocab_service: VocabularytermsListVocabularyService | Unset = UNSET,
+    vocab_service_contains: str | Unset = UNSET,
+    vocab_service_endswith: str | Unset = UNSET,
+    vocab_service_gt: str | Unset = UNSET,
+    vocab_service_gte: str | Unset = UNSET,
+    vocab_service_icontains: str | Unset = UNSET,
+    vocab_service_iendswith: str | Unset = UNSET,
+    vocab_service_iexact: str | Unset = UNSET,
+    vocab_service_in: list[str] | Unset = UNSET,
+    vocab_service_iregex: str | Unset = UNSET,
+    vocab_service_isnull: bool | Unset = UNSET,
+    vocab_service_istartswith: str | Unset = UNSET,
+    vocab_service_lt: str | Unset = UNSET,
+    vocab_service_lte: str | Unset = UNSET,
+    vocab_service_range: list[str] | Unset = UNSET,
+    vocab_service_regex: str | Unset = UNSET,
+    vocab_service_startswith: str | Unset = UNSET,
+) -> PaginatedVocabularyTermReadList | None:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        resolved_term (Union[Unset, str]):
-        resolved_term_contains (Union[Unset, str]):
-        resolved_term_endswith (Union[Unset, str]):
-        resolved_term_gt (Union[Unset, str]):
-        resolved_term_gte (Union[Unset, str]):
-        resolved_term_icontains (Union[Unset, str]):
-        resolved_term_iendswith (Union[Unset, str]):
-        resolved_term_iexact (Union[Unset, str]):
-        resolved_term_in (Union[Unset, list[str]]):
-        resolved_term_iregex (Union[Unset, str]):
-        resolved_term_isnull (Union[Unset, bool]):
-        resolved_term_istartswith (Union[Unset, str]):
-        resolved_term_lt (Union[Unset, str]):
-        resolved_term_lte (Union[Unset, str]):
-        resolved_term_range (Union[Unset, list[str]]):
-        resolved_term_regex (Union[Unset, str]):
-        resolved_term_startswith (Union[Unset, str]):
-        uri (Union[Unset, str]):
-        uri_contains (Union[Unset, str]):
-        uri_endswith (Union[Unset, str]):
-        uri_gt (Union[Unset, str]):
-        uri_gte (Union[Unset, str]):
-        uri_icontains (Union[Unset, str]):
-        uri_iendswith (Union[Unset, str]):
-        uri_iexact (Union[Unset, str]):
-        uri_in (Union[Unset, list[str]]):
-        uri_iregex (Union[Unset, str]):
-        uri_isnull (Union[Unset, bool]):
-        uri_istartswith (Union[Unset, str]):
-        uri_lt (Union[Unset, str]):
-        uri_lte (Union[Unset, str]):
-        uri_range (Union[Unset, list[str]]):
-        uri_regex (Union[Unset, str]):
-        uri_startswith (Union[Unset, str]):
-        vocab_service (Union[Unset, VocabularytermsListVocabularyService]):
-        vocab_service_contains (Union[Unset, str]):
-        vocab_service_endswith (Union[Unset, str]):
-        vocab_service_gt (Union[Unset, str]):
-        vocab_service_gte (Union[Unset, str]):
-        vocab_service_icontains (Union[Unset, str]):
-        vocab_service_iendswith (Union[Unset, str]):
-        vocab_service_iexact (Union[Unset, str]):
-        vocab_service_in (Union[Unset, list[str]]):
-        vocab_service_iregex (Union[Unset, str]):
-        vocab_service_isnull (Union[Unset, bool]):
-        vocab_service_istartswith (Union[Unset, str]):
-        vocab_service_lt (Union[Unset, str]):
-        vocab_service_lte (Union[Unset, str]):
-        vocab_service_range (Union[Unset, list[str]]):
-        vocab_service_regex (Union[Unset, str]):
-        vocab_service_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        resolved_term (str | Unset):
+        resolved_term_contains (str | Unset):
+        resolved_term_endswith (str | Unset):
+        resolved_term_gt (str | Unset):
+        resolved_term_gte (str | Unset):
+        resolved_term_icontains (str | Unset):
+        resolved_term_iendswith (str | Unset):
+        resolved_term_iexact (str | Unset):
+        resolved_term_in (list[str] | Unset):
+        resolved_term_iregex (str | Unset):
+        resolved_term_isnull (bool | Unset):
+        resolved_term_istartswith (str | Unset):
+        resolved_term_lt (str | Unset):
+        resolved_term_lte (str | Unset):
+        resolved_term_range (list[str] | Unset):
+        resolved_term_regex (str | Unset):
+        resolved_term_startswith (str | Unset):
+        uri (str | Unset):
+        uri_contains (str | Unset):
+        uri_endswith (str | Unset):
+        uri_gt (str | Unset):
+        uri_gte (str | Unset):
+        uri_icontains (str | Unset):
+        uri_iendswith (str | Unset):
+        uri_iexact (str | Unset):
+        uri_in (list[str] | Unset):
+        uri_iregex (str | Unset):
+        uri_isnull (bool | Unset):
+        uri_istartswith (str | Unset):
+        uri_lt (str | Unset):
+        uri_lte (str | Unset):
+        uri_range (list[str] | Unset):
+        uri_regex (str | Unset):
+        uri_startswith (str | Unset):
+        vocab_service (VocabularytermsListVocabularyService | Unset):
+        vocab_service_contains (str | Unset):
+        vocab_service_endswith (str | Unset):
+        vocab_service_gt (str | Unset):
+        vocab_service_gte (str | Unset):
+        vocab_service_icontains (str | Unset):
+        vocab_service_iendswith (str | Unset):
+        vocab_service_iexact (str | Unset):
+        vocab_service_in (list[str] | Unset):
+        vocab_service_iregex (str | Unset):
+        vocab_service_isnull (bool | Unset):
+        vocab_service_istartswith (str | Unset):
+        vocab_service_lt (str | Unset):
+        vocab_service_lte (str | Unset):
+        vocab_service_range (list[str] | Unset):
+        vocab_service_regex (str | Unset):
+        vocab_service_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -785,154 +785,154 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    resolved_term: Union[Unset, str] = UNSET,
-    resolved_term_contains: Union[Unset, str] = UNSET,
-    resolved_term_endswith: Union[Unset, str] = UNSET,
-    resolved_term_gt: Union[Unset, str] = UNSET,
-    resolved_term_gte: Union[Unset, str] = UNSET,
-    resolved_term_icontains: Union[Unset, str] = UNSET,
-    resolved_term_iendswith: Union[Unset, str] = UNSET,
-    resolved_term_iexact: Union[Unset, str] = UNSET,
-    resolved_term_in: Union[Unset, list[str]] = UNSET,
-    resolved_term_iregex: Union[Unset, str] = UNSET,
-    resolved_term_isnull: Union[Unset, bool] = UNSET,
-    resolved_term_istartswith: Union[Unset, str] = UNSET,
-    resolved_term_lt: Union[Unset, str] = UNSET,
-    resolved_term_lte: Union[Unset, str] = UNSET,
-    resolved_term_range: Union[Unset, list[str]] = UNSET,
-    resolved_term_regex: Union[Unset, str] = UNSET,
-    resolved_term_startswith: Union[Unset, str] = UNSET,
-    uri: Union[Unset, str] = UNSET,
-    uri_contains: Union[Unset, str] = UNSET,
-    uri_endswith: Union[Unset, str] = UNSET,
-    uri_gt: Union[Unset, str] = UNSET,
-    uri_gte: Union[Unset, str] = UNSET,
-    uri_icontains: Union[Unset, str] = UNSET,
-    uri_iendswith: Union[Unset, str] = UNSET,
-    uri_iexact: Union[Unset, str] = UNSET,
-    uri_in: Union[Unset, list[str]] = UNSET,
-    uri_iregex: Union[Unset, str] = UNSET,
-    uri_isnull: Union[Unset, bool] = UNSET,
-    uri_istartswith: Union[Unset, str] = UNSET,
-    uri_lt: Union[Unset, str] = UNSET,
-    uri_lte: Union[Unset, str] = UNSET,
-    uri_range: Union[Unset, list[str]] = UNSET,
-    uri_regex: Union[Unset, str] = UNSET,
-    uri_startswith: Union[Unset, str] = UNSET,
-    vocab_service: Union[Unset, VocabularytermsListVocabularyService] = UNSET,
-    vocab_service_contains: Union[Unset, str] = UNSET,
-    vocab_service_endswith: Union[Unset, str] = UNSET,
-    vocab_service_gt: Union[Unset, str] = UNSET,
-    vocab_service_gte: Union[Unset, str] = UNSET,
-    vocab_service_icontains: Union[Unset, str] = UNSET,
-    vocab_service_iendswith: Union[Unset, str] = UNSET,
-    vocab_service_iexact: Union[Unset, str] = UNSET,
-    vocab_service_in: Union[Unset, list[str]] = UNSET,
-    vocab_service_iregex: Union[Unset, str] = UNSET,
-    vocab_service_isnull: Union[Unset, bool] = UNSET,
-    vocab_service_istartswith: Union[Unset, str] = UNSET,
-    vocab_service_lt: Union[Unset, str] = UNSET,
-    vocab_service_lte: Union[Unset, str] = UNSET,
-    vocab_service_range: Union[Unset, list[str]] = UNSET,
-    vocab_service_regex: Union[Unset, str] = UNSET,
-    vocab_service_startswith: Union[Unset, str] = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    resolved_term: str | Unset = UNSET,
+    resolved_term_contains: str | Unset = UNSET,
+    resolved_term_endswith: str | Unset = UNSET,
+    resolved_term_gt: str | Unset = UNSET,
+    resolved_term_gte: str | Unset = UNSET,
+    resolved_term_icontains: str | Unset = UNSET,
+    resolved_term_iendswith: str | Unset = UNSET,
+    resolved_term_iexact: str | Unset = UNSET,
+    resolved_term_in: list[str] | Unset = UNSET,
+    resolved_term_iregex: str | Unset = UNSET,
+    resolved_term_isnull: bool | Unset = UNSET,
+    resolved_term_istartswith: str | Unset = UNSET,
+    resolved_term_lt: str | Unset = UNSET,
+    resolved_term_lte: str | Unset = UNSET,
+    resolved_term_range: list[str] | Unset = UNSET,
+    resolved_term_regex: str | Unset = UNSET,
+    resolved_term_startswith: str | Unset = UNSET,
+    uri: str | Unset = UNSET,
+    uri_contains: str | Unset = UNSET,
+    uri_endswith: str | Unset = UNSET,
+    uri_gt: str | Unset = UNSET,
+    uri_gte: str | Unset = UNSET,
+    uri_icontains: str | Unset = UNSET,
+    uri_iendswith: str | Unset = UNSET,
+    uri_iexact: str | Unset = UNSET,
+    uri_in: list[str] | Unset = UNSET,
+    uri_iregex: str | Unset = UNSET,
+    uri_isnull: bool | Unset = UNSET,
+    uri_istartswith: str | Unset = UNSET,
+    uri_lt: str | Unset = UNSET,
+    uri_lte: str | Unset = UNSET,
+    uri_range: list[str] | Unset = UNSET,
+    uri_regex: str | Unset = UNSET,
+    uri_startswith: str | Unset = UNSET,
+    vocab_service: VocabularytermsListVocabularyService | Unset = UNSET,
+    vocab_service_contains: str | Unset = UNSET,
+    vocab_service_endswith: str | Unset = UNSET,
+    vocab_service_gt: str | Unset = UNSET,
+    vocab_service_gte: str | Unset = UNSET,
+    vocab_service_icontains: str | Unset = UNSET,
+    vocab_service_iendswith: str | Unset = UNSET,
+    vocab_service_iexact: str | Unset = UNSET,
+    vocab_service_in: list[str] | Unset = UNSET,
+    vocab_service_iregex: str | Unset = UNSET,
+    vocab_service_isnull: bool | Unset = UNSET,
+    vocab_service_istartswith: str | Unset = UNSET,
+    vocab_service_lt: str | Unset = UNSET,
+    vocab_service_lte: str | Unset = UNSET,
+    vocab_service_range: list[str] | Unset = UNSET,
+    vocab_service_regex: str | Unset = UNSET,
+    vocab_service_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedVocabularyTermReadList]:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        resolved_term (Union[Unset, str]):
-        resolved_term_contains (Union[Unset, str]):
-        resolved_term_endswith (Union[Unset, str]):
-        resolved_term_gt (Union[Unset, str]):
-        resolved_term_gte (Union[Unset, str]):
-        resolved_term_icontains (Union[Unset, str]):
-        resolved_term_iendswith (Union[Unset, str]):
-        resolved_term_iexact (Union[Unset, str]):
-        resolved_term_in (Union[Unset, list[str]]):
-        resolved_term_iregex (Union[Unset, str]):
-        resolved_term_isnull (Union[Unset, bool]):
-        resolved_term_istartswith (Union[Unset, str]):
-        resolved_term_lt (Union[Unset, str]):
-        resolved_term_lte (Union[Unset, str]):
-        resolved_term_range (Union[Unset, list[str]]):
-        resolved_term_regex (Union[Unset, str]):
-        resolved_term_startswith (Union[Unset, str]):
-        uri (Union[Unset, str]):
-        uri_contains (Union[Unset, str]):
-        uri_endswith (Union[Unset, str]):
-        uri_gt (Union[Unset, str]):
-        uri_gte (Union[Unset, str]):
-        uri_icontains (Union[Unset, str]):
-        uri_iendswith (Union[Unset, str]):
-        uri_iexact (Union[Unset, str]):
-        uri_in (Union[Unset, list[str]]):
-        uri_iregex (Union[Unset, str]):
-        uri_isnull (Union[Unset, bool]):
-        uri_istartswith (Union[Unset, str]):
-        uri_lt (Union[Unset, str]):
-        uri_lte (Union[Unset, str]):
-        uri_range (Union[Unset, list[str]]):
-        uri_regex (Union[Unset, str]):
-        uri_startswith (Union[Unset, str]):
-        vocab_service (Union[Unset, VocabularytermsListVocabularyService]):
-        vocab_service_contains (Union[Unset, str]):
-        vocab_service_endswith (Union[Unset, str]):
-        vocab_service_gt (Union[Unset, str]):
-        vocab_service_gte (Union[Unset, str]):
-        vocab_service_icontains (Union[Unset, str]):
-        vocab_service_iendswith (Union[Unset, str]):
-        vocab_service_iexact (Union[Unset, str]):
-        vocab_service_in (Union[Unset, list[str]]):
-        vocab_service_iregex (Union[Unset, str]):
-        vocab_service_isnull (Union[Unset, bool]):
-        vocab_service_istartswith (Union[Unset, str]):
-        vocab_service_lt (Union[Unset, str]):
-        vocab_service_lte (Union[Unset, str]):
-        vocab_service_range (Union[Unset, list[str]]):
-        vocab_service_regex (Union[Unset, str]):
-        vocab_service_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        resolved_term (str | Unset):
+        resolved_term_contains (str | Unset):
+        resolved_term_endswith (str | Unset):
+        resolved_term_gt (str | Unset):
+        resolved_term_gte (str | Unset):
+        resolved_term_icontains (str | Unset):
+        resolved_term_iendswith (str | Unset):
+        resolved_term_iexact (str | Unset):
+        resolved_term_in (list[str] | Unset):
+        resolved_term_iregex (str | Unset):
+        resolved_term_isnull (bool | Unset):
+        resolved_term_istartswith (str | Unset):
+        resolved_term_lt (str | Unset):
+        resolved_term_lte (str | Unset):
+        resolved_term_range (list[str] | Unset):
+        resolved_term_regex (str | Unset):
+        resolved_term_startswith (str | Unset):
+        uri (str | Unset):
+        uri_contains (str | Unset):
+        uri_endswith (str | Unset):
+        uri_gt (str | Unset):
+        uri_gte (str | Unset):
+        uri_icontains (str | Unset):
+        uri_iendswith (str | Unset):
+        uri_iexact (str | Unset):
+        uri_in (list[str] | Unset):
+        uri_iregex (str | Unset):
+        uri_isnull (bool | Unset):
+        uri_istartswith (str | Unset):
+        uri_lt (str | Unset):
+        uri_lte (str | Unset):
+        uri_range (list[str] | Unset):
+        uri_regex (str | Unset):
+        uri_startswith (str | Unset):
+        vocab_service (VocabularytermsListVocabularyService | Unset):
+        vocab_service_contains (str | Unset):
+        vocab_service_endswith (str | Unset):
+        vocab_service_gt (str | Unset):
+        vocab_service_gte (str | Unset):
+        vocab_service_icontains (str | Unset):
+        vocab_service_iendswith (str | Unset):
+        vocab_service_iexact (str | Unset):
+        vocab_service_in (list[str] | Unset):
+        vocab_service_iregex (str | Unset):
+        vocab_service_isnull (bool | Unset):
+        vocab_service_istartswith (str | Unset):
+        vocab_service_lt (str | Unset):
+        vocab_service_lte (str | Unset):
+        vocab_service_range (list[str] | Unset):
+        vocab_service_regex (str | Unset):
+        vocab_service_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1025,154 +1025,154 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    resolved_term: Union[Unset, str] = UNSET,
-    resolved_term_contains: Union[Unset, str] = UNSET,
-    resolved_term_endswith: Union[Unset, str] = UNSET,
-    resolved_term_gt: Union[Unset, str] = UNSET,
-    resolved_term_gte: Union[Unset, str] = UNSET,
-    resolved_term_icontains: Union[Unset, str] = UNSET,
-    resolved_term_iendswith: Union[Unset, str] = UNSET,
-    resolved_term_iexact: Union[Unset, str] = UNSET,
-    resolved_term_in: Union[Unset, list[str]] = UNSET,
-    resolved_term_iregex: Union[Unset, str] = UNSET,
-    resolved_term_isnull: Union[Unset, bool] = UNSET,
-    resolved_term_istartswith: Union[Unset, str] = UNSET,
-    resolved_term_lt: Union[Unset, str] = UNSET,
-    resolved_term_lte: Union[Unset, str] = UNSET,
-    resolved_term_range: Union[Unset, list[str]] = UNSET,
-    resolved_term_regex: Union[Unset, str] = UNSET,
-    resolved_term_startswith: Union[Unset, str] = UNSET,
-    uri: Union[Unset, str] = UNSET,
-    uri_contains: Union[Unset, str] = UNSET,
-    uri_endswith: Union[Unset, str] = UNSET,
-    uri_gt: Union[Unset, str] = UNSET,
-    uri_gte: Union[Unset, str] = UNSET,
-    uri_icontains: Union[Unset, str] = UNSET,
-    uri_iendswith: Union[Unset, str] = UNSET,
-    uri_iexact: Union[Unset, str] = UNSET,
-    uri_in: Union[Unset, list[str]] = UNSET,
-    uri_iregex: Union[Unset, str] = UNSET,
-    uri_isnull: Union[Unset, bool] = UNSET,
-    uri_istartswith: Union[Unset, str] = UNSET,
-    uri_lt: Union[Unset, str] = UNSET,
-    uri_lte: Union[Unset, str] = UNSET,
-    uri_range: Union[Unset, list[str]] = UNSET,
-    uri_regex: Union[Unset, str] = UNSET,
-    uri_startswith: Union[Unset, str] = UNSET,
-    vocab_service: Union[Unset, VocabularytermsListVocabularyService] = UNSET,
-    vocab_service_contains: Union[Unset, str] = UNSET,
-    vocab_service_endswith: Union[Unset, str] = UNSET,
-    vocab_service_gt: Union[Unset, str] = UNSET,
-    vocab_service_gte: Union[Unset, str] = UNSET,
-    vocab_service_icontains: Union[Unset, str] = UNSET,
-    vocab_service_iendswith: Union[Unset, str] = UNSET,
-    vocab_service_iexact: Union[Unset, str] = UNSET,
-    vocab_service_in: Union[Unset, list[str]] = UNSET,
-    vocab_service_iregex: Union[Unset, str] = UNSET,
-    vocab_service_isnull: Union[Unset, bool] = UNSET,
-    vocab_service_istartswith: Union[Unset, str] = UNSET,
-    vocab_service_lt: Union[Unset, str] = UNSET,
-    vocab_service_lte: Union[Unset, str] = UNSET,
-    vocab_service_range: Union[Unset, list[str]] = UNSET,
-    vocab_service_regex: Union[Unset, str] = UNSET,
-    vocab_service_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedVocabularyTermReadList]:
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    resolved_term: str | Unset = UNSET,
+    resolved_term_contains: str | Unset = UNSET,
+    resolved_term_endswith: str | Unset = UNSET,
+    resolved_term_gt: str | Unset = UNSET,
+    resolved_term_gte: str | Unset = UNSET,
+    resolved_term_icontains: str | Unset = UNSET,
+    resolved_term_iendswith: str | Unset = UNSET,
+    resolved_term_iexact: str | Unset = UNSET,
+    resolved_term_in: list[str] | Unset = UNSET,
+    resolved_term_iregex: str | Unset = UNSET,
+    resolved_term_isnull: bool | Unset = UNSET,
+    resolved_term_istartswith: str | Unset = UNSET,
+    resolved_term_lt: str | Unset = UNSET,
+    resolved_term_lte: str | Unset = UNSET,
+    resolved_term_range: list[str] | Unset = UNSET,
+    resolved_term_regex: str | Unset = UNSET,
+    resolved_term_startswith: str | Unset = UNSET,
+    uri: str | Unset = UNSET,
+    uri_contains: str | Unset = UNSET,
+    uri_endswith: str | Unset = UNSET,
+    uri_gt: str | Unset = UNSET,
+    uri_gte: str | Unset = UNSET,
+    uri_icontains: str | Unset = UNSET,
+    uri_iendswith: str | Unset = UNSET,
+    uri_iexact: str | Unset = UNSET,
+    uri_in: list[str] | Unset = UNSET,
+    uri_iregex: str | Unset = UNSET,
+    uri_isnull: bool | Unset = UNSET,
+    uri_istartswith: str | Unset = UNSET,
+    uri_lt: str | Unset = UNSET,
+    uri_lte: str | Unset = UNSET,
+    uri_range: list[str] | Unset = UNSET,
+    uri_regex: str | Unset = UNSET,
+    uri_startswith: str | Unset = UNSET,
+    vocab_service: VocabularytermsListVocabularyService | Unset = UNSET,
+    vocab_service_contains: str | Unset = UNSET,
+    vocab_service_endswith: str | Unset = UNSET,
+    vocab_service_gt: str | Unset = UNSET,
+    vocab_service_gte: str | Unset = UNSET,
+    vocab_service_icontains: str | Unset = UNSET,
+    vocab_service_iendswith: str | Unset = UNSET,
+    vocab_service_iexact: str | Unset = UNSET,
+    vocab_service_in: list[str] | Unset = UNSET,
+    vocab_service_iregex: str | Unset = UNSET,
+    vocab_service_isnull: bool | Unset = UNSET,
+    vocab_service_istartswith: str | Unset = UNSET,
+    vocab_service_lt: str | Unset = UNSET,
+    vocab_service_lte: str | Unset = UNSET,
+    vocab_service_range: list[str] | Unset = UNSET,
+    vocab_service_regex: str | Unset = UNSET,
+    vocab_service_startswith: str | Unset = UNSET,
+) -> PaginatedVocabularyTermReadList | None:
     """Get a list of Vocabulary terms objects.
 
     Args:
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        resolved_term (Union[Unset, str]):
-        resolved_term_contains (Union[Unset, str]):
-        resolved_term_endswith (Union[Unset, str]):
-        resolved_term_gt (Union[Unset, str]):
-        resolved_term_gte (Union[Unset, str]):
-        resolved_term_icontains (Union[Unset, str]):
-        resolved_term_iendswith (Union[Unset, str]):
-        resolved_term_iexact (Union[Unset, str]):
-        resolved_term_in (Union[Unset, list[str]]):
-        resolved_term_iregex (Union[Unset, str]):
-        resolved_term_isnull (Union[Unset, bool]):
-        resolved_term_istartswith (Union[Unset, str]):
-        resolved_term_lt (Union[Unset, str]):
-        resolved_term_lte (Union[Unset, str]):
-        resolved_term_range (Union[Unset, list[str]]):
-        resolved_term_regex (Union[Unset, str]):
-        resolved_term_startswith (Union[Unset, str]):
-        uri (Union[Unset, str]):
-        uri_contains (Union[Unset, str]):
-        uri_endswith (Union[Unset, str]):
-        uri_gt (Union[Unset, str]):
-        uri_gte (Union[Unset, str]):
-        uri_icontains (Union[Unset, str]):
-        uri_iendswith (Union[Unset, str]):
-        uri_iexact (Union[Unset, str]):
-        uri_in (Union[Unset, list[str]]):
-        uri_iregex (Union[Unset, str]):
-        uri_isnull (Union[Unset, bool]):
-        uri_istartswith (Union[Unset, str]):
-        uri_lt (Union[Unset, str]):
-        uri_lte (Union[Unset, str]):
-        uri_range (Union[Unset, list[str]]):
-        uri_regex (Union[Unset, str]):
-        uri_startswith (Union[Unset, str]):
-        vocab_service (Union[Unset, VocabularytermsListVocabularyService]):
-        vocab_service_contains (Union[Unset, str]):
-        vocab_service_endswith (Union[Unset, str]):
-        vocab_service_gt (Union[Unset, str]):
-        vocab_service_gte (Union[Unset, str]):
-        vocab_service_icontains (Union[Unset, str]):
-        vocab_service_iendswith (Union[Unset, str]):
-        vocab_service_iexact (Union[Unset, str]):
-        vocab_service_in (Union[Unset, list[str]]):
-        vocab_service_iregex (Union[Unset, str]):
-        vocab_service_isnull (Union[Unset, bool]):
-        vocab_service_istartswith (Union[Unset, str]):
-        vocab_service_lt (Union[Unset, str]):
-        vocab_service_lte (Union[Unset, str]):
-        vocab_service_range (Union[Unset, list[str]]):
-        vocab_service_regex (Union[Unset, str]):
-        vocab_service_startswith (Union[Unset, str]):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        resolved_term (str | Unset):
+        resolved_term_contains (str | Unset):
+        resolved_term_endswith (str | Unset):
+        resolved_term_gt (str | Unset):
+        resolved_term_gte (str | Unset):
+        resolved_term_icontains (str | Unset):
+        resolved_term_iendswith (str | Unset):
+        resolved_term_iexact (str | Unset):
+        resolved_term_in (list[str] | Unset):
+        resolved_term_iregex (str | Unset):
+        resolved_term_isnull (bool | Unset):
+        resolved_term_istartswith (str | Unset):
+        resolved_term_lt (str | Unset):
+        resolved_term_lte (str | Unset):
+        resolved_term_range (list[str] | Unset):
+        resolved_term_regex (str | Unset):
+        resolved_term_startswith (str | Unset):
+        uri (str | Unset):
+        uri_contains (str | Unset):
+        uri_endswith (str | Unset):
+        uri_gt (str | Unset):
+        uri_gte (str | Unset):
+        uri_icontains (str | Unset):
+        uri_iendswith (str | Unset):
+        uri_iexact (str | Unset):
+        uri_in (list[str] | Unset):
+        uri_iregex (str | Unset):
+        uri_isnull (bool | Unset):
+        uri_istartswith (str | Unset):
+        uri_lt (str | Unset):
+        uri_lte (str | Unset):
+        uri_range (list[str] | Unset):
+        uri_regex (str | Unset):
+        uri_startswith (str | Unset):
+        vocab_service (VocabularytermsListVocabularyService | Unset):
+        vocab_service_contains (str | Unset):
+        vocab_service_endswith (str | Unset):
+        vocab_service_gt (str | Unset):
+        vocab_service_gte (str | Unset):
+        vocab_service_icontains (str | Unset):
+        vocab_service_iendswith (str | Unset):
+        vocab_service_iexact (str | Unset):
+        vocab_service_in (list[str] | Unset):
+        vocab_service_iregex (str | Unset):
+        vocab_service_isnull (bool | Unset):
+        vocab_service_istartswith (str | Unset):
+        vocab_service_lt (str | Unset):
+        vocab_service_lte (str | Unset):
+        vocab_service_range (list[str] | Unset):
+        vocab_service_regex (str | Unset):
+        vocab_service_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

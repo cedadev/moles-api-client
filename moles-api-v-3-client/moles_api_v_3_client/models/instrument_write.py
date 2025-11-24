@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,20 +23,20 @@ class InstrumentWrite:
             uuid (str):
             short_code (str):
             title (str):
-            abstract (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            instrument_type (Union[BlankEnum, InstrumentTypeEnum, Unset]):
-            image_details (Union[Unset, list[int]]):
+            abstract (str | Unset):
+            keywords (str | Unset):
+            instrument_type (BlankEnum | InstrumentTypeEnum | Unset):
+            image_details (list[int] | Unset):
     """
 
     ob_id: int
     uuid: str
     short_code: str
     title: str
-    abstract: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    instrument_type: Union[BlankEnum, InstrumentTypeEnum, Unset] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
+    abstract: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    instrument_type: BlankEnum | InstrumentTypeEnum | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -50,7 +52,7 @@ class InstrumentWrite:
 
         keywords = self.keywords
 
-        instrument_type: Union[Unset, str]
+        instrument_type: str | Unset
         if isinstance(self.instrument_type, Unset):
             instrument_type = UNSET
         elif isinstance(self.instrument_type, InstrumentTypeEnum):
@@ -58,7 +60,7 @@ class InstrumentWrite:
         else:
             instrument_type = self.instrument_type.value
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
@@ -98,7 +100,7 @@ class InstrumentWrite:
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_instrument_type(data: object) -> Union[BlankEnum, InstrumentTypeEnum, Unset]:
+        def _parse_instrument_type(data: object) -> BlankEnum | InstrumentTypeEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -107,7 +109,7 @@ class InstrumentWrite:
                 instrument_type_type_0 = InstrumentTypeEnum(data)
 
                 return instrument_type_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()

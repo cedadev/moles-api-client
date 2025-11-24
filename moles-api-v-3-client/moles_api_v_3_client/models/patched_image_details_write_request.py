@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,12 +17,12 @@ class PatchedImageDetailsWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            linkage (Union[Unset, str]):
-            file_name (Union[Unset, str]):
+            linkage (str | Unset):
+            file_name (str | Unset):
     """
 
-    linkage: Union[Unset, str] = UNSET
-    file_name: Union[Unset, str] = UNSET
+    linkage: str | Unset = UNSET
+    file_name: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

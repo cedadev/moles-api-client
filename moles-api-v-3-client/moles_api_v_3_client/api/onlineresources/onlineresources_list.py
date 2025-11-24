@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -16,146 +16,146 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    application_profile: Union[Unset, OnlineresourcesListApplicationProfileFileFormat] = UNSET,
-    application_profile_contains: Union[Unset, str] = UNSET,
-    application_profile_endswith: Union[Unset, str] = UNSET,
-    application_profile_gt: Union[Unset, str] = UNSET,
-    application_profile_gte: Union[Unset, str] = UNSET,
-    application_profile_icontains: Union[Unset, str] = UNSET,
-    application_profile_iendswith: Union[Unset, str] = UNSET,
-    application_profile_iexact: Union[Unset, str] = UNSET,
-    application_profile_in: Union[Unset, list[str]] = UNSET,
-    application_profile_iregex: Union[Unset, str] = UNSET,
-    application_profile_isnull: Union[Unset, bool] = UNSET,
-    application_profile_istartswith: Union[Unset, str] = UNSET,
-    application_profile_lt: Union[Unset, str] = UNSET,
-    application_profile_lte: Union[Unset, str] = UNSET,
-    application_profile_range: Union[Unset, list[str]] = UNSET,
-    application_profile_regex: Union[Unset, str] = UNSET,
-    application_profile_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    function: Union[Unset, OnlineresourcesListFunction] = UNSET,
-    function_contains: Union[Unset, str] = UNSET,
-    function_endswith: Union[Unset, str] = UNSET,
-    function_gt: Union[Unset, str] = UNSET,
-    function_gte: Union[Unset, str] = UNSET,
-    function_icontains: Union[Unset, str] = UNSET,
-    function_iendswith: Union[Unset, str] = UNSET,
-    function_iexact: Union[Unset, str] = UNSET,
-    function_in: Union[Unset, list[str]] = UNSET,
-    function_iregex: Union[Unset, str] = UNSET,
-    function_isnull: Union[Unset, bool] = UNSET,
-    function_istartswith: Union[Unset, str] = UNSET,
-    function_lt: Union[Unset, str] = UNSET,
-    function_lte: Union[Unset, str] = UNSET,
-    function_range: Union[Unset, list[str]] = UNSET,
-    function_regex: Union[Unset, str] = UNSET,
-    function_startswith: Union[Unset, str] = UNSET,
-    internal_resource_type: Union[Unset, OnlineresourcesListInternalResourceType] = UNSET,
-    internal_resource_type_contains: Union[Unset, str] = UNSET,
-    internal_resource_type_endswith: Union[Unset, str] = UNSET,
-    internal_resource_type_gt: Union[Unset, str] = UNSET,
-    internal_resource_type_gte: Union[Unset, str] = UNSET,
-    internal_resource_type_icontains: Union[Unset, str] = UNSET,
-    internal_resource_type_iendswith: Union[Unset, str] = UNSET,
-    internal_resource_type_iexact: Union[Unset, str] = UNSET,
-    internal_resource_type_in: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_iregex: Union[Unset, str] = UNSET,
-    internal_resource_type_isnull: Union[Unset, bool] = UNSET,
-    internal_resource_type_istartswith: Union[Unset, str] = UNSET,
-    internal_resource_type_lt: Union[Unset, str] = UNSET,
-    internal_resource_type_lte: Union[Unset, str] = UNSET,
-    internal_resource_type_range: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_regex: Union[Unset, str] = UNSET,
-    internal_resource_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    application_profile: OnlineresourcesListApplicationProfileFileFormat | Unset = UNSET,
+    application_profile_contains: str | Unset = UNSET,
+    application_profile_endswith: str | Unset = UNSET,
+    application_profile_gt: str | Unset = UNSET,
+    application_profile_gte: str | Unset = UNSET,
+    application_profile_icontains: str | Unset = UNSET,
+    application_profile_iendswith: str | Unset = UNSET,
+    application_profile_iexact: str | Unset = UNSET,
+    application_profile_in: list[str] | Unset = UNSET,
+    application_profile_iregex: str | Unset = UNSET,
+    application_profile_isnull: bool | Unset = UNSET,
+    application_profile_istartswith: str | Unset = UNSET,
+    application_profile_lt: str | Unset = UNSET,
+    application_profile_lte: str | Unset = UNSET,
+    application_profile_range: list[str] | Unset = UNSET,
+    application_profile_regex: str | Unset = UNSET,
+    application_profile_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    function: OnlineresourcesListFunction | Unset = UNSET,
+    function_contains: str | Unset = UNSET,
+    function_endswith: str | Unset = UNSET,
+    function_gt: str | Unset = UNSET,
+    function_gte: str | Unset = UNSET,
+    function_icontains: str | Unset = UNSET,
+    function_iendswith: str | Unset = UNSET,
+    function_iexact: str | Unset = UNSET,
+    function_in: list[str] | Unset = UNSET,
+    function_iregex: str | Unset = UNSET,
+    function_isnull: bool | Unset = UNSET,
+    function_istartswith: str | Unset = UNSET,
+    function_lt: str | Unset = UNSET,
+    function_lte: str | Unset = UNSET,
+    function_range: list[str] | Unset = UNSET,
+    function_regex: str | Unset = UNSET,
+    function_startswith: str | Unset = UNSET,
+    internal_resource_type: OnlineresourcesListInternalResourceType | Unset = UNSET,
+    internal_resource_type_contains: str | Unset = UNSET,
+    internal_resource_type_endswith: str | Unset = UNSET,
+    internal_resource_type_gt: str | Unset = UNSET,
+    internal_resource_type_gte: str | Unset = UNSET,
+    internal_resource_type_icontains: str | Unset = UNSET,
+    internal_resource_type_iendswith: str | Unset = UNSET,
+    internal_resource_type_iexact: str | Unset = UNSET,
+    internal_resource_type_in: list[str] | Unset = UNSET,
+    internal_resource_type_iregex: str | Unset = UNSET,
+    internal_resource_type_isnull: bool | Unset = UNSET,
+    internal_resource_type_istartswith: str | Unset = UNSET,
+    internal_resource_type_lt: str | Unset = UNSET,
+    internal_resource_type_lte: str | Unset = UNSET,
+    internal_resource_type_range: list[str] | Unset = UNSET,
+    internal_resource_type_regex: str | Unset = UNSET,
+    internal_resource_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    json_application_profile: Union[Unset, str] = UNSET
+    json_application_profile: str | Unset = UNSET
     if not isinstance(application_profile, Unset):
         json_application_profile = application_profile.value
 
@@ -175,7 +175,7 @@ def _get_kwargs(
 
     params["applicationProfile__iexact"] = application_profile_iexact
 
-    json_application_profile_in: Union[Unset, list[str]] = UNSET
+    json_application_profile_in: list[str] | Unset = UNSET
     if not isinstance(application_profile_in, Unset):
         json_application_profile_in = ",".join(map(str, application_profile_in))
 
@@ -191,7 +191,7 @@ def _get_kwargs(
 
     params["applicationProfile__lte"] = application_profile_lte
 
-    json_application_profile_range: Union[Unset, list[str]] = UNSET
+    json_application_profile_range: list[str] | Unset = UNSET
     if not isinstance(application_profile_range, Unset):
         json_application_profile_range = ",".join(map(str, application_profile_range))
 
@@ -217,7 +217,7 @@ def _get_kwargs(
 
     params["description__iexact"] = description_iexact
 
-    json_description_in: Union[Unset, list[str]] = UNSET
+    json_description_in: list[str] | Unset = UNSET
     if not isinstance(description_in, Unset):
         json_description_in = ",".join(map(str, description_in))
 
@@ -233,7 +233,7 @@ def _get_kwargs(
 
     params["description__lte"] = description_lte
 
-    json_description_range: Union[Unset, list[str]] = UNSET
+    json_description_range: list[str] | Unset = UNSET
     if not isinstance(description_range, Unset):
         json_description_range = ",".join(map(str, description_range))
 
@@ -243,7 +243,7 @@ def _get_kwargs(
 
     params["description__startswith"] = description_startswith
 
-    json_function: Union[Unset, str] = UNSET
+    json_function: str | Unset = UNSET
     if not isinstance(function, Unset):
         json_function = function.value
 
@@ -263,7 +263,7 @@ def _get_kwargs(
 
     params["function__iexact"] = function_iexact
 
-    json_function_in: Union[Unset, list[str]] = UNSET
+    json_function_in: list[str] | Unset = UNSET
     if not isinstance(function_in, Unset):
         json_function_in = ",".join(map(str, function_in))
 
@@ -279,7 +279,7 @@ def _get_kwargs(
 
     params["function__lte"] = function_lte
 
-    json_function_range: Union[Unset, list[str]] = UNSET
+    json_function_range: list[str] | Unset = UNSET
     if not isinstance(function_range, Unset):
         json_function_range = ",".join(map(str, function_range))
 
@@ -289,7 +289,7 @@ def _get_kwargs(
 
     params["function__startswith"] = function_startswith
 
-    json_internal_resource_type: Union[Unset, str] = UNSET
+    json_internal_resource_type: str | Unset = UNSET
     if not isinstance(internal_resource_type, Unset):
         json_internal_resource_type = internal_resource_type.value
 
@@ -309,7 +309,7 @@ def _get_kwargs(
 
     params["internalResourceType__iexact"] = internal_resource_type_iexact
 
-    json_internal_resource_type_in: Union[Unset, list[str]] = UNSET
+    json_internal_resource_type_in: list[str] | Unset = UNSET
     if not isinstance(internal_resource_type_in, Unset):
         json_internal_resource_type_in = ",".join(map(str, internal_resource_type_in))
 
@@ -325,7 +325,7 @@ def _get_kwargs(
 
     params["internalResourceType__lte"] = internal_resource_type_lte
 
-    json_internal_resource_type_range: Union[Unset, list[str]] = UNSET
+    json_internal_resource_type_range: list[str] | Unset = UNSET
     if not isinstance(internal_resource_type_range, Unset):
         json_internal_resource_type_range = ",".join(map(str, internal_resource_type_range))
 
@@ -353,7 +353,7 @@ def _get_kwargs(
 
     params["linkage__iexact"] = linkage_iexact
 
-    json_linkage_in: Union[Unset, list[str]] = UNSET
+    json_linkage_in: list[str] | Unset = UNSET
     if not isinstance(linkage_in, Unset):
         json_linkage_in = ",".join(map(str, linkage_in))
 
@@ -369,7 +369,7 @@ def _get_kwargs(
 
     params["linkage__lte"] = linkage_lte
 
-    json_linkage_range: Union[Unset, list[str]] = UNSET
+    json_linkage_range: list[str] | Unset = UNSET
     if not isinstance(linkage_range, Unset):
         json_linkage_range = ",".join(map(str, linkage_range))
 
@@ -395,7 +395,7 @@ def _get_kwargs(
 
     params["name__iexact"] = name_iexact
 
-    json_name_in: Union[Unset, list[str]] = UNSET
+    json_name_in: list[str] | Unset = UNSET
     if not isinstance(name_in, Unset):
         json_name_in = ",".join(map(str, name_in))
 
@@ -411,7 +411,7 @@ def _get_kwargs(
 
     params["name__lte"] = name_lte
 
-    json_name_range: Union[Unset, list[str]] = UNSET
+    json_name_range: list[str] | Unset = UNSET
     if not isinstance(name_range, Unset):
         json_name_range = ",".join(map(str, name_range))
 
@@ -439,7 +439,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -455,7 +455,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -475,7 +475,7 @@ def _get_kwargs(
 
     params["relatedTo__gte"] = related_to_gte
 
-    json_related_to_in: Union[Unset, list[int]] = UNSET
+    json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
 
@@ -489,7 +489,7 @@ def _get_kwargs(
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
-    json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
@@ -497,7 +497,7 @@ def _get_kwargs(
 
     params["relatedTo__short_code"] = related_to_short_code
 
-    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
         json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
 
@@ -505,7 +505,7 @@ def _get_kwargs(
 
     params["relatedTo__uuid"] = related_to_uuid
 
-    json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
+    json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
         json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
@@ -523,8 +523,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedOnlineResourceReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedOnlineResourceReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedOnlineResourceReadList.from_dict(response.json())
 
@@ -537,7 +537,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedOnlineResourceReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -550,282 +550,282 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    application_profile: Union[Unset, OnlineresourcesListApplicationProfileFileFormat] = UNSET,
-    application_profile_contains: Union[Unset, str] = UNSET,
-    application_profile_endswith: Union[Unset, str] = UNSET,
-    application_profile_gt: Union[Unset, str] = UNSET,
-    application_profile_gte: Union[Unset, str] = UNSET,
-    application_profile_icontains: Union[Unset, str] = UNSET,
-    application_profile_iendswith: Union[Unset, str] = UNSET,
-    application_profile_iexact: Union[Unset, str] = UNSET,
-    application_profile_in: Union[Unset, list[str]] = UNSET,
-    application_profile_iregex: Union[Unset, str] = UNSET,
-    application_profile_isnull: Union[Unset, bool] = UNSET,
-    application_profile_istartswith: Union[Unset, str] = UNSET,
-    application_profile_lt: Union[Unset, str] = UNSET,
-    application_profile_lte: Union[Unset, str] = UNSET,
-    application_profile_range: Union[Unset, list[str]] = UNSET,
-    application_profile_regex: Union[Unset, str] = UNSET,
-    application_profile_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    function: Union[Unset, OnlineresourcesListFunction] = UNSET,
-    function_contains: Union[Unset, str] = UNSET,
-    function_endswith: Union[Unset, str] = UNSET,
-    function_gt: Union[Unset, str] = UNSET,
-    function_gte: Union[Unset, str] = UNSET,
-    function_icontains: Union[Unset, str] = UNSET,
-    function_iendswith: Union[Unset, str] = UNSET,
-    function_iexact: Union[Unset, str] = UNSET,
-    function_in: Union[Unset, list[str]] = UNSET,
-    function_iregex: Union[Unset, str] = UNSET,
-    function_isnull: Union[Unset, bool] = UNSET,
-    function_istartswith: Union[Unset, str] = UNSET,
-    function_lt: Union[Unset, str] = UNSET,
-    function_lte: Union[Unset, str] = UNSET,
-    function_range: Union[Unset, list[str]] = UNSET,
-    function_regex: Union[Unset, str] = UNSET,
-    function_startswith: Union[Unset, str] = UNSET,
-    internal_resource_type: Union[Unset, OnlineresourcesListInternalResourceType] = UNSET,
-    internal_resource_type_contains: Union[Unset, str] = UNSET,
-    internal_resource_type_endswith: Union[Unset, str] = UNSET,
-    internal_resource_type_gt: Union[Unset, str] = UNSET,
-    internal_resource_type_gte: Union[Unset, str] = UNSET,
-    internal_resource_type_icontains: Union[Unset, str] = UNSET,
-    internal_resource_type_iendswith: Union[Unset, str] = UNSET,
-    internal_resource_type_iexact: Union[Unset, str] = UNSET,
-    internal_resource_type_in: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_iregex: Union[Unset, str] = UNSET,
-    internal_resource_type_isnull: Union[Unset, bool] = UNSET,
-    internal_resource_type_istartswith: Union[Unset, str] = UNSET,
-    internal_resource_type_lt: Union[Unset, str] = UNSET,
-    internal_resource_type_lte: Union[Unset, str] = UNSET,
-    internal_resource_type_range: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_regex: Union[Unset, str] = UNSET,
-    internal_resource_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    application_profile: OnlineresourcesListApplicationProfileFileFormat | Unset = UNSET,
+    application_profile_contains: str | Unset = UNSET,
+    application_profile_endswith: str | Unset = UNSET,
+    application_profile_gt: str | Unset = UNSET,
+    application_profile_gte: str | Unset = UNSET,
+    application_profile_icontains: str | Unset = UNSET,
+    application_profile_iendswith: str | Unset = UNSET,
+    application_profile_iexact: str | Unset = UNSET,
+    application_profile_in: list[str] | Unset = UNSET,
+    application_profile_iregex: str | Unset = UNSET,
+    application_profile_isnull: bool | Unset = UNSET,
+    application_profile_istartswith: str | Unset = UNSET,
+    application_profile_lt: str | Unset = UNSET,
+    application_profile_lte: str | Unset = UNSET,
+    application_profile_range: list[str] | Unset = UNSET,
+    application_profile_regex: str | Unset = UNSET,
+    application_profile_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    function: OnlineresourcesListFunction | Unset = UNSET,
+    function_contains: str | Unset = UNSET,
+    function_endswith: str | Unset = UNSET,
+    function_gt: str | Unset = UNSET,
+    function_gte: str | Unset = UNSET,
+    function_icontains: str | Unset = UNSET,
+    function_iendswith: str | Unset = UNSET,
+    function_iexact: str | Unset = UNSET,
+    function_in: list[str] | Unset = UNSET,
+    function_iregex: str | Unset = UNSET,
+    function_isnull: bool | Unset = UNSET,
+    function_istartswith: str | Unset = UNSET,
+    function_lt: str | Unset = UNSET,
+    function_lte: str | Unset = UNSET,
+    function_range: list[str] | Unset = UNSET,
+    function_regex: str | Unset = UNSET,
+    function_startswith: str | Unset = UNSET,
+    internal_resource_type: OnlineresourcesListInternalResourceType | Unset = UNSET,
+    internal_resource_type_contains: str | Unset = UNSET,
+    internal_resource_type_endswith: str | Unset = UNSET,
+    internal_resource_type_gt: str | Unset = UNSET,
+    internal_resource_type_gte: str | Unset = UNSET,
+    internal_resource_type_icontains: str | Unset = UNSET,
+    internal_resource_type_iendswith: str | Unset = UNSET,
+    internal_resource_type_iexact: str | Unset = UNSET,
+    internal_resource_type_in: list[str] | Unset = UNSET,
+    internal_resource_type_iregex: str | Unset = UNSET,
+    internal_resource_type_isnull: bool | Unset = UNSET,
+    internal_resource_type_istartswith: str | Unset = UNSET,
+    internal_resource_type_lt: str | Unset = UNSET,
+    internal_resource_type_lte: str | Unset = UNSET,
+    internal_resource_type_range: list[str] | Unset = UNSET,
+    internal_resource_type_regex: str | Unset = UNSET,
+    internal_resource_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
-        application_profile (Union[Unset, OnlineresourcesListApplicationProfileFileFormat]):
-        application_profile_contains (Union[Unset, str]):
-        application_profile_endswith (Union[Unset, str]):
-        application_profile_gt (Union[Unset, str]):
-        application_profile_gte (Union[Unset, str]):
-        application_profile_icontains (Union[Unset, str]):
-        application_profile_iendswith (Union[Unset, str]):
-        application_profile_iexact (Union[Unset, str]):
-        application_profile_in (Union[Unset, list[str]]):
-        application_profile_iregex (Union[Unset, str]):
-        application_profile_isnull (Union[Unset, bool]):
-        application_profile_istartswith (Union[Unset, str]):
-        application_profile_lt (Union[Unset, str]):
-        application_profile_lte (Union[Unset, str]):
-        application_profile_range (Union[Unset, list[str]]):
-        application_profile_regex (Union[Unset, str]):
-        application_profile_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        function (Union[Unset, OnlineresourcesListFunction]):
-        function_contains (Union[Unset, str]):
-        function_endswith (Union[Unset, str]):
-        function_gt (Union[Unset, str]):
-        function_gte (Union[Unset, str]):
-        function_icontains (Union[Unset, str]):
-        function_iendswith (Union[Unset, str]):
-        function_iexact (Union[Unset, str]):
-        function_in (Union[Unset, list[str]]):
-        function_iregex (Union[Unset, str]):
-        function_isnull (Union[Unset, bool]):
-        function_istartswith (Union[Unset, str]):
-        function_lt (Union[Unset, str]):
-        function_lte (Union[Unset, str]):
-        function_range (Union[Unset, list[str]]):
-        function_regex (Union[Unset, str]):
-        function_startswith (Union[Unset, str]):
-        internal_resource_type (Union[Unset, OnlineresourcesListInternalResourceType]):
-        internal_resource_type_contains (Union[Unset, str]):
-        internal_resource_type_endswith (Union[Unset, str]):
-        internal_resource_type_gt (Union[Unset, str]):
-        internal_resource_type_gte (Union[Unset, str]):
-        internal_resource_type_icontains (Union[Unset, str]):
-        internal_resource_type_iendswith (Union[Unset, str]):
-        internal_resource_type_iexact (Union[Unset, str]):
-        internal_resource_type_in (Union[Unset, list[str]]):
-        internal_resource_type_iregex (Union[Unset, str]):
-        internal_resource_type_isnull (Union[Unset, bool]):
-        internal_resource_type_istartswith (Union[Unset, str]):
-        internal_resource_type_lt (Union[Unset, str]):
-        internal_resource_type_lte (Union[Unset, str]):
-        internal_resource_type_range (Union[Unset, list[str]]):
-        internal_resource_type_regex (Union[Unset, str]):
-        internal_resource_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        application_profile (OnlineresourcesListApplicationProfileFileFormat | Unset):
+        application_profile_contains (str | Unset):
+        application_profile_endswith (str | Unset):
+        application_profile_gt (str | Unset):
+        application_profile_gte (str | Unset):
+        application_profile_icontains (str | Unset):
+        application_profile_iendswith (str | Unset):
+        application_profile_iexact (str | Unset):
+        application_profile_in (list[str] | Unset):
+        application_profile_iregex (str | Unset):
+        application_profile_isnull (bool | Unset):
+        application_profile_istartswith (str | Unset):
+        application_profile_lt (str | Unset):
+        application_profile_lte (str | Unset):
+        application_profile_range (list[str] | Unset):
+        application_profile_regex (str | Unset):
+        application_profile_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        function (OnlineresourcesListFunction | Unset):
+        function_contains (str | Unset):
+        function_endswith (str | Unset):
+        function_gt (str | Unset):
+        function_gte (str | Unset):
+        function_icontains (str | Unset):
+        function_iendswith (str | Unset):
+        function_iexact (str | Unset):
+        function_in (list[str] | Unset):
+        function_iregex (str | Unset):
+        function_isnull (bool | Unset):
+        function_istartswith (str | Unset):
+        function_lt (str | Unset):
+        function_lte (str | Unset):
+        function_range (list[str] | Unset):
+        function_regex (str | Unset):
+        function_startswith (str | Unset):
+        internal_resource_type (OnlineresourcesListInternalResourceType | Unset):
+        internal_resource_type_contains (str | Unset):
+        internal_resource_type_endswith (str | Unset):
+        internal_resource_type_gt (str | Unset):
+        internal_resource_type_gte (str | Unset):
+        internal_resource_type_icontains (str | Unset):
+        internal_resource_type_iendswith (str | Unset):
+        internal_resource_type_iexact (str | Unset):
+        internal_resource_type_in (list[str] | Unset):
+        internal_resource_type_iregex (str | Unset):
+        internal_resource_type_isnull (bool | Unset):
+        internal_resource_type_istartswith (str | Unset):
+        internal_resource_type_lt (str | Unset):
+        internal_resource_type_lte (str | Unset):
+        internal_resource_type_range (list[str] | Unset):
+        internal_resource_type_regex (str | Unset):
+        internal_resource_type_startswith (str | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -984,282 +984,282 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    application_profile: Union[Unset, OnlineresourcesListApplicationProfileFileFormat] = UNSET,
-    application_profile_contains: Union[Unset, str] = UNSET,
-    application_profile_endswith: Union[Unset, str] = UNSET,
-    application_profile_gt: Union[Unset, str] = UNSET,
-    application_profile_gte: Union[Unset, str] = UNSET,
-    application_profile_icontains: Union[Unset, str] = UNSET,
-    application_profile_iendswith: Union[Unset, str] = UNSET,
-    application_profile_iexact: Union[Unset, str] = UNSET,
-    application_profile_in: Union[Unset, list[str]] = UNSET,
-    application_profile_iregex: Union[Unset, str] = UNSET,
-    application_profile_isnull: Union[Unset, bool] = UNSET,
-    application_profile_istartswith: Union[Unset, str] = UNSET,
-    application_profile_lt: Union[Unset, str] = UNSET,
-    application_profile_lte: Union[Unset, str] = UNSET,
-    application_profile_range: Union[Unset, list[str]] = UNSET,
-    application_profile_regex: Union[Unset, str] = UNSET,
-    application_profile_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    function: Union[Unset, OnlineresourcesListFunction] = UNSET,
-    function_contains: Union[Unset, str] = UNSET,
-    function_endswith: Union[Unset, str] = UNSET,
-    function_gt: Union[Unset, str] = UNSET,
-    function_gte: Union[Unset, str] = UNSET,
-    function_icontains: Union[Unset, str] = UNSET,
-    function_iendswith: Union[Unset, str] = UNSET,
-    function_iexact: Union[Unset, str] = UNSET,
-    function_in: Union[Unset, list[str]] = UNSET,
-    function_iregex: Union[Unset, str] = UNSET,
-    function_isnull: Union[Unset, bool] = UNSET,
-    function_istartswith: Union[Unset, str] = UNSET,
-    function_lt: Union[Unset, str] = UNSET,
-    function_lte: Union[Unset, str] = UNSET,
-    function_range: Union[Unset, list[str]] = UNSET,
-    function_regex: Union[Unset, str] = UNSET,
-    function_startswith: Union[Unset, str] = UNSET,
-    internal_resource_type: Union[Unset, OnlineresourcesListInternalResourceType] = UNSET,
-    internal_resource_type_contains: Union[Unset, str] = UNSET,
-    internal_resource_type_endswith: Union[Unset, str] = UNSET,
-    internal_resource_type_gt: Union[Unset, str] = UNSET,
-    internal_resource_type_gte: Union[Unset, str] = UNSET,
-    internal_resource_type_icontains: Union[Unset, str] = UNSET,
-    internal_resource_type_iendswith: Union[Unset, str] = UNSET,
-    internal_resource_type_iexact: Union[Unset, str] = UNSET,
-    internal_resource_type_in: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_iregex: Union[Unset, str] = UNSET,
-    internal_resource_type_isnull: Union[Unset, bool] = UNSET,
-    internal_resource_type_istartswith: Union[Unset, str] = UNSET,
-    internal_resource_type_lt: Union[Unset, str] = UNSET,
-    internal_resource_type_lte: Union[Unset, str] = UNSET,
-    internal_resource_type_range: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_regex: Union[Unset, str] = UNSET,
-    internal_resource_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedOnlineResourceReadList]:
+    application_profile: OnlineresourcesListApplicationProfileFileFormat | Unset = UNSET,
+    application_profile_contains: str | Unset = UNSET,
+    application_profile_endswith: str | Unset = UNSET,
+    application_profile_gt: str | Unset = UNSET,
+    application_profile_gte: str | Unset = UNSET,
+    application_profile_icontains: str | Unset = UNSET,
+    application_profile_iendswith: str | Unset = UNSET,
+    application_profile_iexact: str | Unset = UNSET,
+    application_profile_in: list[str] | Unset = UNSET,
+    application_profile_iregex: str | Unset = UNSET,
+    application_profile_isnull: bool | Unset = UNSET,
+    application_profile_istartswith: str | Unset = UNSET,
+    application_profile_lt: str | Unset = UNSET,
+    application_profile_lte: str | Unset = UNSET,
+    application_profile_range: list[str] | Unset = UNSET,
+    application_profile_regex: str | Unset = UNSET,
+    application_profile_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    function: OnlineresourcesListFunction | Unset = UNSET,
+    function_contains: str | Unset = UNSET,
+    function_endswith: str | Unset = UNSET,
+    function_gt: str | Unset = UNSET,
+    function_gte: str | Unset = UNSET,
+    function_icontains: str | Unset = UNSET,
+    function_iendswith: str | Unset = UNSET,
+    function_iexact: str | Unset = UNSET,
+    function_in: list[str] | Unset = UNSET,
+    function_iregex: str | Unset = UNSET,
+    function_isnull: bool | Unset = UNSET,
+    function_istartswith: str | Unset = UNSET,
+    function_lt: str | Unset = UNSET,
+    function_lte: str | Unset = UNSET,
+    function_range: list[str] | Unset = UNSET,
+    function_regex: str | Unset = UNSET,
+    function_startswith: str | Unset = UNSET,
+    internal_resource_type: OnlineresourcesListInternalResourceType | Unset = UNSET,
+    internal_resource_type_contains: str | Unset = UNSET,
+    internal_resource_type_endswith: str | Unset = UNSET,
+    internal_resource_type_gt: str | Unset = UNSET,
+    internal_resource_type_gte: str | Unset = UNSET,
+    internal_resource_type_icontains: str | Unset = UNSET,
+    internal_resource_type_iendswith: str | Unset = UNSET,
+    internal_resource_type_iexact: str | Unset = UNSET,
+    internal_resource_type_in: list[str] | Unset = UNSET,
+    internal_resource_type_iregex: str | Unset = UNSET,
+    internal_resource_type_isnull: bool | Unset = UNSET,
+    internal_resource_type_istartswith: str | Unset = UNSET,
+    internal_resource_type_lt: str | Unset = UNSET,
+    internal_resource_type_lte: str | Unset = UNSET,
+    internal_resource_type_range: list[str] | Unset = UNSET,
+    internal_resource_type_regex: str | Unset = UNSET,
+    internal_resource_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedOnlineResourceReadList | None:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
-        application_profile (Union[Unset, OnlineresourcesListApplicationProfileFileFormat]):
-        application_profile_contains (Union[Unset, str]):
-        application_profile_endswith (Union[Unset, str]):
-        application_profile_gt (Union[Unset, str]):
-        application_profile_gte (Union[Unset, str]):
-        application_profile_icontains (Union[Unset, str]):
-        application_profile_iendswith (Union[Unset, str]):
-        application_profile_iexact (Union[Unset, str]):
-        application_profile_in (Union[Unset, list[str]]):
-        application_profile_iregex (Union[Unset, str]):
-        application_profile_isnull (Union[Unset, bool]):
-        application_profile_istartswith (Union[Unset, str]):
-        application_profile_lt (Union[Unset, str]):
-        application_profile_lte (Union[Unset, str]):
-        application_profile_range (Union[Unset, list[str]]):
-        application_profile_regex (Union[Unset, str]):
-        application_profile_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        function (Union[Unset, OnlineresourcesListFunction]):
-        function_contains (Union[Unset, str]):
-        function_endswith (Union[Unset, str]):
-        function_gt (Union[Unset, str]):
-        function_gte (Union[Unset, str]):
-        function_icontains (Union[Unset, str]):
-        function_iendswith (Union[Unset, str]):
-        function_iexact (Union[Unset, str]):
-        function_in (Union[Unset, list[str]]):
-        function_iregex (Union[Unset, str]):
-        function_isnull (Union[Unset, bool]):
-        function_istartswith (Union[Unset, str]):
-        function_lt (Union[Unset, str]):
-        function_lte (Union[Unset, str]):
-        function_range (Union[Unset, list[str]]):
-        function_regex (Union[Unset, str]):
-        function_startswith (Union[Unset, str]):
-        internal_resource_type (Union[Unset, OnlineresourcesListInternalResourceType]):
-        internal_resource_type_contains (Union[Unset, str]):
-        internal_resource_type_endswith (Union[Unset, str]):
-        internal_resource_type_gt (Union[Unset, str]):
-        internal_resource_type_gte (Union[Unset, str]):
-        internal_resource_type_icontains (Union[Unset, str]):
-        internal_resource_type_iendswith (Union[Unset, str]):
-        internal_resource_type_iexact (Union[Unset, str]):
-        internal_resource_type_in (Union[Unset, list[str]]):
-        internal_resource_type_iregex (Union[Unset, str]):
-        internal_resource_type_isnull (Union[Unset, bool]):
-        internal_resource_type_istartswith (Union[Unset, str]):
-        internal_resource_type_lt (Union[Unset, str]):
-        internal_resource_type_lte (Union[Unset, str]):
-        internal_resource_type_range (Union[Unset, list[str]]):
-        internal_resource_type_regex (Union[Unset, str]):
-        internal_resource_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        application_profile (OnlineresourcesListApplicationProfileFileFormat | Unset):
+        application_profile_contains (str | Unset):
+        application_profile_endswith (str | Unset):
+        application_profile_gt (str | Unset):
+        application_profile_gte (str | Unset):
+        application_profile_icontains (str | Unset):
+        application_profile_iendswith (str | Unset):
+        application_profile_iexact (str | Unset):
+        application_profile_in (list[str] | Unset):
+        application_profile_iregex (str | Unset):
+        application_profile_isnull (bool | Unset):
+        application_profile_istartswith (str | Unset):
+        application_profile_lt (str | Unset):
+        application_profile_lte (str | Unset):
+        application_profile_range (list[str] | Unset):
+        application_profile_regex (str | Unset):
+        application_profile_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        function (OnlineresourcesListFunction | Unset):
+        function_contains (str | Unset):
+        function_endswith (str | Unset):
+        function_gt (str | Unset):
+        function_gte (str | Unset):
+        function_icontains (str | Unset):
+        function_iendswith (str | Unset):
+        function_iexact (str | Unset):
+        function_in (list[str] | Unset):
+        function_iregex (str | Unset):
+        function_isnull (bool | Unset):
+        function_istartswith (str | Unset):
+        function_lt (str | Unset):
+        function_lte (str | Unset):
+        function_range (list[str] | Unset):
+        function_regex (str | Unset):
+        function_startswith (str | Unset):
+        internal_resource_type (OnlineresourcesListInternalResourceType | Unset):
+        internal_resource_type_contains (str | Unset):
+        internal_resource_type_endswith (str | Unset):
+        internal_resource_type_gt (str | Unset):
+        internal_resource_type_gte (str | Unset):
+        internal_resource_type_icontains (str | Unset):
+        internal_resource_type_iendswith (str | Unset):
+        internal_resource_type_iexact (str | Unset):
+        internal_resource_type_in (list[str] | Unset):
+        internal_resource_type_iregex (str | Unset):
+        internal_resource_type_isnull (bool | Unset):
+        internal_resource_type_istartswith (str | Unset):
+        internal_resource_type_lt (str | Unset):
+        internal_resource_type_lte (str | Unset):
+        internal_resource_type_range (list[str] | Unset):
+        internal_resource_type_regex (str | Unset):
+        internal_resource_type_startswith (str | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1413,282 +1413,282 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    application_profile: Union[Unset, OnlineresourcesListApplicationProfileFileFormat] = UNSET,
-    application_profile_contains: Union[Unset, str] = UNSET,
-    application_profile_endswith: Union[Unset, str] = UNSET,
-    application_profile_gt: Union[Unset, str] = UNSET,
-    application_profile_gte: Union[Unset, str] = UNSET,
-    application_profile_icontains: Union[Unset, str] = UNSET,
-    application_profile_iendswith: Union[Unset, str] = UNSET,
-    application_profile_iexact: Union[Unset, str] = UNSET,
-    application_profile_in: Union[Unset, list[str]] = UNSET,
-    application_profile_iregex: Union[Unset, str] = UNSET,
-    application_profile_isnull: Union[Unset, bool] = UNSET,
-    application_profile_istartswith: Union[Unset, str] = UNSET,
-    application_profile_lt: Union[Unset, str] = UNSET,
-    application_profile_lte: Union[Unset, str] = UNSET,
-    application_profile_range: Union[Unset, list[str]] = UNSET,
-    application_profile_regex: Union[Unset, str] = UNSET,
-    application_profile_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    function: Union[Unset, OnlineresourcesListFunction] = UNSET,
-    function_contains: Union[Unset, str] = UNSET,
-    function_endswith: Union[Unset, str] = UNSET,
-    function_gt: Union[Unset, str] = UNSET,
-    function_gte: Union[Unset, str] = UNSET,
-    function_icontains: Union[Unset, str] = UNSET,
-    function_iendswith: Union[Unset, str] = UNSET,
-    function_iexact: Union[Unset, str] = UNSET,
-    function_in: Union[Unset, list[str]] = UNSET,
-    function_iregex: Union[Unset, str] = UNSET,
-    function_isnull: Union[Unset, bool] = UNSET,
-    function_istartswith: Union[Unset, str] = UNSET,
-    function_lt: Union[Unset, str] = UNSET,
-    function_lte: Union[Unset, str] = UNSET,
-    function_range: Union[Unset, list[str]] = UNSET,
-    function_regex: Union[Unset, str] = UNSET,
-    function_startswith: Union[Unset, str] = UNSET,
-    internal_resource_type: Union[Unset, OnlineresourcesListInternalResourceType] = UNSET,
-    internal_resource_type_contains: Union[Unset, str] = UNSET,
-    internal_resource_type_endswith: Union[Unset, str] = UNSET,
-    internal_resource_type_gt: Union[Unset, str] = UNSET,
-    internal_resource_type_gte: Union[Unset, str] = UNSET,
-    internal_resource_type_icontains: Union[Unset, str] = UNSET,
-    internal_resource_type_iendswith: Union[Unset, str] = UNSET,
-    internal_resource_type_iexact: Union[Unset, str] = UNSET,
-    internal_resource_type_in: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_iregex: Union[Unset, str] = UNSET,
-    internal_resource_type_isnull: Union[Unset, bool] = UNSET,
-    internal_resource_type_istartswith: Union[Unset, str] = UNSET,
-    internal_resource_type_lt: Union[Unset, str] = UNSET,
-    internal_resource_type_lte: Union[Unset, str] = UNSET,
-    internal_resource_type_range: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_regex: Union[Unset, str] = UNSET,
-    internal_resource_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    application_profile: OnlineresourcesListApplicationProfileFileFormat | Unset = UNSET,
+    application_profile_contains: str | Unset = UNSET,
+    application_profile_endswith: str | Unset = UNSET,
+    application_profile_gt: str | Unset = UNSET,
+    application_profile_gte: str | Unset = UNSET,
+    application_profile_icontains: str | Unset = UNSET,
+    application_profile_iendswith: str | Unset = UNSET,
+    application_profile_iexact: str | Unset = UNSET,
+    application_profile_in: list[str] | Unset = UNSET,
+    application_profile_iregex: str | Unset = UNSET,
+    application_profile_isnull: bool | Unset = UNSET,
+    application_profile_istartswith: str | Unset = UNSET,
+    application_profile_lt: str | Unset = UNSET,
+    application_profile_lte: str | Unset = UNSET,
+    application_profile_range: list[str] | Unset = UNSET,
+    application_profile_regex: str | Unset = UNSET,
+    application_profile_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    function: OnlineresourcesListFunction | Unset = UNSET,
+    function_contains: str | Unset = UNSET,
+    function_endswith: str | Unset = UNSET,
+    function_gt: str | Unset = UNSET,
+    function_gte: str | Unset = UNSET,
+    function_icontains: str | Unset = UNSET,
+    function_iendswith: str | Unset = UNSET,
+    function_iexact: str | Unset = UNSET,
+    function_in: list[str] | Unset = UNSET,
+    function_iregex: str | Unset = UNSET,
+    function_isnull: bool | Unset = UNSET,
+    function_istartswith: str | Unset = UNSET,
+    function_lt: str | Unset = UNSET,
+    function_lte: str | Unset = UNSET,
+    function_range: list[str] | Unset = UNSET,
+    function_regex: str | Unset = UNSET,
+    function_startswith: str | Unset = UNSET,
+    internal_resource_type: OnlineresourcesListInternalResourceType | Unset = UNSET,
+    internal_resource_type_contains: str | Unset = UNSET,
+    internal_resource_type_endswith: str | Unset = UNSET,
+    internal_resource_type_gt: str | Unset = UNSET,
+    internal_resource_type_gte: str | Unset = UNSET,
+    internal_resource_type_icontains: str | Unset = UNSET,
+    internal_resource_type_iendswith: str | Unset = UNSET,
+    internal_resource_type_iexact: str | Unset = UNSET,
+    internal_resource_type_in: list[str] | Unset = UNSET,
+    internal_resource_type_iregex: str | Unset = UNSET,
+    internal_resource_type_isnull: bool | Unset = UNSET,
+    internal_resource_type_istartswith: str | Unset = UNSET,
+    internal_resource_type_lt: str | Unset = UNSET,
+    internal_resource_type_lte: str | Unset = UNSET,
+    internal_resource_type_range: list[str] | Unset = UNSET,
+    internal_resource_type_regex: str | Unset = UNSET,
+    internal_resource_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedOnlineResourceReadList]:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
-        application_profile (Union[Unset, OnlineresourcesListApplicationProfileFileFormat]):
-        application_profile_contains (Union[Unset, str]):
-        application_profile_endswith (Union[Unset, str]):
-        application_profile_gt (Union[Unset, str]):
-        application_profile_gte (Union[Unset, str]):
-        application_profile_icontains (Union[Unset, str]):
-        application_profile_iendswith (Union[Unset, str]):
-        application_profile_iexact (Union[Unset, str]):
-        application_profile_in (Union[Unset, list[str]]):
-        application_profile_iregex (Union[Unset, str]):
-        application_profile_isnull (Union[Unset, bool]):
-        application_profile_istartswith (Union[Unset, str]):
-        application_profile_lt (Union[Unset, str]):
-        application_profile_lte (Union[Unset, str]):
-        application_profile_range (Union[Unset, list[str]]):
-        application_profile_regex (Union[Unset, str]):
-        application_profile_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        function (Union[Unset, OnlineresourcesListFunction]):
-        function_contains (Union[Unset, str]):
-        function_endswith (Union[Unset, str]):
-        function_gt (Union[Unset, str]):
-        function_gte (Union[Unset, str]):
-        function_icontains (Union[Unset, str]):
-        function_iendswith (Union[Unset, str]):
-        function_iexact (Union[Unset, str]):
-        function_in (Union[Unset, list[str]]):
-        function_iregex (Union[Unset, str]):
-        function_isnull (Union[Unset, bool]):
-        function_istartswith (Union[Unset, str]):
-        function_lt (Union[Unset, str]):
-        function_lte (Union[Unset, str]):
-        function_range (Union[Unset, list[str]]):
-        function_regex (Union[Unset, str]):
-        function_startswith (Union[Unset, str]):
-        internal_resource_type (Union[Unset, OnlineresourcesListInternalResourceType]):
-        internal_resource_type_contains (Union[Unset, str]):
-        internal_resource_type_endswith (Union[Unset, str]):
-        internal_resource_type_gt (Union[Unset, str]):
-        internal_resource_type_gte (Union[Unset, str]):
-        internal_resource_type_icontains (Union[Unset, str]):
-        internal_resource_type_iendswith (Union[Unset, str]):
-        internal_resource_type_iexact (Union[Unset, str]):
-        internal_resource_type_in (Union[Unset, list[str]]):
-        internal_resource_type_iregex (Union[Unset, str]):
-        internal_resource_type_isnull (Union[Unset, bool]):
-        internal_resource_type_istartswith (Union[Unset, str]):
-        internal_resource_type_lt (Union[Unset, str]):
-        internal_resource_type_lte (Union[Unset, str]):
-        internal_resource_type_range (Union[Unset, list[str]]):
-        internal_resource_type_regex (Union[Unset, str]):
-        internal_resource_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        application_profile (OnlineresourcesListApplicationProfileFileFormat | Unset):
+        application_profile_contains (str | Unset):
+        application_profile_endswith (str | Unset):
+        application_profile_gt (str | Unset):
+        application_profile_gte (str | Unset):
+        application_profile_icontains (str | Unset):
+        application_profile_iendswith (str | Unset):
+        application_profile_iexact (str | Unset):
+        application_profile_in (list[str] | Unset):
+        application_profile_iregex (str | Unset):
+        application_profile_isnull (bool | Unset):
+        application_profile_istartswith (str | Unset):
+        application_profile_lt (str | Unset):
+        application_profile_lte (str | Unset):
+        application_profile_range (list[str] | Unset):
+        application_profile_regex (str | Unset):
+        application_profile_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        function (OnlineresourcesListFunction | Unset):
+        function_contains (str | Unset):
+        function_endswith (str | Unset):
+        function_gt (str | Unset):
+        function_gte (str | Unset):
+        function_icontains (str | Unset):
+        function_iendswith (str | Unset):
+        function_iexact (str | Unset):
+        function_in (list[str] | Unset):
+        function_iregex (str | Unset):
+        function_isnull (bool | Unset):
+        function_istartswith (str | Unset):
+        function_lt (str | Unset):
+        function_lte (str | Unset):
+        function_range (list[str] | Unset):
+        function_regex (str | Unset):
+        function_startswith (str | Unset):
+        internal_resource_type (OnlineresourcesListInternalResourceType | Unset):
+        internal_resource_type_contains (str | Unset):
+        internal_resource_type_endswith (str | Unset):
+        internal_resource_type_gt (str | Unset):
+        internal_resource_type_gte (str | Unset):
+        internal_resource_type_icontains (str | Unset):
+        internal_resource_type_iendswith (str | Unset):
+        internal_resource_type_iexact (str | Unset):
+        internal_resource_type_in (list[str] | Unset):
+        internal_resource_type_iregex (str | Unset):
+        internal_resource_type_isnull (bool | Unset):
+        internal_resource_type_istartswith (str | Unset):
+        internal_resource_type_lt (str | Unset):
+        internal_resource_type_lte (str | Unset):
+        internal_resource_type_range (list[str] | Unset):
+        internal_resource_type_regex (str | Unset):
+        internal_resource_type_startswith (str | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1845,282 +1845,282 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    application_profile: Union[Unset, OnlineresourcesListApplicationProfileFileFormat] = UNSET,
-    application_profile_contains: Union[Unset, str] = UNSET,
-    application_profile_endswith: Union[Unset, str] = UNSET,
-    application_profile_gt: Union[Unset, str] = UNSET,
-    application_profile_gte: Union[Unset, str] = UNSET,
-    application_profile_icontains: Union[Unset, str] = UNSET,
-    application_profile_iendswith: Union[Unset, str] = UNSET,
-    application_profile_iexact: Union[Unset, str] = UNSET,
-    application_profile_in: Union[Unset, list[str]] = UNSET,
-    application_profile_iregex: Union[Unset, str] = UNSET,
-    application_profile_isnull: Union[Unset, bool] = UNSET,
-    application_profile_istartswith: Union[Unset, str] = UNSET,
-    application_profile_lt: Union[Unset, str] = UNSET,
-    application_profile_lte: Union[Unset, str] = UNSET,
-    application_profile_range: Union[Unset, list[str]] = UNSET,
-    application_profile_regex: Union[Unset, str] = UNSET,
-    application_profile_startswith: Union[Unset, str] = UNSET,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    function: Union[Unset, OnlineresourcesListFunction] = UNSET,
-    function_contains: Union[Unset, str] = UNSET,
-    function_endswith: Union[Unset, str] = UNSET,
-    function_gt: Union[Unset, str] = UNSET,
-    function_gte: Union[Unset, str] = UNSET,
-    function_icontains: Union[Unset, str] = UNSET,
-    function_iendswith: Union[Unset, str] = UNSET,
-    function_iexact: Union[Unset, str] = UNSET,
-    function_in: Union[Unset, list[str]] = UNSET,
-    function_iregex: Union[Unset, str] = UNSET,
-    function_isnull: Union[Unset, bool] = UNSET,
-    function_istartswith: Union[Unset, str] = UNSET,
-    function_lt: Union[Unset, str] = UNSET,
-    function_lte: Union[Unset, str] = UNSET,
-    function_range: Union[Unset, list[str]] = UNSET,
-    function_regex: Union[Unset, str] = UNSET,
-    function_startswith: Union[Unset, str] = UNSET,
-    internal_resource_type: Union[Unset, OnlineresourcesListInternalResourceType] = UNSET,
-    internal_resource_type_contains: Union[Unset, str] = UNSET,
-    internal_resource_type_endswith: Union[Unset, str] = UNSET,
-    internal_resource_type_gt: Union[Unset, str] = UNSET,
-    internal_resource_type_gte: Union[Unset, str] = UNSET,
-    internal_resource_type_icontains: Union[Unset, str] = UNSET,
-    internal_resource_type_iendswith: Union[Unset, str] = UNSET,
-    internal_resource_type_iexact: Union[Unset, str] = UNSET,
-    internal_resource_type_in: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_iregex: Union[Unset, str] = UNSET,
-    internal_resource_type_isnull: Union[Unset, bool] = UNSET,
-    internal_resource_type_istartswith: Union[Unset, str] = UNSET,
-    internal_resource_type_lt: Union[Unset, str] = UNSET,
-    internal_resource_type_lte: Union[Unset, str] = UNSET,
-    internal_resource_type_range: Union[Unset, list[str]] = UNSET,
-    internal_resource_type_regex: Union[Unset, str] = UNSET,
-    internal_resource_type_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    linkage: Union[Unset, str] = UNSET,
-    linkage_contains: Union[Unset, str] = UNSET,
-    linkage_endswith: Union[Unset, str] = UNSET,
-    linkage_gt: Union[Unset, str] = UNSET,
-    linkage_gte: Union[Unset, str] = UNSET,
-    linkage_icontains: Union[Unset, str] = UNSET,
-    linkage_iendswith: Union[Unset, str] = UNSET,
-    linkage_iexact: Union[Unset, str] = UNSET,
-    linkage_in: Union[Unset, list[str]] = UNSET,
-    linkage_iregex: Union[Unset, str] = UNSET,
-    linkage_isnull: Union[Unset, bool] = UNSET,
-    linkage_istartswith: Union[Unset, str] = UNSET,
-    linkage_lt: Union[Unset, str] = UNSET,
-    linkage_lte: Union[Unset, str] = UNSET,
-    linkage_range: Union[Unset, list[str]] = UNSET,
-    linkage_regex: Union[Unset, str] = UNSET,
-    linkage_startswith: Union[Unset, str] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedOnlineResourceReadList]:
+    application_profile: OnlineresourcesListApplicationProfileFileFormat | Unset = UNSET,
+    application_profile_contains: str | Unset = UNSET,
+    application_profile_endswith: str | Unset = UNSET,
+    application_profile_gt: str | Unset = UNSET,
+    application_profile_gte: str | Unset = UNSET,
+    application_profile_icontains: str | Unset = UNSET,
+    application_profile_iendswith: str | Unset = UNSET,
+    application_profile_iexact: str | Unset = UNSET,
+    application_profile_in: list[str] | Unset = UNSET,
+    application_profile_iregex: str | Unset = UNSET,
+    application_profile_isnull: bool | Unset = UNSET,
+    application_profile_istartswith: str | Unset = UNSET,
+    application_profile_lt: str | Unset = UNSET,
+    application_profile_lte: str | Unset = UNSET,
+    application_profile_range: list[str] | Unset = UNSET,
+    application_profile_regex: str | Unset = UNSET,
+    application_profile_startswith: str | Unset = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    function: OnlineresourcesListFunction | Unset = UNSET,
+    function_contains: str | Unset = UNSET,
+    function_endswith: str | Unset = UNSET,
+    function_gt: str | Unset = UNSET,
+    function_gte: str | Unset = UNSET,
+    function_icontains: str | Unset = UNSET,
+    function_iendswith: str | Unset = UNSET,
+    function_iexact: str | Unset = UNSET,
+    function_in: list[str] | Unset = UNSET,
+    function_iregex: str | Unset = UNSET,
+    function_isnull: bool | Unset = UNSET,
+    function_istartswith: str | Unset = UNSET,
+    function_lt: str | Unset = UNSET,
+    function_lte: str | Unset = UNSET,
+    function_range: list[str] | Unset = UNSET,
+    function_regex: str | Unset = UNSET,
+    function_startswith: str | Unset = UNSET,
+    internal_resource_type: OnlineresourcesListInternalResourceType | Unset = UNSET,
+    internal_resource_type_contains: str | Unset = UNSET,
+    internal_resource_type_endswith: str | Unset = UNSET,
+    internal_resource_type_gt: str | Unset = UNSET,
+    internal_resource_type_gte: str | Unset = UNSET,
+    internal_resource_type_icontains: str | Unset = UNSET,
+    internal_resource_type_iendswith: str | Unset = UNSET,
+    internal_resource_type_iexact: str | Unset = UNSET,
+    internal_resource_type_in: list[str] | Unset = UNSET,
+    internal_resource_type_iregex: str | Unset = UNSET,
+    internal_resource_type_isnull: bool | Unset = UNSET,
+    internal_resource_type_istartswith: str | Unset = UNSET,
+    internal_resource_type_lt: str | Unset = UNSET,
+    internal_resource_type_lte: str | Unset = UNSET,
+    internal_resource_type_range: list[str] | Unset = UNSET,
+    internal_resource_type_regex: str | Unset = UNSET,
+    internal_resource_type_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    linkage: str | Unset = UNSET,
+    linkage_contains: str | Unset = UNSET,
+    linkage_endswith: str | Unset = UNSET,
+    linkage_gt: str | Unset = UNSET,
+    linkage_gte: str | Unset = UNSET,
+    linkage_icontains: str | Unset = UNSET,
+    linkage_iendswith: str | Unset = UNSET,
+    linkage_iexact: str | Unset = UNSET,
+    linkage_in: list[str] | Unset = UNSET,
+    linkage_iregex: str | Unset = UNSET,
+    linkage_isnull: bool | Unset = UNSET,
+    linkage_istartswith: str | Unset = UNSET,
+    linkage_lt: str | Unset = UNSET,
+    linkage_lte: str | Unset = UNSET,
+    linkage_range: list[str] | Unset = UNSET,
+    linkage_regex: str | Unset = UNSET,
+    linkage_startswith: str | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedOnlineResourceReadList | None:
     """Get a list of Instrument objects. Instruments have a 1:1 mapping with Observations.
 
     Args:
-        application_profile (Union[Unset, OnlineresourcesListApplicationProfileFileFormat]):
-        application_profile_contains (Union[Unset, str]):
-        application_profile_endswith (Union[Unset, str]):
-        application_profile_gt (Union[Unset, str]):
-        application_profile_gte (Union[Unset, str]):
-        application_profile_icontains (Union[Unset, str]):
-        application_profile_iendswith (Union[Unset, str]):
-        application_profile_iexact (Union[Unset, str]):
-        application_profile_in (Union[Unset, list[str]]):
-        application_profile_iregex (Union[Unset, str]):
-        application_profile_isnull (Union[Unset, bool]):
-        application_profile_istartswith (Union[Unset, str]):
-        application_profile_lt (Union[Unset, str]):
-        application_profile_lte (Union[Unset, str]):
-        application_profile_range (Union[Unset, list[str]]):
-        application_profile_regex (Union[Unset, str]):
-        application_profile_startswith (Union[Unset, str]):
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        function (Union[Unset, OnlineresourcesListFunction]):
-        function_contains (Union[Unset, str]):
-        function_endswith (Union[Unset, str]):
-        function_gt (Union[Unset, str]):
-        function_gte (Union[Unset, str]):
-        function_icontains (Union[Unset, str]):
-        function_iendswith (Union[Unset, str]):
-        function_iexact (Union[Unset, str]):
-        function_in (Union[Unset, list[str]]):
-        function_iregex (Union[Unset, str]):
-        function_isnull (Union[Unset, bool]):
-        function_istartswith (Union[Unset, str]):
-        function_lt (Union[Unset, str]):
-        function_lte (Union[Unset, str]):
-        function_range (Union[Unset, list[str]]):
-        function_regex (Union[Unset, str]):
-        function_startswith (Union[Unset, str]):
-        internal_resource_type (Union[Unset, OnlineresourcesListInternalResourceType]):
-        internal_resource_type_contains (Union[Unset, str]):
-        internal_resource_type_endswith (Union[Unset, str]):
-        internal_resource_type_gt (Union[Unset, str]):
-        internal_resource_type_gte (Union[Unset, str]):
-        internal_resource_type_icontains (Union[Unset, str]):
-        internal_resource_type_iendswith (Union[Unset, str]):
-        internal_resource_type_iexact (Union[Unset, str]):
-        internal_resource_type_in (Union[Unset, list[str]]):
-        internal_resource_type_iregex (Union[Unset, str]):
-        internal_resource_type_isnull (Union[Unset, bool]):
-        internal_resource_type_istartswith (Union[Unset, str]):
-        internal_resource_type_lt (Union[Unset, str]):
-        internal_resource_type_lte (Union[Unset, str]):
-        internal_resource_type_range (Union[Unset, list[str]]):
-        internal_resource_type_regex (Union[Unset, str]):
-        internal_resource_type_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        linkage (Union[Unset, str]):
-        linkage_contains (Union[Unset, str]):
-        linkage_endswith (Union[Unset, str]):
-        linkage_gt (Union[Unset, str]):
-        linkage_gte (Union[Unset, str]):
-        linkage_icontains (Union[Unset, str]):
-        linkage_iendswith (Union[Unset, str]):
-        linkage_iexact (Union[Unset, str]):
-        linkage_in (Union[Unset, list[str]]):
-        linkage_iregex (Union[Unset, str]):
-        linkage_isnull (Union[Unset, bool]):
-        linkage_istartswith (Union[Unset, str]):
-        linkage_lt (Union[Unset, str]):
-        linkage_lte (Union[Unset, str]):
-        linkage_range (Union[Unset, list[str]]):
-        linkage_regex (Union[Unset, str]):
-        linkage_startswith (Union[Unset, str]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        application_profile (OnlineresourcesListApplicationProfileFileFormat | Unset):
+        application_profile_contains (str | Unset):
+        application_profile_endswith (str | Unset):
+        application_profile_gt (str | Unset):
+        application_profile_gte (str | Unset):
+        application_profile_icontains (str | Unset):
+        application_profile_iendswith (str | Unset):
+        application_profile_iexact (str | Unset):
+        application_profile_in (list[str] | Unset):
+        application_profile_iregex (str | Unset):
+        application_profile_isnull (bool | Unset):
+        application_profile_istartswith (str | Unset):
+        application_profile_lt (str | Unset):
+        application_profile_lte (str | Unset):
+        application_profile_range (list[str] | Unset):
+        application_profile_regex (str | Unset):
+        application_profile_startswith (str | Unset):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        function (OnlineresourcesListFunction | Unset):
+        function_contains (str | Unset):
+        function_endswith (str | Unset):
+        function_gt (str | Unset):
+        function_gte (str | Unset):
+        function_icontains (str | Unset):
+        function_iendswith (str | Unset):
+        function_iexact (str | Unset):
+        function_in (list[str] | Unset):
+        function_iregex (str | Unset):
+        function_isnull (bool | Unset):
+        function_istartswith (str | Unset):
+        function_lt (str | Unset):
+        function_lte (str | Unset):
+        function_range (list[str] | Unset):
+        function_regex (str | Unset):
+        function_startswith (str | Unset):
+        internal_resource_type (OnlineresourcesListInternalResourceType | Unset):
+        internal_resource_type_contains (str | Unset):
+        internal_resource_type_endswith (str | Unset):
+        internal_resource_type_gt (str | Unset):
+        internal_resource_type_gte (str | Unset):
+        internal_resource_type_icontains (str | Unset):
+        internal_resource_type_iendswith (str | Unset):
+        internal_resource_type_iexact (str | Unset):
+        internal_resource_type_in (list[str] | Unset):
+        internal_resource_type_iregex (str | Unset):
+        internal_resource_type_isnull (bool | Unset):
+        internal_resource_type_istartswith (str | Unset):
+        internal_resource_type_lt (str | Unset):
+        internal_resource_type_lte (str | Unset):
+        internal_resource_type_range (list[str] | Unset):
+        internal_resource_type_regex (str | Unset):
+        internal_resource_type_startswith (str | Unset):
+        limit (int | Unset):
+        linkage (str | Unset):
+        linkage_contains (str | Unset):
+        linkage_endswith (str | Unset):
+        linkage_gt (str | Unset):
+        linkage_gte (str | Unset):
+        linkage_icontains (str | Unset):
+        linkage_iendswith (str | Unset):
+        linkage_iexact (str | Unset):
+        linkage_in (list[str] | Unset):
+        linkage_iregex (str | Unset):
+        linkage_isnull (bool | Unset):
+        linkage_istartswith (str | Unset):
+        linkage_lt (str | Unset):
+        linkage_lte (str | Unset):
+        linkage_range (list[str] | Unset):
+        linkage_regex (str | Unset):
+        linkage_startswith (str | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

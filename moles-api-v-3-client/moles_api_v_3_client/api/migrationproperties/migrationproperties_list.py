@@ -1,6 +1,6 @@
 import datetime
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,94 +12,94 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    id: Union[Unset, int] = UNSET,
-    id_contained_by: Union[Unset, int] = UNSET,
-    id_contains: Union[Unset, int] = UNSET,
-    id_endswith: Union[Unset, int] = UNSET,
-    id_gt: Union[Unset, int] = UNSET,
-    id_gte: Union[Unset, int] = UNSET,
-    id_icontains: Union[Unset, int] = UNSET,
-    id_iendswith: Union[Unset, int] = UNSET,
-    id_iexact: Union[Unset, int] = UNSET,
-    id_in: Union[Unset, list[int]] = UNSET,
-    id_iregex: Union[Unset, int] = UNSET,
-    id_isnull: Union[Unset, bool] = UNSET,
-    id_istartswith: Union[Unset, int] = UNSET,
-    id_lt: Union[Unset, int] = UNSET,
-    id_lte: Union[Unset, int] = UNSET,
-    id_range: Union[Unset, list[int]] = UNSET,
-    id_regex: Union[Unset, int] = UNSET,
-    id_startswith: Union[Unset, int] = UNSET,
-    key: Union[Unset, str] = UNSET,
-    key_contains: Union[Unset, str] = UNSET,
-    key_endswith: Union[Unset, str] = UNSET,
-    key_gt: Union[Unset, str] = UNSET,
-    key_gte: Union[Unset, str] = UNSET,
-    key_icontains: Union[Unset, str] = UNSET,
-    key_iendswith: Union[Unset, str] = UNSET,
-    key_iexact: Union[Unset, str] = UNSET,
-    key_in: Union[Unset, list[str]] = UNSET,
-    key_iregex: Union[Unset, str] = UNSET,
-    key_isnull: Union[Unset, bool] = UNSET,
-    key_istartswith: Union[Unset, str] = UNSET,
-    key_lt: Union[Unset, str] = UNSET,
-    key_lte: Union[Unset, str] = UNSET,
-    key_range: Union[Unset, list[str]] = UNSET,
-    key_regex: Union[Unset, str] = UNSET,
-    key_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    modified: Union[Unset, datetime.date] = UNSET,
-    modified_contained_by: Union[Unset, datetime.date] = UNSET,
-    modified_contains: Union[Unset, datetime.date] = UNSET,
-    modified_day: Union[Unset, float] = UNSET,
-    modified_endswith: Union[Unset, datetime.date] = UNSET,
-    modified_gt: Union[Unset, datetime.date] = UNSET,
-    modified_gte: Union[Unset, datetime.date] = UNSET,
-    modified_icontains: Union[Unset, datetime.date] = UNSET,
-    modified_iendswith: Union[Unset, datetime.date] = UNSET,
-    modified_iexact: Union[Unset, datetime.date] = UNSET,
-    modified_in: Union[Unset, list[datetime.date]] = UNSET,
-    modified_iregex: Union[Unset, datetime.date] = UNSET,
-    modified_isnull: Union[Unset, bool] = UNSET,
-    modified_iso_week_day: Union[Unset, float] = UNSET,
-    modified_iso_year: Union[Unset, float] = UNSET,
-    modified_istartswith: Union[Unset, datetime.date] = UNSET,
-    modified_lt: Union[Unset, datetime.date] = UNSET,
-    modified_lte: Union[Unset, datetime.date] = UNSET,
-    modified_month: Union[Unset, float] = UNSET,
-    modified_quarter: Union[Unset, float] = UNSET,
-    modified_range: Union[Unset, list[datetime.date]] = UNSET,
-    modified_regex: Union[Unset, datetime.date] = UNSET,
-    modified_startswith: Union[Unset, datetime.date] = UNSET,
-    modified_week: Union[Unset, float] = UNSET,
-    modified_week_day: Union[Unset, float] = UNSET,
-    modified_year: Union[Unset, float] = UNSET,
-    ob_ref: Union[Unset, int] = UNSET,
-    ob_ref_gt: Union[Unset, int] = UNSET,
-    ob_ref_gte: Union[Unset, int] = UNSET,
-    ob_ref_in: Union[Unset, list[int]] = UNSET,
-    ob_ref_isnull: Union[Unset, bool] = UNSET,
-    ob_ref_lt: Union[Unset, int] = UNSET,
-    ob_ref_lte: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    value: Union[Unset, str] = UNSET,
-    value_contains: Union[Unset, str] = UNSET,
-    value_endswith: Union[Unset, str] = UNSET,
-    value_gt: Union[Unset, str] = UNSET,
-    value_gte: Union[Unset, str] = UNSET,
-    value_icontains: Union[Unset, str] = UNSET,
-    value_iendswith: Union[Unset, str] = UNSET,
-    value_iexact: Union[Unset, str] = UNSET,
-    value_in: Union[Unset, list[str]] = UNSET,
-    value_iregex: Union[Unset, str] = UNSET,
-    value_isnull: Union[Unset, bool] = UNSET,
-    value_istartswith: Union[Unset, str] = UNSET,
-    value_lt: Union[Unset, str] = UNSET,
-    value_lte: Union[Unset, str] = UNSET,
-    value_range: Union[Unset, list[str]] = UNSET,
-    value_regex: Union[Unset, str] = UNSET,
-    value_startswith: Union[Unset, str] = UNSET,
+    id: int | Unset = UNSET,
+    id_contained_by: int | Unset = UNSET,
+    id_contains: int | Unset = UNSET,
+    id_endswith: int | Unset = UNSET,
+    id_gt: int | Unset = UNSET,
+    id_gte: int | Unset = UNSET,
+    id_icontains: int | Unset = UNSET,
+    id_iendswith: int | Unset = UNSET,
+    id_iexact: int | Unset = UNSET,
+    id_in: list[int] | Unset = UNSET,
+    id_iregex: int | Unset = UNSET,
+    id_isnull: bool | Unset = UNSET,
+    id_istartswith: int | Unset = UNSET,
+    id_lt: int | Unset = UNSET,
+    id_lte: int | Unset = UNSET,
+    id_range: list[int] | Unset = UNSET,
+    id_regex: int | Unset = UNSET,
+    id_startswith: int | Unset = UNSET,
+    key: str | Unset = UNSET,
+    key_contains: str | Unset = UNSET,
+    key_endswith: str | Unset = UNSET,
+    key_gt: str | Unset = UNSET,
+    key_gte: str | Unset = UNSET,
+    key_icontains: str | Unset = UNSET,
+    key_iendswith: str | Unset = UNSET,
+    key_iexact: str | Unset = UNSET,
+    key_in: list[str] | Unset = UNSET,
+    key_iregex: str | Unset = UNSET,
+    key_isnull: bool | Unset = UNSET,
+    key_istartswith: str | Unset = UNSET,
+    key_lt: str | Unset = UNSET,
+    key_lte: str | Unset = UNSET,
+    key_range: list[str] | Unset = UNSET,
+    key_regex: str | Unset = UNSET,
+    key_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    modified: datetime.date | Unset = UNSET,
+    modified_contained_by: datetime.date | Unset = UNSET,
+    modified_contains: datetime.date | Unset = UNSET,
+    modified_day: float | Unset = UNSET,
+    modified_endswith: datetime.date | Unset = UNSET,
+    modified_gt: datetime.date | Unset = UNSET,
+    modified_gte: datetime.date | Unset = UNSET,
+    modified_icontains: datetime.date | Unset = UNSET,
+    modified_iendswith: datetime.date | Unset = UNSET,
+    modified_iexact: datetime.date | Unset = UNSET,
+    modified_in: list[datetime.date] | Unset = UNSET,
+    modified_iregex: datetime.date | Unset = UNSET,
+    modified_isnull: bool | Unset = UNSET,
+    modified_iso_week_day: float | Unset = UNSET,
+    modified_iso_year: float | Unset = UNSET,
+    modified_istartswith: datetime.date | Unset = UNSET,
+    modified_lt: datetime.date | Unset = UNSET,
+    modified_lte: datetime.date | Unset = UNSET,
+    modified_month: float | Unset = UNSET,
+    modified_quarter: float | Unset = UNSET,
+    modified_range: list[datetime.date] | Unset = UNSET,
+    modified_regex: datetime.date | Unset = UNSET,
+    modified_startswith: datetime.date | Unset = UNSET,
+    modified_week: float | Unset = UNSET,
+    modified_week_day: float | Unset = UNSET,
+    modified_year: float | Unset = UNSET,
+    ob_ref: int | Unset = UNSET,
+    ob_ref_gt: int | Unset = UNSET,
+    ob_ref_gte: int | Unset = UNSET,
+    ob_ref_in: list[int] | Unset = UNSET,
+    ob_ref_isnull: bool | Unset = UNSET,
+    ob_ref_lt: int | Unset = UNSET,
+    ob_ref_lte: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    value: str | Unset = UNSET,
+    value_contains: str | Unset = UNSET,
+    value_endswith: str | Unset = UNSET,
+    value_gt: str | Unset = UNSET,
+    value_gte: str | Unset = UNSET,
+    value_icontains: str | Unset = UNSET,
+    value_iendswith: str | Unset = UNSET,
+    value_iexact: str | Unset = UNSET,
+    value_in: list[str] | Unset = UNSET,
+    value_iregex: str | Unset = UNSET,
+    value_isnull: bool | Unset = UNSET,
+    value_istartswith: str | Unset = UNSET,
+    value_lt: str | Unset = UNSET,
+    value_lte: str | Unset = UNSET,
+    value_range: list[str] | Unset = UNSET,
+    value_regex: str | Unset = UNSET,
+    value_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -121,7 +121,7 @@ def _get_kwargs(
 
     params["id__iexact"] = id_iexact
 
-    json_id_in: Union[Unset, list[int]] = UNSET
+    json_id_in: list[int] | Unset = UNSET
     if not isinstance(id_in, Unset):
         json_id_in = ",".join(map(str, id_in))
 
@@ -137,7 +137,7 @@ def _get_kwargs(
 
     params["id__lte"] = id_lte
 
-    json_id_range: Union[Unset, list[int]] = UNSET
+    json_id_range: list[int] | Unset = UNSET
     if not isinstance(id_range, Unset):
         json_id_range = ",".join(map(str, id_range))
 
@@ -163,7 +163,7 @@ def _get_kwargs(
 
     params["key__iexact"] = key_iexact
 
-    json_key_in: Union[Unset, list[str]] = UNSET
+    json_key_in: list[str] | Unset = UNSET
     if not isinstance(key_in, Unset):
         json_key_in = ",".join(map(str, key_in))
 
@@ -179,7 +179,7 @@ def _get_kwargs(
 
     params["key__lte"] = key_lte
 
-    json_key_range: Union[Unset, list[str]] = UNSET
+    json_key_range: list[str] | Unset = UNSET
     if not isinstance(key_range, Unset):
         json_key_range = ",".join(map(str, key_range))
 
@@ -191,54 +191,54 @@ def _get_kwargs(
 
     params["limit"] = limit
 
-    json_modified: Union[Unset, str] = UNSET
+    json_modified: str | Unset = UNSET
     if not isinstance(modified, Unset):
         json_modified = modified.isoformat()
     params["modified"] = json_modified
 
-    json_modified_contained_by: Union[Unset, str] = UNSET
+    json_modified_contained_by: str | Unset = UNSET
     if not isinstance(modified_contained_by, Unset):
         json_modified_contained_by = modified_contained_by.isoformat()
     params["modified__contained_by"] = json_modified_contained_by
 
-    json_modified_contains: Union[Unset, str] = UNSET
+    json_modified_contains: str | Unset = UNSET
     if not isinstance(modified_contains, Unset):
         json_modified_contains = modified_contains.isoformat()
     params["modified__contains"] = json_modified_contains
 
     params["modified__day"] = modified_day
 
-    json_modified_endswith: Union[Unset, str] = UNSET
+    json_modified_endswith: str | Unset = UNSET
     if not isinstance(modified_endswith, Unset):
         json_modified_endswith = modified_endswith.isoformat()
     params["modified__endswith"] = json_modified_endswith
 
-    json_modified_gt: Union[Unset, str] = UNSET
+    json_modified_gt: str | Unset = UNSET
     if not isinstance(modified_gt, Unset):
         json_modified_gt = modified_gt.isoformat()
     params["modified__gt"] = json_modified_gt
 
-    json_modified_gte: Union[Unset, str] = UNSET
+    json_modified_gte: str | Unset = UNSET
     if not isinstance(modified_gte, Unset):
         json_modified_gte = modified_gte.isoformat()
     params["modified__gte"] = json_modified_gte
 
-    json_modified_icontains: Union[Unset, str] = UNSET
+    json_modified_icontains: str | Unset = UNSET
     if not isinstance(modified_icontains, Unset):
         json_modified_icontains = modified_icontains.isoformat()
     params["modified__icontains"] = json_modified_icontains
 
-    json_modified_iendswith: Union[Unset, str] = UNSET
+    json_modified_iendswith: str | Unset = UNSET
     if not isinstance(modified_iendswith, Unset):
         json_modified_iendswith = modified_iendswith.isoformat()
     params["modified__iendswith"] = json_modified_iendswith
 
-    json_modified_iexact: Union[Unset, str] = UNSET
+    json_modified_iexact: str | Unset = UNSET
     if not isinstance(modified_iexact, Unset):
         json_modified_iexact = modified_iexact.isoformat()
     params["modified__iexact"] = json_modified_iexact
 
-    json_modified_in: Union[Unset, list[str]] = UNSET
+    json_modified_in: list[str] | Unset = UNSET
     if not isinstance(modified_in, Unset):
         json_modified_in = []
         for modified_in_item_data in modified_in:
@@ -247,7 +247,7 @@ def _get_kwargs(
 
     params["modified__in"] = json_modified_in
 
-    json_modified_iregex: Union[Unset, str] = UNSET
+    json_modified_iregex: str | Unset = UNSET
     if not isinstance(modified_iregex, Unset):
         json_modified_iregex = modified_iregex.isoformat()
     params["modified__iregex"] = json_modified_iregex
@@ -258,17 +258,17 @@ def _get_kwargs(
 
     params["modified__iso_year"] = modified_iso_year
 
-    json_modified_istartswith: Union[Unset, str] = UNSET
+    json_modified_istartswith: str | Unset = UNSET
     if not isinstance(modified_istartswith, Unset):
         json_modified_istartswith = modified_istartswith.isoformat()
     params["modified__istartswith"] = json_modified_istartswith
 
-    json_modified_lt: Union[Unset, str] = UNSET
+    json_modified_lt: str | Unset = UNSET
     if not isinstance(modified_lt, Unset):
         json_modified_lt = modified_lt.isoformat()
     params["modified__lt"] = json_modified_lt
 
-    json_modified_lte: Union[Unset, str] = UNSET
+    json_modified_lte: str | Unset = UNSET
     if not isinstance(modified_lte, Unset):
         json_modified_lte = modified_lte.isoformat()
     params["modified__lte"] = json_modified_lte
@@ -277,7 +277,7 @@ def _get_kwargs(
 
     params["modified__quarter"] = modified_quarter
 
-    json_modified_range: Union[Unset, list[str]] = UNSET
+    json_modified_range: list[str] | Unset = UNSET
     if not isinstance(modified_range, Unset):
         json_modified_range = []
         for modified_range_item_data in modified_range:
@@ -286,12 +286,12 @@ def _get_kwargs(
 
     params["modified__range"] = json_modified_range
 
-    json_modified_regex: Union[Unset, str] = UNSET
+    json_modified_regex: str | Unset = UNSET
     if not isinstance(modified_regex, Unset):
         json_modified_regex = modified_regex.isoformat()
     params["modified__regex"] = json_modified_regex
 
-    json_modified_startswith: Union[Unset, str] = UNSET
+    json_modified_startswith: str | Unset = UNSET
     if not isinstance(modified_startswith, Unset):
         json_modified_startswith = modified_startswith.isoformat()
     params["modified__startswith"] = json_modified_startswith
@@ -308,7 +308,7 @@ def _get_kwargs(
 
     params["ob_ref__gte"] = ob_ref_gte
 
-    json_ob_ref_in: Union[Unset, list[int]] = UNSET
+    json_ob_ref_in: list[int] | Unset = UNSET
     if not isinstance(ob_ref_in, Unset):
         json_ob_ref_in = ",".join(map(str, ob_ref_in))
 
@@ -340,7 +340,7 @@ def _get_kwargs(
 
     params["value__iexact"] = value_iexact
 
-    json_value_in: Union[Unset, list[str]] = UNSET
+    json_value_in: list[str] | Unset = UNSET
     if not isinstance(value_in, Unset):
         json_value_in = ",".join(map(str, value_in))
 
@@ -356,7 +356,7 @@ def _get_kwargs(
 
     params["value__lte"] = value_lte
 
-    json_value_range: Union[Unset, list[str]] = UNSET
+    json_value_range: list[str] | Unset = UNSET
     if not isinstance(value_range, Unset):
         json_value_range = ",".join(map(str, value_range))
 
@@ -378,8 +378,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedMigrationPropertyReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedMigrationPropertyReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedMigrationPropertyReadList.from_dict(response.json())
 
@@ -392,7 +392,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedMigrationPropertyReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -405,186 +405,186 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    id: Union[Unset, int] = UNSET,
-    id_contained_by: Union[Unset, int] = UNSET,
-    id_contains: Union[Unset, int] = UNSET,
-    id_endswith: Union[Unset, int] = UNSET,
-    id_gt: Union[Unset, int] = UNSET,
-    id_gte: Union[Unset, int] = UNSET,
-    id_icontains: Union[Unset, int] = UNSET,
-    id_iendswith: Union[Unset, int] = UNSET,
-    id_iexact: Union[Unset, int] = UNSET,
-    id_in: Union[Unset, list[int]] = UNSET,
-    id_iregex: Union[Unset, int] = UNSET,
-    id_isnull: Union[Unset, bool] = UNSET,
-    id_istartswith: Union[Unset, int] = UNSET,
-    id_lt: Union[Unset, int] = UNSET,
-    id_lte: Union[Unset, int] = UNSET,
-    id_range: Union[Unset, list[int]] = UNSET,
-    id_regex: Union[Unset, int] = UNSET,
-    id_startswith: Union[Unset, int] = UNSET,
-    key: Union[Unset, str] = UNSET,
-    key_contains: Union[Unset, str] = UNSET,
-    key_endswith: Union[Unset, str] = UNSET,
-    key_gt: Union[Unset, str] = UNSET,
-    key_gte: Union[Unset, str] = UNSET,
-    key_icontains: Union[Unset, str] = UNSET,
-    key_iendswith: Union[Unset, str] = UNSET,
-    key_iexact: Union[Unset, str] = UNSET,
-    key_in: Union[Unset, list[str]] = UNSET,
-    key_iregex: Union[Unset, str] = UNSET,
-    key_isnull: Union[Unset, bool] = UNSET,
-    key_istartswith: Union[Unset, str] = UNSET,
-    key_lt: Union[Unset, str] = UNSET,
-    key_lte: Union[Unset, str] = UNSET,
-    key_range: Union[Unset, list[str]] = UNSET,
-    key_regex: Union[Unset, str] = UNSET,
-    key_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    modified: Union[Unset, datetime.date] = UNSET,
-    modified_contained_by: Union[Unset, datetime.date] = UNSET,
-    modified_contains: Union[Unset, datetime.date] = UNSET,
-    modified_day: Union[Unset, float] = UNSET,
-    modified_endswith: Union[Unset, datetime.date] = UNSET,
-    modified_gt: Union[Unset, datetime.date] = UNSET,
-    modified_gte: Union[Unset, datetime.date] = UNSET,
-    modified_icontains: Union[Unset, datetime.date] = UNSET,
-    modified_iendswith: Union[Unset, datetime.date] = UNSET,
-    modified_iexact: Union[Unset, datetime.date] = UNSET,
-    modified_in: Union[Unset, list[datetime.date]] = UNSET,
-    modified_iregex: Union[Unset, datetime.date] = UNSET,
-    modified_isnull: Union[Unset, bool] = UNSET,
-    modified_iso_week_day: Union[Unset, float] = UNSET,
-    modified_iso_year: Union[Unset, float] = UNSET,
-    modified_istartswith: Union[Unset, datetime.date] = UNSET,
-    modified_lt: Union[Unset, datetime.date] = UNSET,
-    modified_lte: Union[Unset, datetime.date] = UNSET,
-    modified_month: Union[Unset, float] = UNSET,
-    modified_quarter: Union[Unset, float] = UNSET,
-    modified_range: Union[Unset, list[datetime.date]] = UNSET,
-    modified_regex: Union[Unset, datetime.date] = UNSET,
-    modified_startswith: Union[Unset, datetime.date] = UNSET,
-    modified_week: Union[Unset, float] = UNSET,
-    modified_week_day: Union[Unset, float] = UNSET,
-    modified_year: Union[Unset, float] = UNSET,
-    ob_ref: Union[Unset, int] = UNSET,
-    ob_ref_gt: Union[Unset, int] = UNSET,
-    ob_ref_gte: Union[Unset, int] = UNSET,
-    ob_ref_in: Union[Unset, list[int]] = UNSET,
-    ob_ref_isnull: Union[Unset, bool] = UNSET,
-    ob_ref_lt: Union[Unset, int] = UNSET,
-    ob_ref_lte: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    value: Union[Unset, str] = UNSET,
-    value_contains: Union[Unset, str] = UNSET,
-    value_endswith: Union[Unset, str] = UNSET,
-    value_gt: Union[Unset, str] = UNSET,
-    value_gte: Union[Unset, str] = UNSET,
-    value_icontains: Union[Unset, str] = UNSET,
-    value_iendswith: Union[Unset, str] = UNSET,
-    value_iexact: Union[Unset, str] = UNSET,
-    value_in: Union[Unset, list[str]] = UNSET,
-    value_iregex: Union[Unset, str] = UNSET,
-    value_isnull: Union[Unset, bool] = UNSET,
-    value_istartswith: Union[Unset, str] = UNSET,
-    value_lt: Union[Unset, str] = UNSET,
-    value_lte: Union[Unset, str] = UNSET,
-    value_range: Union[Unset, list[str]] = UNSET,
-    value_regex: Union[Unset, str] = UNSET,
-    value_startswith: Union[Unset, str] = UNSET,
+    id: int | Unset = UNSET,
+    id_contained_by: int | Unset = UNSET,
+    id_contains: int | Unset = UNSET,
+    id_endswith: int | Unset = UNSET,
+    id_gt: int | Unset = UNSET,
+    id_gte: int | Unset = UNSET,
+    id_icontains: int | Unset = UNSET,
+    id_iendswith: int | Unset = UNSET,
+    id_iexact: int | Unset = UNSET,
+    id_in: list[int] | Unset = UNSET,
+    id_iregex: int | Unset = UNSET,
+    id_isnull: bool | Unset = UNSET,
+    id_istartswith: int | Unset = UNSET,
+    id_lt: int | Unset = UNSET,
+    id_lte: int | Unset = UNSET,
+    id_range: list[int] | Unset = UNSET,
+    id_regex: int | Unset = UNSET,
+    id_startswith: int | Unset = UNSET,
+    key: str | Unset = UNSET,
+    key_contains: str | Unset = UNSET,
+    key_endswith: str | Unset = UNSET,
+    key_gt: str | Unset = UNSET,
+    key_gte: str | Unset = UNSET,
+    key_icontains: str | Unset = UNSET,
+    key_iendswith: str | Unset = UNSET,
+    key_iexact: str | Unset = UNSET,
+    key_in: list[str] | Unset = UNSET,
+    key_iregex: str | Unset = UNSET,
+    key_isnull: bool | Unset = UNSET,
+    key_istartswith: str | Unset = UNSET,
+    key_lt: str | Unset = UNSET,
+    key_lte: str | Unset = UNSET,
+    key_range: list[str] | Unset = UNSET,
+    key_regex: str | Unset = UNSET,
+    key_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    modified: datetime.date | Unset = UNSET,
+    modified_contained_by: datetime.date | Unset = UNSET,
+    modified_contains: datetime.date | Unset = UNSET,
+    modified_day: float | Unset = UNSET,
+    modified_endswith: datetime.date | Unset = UNSET,
+    modified_gt: datetime.date | Unset = UNSET,
+    modified_gte: datetime.date | Unset = UNSET,
+    modified_icontains: datetime.date | Unset = UNSET,
+    modified_iendswith: datetime.date | Unset = UNSET,
+    modified_iexact: datetime.date | Unset = UNSET,
+    modified_in: list[datetime.date] | Unset = UNSET,
+    modified_iregex: datetime.date | Unset = UNSET,
+    modified_isnull: bool | Unset = UNSET,
+    modified_iso_week_day: float | Unset = UNSET,
+    modified_iso_year: float | Unset = UNSET,
+    modified_istartswith: datetime.date | Unset = UNSET,
+    modified_lt: datetime.date | Unset = UNSET,
+    modified_lte: datetime.date | Unset = UNSET,
+    modified_month: float | Unset = UNSET,
+    modified_quarter: float | Unset = UNSET,
+    modified_range: list[datetime.date] | Unset = UNSET,
+    modified_regex: datetime.date | Unset = UNSET,
+    modified_startswith: datetime.date | Unset = UNSET,
+    modified_week: float | Unset = UNSET,
+    modified_week_day: float | Unset = UNSET,
+    modified_year: float | Unset = UNSET,
+    ob_ref: int | Unset = UNSET,
+    ob_ref_gt: int | Unset = UNSET,
+    ob_ref_gte: int | Unset = UNSET,
+    ob_ref_in: list[int] | Unset = UNSET,
+    ob_ref_isnull: bool | Unset = UNSET,
+    ob_ref_lt: int | Unset = UNSET,
+    ob_ref_lte: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    value: str | Unset = UNSET,
+    value_contains: str | Unset = UNSET,
+    value_endswith: str | Unset = UNSET,
+    value_gt: str | Unset = UNSET,
+    value_gte: str | Unset = UNSET,
+    value_icontains: str | Unset = UNSET,
+    value_iendswith: str | Unset = UNSET,
+    value_iexact: str | Unset = UNSET,
+    value_in: list[str] | Unset = UNSET,
+    value_iregex: str | Unset = UNSET,
+    value_isnull: bool | Unset = UNSET,
+    value_istartswith: str | Unset = UNSET,
+    value_lt: str | Unset = UNSET,
+    value_lte: str | Unset = UNSET,
+    value_range: list[str] | Unset = UNSET,
+    value_regex: str | Unset = UNSET,
+    value_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
-        id (Union[Unset, int]):
-        id_contained_by (Union[Unset, int]):
-        id_contains (Union[Unset, int]):
-        id_endswith (Union[Unset, int]):
-        id_gt (Union[Unset, int]):
-        id_gte (Union[Unset, int]):
-        id_icontains (Union[Unset, int]):
-        id_iendswith (Union[Unset, int]):
-        id_iexact (Union[Unset, int]):
-        id_in (Union[Unset, list[int]]):
-        id_iregex (Union[Unset, int]):
-        id_isnull (Union[Unset, bool]):
-        id_istartswith (Union[Unset, int]):
-        id_lt (Union[Unset, int]):
-        id_lte (Union[Unset, int]):
-        id_range (Union[Unset, list[int]]):
-        id_regex (Union[Unset, int]):
-        id_startswith (Union[Unset, int]):
-        key (Union[Unset, str]):
-        key_contains (Union[Unset, str]):
-        key_endswith (Union[Unset, str]):
-        key_gt (Union[Unset, str]):
-        key_gte (Union[Unset, str]):
-        key_icontains (Union[Unset, str]):
-        key_iendswith (Union[Unset, str]):
-        key_iexact (Union[Unset, str]):
-        key_in (Union[Unset, list[str]]):
-        key_iregex (Union[Unset, str]):
-        key_isnull (Union[Unset, bool]):
-        key_istartswith (Union[Unset, str]):
-        key_lt (Union[Unset, str]):
-        key_lte (Union[Unset, str]):
-        key_range (Union[Unset, list[str]]):
-        key_regex (Union[Unset, str]):
-        key_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        modified (Union[Unset, datetime.date]):
-        modified_contained_by (Union[Unset, datetime.date]):
-        modified_contains (Union[Unset, datetime.date]):
-        modified_day (Union[Unset, float]):
-        modified_endswith (Union[Unset, datetime.date]):
-        modified_gt (Union[Unset, datetime.date]):
-        modified_gte (Union[Unset, datetime.date]):
-        modified_icontains (Union[Unset, datetime.date]):
-        modified_iendswith (Union[Unset, datetime.date]):
-        modified_iexact (Union[Unset, datetime.date]):
-        modified_in (Union[Unset, list[datetime.date]]):
-        modified_iregex (Union[Unset, datetime.date]):
-        modified_isnull (Union[Unset, bool]):
-        modified_iso_week_day (Union[Unset, float]):
-        modified_iso_year (Union[Unset, float]):
-        modified_istartswith (Union[Unset, datetime.date]):
-        modified_lt (Union[Unset, datetime.date]):
-        modified_lte (Union[Unset, datetime.date]):
-        modified_month (Union[Unset, float]):
-        modified_quarter (Union[Unset, float]):
-        modified_range (Union[Unset, list[datetime.date]]):
-        modified_regex (Union[Unset, datetime.date]):
-        modified_startswith (Union[Unset, datetime.date]):
-        modified_week (Union[Unset, float]):
-        modified_week_day (Union[Unset, float]):
-        modified_year (Union[Unset, float]):
-        ob_ref (Union[Unset, int]):
-        ob_ref_gt (Union[Unset, int]):
-        ob_ref_gte (Union[Unset, int]):
-        ob_ref_in (Union[Unset, list[int]]):
-        ob_ref_isnull (Union[Unset, bool]):
-        ob_ref_lt (Union[Unset, int]):
-        ob_ref_lte (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        value (Union[Unset, str]):
-        value_contains (Union[Unset, str]):
-        value_endswith (Union[Unset, str]):
-        value_gt (Union[Unset, str]):
-        value_gte (Union[Unset, str]):
-        value_icontains (Union[Unset, str]):
-        value_iendswith (Union[Unset, str]):
-        value_iexact (Union[Unset, str]):
-        value_in (Union[Unset, list[str]]):
-        value_iregex (Union[Unset, str]):
-        value_isnull (Union[Unset, bool]):
-        value_istartswith (Union[Unset, str]):
-        value_lt (Union[Unset, str]):
-        value_lte (Union[Unset, str]):
-        value_range (Union[Unset, list[str]]):
-        value_regex (Union[Unset, str]):
-        value_startswith (Union[Unset, str]):
+        id (int | Unset):
+        id_contained_by (int | Unset):
+        id_contains (int | Unset):
+        id_endswith (int | Unset):
+        id_gt (int | Unset):
+        id_gte (int | Unset):
+        id_icontains (int | Unset):
+        id_iendswith (int | Unset):
+        id_iexact (int | Unset):
+        id_in (list[int] | Unset):
+        id_iregex (int | Unset):
+        id_isnull (bool | Unset):
+        id_istartswith (int | Unset):
+        id_lt (int | Unset):
+        id_lte (int | Unset):
+        id_range (list[int] | Unset):
+        id_regex (int | Unset):
+        id_startswith (int | Unset):
+        key (str | Unset):
+        key_contains (str | Unset):
+        key_endswith (str | Unset):
+        key_gt (str | Unset):
+        key_gte (str | Unset):
+        key_icontains (str | Unset):
+        key_iendswith (str | Unset):
+        key_iexact (str | Unset):
+        key_in (list[str] | Unset):
+        key_iregex (str | Unset):
+        key_isnull (bool | Unset):
+        key_istartswith (str | Unset):
+        key_lt (str | Unset):
+        key_lte (str | Unset):
+        key_range (list[str] | Unset):
+        key_regex (str | Unset):
+        key_startswith (str | Unset):
+        limit (int | Unset):
+        modified (datetime.date | Unset):
+        modified_contained_by (datetime.date | Unset):
+        modified_contains (datetime.date | Unset):
+        modified_day (float | Unset):
+        modified_endswith (datetime.date | Unset):
+        modified_gt (datetime.date | Unset):
+        modified_gte (datetime.date | Unset):
+        modified_icontains (datetime.date | Unset):
+        modified_iendswith (datetime.date | Unset):
+        modified_iexact (datetime.date | Unset):
+        modified_in (list[datetime.date] | Unset):
+        modified_iregex (datetime.date | Unset):
+        modified_isnull (bool | Unset):
+        modified_iso_week_day (float | Unset):
+        modified_iso_year (float | Unset):
+        modified_istartswith (datetime.date | Unset):
+        modified_lt (datetime.date | Unset):
+        modified_lte (datetime.date | Unset):
+        modified_month (float | Unset):
+        modified_quarter (float | Unset):
+        modified_range (list[datetime.date] | Unset):
+        modified_regex (datetime.date | Unset):
+        modified_startswith (datetime.date | Unset):
+        modified_week (float | Unset):
+        modified_week_day (float | Unset):
+        modified_year (float | Unset):
+        ob_ref (int | Unset):
+        ob_ref_gt (int | Unset):
+        ob_ref_gte (int | Unset):
+        ob_ref_in (list[int] | Unset):
+        ob_ref_isnull (bool | Unset):
+        ob_ref_lt (int | Unset):
+        ob_ref_lte (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        value (str | Unset):
+        value_contains (str | Unset):
+        value_endswith (str | Unset):
+        value_gt (str | Unset):
+        value_gte (str | Unset):
+        value_icontains (str | Unset):
+        value_iendswith (str | Unset):
+        value_iexact (str | Unset):
+        value_in (list[str] | Unset):
+        value_iregex (str | Unset):
+        value_isnull (bool | Unset):
+        value_istartswith (str | Unset):
+        value_lt (str | Unset):
+        value_lte (str | Unset):
+        value_range (list[str] | Unset):
+        value_regex (str | Unset):
+        value_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -695,186 +695,186 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    id: Union[Unset, int] = UNSET,
-    id_contained_by: Union[Unset, int] = UNSET,
-    id_contains: Union[Unset, int] = UNSET,
-    id_endswith: Union[Unset, int] = UNSET,
-    id_gt: Union[Unset, int] = UNSET,
-    id_gte: Union[Unset, int] = UNSET,
-    id_icontains: Union[Unset, int] = UNSET,
-    id_iendswith: Union[Unset, int] = UNSET,
-    id_iexact: Union[Unset, int] = UNSET,
-    id_in: Union[Unset, list[int]] = UNSET,
-    id_iregex: Union[Unset, int] = UNSET,
-    id_isnull: Union[Unset, bool] = UNSET,
-    id_istartswith: Union[Unset, int] = UNSET,
-    id_lt: Union[Unset, int] = UNSET,
-    id_lte: Union[Unset, int] = UNSET,
-    id_range: Union[Unset, list[int]] = UNSET,
-    id_regex: Union[Unset, int] = UNSET,
-    id_startswith: Union[Unset, int] = UNSET,
-    key: Union[Unset, str] = UNSET,
-    key_contains: Union[Unset, str] = UNSET,
-    key_endswith: Union[Unset, str] = UNSET,
-    key_gt: Union[Unset, str] = UNSET,
-    key_gte: Union[Unset, str] = UNSET,
-    key_icontains: Union[Unset, str] = UNSET,
-    key_iendswith: Union[Unset, str] = UNSET,
-    key_iexact: Union[Unset, str] = UNSET,
-    key_in: Union[Unset, list[str]] = UNSET,
-    key_iregex: Union[Unset, str] = UNSET,
-    key_isnull: Union[Unset, bool] = UNSET,
-    key_istartswith: Union[Unset, str] = UNSET,
-    key_lt: Union[Unset, str] = UNSET,
-    key_lte: Union[Unset, str] = UNSET,
-    key_range: Union[Unset, list[str]] = UNSET,
-    key_regex: Union[Unset, str] = UNSET,
-    key_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    modified: Union[Unset, datetime.date] = UNSET,
-    modified_contained_by: Union[Unset, datetime.date] = UNSET,
-    modified_contains: Union[Unset, datetime.date] = UNSET,
-    modified_day: Union[Unset, float] = UNSET,
-    modified_endswith: Union[Unset, datetime.date] = UNSET,
-    modified_gt: Union[Unset, datetime.date] = UNSET,
-    modified_gte: Union[Unset, datetime.date] = UNSET,
-    modified_icontains: Union[Unset, datetime.date] = UNSET,
-    modified_iendswith: Union[Unset, datetime.date] = UNSET,
-    modified_iexact: Union[Unset, datetime.date] = UNSET,
-    modified_in: Union[Unset, list[datetime.date]] = UNSET,
-    modified_iregex: Union[Unset, datetime.date] = UNSET,
-    modified_isnull: Union[Unset, bool] = UNSET,
-    modified_iso_week_day: Union[Unset, float] = UNSET,
-    modified_iso_year: Union[Unset, float] = UNSET,
-    modified_istartswith: Union[Unset, datetime.date] = UNSET,
-    modified_lt: Union[Unset, datetime.date] = UNSET,
-    modified_lte: Union[Unset, datetime.date] = UNSET,
-    modified_month: Union[Unset, float] = UNSET,
-    modified_quarter: Union[Unset, float] = UNSET,
-    modified_range: Union[Unset, list[datetime.date]] = UNSET,
-    modified_regex: Union[Unset, datetime.date] = UNSET,
-    modified_startswith: Union[Unset, datetime.date] = UNSET,
-    modified_week: Union[Unset, float] = UNSET,
-    modified_week_day: Union[Unset, float] = UNSET,
-    modified_year: Union[Unset, float] = UNSET,
-    ob_ref: Union[Unset, int] = UNSET,
-    ob_ref_gt: Union[Unset, int] = UNSET,
-    ob_ref_gte: Union[Unset, int] = UNSET,
-    ob_ref_in: Union[Unset, list[int]] = UNSET,
-    ob_ref_isnull: Union[Unset, bool] = UNSET,
-    ob_ref_lt: Union[Unset, int] = UNSET,
-    ob_ref_lte: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    value: Union[Unset, str] = UNSET,
-    value_contains: Union[Unset, str] = UNSET,
-    value_endswith: Union[Unset, str] = UNSET,
-    value_gt: Union[Unset, str] = UNSET,
-    value_gte: Union[Unset, str] = UNSET,
-    value_icontains: Union[Unset, str] = UNSET,
-    value_iendswith: Union[Unset, str] = UNSET,
-    value_iexact: Union[Unset, str] = UNSET,
-    value_in: Union[Unset, list[str]] = UNSET,
-    value_iregex: Union[Unset, str] = UNSET,
-    value_isnull: Union[Unset, bool] = UNSET,
-    value_istartswith: Union[Unset, str] = UNSET,
-    value_lt: Union[Unset, str] = UNSET,
-    value_lte: Union[Unset, str] = UNSET,
-    value_range: Union[Unset, list[str]] = UNSET,
-    value_regex: Union[Unset, str] = UNSET,
-    value_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMigrationPropertyReadList]:
+    id: int | Unset = UNSET,
+    id_contained_by: int | Unset = UNSET,
+    id_contains: int | Unset = UNSET,
+    id_endswith: int | Unset = UNSET,
+    id_gt: int | Unset = UNSET,
+    id_gte: int | Unset = UNSET,
+    id_icontains: int | Unset = UNSET,
+    id_iendswith: int | Unset = UNSET,
+    id_iexact: int | Unset = UNSET,
+    id_in: list[int] | Unset = UNSET,
+    id_iregex: int | Unset = UNSET,
+    id_isnull: bool | Unset = UNSET,
+    id_istartswith: int | Unset = UNSET,
+    id_lt: int | Unset = UNSET,
+    id_lte: int | Unset = UNSET,
+    id_range: list[int] | Unset = UNSET,
+    id_regex: int | Unset = UNSET,
+    id_startswith: int | Unset = UNSET,
+    key: str | Unset = UNSET,
+    key_contains: str | Unset = UNSET,
+    key_endswith: str | Unset = UNSET,
+    key_gt: str | Unset = UNSET,
+    key_gte: str | Unset = UNSET,
+    key_icontains: str | Unset = UNSET,
+    key_iendswith: str | Unset = UNSET,
+    key_iexact: str | Unset = UNSET,
+    key_in: list[str] | Unset = UNSET,
+    key_iregex: str | Unset = UNSET,
+    key_isnull: bool | Unset = UNSET,
+    key_istartswith: str | Unset = UNSET,
+    key_lt: str | Unset = UNSET,
+    key_lte: str | Unset = UNSET,
+    key_range: list[str] | Unset = UNSET,
+    key_regex: str | Unset = UNSET,
+    key_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    modified: datetime.date | Unset = UNSET,
+    modified_contained_by: datetime.date | Unset = UNSET,
+    modified_contains: datetime.date | Unset = UNSET,
+    modified_day: float | Unset = UNSET,
+    modified_endswith: datetime.date | Unset = UNSET,
+    modified_gt: datetime.date | Unset = UNSET,
+    modified_gte: datetime.date | Unset = UNSET,
+    modified_icontains: datetime.date | Unset = UNSET,
+    modified_iendswith: datetime.date | Unset = UNSET,
+    modified_iexact: datetime.date | Unset = UNSET,
+    modified_in: list[datetime.date] | Unset = UNSET,
+    modified_iregex: datetime.date | Unset = UNSET,
+    modified_isnull: bool | Unset = UNSET,
+    modified_iso_week_day: float | Unset = UNSET,
+    modified_iso_year: float | Unset = UNSET,
+    modified_istartswith: datetime.date | Unset = UNSET,
+    modified_lt: datetime.date | Unset = UNSET,
+    modified_lte: datetime.date | Unset = UNSET,
+    modified_month: float | Unset = UNSET,
+    modified_quarter: float | Unset = UNSET,
+    modified_range: list[datetime.date] | Unset = UNSET,
+    modified_regex: datetime.date | Unset = UNSET,
+    modified_startswith: datetime.date | Unset = UNSET,
+    modified_week: float | Unset = UNSET,
+    modified_week_day: float | Unset = UNSET,
+    modified_year: float | Unset = UNSET,
+    ob_ref: int | Unset = UNSET,
+    ob_ref_gt: int | Unset = UNSET,
+    ob_ref_gte: int | Unset = UNSET,
+    ob_ref_in: list[int] | Unset = UNSET,
+    ob_ref_isnull: bool | Unset = UNSET,
+    ob_ref_lt: int | Unset = UNSET,
+    ob_ref_lte: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    value: str | Unset = UNSET,
+    value_contains: str | Unset = UNSET,
+    value_endswith: str | Unset = UNSET,
+    value_gt: str | Unset = UNSET,
+    value_gte: str | Unset = UNSET,
+    value_icontains: str | Unset = UNSET,
+    value_iendswith: str | Unset = UNSET,
+    value_iexact: str | Unset = UNSET,
+    value_in: list[str] | Unset = UNSET,
+    value_iregex: str | Unset = UNSET,
+    value_isnull: bool | Unset = UNSET,
+    value_istartswith: str | Unset = UNSET,
+    value_lt: str | Unset = UNSET,
+    value_lte: str | Unset = UNSET,
+    value_range: list[str] | Unset = UNSET,
+    value_regex: str | Unset = UNSET,
+    value_startswith: str | Unset = UNSET,
+) -> PaginatedMigrationPropertyReadList | None:
     """Get a list of MigrationProperty objects.
 
     Args:
-        id (Union[Unset, int]):
-        id_contained_by (Union[Unset, int]):
-        id_contains (Union[Unset, int]):
-        id_endswith (Union[Unset, int]):
-        id_gt (Union[Unset, int]):
-        id_gte (Union[Unset, int]):
-        id_icontains (Union[Unset, int]):
-        id_iendswith (Union[Unset, int]):
-        id_iexact (Union[Unset, int]):
-        id_in (Union[Unset, list[int]]):
-        id_iregex (Union[Unset, int]):
-        id_isnull (Union[Unset, bool]):
-        id_istartswith (Union[Unset, int]):
-        id_lt (Union[Unset, int]):
-        id_lte (Union[Unset, int]):
-        id_range (Union[Unset, list[int]]):
-        id_regex (Union[Unset, int]):
-        id_startswith (Union[Unset, int]):
-        key (Union[Unset, str]):
-        key_contains (Union[Unset, str]):
-        key_endswith (Union[Unset, str]):
-        key_gt (Union[Unset, str]):
-        key_gte (Union[Unset, str]):
-        key_icontains (Union[Unset, str]):
-        key_iendswith (Union[Unset, str]):
-        key_iexact (Union[Unset, str]):
-        key_in (Union[Unset, list[str]]):
-        key_iregex (Union[Unset, str]):
-        key_isnull (Union[Unset, bool]):
-        key_istartswith (Union[Unset, str]):
-        key_lt (Union[Unset, str]):
-        key_lte (Union[Unset, str]):
-        key_range (Union[Unset, list[str]]):
-        key_regex (Union[Unset, str]):
-        key_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        modified (Union[Unset, datetime.date]):
-        modified_contained_by (Union[Unset, datetime.date]):
-        modified_contains (Union[Unset, datetime.date]):
-        modified_day (Union[Unset, float]):
-        modified_endswith (Union[Unset, datetime.date]):
-        modified_gt (Union[Unset, datetime.date]):
-        modified_gte (Union[Unset, datetime.date]):
-        modified_icontains (Union[Unset, datetime.date]):
-        modified_iendswith (Union[Unset, datetime.date]):
-        modified_iexact (Union[Unset, datetime.date]):
-        modified_in (Union[Unset, list[datetime.date]]):
-        modified_iregex (Union[Unset, datetime.date]):
-        modified_isnull (Union[Unset, bool]):
-        modified_iso_week_day (Union[Unset, float]):
-        modified_iso_year (Union[Unset, float]):
-        modified_istartswith (Union[Unset, datetime.date]):
-        modified_lt (Union[Unset, datetime.date]):
-        modified_lte (Union[Unset, datetime.date]):
-        modified_month (Union[Unset, float]):
-        modified_quarter (Union[Unset, float]):
-        modified_range (Union[Unset, list[datetime.date]]):
-        modified_regex (Union[Unset, datetime.date]):
-        modified_startswith (Union[Unset, datetime.date]):
-        modified_week (Union[Unset, float]):
-        modified_week_day (Union[Unset, float]):
-        modified_year (Union[Unset, float]):
-        ob_ref (Union[Unset, int]):
-        ob_ref_gt (Union[Unset, int]):
-        ob_ref_gte (Union[Unset, int]):
-        ob_ref_in (Union[Unset, list[int]]):
-        ob_ref_isnull (Union[Unset, bool]):
-        ob_ref_lt (Union[Unset, int]):
-        ob_ref_lte (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        value (Union[Unset, str]):
-        value_contains (Union[Unset, str]):
-        value_endswith (Union[Unset, str]):
-        value_gt (Union[Unset, str]):
-        value_gte (Union[Unset, str]):
-        value_icontains (Union[Unset, str]):
-        value_iendswith (Union[Unset, str]):
-        value_iexact (Union[Unset, str]):
-        value_in (Union[Unset, list[str]]):
-        value_iregex (Union[Unset, str]):
-        value_isnull (Union[Unset, bool]):
-        value_istartswith (Union[Unset, str]):
-        value_lt (Union[Unset, str]):
-        value_lte (Union[Unset, str]):
-        value_range (Union[Unset, list[str]]):
-        value_regex (Union[Unset, str]):
-        value_startswith (Union[Unset, str]):
+        id (int | Unset):
+        id_contained_by (int | Unset):
+        id_contains (int | Unset):
+        id_endswith (int | Unset):
+        id_gt (int | Unset):
+        id_gte (int | Unset):
+        id_icontains (int | Unset):
+        id_iendswith (int | Unset):
+        id_iexact (int | Unset):
+        id_in (list[int] | Unset):
+        id_iregex (int | Unset):
+        id_isnull (bool | Unset):
+        id_istartswith (int | Unset):
+        id_lt (int | Unset):
+        id_lte (int | Unset):
+        id_range (list[int] | Unset):
+        id_regex (int | Unset):
+        id_startswith (int | Unset):
+        key (str | Unset):
+        key_contains (str | Unset):
+        key_endswith (str | Unset):
+        key_gt (str | Unset):
+        key_gte (str | Unset):
+        key_icontains (str | Unset):
+        key_iendswith (str | Unset):
+        key_iexact (str | Unset):
+        key_in (list[str] | Unset):
+        key_iregex (str | Unset):
+        key_isnull (bool | Unset):
+        key_istartswith (str | Unset):
+        key_lt (str | Unset):
+        key_lte (str | Unset):
+        key_range (list[str] | Unset):
+        key_regex (str | Unset):
+        key_startswith (str | Unset):
+        limit (int | Unset):
+        modified (datetime.date | Unset):
+        modified_contained_by (datetime.date | Unset):
+        modified_contains (datetime.date | Unset):
+        modified_day (float | Unset):
+        modified_endswith (datetime.date | Unset):
+        modified_gt (datetime.date | Unset):
+        modified_gte (datetime.date | Unset):
+        modified_icontains (datetime.date | Unset):
+        modified_iendswith (datetime.date | Unset):
+        modified_iexact (datetime.date | Unset):
+        modified_in (list[datetime.date] | Unset):
+        modified_iregex (datetime.date | Unset):
+        modified_isnull (bool | Unset):
+        modified_iso_week_day (float | Unset):
+        modified_iso_year (float | Unset):
+        modified_istartswith (datetime.date | Unset):
+        modified_lt (datetime.date | Unset):
+        modified_lte (datetime.date | Unset):
+        modified_month (float | Unset):
+        modified_quarter (float | Unset):
+        modified_range (list[datetime.date] | Unset):
+        modified_regex (datetime.date | Unset):
+        modified_startswith (datetime.date | Unset):
+        modified_week (float | Unset):
+        modified_week_day (float | Unset):
+        modified_year (float | Unset):
+        ob_ref (int | Unset):
+        ob_ref_gt (int | Unset):
+        ob_ref_gte (int | Unset):
+        ob_ref_in (list[int] | Unset):
+        ob_ref_isnull (bool | Unset):
+        ob_ref_lt (int | Unset):
+        ob_ref_lte (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        value (str | Unset):
+        value_contains (str | Unset):
+        value_endswith (str | Unset):
+        value_gt (str | Unset):
+        value_gte (str | Unset):
+        value_icontains (str | Unset):
+        value_iendswith (str | Unset):
+        value_iexact (str | Unset):
+        value_in (list[str] | Unset):
+        value_iregex (str | Unset):
+        value_isnull (bool | Unset):
+        value_istartswith (str | Unset):
+        value_lt (str | Unset):
+        value_lte (str | Unset):
+        value_range (list[str] | Unset):
+        value_regex (str | Unset):
+        value_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -980,186 +980,186 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    id: Union[Unset, int] = UNSET,
-    id_contained_by: Union[Unset, int] = UNSET,
-    id_contains: Union[Unset, int] = UNSET,
-    id_endswith: Union[Unset, int] = UNSET,
-    id_gt: Union[Unset, int] = UNSET,
-    id_gte: Union[Unset, int] = UNSET,
-    id_icontains: Union[Unset, int] = UNSET,
-    id_iendswith: Union[Unset, int] = UNSET,
-    id_iexact: Union[Unset, int] = UNSET,
-    id_in: Union[Unset, list[int]] = UNSET,
-    id_iregex: Union[Unset, int] = UNSET,
-    id_isnull: Union[Unset, bool] = UNSET,
-    id_istartswith: Union[Unset, int] = UNSET,
-    id_lt: Union[Unset, int] = UNSET,
-    id_lte: Union[Unset, int] = UNSET,
-    id_range: Union[Unset, list[int]] = UNSET,
-    id_regex: Union[Unset, int] = UNSET,
-    id_startswith: Union[Unset, int] = UNSET,
-    key: Union[Unset, str] = UNSET,
-    key_contains: Union[Unset, str] = UNSET,
-    key_endswith: Union[Unset, str] = UNSET,
-    key_gt: Union[Unset, str] = UNSET,
-    key_gte: Union[Unset, str] = UNSET,
-    key_icontains: Union[Unset, str] = UNSET,
-    key_iendswith: Union[Unset, str] = UNSET,
-    key_iexact: Union[Unset, str] = UNSET,
-    key_in: Union[Unset, list[str]] = UNSET,
-    key_iregex: Union[Unset, str] = UNSET,
-    key_isnull: Union[Unset, bool] = UNSET,
-    key_istartswith: Union[Unset, str] = UNSET,
-    key_lt: Union[Unset, str] = UNSET,
-    key_lte: Union[Unset, str] = UNSET,
-    key_range: Union[Unset, list[str]] = UNSET,
-    key_regex: Union[Unset, str] = UNSET,
-    key_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    modified: Union[Unset, datetime.date] = UNSET,
-    modified_contained_by: Union[Unset, datetime.date] = UNSET,
-    modified_contains: Union[Unset, datetime.date] = UNSET,
-    modified_day: Union[Unset, float] = UNSET,
-    modified_endswith: Union[Unset, datetime.date] = UNSET,
-    modified_gt: Union[Unset, datetime.date] = UNSET,
-    modified_gte: Union[Unset, datetime.date] = UNSET,
-    modified_icontains: Union[Unset, datetime.date] = UNSET,
-    modified_iendswith: Union[Unset, datetime.date] = UNSET,
-    modified_iexact: Union[Unset, datetime.date] = UNSET,
-    modified_in: Union[Unset, list[datetime.date]] = UNSET,
-    modified_iregex: Union[Unset, datetime.date] = UNSET,
-    modified_isnull: Union[Unset, bool] = UNSET,
-    modified_iso_week_day: Union[Unset, float] = UNSET,
-    modified_iso_year: Union[Unset, float] = UNSET,
-    modified_istartswith: Union[Unset, datetime.date] = UNSET,
-    modified_lt: Union[Unset, datetime.date] = UNSET,
-    modified_lte: Union[Unset, datetime.date] = UNSET,
-    modified_month: Union[Unset, float] = UNSET,
-    modified_quarter: Union[Unset, float] = UNSET,
-    modified_range: Union[Unset, list[datetime.date]] = UNSET,
-    modified_regex: Union[Unset, datetime.date] = UNSET,
-    modified_startswith: Union[Unset, datetime.date] = UNSET,
-    modified_week: Union[Unset, float] = UNSET,
-    modified_week_day: Union[Unset, float] = UNSET,
-    modified_year: Union[Unset, float] = UNSET,
-    ob_ref: Union[Unset, int] = UNSET,
-    ob_ref_gt: Union[Unset, int] = UNSET,
-    ob_ref_gte: Union[Unset, int] = UNSET,
-    ob_ref_in: Union[Unset, list[int]] = UNSET,
-    ob_ref_isnull: Union[Unset, bool] = UNSET,
-    ob_ref_lt: Union[Unset, int] = UNSET,
-    ob_ref_lte: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    value: Union[Unset, str] = UNSET,
-    value_contains: Union[Unset, str] = UNSET,
-    value_endswith: Union[Unset, str] = UNSET,
-    value_gt: Union[Unset, str] = UNSET,
-    value_gte: Union[Unset, str] = UNSET,
-    value_icontains: Union[Unset, str] = UNSET,
-    value_iendswith: Union[Unset, str] = UNSET,
-    value_iexact: Union[Unset, str] = UNSET,
-    value_in: Union[Unset, list[str]] = UNSET,
-    value_iregex: Union[Unset, str] = UNSET,
-    value_isnull: Union[Unset, bool] = UNSET,
-    value_istartswith: Union[Unset, str] = UNSET,
-    value_lt: Union[Unset, str] = UNSET,
-    value_lte: Union[Unset, str] = UNSET,
-    value_range: Union[Unset, list[str]] = UNSET,
-    value_regex: Union[Unset, str] = UNSET,
-    value_startswith: Union[Unset, str] = UNSET,
+    id: int | Unset = UNSET,
+    id_contained_by: int | Unset = UNSET,
+    id_contains: int | Unset = UNSET,
+    id_endswith: int | Unset = UNSET,
+    id_gt: int | Unset = UNSET,
+    id_gte: int | Unset = UNSET,
+    id_icontains: int | Unset = UNSET,
+    id_iendswith: int | Unset = UNSET,
+    id_iexact: int | Unset = UNSET,
+    id_in: list[int] | Unset = UNSET,
+    id_iregex: int | Unset = UNSET,
+    id_isnull: bool | Unset = UNSET,
+    id_istartswith: int | Unset = UNSET,
+    id_lt: int | Unset = UNSET,
+    id_lte: int | Unset = UNSET,
+    id_range: list[int] | Unset = UNSET,
+    id_regex: int | Unset = UNSET,
+    id_startswith: int | Unset = UNSET,
+    key: str | Unset = UNSET,
+    key_contains: str | Unset = UNSET,
+    key_endswith: str | Unset = UNSET,
+    key_gt: str | Unset = UNSET,
+    key_gte: str | Unset = UNSET,
+    key_icontains: str | Unset = UNSET,
+    key_iendswith: str | Unset = UNSET,
+    key_iexact: str | Unset = UNSET,
+    key_in: list[str] | Unset = UNSET,
+    key_iregex: str | Unset = UNSET,
+    key_isnull: bool | Unset = UNSET,
+    key_istartswith: str | Unset = UNSET,
+    key_lt: str | Unset = UNSET,
+    key_lte: str | Unset = UNSET,
+    key_range: list[str] | Unset = UNSET,
+    key_regex: str | Unset = UNSET,
+    key_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    modified: datetime.date | Unset = UNSET,
+    modified_contained_by: datetime.date | Unset = UNSET,
+    modified_contains: datetime.date | Unset = UNSET,
+    modified_day: float | Unset = UNSET,
+    modified_endswith: datetime.date | Unset = UNSET,
+    modified_gt: datetime.date | Unset = UNSET,
+    modified_gte: datetime.date | Unset = UNSET,
+    modified_icontains: datetime.date | Unset = UNSET,
+    modified_iendswith: datetime.date | Unset = UNSET,
+    modified_iexact: datetime.date | Unset = UNSET,
+    modified_in: list[datetime.date] | Unset = UNSET,
+    modified_iregex: datetime.date | Unset = UNSET,
+    modified_isnull: bool | Unset = UNSET,
+    modified_iso_week_day: float | Unset = UNSET,
+    modified_iso_year: float | Unset = UNSET,
+    modified_istartswith: datetime.date | Unset = UNSET,
+    modified_lt: datetime.date | Unset = UNSET,
+    modified_lte: datetime.date | Unset = UNSET,
+    modified_month: float | Unset = UNSET,
+    modified_quarter: float | Unset = UNSET,
+    modified_range: list[datetime.date] | Unset = UNSET,
+    modified_regex: datetime.date | Unset = UNSET,
+    modified_startswith: datetime.date | Unset = UNSET,
+    modified_week: float | Unset = UNSET,
+    modified_week_day: float | Unset = UNSET,
+    modified_year: float | Unset = UNSET,
+    ob_ref: int | Unset = UNSET,
+    ob_ref_gt: int | Unset = UNSET,
+    ob_ref_gte: int | Unset = UNSET,
+    ob_ref_in: list[int] | Unset = UNSET,
+    ob_ref_isnull: bool | Unset = UNSET,
+    ob_ref_lt: int | Unset = UNSET,
+    ob_ref_lte: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    value: str | Unset = UNSET,
+    value_contains: str | Unset = UNSET,
+    value_endswith: str | Unset = UNSET,
+    value_gt: str | Unset = UNSET,
+    value_gte: str | Unset = UNSET,
+    value_icontains: str | Unset = UNSET,
+    value_iendswith: str | Unset = UNSET,
+    value_iexact: str | Unset = UNSET,
+    value_in: list[str] | Unset = UNSET,
+    value_iregex: str | Unset = UNSET,
+    value_isnull: bool | Unset = UNSET,
+    value_istartswith: str | Unset = UNSET,
+    value_lt: str | Unset = UNSET,
+    value_lte: str | Unset = UNSET,
+    value_range: list[str] | Unset = UNSET,
+    value_regex: str | Unset = UNSET,
+    value_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedMigrationPropertyReadList]:
     """Get a list of MigrationProperty objects.
 
     Args:
-        id (Union[Unset, int]):
-        id_contained_by (Union[Unset, int]):
-        id_contains (Union[Unset, int]):
-        id_endswith (Union[Unset, int]):
-        id_gt (Union[Unset, int]):
-        id_gte (Union[Unset, int]):
-        id_icontains (Union[Unset, int]):
-        id_iendswith (Union[Unset, int]):
-        id_iexact (Union[Unset, int]):
-        id_in (Union[Unset, list[int]]):
-        id_iregex (Union[Unset, int]):
-        id_isnull (Union[Unset, bool]):
-        id_istartswith (Union[Unset, int]):
-        id_lt (Union[Unset, int]):
-        id_lte (Union[Unset, int]):
-        id_range (Union[Unset, list[int]]):
-        id_regex (Union[Unset, int]):
-        id_startswith (Union[Unset, int]):
-        key (Union[Unset, str]):
-        key_contains (Union[Unset, str]):
-        key_endswith (Union[Unset, str]):
-        key_gt (Union[Unset, str]):
-        key_gte (Union[Unset, str]):
-        key_icontains (Union[Unset, str]):
-        key_iendswith (Union[Unset, str]):
-        key_iexact (Union[Unset, str]):
-        key_in (Union[Unset, list[str]]):
-        key_iregex (Union[Unset, str]):
-        key_isnull (Union[Unset, bool]):
-        key_istartswith (Union[Unset, str]):
-        key_lt (Union[Unset, str]):
-        key_lte (Union[Unset, str]):
-        key_range (Union[Unset, list[str]]):
-        key_regex (Union[Unset, str]):
-        key_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        modified (Union[Unset, datetime.date]):
-        modified_contained_by (Union[Unset, datetime.date]):
-        modified_contains (Union[Unset, datetime.date]):
-        modified_day (Union[Unset, float]):
-        modified_endswith (Union[Unset, datetime.date]):
-        modified_gt (Union[Unset, datetime.date]):
-        modified_gte (Union[Unset, datetime.date]):
-        modified_icontains (Union[Unset, datetime.date]):
-        modified_iendswith (Union[Unset, datetime.date]):
-        modified_iexact (Union[Unset, datetime.date]):
-        modified_in (Union[Unset, list[datetime.date]]):
-        modified_iregex (Union[Unset, datetime.date]):
-        modified_isnull (Union[Unset, bool]):
-        modified_iso_week_day (Union[Unset, float]):
-        modified_iso_year (Union[Unset, float]):
-        modified_istartswith (Union[Unset, datetime.date]):
-        modified_lt (Union[Unset, datetime.date]):
-        modified_lte (Union[Unset, datetime.date]):
-        modified_month (Union[Unset, float]):
-        modified_quarter (Union[Unset, float]):
-        modified_range (Union[Unset, list[datetime.date]]):
-        modified_regex (Union[Unset, datetime.date]):
-        modified_startswith (Union[Unset, datetime.date]):
-        modified_week (Union[Unset, float]):
-        modified_week_day (Union[Unset, float]):
-        modified_year (Union[Unset, float]):
-        ob_ref (Union[Unset, int]):
-        ob_ref_gt (Union[Unset, int]):
-        ob_ref_gte (Union[Unset, int]):
-        ob_ref_in (Union[Unset, list[int]]):
-        ob_ref_isnull (Union[Unset, bool]):
-        ob_ref_lt (Union[Unset, int]):
-        ob_ref_lte (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        value (Union[Unset, str]):
-        value_contains (Union[Unset, str]):
-        value_endswith (Union[Unset, str]):
-        value_gt (Union[Unset, str]):
-        value_gte (Union[Unset, str]):
-        value_icontains (Union[Unset, str]):
-        value_iendswith (Union[Unset, str]):
-        value_iexact (Union[Unset, str]):
-        value_in (Union[Unset, list[str]]):
-        value_iregex (Union[Unset, str]):
-        value_isnull (Union[Unset, bool]):
-        value_istartswith (Union[Unset, str]):
-        value_lt (Union[Unset, str]):
-        value_lte (Union[Unset, str]):
-        value_range (Union[Unset, list[str]]):
-        value_regex (Union[Unset, str]):
-        value_startswith (Union[Unset, str]):
+        id (int | Unset):
+        id_contained_by (int | Unset):
+        id_contains (int | Unset):
+        id_endswith (int | Unset):
+        id_gt (int | Unset):
+        id_gte (int | Unset):
+        id_icontains (int | Unset):
+        id_iendswith (int | Unset):
+        id_iexact (int | Unset):
+        id_in (list[int] | Unset):
+        id_iregex (int | Unset):
+        id_isnull (bool | Unset):
+        id_istartswith (int | Unset):
+        id_lt (int | Unset):
+        id_lte (int | Unset):
+        id_range (list[int] | Unset):
+        id_regex (int | Unset):
+        id_startswith (int | Unset):
+        key (str | Unset):
+        key_contains (str | Unset):
+        key_endswith (str | Unset):
+        key_gt (str | Unset):
+        key_gte (str | Unset):
+        key_icontains (str | Unset):
+        key_iendswith (str | Unset):
+        key_iexact (str | Unset):
+        key_in (list[str] | Unset):
+        key_iregex (str | Unset):
+        key_isnull (bool | Unset):
+        key_istartswith (str | Unset):
+        key_lt (str | Unset):
+        key_lte (str | Unset):
+        key_range (list[str] | Unset):
+        key_regex (str | Unset):
+        key_startswith (str | Unset):
+        limit (int | Unset):
+        modified (datetime.date | Unset):
+        modified_contained_by (datetime.date | Unset):
+        modified_contains (datetime.date | Unset):
+        modified_day (float | Unset):
+        modified_endswith (datetime.date | Unset):
+        modified_gt (datetime.date | Unset):
+        modified_gte (datetime.date | Unset):
+        modified_icontains (datetime.date | Unset):
+        modified_iendswith (datetime.date | Unset):
+        modified_iexact (datetime.date | Unset):
+        modified_in (list[datetime.date] | Unset):
+        modified_iregex (datetime.date | Unset):
+        modified_isnull (bool | Unset):
+        modified_iso_week_day (float | Unset):
+        modified_iso_year (float | Unset):
+        modified_istartswith (datetime.date | Unset):
+        modified_lt (datetime.date | Unset):
+        modified_lte (datetime.date | Unset):
+        modified_month (float | Unset):
+        modified_quarter (float | Unset):
+        modified_range (list[datetime.date] | Unset):
+        modified_regex (datetime.date | Unset):
+        modified_startswith (datetime.date | Unset):
+        modified_week (float | Unset):
+        modified_week_day (float | Unset):
+        modified_year (float | Unset):
+        ob_ref (int | Unset):
+        ob_ref_gt (int | Unset):
+        ob_ref_gte (int | Unset):
+        ob_ref_in (list[int] | Unset):
+        ob_ref_isnull (bool | Unset):
+        ob_ref_lt (int | Unset):
+        ob_ref_lte (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        value (str | Unset):
+        value_contains (str | Unset):
+        value_endswith (str | Unset):
+        value_gt (str | Unset):
+        value_gte (str | Unset):
+        value_icontains (str | Unset):
+        value_iendswith (str | Unset):
+        value_iexact (str | Unset):
+        value_in (list[str] | Unset):
+        value_iregex (str | Unset):
+        value_isnull (bool | Unset):
+        value_istartswith (str | Unset):
+        value_lt (str | Unset):
+        value_lte (str | Unset):
+        value_range (list[str] | Unset):
+        value_regex (str | Unset):
+        value_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1268,186 +1268,186 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    id: Union[Unset, int] = UNSET,
-    id_contained_by: Union[Unset, int] = UNSET,
-    id_contains: Union[Unset, int] = UNSET,
-    id_endswith: Union[Unset, int] = UNSET,
-    id_gt: Union[Unset, int] = UNSET,
-    id_gte: Union[Unset, int] = UNSET,
-    id_icontains: Union[Unset, int] = UNSET,
-    id_iendswith: Union[Unset, int] = UNSET,
-    id_iexact: Union[Unset, int] = UNSET,
-    id_in: Union[Unset, list[int]] = UNSET,
-    id_iregex: Union[Unset, int] = UNSET,
-    id_isnull: Union[Unset, bool] = UNSET,
-    id_istartswith: Union[Unset, int] = UNSET,
-    id_lt: Union[Unset, int] = UNSET,
-    id_lte: Union[Unset, int] = UNSET,
-    id_range: Union[Unset, list[int]] = UNSET,
-    id_regex: Union[Unset, int] = UNSET,
-    id_startswith: Union[Unset, int] = UNSET,
-    key: Union[Unset, str] = UNSET,
-    key_contains: Union[Unset, str] = UNSET,
-    key_endswith: Union[Unset, str] = UNSET,
-    key_gt: Union[Unset, str] = UNSET,
-    key_gte: Union[Unset, str] = UNSET,
-    key_icontains: Union[Unset, str] = UNSET,
-    key_iendswith: Union[Unset, str] = UNSET,
-    key_iexact: Union[Unset, str] = UNSET,
-    key_in: Union[Unset, list[str]] = UNSET,
-    key_iregex: Union[Unset, str] = UNSET,
-    key_isnull: Union[Unset, bool] = UNSET,
-    key_istartswith: Union[Unset, str] = UNSET,
-    key_lt: Union[Unset, str] = UNSET,
-    key_lte: Union[Unset, str] = UNSET,
-    key_range: Union[Unset, list[str]] = UNSET,
-    key_regex: Union[Unset, str] = UNSET,
-    key_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    modified: Union[Unset, datetime.date] = UNSET,
-    modified_contained_by: Union[Unset, datetime.date] = UNSET,
-    modified_contains: Union[Unset, datetime.date] = UNSET,
-    modified_day: Union[Unset, float] = UNSET,
-    modified_endswith: Union[Unset, datetime.date] = UNSET,
-    modified_gt: Union[Unset, datetime.date] = UNSET,
-    modified_gte: Union[Unset, datetime.date] = UNSET,
-    modified_icontains: Union[Unset, datetime.date] = UNSET,
-    modified_iendswith: Union[Unset, datetime.date] = UNSET,
-    modified_iexact: Union[Unset, datetime.date] = UNSET,
-    modified_in: Union[Unset, list[datetime.date]] = UNSET,
-    modified_iregex: Union[Unset, datetime.date] = UNSET,
-    modified_isnull: Union[Unset, bool] = UNSET,
-    modified_iso_week_day: Union[Unset, float] = UNSET,
-    modified_iso_year: Union[Unset, float] = UNSET,
-    modified_istartswith: Union[Unset, datetime.date] = UNSET,
-    modified_lt: Union[Unset, datetime.date] = UNSET,
-    modified_lte: Union[Unset, datetime.date] = UNSET,
-    modified_month: Union[Unset, float] = UNSET,
-    modified_quarter: Union[Unset, float] = UNSET,
-    modified_range: Union[Unset, list[datetime.date]] = UNSET,
-    modified_regex: Union[Unset, datetime.date] = UNSET,
-    modified_startswith: Union[Unset, datetime.date] = UNSET,
-    modified_week: Union[Unset, float] = UNSET,
-    modified_week_day: Union[Unset, float] = UNSET,
-    modified_year: Union[Unset, float] = UNSET,
-    ob_ref: Union[Unset, int] = UNSET,
-    ob_ref_gt: Union[Unset, int] = UNSET,
-    ob_ref_gte: Union[Unset, int] = UNSET,
-    ob_ref_in: Union[Unset, list[int]] = UNSET,
-    ob_ref_isnull: Union[Unset, bool] = UNSET,
-    ob_ref_lt: Union[Unset, int] = UNSET,
-    ob_ref_lte: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    value: Union[Unset, str] = UNSET,
-    value_contains: Union[Unset, str] = UNSET,
-    value_endswith: Union[Unset, str] = UNSET,
-    value_gt: Union[Unset, str] = UNSET,
-    value_gte: Union[Unset, str] = UNSET,
-    value_icontains: Union[Unset, str] = UNSET,
-    value_iendswith: Union[Unset, str] = UNSET,
-    value_iexact: Union[Unset, str] = UNSET,
-    value_in: Union[Unset, list[str]] = UNSET,
-    value_iregex: Union[Unset, str] = UNSET,
-    value_isnull: Union[Unset, bool] = UNSET,
-    value_istartswith: Union[Unset, str] = UNSET,
-    value_lt: Union[Unset, str] = UNSET,
-    value_lte: Union[Unset, str] = UNSET,
-    value_range: Union[Unset, list[str]] = UNSET,
-    value_regex: Union[Unset, str] = UNSET,
-    value_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedMigrationPropertyReadList]:
+    id: int | Unset = UNSET,
+    id_contained_by: int | Unset = UNSET,
+    id_contains: int | Unset = UNSET,
+    id_endswith: int | Unset = UNSET,
+    id_gt: int | Unset = UNSET,
+    id_gte: int | Unset = UNSET,
+    id_icontains: int | Unset = UNSET,
+    id_iendswith: int | Unset = UNSET,
+    id_iexact: int | Unset = UNSET,
+    id_in: list[int] | Unset = UNSET,
+    id_iregex: int | Unset = UNSET,
+    id_isnull: bool | Unset = UNSET,
+    id_istartswith: int | Unset = UNSET,
+    id_lt: int | Unset = UNSET,
+    id_lte: int | Unset = UNSET,
+    id_range: list[int] | Unset = UNSET,
+    id_regex: int | Unset = UNSET,
+    id_startswith: int | Unset = UNSET,
+    key: str | Unset = UNSET,
+    key_contains: str | Unset = UNSET,
+    key_endswith: str | Unset = UNSET,
+    key_gt: str | Unset = UNSET,
+    key_gte: str | Unset = UNSET,
+    key_icontains: str | Unset = UNSET,
+    key_iendswith: str | Unset = UNSET,
+    key_iexact: str | Unset = UNSET,
+    key_in: list[str] | Unset = UNSET,
+    key_iregex: str | Unset = UNSET,
+    key_isnull: bool | Unset = UNSET,
+    key_istartswith: str | Unset = UNSET,
+    key_lt: str | Unset = UNSET,
+    key_lte: str | Unset = UNSET,
+    key_range: list[str] | Unset = UNSET,
+    key_regex: str | Unset = UNSET,
+    key_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    modified: datetime.date | Unset = UNSET,
+    modified_contained_by: datetime.date | Unset = UNSET,
+    modified_contains: datetime.date | Unset = UNSET,
+    modified_day: float | Unset = UNSET,
+    modified_endswith: datetime.date | Unset = UNSET,
+    modified_gt: datetime.date | Unset = UNSET,
+    modified_gte: datetime.date | Unset = UNSET,
+    modified_icontains: datetime.date | Unset = UNSET,
+    modified_iendswith: datetime.date | Unset = UNSET,
+    modified_iexact: datetime.date | Unset = UNSET,
+    modified_in: list[datetime.date] | Unset = UNSET,
+    modified_iregex: datetime.date | Unset = UNSET,
+    modified_isnull: bool | Unset = UNSET,
+    modified_iso_week_day: float | Unset = UNSET,
+    modified_iso_year: float | Unset = UNSET,
+    modified_istartswith: datetime.date | Unset = UNSET,
+    modified_lt: datetime.date | Unset = UNSET,
+    modified_lte: datetime.date | Unset = UNSET,
+    modified_month: float | Unset = UNSET,
+    modified_quarter: float | Unset = UNSET,
+    modified_range: list[datetime.date] | Unset = UNSET,
+    modified_regex: datetime.date | Unset = UNSET,
+    modified_startswith: datetime.date | Unset = UNSET,
+    modified_week: float | Unset = UNSET,
+    modified_week_day: float | Unset = UNSET,
+    modified_year: float | Unset = UNSET,
+    ob_ref: int | Unset = UNSET,
+    ob_ref_gt: int | Unset = UNSET,
+    ob_ref_gte: int | Unset = UNSET,
+    ob_ref_in: list[int] | Unset = UNSET,
+    ob_ref_isnull: bool | Unset = UNSET,
+    ob_ref_lt: int | Unset = UNSET,
+    ob_ref_lte: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    value: str | Unset = UNSET,
+    value_contains: str | Unset = UNSET,
+    value_endswith: str | Unset = UNSET,
+    value_gt: str | Unset = UNSET,
+    value_gte: str | Unset = UNSET,
+    value_icontains: str | Unset = UNSET,
+    value_iendswith: str | Unset = UNSET,
+    value_iexact: str | Unset = UNSET,
+    value_in: list[str] | Unset = UNSET,
+    value_iregex: str | Unset = UNSET,
+    value_isnull: bool | Unset = UNSET,
+    value_istartswith: str | Unset = UNSET,
+    value_lt: str | Unset = UNSET,
+    value_lte: str | Unset = UNSET,
+    value_range: list[str] | Unset = UNSET,
+    value_regex: str | Unset = UNSET,
+    value_startswith: str | Unset = UNSET,
+) -> PaginatedMigrationPropertyReadList | None:
     """Get a list of MigrationProperty objects.
 
     Args:
-        id (Union[Unset, int]):
-        id_contained_by (Union[Unset, int]):
-        id_contains (Union[Unset, int]):
-        id_endswith (Union[Unset, int]):
-        id_gt (Union[Unset, int]):
-        id_gte (Union[Unset, int]):
-        id_icontains (Union[Unset, int]):
-        id_iendswith (Union[Unset, int]):
-        id_iexact (Union[Unset, int]):
-        id_in (Union[Unset, list[int]]):
-        id_iregex (Union[Unset, int]):
-        id_isnull (Union[Unset, bool]):
-        id_istartswith (Union[Unset, int]):
-        id_lt (Union[Unset, int]):
-        id_lte (Union[Unset, int]):
-        id_range (Union[Unset, list[int]]):
-        id_regex (Union[Unset, int]):
-        id_startswith (Union[Unset, int]):
-        key (Union[Unset, str]):
-        key_contains (Union[Unset, str]):
-        key_endswith (Union[Unset, str]):
-        key_gt (Union[Unset, str]):
-        key_gte (Union[Unset, str]):
-        key_icontains (Union[Unset, str]):
-        key_iendswith (Union[Unset, str]):
-        key_iexact (Union[Unset, str]):
-        key_in (Union[Unset, list[str]]):
-        key_iregex (Union[Unset, str]):
-        key_isnull (Union[Unset, bool]):
-        key_istartswith (Union[Unset, str]):
-        key_lt (Union[Unset, str]):
-        key_lte (Union[Unset, str]):
-        key_range (Union[Unset, list[str]]):
-        key_regex (Union[Unset, str]):
-        key_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        modified (Union[Unset, datetime.date]):
-        modified_contained_by (Union[Unset, datetime.date]):
-        modified_contains (Union[Unset, datetime.date]):
-        modified_day (Union[Unset, float]):
-        modified_endswith (Union[Unset, datetime.date]):
-        modified_gt (Union[Unset, datetime.date]):
-        modified_gte (Union[Unset, datetime.date]):
-        modified_icontains (Union[Unset, datetime.date]):
-        modified_iendswith (Union[Unset, datetime.date]):
-        modified_iexact (Union[Unset, datetime.date]):
-        modified_in (Union[Unset, list[datetime.date]]):
-        modified_iregex (Union[Unset, datetime.date]):
-        modified_isnull (Union[Unset, bool]):
-        modified_iso_week_day (Union[Unset, float]):
-        modified_iso_year (Union[Unset, float]):
-        modified_istartswith (Union[Unset, datetime.date]):
-        modified_lt (Union[Unset, datetime.date]):
-        modified_lte (Union[Unset, datetime.date]):
-        modified_month (Union[Unset, float]):
-        modified_quarter (Union[Unset, float]):
-        modified_range (Union[Unset, list[datetime.date]]):
-        modified_regex (Union[Unset, datetime.date]):
-        modified_startswith (Union[Unset, datetime.date]):
-        modified_week (Union[Unset, float]):
-        modified_week_day (Union[Unset, float]):
-        modified_year (Union[Unset, float]):
-        ob_ref (Union[Unset, int]):
-        ob_ref_gt (Union[Unset, int]):
-        ob_ref_gte (Union[Unset, int]):
-        ob_ref_in (Union[Unset, list[int]]):
-        ob_ref_isnull (Union[Unset, bool]):
-        ob_ref_lt (Union[Unset, int]):
-        ob_ref_lte (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        value (Union[Unset, str]):
-        value_contains (Union[Unset, str]):
-        value_endswith (Union[Unset, str]):
-        value_gt (Union[Unset, str]):
-        value_gte (Union[Unset, str]):
-        value_icontains (Union[Unset, str]):
-        value_iendswith (Union[Unset, str]):
-        value_iexact (Union[Unset, str]):
-        value_in (Union[Unset, list[str]]):
-        value_iregex (Union[Unset, str]):
-        value_isnull (Union[Unset, bool]):
-        value_istartswith (Union[Unset, str]):
-        value_lt (Union[Unset, str]):
-        value_lte (Union[Unset, str]):
-        value_range (Union[Unset, list[str]]):
-        value_regex (Union[Unset, str]):
-        value_startswith (Union[Unset, str]):
+        id (int | Unset):
+        id_contained_by (int | Unset):
+        id_contains (int | Unset):
+        id_endswith (int | Unset):
+        id_gt (int | Unset):
+        id_gte (int | Unset):
+        id_icontains (int | Unset):
+        id_iendswith (int | Unset):
+        id_iexact (int | Unset):
+        id_in (list[int] | Unset):
+        id_iregex (int | Unset):
+        id_isnull (bool | Unset):
+        id_istartswith (int | Unset):
+        id_lt (int | Unset):
+        id_lte (int | Unset):
+        id_range (list[int] | Unset):
+        id_regex (int | Unset):
+        id_startswith (int | Unset):
+        key (str | Unset):
+        key_contains (str | Unset):
+        key_endswith (str | Unset):
+        key_gt (str | Unset):
+        key_gte (str | Unset):
+        key_icontains (str | Unset):
+        key_iendswith (str | Unset):
+        key_iexact (str | Unset):
+        key_in (list[str] | Unset):
+        key_iregex (str | Unset):
+        key_isnull (bool | Unset):
+        key_istartswith (str | Unset):
+        key_lt (str | Unset):
+        key_lte (str | Unset):
+        key_range (list[str] | Unset):
+        key_regex (str | Unset):
+        key_startswith (str | Unset):
+        limit (int | Unset):
+        modified (datetime.date | Unset):
+        modified_contained_by (datetime.date | Unset):
+        modified_contains (datetime.date | Unset):
+        modified_day (float | Unset):
+        modified_endswith (datetime.date | Unset):
+        modified_gt (datetime.date | Unset):
+        modified_gte (datetime.date | Unset):
+        modified_icontains (datetime.date | Unset):
+        modified_iendswith (datetime.date | Unset):
+        modified_iexact (datetime.date | Unset):
+        modified_in (list[datetime.date] | Unset):
+        modified_iregex (datetime.date | Unset):
+        modified_isnull (bool | Unset):
+        modified_iso_week_day (float | Unset):
+        modified_iso_year (float | Unset):
+        modified_istartswith (datetime.date | Unset):
+        modified_lt (datetime.date | Unset):
+        modified_lte (datetime.date | Unset):
+        modified_month (float | Unset):
+        modified_quarter (float | Unset):
+        modified_range (list[datetime.date] | Unset):
+        modified_regex (datetime.date | Unset):
+        modified_startswith (datetime.date | Unset):
+        modified_week (float | Unset):
+        modified_week_day (float | Unset):
+        modified_year (float | Unset):
+        ob_ref (int | Unset):
+        ob_ref_gt (int | Unset):
+        ob_ref_gte (int | Unset):
+        ob_ref_in (list[int] | Unset):
+        ob_ref_isnull (bool | Unset):
+        ob_ref_lt (int | Unset):
+        ob_ref_lte (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        value (str | Unset):
+        value_contains (str | Unset):
+        value_endswith (str | Unset):
+        value_gt (str | Unset):
+        value_gte (str | Unset):
+        value_icontains (str | Unset):
+        value_iendswith (str | Unset):
+        value_iexact (str | Unset):
+        value_in (list[str] | Unset):
+        value_iregex (str | Unset):
+        value_isnull (bool | Unset):
+        value_istartswith (str | Unset):
+        value_lt (str | Unset):
+        value_lte (str | Unset):
+        value_range (list[str] | Unset):
+        value_regex (str | Unset):
+        value_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

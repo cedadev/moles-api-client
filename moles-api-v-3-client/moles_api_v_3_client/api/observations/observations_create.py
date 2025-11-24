@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -29,9 +29,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[ObservationWrite]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> ObservationWrite | None:
     if response.status_code == 201:
         response_201 = ObservationWrite.from_dict(response.json())
 
@@ -43,9 +41,7 @@ def _parse_response(
         return None
 
 
-def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Response[ObservationWrite]:
+def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Response[ObservationWrite]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -89,7 +85,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: ObservationWriteRequest,
-) -> Optional[ObservationWrite]:
+) -> ObservationWrite | None:
     """Get a list of Observation objects.
 
     Args:
@@ -144,7 +140,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: ObservationWriteRequest,
-) -> Optional[ObservationWrite]:
+) -> ObservationWrite | None:
     """Get a list of Observation objects.
 
     Args:

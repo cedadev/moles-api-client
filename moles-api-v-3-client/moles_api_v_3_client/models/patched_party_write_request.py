@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,33 +18,33 @@ class PatchedPartyWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            first_name (Union[Unset, str]):
-            last_name (Union[Unset, str]):
-            party_type (Union[Unset, PartyTypeEnum]): * `individual` - Individual
+            first_name (str | Unset):
+            last_name (str | Unset):
+            party_type (PartyTypeEnum | Unset): * `individual` - Individual
                 * `organisation` - Organisation
-            description (Union[Unset, str]):
-            address_line_1 (Union[Unset, str]):
-            address_line_2 (Union[Unset, str]):
-            city (Union[Unset, str]):
-            country (Union[Unset, str]):
-            postal_code (Union[Unset, str]):
-            electronic_email_address (Union[Unset, str]):
-            phone (Union[Unset, str]):
-            online_resource (Union[Unset, str]):
+            description (str | Unset):
+            address_line_1 (str | Unset):
+            address_line_2 (str | Unset):
+            city (str | Unset):
+            country (str | Unset):
+            postal_code (str | Unset):
+            electronic_email_address (str | Unset):
+            phone (str | Unset):
+            online_resource (str | Unset):
     """
 
-    first_name: Union[Unset, str] = UNSET
-    last_name: Union[Unset, str] = UNSET
-    party_type: Union[Unset, PartyTypeEnum] = UNSET
-    description: Union[Unset, str] = UNSET
-    address_line_1: Union[Unset, str] = UNSET
-    address_line_2: Union[Unset, str] = UNSET
-    city: Union[Unset, str] = UNSET
-    country: Union[Unset, str] = UNSET
-    postal_code: Union[Unset, str] = UNSET
-    electronic_email_address: Union[Unset, str] = UNSET
-    phone: Union[Unset, str] = UNSET
-    online_resource: Union[Unset, str] = UNSET
+    first_name: str | Unset = UNSET
+    last_name: str | Unset = UNSET
+    party_type: PartyTypeEnum | Unset = UNSET
+    description: str | Unset = UNSET
+    address_line_1: str | Unset = UNSET
+    address_line_2: str | Unset = UNSET
+    city: str | Unset = UNSET
+    country: str | Unset = UNSET
+    postal_code: str | Unset = UNSET
+    electronic_email_address: str | Unset = UNSET
+    phone: str | Unset = UNSET
+    online_resource: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -50,7 +52,7 @@ class PatchedPartyWriteRequest:
 
         last_name = self.last_name
 
-        party_type: Union[Unset, str] = UNSET
+        party_type: str | Unset = UNSET
         if not isinstance(self.party_type, Unset):
             party_type = self.party_type.value
 
@@ -110,7 +112,7 @@ class PatchedPartyWriteRequest:
         last_name = d.pop("lastName", UNSET)
 
         _party_type = d.pop("partyType", UNSET)
-        party_type: Union[Unset, PartyTypeEnum]
+        party_type: PartyTypeEnum | Unset
         if isinstance(_party_type, Unset):
             party_type = UNSET
         else:

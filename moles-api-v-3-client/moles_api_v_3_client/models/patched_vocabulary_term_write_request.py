@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,25 +18,25 @@ class PatchedVocabularyTermWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            vocab_service (Union[Unset, VocabServiceEnum]): * `clipc_skos_vocab` - CLIPC SKOS Vocabulary Service
+            vocab_service (VocabServiceEnum | Unset): * `clipc_skos_vocab` - CLIPC SKOS Vocabulary Service
                 * `nerc_skos_vocab` - NERC SKOS Vocabulary Service
-            uri (Union[Unset, str]):
-            resolved_term (Union[None, Unset, str]):
+            uri (str | Unset):
+            resolved_term (None | str | Unset):
     """
 
-    vocab_service: Union[Unset, VocabServiceEnum] = UNSET
-    uri: Union[Unset, str] = UNSET
-    resolved_term: Union[None, Unset, str] = UNSET
+    vocab_service: VocabServiceEnum | Unset = UNSET
+    uri: str | Unset = UNSET
+    resolved_term: None | str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        vocab_service: Union[Unset, str] = UNSET
+        vocab_service: str | Unset = UNSET
         if not isinstance(self.vocab_service, Unset):
             vocab_service = self.vocab_service.value
 
         uri = self.uri
 
-        resolved_term: Union[None, Unset, str]
+        resolved_term: None | str | Unset
         if isinstance(self.resolved_term, Unset):
             resolved_term = UNSET
         else:
@@ -56,7 +58,7 @@ class PatchedVocabularyTermWriteRequest:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         _vocab_service = d.pop("vocabService", UNSET)
-        vocab_service: Union[Unset, VocabServiceEnum]
+        vocab_service: VocabServiceEnum | Unset
         if isinstance(_vocab_service, Unset):
             vocab_service = UNSET
         else:
@@ -64,12 +66,12 @@ class PatchedVocabularyTermWriteRequest:
 
         uri = d.pop("uri", UNSET)
 
-        def _parse_resolved_term(data: object) -> Union[None, Unset, str]:
+        def _parse_resolved_term(data: object) -> None | str | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, str], data)
+            return cast(None | str | Unset, data)
 
         resolved_term = _parse_resolved_term(d.pop("resolvedTerm", UNSET))
 

@@ -63,6 +63,8 @@ def cat_filter(title, project, collection, path, state, pubfy, officer):
     
     response = observations_list.sync_detailed(client=CLIENT, **params)
 
+    if response.status_code.value != 200:
+        raise Exception(f"API: {response}")
     return response.parsed.results
 
 def fetch_authors(obs):

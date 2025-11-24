@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -29,7 +29,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[PlatformWrite]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> PlatformWrite | None:
     if response.status_code == 201:
         response_201 = PlatformWrite.from_dict(response.json())
 
@@ -41,7 +41,7 @@ def _parse_response(*, client: Union[AuthenticatedClient, Client], response: htt
         return None
 
 
-def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[PlatformWrite]:
+def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Response[PlatformWrite]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -85,7 +85,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: PlatformWriteRequest,
-) -> Optional[PlatformWrite]:
+) -> PlatformWrite | None:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:
@@ -140,7 +140,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: PlatformWriteRequest,
-) -> Optional[PlatformWrite]:
+) -> PlatformWrite | None:
     """Get a list of Platform objects. Platforms have a 1:1 mapping with Observations.
 
     Args:

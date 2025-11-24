@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,27 +22,27 @@ class ObservationCollectionWriteRequest:
 
         Attributes:
             member (list[int]):
-            title (Union[Unset, str]):
-            abstract (Union[Unset, str]):
-            keywords (Union[Unset, str]):
-            publication_state (Union[BlankEnum, PublicationStateCbbEnum, Unset]):
-            data_published_time (Union[None, Unset, datetime.datetime]):
-            doi_published_time (Union[None, Unset, datetime.datetime]):
-            dont_harvest_from_projects (Union[Unset, bool]):
-            image_details (Union[Unset, list[int]]):
-            discovery_keywords (Union[Unset, list[int]]):
+            title (str | Unset):
+            abstract (str | Unset):
+            keywords (str | Unset):
+            publication_state (BlankEnum | PublicationStateCbbEnum | Unset):
+            data_published_time (datetime.datetime | None | Unset):
+            doi_published_time (datetime.datetime | None | Unset):
+            dont_harvest_from_projects (bool | Unset):
+            image_details (list[int] | Unset):
+            discovery_keywords (list[int] | Unset):
     """
 
     member: list[int]
-    title: Union[Unset, str] = UNSET
-    abstract: Union[Unset, str] = UNSET
-    keywords: Union[Unset, str] = UNSET
-    publication_state: Union[BlankEnum, PublicationStateCbbEnum, Unset] = UNSET
-    data_published_time: Union[None, Unset, datetime.datetime] = UNSET
-    doi_published_time: Union[None, Unset, datetime.datetime] = UNSET
-    dont_harvest_from_projects: Union[Unset, bool] = UNSET
-    image_details: Union[Unset, list[int]] = UNSET
-    discovery_keywords: Union[Unset, list[int]] = UNSET
+    title: str | Unset = UNSET
+    abstract: str | Unset = UNSET
+    keywords: str | Unset = UNSET
+    publication_state: BlankEnum | PublicationStateCbbEnum | Unset = UNSET
+    data_published_time: datetime.datetime | None | Unset = UNSET
+    doi_published_time: datetime.datetime | None | Unset = UNSET
+    dont_harvest_from_projects: bool | Unset = UNSET
+    image_details: list[int] | Unset = UNSET
+    discovery_keywords: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -52,7 +54,7 @@ class ObservationCollectionWriteRequest:
 
         keywords = self.keywords
 
-        publication_state: Union[Unset, str]
+        publication_state: str | Unset
         if isinstance(self.publication_state, Unset):
             publication_state = UNSET
         elif isinstance(self.publication_state, PublicationStateCbbEnum):
@@ -60,7 +62,7 @@ class ObservationCollectionWriteRequest:
         else:
             publication_state = self.publication_state.value
 
-        data_published_time: Union[None, Unset, str]
+        data_published_time: None | str | Unset
         if isinstance(self.data_published_time, Unset):
             data_published_time = UNSET
         elif isinstance(self.data_published_time, datetime.datetime):
@@ -68,7 +70,7 @@ class ObservationCollectionWriteRequest:
         else:
             data_published_time = self.data_published_time
 
-        doi_published_time: Union[None, Unset, str]
+        doi_published_time: None | str | Unset
         if isinstance(self.doi_published_time, Unset):
             doi_published_time = UNSET
         elif isinstance(self.doi_published_time, datetime.datetime):
@@ -78,11 +80,11 @@ class ObservationCollectionWriteRequest:
 
         dont_harvest_from_projects = self.dont_harvest_from_projects
 
-        image_details: Union[Unset, list[int]] = UNSET
+        image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
             image_details = ",".join(map(str, self.image_details))
 
-        discovery_keywords: Union[Unset, list[int]] = UNSET
+        discovery_keywords: list[int] | Unset = UNSET
         if not isinstance(self.discovery_keywords, Unset):
             discovery_keywords = ",".join(map(str, self.discovery_keywords))
 
@@ -125,7 +127,7 @@ class ObservationCollectionWriteRequest:
 
         keywords = d.pop("keywords", UNSET)
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationStateCbbEnum, Unset]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum | Unset:
             if isinstance(data, Unset):
                 return data
             try:
@@ -134,7 +136,7 @@ class ObservationCollectionWriteRequest:
                 publication_state_type_0 = PublicationStateCbbEnum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -144,7 +146,7 @@ class ObservationCollectionWriteRequest:
 
         publication_state = _parse_publication_state(d.pop("publicationState", UNSET))
 
-        def _parse_data_published_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_data_published_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -155,13 +157,13 @@ class ObservationCollectionWriteRequest:
                 data_published_time_type_0 = isoparse(data)
 
                 return data_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         data_published_time = _parse_data_published_time(d.pop("dataPublishedTime", UNSET))
 
-        def _parse_doi_published_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_doi_published_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -172,9 +174,9 @@ class ObservationCollectionWriteRequest:
                 doi_published_time_type_0 = isoparse(data)
 
                 return doi_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         doi_published_time = _parse_doi_published_time(d.pop("doiPublishedTime", UNSET))
 

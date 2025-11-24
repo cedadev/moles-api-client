@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -18,17 +20,17 @@ class TimePeriodRequest:
 
         Attributes:
             start_time (datetime.datetime):
-            end_time (Union[None, Unset, datetime.datetime]):
+            end_time (datetime.datetime | None | Unset):
     """
 
     start_time: datetime.datetime
-    end_time: Union[None, Unset, datetime.datetime] = UNSET
+    end_time: datetime.datetime | None | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         start_time = self.start_time.isoformat()
 
-        end_time: Union[None, Unset, str]
+        end_time: None | str | Unset
         if isinstance(self.end_time, Unset):
             end_time = UNSET
         elif isinstance(self.end_time, datetime.datetime):
@@ -53,7 +55,7 @@ class TimePeriodRequest:
         d = dict(src_dict)
         start_time = isoparse(d.pop("startTime"))
 
-        def _parse_end_time(data: object) -> Union[None, Unset, datetime.datetime]:
+        def _parse_end_time(data: object) -> datetime.datetime | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
@@ -64,9 +66,9 @@ class TimePeriodRequest:
                 end_time_type_0 = isoparse(data)
 
                 return end_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, Unset, datetime.datetime], data)
+            return cast(datetime.datetime | None | Unset, data)
 
         end_time = _parse_end_time(d.pop("endTime", UNSET))
 

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,116 +11,116 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    bbox_name: Union[Unset, str] = UNSET,
-    bbox_name_contains: Union[Unset, str] = UNSET,
-    bbox_name_endswith: Union[Unset, str] = UNSET,
-    bbox_name_gt: Union[Unset, str] = UNSET,
-    bbox_name_gte: Union[Unset, str] = UNSET,
-    bbox_name_icontains: Union[Unset, str] = UNSET,
-    bbox_name_iendswith: Union[Unset, str] = UNSET,
-    bbox_name_iexact: Union[Unset, str] = UNSET,
-    bbox_name_in: Union[Unset, list[str]] = UNSET,
-    bbox_name_iregex: Union[Unset, str] = UNSET,
-    bbox_name_isnull: Union[Unset, bool] = UNSET,
-    bbox_name_istartswith: Union[Unset, str] = UNSET,
-    bbox_name_lt: Union[Unset, str] = UNSET,
-    bbox_name_lte: Union[Unset, str] = UNSET,
-    bbox_name_range: Union[Unset, list[str]] = UNSET,
-    bbox_name_regex: Union[Unset, str] = UNSET,
-    bbox_name_startswith: Union[Unset, str] = UNSET,
-    east_bound_longitude: Union[Unset, float] = UNSET,
-    east_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    east_bound_longitude_contains: Union[Unset, float] = UNSET,
-    east_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    east_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    east_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    east_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    east_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    east_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_regex: Union[Unset, float] = UNSET,
-    east_bound_longitude_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    north_bound_latitude: Union[Unset, float] = UNSET,
-    north_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    north_bound_latitude_contains: Union[Unset, float] = UNSET,
-    north_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    north_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    north_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    north_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    north_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    north_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_regex: Union[Unset, float] = UNSET,
-    north_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    south_bound_latitude: Union[Unset, float] = UNSET,
-    south_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    south_bound_latitude_contains: Union[Unset, float] = UNSET,
-    south_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    south_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    south_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    south_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    south_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    south_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_regex: Union[Unset, float] = UNSET,
-    south_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    west_bound_longitude: Union[Unset, float] = UNSET,
-    west_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    west_bound_longitude_contains: Union[Unset, float] = UNSET,
-    west_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    west_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    west_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    west_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    west_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    west_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_regex: Union[Unset, float] = UNSET,
-    west_bound_longitude_startswith: Union[Unset, float] = UNSET,
+    bbox_name: str | Unset = UNSET,
+    bbox_name_contains: str | Unset = UNSET,
+    bbox_name_endswith: str | Unset = UNSET,
+    bbox_name_gt: str | Unset = UNSET,
+    bbox_name_gte: str | Unset = UNSET,
+    bbox_name_icontains: str | Unset = UNSET,
+    bbox_name_iendswith: str | Unset = UNSET,
+    bbox_name_iexact: str | Unset = UNSET,
+    bbox_name_in: list[str] | Unset = UNSET,
+    bbox_name_iregex: str | Unset = UNSET,
+    bbox_name_isnull: bool | Unset = UNSET,
+    bbox_name_istartswith: str | Unset = UNSET,
+    bbox_name_lt: str | Unset = UNSET,
+    bbox_name_lte: str | Unset = UNSET,
+    bbox_name_range: list[str] | Unset = UNSET,
+    bbox_name_regex: str | Unset = UNSET,
+    bbox_name_startswith: str | Unset = UNSET,
+    east_bound_longitude: float | Unset = UNSET,
+    east_bound_longitude_contained_by: float | Unset = UNSET,
+    east_bound_longitude_contains: float | Unset = UNSET,
+    east_bound_longitude_endswith: float | Unset = UNSET,
+    east_bound_longitude_gt: float | Unset = UNSET,
+    east_bound_longitude_gte: float | Unset = UNSET,
+    east_bound_longitude_icontains: float | Unset = UNSET,
+    east_bound_longitude_iendswith: float | Unset = UNSET,
+    east_bound_longitude_iexact: float | Unset = UNSET,
+    east_bound_longitude_in: list[float] | Unset = UNSET,
+    east_bound_longitude_iregex: float | Unset = UNSET,
+    east_bound_longitude_isnull: bool | Unset = UNSET,
+    east_bound_longitude_istartswith: float | Unset = UNSET,
+    east_bound_longitude_lt: float | Unset = UNSET,
+    east_bound_longitude_lte: float | Unset = UNSET,
+    east_bound_longitude_range: list[float] | Unset = UNSET,
+    east_bound_longitude_regex: float | Unset = UNSET,
+    east_bound_longitude_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    north_bound_latitude: float | Unset = UNSET,
+    north_bound_latitude_contained_by: float | Unset = UNSET,
+    north_bound_latitude_contains: float | Unset = UNSET,
+    north_bound_latitude_endswith: float | Unset = UNSET,
+    north_bound_latitude_gt: float | Unset = UNSET,
+    north_bound_latitude_gte: float | Unset = UNSET,
+    north_bound_latitude_icontains: float | Unset = UNSET,
+    north_bound_latitude_iendswith: float | Unset = UNSET,
+    north_bound_latitude_iexact: float | Unset = UNSET,
+    north_bound_latitude_in: list[float] | Unset = UNSET,
+    north_bound_latitude_iregex: float | Unset = UNSET,
+    north_bound_latitude_isnull: bool | Unset = UNSET,
+    north_bound_latitude_istartswith: float | Unset = UNSET,
+    north_bound_latitude_lt: float | Unset = UNSET,
+    north_bound_latitude_lte: float | Unset = UNSET,
+    north_bound_latitude_range: list[float] | Unset = UNSET,
+    north_bound_latitude_regex: float | Unset = UNSET,
+    north_bound_latitude_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    south_bound_latitude: float | Unset = UNSET,
+    south_bound_latitude_contained_by: float | Unset = UNSET,
+    south_bound_latitude_contains: float | Unset = UNSET,
+    south_bound_latitude_endswith: float | Unset = UNSET,
+    south_bound_latitude_gt: float | Unset = UNSET,
+    south_bound_latitude_gte: float | Unset = UNSET,
+    south_bound_latitude_icontains: float | Unset = UNSET,
+    south_bound_latitude_iendswith: float | Unset = UNSET,
+    south_bound_latitude_iexact: float | Unset = UNSET,
+    south_bound_latitude_in: list[float] | Unset = UNSET,
+    south_bound_latitude_iregex: float | Unset = UNSET,
+    south_bound_latitude_isnull: bool | Unset = UNSET,
+    south_bound_latitude_istartswith: float | Unset = UNSET,
+    south_bound_latitude_lt: float | Unset = UNSET,
+    south_bound_latitude_lte: float | Unset = UNSET,
+    south_bound_latitude_range: list[float] | Unset = UNSET,
+    south_bound_latitude_regex: float | Unset = UNSET,
+    south_bound_latitude_startswith: float | Unset = UNSET,
+    west_bound_longitude: float | Unset = UNSET,
+    west_bound_longitude_contained_by: float | Unset = UNSET,
+    west_bound_longitude_contains: float | Unset = UNSET,
+    west_bound_longitude_endswith: float | Unset = UNSET,
+    west_bound_longitude_gt: float | Unset = UNSET,
+    west_bound_longitude_gte: float | Unset = UNSET,
+    west_bound_longitude_icontains: float | Unset = UNSET,
+    west_bound_longitude_iendswith: float | Unset = UNSET,
+    west_bound_longitude_iexact: float | Unset = UNSET,
+    west_bound_longitude_in: list[float] | Unset = UNSET,
+    west_bound_longitude_iregex: float | Unset = UNSET,
+    west_bound_longitude_isnull: bool | Unset = UNSET,
+    west_bound_longitude_istartswith: float | Unset = UNSET,
+    west_bound_longitude_lt: float | Unset = UNSET,
+    west_bound_longitude_lte: float | Unset = UNSET,
+    west_bound_longitude_range: list[float] | Unset = UNSET,
+    west_bound_longitude_regex: float | Unset = UNSET,
+    west_bound_longitude_startswith: float | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -140,7 +140,7 @@ def _get_kwargs(
 
     params["bboxName__iexact"] = bbox_name_iexact
 
-    json_bbox_name_in: Union[Unset, list[str]] = UNSET
+    json_bbox_name_in: list[str] | Unset = UNSET
     if not isinstance(bbox_name_in, Unset):
         json_bbox_name_in = ",".join(map(str, bbox_name_in))
 
@@ -156,7 +156,7 @@ def _get_kwargs(
 
     params["bboxName__lte"] = bbox_name_lte
 
-    json_bbox_name_range: Union[Unset, list[str]] = UNSET
+    json_bbox_name_range: list[str] | Unset = UNSET
     if not isinstance(bbox_name_range, Unset):
         json_bbox_name_range = ",".join(map(str, bbox_name_range))
 
@@ -184,7 +184,7 @@ def _get_kwargs(
 
     params["eastBoundLongitude__iexact"] = east_bound_longitude_iexact
 
-    json_east_bound_longitude_in: Union[Unset, list[float]] = UNSET
+    json_east_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_in, Unset):
         json_east_bound_longitude_in = ",".join(map(str, east_bound_longitude_in))
 
@@ -200,7 +200,7 @@ def _get_kwargs(
 
     params["eastBoundLongitude__lte"] = east_bound_longitude_lte
 
-    json_east_bound_longitude_range: Union[Unset, list[float]] = UNSET
+    json_east_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_range, Unset):
         json_east_bound_longitude_range = ",".join(map(str, east_bound_longitude_range))
 
@@ -230,7 +230,7 @@ def _get_kwargs(
 
     params["northBoundLatitude__iexact"] = north_bound_latitude_iexact
 
-    json_north_bound_latitude_in: Union[Unset, list[float]] = UNSET
+    json_north_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_in, Unset):
         json_north_bound_latitude_in = ",".join(map(str, north_bound_latitude_in))
 
@@ -246,7 +246,7 @@ def _get_kwargs(
 
     params["northBoundLatitude__lte"] = north_bound_latitude_lte
 
-    json_north_bound_latitude_range: Union[Unset, list[float]] = UNSET
+    json_north_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_range, Unset):
         json_north_bound_latitude_range = ",".join(map(str, north_bound_latitude_range))
 
@@ -274,7 +274,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -290,7 +290,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -322,7 +322,7 @@ def _get_kwargs(
 
     params["southBoundLatitude__iexact"] = south_bound_latitude_iexact
 
-    json_south_bound_latitude_in: Union[Unset, list[float]] = UNSET
+    json_south_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_in, Unset):
         json_south_bound_latitude_in = ",".join(map(str, south_bound_latitude_in))
 
@@ -338,7 +338,7 @@ def _get_kwargs(
 
     params["southBoundLatitude__lte"] = south_bound_latitude_lte
 
-    json_south_bound_latitude_range: Union[Unset, list[float]] = UNSET
+    json_south_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_range, Unset):
         json_south_bound_latitude_range = ",".join(map(str, south_bound_latitude_range))
 
@@ -366,7 +366,7 @@ def _get_kwargs(
 
     params["westBoundLongitude__iexact"] = west_bound_longitude_iexact
 
-    json_west_bound_longitude_in: Union[Unset, list[float]] = UNSET
+    json_west_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_in, Unset):
         json_west_bound_longitude_in = ",".join(map(str, west_bound_longitude_in))
 
@@ -382,7 +382,7 @@ def _get_kwargs(
 
     params["westBoundLongitude__lte"] = west_bound_longitude_lte
 
-    json_west_bound_longitude_range: Union[Unset, list[float]] = UNSET
+    json_west_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_range, Unset):
         json_west_bound_longitude_range = ",".join(map(str, west_bound_longitude_range))
 
@@ -404,8 +404,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedGeographicBoundingBoxReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedGeographicBoundingBoxReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedGeographicBoundingBoxReadList.from_dict(response.json())
 
@@ -418,7 +418,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedGeographicBoundingBoxReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -431,231 +431,231 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    bbox_name: Union[Unset, str] = UNSET,
-    bbox_name_contains: Union[Unset, str] = UNSET,
-    bbox_name_endswith: Union[Unset, str] = UNSET,
-    bbox_name_gt: Union[Unset, str] = UNSET,
-    bbox_name_gte: Union[Unset, str] = UNSET,
-    bbox_name_icontains: Union[Unset, str] = UNSET,
-    bbox_name_iendswith: Union[Unset, str] = UNSET,
-    bbox_name_iexact: Union[Unset, str] = UNSET,
-    bbox_name_in: Union[Unset, list[str]] = UNSET,
-    bbox_name_iregex: Union[Unset, str] = UNSET,
-    bbox_name_isnull: Union[Unset, bool] = UNSET,
-    bbox_name_istartswith: Union[Unset, str] = UNSET,
-    bbox_name_lt: Union[Unset, str] = UNSET,
-    bbox_name_lte: Union[Unset, str] = UNSET,
-    bbox_name_range: Union[Unset, list[str]] = UNSET,
-    bbox_name_regex: Union[Unset, str] = UNSET,
-    bbox_name_startswith: Union[Unset, str] = UNSET,
-    east_bound_longitude: Union[Unset, float] = UNSET,
-    east_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    east_bound_longitude_contains: Union[Unset, float] = UNSET,
-    east_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    east_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    east_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    east_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    east_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    east_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_regex: Union[Unset, float] = UNSET,
-    east_bound_longitude_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    north_bound_latitude: Union[Unset, float] = UNSET,
-    north_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    north_bound_latitude_contains: Union[Unset, float] = UNSET,
-    north_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    north_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    north_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    north_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    north_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    north_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_regex: Union[Unset, float] = UNSET,
-    north_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    south_bound_latitude: Union[Unset, float] = UNSET,
-    south_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    south_bound_latitude_contains: Union[Unset, float] = UNSET,
-    south_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    south_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    south_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    south_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    south_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    south_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_regex: Union[Unset, float] = UNSET,
-    south_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    west_bound_longitude: Union[Unset, float] = UNSET,
-    west_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    west_bound_longitude_contains: Union[Unset, float] = UNSET,
-    west_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    west_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    west_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    west_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    west_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    west_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_regex: Union[Unset, float] = UNSET,
-    west_bound_longitude_startswith: Union[Unset, float] = UNSET,
+    bbox_name: str | Unset = UNSET,
+    bbox_name_contains: str | Unset = UNSET,
+    bbox_name_endswith: str | Unset = UNSET,
+    bbox_name_gt: str | Unset = UNSET,
+    bbox_name_gte: str | Unset = UNSET,
+    bbox_name_icontains: str | Unset = UNSET,
+    bbox_name_iendswith: str | Unset = UNSET,
+    bbox_name_iexact: str | Unset = UNSET,
+    bbox_name_in: list[str] | Unset = UNSET,
+    bbox_name_iregex: str | Unset = UNSET,
+    bbox_name_isnull: bool | Unset = UNSET,
+    bbox_name_istartswith: str | Unset = UNSET,
+    bbox_name_lt: str | Unset = UNSET,
+    bbox_name_lte: str | Unset = UNSET,
+    bbox_name_range: list[str] | Unset = UNSET,
+    bbox_name_regex: str | Unset = UNSET,
+    bbox_name_startswith: str | Unset = UNSET,
+    east_bound_longitude: float | Unset = UNSET,
+    east_bound_longitude_contained_by: float | Unset = UNSET,
+    east_bound_longitude_contains: float | Unset = UNSET,
+    east_bound_longitude_endswith: float | Unset = UNSET,
+    east_bound_longitude_gt: float | Unset = UNSET,
+    east_bound_longitude_gte: float | Unset = UNSET,
+    east_bound_longitude_icontains: float | Unset = UNSET,
+    east_bound_longitude_iendswith: float | Unset = UNSET,
+    east_bound_longitude_iexact: float | Unset = UNSET,
+    east_bound_longitude_in: list[float] | Unset = UNSET,
+    east_bound_longitude_iregex: float | Unset = UNSET,
+    east_bound_longitude_isnull: bool | Unset = UNSET,
+    east_bound_longitude_istartswith: float | Unset = UNSET,
+    east_bound_longitude_lt: float | Unset = UNSET,
+    east_bound_longitude_lte: float | Unset = UNSET,
+    east_bound_longitude_range: list[float] | Unset = UNSET,
+    east_bound_longitude_regex: float | Unset = UNSET,
+    east_bound_longitude_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    north_bound_latitude: float | Unset = UNSET,
+    north_bound_latitude_contained_by: float | Unset = UNSET,
+    north_bound_latitude_contains: float | Unset = UNSET,
+    north_bound_latitude_endswith: float | Unset = UNSET,
+    north_bound_latitude_gt: float | Unset = UNSET,
+    north_bound_latitude_gte: float | Unset = UNSET,
+    north_bound_latitude_icontains: float | Unset = UNSET,
+    north_bound_latitude_iendswith: float | Unset = UNSET,
+    north_bound_latitude_iexact: float | Unset = UNSET,
+    north_bound_latitude_in: list[float] | Unset = UNSET,
+    north_bound_latitude_iregex: float | Unset = UNSET,
+    north_bound_latitude_isnull: bool | Unset = UNSET,
+    north_bound_latitude_istartswith: float | Unset = UNSET,
+    north_bound_latitude_lt: float | Unset = UNSET,
+    north_bound_latitude_lte: float | Unset = UNSET,
+    north_bound_latitude_range: list[float] | Unset = UNSET,
+    north_bound_latitude_regex: float | Unset = UNSET,
+    north_bound_latitude_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    south_bound_latitude: float | Unset = UNSET,
+    south_bound_latitude_contained_by: float | Unset = UNSET,
+    south_bound_latitude_contains: float | Unset = UNSET,
+    south_bound_latitude_endswith: float | Unset = UNSET,
+    south_bound_latitude_gt: float | Unset = UNSET,
+    south_bound_latitude_gte: float | Unset = UNSET,
+    south_bound_latitude_icontains: float | Unset = UNSET,
+    south_bound_latitude_iendswith: float | Unset = UNSET,
+    south_bound_latitude_iexact: float | Unset = UNSET,
+    south_bound_latitude_in: list[float] | Unset = UNSET,
+    south_bound_latitude_iregex: float | Unset = UNSET,
+    south_bound_latitude_isnull: bool | Unset = UNSET,
+    south_bound_latitude_istartswith: float | Unset = UNSET,
+    south_bound_latitude_lt: float | Unset = UNSET,
+    south_bound_latitude_lte: float | Unset = UNSET,
+    south_bound_latitude_range: list[float] | Unset = UNSET,
+    south_bound_latitude_regex: float | Unset = UNSET,
+    south_bound_latitude_startswith: float | Unset = UNSET,
+    west_bound_longitude: float | Unset = UNSET,
+    west_bound_longitude_contained_by: float | Unset = UNSET,
+    west_bound_longitude_contains: float | Unset = UNSET,
+    west_bound_longitude_endswith: float | Unset = UNSET,
+    west_bound_longitude_gt: float | Unset = UNSET,
+    west_bound_longitude_gte: float | Unset = UNSET,
+    west_bound_longitude_icontains: float | Unset = UNSET,
+    west_bound_longitude_iendswith: float | Unset = UNSET,
+    west_bound_longitude_iexact: float | Unset = UNSET,
+    west_bound_longitude_in: list[float] | Unset = UNSET,
+    west_bound_longitude_iregex: float | Unset = UNSET,
+    west_bound_longitude_isnull: bool | Unset = UNSET,
+    west_bound_longitude_istartswith: float | Unset = UNSET,
+    west_bound_longitude_lt: float | Unset = UNSET,
+    west_bound_longitude_lte: float | Unset = UNSET,
+    west_bound_longitude_range: list[float] | Unset = UNSET,
+    west_bound_longitude_regex: float | Unset = UNSET,
+    west_bound_longitude_startswith: float | Unset = UNSET,
 ) -> Response[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        bbox_name (Union[Unset, str]):
-        bbox_name_contains (Union[Unset, str]):
-        bbox_name_endswith (Union[Unset, str]):
-        bbox_name_gt (Union[Unset, str]):
-        bbox_name_gte (Union[Unset, str]):
-        bbox_name_icontains (Union[Unset, str]):
-        bbox_name_iendswith (Union[Unset, str]):
-        bbox_name_iexact (Union[Unset, str]):
-        bbox_name_in (Union[Unset, list[str]]):
-        bbox_name_iregex (Union[Unset, str]):
-        bbox_name_isnull (Union[Unset, bool]):
-        bbox_name_istartswith (Union[Unset, str]):
-        bbox_name_lt (Union[Unset, str]):
-        bbox_name_lte (Union[Unset, str]):
-        bbox_name_range (Union[Unset, list[str]]):
-        bbox_name_regex (Union[Unset, str]):
-        bbox_name_startswith (Union[Unset, str]):
-        east_bound_longitude (Union[Unset, float]):
-        east_bound_longitude_contained_by (Union[Unset, float]):
-        east_bound_longitude_contains (Union[Unset, float]):
-        east_bound_longitude_endswith (Union[Unset, float]):
-        east_bound_longitude_gt (Union[Unset, float]):
-        east_bound_longitude_gte (Union[Unset, float]):
-        east_bound_longitude_icontains (Union[Unset, float]):
-        east_bound_longitude_iendswith (Union[Unset, float]):
-        east_bound_longitude_iexact (Union[Unset, float]):
-        east_bound_longitude_in (Union[Unset, list[float]]):
-        east_bound_longitude_iregex (Union[Unset, float]):
-        east_bound_longitude_isnull (Union[Unset, bool]):
-        east_bound_longitude_istartswith (Union[Unset, float]):
-        east_bound_longitude_lt (Union[Unset, float]):
-        east_bound_longitude_lte (Union[Unset, float]):
-        east_bound_longitude_range (Union[Unset, list[float]]):
-        east_bound_longitude_regex (Union[Unset, float]):
-        east_bound_longitude_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        north_bound_latitude (Union[Unset, float]):
-        north_bound_latitude_contained_by (Union[Unset, float]):
-        north_bound_latitude_contains (Union[Unset, float]):
-        north_bound_latitude_endswith (Union[Unset, float]):
-        north_bound_latitude_gt (Union[Unset, float]):
-        north_bound_latitude_gte (Union[Unset, float]):
-        north_bound_latitude_icontains (Union[Unset, float]):
-        north_bound_latitude_iendswith (Union[Unset, float]):
-        north_bound_latitude_iexact (Union[Unset, float]):
-        north_bound_latitude_in (Union[Unset, list[float]]):
-        north_bound_latitude_iregex (Union[Unset, float]):
-        north_bound_latitude_isnull (Union[Unset, bool]):
-        north_bound_latitude_istartswith (Union[Unset, float]):
-        north_bound_latitude_lt (Union[Unset, float]):
-        north_bound_latitude_lte (Union[Unset, float]):
-        north_bound_latitude_range (Union[Unset, list[float]]):
-        north_bound_latitude_regex (Union[Unset, float]):
-        north_bound_latitude_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        south_bound_latitude (Union[Unset, float]):
-        south_bound_latitude_contained_by (Union[Unset, float]):
-        south_bound_latitude_contains (Union[Unset, float]):
-        south_bound_latitude_endswith (Union[Unset, float]):
-        south_bound_latitude_gt (Union[Unset, float]):
-        south_bound_latitude_gte (Union[Unset, float]):
-        south_bound_latitude_icontains (Union[Unset, float]):
-        south_bound_latitude_iendswith (Union[Unset, float]):
-        south_bound_latitude_iexact (Union[Unset, float]):
-        south_bound_latitude_in (Union[Unset, list[float]]):
-        south_bound_latitude_iregex (Union[Unset, float]):
-        south_bound_latitude_isnull (Union[Unset, bool]):
-        south_bound_latitude_istartswith (Union[Unset, float]):
-        south_bound_latitude_lt (Union[Unset, float]):
-        south_bound_latitude_lte (Union[Unset, float]):
-        south_bound_latitude_range (Union[Unset, list[float]]):
-        south_bound_latitude_regex (Union[Unset, float]):
-        south_bound_latitude_startswith (Union[Unset, float]):
-        west_bound_longitude (Union[Unset, float]):
-        west_bound_longitude_contained_by (Union[Unset, float]):
-        west_bound_longitude_contains (Union[Unset, float]):
-        west_bound_longitude_endswith (Union[Unset, float]):
-        west_bound_longitude_gt (Union[Unset, float]):
-        west_bound_longitude_gte (Union[Unset, float]):
-        west_bound_longitude_icontains (Union[Unset, float]):
-        west_bound_longitude_iendswith (Union[Unset, float]):
-        west_bound_longitude_iexact (Union[Unset, float]):
-        west_bound_longitude_in (Union[Unset, list[float]]):
-        west_bound_longitude_iregex (Union[Unset, float]):
-        west_bound_longitude_isnull (Union[Unset, bool]):
-        west_bound_longitude_istartswith (Union[Unset, float]):
-        west_bound_longitude_lt (Union[Unset, float]):
-        west_bound_longitude_lte (Union[Unset, float]):
-        west_bound_longitude_range (Union[Unset, list[float]]):
-        west_bound_longitude_regex (Union[Unset, float]):
-        west_bound_longitude_startswith (Union[Unset, float]):
+        bbox_name (str | Unset):
+        bbox_name_contains (str | Unset):
+        bbox_name_endswith (str | Unset):
+        bbox_name_gt (str | Unset):
+        bbox_name_gte (str | Unset):
+        bbox_name_icontains (str | Unset):
+        bbox_name_iendswith (str | Unset):
+        bbox_name_iexact (str | Unset):
+        bbox_name_in (list[str] | Unset):
+        bbox_name_iregex (str | Unset):
+        bbox_name_isnull (bool | Unset):
+        bbox_name_istartswith (str | Unset):
+        bbox_name_lt (str | Unset):
+        bbox_name_lte (str | Unset):
+        bbox_name_range (list[str] | Unset):
+        bbox_name_regex (str | Unset):
+        bbox_name_startswith (str | Unset):
+        east_bound_longitude (float | Unset):
+        east_bound_longitude_contained_by (float | Unset):
+        east_bound_longitude_contains (float | Unset):
+        east_bound_longitude_endswith (float | Unset):
+        east_bound_longitude_gt (float | Unset):
+        east_bound_longitude_gte (float | Unset):
+        east_bound_longitude_icontains (float | Unset):
+        east_bound_longitude_iendswith (float | Unset):
+        east_bound_longitude_iexact (float | Unset):
+        east_bound_longitude_in (list[float] | Unset):
+        east_bound_longitude_iregex (float | Unset):
+        east_bound_longitude_isnull (bool | Unset):
+        east_bound_longitude_istartswith (float | Unset):
+        east_bound_longitude_lt (float | Unset):
+        east_bound_longitude_lte (float | Unset):
+        east_bound_longitude_range (list[float] | Unset):
+        east_bound_longitude_regex (float | Unset):
+        east_bound_longitude_startswith (float | Unset):
+        limit (int | Unset):
+        north_bound_latitude (float | Unset):
+        north_bound_latitude_contained_by (float | Unset):
+        north_bound_latitude_contains (float | Unset):
+        north_bound_latitude_endswith (float | Unset):
+        north_bound_latitude_gt (float | Unset):
+        north_bound_latitude_gte (float | Unset):
+        north_bound_latitude_icontains (float | Unset):
+        north_bound_latitude_iendswith (float | Unset):
+        north_bound_latitude_iexact (float | Unset):
+        north_bound_latitude_in (list[float] | Unset):
+        north_bound_latitude_iregex (float | Unset):
+        north_bound_latitude_isnull (bool | Unset):
+        north_bound_latitude_istartswith (float | Unset):
+        north_bound_latitude_lt (float | Unset):
+        north_bound_latitude_lte (float | Unset):
+        north_bound_latitude_range (list[float] | Unset):
+        north_bound_latitude_regex (float | Unset):
+        north_bound_latitude_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        south_bound_latitude (float | Unset):
+        south_bound_latitude_contained_by (float | Unset):
+        south_bound_latitude_contains (float | Unset):
+        south_bound_latitude_endswith (float | Unset):
+        south_bound_latitude_gt (float | Unset):
+        south_bound_latitude_gte (float | Unset):
+        south_bound_latitude_icontains (float | Unset):
+        south_bound_latitude_iendswith (float | Unset):
+        south_bound_latitude_iexact (float | Unset):
+        south_bound_latitude_in (list[float] | Unset):
+        south_bound_latitude_iregex (float | Unset):
+        south_bound_latitude_isnull (bool | Unset):
+        south_bound_latitude_istartswith (float | Unset):
+        south_bound_latitude_lt (float | Unset):
+        south_bound_latitude_lte (float | Unset):
+        south_bound_latitude_range (list[float] | Unset):
+        south_bound_latitude_regex (float | Unset):
+        south_bound_latitude_startswith (float | Unset):
+        west_bound_longitude (float | Unset):
+        west_bound_longitude_contained_by (float | Unset):
+        west_bound_longitude_contains (float | Unset):
+        west_bound_longitude_endswith (float | Unset):
+        west_bound_longitude_gt (float | Unset):
+        west_bound_longitude_gte (float | Unset):
+        west_bound_longitude_icontains (float | Unset):
+        west_bound_longitude_iendswith (float | Unset):
+        west_bound_longitude_iexact (float | Unset):
+        west_bound_longitude_in (list[float] | Unset):
+        west_bound_longitude_iregex (float | Unset):
+        west_bound_longitude_isnull (bool | Unset):
+        west_bound_longitude_istartswith (float | Unset):
+        west_bound_longitude_lt (float | Unset):
+        west_bound_longitude_lte (float | Unset):
+        west_bound_longitude_range (list[float] | Unset):
+        west_bound_longitude_regex (float | Unset):
+        west_bound_longitude_startswith (float | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -788,231 +788,231 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    bbox_name: Union[Unset, str] = UNSET,
-    bbox_name_contains: Union[Unset, str] = UNSET,
-    bbox_name_endswith: Union[Unset, str] = UNSET,
-    bbox_name_gt: Union[Unset, str] = UNSET,
-    bbox_name_gte: Union[Unset, str] = UNSET,
-    bbox_name_icontains: Union[Unset, str] = UNSET,
-    bbox_name_iendswith: Union[Unset, str] = UNSET,
-    bbox_name_iexact: Union[Unset, str] = UNSET,
-    bbox_name_in: Union[Unset, list[str]] = UNSET,
-    bbox_name_iregex: Union[Unset, str] = UNSET,
-    bbox_name_isnull: Union[Unset, bool] = UNSET,
-    bbox_name_istartswith: Union[Unset, str] = UNSET,
-    bbox_name_lt: Union[Unset, str] = UNSET,
-    bbox_name_lte: Union[Unset, str] = UNSET,
-    bbox_name_range: Union[Unset, list[str]] = UNSET,
-    bbox_name_regex: Union[Unset, str] = UNSET,
-    bbox_name_startswith: Union[Unset, str] = UNSET,
-    east_bound_longitude: Union[Unset, float] = UNSET,
-    east_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    east_bound_longitude_contains: Union[Unset, float] = UNSET,
-    east_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    east_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    east_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    east_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    east_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    east_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_regex: Union[Unset, float] = UNSET,
-    east_bound_longitude_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    north_bound_latitude: Union[Unset, float] = UNSET,
-    north_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    north_bound_latitude_contains: Union[Unset, float] = UNSET,
-    north_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    north_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    north_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    north_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    north_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    north_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_regex: Union[Unset, float] = UNSET,
-    north_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    south_bound_latitude: Union[Unset, float] = UNSET,
-    south_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    south_bound_latitude_contains: Union[Unset, float] = UNSET,
-    south_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    south_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    south_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    south_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    south_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    south_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_regex: Union[Unset, float] = UNSET,
-    south_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    west_bound_longitude: Union[Unset, float] = UNSET,
-    west_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    west_bound_longitude_contains: Union[Unset, float] = UNSET,
-    west_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    west_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    west_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    west_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    west_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    west_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_regex: Union[Unset, float] = UNSET,
-    west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Optional[PaginatedGeographicBoundingBoxReadList]:
+    bbox_name: str | Unset = UNSET,
+    bbox_name_contains: str | Unset = UNSET,
+    bbox_name_endswith: str | Unset = UNSET,
+    bbox_name_gt: str | Unset = UNSET,
+    bbox_name_gte: str | Unset = UNSET,
+    bbox_name_icontains: str | Unset = UNSET,
+    bbox_name_iendswith: str | Unset = UNSET,
+    bbox_name_iexact: str | Unset = UNSET,
+    bbox_name_in: list[str] | Unset = UNSET,
+    bbox_name_iregex: str | Unset = UNSET,
+    bbox_name_isnull: bool | Unset = UNSET,
+    bbox_name_istartswith: str | Unset = UNSET,
+    bbox_name_lt: str | Unset = UNSET,
+    bbox_name_lte: str | Unset = UNSET,
+    bbox_name_range: list[str] | Unset = UNSET,
+    bbox_name_regex: str | Unset = UNSET,
+    bbox_name_startswith: str | Unset = UNSET,
+    east_bound_longitude: float | Unset = UNSET,
+    east_bound_longitude_contained_by: float | Unset = UNSET,
+    east_bound_longitude_contains: float | Unset = UNSET,
+    east_bound_longitude_endswith: float | Unset = UNSET,
+    east_bound_longitude_gt: float | Unset = UNSET,
+    east_bound_longitude_gte: float | Unset = UNSET,
+    east_bound_longitude_icontains: float | Unset = UNSET,
+    east_bound_longitude_iendswith: float | Unset = UNSET,
+    east_bound_longitude_iexact: float | Unset = UNSET,
+    east_bound_longitude_in: list[float] | Unset = UNSET,
+    east_bound_longitude_iregex: float | Unset = UNSET,
+    east_bound_longitude_isnull: bool | Unset = UNSET,
+    east_bound_longitude_istartswith: float | Unset = UNSET,
+    east_bound_longitude_lt: float | Unset = UNSET,
+    east_bound_longitude_lte: float | Unset = UNSET,
+    east_bound_longitude_range: list[float] | Unset = UNSET,
+    east_bound_longitude_regex: float | Unset = UNSET,
+    east_bound_longitude_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    north_bound_latitude: float | Unset = UNSET,
+    north_bound_latitude_contained_by: float | Unset = UNSET,
+    north_bound_latitude_contains: float | Unset = UNSET,
+    north_bound_latitude_endswith: float | Unset = UNSET,
+    north_bound_latitude_gt: float | Unset = UNSET,
+    north_bound_latitude_gte: float | Unset = UNSET,
+    north_bound_latitude_icontains: float | Unset = UNSET,
+    north_bound_latitude_iendswith: float | Unset = UNSET,
+    north_bound_latitude_iexact: float | Unset = UNSET,
+    north_bound_latitude_in: list[float] | Unset = UNSET,
+    north_bound_latitude_iregex: float | Unset = UNSET,
+    north_bound_latitude_isnull: bool | Unset = UNSET,
+    north_bound_latitude_istartswith: float | Unset = UNSET,
+    north_bound_latitude_lt: float | Unset = UNSET,
+    north_bound_latitude_lte: float | Unset = UNSET,
+    north_bound_latitude_range: list[float] | Unset = UNSET,
+    north_bound_latitude_regex: float | Unset = UNSET,
+    north_bound_latitude_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    south_bound_latitude: float | Unset = UNSET,
+    south_bound_latitude_contained_by: float | Unset = UNSET,
+    south_bound_latitude_contains: float | Unset = UNSET,
+    south_bound_latitude_endswith: float | Unset = UNSET,
+    south_bound_latitude_gt: float | Unset = UNSET,
+    south_bound_latitude_gte: float | Unset = UNSET,
+    south_bound_latitude_icontains: float | Unset = UNSET,
+    south_bound_latitude_iendswith: float | Unset = UNSET,
+    south_bound_latitude_iexact: float | Unset = UNSET,
+    south_bound_latitude_in: list[float] | Unset = UNSET,
+    south_bound_latitude_iregex: float | Unset = UNSET,
+    south_bound_latitude_isnull: bool | Unset = UNSET,
+    south_bound_latitude_istartswith: float | Unset = UNSET,
+    south_bound_latitude_lt: float | Unset = UNSET,
+    south_bound_latitude_lte: float | Unset = UNSET,
+    south_bound_latitude_range: list[float] | Unset = UNSET,
+    south_bound_latitude_regex: float | Unset = UNSET,
+    south_bound_latitude_startswith: float | Unset = UNSET,
+    west_bound_longitude: float | Unset = UNSET,
+    west_bound_longitude_contained_by: float | Unset = UNSET,
+    west_bound_longitude_contains: float | Unset = UNSET,
+    west_bound_longitude_endswith: float | Unset = UNSET,
+    west_bound_longitude_gt: float | Unset = UNSET,
+    west_bound_longitude_gte: float | Unset = UNSET,
+    west_bound_longitude_icontains: float | Unset = UNSET,
+    west_bound_longitude_iendswith: float | Unset = UNSET,
+    west_bound_longitude_iexact: float | Unset = UNSET,
+    west_bound_longitude_in: list[float] | Unset = UNSET,
+    west_bound_longitude_iregex: float | Unset = UNSET,
+    west_bound_longitude_isnull: bool | Unset = UNSET,
+    west_bound_longitude_istartswith: float | Unset = UNSET,
+    west_bound_longitude_lt: float | Unset = UNSET,
+    west_bound_longitude_lte: float | Unset = UNSET,
+    west_bound_longitude_range: list[float] | Unset = UNSET,
+    west_bound_longitude_regex: float | Unset = UNSET,
+    west_bound_longitude_startswith: float | Unset = UNSET,
+) -> PaginatedGeographicBoundingBoxReadList | None:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        bbox_name (Union[Unset, str]):
-        bbox_name_contains (Union[Unset, str]):
-        bbox_name_endswith (Union[Unset, str]):
-        bbox_name_gt (Union[Unset, str]):
-        bbox_name_gte (Union[Unset, str]):
-        bbox_name_icontains (Union[Unset, str]):
-        bbox_name_iendswith (Union[Unset, str]):
-        bbox_name_iexact (Union[Unset, str]):
-        bbox_name_in (Union[Unset, list[str]]):
-        bbox_name_iregex (Union[Unset, str]):
-        bbox_name_isnull (Union[Unset, bool]):
-        bbox_name_istartswith (Union[Unset, str]):
-        bbox_name_lt (Union[Unset, str]):
-        bbox_name_lte (Union[Unset, str]):
-        bbox_name_range (Union[Unset, list[str]]):
-        bbox_name_regex (Union[Unset, str]):
-        bbox_name_startswith (Union[Unset, str]):
-        east_bound_longitude (Union[Unset, float]):
-        east_bound_longitude_contained_by (Union[Unset, float]):
-        east_bound_longitude_contains (Union[Unset, float]):
-        east_bound_longitude_endswith (Union[Unset, float]):
-        east_bound_longitude_gt (Union[Unset, float]):
-        east_bound_longitude_gte (Union[Unset, float]):
-        east_bound_longitude_icontains (Union[Unset, float]):
-        east_bound_longitude_iendswith (Union[Unset, float]):
-        east_bound_longitude_iexact (Union[Unset, float]):
-        east_bound_longitude_in (Union[Unset, list[float]]):
-        east_bound_longitude_iregex (Union[Unset, float]):
-        east_bound_longitude_isnull (Union[Unset, bool]):
-        east_bound_longitude_istartswith (Union[Unset, float]):
-        east_bound_longitude_lt (Union[Unset, float]):
-        east_bound_longitude_lte (Union[Unset, float]):
-        east_bound_longitude_range (Union[Unset, list[float]]):
-        east_bound_longitude_regex (Union[Unset, float]):
-        east_bound_longitude_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        north_bound_latitude (Union[Unset, float]):
-        north_bound_latitude_contained_by (Union[Unset, float]):
-        north_bound_latitude_contains (Union[Unset, float]):
-        north_bound_latitude_endswith (Union[Unset, float]):
-        north_bound_latitude_gt (Union[Unset, float]):
-        north_bound_latitude_gte (Union[Unset, float]):
-        north_bound_latitude_icontains (Union[Unset, float]):
-        north_bound_latitude_iendswith (Union[Unset, float]):
-        north_bound_latitude_iexact (Union[Unset, float]):
-        north_bound_latitude_in (Union[Unset, list[float]]):
-        north_bound_latitude_iregex (Union[Unset, float]):
-        north_bound_latitude_isnull (Union[Unset, bool]):
-        north_bound_latitude_istartswith (Union[Unset, float]):
-        north_bound_latitude_lt (Union[Unset, float]):
-        north_bound_latitude_lte (Union[Unset, float]):
-        north_bound_latitude_range (Union[Unset, list[float]]):
-        north_bound_latitude_regex (Union[Unset, float]):
-        north_bound_latitude_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        south_bound_latitude (Union[Unset, float]):
-        south_bound_latitude_contained_by (Union[Unset, float]):
-        south_bound_latitude_contains (Union[Unset, float]):
-        south_bound_latitude_endswith (Union[Unset, float]):
-        south_bound_latitude_gt (Union[Unset, float]):
-        south_bound_latitude_gte (Union[Unset, float]):
-        south_bound_latitude_icontains (Union[Unset, float]):
-        south_bound_latitude_iendswith (Union[Unset, float]):
-        south_bound_latitude_iexact (Union[Unset, float]):
-        south_bound_latitude_in (Union[Unset, list[float]]):
-        south_bound_latitude_iregex (Union[Unset, float]):
-        south_bound_latitude_isnull (Union[Unset, bool]):
-        south_bound_latitude_istartswith (Union[Unset, float]):
-        south_bound_latitude_lt (Union[Unset, float]):
-        south_bound_latitude_lte (Union[Unset, float]):
-        south_bound_latitude_range (Union[Unset, list[float]]):
-        south_bound_latitude_regex (Union[Unset, float]):
-        south_bound_latitude_startswith (Union[Unset, float]):
-        west_bound_longitude (Union[Unset, float]):
-        west_bound_longitude_contained_by (Union[Unset, float]):
-        west_bound_longitude_contains (Union[Unset, float]):
-        west_bound_longitude_endswith (Union[Unset, float]):
-        west_bound_longitude_gt (Union[Unset, float]):
-        west_bound_longitude_gte (Union[Unset, float]):
-        west_bound_longitude_icontains (Union[Unset, float]):
-        west_bound_longitude_iendswith (Union[Unset, float]):
-        west_bound_longitude_iexact (Union[Unset, float]):
-        west_bound_longitude_in (Union[Unset, list[float]]):
-        west_bound_longitude_iregex (Union[Unset, float]):
-        west_bound_longitude_isnull (Union[Unset, bool]):
-        west_bound_longitude_istartswith (Union[Unset, float]):
-        west_bound_longitude_lt (Union[Unset, float]):
-        west_bound_longitude_lte (Union[Unset, float]):
-        west_bound_longitude_range (Union[Unset, list[float]]):
-        west_bound_longitude_regex (Union[Unset, float]):
-        west_bound_longitude_startswith (Union[Unset, float]):
+        bbox_name (str | Unset):
+        bbox_name_contains (str | Unset):
+        bbox_name_endswith (str | Unset):
+        bbox_name_gt (str | Unset):
+        bbox_name_gte (str | Unset):
+        bbox_name_icontains (str | Unset):
+        bbox_name_iendswith (str | Unset):
+        bbox_name_iexact (str | Unset):
+        bbox_name_in (list[str] | Unset):
+        bbox_name_iregex (str | Unset):
+        bbox_name_isnull (bool | Unset):
+        bbox_name_istartswith (str | Unset):
+        bbox_name_lt (str | Unset):
+        bbox_name_lte (str | Unset):
+        bbox_name_range (list[str] | Unset):
+        bbox_name_regex (str | Unset):
+        bbox_name_startswith (str | Unset):
+        east_bound_longitude (float | Unset):
+        east_bound_longitude_contained_by (float | Unset):
+        east_bound_longitude_contains (float | Unset):
+        east_bound_longitude_endswith (float | Unset):
+        east_bound_longitude_gt (float | Unset):
+        east_bound_longitude_gte (float | Unset):
+        east_bound_longitude_icontains (float | Unset):
+        east_bound_longitude_iendswith (float | Unset):
+        east_bound_longitude_iexact (float | Unset):
+        east_bound_longitude_in (list[float] | Unset):
+        east_bound_longitude_iregex (float | Unset):
+        east_bound_longitude_isnull (bool | Unset):
+        east_bound_longitude_istartswith (float | Unset):
+        east_bound_longitude_lt (float | Unset):
+        east_bound_longitude_lte (float | Unset):
+        east_bound_longitude_range (list[float] | Unset):
+        east_bound_longitude_regex (float | Unset):
+        east_bound_longitude_startswith (float | Unset):
+        limit (int | Unset):
+        north_bound_latitude (float | Unset):
+        north_bound_latitude_contained_by (float | Unset):
+        north_bound_latitude_contains (float | Unset):
+        north_bound_latitude_endswith (float | Unset):
+        north_bound_latitude_gt (float | Unset):
+        north_bound_latitude_gte (float | Unset):
+        north_bound_latitude_icontains (float | Unset):
+        north_bound_latitude_iendswith (float | Unset):
+        north_bound_latitude_iexact (float | Unset):
+        north_bound_latitude_in (list[float] | Unset):
+        north_bound_latitude_iregex (float | Unset):
+        north_bound_latitude_isnull (bool | Unset):
+        north_bound_latitude_istartswith (float | Unset):
+        north_bound_latitude_lt (float | Unset):
+        north_bound_latitude_lte (float | Unset):
+        north_bound_latitude_range (list[float] | Unset):
+        north_bound_latitude_regex (float | Unset):
+        north_bound_latitude_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        south_bound_latitude (float | Unset):
+        south_bound_latitude_contained_by (float | Unset):
+        south_bound_latitude_contains (float | Unset):
+        south_bound_latitude_endswith (float | Unset):
+        south_bound_latitude_gt (float | Unset):
+        south_bound_latitude_gte (float | Unset):
+        south_bound_latitude_icontains (float | Unset):
+        south_bound_latitude_iendswith (float | Unset):
+        south_bound_latitude_iexact (float | Unset):
+        south_bound_latitude_in (list[float] | Unset):
+        south_bound_latitude_iregex (float | Unset):
+        south_bound_latitude_isnull (bool | Unset):
+        south_bound_latitude_istartswith (float | Unset):
+        south_bound_latitude_lt (float | Unset):
+        south_bound_latitude_lte (float | Unset):
+        south_bound_latitude_range (list[float] | Unset):
+        south_bound_latitude_regex (float | Unset):
+        south_bound_latitude_startswith (float | Unset):
+        west_bound_longitude (float | Unset):
+        west_bound_longitude_contained_by (float | Unset):
+        west_bound_longitude_contains (float | Unset):
+        west_bound_longitude_endswith (float | Unset):
+        west_bound_longitude_gt (float | Unset):
+        west_bound_longitude_gte (float | Unset):
+        west_bound_longitude_icontains (float | Unset):
+        west_bound_longitude_iendswith (float | Unset):
+        west_bound_longitude_iexact (float | Unset):
+        west_bound_longitude_in (list[float] | Unset):
+        west_bound_longitude_iregex (float | Unset):
+        west_bound_longitude_isnull (bool | Unset):
+        west_bound_longitude_istartswith (float | Unset):
+        west_bound_longitude_lt (float | Unset):
+        west_bound_longitude_lte (float | Unset):
+        west_bound_longitude_range (list[float] | Unset):
+        west_bound_longitude_regex (float | Unset):
+        west_bound_longitude_startswith (float | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1140,231 +1140,231 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    bbox_name: Union[Unset, str] = UNSET,
-    bbox_name_contains: Union[Unset, str] = UNSET,
-    bbox_name_endswith: Union[Unset, str] = UNSET,
-    bbox_name_gt: Union[Unset, str] = UNSET,
-    bbox_name_gte: Union[Unset, str] = UNSET,
-    bbox_name_icontains: Union[Unset, str] = UNSET,
-    bbox_name_iendswith: Union[Unset, str] = UNSET,
-    bbox_name_iexact: Union[Unset, str] = UNSET,
-    bbox_name_in: Union[Unset, list[str]] = UNSET,
-    bbox_name_iregex: Union[Unset, str] = UNSET,
-    bbox_name_isnull: Union[Unset, bool] = UNSET,
-    bbox_name_istartswith: Union[Unset, str] = UNSET,
-    bbox_name_lt: Union[Unset, str] = UNSET,
-    bbox_name_lte: Union[Unset, str] = UNSET,
-    bbox_name_range: Union[Unset, list[str]] = UNSET,
-    bbox_name_regex: Union[Unset, str] = UNSET,
-    bbox_name_startswith: Union[Unset, str] = UNSET,
-    east_bound_longitude: Union[Unset, float] = UNSET,
-    east_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    east_bound_longitude_contains: Union[Unset, float] = UNSET,
-    east_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    east_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    east_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    east_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    east_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    east_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_regex: Union[Unset, float] = UNSET,
-    east_bound_longitude_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    north_bound_latitude: Union[Unset, float] = UNSET,
-    north_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    north_bound_latitude_contains: Union[Unset, float] = UNSET,
-    north_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    north_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    north_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    north_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    north_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    north_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_regex: Union[Unset, float] = UNSET,
-    north_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    south_bound_latitude: Union[Unset, float] = UNSET,
-    south_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    south_bound_latitude_contains: Union[Unset, float] = UNSET,
-    south_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    south_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    south_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    south_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    south_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    south_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_regex: Union[Unset, float] = UNSET,
-    south_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    west_bound_longitude: Union[Unset, float] = UNSET,
-    west_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    west_bound_longitude_contains: Union[Unset, float] = UNSET,
-    west_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    west_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    west_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    west_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    west_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    west_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_regex: Union[Unset, float] = UNSET,
-    west_bound_longitude_startswith: Union[Unset, float] = UNSET,
+    bbox_name: str | Unset = UNSET,
+    bbox_name_contains: str | Unset = UNSET,
+    bbox_name_endswith: str | Unset = UNSET,
+    bbox_name_gt: str | Unset = UNSET,
+    bbox_name_gte: str | Unset = UNSET,
+    bbox_name_icontains: str | Unset = UNSET,
+    bbox_name_iendswith: str | Unset = UNSET,
+    bbox_name_iexact: str | Unset = UNSET,
+    bbox_name_in: list[str] | Unset = UNSET,
+    bbox_name_iregex: str | Unset = UNSET,
+    bbox_name_isnull: bool | Unset = UNSET,
+    bbox_name_istartswith: str | Unset = UNSET,
+    bbox_name_lt: str | Unset = UNSET,
+    bbox_name_lte: str | Unset = UNSET,
+    bbox_name_range: list[str] | Unset = UNSET,
+    bbox_name_regex: str | Unset = UNSET,
+    bbox_name_startswith: str | Unset = UNSET,
+    east_bound_longitude: float | Unset = UNSET,
+    east_bound_longitude_contained_by: float | Unset = UNSET,
+    east_bound_longitude_contains: float | Unset = UNSET,
+    east_bound_longitude_endswith: float | Unset = UNSET,
+    east_bound_longitude_gt: float | Unset = UNSET,
+    east_bound_longitude_gte: float | Unset = UNSET,
+    east_bound_longitude_icontains: float | Unset = UNSET,
+    east_bound_longitude_iendswith: float | Unset = UNSET,
+    east_bound_longitude_iexact: float | Unset = UNSET,
+    east_bound_longitude_in: list[float] | Unset = UNSET,
+    east_bound_longitude_iregex: float | Unset = UNSET,
+    east_bound_longitude_isnull: bool | Unset = UNSET,
+    east_bound_longitude_istartswith: float | Unset = UNSET,
+    east_bound_longitude_lt: float | Unset = UNSET,
+    east_bound_longitude_lte: float | Unset = UNSET,
+    east_bound_longitude_range: list[float] | Unset = UNSET,
+    east_bound_longitude_regex: float | Unset = UNSET,
+    east_bound_longitude_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    north_bound_latitude: float | Unset = UNSET,
+    north_bound_latitude_contained_by: float | Unset = UNSET,
+    north_bound_latitude_contains: float | Unset = UNSET,
+    north_bound_latitude_endswith: float | Unset = UNSET,
+    north_bound_latitude_gt: float | Unset = UNSET,
+    north_bound_latitude_gte: float | Unset = UNSET,
+    north_bound_latitude_icontains: float | Unset = UNSET,
+    north_bound_latitude_iendswith: float | Unset = UNSET,
+    north_bound_latitude_iexact: float | Unset = UNSET,
+    north_bound_latitude_in: list[float] | Unset = UNSET,
+    north_bound_latitude_iregex: float | Unset = UNSET,
+    north_bound_latitude_isnull: bool | Unset = UNSET,
+    north_bound_latitude_istartswith: float | Unset = UNSET,
+    north_bound_latitude_lt: float | Unset = UNSET,
+    north_bound_latitude_lte: float | Unset = UNSET,
+    north_bound_latitude_range: list[float] | Unset = UNSET,
+    north_bound_latitude_regex: float | Unset = UNSET,
+    north_bound_latitude_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    south_bound_latitude: float | Unset = UNSET,
+    south_bound_latitude_contained_by: float | Unset = UNSET,
+    south_bound_latitude_contains: float | Unset = UNSET,
+    south_bound_latitude_endswith: float | Unset = UNSET,
+    south_bound_latitude_gt: float | Unset = UNSET,
+    south_bound_latitude_gte: float | Unset = UNSET,
+    south_bound_latitude_icontains: float | Unset = UNSET,
+    south_bound_latitude_iendswith: float | Unset = UNSET,
+    south_bound_latitude_iexact: float | Unset = UNSET,
+    south_bound_latitude_in: list[float] | Unset = UNSET,
+    south_bound_latitude_iregex: float | Unset = UNSET,
+    south_bound_latitude_isnull: bool | Unset = UNSET,
+    south_bound_latitude_istartswith: float | Unset = UNSET,
+    south_bound_latitude_lt: float | Unset = UNSET,
+    south_bound_latitude_lte: float | Unset = UNSET,
+    south_bound_latitude_range: list[float] | Unset = UNSET,
+    south_bound_latitude_regex: float | Unset = UNSET,
+    south_bound_latitude_startswith: float | Unset = UNSET,
+    west_bound_longitude: float | Unset = UNSET,
+    west_bound_longitude_contained_by: float | Unset = UNSET,
+    west_bound_longitude_contains: float | Unset = UNSET,
+    west_bound_longitude_endswith: float | Unset = UNSET,
+    west_bound_longitude_gt: float | Unset = UNSET,
+    west_bound_longitude_gte: float | Unset = UNSET,
+    west_bound_longitude_icontains: float | Unset = UNSET,
+    west_bound_longitude_iendswith: float | Unset = UNSET,
+    west_bound_longitude_iexact: float | Unset = UNSET,
+    west_bound_longitude_in: list[float] | Unset = UNSET,
+    west_bound_longitude_iregex: float | Unset = UNSET,
+    west_bound_longitude_isnull: bool | Unset = UNSET,
+    west_bound_longitude_istartswith: float | Unset = UNSET,
+    west_bound_longitude_lt: float | Unset = UNSET,
+    west_bound_longitude_lte: float | Unset = UNSET,
+    west_bound_longitude_range: list[float] | Unset = UNSET,
+    west_bound_longitude_regex: float | Unset = UNSET,
+    west_bound_longitude_startswith: float | Unset = UNSET,
 ) -> Response[PaginatedGeographicBoundingBoxReadList]:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        bbox_name (Union[Unset, str]):
-        bbox_name_contains (Union[Unset, str]):
-        bbox_name_endswith (Union[Unset, str]):
-        bbox_name_gt (Union[Unset, str]):
-        bbox_name_gte (Union[Unset, str]):
-        bbox_name_icontains (Union[Unset, str]):
-        bbox_name_iendswith (Union[Unset, str]):
-        bbox_name_iexact (Union[Unset, str]):
-        bbox_name_in (Union[Unset, list[str]]):
-        bbox_name_iregex (Union[Unset, str]):
-        bbox_name_isnull (Union[Unset, bool]):
-        bbox_name_istartswith (Union[Unset, str]):
-        bbox_name_lt (Union[Unset, str]):
-        bbox_name_lte (Union[Unset, str]):
-        bbox_name_range (Union[Unset, list[str]]):
-        bbox_name_regex (Union[Unset, str]):
-        bbox_name_startswith (Union[Unset, str]):
-        east_bound_longitude (Union[Unset, float]):
-        east_bound_longitude_contained_by (Union[Unset, float]):
-        east_bound_longitude_contains (Union[Unset, float]):
-        east_bound_longitude_endswith (Union[Unset, float]):
-        east_bound_longitude_gt (Union[Unset, float]):
-        east_bound_longitude_gte (Union[Unset, float]):
-        east_bound_longitude_icontains (Union[Unset, float]):
-        east_bound_longitude_iendswith (Union[Unset, float]):
-        east_bound_longitude_iexact (Union[Unset, float]):
-        east_bound_longitude_in (Union[Unset, list[float]]):
-        east_bound_longitude_iregex (Union[Unset, float]):
-        east_bound_longitude_isnull (Union[Unset, bool]):
-        east_bound_longitude_istartswith (Union[Unset, float]):
-        east_bound_longitude_lt (Union[Unset, float]):
-        east_bound_longitude_lte (Union[Unset, float]):
-        east_bound_longitude_range (Union[Unset, list[float]]):
-        east_bound_longitude_regex (Union[Unset, float]):
-        east_bound_longitude_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        north_bound_latitude (Union[Unset, float]):
-        north_bound_latitude_contained_by (Union[Unset, float]):
-        north_bound_latitude_contains (Union[Unset, float]):
-        north_bound_latitude_endswith (Union[Unset, float]):
-        north_bound_latitude_gt (Union[Unset, float]):
-        north_bound_latitude_gte (Union[Unset, float]):
-        north_bound_latitude_icontains (Union[Unset, float]):
-        north_bound_latitude_iendswith (Union[Unset, float]):
-        north_bound_latitude_iexact (Union[Unset, float]):
-        north_bound_latitude_in (Union[Unset, list[float]]):
-        north_bound_latitude_iregex (Union[Unset, float]):
-        north_bound_latitude_isnull (Union[Unset, bool]):
-        north_bound_latitude_istartswith (Union[Unset, float]):
-        north_bound_latitude_lt (Union[Unset, float]):
-        north_bound_latitude_lte (Union[Unset, float]):
-        north_bound_latitude_range (Union[Unset, list[float]]):
-        north_bound_latitude_regex (Union[Unset, float]):
-        north_bound_latitude_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        south_bound_latitude (Union[Unset, float]):
-        south_bound_latitude_contained_by (Union[Unset, float]):
-        south_bound_latitude_contains (Union[Unset, float]):
-        south_bound_latitude_endswith (Union[Unset, float]):
-        south_bound_latitude_gt (Union[Unset, float]):
-        south_bound_latitude_gte (Union[Unset, float]):
-        south_bound_latitude_icontains (Union[Unset, float]):
-        south_bound_latitude_iendswith (Union[Unset, float]):
-        south_bound_latitude_iexact (Union[Unset, float]):
-        south_bound_latitude_in (Union[Unset, list[float]]):
-        south_bound_latitude_iregex (Union[Unset, float]):
-        south_bound_latitude_isnull (Union[Unset, bool]):
-        south_bound_latitude_istartswith (Union[Unset, float]):
-        south_bound_latitude_lt (Union[Unset, float]):
-        south_bound_latitude_lte (Union[Unset, float]):
-        south_bound_latitude_range (Union[Unset, list[float]]):
-        south_bound_latitude_regex (Union[Unset, float]):
-        south_bound_latitude_startswith (Union[Unset, float]):
-        west_bound_longitude (Union[Unset, float]):
-        west_bound_longitude_contained_by (Union[Unset, float]):
-        west_bound_longitude_contains (Union[Unset, float]):
-        west_bound_longitude_endswith (Union[Unset, float]):
-        west_bound_longitude_gt (Union[Unset, float]):
-        west_bound_longitude_gte (Union[Unset, float]):
-        west_bound_longitude_icontains (Union[Unset, float]):
-        west_bound_longitude_iendswith (Union[Unset, float]):
-        west_bound_longitude_iexact (Union[Unset, float]):
-        west_bound_longitude_in (Union[Unset, list[float]]):
-        west_bound_longitude_iregex (Union[Unset, float]):
-        west_bound_longitude_isnull (Union[Unset, bool]):
-        west_bound_longitude_istartswith (Union[Unset, float]):
-        west_bound_longitude_lt (Union[Unset, float]):
-        west_bound_longitude_lte (Union[Unset, float]):
-        west_bound_longitude_range (Union[Unset, list[float]]):
-        west_bound_longitude_regex (Union[Unset, float]):
-        west_bound_longitude_startswith (Union[Unset, float]):
+        bbox_name (str | Unset):
+        bbox_name_contains (str | Unset):
+        bbox_name_endswith (str | Unset):
+        bbox_name_gt (str | Unset):
+        bbox_name_gte (str | Unset):
+        bbox_name_icontains (str | Unset):
+        bbox_name_iendswith (str | Unset):
+        bbox_name_iexact (str | Unset):
+        bbox_name_in (list[str] | Unset):
+        bbox_name_iregex (str | Unset):
+        bbox_name_isnull (bool | Unset):
+        bbox_name_istartswith (str | Unset):
+        bbox_name_lt (str | Unset):
+        bbox_name_lte (str | Unset):
+        bbox_name_range (list[str] | Unset):
+        bbox_name_regex (str | Unset):
+        bbox_name_startswith (str | Unset):
+        east_bound_longitude (float | Unset):
+        east_bound_longitude_contained_by (float | Unset):
+        east_bound_longitude_contains (float | Unset):
+        east_bound_longitude_endswith (float | Unset):
+        east_bound_longitude_gt (float | Unset):
+        east_bound_longitude_gte (float | Unset):
+        east_bound_longitude_icontains (float | Unset):
+        east_bound_longitude_iendswith (float | Unset):
+        east_bound_longitude_iexact (float | Unset):
+        east_bound_longitude_in (list[float] | Unset):
+        east_bound_longitude_iregex (float | Unset):
+        east_bound_longitude_isnull (bool | Unset):
+        east_bound_longitude_istartswith (float | Unset):
+        east_bound_longitude_lt (float | Unset):
+        east_bound_longitude_lte (float | Unset):
+        east_bound_longitude_range (list[float] | Unset):
+        east_bound_longitude_regex (float | Unset):
+        east_bound_longitude_startswith (float | Unset):
+        limit (int | Unset):
+        north_bound_latitude (float | Unset):
+        north_bound_latitude_contained_by (float | Unset):
+        north_bound_latitude_contains (float | Unset):
+        north_bound_latitude_endswith (float | Unset):
+        north_bound_latitude_gt (float | Unset):
+        north_bound_latitude_gte (float | Unset):
+        north_bound_latitude_icontains (float | Unset):
+        north_bound_latitude_iendswith (float | Unset):
+        north_bound_latitude_iexact (float | Unset):
+        north_bound_latitude_in (list[float] | Unset):
+        north_bound_latitude_iregex (float | Unset):
+        north_bound_latitude_isnull (bool | Unset):
+        north_bound_latitude_istartswith (float | Unset):
+        north_bound_latitude_lt (float | Unset):
+        north_bound_latitude_lte (float | Unset):
+        north_bound_latitude_range (list[float] | Unset):
+        north_bound_latitude_regex (float | Unset):
+        north_bound_latitude_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        south_bound_latitude (float | Unset):
+        south_bound_latitude_contained_by (float | Unset):
+        south_bound_latitude_contains (float | Unset):
+        south_bound_latitude_endswith (float | Unset):
+        south_bound_latitude_gt (float | Unset):
+        south_bound_latitude_gte (float | Unset):
+        south_bound_latitude_icontains (float | Unset):
+        south_bound_latitude_iendswith (float | Unset):
+        south_bound_latitude_iexact (float | Unset):
+        south_bound_latitude_in (list[float] | Unset):
+        south_bound_latitude_iregex (float | Unset):
+        south_bound_latitude_isnull (bool | Unset):
+        south_bound_latitude_istartswith (float | Unset):
+        south_bound_latitude_lt (float | Unset):
+        south_bound_latitude_lte (float | Unset):
+        south_bound_latitude_range (list[float] | Unset):
+        south_bound_latitude_regex (float | Unset):
+        south_bound_latitude_startswith (float | Unset):
+        west_bound_longitude (float | Unset):
+        west_bound_longitude_contained_by (float | Unset):
+        west_bound_longitude_contains (float | Unset):
+        west_bound_longitude_endswith (float | Unset):
+        west_bound_longitude_gt (float | Unset):
+        west_bound_longitude_gte (float | Unset):
+        west_bound_longitude_icontains (float | Unset):
+        west_bound_longitude_iendswith (float | Unset):
+        west_bound_longitude_iexact (float | Unset):
+        west_bound_longitude_in (list[float] | Unset):
+        west_bound_longitude_iregex (float | Unset):
+        west_bound_longitude_isnull (bool | Unset):
+        west_bound_longitude_istartswith (float | Unset):
+        west_bound_longitude_lt (float | Unset):
+        west_bound_longitude_lte (float | Unset):
+        west_bound_longitude_range (list[float] | Unset):
+        west_bound_longitude_regex (float | Unset):
+        west_bound_longitude_startswith (float | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1495,231 +1495,231 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    bbox_name: Union[Unset, str] = UNSET,
-    bbox_name_contains: Union[Unset, str] = UNSET,
-    bbox_name_endswith: Union[Unset, str] = UNSET,
-    bbox_name_gt: Union[Unset, str] = UNSET,
-    bbox_name_gte: Union[Unset, str] = UNSET,
-    bbox_name_icontains: Union[Unset, str] = UNSET,
-    bbox_name_iendswith: Union[Unset, str] = UNSET,
-    bbox_name_iexact: Union[Unset, str] = UNSET,
-    bbox_name_in: Union[Unset, list[str]] = UNSET,
-    bbox_name_iregex: Union[Unset, str] = UNSET,
-    bbox_name_isnull: Union[Unset, bool] = UNSET,
-    bbox_name_istartswith: Union[Unset, str] = UNSET,
-    bbox_name_lt: Union[Unset, str] = UNSET,
-    bbox_name_lte: Union[Unset, str] = UNSET,
-    bbox_name_range: Union[Unset, list[str]] = UNSET,
-    bbox_name_regex: Union[Unset, str] = UNSET,
-    bbox_name_startswith: Union[Unset, str] = UNSET,
-    east_bound_longitude: Union[Unset, float] = UNSET,
-    east_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    east_bound_longitude_contains: Union[Unset, float] = UNSET,
-    east_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_gt: Union[Unset, float] = UNSET,
-    east_bound_longitude_gte: Union[Unset, float] = UNSET,
-    east_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    east_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    east_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    east_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    east_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    east_bound_longitude_lt: Union[Unset, float] = UNSET,
-    east_bound_longitude_lte: Union[Unset, float] = UNSET,
-    east_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    east_bound_longitude_regex: Union[Unset, float] = UNSET,
-    east_bound_longitude_startswith: Union[Unset, float] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    north_bound_latitude: Union[Unset, float] = UNSET,
-    north_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    north_bound_latitude_contains: Union[Unset, float] = UNSET,
-    north_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_gt: Union[Unset, float] = UNSET,
-    north_bound_latitude_gte: Union[Unset, float] = UNSET,
-    north_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    north_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    north_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    north_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    north_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    north_bound_latitude_lt: Union[Unset, float] = UNSET,
-    north_bound_latitude_lte: Union[Unset, float] = UNSET,
-    north_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    north_bound_latitude_regex: Union[Unset, float] = UNSET,
-    north_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    south_bound_latitude: Union[Unset, float] = UNSET,
-    south_bound_latitude_contained_by: Union[Unset, float] = UNSET,
-    south_bound_latitude_contains: Union[Unset, float] = UNSET,
-    south_bound_latitude_endswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_gt: Union[Unset, float] = UNSET,
-    south_bound_latitude_gte: Union[Unset, float] = UNSET,
-    south_bound_latitude_icontains: Union[Unset, float] = UNSET,
-    south_bound_latitude_iendswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_iexact: Union[Unset, float] = UNSET,
-    south_bound_latitude_in: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_iregex: Union[Unset, float] = UNSET,
-    south_bound_latitude_isnull: Union[Unset, bool] = UNSET,
-    south_bound_latitude_istartswith: Union[Unset, float] = UNSET,
-    south_bound_latitude_lt: Union[Unset, float] = UNSET,
-    south_bound_latitude_lte: Union[Unset, float] = UNSET,
-    south_bound_latitude_range: Union[Unset, list[float]] = UNSET,
-    south_bound_latitude_regex: Union[Unset, float] = UNSET,
-    south_bound_latitude_startswith: Union[Unset, float] = UNSET,
-    west_bound_longitude: Union[Unset, float] = UNSET,
-    west_bound_longitude_contained_by: Union[Unset, float] = UNSET,
-    west_bound_longitude_contains: Union[Unset, float] = UNSET,
-    west_bound_longitude_endswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_gt: Union[Unset, float] = UNSET,
-    west_bound_longitude_gte: Union[Unset, float] = UNSET,
-    west_bound_longitude_icontains: Union[Unset, float] = UNSET,
-    west_bound_longitude_iendswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_iexact: Union[Unset, float] = UNSET,
-    west_bound_longitude_in: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_iregex: Union[Unset, float] = UNSET,
-    west_bound_longitude_isnull: Union[Unset, bool] = UNSET,
-    west_bound_longitude_istartswith: Union[Unset, float] = UNSET,
-    west_bound_longitude_lt: Union[Unset, float] = UNSET,
-    west_bound_longitude_lte: Union[Unset, float] = UNSET,
-    west_bound_longitude_range: Union[Unset, list[float]] = UNSET,
-    west_bound_longitude_regex: Union[Unset, float] = UNSET,
-    west_bound_longitude_startswith: Union[Unset, float] = UNSET,
-) -> Optional[PaginatedGeographicBoundingBoxReadList]:
+    bbox_name: str | Unset = UNSET,
+    bbox_name_contains: str | Unset = UNSET,
+    bbox_name_endswith: str | Unset = UNSET,
+    bbox_name_gt: str | Unset = UNSET,
+    bbox_name_gte: str | Unset = UNSET,
+    bbox_name_icontains: str | Unset = UNSET,
+    bbox_name_iendswith: str | Unset = UNSET,
+    bbox_name_iexact: str | Unset = UNSET,
+    bbox_name_in: list[str] | Unset = UNSET,
+    bbox_name_iregex: str | Unset = UNSET,
+    bbox_name_isnull: bool | Unset = UNSET,
+    bbox_name_istartswith: str | Unset = UNSET,
+    bbox_name_lt: str | Unset = UNSET,
+    bbox_name_lte: str | Unset = UNSET,
+    bbox_name_range: list[str] | Unset = UNSET,
+    bbox_name_regex: str | Unset = UNSET,
+    bbox_name_startswith: str | Unset = UNSET,
+    east_bound_longitude: float | Unset = UNSET,
+    east_bound_longitude_contained_by: float | Unset = UNSET,
+    east_bound_longitude_contains: float | Unset = UNSET,
+    east_bound_longitude_endswith: float | Unset = UNSET,
+    east_bound_longitude_gt: float | Unset = UNSET,
+    east_bound_longitude_gte: float | Unset = UNSET,
+    east_bound_longitude_icontains: float | Unset = UNSET,
+    east_bound_longitude_iendswith: float | Unset = UNSET,
+    east_bound_longitude_iexact: float | Unset = UNSET,
+    east_bound_longitude_in: list[float] | Unset = UNSET,
+    east_bound_longitude_iregex: float | Unset = UNSET,
+    east_bound_longitude_isnull: bool | Unset = UNSET,
+    east_bound_longitude_istartswith: float | Unset = UNSET,
+    east_bound_longitude_lt: float | Unset = UNSET,
+    east_bound_longitude_lte: float | Unset = UNSET,
+    east_bound_longitude_range: list[float] | Unset = UNSET,
+    east_bound_longitude_regex: float | Unset = UNSET,
+    east_bound_longitude_startswith: float | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    north_bound_latitude: float | Unset = UNSET,
+    north_bound_latitude_contained_by: float | Unset = UNSET,
+    north_bound_latitude_contains: float | Unset = UNSET,
+    north_bound_latitude_endswith: float | Unset = UNSET,
+    north_bound_latitude_gt: float | Unset = UNSET,
+    north_bound_latitude_gte: float | Unset = UNSET,
+    north_bound_latitude_icontains: float | Unset = UNSET,
+    north_bound_latitude_iendswith: float | Unset = UNSET,
+    north_bound_latitude_iexact: float | Unset = UNSET,
+    north_bound_latitude_in: list[float] | Unset = UNSET,
+    north_bound_latitude_iregex: float | Unset = UNSET,
+    north_bound_latitude_isnull: bool | Unset = UNSET,
+    north_bound_latitude_istartswith: float | Unset = UNSET,
+    north_bound_latitude_lt: float | Unset = UNSET,
+    north_bound_latitude_lte: float | Unset = UNSET,
+    north_bound_latitude_range: list[float] | Unset = UNSET,
+    north_bound_latitude_regex: float | Unset = UNSET,
+    north_bound_latitude_startswith: float | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    south_bound_latitude: float | Unset = UNSET,
+    south_bound_latitude_contained_by: float | Unset = UNSET,
+    south_bound_latitude_contains: float | Unset = UNSET,
+    south_bound_latitude_endswith: float | Unset = UNSET,
+    south_bound_latitude_gt: float | Unset = UNSET,
+    south_bound_latitude_gte: float | Unset = UNSET,
+    south_bound_latitude_icontains: float | Unset = UNSET,
+    south_bound_latitude_iendswith: float | Unset = UNSET,
+    south_bound_latitude_iexact: float | Unset = UNSET,
+    south_bound_latitude_in: list[float] | Unset = UNSET,
+    south_bound_latitude_iregex: float | Unset = UNSET,
+    south_bound_latitude_isnull: bool | Unset = UNSET,
+    south_bound_latitude_istartswith: float | Unset = UNSET,
+    south_bound_latitude_lt: float | Unset = UNSET,
+    south_bound_latitude_lte: float | Unset = UNSET,
+    south_bound_latitude_range: list[float] | Unset = UNSET,
+    south_bound_latitude_regex: float | Unset = UNSET,
+    south_bound_latitude_startswith: float | Unset = UNSET,
+    west_bound_longitude: float | Unset = UNSET,
+    west_bound_longitude_contained_by: float | Unset = UNSET,
+    west_bound_longitude_contains: float | Unset = UNSET,
+    west_bound_longitude_endswith: float | Unset = UNSET,
+    west_bound_longitude_gt: float | Unset = UNSET,
+    west_bound_longitude_gte: float | Unset = UNSET,
+    west_bound_longitude_icontains: float | Unset = UNSET,
+    west_bound_longitude_iendswith: float | Unset = UNSET,
+    west_bound_longitude_iexact: float | Unset = UNSET,
+    west_bound_longitude_in: list[float] | Unset = UNSET,
+    west_bound_longitude_iregex: float | Unset = UNSET,
+    west_bound_longitude_isnull: bool | Unset = UNSET,
+    west_bound_longitude_istartswith: float | Unset = UNSET,
+    west_bound_longitude_lt: float | Unset = UNSET,
+    west_bound_longitude_lte: float | Unset = UNSET,
+    west_bound_longitude_range: list[float] | Unset = UNSET,
+    west_bound_longitude_regex: float | Unset = UNSET,
+    west_bound_longitude_startswith: float | Unset = UNSET,
+) -> PaginatedGeographicBoundingBoxReadList | None:
     """Get a list of geographic bounding box objects. GeographicBoundingBoxes have a 1:many mapping with
     Observations.
 
     Args:
-        bbox_name (Union[Unset, str]):
-        bbox_name_contains (Union[Unset, str]):
-        bbox_name_endswith (Union[Unset, str]):
-        bbox_name_gt (Union[Unset, str]):
-        bbox_name_gte (Union[Unset, str]):
-        bbox_name_icontains (Union[Unset, str]):
-        bbox_name_iendswith (Union[Unset, str]):
-        bbox_name_iexact (Union[Unset, str]):
-        bbox_name_in (Union[Unset, list[str]]):
-        bbox_name_iregex (Union[Unset, str]):
-        bbox_name_isnull (Union[Unset, bool]):
-        bbox_name_istartswith (Union[Unset, str]):
-        bbox_name_lt (Union[Unset, str]):
-        bbox_name_lte (Union[Unset, str]):
-        bbox_name_range (Union[Unset, list[str]]):
-        bbox_name_regex (Union[Unset, str]):
-        bbox_name_startswith (Union[Unset, str]):
-        east_bound_longitude (Union[Unset, float]):
-        east_bound_longitude_contained_by (Union[Unset, float]):
-        east_bound_longitude_contains (Union[Unset, float]):
-        east_bound_longitude_endswith (Union[Unset, float]):
-        east_bound_longitude_gt (Union[Unset, float]):
-        east_bound_longitude_gte (Union[Unset, float]):
-        east_bound_longitude_icontains (Union[Unset, float]):
-        east_bound_longitude_iendswith (Union[Unset, float]):
-        east_bound_longitude_iexact (Union[Unset, float]):
-        east_bound_longitude_in (Union[Unset, list[float]]):
-        east_bound_longitude_iregex (Union[Unset, float]):
-        east_bound_longitude_isnull (Union[Unset, bool]):
-        east_bound_longitude_istartswith (Union[Unset, float]):
-        east_bound_longitude_lt (Union[Unset, float]):
-        east_bound_longitude_lte (Union[Unset, float]):
-        east_bound_longitude_range (Union[Unset, list[float]]):
-        east_bound_longitude_regex (Union[Unset, float]):
-        east_bound_longitude_startswith (Union[Unset, float]):
-        limit (Union[Unset, int]):
-        north_bound_latitude (Union[Unset, float]):
-        north_bound_latitude_contained_by (Union[Unset, float]):
-        north_bound_latitude_contains (Union[Unset, float]):
-        north_bound_latitude_endswith (Union[Unset, float]):
-        north_bound_latitude_gt (Union[Unset, float]):
-        north_bound_latitude_gte (Union[Unset, float]):
-        north_bound_latitude_icontains (Union[Unset, float]):
-        north_bound_latitude_iendswith (Union[Unset, float]):
-        north_bound_latitude_iexact (Union[Unset, float]):
-        north_bound_latitude_in (Union[Unset, list[float]]):
-        north_bound_latitude_iregex (Union[Unset, float]):
-        north_bound_latitude_isnull (Union[Unset, bool]):
-        north_bound_latitude_istartswith (Union[Unset, float]):
-        north_bound_latitude_lt (Union[Unset, float]):
-        north_bound_latitude_lte (Union[Unset, float]):
-        north_bound_latitude_range (Union[Unset, list[float]]):
-        north_bound_latitude_regex (Union[Unset, float]):
-        north_bound_latitude_startswith (Union[Unset, float]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        south_bound_latitude (Union[Unset, float]):
-        south_bound_latitude_contained_by (Union[Unset, float]):
-        south_bound_latitude_contains (Union[Unset, float]):
-        south_bound_latitude_endswith (Union[Unset, float]):
-        south_bound_latitude_gt (Union[Unset, float]):
-        south_bound_latitude_gte (Union[Unset, float]):
-        south_bound_latitude_icontains (Union[Unset, float]):
-        south_bound_latitude_iendswith (Union[Unset, float]):
-        south_bound_latitude_iexact (Union[Unset, float]):
-        south_bound_latitude_in (Union[Unset, list[float]]):
-        south_bound_latitude_iregex (Union[Unset, float]):
-        south_bound_latitude_isnull (Union[Unset, bool]):
-        south_bound_latitude_istartswith (Union[Unset, float]):
-        south_bound_latitude_lt (Union[Unset, float]):
-        south_bound_latitude_lte (Union[Unset, float]):
-        south_bound_latitude_range (Union[Unset, list[float]]):
-        south_bound_latitude_regex (Union[Unset, float]):
-        south_bound_latitude_startswith (Union[Unset, float]):
-        west_bound_longitude (Union[Unset, float]):
-        west_bound_longitude_contained_by (Union[Unset, float]):
-        west_bound_longitude_contains (Union[Unset, float]):
-        west_bound_longitude_endswith (Union[Unset, float]):
-        west_bound_longitude_gt (Union[Unset, float]):
-        west_bound_longitude_gte (Union[Unset, float]):
-        west_bound_longitude_icontains (Union[Unset, float]):
-        west_bound_longitude_iendswith (Union[Unset, float]):
-        west_bound_longitude_iexact (Union[Unset, float]):
-        west_bound_longitude_in (Union[Unset, list[float]]):
-        west_bound_longitude_iregex (Union[Unset, float]):
-        west_bound_longitude_isnull (Union[Unset, bool]):
-        west_bound_longitude_istartswith (Union[Unset, float]):
-        west_bound_longitude_lt (Union[Unset, float]):
-        west_bound_longitude_lte (Union[Unset, float]):
-        west_bound_longitude_range (Union[Unset, list[float]]):
-        west_bound_longitude_regex (Union[Unset, float]):
-        west_bound_longitude_startswith (Union[Unset, float]):
+        bbox_name (str | Unset):
+        bbox_name_contains (str | Unset):
+        bbox_name_endswith (str | Unset):
+        bbox_name_gt (str | Unset):
+        bbox_name_gte (str | Unset):
+        bbox_name_icontains (str | Unset):
+        bbox_name_iendswith (str | Unset):
+        bbox_name_iexact (str | Unset):
+        bbox_name_in (list[str] | Unset):
+        bbox_name_iregex (str | Unset):
+        bbox_name_isnull (bool | Unset):
+        bbox_name_istartswith (str | Unset):
+        bbox_name_lt (str | Unset):
+        bbox_name_lte (str | Unset):
+        bbox_name_range (list[str] | Unset):
+        bbox_name_regex (str | Unset):
+        bbox_name_startswith (str | Unset):
+        east_bound_longitude (float | Unset):
+        east_bound_longitude_contained_by (float | Unset):
+        east_bound_longitude_contains (float | Unset):
+        east_bound_longitude_endswith (float | Unset):
+        east_bound_longitude_gt (float | Unset):
+        east_bound_longitude_gte (float | Unset):
+        east_bound_longitude_icontains (float | Unset):
+        east_bound_longitude_iendswith (float | Unset):
+        east_bound_longitude_iexact (float | Unset):
+        east_bound_longitude_in (list[float] | Unset):
+        east_bound_longitude_iregex (float | Unset):
+        east_bound_longitude_isnull (bool | Unset):
+        east_bound_longitude_istartswith (float | Unset):
+        east_bound_longitude_lt (float | Unset):
+        east_bound_longitude_lte (float | Unset):
+        east_bound_longitude_range (list[float] | Unset):
+        east_bound_longitude_regex (float | Unset):
+        east_bound_longitude_startswith (float | Unset):
+        limit (int | Unset):
+        north_bound_latitude (float | Unset):
+        north_bound_latitude_contained_by (float | Unset):
+        north_bound_latitude_contains (float | Unset):
+        north_bound_latitude_endswith (float | Unset):
+        north_bound_latitude_gt (float | Unset):
+        north_bound_latitude_gte (float | Unset):
+        north_bound_latitude_icontains (float | Unset):
+        north_bound_latitude_iendswith (float | Unset):
+        north_bound_latitude_iexact (float | Unset):
+        north_bound_latitude_in (list[float] | Unset):
+        north_bound_latitude_iregex (float | Unset):
+        north_bound_latitude_isnull (bool | Unset):
+        north_bound_latitude_istartswith (float | Unset):
+        north_bound_latitude_lt (float | Unset):
+        north_bound_latitude_lte (float | Unset):
+        north_bound_latitude_range (list[float] | Unset):
+        north_bound_latitude_regex (float | Unset):
+        north_bound_latitude_startswith (float | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        south_bound_latitude (float | Unset):
+        south_bound_latitude_contained_by (float | Unset):
+        south_bound_latitude_contains (float | Unset):
+        south_bound_latitude_endswith (float | Unset):
+        south_bound_latitude_gt (float | Unset):
+        south_bound_latitude_gte (float | Unset):
+        south_bound_latitude_icontains (float | Unset):
+        south_bound_latitude_iendswith (float | Unset):
+        south_bound_latitude_iexact (float | Unset):
+        south_bound_latitude_in (list[float] | Unset):
+        south_bound_latitude_iregex (float | Unset):
+        south_bound_latitude_isnull (bool | Unset):
+        south_bound_latitude_istartswith (float | Unset):
+        south_bound_latitude_lt (float | Unset):
+        south_bound_latitude_lte (float | Unset):
+        south_bound_latitude_range (list[float] | Unset):
+        south_bound_latitude_regex (float | Unset):
+        south_bound_latitude_startswith (float | Unset):
+        west_bound_longitude (float | Unset):
+        west_bound_longitude_contained_by (float | Unset):
+        west_bound_longitude_contains (float | Unset):
+        west_bound_longitude_endswith (float | Unset):
+        west_bound_longitude_gt (float | Unset):
+        west_bound_longitude_gte (float | Unset):
+        west_bound_longitude_icontains (float | Unset):
+        west_bound_longitude_iendswith (float | Unset):
+        west_bound_longitude_iexact (float | Unset):
+        west_bound_longitude_in (list[float] | Unset):
+        west_bound_longitude_iregex (float | Unset):
+        west_bound_longitude_isnull (bool | Unset):
+        west_bound_longitude_istartswith (float | Unset):
+        west_bound_longitude_lt (float | Unset):
+        west_bound_longitude_lte (float | Unset):
+        west_bound_longitude_range (list[float] | Unset):
+        west_bound_longitude_regex (float | Unset):
+        west_bound_longitude_startswith (float | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

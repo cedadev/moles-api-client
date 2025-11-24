@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,140 +11,140 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    input_description: Union[Unset, int] = UNSET,
-    input_description_gt: Union[Unset, int] = UNSET,
-    input_description_gte: Union[Unset, int] = UNSET,
-    input_description_in: Union[Unset, list[int]] = UNSET,
-    input_description_isnull: Union[Unset, bool] = UNSET,
-    input_description_lt: Union[Unset, int] = UNSET,
-    input_description_lte: Union[Unset, int] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    output_description: Union[Unset, int] = UNSET,
-    output_description_gt: Union[Unset, int] = UNSET,
-    output_description_gte: Union[Unset, int] = UNSET,
-    output_description_in: Union[Unset, list[int]] = UNSET,
-    output_description_isnull: Union[Unset, bool] = UNSET,
-    output_description_lt: Union[Unset, int] = UNSET,
-    output_description_lte: Union[Unset, int] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    software_reference: Union[Unset, int] = UNSET,
-    software_reference_gt: Union[Unset, int] = UNSET,
-    software_reference_gte: Union[Unset, int] = UNSET,
-    software_reference_in: Union[Unset, list[int]] = UNSET,
-    software_reference_isnull: Union[Unset, bool] = UNSET,
-    software_reference_lt: Union[Unset, int] = UNSET,
-    software_reference_lte: Union[Unset, int] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    input_description: int | Unset = UNSET,
+    input_description_gt: int | Unset = UNSET,
+    input_description_gte: int | Unset = UNSET,
+    input_description_in: list[int] | Unset = UNSET,
+    input_description_isnull: bool | Unset = UNSET,
+    input_description_lt: int | Unset = UNSET,
+    input_description_lte: int | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    output_description: int | Unset = UNSET,
+    output_description_gt: int | Unset = UNSET,
+    output_description_gte: int | Unset = UNSET,
+    output_description_in: list[int] | Unset = UNSET,
+    output_description_isnull: bool | Unset = UNSET,
+    output_description_lt: int | Unset = UNSET,
+    output_description_lte: int | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    software_reference: int | Unset = UNSET,
+    software_reference_gt: int | Unset = UNSET,
+    software_reference_gte: int | Unset = UNSET,
+    software_reference_in: list[int] | Unset = UNSET,
+    software_reference_isnull: bool | Unset = UNSET,
+    software_reference_lt: int | Unset = UNSET,
+    software_reference_lte: int | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -164,7 +164,7 @@ def _get_kwargs(
 
     params["abstract__iexact"] = abstract_iexact
 
-    json_abstract_in: Union[Unset, list[str]] = UNSET
+    json_abstract_in: list[str] | Unset = UNSET
     if not isinstance(abstract_in, Unset):
         json_abstract_in = ",".join(map(str, abstract_in))
 
@@ -180,7 +180,7 @@ def _get_kwargs(
 
     params["abstract__lte"] = abstract_lte
 
-    json_abstract_range: Union[Unset, list[str]] = UNSET
+    json_abstract_range: list[str] | Unset = UNSET
     if not isinstance(abstract_range, Unset):
         json_abstract_range = ",".join(map(str, abstract_range))
 
@@ -196,7 +196,7 @@ def _get_kwargs(
 
     params["inputDescription__gte"] = input_description_gte
 
-    json_input_description_in: Union[Unset, list[int]] = UNSET
+    json_input_description_in: list[int] | Unset = UNSET
     if not isinstance(input_description_in, Unset):
         json_input_description_in = ",".join(map(str, input_description_in))
 
@@ -224,7 +224,7 @@ def _get_kwargs(
 
     params["keywords__iexact"] = keywords_iexact
 
-    json_keywords_in: Union[Unset, list[str]] = UNSET
+    json_keywords_in: list[str] | Unset = UNSET
     if not isinstance(keywords_in, Unset):
         json_keywords_in = ",".join(map(str, keywords_in))
 
@@ -240,7 +240,7 @@ def _get_kwargs(
 
     params["keywords__lte"] = keywords_lte
 
-    json_keywords_range: Union[Unset, list[str]] = UNSET
+    json_keywords_range: list[str] | Unset = UNSET
     if not isinstance(keywords_range, Unset):
         json_keywords_range = ",".join(map(str, keywords_range))
 
@@ -270,7 +270,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -286,7 +286,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -306,7 +306,7 @@ def _get_kwargs(
 
     params["outputDescription__gte"] = output_description_gte
 
-    json_output_description_in: Union[Unset, list[int]] = UNSET
+    json_output_description_in: list[int] | Unset = UNSET
     if not isinstance(output_description_in, Unset):
         json_output_description_in = ",".join(map(str, output_description_in))
 
@@ -324,7 +324,7 @@ def _get_kwargs(
 
     params["referenceable_ptr__gte"] = referenceable_ptr_gte
 
-    json_referenceable_ptr_in: Union[Unset, list[int]] = UNSET
+    json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
         json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
 
@@ -352,7 +352,7 @@ def _get_kwargs(
 
     params["short_code__iexact"] = short_code_iexact
 
-    json_short_code_in: Union[Unset, list[str]] = UNSET
+    json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
         json_short_code_in = ",".join(map(str, short_code_in))
 
@@ -368,7 +368,7 @@ def _get_kwargs(
 
     params["short_code__lte"] = short_code_lte
 
-    json_short_code_range: Union[Unset, list[str]] = UNSET
+    json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
         json_short_code_range = ",".join(map(str, short_code_range))
 
@@ -384,7 +384,7 @@ def _get_kwargs(
 
     params["softwareReference__gte"] = software_reference_gte
 
-    json_software_reference_in: Union[Unset, list[int]] = UNSET
+    json_software_reference_in: list[int] | Unset = UNSET
     if not isinstance(software_reference_in, Unset):
         json_software_reference_in = ",".join(map(str, software_reference_in))
 
@@ -412,7 +412,7 @@ def _get_kwargs(
 
     params["title__iexact"] = title_iexact
 
-    json_title_in: Union[Unset, list[str]] = UNSET
+    json_title_in: list[str] | Unset = UNSET
     if not isinstance(title_in, Unset):
         json_title_in = ",".join(map(str, title_in))
 
@@ -428,7 +428,7 @@ def _get_kwargs(
 
     params["title__lte"] = title_lte
 
-    json_title_range: Union[Unset, list[str]] = UNSET
+    json_title_range: list[str] | Unset = UNSET
     if not isinstance(title_range, Unset):
         json_title_range = ",".join(map(str, title_range))
 
@@ -454,7 +454,7 @@ def _get_kwargs(
 
     params["uuid__iexact"] = uuid_iexact
 
-    json_uuid_in: Union[Unset, list[str]] = UNSET
+    json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
         json_uuid_in = ",".join(map(str, uuid_in))
 
@@ -470,7 +470,7 @@ def _get_kwargs(
 
     params["uuid__lte"] = uuid_lte
 
-    json_uuid_range: Union[Unset, list[str]] = UNSET
+    json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
         json_uuid_range = ",".join(map(str, uuid_range))
 
@@ -492,8 +492,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedProcedureComputationReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedProcedureComputationReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedProcedureComputationReadList.from_dict(response.json())
 
@@ -506,7 +506,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedProcedureComputationReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -519,279 +519,279 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    input_description: Union[Unset, int] = UNSET,
-    input_description_gt: Union[Unset, int] = UNSET,
-    input_description_gte: Union[Unset, int] = UNSET,
-    input_description_in: Union[Unset, list[int]] = UNSET,
-    input_description_isnull: Union[Unset, bool] = UNSET,
-    input_description_lt: Union[Unset, int] = UNSET,
-    input_description_lte: Union[Unset, int] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    output_description: Union[Unset, int] = UNSET,
-    output_description_gt: Union[Unset, int] = UNSET,
-    output_description_gte: Union[Unset, int] = UNSET,
-    output_description_in: Union[Unset, list[int]] = UNSET,
-    output_description_isnull: Union[Unset, bool] = UNSET,
-    output_description_lt: Union[Unset, int] = UNSET,
-    output_description_lte: Union[Unset, int] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    software_reference: Union[Unset, int] = UNSET,
-    software_reference_gt: Union[Unset, int] = UNSET,
-    software_reference_gte: Union[Unset, int] = UNSET,
-    software_reference_in: Union[Unset, list[int]] = UNSET,
-    software_reference_isnull: Union[Unset, bool] = UNSET,
-    software_reference_lt: Union[Unset, int] = UNSET,
-    software_reference_lte: Union[Unset, int] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    input_description: int | Unset = UNSET,
+    input_description_gt: int | Unset = UNSET,
+    input_description_gte: int | Unset = UNSET,
+    input_description_in: list[int] | Unset = UNSET,
+    input_description_isnull: bool | Unset = UNSET,
+    input_description_lt: int | Unset = UNSET,
+    input_description_lte: int | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    output_description: int | Unset = UNSET,
+    output_description_gt: int | Unset = UNSET,
+    output_description_gte: int | Unset = UNSET,
+    output_description_in: list[int] | Unset = UNSET,
+    output_description_isnull: bool | Unset = UNSET,
+    output_description_lt: int | Unset = UNSET,
+    output_description_lte: int | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    software_reference: int | Unset = UNSET,
+    software_reference_gt: int | Unset = UNSET,
+    software_reference_gte: int | Unset = UNSET,
+    software_reference_in: list[int] | Unset = UNSET,
+    software_reference_isnull: bool | Unset = UNSET,
+    software_reference_lt: int | Unset = UNSET,
+    software_reference_lte: int | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedProcedureComputationReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        input_description (Union[Unset, int]):
-        input_description_gt (Union[Unset, int]):
-        input_description_gte (Union[Unset, int]):
-        input_description_in (Union[Unset, list[int]]):
-        input_description_isnull (Union[Unset, bool]):
-        input_description_lt (Union[Unset, int]):
-        input_description_lte (Union[Unset, int]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        output_description (Union[Unset, int]):
-        output_description_gt (Union[Unset, int]):
-        output_description_gte (Union[Unset, int]):
-        output_description_in (Union[Unset, list[int]]):
-        output_description_isnull (Union[Unset, bool]):
-        output_description_lt (Union[Unset, int]):
-        output_description_lte (Union[Unset, int]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        software_reference (Union[Unset, int]):
-        software_reference_gt (Union[Unset, int]):
-        software_reference_gte (Union[Unset, int]):
-        software_reference_in (Union[Unset, list[int]]):
-        software_reference_isnull (Union[Unset, bool]):
-        software_reference_lt (Union[Unset, int]):
-        software_reference_lte (Union[Unset, int]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        input_description (int | Unset):
+        input_description_gt (int | Unset):
+        input_description_gte (int | Unset):
+        input_description_in (list[int] | Unset):
+        input_description_isnull (bool | Unset):
+        input_description_lt (int | Unset):
+        input_description_lte (int | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        output_description (int | Unset):
+        output_description_gt (int | Unset):
+        output_description_gte (int | Unset):
+        output_description_in (list[int] | Unset):
+        output_description_isnull (bool | Unset):
+        output_description_lt (int | Unset):
+        output_description_lte (int | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        software_reference (int | Unset):
+        software_reference_gt (int | Unset):
+        software_reference_gte (int | Unset):
+        software_reference_in (list[int] | Unset):
+        software_reference_isnull (bool | Unset):
+        software_reference_lt (int | Unset):
+        software_reference_lte (int | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -948,279 +948,279 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    input_description: Union[Unset, int] = UNSET,
-    input_description_gt: Union[Unset, int] = UNSET,
-    input_description_gte: Union[Unset, int] = UNSET,
-    input_description_in: Union[Unset, list[int]] = UNSET,
-    input_description_isnull: Union[Unset, bool] = UNSET,
-    input_description_lt: Union[Unset, int] = UNSET,
-    input_description_lte: Union[Unset, int] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    output_description: Union[Unset, int] = UNSET,
-    output_description_gt: Union[Unset, int] = UNSET,
-    output_description_gte: Union[Unset, int] = UNSET,
-    output_description_in: Union[Unset, list[int]] = UNSET,
-    output_description_isnull: Union[Unset, bool] = UNSET,
-    output_description_lt: Union[Unset, int] = UNSET,
-    output_description_lte: Union[Unset, int] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    software_reference: Union[Unset, int] = UNSET,
-    software_reference_gt: Union[Unset, int] = UNSET,
-    software_reference_gte: Union[Unset, int] = UNSET,
-    software_reference_in: Union[Unset, list[int]] = UNSET,
-    software_reference_isnull: Union[Unset, bool] = UNSET,
-    software_reference_lt: Union[Unset, int] = UNSET,
-    software_reference_lte: Union[Unset, int] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureComputationReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    input_description: int | Unset = UNSET,
+    input_description_gt: int | Unset = UNSET,
+    input_description_gte: int | Unset = UNSET,
+    input_description_in: list[int] | Unset = UNSET,
+    input_description_isnull: bool | Unset = UNSET,
+    input_description_lt: int | Unset = UNSET,
+    input_description_lte: int | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    output_description: int | Unset = UNSET,
+    output_description_gt: int | Unset = UNSET,
+    output_description_gte: int | Unset = UNSET,
+    output_description_in: list[int] | Unset = UNSET,
+    output_description_isnull: bool | Unset = UNSET,
+    output_description_lt: int | Unset = UNSET,
+    output_description_lte: int | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    software_reference: int | Unset = UNSET,
+    software_reference_gt: int | Unset = UNSET,
+    software_reference_gte: int | Unset = UNSET,
+    software_reference_in: list[int] | Unset = UNSET,
+    software_reference_isnull: bool | Unset = UNSET,
+    software_reference_lt: int | Unset = UNSET,
+    software_reference_lte: int | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedProcedureComputationReadList | None:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        input_description (Union[Unset, int]):
-        input_description_gt (Union[Unset, int]):
-        input_description_gte (Union[Unset, int]):
-        input_description_in (Union[Unset, list[int]]):
-        input_description_isnull (Union[Unset, bool]):
-        input_description_lt (Union[Unset, int]):
-        input_description_lte (Union[Unset, int]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        output_description (Union[Unset, int]):
-        output_description_gt (Union[Unset, int]):
-        output_description_gte (Union[Unset, int]):
-        output_description_in (Union[Unset, list[int]]):
-        output_description_isnull (Union[Unset, bool]):
-        output_description_lt (Union[Unset, int]):
-        output_description_lte (Union[Unset, int]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        software_reference (Union[Unset, int]):
-        software_reference_gt (Union[Unset, int]):
-        software_reference_gte (Union[Unset, int]):
-        software_reference_in (Union[Unset, list[int]]):
-        software_reference_isnull (Union[Unset, bool]):
-        software_reference_lt (Union[Unset, int]):
-        software_reference_lte (Union[Unset, int]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        input_description (int | Unset):
+        input_description_gt (int | Unset):
+        input_description_gte (int | Unset):
+        input_description_in (list[int] | Unset):
+        input_description_isnull (bool | Unset):
+        input_description_lt (int | Unset):
+        input_description_lte (int | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        output_description (int | Unset):
+        output_description_gt (int | Unset):
+        output_description_gte (int | Unset):
+        output_description_in (list[int] | Unset):
+        output_description_isnull (bool | Unset):
+        output_description_lt (int | Unset):
+        output_description_lte (int | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        software_reference (int | Unset):
+        software_reference_gt (int | Unset):
+        software_reference_gte (int | Unset):
+        software_reference_in (list[int] | Unset):
+        software_reference_isnull (bool | Unset):
+        software_reference_lt (int | Unset):
+        software_reference_lte (int | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1372,279 +1372,279 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    input_description: Union[Unset, int] = UNSET,
-    input_description_gt: Union[Unset, int] = UNSET,
-    input_description_gte: Union[Unset, int] = UNSET,
-    input_description_in: Union[Unset, list[int]] = UNSET,
-    input_description_isnull: Union[Unset, bool] = UNSET,
-    input_description_lt: Union[Unset, int] = UNSET,
-    input_description_lte: Union[Unset, int] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    output_description: Union[Unset, int] = UNSET,
-    output_description_gt: Union[Unset, int] = UNSET,
-    output_description_gte: Union[Unset, int] = UNSET,
-    output_description_in: Union[Unset, list[int]] = UNSET,
-    output_description_isnull: Union[Unset, bool] = UNSET,
-    output_description_lt: Union[Unset, int] = UNSET,
-    output_description_lte: Union[Unset, int] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    software_reference: Union[Unset, int] = UNSET,
-    software_reference_gt: Union[Unset, int] = UNSET,
-    software_reference_gte: Union[Unset, int] = UNSET,
-    software_reference_in: Union[Unset, list[int]] = UNSET,
-    software_reference_isnull: Union[Unset, bool] = UNSET,
-    software_reference_lt: Union[Unset, int] = UNSET,
-    software_reference_lte: Union[Unset, int] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    input_description: int | Unset = UNSET,
+    input_description_gt: int | Unset = UNSET,
+    input_description_gte: int | Unset = UNSET,
+    input_description_in: list[int] | Unset = UNSET,
+    input_description_isnull: bool | Unset = UNSET,
+    input_description_lt: int | Unset = UNSET,
+    input_description_lte: int | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    output_description: int | Unset = UNSET,
+    output_description_gt: int | Unset = UNSET,
+    output_description_gte: int | Unset = UNSET,
+    output_description_in: list[int] | Unset = UNSET,
+    output_description_isnull: bool | Unset = UNSET,
+    output_description_lt: int | Unset = UNSET,
+    output_description_lte: int | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    software_reference: int | Unset = UNSET,
+    software_reference_gt: int | Unset = UNSET,
+    software_reference_gte: int | Unset = UNSET,
+    software_reference_in: list[int] | Unset = UNSET,
+    software_reference_isnull: bool | Unset = UNSET,
+    software_reference_lt: int | Unset = UNSET,
+    software_reference_lte: int | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedProcedureComputationReadList]:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        input_description (Union[Unset, int]):
-        input_description_gt (Union[Unset, int]):
-        input_description_gte (Union[Unset, int]):
-        input_description_in (Union[Unset, list[int]]):
-        input_description_isnull (Union[Unset, bool]):
-        input_description_lt (Union[Unset, int]):
-        input_description_lte (Union[Unset, int]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        output_description (Union[Unset, int]):
-        output_description_gt (Union[Unset, int]):
-        output_description_gte (Union[Unset, int]):
-        output_description_in (Union[Unset, list[int]]):
-        output_description_isnull (Union[Unset, bool]):
-        output_description_lt (Union[Unset, int]):
-        output_description_lte (Union[Unset, int]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        software_reference (Union[Unset, int]):
-        software_reference_gt (Union[Unset, int]):
-        software_reference_gte (Union[Unset, int]):
-        software_reference_in (Union[Unset, list[int]]):
-        software_reference_isnull (Union[Unset, bool]):
-        software_reference_lt (Union[Unset, int]):
-        software_reference_lte (Union[Unset, int]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        input_description (int | Unset):
+        input_description_gt (int | Unset):
+        input_description_gte (int | Unset):
+        input_description_in (list[int] | Unset):
+        input_description_isnull (bool | Unset):
+        input_description_lt (int | Unset):
+        input_description_lte (int | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        output_description (int | Unset):
+        output_description_gt (int | Unset):
+        output_description_gte (int | Unset):
+        output_description_in (list[int] | Unset):
+        output_description_isnull (bool | Unset):
+        output_description_lt (int | Unset):
+        output_description_lte (int | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        software_reference (int | Unset):
+        software_reference_gt (int | Unset):
+        software_reference_gte (int | Unset):
+        software_reference_in (list[int] | Unset):
+        software_reference_isnull (bool | Unset):
+        software_reference_lt (int | Unset):
+        software_reference_lte (int | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1799,279 +1799,279 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    abstract: Union[Unset, str] = UNSET,
-    abstract_contains: Union[Unset, str] = UNSET,
-    abstract_endswith: Union[Unset, str] = UNSET,
-    abstract_gt: Union[Unset, str] = UNSET,
-    abstract_gte: Union[Unset, str] = UNSET,
-    abstract_icontains: Union[Unset, str] = UNSET,
-    abstract_iendswith: Union[Unset, str] = UNSET,
-    abstract_iexact: Union[Unset, str] = UNSET,
-    abstract_in: Union[Unset, list[str]] = UNSET,
-    abstract_iregex: Union[Unset, str] = UNSET,
-    abstract_isnull: Union[Unset, bool] = UNSET,
-    abstract_istartswith: Union[Unset, str] = UNSET,
-    abstract_lt: Union[Unset, str] = UNSET,
-    abstract_lte: Union[Unset, str] = UNSET,
-    abstract_range: Union[Unset, list[str]] = UNSET,
-    abstract_regex: Union[Unset, str] = UNSET,
-    abstract_startswith: Union[Unset, str] = UNSET,
-    input_description: Union[Unset, int] = UNSET,
-    input_description_gt: Union[Unset, int] = UNSET,
-    input_description_gte: Union[Unset, int] = UNSET,
-    input_description_in: Union[Unset, list[int]] = UNSET,
-    input_description_isnull: Union[Unset, bool] = UNSET,
-    input_description_lt: Union[Unset, int] = UNSET,
-    input_description_lte: Union[Unset, int] = UNSET,
-    keywords: Union[Unset, str] = UNSET,
-    keywords_contains: Union[Unset, str] = UNSET,
-    keywords_endswith: Union[Unset, str] = UNSET,
-    keywords_gt: Union[Unset, str] = UNSET,
-    keywords_gte: Union[Unset, str] = UNSET,
-    keywords_icontains: Union[Unset, str] = UNSET,
-    keywords_iendswith: Union[Unset, str] = UNSET,
-    keywords_iexact: Union[Unset, str] = UNSET,
-    keywords_in: Union[Unset, list[str]] = UNSET,
-    keywords_iregex: Union[Unset, str] = UNSET,
-    keywords_isnull: Union[Unset, bool] = UNSET,
-    keywords_istartswith: Union[Unset, str] = UNSET,
-    keywords_lt: Union[Unset, str] = UNSET,
-    keywords_lte: Union[Unset, str] = UNSET,
-    keywords_range: Union[Unset, list[str]] = UNSET,
-    keywords_regex: Union[Unset, str] = UNSET,
-    keywords_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    output_description: Union[Unset, int] = UNSET,
-    output_description_gt: Union[Unset, int] = UNSET,
-    output_description_gte: Union[Unset, int] = UNSET,
-    output_description_in: Union[Unset, list[int]] = UNSET,
-    output_description_isnull: Union[Unset, bool] = UNSET,
-    output_description_lt: Union[Unset, int] = UNSET,
-    output_description_lte: Union[Unset, int] = UNSET,
-    referenceable_ptr: Union[Unset, int] = UNSET,
-    referenceable_ptr_gt: Union[Unset, int] = UNSET,
-    referenceable_ptr_gte: Union[Unset, int] = UNSET,
-    referenceable_ptr_in: Union[Unset, list[int]] = UNSET,
-    referenceable_ptr_isnull: Union[Unset, bool] = UNSET,
-    referenceable_ptr_lt: Union[Unset, int] = UNSET,
-    referenceable_ptr_lte: Union[Unset, int] = UNSET,
-    short_code: Union[Unset, str] = UNSET,
-    short_code_contains: Union[Unset, str] = UNSET,
-    short_code_endswith: Union[Unset, str] = UNSET,
-    short_code_gt: Union[Unset, str] = UNSET,
-    short_code_gte: Union[Unset, str] = UNSET,
-    short_code_icontains: Union[Unset, str] = UNSET,
-    short_code_iendswith: Union[Unset, str] = UNSET,
-    short_code_iexact: Union[Unset, str] = UNSET,
-    short_code_in: Union[Unset, list[str]] = UNSET,
-    short_code_iregex: Union[Unset, str] = UNSET,
-    short_code_isnull: Union[Unset, bool] = UNSET,
-    short_code_istartswith: Union[Unset, str] = UNSET,
-    short_code_lt: Union[Unset, str] = UNSET,
-    short_code_lte: Union[Unset, str] = UNSET,
-    short_code_range: Union[Unset, list[str]] = UNSET,
-    short_code_regex: Union[Unset, str] = UNSET,
-    short_code_startswith: Union[Unset, str] = UNSET,
-    software_reference: Union[Unset, int] = UNSET,
-    software_reference_gt: Union[Unset, int] = UNSET,
-    software_reference_gte: Union[Unset, int] = UNSET,
-    software_reference_in: Union[Unset, list[int]] = UNSET,
-    software_reference_isnull: Union[Unset, bool] = UNSET,
-    software_reference_lt: Union[Unset, int] = UNSET,
-    software_reference_lte: Union[Unset, int] = UNSET,
-    title: Union[Unset, str] = UNSET,
-    title_contains: Union[Unset, str] = UNSET,
-    title_endswith: Union[Unset, str] = UNSET,
-    title_gt: Union[Unset, str] = UNSET,
-    title_gte: Union[Unset, str] = UNSET,
-    title_icontains: Union[Unset, str] = UNSET,
-    title_iendswith: Union[Unset, str] = UNSET,
-    title_iexact: Union[Unset, str] = UNSET,
-    title_in: Union[Unset, list[str]] = UNSET,
-    title_iregex: Union[Unset, str] = UNSET,
-    title_isnull: Union[Unset, bool] = UNSET,
-    title_istartswith: Union[Unset, str] = UNSET,
-    title_lt: Union[Unset, str] = UNSET,
-    title_lte: Union[Unset, str] = UNSET,
-    title_range: Union[Unset, list[str]] = UNSET,
-    title_regex: Union[Unset, str] = UNSET,
-    title_startswith: Union[Unset, str] = UNSET,
-    uuid: Union[Unset, str] = UNSET,
-    uuid_contains: Union[Unset, str] = UNSET,
-    uuid_endswith: Union[Unset, str] = UNSET,
-    uuid_gt: Union[Unset, str] = UNSET,
-    uuid_gte: Union[Unset, str] = UNSET,
-    uuid_icontains: Union[Unset, str] = UNSET,
-    uuid_iendswith: Union[Unset, str] = UNSET,
-    uuid_iexact: Union[Unset, str] = UNSET,
-    uuid_in: Union[Unset, list[str]] = UNSET,
-    uuid_iregex: Union[Unset, str] = UNSET,
-    uuid_isnull: Union[Unset, bool] = UNSET,
-    uuid_istartswith: Union[Unset, str] = UNSET,
-    uuid_lt: Union[Unset, str] = UNSET,
-    uuid_lte: Union[Unset, str] = UNSET,
-    uuid_range: Union[Unset, list[str]] = UNSET,
-    uuid_regex: Union[Unset, str] = UNSET,
-    uuid_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedProcedureComputationReadList]:
+    abstract: str | Unset = UNSET,
+    abstract_contains: str | Unset = UNSET,
+    abstract_endswith: str | Unset = UNSET,
+    abstract_gt: str | Unset = UNSET,
+    abstract_gte: str | Unset = UNSET,
+    abstract_icontains: str | Unset = UNSET,
+    abstract_iendswith: str | Unset = UNSET,
+    abstract_iexact: str | Unset = UNSET,
+    abstract_in: list[str] | Unset = UNSET,
+    abstract_iregex: str | Unset = UNSET,
+    abstract_isnull: bool | Unset = UNSET,
+    abstract_istartswith: str | Unset = UNSET,
+    abstract_lt: str | Unset = UNSET,
+    abstract_lte: str | Unset = UNSET,
+    abstract_range: list[str] | Unset = UNSET,
+    abstract_regex: str | Unset = UNSET,
+    abstract_startswith: str | Unset = UNSET,
+    input_description: int | Unset = UNSET,
+    input_description_gt: int | Unset = UNSET,
+    input_description_gte: int | Unset = UNSET,
+    input_description_in: list[int] | Unset = UNSET,
+    input_description_isnull: bool | Unset = UNSET,
+    input_description_lt: int | Unset = UNSET,
+    input_description_lte: int | Unset = UNSET,
+    keywords: str | Unset = UNSET,
+    keywords_contains: str | Unset = UNSET,
+    keywords_endswith: str | Unset = UNSET,
+    keywords_gt: str | Unset = UNSET,
+    keywords_gte: str | Unset = UNSET,
+    keywords_icontains: str | Unset = UNSET,
+    keywords_iendswith: str | Unset = UNSET,
+    keywords_iexact: str | Unset = UNSET,
+    keywords_in: list[str] | Unset = UNSET,
+    keywords_iregex: str | Unset = UNSET,
+    keywords_isnull: bool | Unset = UNSET,
+    keywords_istartswith: str | Unset = UNSET,
+    keywords_lt: str | Unset = UNSET,
+    keywords_lte: str | Unset = UNSET,
+    keywords_range: list[str] | Unset = UNSET,
+    keywords_regex: str | Unset = UNSET,
+    keywords_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    output_description: int | Unset = UNSET,
+    output_description_gt: int | Unset = UNSET,
+    output_description_gte: int | Unset = UNSET,
+    output_description_in: list[int] | Unset = UNSET,
+    output_description_isnull: bool | Unset = UNSET,
+    output_description_lt: int | Unset = UNSET,
+    output_description_lte: int | Unset = UNSET,
+    referenceable_ptr: int | Unset = UNSET,
+    referenceable_ptr_gt: int | Unset = UNSET,
+    referenceable_ptr_gte: int | Unset = UNSET,
+    referenceable_ptr_in: list[int] | Unset = UNSET,
+    referenceable_ptr_isnull: bool | Unset = UNSET,
+    referenceable_ptr_lt: int | Unset = UNSET,
+    referenceable_ptr_lte: int | Unset = UNSET,
+    short_code: str | Unset = UNSET,
+    short_code_contains: str | Unset = UNSET,
+    short_code_endswith: str | Unset = UNSET,
+    short_code_gt: str | Unset = UNSET,
+    short_code_gte: str | Unset = UNSET,
+    short_code_icontains: str | Unset = UNSET,
+    short_code_iendswith: str | Unset = UNSET,
+    short_code_iexact: str | Unset = UNSET,
+    short_code_in: list[str] | Unset = UNSET,
+    short_code_iregex: str | Unset = UNSET,
+    short_code_isnull: bool | Unset = UNSET,
+    short_code_istartswith: str | Unset = UNSET,
+    short_code_lt: str | Unset = UNSET,
+    short_code_lte: str | Unset = UNSET,
+    short_code_range: list[str] | Unset = UNSET,
+    short_code_regex: str | Unset = UNSET,
+    short_code_startswith: str | Unset = UNSET,
+    software_reference: int | Unset = UNSET,
+    software_reference_gt: int | Unset = UNSET,
+    software_reference_gte: int | Unset = UNSET,
+    software_reference_in: list[int] | Unset = UNSET,
+    software_reference_isnull: bool | Unset = UNSET,
+    software_reference_lt: int | Unset = UNSET,
+    software_reference_lte: int | Unset = UNSET,
+    title: str | Unset = UNSET,
+    title_contains: str | Unset = UNSET,
+    title_endswith: str | Unset = UNSET,
+    title_gt: str | Unset = UNSET,
+    title_gte: str | Unset = UNSET,
+    title_icontains: str | Unset = UNSET,
+    title_iendswith: str | Unset = UNSET,
+    title_iexact: str | Unset = UNSET,
+    title_in: list[str] | Unset = UNSET,
+    title_iregex: str | Unset = UNSET,
+    title_isnull: bool | Unset = UNSET,
+    title_istartswith: str | Unset = UNSET,
+    title_lt: str | Unset = UNSET,
+    title_lte: str | Unset = UNSET,
+    title_range: list[str] | Unset = UNSET,
+    title_regex: str | Unset = UNSET,
+    title_startswith: str | Unset = UNSET,
+    uuid: str | Unset = UNSET,
+    uuid_contains: str | Unset = UNSET,
+    uuid_endswith: str | Unset = UNSET,
+    uuid_gt: str | Unset = UNSET,
+    uuid_gte: str | Unset = UNSET,
+    uuid_icontains: str | Unset = UNSET,
+    uuid_iendswith: str | Unset = UNSET,
+    uuid_iexact: str | Unset = UNSET,
+    uuid_in: list[str] | Unset = UNSET,
+    uuid_iregex: str | Unset = UNSET,
+    uuid_isnull: bool | Unset = UNSET,
+    uuid_istartswith: str | Unset = UNSET,
+    uuid_lt: str | Unset = UNSET,
+    uuid_lte: str | Unset = UNSET,
+    uuid_range: list[str] | Unset = UNSET,
+    uuid_regex: str | Unset = UNSET,
+    uuid_startswith: str | Unset = UNSET,
+) -> PaginatedProcedureComputationReadList | None:
     """Get a list of ProcedureComputation objects. ProcedureComputations have a 1:1 mapping with
     Observations.
 
     Args:
-        abstract (Union[Unset, str]):
-        abstract_contains (Union[Unset, str]):
-        abstract_endswith (Union[Unset, str]):
-        abstract_gt (Union[Unset, str]):
-        abstract_gte (Union[Unset, str]):
-        abstract_icontains (Union[Unset, str]):
-        abstract_iendswith (Union[Unset, str]):
-        abstract_iexact (Union[Unset, str]):
-        abstract_in (Union[Unset, list[str]]):
-        abstract_iregex (Union[Unset, str]):
-        abstract_isnull (Union[Unset, bool]):
-        abstract_istartswith (Union[Unset, str]):
-        abstract_lt (Union[Unset, str]):
-        abstract_lte (Union[Unset, str]):
-        abstract_range (Union[Unset, list[str]]):
-        abstract_regex (Union[Unset, str]):
-        abstract_startswith (Union[Unset, str]):
-        input_description (Union[Unset, int]):
-        input_description_gt (Union[Unset, int]):
-        input_description_gte (Union[Unset, int]):
-        input_description_in (Union[Unset, list[int]]):
-        input_description_isnull (Union[Unset, bool]):
-        input_description_lt (Union[Unset, int]):
-        input_description_lte (Union[Unset, int]):
-        keywords (Union[Unset, str]):
-        keywords_contains (Union[Unset, str]):
-        keywords_endswith (Union[Unset, str]):
-        keywords_gt (Union[Unset, str]):
-        keywords_gte (Union[Unset, str]):
-        keywords_icontains (Union[Unset, str]):
-        keywords_iendswith (Union[Unset, str]):
-        keywords_iexact (Union[Unset, str]):
-        keywords_in (Union[Unset, list[str]]):
-        keywords_iregex (Union[Unset, str]):
-        keywords_isnull (Union[Unset, bool]):
-        keywords_istartswith (Union[Unset, str]):
-        keywords_lt (Union[Unset, str]):
-        keywords_lte (Union[Unset, str]):
-        keywords_range (Union[Unset, list[str]]):
-        keywords_regex (Union[Unset, str]):
-        keywords_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        output_description (Union[Unset, int]):
-        output_description_gt (Union[Unset, int]):
-        output_description_gte (Union[Unset, int]):
-        output_description_in (Union[Unset, list[int]]):
-        output_description_isnull (Union[Unset, bool]):
-        output_description_lt (Union[Unset, int]):
-        output_description_lte (Union[Unset, int]):
-        referenceable_ptr (Union[Unset, int]):
-        referenceable_ptr_gt (Union[Unset, int]):
-        referenceable_ptr_gte (Union[Unset, int]):
-        referenceable_ptr_in (Union[Unset, list[int]]):
-        referenceable_ptr_isnull (Union[Unset, bool]):
-        referenceable_ptr_lt (Union[Unset, int]):
-        referenceable_ptr_lte (Union[Unset, int]):
-        short_code (Union[Unset, str]):
-        short_code_contains (Union[Unset, str]):
-        short_code_endswith (Union[Unset, str]):
-        short_code_gt (Union[Unset, str]):
-        short_code_gte (Union[Unset, str]):
-        short_code_icontains (Union[Unset, str]):
-        short_code_iendswith (Union[Unset, str]):
-        short_code_iexact (Union[Unset, str]):
-        short_code_in (Union[Unset, list[str]]):
-        short_code_iregex (Union[Unset, str]):
-        short_code_isnull (Union[Unset, bool]):
-        short_code_istartswith (Union[Unset, str]):
-        short_code_lt (Union[Unset, str]):
-        short_code_lte (Union[Unset, str]):
-        short_code_range (Union[Unset, list[str]]):
-        short_code_regex (Union[Unset, str]):
-        short_code_startswith (Union[Unset, str]):
-        software_reference (Union[Unset, int]):
-        software_reference_gt (Union[Unset, int]):
-        software_reference_gte (Union[Unset, int]):
-        software_reference_in (Union[Unset, list[int]]):
-        software_reference_isnull (Union[Unset, bool]):
-        software_reference_lt (Union[Unset, int]):
-        software_reference_lte (Union[Unset, int]):
-        title (Union[Unset, str]):
-        title_contains (Union[Unset, str]):
-        title_endswith (Union[Unset, str]):
-        title_gt (Union[Unset, str]):
-        title_gte (Union[Unset, str]):
-        title_icontains (Union[Unset, str]):
-        title_iendswith (Union[Unset, str]):
-        title_iexact (Union[Unset, str]):
-        title_in (Union[Unset, list[str]]):
-        title_iregex (Union[Unset, str]):
-        title_isnull (Union[Unset, bool]):
-        title_istartswith (Union[Unset, str]):
-        title_lt (Union[Unset, str]):
-        title_lte (Union[Unset, str]):
-        title_range (Union[Unset, list[str]]):
-        title_regex (Union[Unset, str]):
-        title_startswith (Union[Unset, str]):
-        uuid (Union[Unset, str]):
-        uuid_contains (Union[Unset, str]):
-        uuid_endswith (Union[Unset, str]):
-        uuid_gt (Union[Unset, str]):
-        uuid_gte (Union[Unset, str]):
-        uuid_icontains (Union[Unset, str]):
-        uuid_iendswith (Union[Unset, str]):
-        uuid_iexact (Union[Unset, str]):
-        uuid_in (Union[Unset, list[str]]):
-        uuid_iregex (Union[Unset, str]):
-        uuid_isnull (Union[Unset, bool]):
-        uuid_istartswith (Union[Unset, str]):
-        uuid_lt (Union[Unset, str]):
-        uuid_lte (Union[Unset, str]):
-        uuid_range (Union[Unset, list[str]]):
-        uuid_regex (Union[Unset, str]):
-        uuid_startswith (Union[Unset, str]):
+        abstract (str | Unset):
+        abstract_contains (str | Unset):
+        abstract_endswith (str | Unset):
+        abstract_gt (str | Unset):
+        abstract_gte (str | Unset):
+        abstract_icontains (str | Unset):
+        abstract_iendswith (str | Unset):
+        abstract_iexact (str | Unset):
+        abstract_in (list[str] | Unset):
+        abstract_iregex (str | Unset):
+        abstract_isnull (bool | Unset):
+        abstract_istartswith (str | Unset):
+        abstract_lt (str | Unset):
+        abstract_lte (str | Unset):
+        abstract_range (list[str] | Unset):
+        abstract_regex (str | Unset):
+        abstract_startswith (str | Unset):
+        input_description (int | Unset):
+        input_description_gt (int | Unset):
+        input_description_gte (int | Unset):
+        input_description_in (list[int] | Unset):
+        input_description_isnull (bool | Unset):
+        input_description_lt (int | Unset):
+        input_description_lte (int | Unset):
+        keywords (str | Unset):
+        keywords_contains (str | Unset):
+        keywords_endswith (str | Unset):
+        keywords_gt (str | Unset):
+        keywords_gte (str | Unset):
+        keywords_icontains (str | Unset):
+        keywords_iendswith (str | Unset):
+        keywords_iexact (str | Unset):
+        keywords_in (list[str] | Unset):
+        keywords_iregex (str | Unset):
+        keywords_isnull (bool | Unset):
+        keywords_istartswith (str | Unset):
+        keywords_lt (str | Unset):
+        keywords_lte (str | Unset):
+        keywords_range (list[str] | Unset):
+        keywords_regex (str | Unset):
+        keywords_startswith (str | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        output_description (int | Unset):
+        output_description_gt (int | Unset):
+        output_description_gte (int | Unset):
+        output_description_in (list[int] | Unset):
+        output_description_isnull (bool | Unset):
+        output_description_lt (int | Unset):
+        output_description_lte (int | Unset):
+        referenceable_ptr (int | Unset):
+        referenceable_ptr_gt (int | Unset):
+        referenceable_ptr_gte (int | Unset):
+        referenceable_ptr_in (list[int] | Unset):
+        referenceable_ptr_isnull (bool | Unset):
+        referenceable_ptr_lt (int | Unset):
+        referenceable_ptr_lte (int | Unset):
+        short_code (str | Unset):
+        short_code_contains (str | Unset):
+        short_code_endswith (str | Unset):
+        short_code_gt (str | Unset):
+        short_code_gte (str | Unset):
+        short_code_icontains (str | Unset):
+        short_code_iendswith (str | Unset):
+        short_code_iexact (str | Unset):
+        short_code_in (list[str] | Unset):
+        short_code_iregex (str | Unset):
+        short_code_isnull (bool | Unset):
+        short_code_istartswith (str | Unset):
+        short_code_lt (str | Unset):
+        short_code_lte (str | Unset):
+        short_code_range (list[str] | Unset):
+        short_code_regex (str | Unset):
+        short_code_startswith (str | Unset):
+        software_reference (int | Unset):
+        software_reference_gt (int | Unset):
+        software_reference_gte (int | Unset):
+        software_reference_in (list[int] | Unset):
+        software_reference_isnull (bool | Unset):
+        software_reference_lt (int | Unset):
+        software_reference_lte (int | Unset):
+        title (str | Unset):
+        title_contains (str | Unset):
+        title_endswith (str | Unset):
+        title_gt (str | Unset):
+        title_gte (str | Unset):
+        title_icontains (str | Unset):
+        title_iendswith (str | Unset):
+        title_iexact (str | Unset):
+        title_in (list[str] | Unset):
+        title_iregex (str | Unset):
+        title_isnull (bool | Unset):
+        title_istartswith (str | Unset):
+        title_lt (str | Unset):
+        title_lte (str | Unset):
+        title_range (list[str] | Unset):
+        title_regex (str | Unset):
+        title_startswith (str | Unset):
+        uuid (str | Unset):
+        uuid_contains (str | Unset):
+        uuid_endswith (str | Unset):
+        uuid_gt (str | Unset):
+        uuid_gte (str | Unset):
+        uuid_icontains (str | Unset):
+        uuid_iendswith (str | Unset):
+        uuid_iexact (str | Unset):
+        uuid_in (list[str] | Unset):
+        uuid_iregex (str | Unset):
+        uuid_isnull (bool | Unset):
+        uuid_istartswith (str | Unset):
+        uuid_lt (str | Unset):
+        uuid_lte (str | Unset):
+        uuid_range (list[str] | Unset):
+        uuid_regex (str | Unset):
+        uuid_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

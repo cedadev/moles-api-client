@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,16 +17,16 @@ class PatchedDRSDatasetWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            drs_id (Union[Unset, str]):
-            version (Union[Unset, str]):
-            directory (Union[Unset, str]):
-            related_to (Union[Unset, int]):
+            drs_id (str | Unset):
+            version (str | Unset):
+            directory (str | Unset):
+            related_to (int | Unset):
     """
 
-    drs_id: Union[Unset, str] = UNSET
-    version: Union[Unset, str] = UNSET
-    directory: Union[Unset, str] = UNSET
-    related_to: Union[Unset, int] = UNSET
+    drs_id: str | Unset = UNSET
+    version: str | Unset = UNSET
+    directory: str | Unset = UNSET
+    related_to: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:

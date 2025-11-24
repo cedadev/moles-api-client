@@ -1,6 +1,8 @@
+from __future__ import annotations
+
 import datetime
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -29,17 +31,17 @@ class ObservationCollectionRead:
             title (str):
             abstract (str):
             keywords (str):
-            publication_state (Union[BlankEnum, PublicationStateCbbEnum]):
-            data_published_time (Union[None, datetime.datetime]):
-            doi_published_time (Union[None, datetime.datetime]):
+            publication_state (BlankEnum | PublicationStateCbbEnum):
+            data_published_time (datetime.datetime | None):
+            doi_published_time (datetime.datetime | None):
             dont_harvest_from_projects (bool):
-            image_details (list[Union[None, int]]):
-            discovery_keywords (list['DiscoveryServiceIdRead']):
-            member (Union[None, list['SimpleRead']]):
-            identifier_set (list[Union[None, int]]):
-            responsiblepartyinfo_set (list[Union[None, int]]):
-            onlineresource_set (list[Union[None, int]]):
-            project_set (list[Union[None, int]]):
+            image_details (list[int | None]):
+            discovery_keywords (list[DiscoveryServiceIdRead]):
+            member (list[SimpleRead] | None):
+            identifier_set (list[int | None]):
+            responsiblepartyinfo_set (list[int | None]):
+            onlineresource_set (list[int | None]):
+            project_set (list[int | None]):
     """
 
     ob_id: int
@@ -48,17 +50,17 @@ class ObservationCollectionRead:
     title: str
     abstract: str
     keywords: str
-    publication_state: Union[BlankEnum, PublicationStateCbbEnum]
-    data_published_time: Union[None, datetime.datetime]
-    doi_published_time: Union[None, datetime.datetime]
+    publication_state: BlankEnum | PublicationStateCbbEnum
+    data_published_time: datetime.datetime | None
+    doi_published_time: datetime.datetime | None
     dont_harvest_from_projects: bool
-    image_details: list[Union[None, int]]
-    discovery_keywords: list["DiscoveryServiceIdRead"]
-    member: Union[None, list["SimpleRead"]]
-    identifier_set: list[Union[None, int]]
-    responsiblepartyinfo_set: list[Union[None, int]]
-    onlineresource_set: list[Union[None, int]]
-    project_set: list[Union[None, int]]
+    image_details: list[int | None]
+    discovery_keywords: list[DiscoveryServiceIdRead]
+    member: list[SimpleRead] | None
+    identifier_set: list[int | None]
+    responsiblepartyinfo_set: list[int | None]
+    onlineresource_set: list[int | None]
+    project_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -80,13 +82,13 @@ class ObservationCollectionRead:
         else:
             publication_state = self.publication_state.value
 
-        data_published_time: Union[None, str]
+        data_published_time: None | str
         if isinstance(self.data_published_time, datetime.datetime):
             data_published_time = self.data_published_time.isoformat()
         else:
             data_published_time = self.data_published_time
 
-        doi_published_time: Union[None, str]
+        doi_published_time: None | str
         if isinstance(self.doi_published_time, datetime.datetime):
             doi_published_time = self.doi_published_time.isoformat()
         else:
@@ -96,7 +98,7 @@ class ObservationCollectionRead:
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
@@ -105,7 +107,7 @@ class ObservationCollectionRead:
             discovery_keywords_item = discovery_keywords_item_data.to_dict()
             discovery_keywords.append(discovery_keywords_item)
 
-        member: Union[None, list[dict[str, Any]]]
+        member: list[dict[str, Any]] | None
         if isinstance(self.member, list):
             member = []
             for member_type_0_item_data in self.member:
@@ -117,25 +119,25 @@ class ObservationCollectionRead:
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
-            responsiblepartyinfo_set_item: Union[None, int]
+            responsiblepartyinfo_set_item: int | None
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
         onlineresource_set = []
         for onlineresource_set_item_data in self.onlineresource_set:
-            onlineresource_set_item: Union[None, int]
+            onlineresource_set_item: int | None
             onlineresource_set_item = onlineresource_set_item_data
             onlineresource_set.append(onlineresource_set_item)
 
         project_set = []
         for project_set_item_data in self.project_set:
-            project_set_item: Union[None, int]
+            project_set_item: int | None
             project_set_item = project_set_item_data
             project_set.append(project_set_item)
 
@@ -183,14 +185,14 @@ class ObservationCollectionRead:
 
         keywords = d.pop("keywords")
 
-        def _parse_publication_state(data: object) -> Union[BlankEnum, PublicationStateCbbEnum]:
+        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 publication_state_type_0 = PublicationStateCbbEnum(data)
 
                 return publication_state_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -200,7 +202,7 @@ class ObservationCollectionRead:
 
         publication_state = _parse_publication_state(d.pop("publicationState"))
 
-        def _parse_data_published_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_data_published_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -209,13 +211,13 @@ class ObservationCollectionRead:
                 data_published_time_type_0 = isoparse(data)
 
                 return data_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         data_published_time = _parse_data_published_time(d.pop("dataPublishedTime"))
 
-        def _parse_doi_published_time(data: object) -> Union[None, datetime.datetime]:
+        def _parse_doi_published_time(data: object) -> datetime.datetime | None:
             if data is None:
                 return data
             try:
@@ -224,9 +226,9 @@ class ObservationCollectionRead:
                 doi_published_time_type_0 = isoparse(data)
 
                 return doi_published_time_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, datetime.datetime], data)
+            return cast(datetime.datetime | None, data)
 
         doi_published_time = _parse_doi_published_time(d.pop("doiPublishedTime"))
 
@@ -236,10 +238,10 @@ class ObservationCollectionRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
@@ -252,7 +254,7 @@ class ObservationCollectionRead:
 
             discovery_keywords.append(discovery_keywords_item)
 
-        def _parse_member(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_member(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -266,9 +268,9 @@ class ObservationCollectionRead:
                     member_type_0.append(member_type_0_item)
 
                 return member_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         member = _parse_member(d.pop("member"))
 
@@ -276,10 +278,10 @@ class ObservationCollectionRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 
@@ -289,10 +291,10 @@ class ObservationCollectionRead:
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")
         for responsiblepartyinfo_set_item_data in _responsiblepartyinfo_set:
 
-            def _parse_responsiblepartyinfo_set_item(data: object) -> Union[None, int]:
+            def _parse_responsiblepartyinfo_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             responsiblepartyinfo_set_item = _parse_responsiblepartyinfo_set_item(responsiblepartyinfo_set_item_data)
 
@@ -302,10 +304,10 @@ class ObservationCollectionRead:
         _onlineresource_set = d.pop("onlineresource_set")
         for onlineresource_set_item_data in _onlineresource_set:
 
-            def _parse_onlineresource_set_item(data: object) -> Union[None, int]:
+            def _parse_onlineresource_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             onlineresource_set_item = _parse_onlineresource_set_item(onlineresource_set_item_data)
 
@@ -315,10 +317,10 @@ class ObservationCollectionRead:
         _project_set = d.pop("project_set")
         for project_set_item_data in _project_set:
 
-            def _parse_project_set_item(data: object) -> Union[None, int]:
+            def _parse_project_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             project_set_item = _parse_project_set_item(project_set_item_data)
 

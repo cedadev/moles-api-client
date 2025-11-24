@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -26,11 +28,11 @@ class InstrumentRead:
             title (str):
             abstract (str):
             keywords (str):
-            instrument_type (Union[BlankEnum, InstrumentTypeEnum]):
-            image_details (list[Union[None, int]]):
-            sub_instrument (Union[None, list['SimpleRead']]):
-            identifier_set (list[Union[None, int]]):
-            responsiblepartyinfo_set (list[Union[None, int]]):
+            instrument_type (BlankEnum | InstrumentTypeEnum):
+            image_details (list[int | None]):
+            sub_instrument (list[SimpleRead] | None):
+            identifier_set (list[int | None]):
+            responsiblepartyinfo_set (list[int | None]):
     """
 
     ob_id: int
@@ -39,11 +41,11 @@ class InstrumentRead:
     title: str
     abstract: str
     keywords: str
-    instrument_type: Union[BlankEnum, InstrumentTypeEnum]
-    image_details: list[Union[None, int]]
-    sub_instrument: Union[None, list["SimpleRead"]]
-    identifier_set: list[Union[None, int]]
-    responsiblepartyinfo_set: list[Union[None, int]]
+    instrument_type: BlankEnum | InstrumentTypeEnum
+    image_details: list[int | None]
+    sub_instrument: list[SimpleRead] | None
+    identifier_set: list[int | None]
+    responsiblepartyinfo_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -67,11 +69,11 @@ class InstrumentRead:
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
-        sub_instrument: Union[None, list[dict[str, Any]]]
+        sub_instrument: list[dict[str, Any]] | None
         if isinstance(self.sub_instrument, list):
             sub_instrument = []
             for sub_instrument_type_0_item_data in self.sub_instrument:
@@ -83,13 +85,13 @@ class InstrumentRead:
 
         identifier_set = []
         for identifier_set_item_data in self.identifier_set:
-            identifier_set_item: Union[None, int]
+            identifier_set_item: int | None
             identifier_set_item = identifier_set_item_data
             identifier_set.append(identifier_set_item)
 
         responsiblepartyinfo_set = []
         for responsiblepartyinfo_set_item_data in self.responsiblepartyinfo_set:
-            responsiblepartyinfo_set_item: Union[None, int]
+            responsiblepartyinfo_set_item: int | None
             responsiblepartyinfo_set_item = responsiblepartyinfo_set_item_data
             responsiblepartyinfo_set.append(responsiblepartyinfo_set_item)
 
@@ -130,14 +132,14 @@ class InstrumentRead:
 
         keywords = d.pop("keywords")
 
-        def _parse_instrument_type(data: object) -> Union[BlankEnum, InstrumentTypeEnum]:
+        def _parse_instrument_type(data: object) -> BlankEnum | InstrumentTypeEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 instrument_type_type_0 = InstrumentTypeEnum(data)
 
                 return instrument_type_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -151,16 +153,16 @@ class InstrumentRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
             image_details.append(image_details_item)
 
-        def _parse_sub_instrument(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_sub_instrument(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -174,9 +176,9 @@ class InstrumentRead:
                     sub_instrument_type_0.append(sub_instrument_type_0_item)
 
                 return sub_instrument_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         sub_instrument = _parse_sub_instrument(d.pop("subInstrument"))
 
@@ -184,10 +186,10 @@ class InstrumentRead:
         _identifier_set = d.pop("identifier_set")
         for identifier_set_item_data in _identifier_set:
 
-            def _parse_identifier_set_item(data: object) -> Union[None, int]:
+            def _parse_identifier_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             identifier_set_item = _parse_identifier_set_item(identifier_set_item_data)
 
@@ -197,10 +199,10 @@ class InstrumentRead:
         _responsiblepartyinfo_set = d.pop("responsiblepartyinfo_set")
         for responsiblepartyinfo_set_item_data in _responsiblepartyinfo_set:
 
-            def _parse_responsiblepartyinfo_set_item(data: object) -> Union[None, int]:
+            def _parse_responsiblepartyinfo_set_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             responsiblepartyinfo_set_item = _parse_responsiblepartyinfo_set_item(responsiblepartyinfo_set_item_data)
 

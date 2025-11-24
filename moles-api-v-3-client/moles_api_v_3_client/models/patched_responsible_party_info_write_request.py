@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union, cast
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,9 +18,9 @@ class PatchedResponsiblePartyInfoWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            priority (Union[None, Unset, int]):
-            party (Union[Unset, int]):
-            role (Union[Unset, RoleEnum]): * `author` - Author
+            priority (int | None | Unset):
+            party (int | Unset):
+            role (RoleEnum | Unset): * `author` - Author
                 * `ceda_officer` - CEDA Officer
                 * `co_investigator` - Co-Investigator
                 * `curator` - Curator
@@ -31,17 +33,17 @@ class PatchedResponsiblePartyInfoWriteRequest:
                 * `principal_investigator` - Principal Investigator
                 * `point_of_contact` - Point of Contact
                 * `publisher` - Publisher
-            related_to (Union[Unset, str]):
+            related_to (str | Unset):
     """
 
-    priority: Union[None, Unset, int] = UNSET
-    party: Union[Unset, int] = UNSET
-    role: Union[Unset, RoleEnum] = UNSET
-    related_to: Union[Unset, str] = UNSET
+    priority: int | None | Unset = UNSET
+    party: int | Unset = UNSET
+    role: RoleEnum | Unset = UNSET
+    related_to: str | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
-        priority: Union[None, Unset, int]
+        priority: int | None | Unset
         if isinstance(self.priority, Unset):
             priority = UNSET
         else:
@@ -49,7 +51,7 @@ class PatchedResponsiblePartyInfoWriteRequest:
 
         party = self.party
 
-        role: Union[Unset, str] = UNSET
+        role: str | Unset = UNSET
         if not isinstance(self.role, Unset):
             role = self.role.value
 
@@ -73,19 +75,19 @@ class PatchedResponsiblePartyInfoWriteRequest:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
 
-        def _parse_priority(data: object) -> Union[None, Unset, int]:
+        def _parse_priority(data: object) -> int | None | Unset:
             if data is None:
                 return data
             if isinstance(data, Unset):
                 return data
-            return cast(Union[None, Unset, int], data)
+            return cast(int | None | Unset, data)
 
         priority = _parse_priority(d.pop("priority", UNSET))
 
         party = d.pop("party", UNSET)
 
         _role = d.pop("role", UNSET)
-        role: Union[Unset, RoleEnum]
+        role: RoleEnum | Unset
         if isinstance(_role, Unset):
             role = UNSET
         else:

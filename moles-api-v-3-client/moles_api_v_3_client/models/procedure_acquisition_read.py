@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -23,9 +25,9 @@ class ProcedureAcquisitionRead:
             short_code (str):
             title (str):
             abstract (str):
-            image_details (list[Union[None, int]]):
-            mobile_platform_operation (Union[None, list['SimpleRead']]):
-            instrumentplatformpair_set (Union[None, list['InstrumentPlatformPairRead']]):
+            image_details (list[int | None]):
+            mobile_platform_operation (list[SimpleRead] | None):
+            instrumentplatformpair_set (list[InstrumentPlatformPairRead] | None):
     """
 
     ob_id: int
@@ -33,9 +35,9 @@ class ProcedureAcquisitionRead:
     short_code: str
     title: str
     abstract: str
-    image_details: list[Union[None, int]]
-    mobile_platform_operation: Union[None, list["SimpleRead"]]
-    instrumentplatformpair_set: Union[None, list["InstrumentPlatformPairRead"]]
+    image_details: list[int | None]
+    mobile_platform_operation: list[SimpleRead] | None
+    instrumentplatformpair_set: list[InstrumentPlatformPairRead] | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -51,11 +53,11 @@ class ProcedureAcquisitionRead:
 
         image_details = []
         for image_details_item_data in self.image_details:
-            image_details_item: Union[None, int]
+            image_details_item: int | None
             image_details_item = image_details_item_data
             image_details.append(image_details_item)
 
-        mobile_platform_operation: Union[None, list[dict[str, Any]]]
+        mobile_platform_operation: list[dict[str, Any]] | None
         if isinstance(self.mobile_platform_operation, list):
             mobile_platform_operation = []
             for mobile_platform_operation_type_0_item_data in self.mobile_platform_operation:
@@ -65,7 +67,7 @@ class ProcedureAcquisitionRead:
         else:
             mobile_platform_operation = self.mobile_platform_operation
 
-        instrumentplatformpair_set: Union[None, list[dict[str, Any]]]
+        instrumentplatformpair_set: list[dict[str, Any]] | None
         if isinstance(self.instrumentplatformpair_set, list):
             instrumentplatformpair_set = []
             for instrumentplatformpair_set_type_0_item_data in self.instrumentplatformpair_set:
@@ -112,16 +114,16 @@ class ProcedureAcquisitionRead:
         _image_details = d.pop("imageDetails")
         for image_details_item_data in _image_details:
 
-            def _parse_image_details_item(data: object) -> Union[None, int]:
+            def _parse_image_details_item(data: object) -> int | None:
                 if data is None:
                     return data
-                return cast(Union[None, int], data)
+                return cast(int | None, data)
 
             image_details_item = _parse_image_details_item(image_details_item_data)
 
             image_details.append(image_details_item)
 
-        def _parse_mobile_platform_operation(data: object) -> Union[None, list["SimpleRead"]]:
+        def _parse_mobile_platform_operation(data: object) -> list[SimpleRead] | None:
             if data is None:
                 return data
             try:
@@ -137,13 +139,13 @@ class ProcedureAcquisitionRead:
                     mobile_platform_operation_type_0.append(mobile_platform_operation_type_0_item)
 
                 return mobile_platform_operation_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["SimpleRead"]], data)
+            return cast(list[SimpleRead] | None, data)
 
         mobile_platform_operation = _parse_mobile_platform_operation(d.pop("mobilePlatformOperation"))
 
-        def _parse_instrumentplatformpair_set(data: object) -> Union[None, list["InstrumentPlatformPairRead"]]:
+        def _parse_instrumentplatformpair_set(data: object) -> list[InstrumentPlatformPairRead] | None:
             if data is None:
                 return data
             try:
@@ -159,9 +161,9 @@ class ProcedureAcquisitionRead:
                     instrumentplatformpair_set_type_0.append(instrumentplatformpair_set_type_0_item)
 
                 return instrumentplatformpair_set_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[None, list["InstrumentPlatformPairRead"]], data)
+            return cast(list[InstrumentPlatformPairRead] | None, data)
 
         instrumentplatformpair_set = _parse_instrumentplatformpair_set(d.pop("instrumentplatformpair_set"))
 

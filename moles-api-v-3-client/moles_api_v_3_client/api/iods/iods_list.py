@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,61 +11,61 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -85,7 +85,7 @@ def _get_kwargs(
 
     params["description__iexact"] = description_iexact
 
-    json_description_in: Union[Unset, list[str]] = UNSET
+    json_description_in: list[str] | Unset = UNSET
     if not isinstance(description_in, Unset):
         json_description_in = ",".join(map(str, description_in))
 
@@ -101,7 +101,7 @@ def _get_kwargs(
 
     params["description__lte"] = description_lte
 
-    json_description_range: Union[Unset, list[str]] = UNSET
+    json_description_range: list[str] | Unset = UNSET
     if not isinstance(description_range, Unset):
         json_description_range = ",".join(map(str, description_range))
 
@@ -129,7 +129,7 @@ def _get_kwargs(
 
     params["name__iexact"] = name_iexact
 
-    json_name_in: Union[Unset, list[str]] = UNSET
+    json_name_in: list[str] | Unset = UNSET
     if not isinstance(name_in, Unset):
         json_name_in = ",".join(map(str, name_in))
 
@@ -145,7 +145,7 @@ def _get_kwargs(
 
     params["name__lte"] = name_lte
 
-    json_name_range: Union[Unset, list[str]] = UNSET
+    json_name_range: list[str] | Unset = UNSET
     if not isinstance(name_range, Unset):
         json_name_range = ",".join(map(str, name_range))
 
@@ -173,7 +173,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -189,7 +189,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -215,8 +215,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedInputOutputDescriptionReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedInputOutputDescriptionReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedInputOutputDescriptionReadList.from_dict(response.json())
 
@@ -229,7 +229,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedInputOutputDescriptionReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -242,120 +242,120 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        limit (int | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -433,120 +433,120 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInputOutputDescriptionReadList]:
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedInputOutputDescriptionReadList | None:
     """Get a list of InputOutputDescription objects.
 
     Args:
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        limit (int | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -619,120 +619,120 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
 ) -> Response[PaginatedInputOutputDescriptionReadList]:
     """Get a list of InputOutputDescription objects.
 
     Args:
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        limit (int | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -808,120 +808,120 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    description: Union[Unset, str] = UNSET,
-    description_contains: Union[Unset, str] = UNSET,
-    description_endswith: Union[Unset, str] = UNSET,
-    description_gt: Union[Unset, str] = UNSET,
-    description_gte: Union[Unset, str] = UNSET,
-    description_icontains: Union[Unset, str] = UNSET,
-    description_iendswith: Union[Unset, str] = UNSET,
-    description_iexact: Union[Unset, str] = UNSET,
-    description_in: Union[Unset, list[str]] = UNSET,
-    description_iregex: Union[Unset, str] = UNSET,
-    description_isnull: Union[Unset, bool] = UNSET,
-    description_istartswith: Union[Unset, str] = UNSET,
-    description_lt: Union[Unset, str] = UNSET,
-    description_lte: Union[Unset, str] = UNSET,
-    description_range: Union[Unset, list[str]] = UNSET,
-    description_regex: Union[Unset, str] = UNSET,
-    description_startswith: Union[Unset, str] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    name: Union[Unset, str] = UNSET,
-    name_contains: Union[Unset, str] = UNSET,
-    name_endswith: Union[Unset, str] = UNSET,
-    name_gt: Union[Unset, str] = UNSET,
-    name_gte: Union[Unset, str] = UNSET,
-    name_icontains: Union[Unset, str] = UNSET,
-    name_iendswith: Union[Unset, str] = UNSET,
-    name_iexact: Union[Unset, str] = UNSET,
-    name_in: Union[Unset, list[str]] = UNSET,
-    name_iregex: Union[Unset, str] = UNSET,
-    name_isnull: Union[Unset, bool] = UNSET,
-    name_istartswith: Union[Unset, str] = UNSET,
-    name_lt: Union[Unset, str] = UNSET,
-    name_lte: Union[Unset, str] = UNSET,
-    name_range: Union[Unset, list[str]] = UNSET,
-    name_regex: Union[Unset, str] = UNSET,
-    name_startswith: Union[Unset, str] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedInputOutputDescriptionReadList]:
+    description: str | Unset = UNSET,
+    description_contains: str | Unset = UNSET,
+    description_endswith: str | Unset = UNSET,
+    description_gt: str | Unset = UNSET,
+    description_gte: str | Unset = UNSET,
+    description_icontains: str | Unset = UNSET,
+    description_iendswith: str | Unset = UNSET,
+    description_iexact: str | Unset = UNSET,
+    description_in: list[str] | Unset = UNSET,
+    description_iregex: str | Unset = UNSET,
+    description_isnull: bool | Unset = UNSET,
+    description_istartswith: str | Unset = UNSET,
+    description_lt: str | Unset = UNSET,
+    description_lte: str | Unset = UNSET,
+    description_range: list[str] | Unset = UNSET,
+    description_regex: str | Unset = UNSET,
+    description_startswith: str | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    name: str | Unset = UNSET,
+    name_contains: str | Unset = UNSET,
+    name_endswith: str | Unset = UNSET,
+    name_gt: str | Unset = UNSET,
+    name_gte: str | Unset = UNSET,
+    name_icontains: str | Unset = UNSET,
+    name_iendswith: str | Unset = UNSET,
+    name_iexact: str | Unset = UNSET,
+    name_in: list[str] | Unset = UNSET,
+    name_iregex: str | Unset = UNSET,
+    name_isnull: bool | Unset = UNSET,
+    name_istartswith: str | Unset = UNSET,
+    name_lt: str | Unset = UNSET,
+    name_lte: str | Unset = UNSET,
+    name_range: list[str] | Unset = UNSET,
+    name_regex: str | Unset = UNSET,
+    name_startswith: str | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+) -> PaginatedInputOutputDescriptionReadList | None:
     """Get a list of InputOutputDescription objects.
 
     Args:
-        description (Union[Unset, str]):
-        description_contains (Union[Unset, str]):
-        description_endswith (Union[Unset, str]):
-        description_gt (Union[Unset, str]):
-        description_gte (Union[Unset, str]):
-        description_icontains (Union[Unset, str]):
-        description_iendswith (Union[Unset, str]):
-        description_iexact (Union[Unset, str]):
-        description_in (Union[Unset, list[str]]):
-        description_iregex (Union[Unset, str]):
-        description_isnull (Union[Unset, bool]):
-        description_istartswith (Union[Unset, str]):
-        description_lt (Union[Unset, str]):
-        description_lte (Union[Unset, str]):
-        description_range (Union[Unset, list[str]]):
-        description_regex (Union[Unset, str]):
-        description_startswith (Union[Unset, str]):
-        limit (Union[Unset, int]):
-        name (Union[Unset, str]):
-        name_contains (Union[Unset, str]):
-        name_endswith (Union[Unset, str]):
-        name_gt (Union[Unset, str]):
-        name_gte (Union[Unset, str]):
-        name_icontains (Union[Unset, str]):
-        name_iendswith (Union[Unset, str]):
-        name_iexact (Union[Unset, str]):
-        name_in (Union[Unset, list[str]]):
-        name_iregex (Union[Unset, str]):
-        name_isnull (Union[Unset, bool]):
-        name_istartswith (Union[Unset, str]):
-        name_lt (Union[Unset, str]):
-        name_lte (Union[Unset, str]):
-        name_range (Union[Unset, list[str]]):
-        name_regex (Union[Unset, str]):
-        name_startswith (Union[Unset, str]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
+        description (str | Unset):
+        description_contains (str | Unset):
+        description_endswith (str | Unset):
+        description_gt (str | Unset):
+        description_gte (str | Unset):
+        description_icontains (str | Unset):
+        description_iendswith (str | Unset):
+        description_iexact (str | Unset):
+        description_in (list[str] | Unset):
+        description_iregex (str | Unset):
+        description_isnull (bool | Unset):
+        description_istartswith (str | Unset):
+        description_lt (str | Unset):
+        description_lte (str | Unset):
+        description_range (list[str] | Unset):
+        description_regex (str | Unset):
+        description_startswith (str | Unset):
+        limit (int | Unset):
+        name (str | Unset):
+        name_contains (str | Unset):
+        name_endswith (str | Unset):
+        name_gt (str | Unset):
+        name_gte (str | Unset):
+        name_icontains (str | Unset):
+        name_iendswith (str | Unset):
+        name_iexact (str | Unset):
+        name_in (list[str] | Unset):
+        name_iregex (str | Unset):
+        name_isnull (bool | Unset):
+        name_istartswith (str | Unset):
+        name_lt (str | Unset):
+        name_lte (str | Unset):
+        name_range (list[str] | Unset):
+        name_regex (str | Unset):
+        name_startswith (str | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

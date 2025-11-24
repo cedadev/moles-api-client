@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -11,62 +11,62 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    instrument: Union[Unset, int] = UNSET,
-    instrument_gt: Union[Unset, int] = UNSET,
-    instrument_gte: Union[Unset, int] = UNSET,
-    instrument_in: Union[Unset, list[int]] = UNSET,
-    instrument_isnull: Union[Unset, bool] = UNSET,
-    instrument_lt: Union[Unset, int] = UNSET,
-    instrument_lte: Union[Unset, int] = UNSET,
-    instrument_ob_id: Union[Unset, int] = UNSET,
-    instrument_ob_id_in: Union[Unset, list[int]] = UNSET,
-    instrument_uuid: Union[Unset, str] = UNSET,
-    instrument_uuid_in: Union[Unset, list[str]] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform: Union[Unset, int] = UNSET,
-    platform_gt: Union[Unset, int] = UNSET,
-    platform_gte: Union[Unset, int] = UNSET,
-    platform_in: Union[Unset, list[int]] = UNSET,
-    platform_isnull: Union[Unset, bool] = UNSET,
-    platform_lt: Union[Unset, int] = UNSET,
-    platform_lte: Union[Unset, int] = UNSET,
-    platform_ob_id: Union[Unset, int] = UNSET,
-    platform_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_uuid: Union[Unset, str] = UNSET,
-    platform_uuid_in: Union[Unset, list[str]] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    instrument: int | Unset = UNSET,
+    instrument_gt: int | Unset = UNSET,
+    instrument_gte: int | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
+    instrument_lt: int | Unset = UNSET,
+    instrument_lte: int | Unset = UNSET,
+    instrument_ob_id: int | Unset = UNSET,
+    instrument_ob_id_in: list[int] | Unset = UNSET,
+    instrument_uuid: str | Unset = UNSET,
+    instrument_uuid_in: list[str] | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform: int | Unset = UNSET,
+    platform_gt: int | Unset = UNSET,
+    platform_gte: int | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    platform_lt: int | Unset = UNSET,
+    platform_lte: int | Unset = UNSET,
+    platform_ob_id: int | Unset = UNSET,
+    platform_ob_id_in: list[int] | Unset = UNSET,
+    platform_uuid: str | Unset = UNSET,
+    platform_uuid_in: list[str] | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -76,7 +76,7 @@ def _get_kwargs(
 
     params["instrument__gte"] = instrument_gte
 
-    json_instrument_in: Union[Unset, list[int]] = UNSET
+    json_instrument_in: list[int] | Unset = UNSET
     if not isinstance(instrument_in, Unset):
         json_instrument_in = ",".join(map(str, instrument_in))
 
@@ -90,7 +90,7 @@ def _get_kwargs(
 
     params["instrument__ob_id"] = instrument_ob_id
 
-    json_instrument_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_instrument_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(instrument_ob_id_in, Unset):
         json_instrument_ob_id_in = ",".join(map(str, instrument_ob_id_in))
 
@@ -98,7 +98,7 @@ def _get_kwargs(
 
     params["instrument__uuid"] = instrument_uuid
 
-    json_instrument_uuid_in: Union[Unset, list[str]] = UNSET
+    json_instrument_uuid_in: list[str] | Unset = UNSET
     if not isinstance(instrument_uuid_in, Unset):
         json_instrument_uuid_in = ",".join(map(str, instrument_uuid_in))
 
@@ -124,7 +124,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -140,7 +140,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -160,7 +160,7 @@ def _get_kwargs(
 
     params["platform__gte"] = platform_gte
 
-    json_platform_in: Union[Unset, list[int]] = UNSET
+    json_platform_in: list[int] | Unset = UNSET
     if not isinstance(platform_in, Unset):
         json_platform_in = ",".join(map(str, platform_in))
 
@@ -174,7 +174,7 @@ def _get_kwargs(
 
     params["platform__ob_id"] = platform_ob_id
 
-    json_platform_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_platform_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(platform_ob_id_in, Unset):
         json_platform_ob_id_in = ",".join(map(str, platform_ob_id_in))
 
@@ -182,7 +182,7 @@ def _get_kwargs(
 
     params["platform__uuid"] = platform_uuid
 
-    json_platform_uuid_in: Union[Unset, list[str]] = UNSET
+    json_platform_uuid_in: list[str] | Unset = UNSET
     if not isinstance(platform_uuid_in, Unset):
         json_platform_uuid_in = ",".join(map(str, platform_uuid_in))
 
@@ -194,7 +194,7 @@ def _get_kwargs(
 
     params["relatedTo__gte"] = related_to_gte
 
-    json_related_to_in: Union[Unset, list[int]] = UNSET
+    json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
 
@@ -208,7 +208,7 @@ def _get_kwargs(
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
-    json_related_to_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
         json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
 
@@ -216,7 +216,7 @@ def _get_kwargs(
 
     params["relatedTo__short_code"] = related_to_short_code
 
-    json_related_to_short_code_in: Union[Unset, list[str]] = UNSET
+    json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
         json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
 
@@ -224,7 +224,7 @@ def _get_kwargs(
 
     params["relatedTo__uuid"] = related_to_uuid
 
-    json_related_to_uuid_in: Union[Unset, list[str]] = UNSET
+    json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
         json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
 
@@ -242,8 +242,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedInstrumentPlatformPairReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedInstrumentPlatformPairReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedInstrumentPlatformPairReadList.from_dict(response.json())
 
@@ -256,7 +256,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedInstrumentPlatformPairReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -269,62 +269,62 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    instrument: Union[Unset, int] = UNSET,
-    instrument_gt: Union[Unset, int] = UNSET,
-    instrument_gte: Union[Unset, int] = UNSET,
-    instrument_in: Union[Unset, list[int]] = UNSET,
-    instrument_isnull: Union[Unset, bool] = UNSET,
-    instrument_lt: Union[Unset, int] = UNSET,
-    instrument_lte: Union[Unset, int] = UNSET,
-    instrument_ob_id: Union[Unset, int] = UNSET,
-    instrument_ob_id_in: Union[Unset, list[int]] = UNSET,
-    instrument_uuid: Union[Unset, str] = UNSET,
-    instrument_uuid_in: Union[Unset, list[str]] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform: Union[Unset, int] = UNSET,
-    platform_gt: Union[Unset, int] = UNSET,
-    platform_gte: Union[Unset, int] = UNSET,
-    platform_in: Union[Unset, list[int]] = UNSET,
-    platform_isnull: Union[Unset, bool] = UNSET,
-    platform_lt: Union[Unset, int] = UNSET,
-    platform_lte: Union[Unset, int] = UNSET,
-    platform_ob_id: Union[Unset, int] = UNSET,
-    platform_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_uuid: Union[Unset, str] = UNSET,
-    platform_uuid_in: Union[Unset, list[str]] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    instrument: int | Unset = UNSET,
+    instrument_gt: int | Unset = UNSET,
+    instrument_gte: int | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
+    instrument_lt: int | Unset = UNSET,
+    instrument_lte: int | Unset = UNSET,
+    instrument_ob_id: int | Unset = UNSET,
+    instrument_ob_id_in: list[int] | Unset = UNSET,
+    instrument_uuid: str | Unset = UNSET,
+    instrument_uuid_in: list[str] | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform: int | Unset = UNSET,
+    platform_gt: int | Unset = UNSET,
+    platform_gte: int | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    platform_lt: int | Unset = UNSET,
+    platform_lte: int | Unset = UNSET,
+    platform_ob_id: int | Unset = UNSET,
+    platform_ob_id_in: list[int] | Unset = UNSET,
+    platform_uuid: str | Unset = UNSET,
+    platform_uuid_in: list[str] | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedInstrumentPlatformPairReadList]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -332,62 +332,62 @@ def sync_detailed(
     CompositeProcesses).
 
     Args:
-        instrument (Union[Unset, int]):
-        instrument_gt (Union[Unset, int]):
-        instrument_gte (Union[Unset, int]):
-        instrument_in (Union[Unset, list[int]]):
-        instrument_isnull (Union[Unset, bool]):
-        instrument_lt (Union[Unset, int]):
-        instrument_lte (Union[Unset, int]):
-        instrument_ob_id (Union[Unset, int]):
-        instrument_ob_id_in (Union[Unset, list[int]]):
-        instrument_uuid (Union[Unset, str]):
-        instrument_uuid_in (Union[Unset, list[str]]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        platform (Union[Unset, int]):
-        platform_gt (Union[Unset, int]):
-        platform_gte (Union[Unset, int]):
-        platform_in (Union[Unset, list[int]]):
-        platform_isnull (Union[Unset, bool]):
-        platform_lt (Union[Unset, int]):
-        platform_lte (Union[Unset, int]):
-        platform_ob_id (Union[Unset, int]):
-        platform_ob_id_in (Union[Unset, list[int]]):
-        platform_uuid (Union[Unset, str]):
-        platform_uuid_in (Union[Unset, list[str]]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        instrument (int | Unset):
+        instrument_gt (int | Unset):
+        instrument_gte (int | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
+        instrument_lt (int | Unset):
+        instrument_lte (int | Unset):
+        instrument_ob_id (int | Unset):
+        instrument_ob_id_in (list[int] | Unset):
+        instrument_uuid (str | Unset):
+        instrument_uuid_in (list[str] | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        platform (int | Unset):
+        platform_gt (int | Unset):
+        platform_gte (int | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        platform_lt (int | Unset):
+        platform_lte (int | Unset):
+        platform_ob_id (int | Unset):
+        platform_ob_id_in (list[int] | Unset):
+        platform_uuid (str | Unset):
+        platform_uuid_in (list[str] | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -466,125 +466,125 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    instrument: Union[Unset, int] = UNSET,
-    instrument_gt: Union[Unset, int] = UNSET,
-    instrument_gte: Union[Unset, int] = UNSET,
-    instrument_in: Union[Unset, list[int]] = UNSET,
-    instrument_isnull: Union[Unset, bool] = UNSET,
-    instrument_lt: Union[Unset, int] = UNSET,
-    instrument_lte: Union[Unset, int] = UNSET,
-    instrument_ob_id: Union[Unset, int] = UNSET,
-    instrument_ob_id_in: Union[Unset, list[int]] = UNSET,
-    instrument_uuid: Union[Unset, str] = UNSET,
-    instrument_uuid_in: Union[Unset, list[str]] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform: Union[Unset, int] = UNSET,
-    platform_gt: Union[Unset, int] = UNSET,
-    platform_gte: Union[Unset, int] = UNSET,
-    platform_in: Union[Unset, list[int]] = UNSET,
-    platform_isnull: Union[Unset, bool] = UNSET,
-    platform_lt: Union[Unset, int] = UNSET,
-    platform_lte: Union[Unset, int] = UNSET,
-    platform_ob_id: Union[Unset, int] = UNSET,
-    platform_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_uuid: Union[Unset, str] = UNSET,
-    platform_uuid_in: Union[Unset, list[str]] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedInstrumentPlatformPairReadList]:
+    instrument: int | Unset = UNSET,
+    instrument_gt: int | Unset = UNSET,
+    instrument_gte: int | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
+    instrument_lt: int | Unset = UNSET,
+    instrument_lte: int | Unset = UNSET,
+    instrument_ob_id: int | Unset = UNSET,
+    instrument_ob_id_in: list[int] | Unset = UNSET,
+    instrument_uuid: str | Unset = UNSET,
+    instrument_uuid_in: list[str] | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform: int | Unset = UNSET,
+    platform_gt: int | Unset = UNSET,
+    platform_gte: int | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    platform_lt: int | Unset = UNSET,
+    platform_lte: int | Unset = UNSET,
+    platform_ob_id: int | Unset = UNSET,
+    platform_ob_id_in: list[int] | Unset = UNSET,
+    platform_uuid: str | Unset = UNSET,
+    platform_uuid_in: list[str] | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedInstrumentPlatformPairReadList | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
     CompositeProcesses).
 
     Args:
-        instrument (Union[Unset, int]):
-        instrument_gt (Union[Unset, int]):
-        instrument_gte (Union[Unset, int]):
-        instrument_in (Union[Unset, list[int]]):
-        instrument_isnull (Union[Unset, bool]):
-        instrument_lt (Union[Unset, int]):
-        instrument_lte (Union[Unset, int]):
-        instrument_ob_id (Union[Unset, int]):
-        instrument_ob_id_in (Union[Unset, list[int]]):
-        instrument_uuid (Union[Unset, str]):
-        instrument_uuid_in (Union[Unset, list[str]]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        platform (Union[Unset, int]):
-        platform_gt (Union[Unset, int]):
-        platform_gte (Union[Unset, int]):
-        platform_in (Union[Unset, list[int]]):
-        platform_isnull (Union[Unset, bool]):
-        platform_lt (Union[Unset, int]):
-        platform_lte (Union[Unset, int]):
-        platform_ob_id (Union[Unset, int]):
-        platform_ob_id_in (Union[Unset, list[int]]):
-        platform_uuid (Union[Unset, str]):
-        platform_uuid_in (Union[Unset, list[str]]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        instrument (int | Unset):
+        instrument_gt (int | Unset):
+        instrument_gte (int | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
+        instrument_lt (int | Unset):
+        instrument_lte (int | Unset):
+        instrument_ob_id (int | Unset):
+        instrument_ob_id_in (list[int] | Unset):
+        instrument_uuid (str | Unset):
+        instrument_uuid_in (list[str] | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        platform (int | Unset):
+        platform_gt (int | Unset):
+        platform_gte (int | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        platform_lt (int | Unset):
+        platform_lte (int | Unset):
+        platform_ob_id (int | Unset):
+        platform_ob_id_in (list[int] | Unset):
+        platform_uuid (str | Unset):
+        platform_uuid_in (list[str] | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -658,62 +658,62 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    instrument: Union[Unset, int] = UNSET,
-    instrument_gt: Union[Unset, int] = UNSET,
-    instrument_gte: Union[Unset, int] = UNSET,
-    instrument_in: Union[Unset, list[int]] = UNSET,
-    instrument_isnull: Union[Unset, bool] = UNSET,
-    instrument_lt: Union[Unset, int] = UNSET,
-    instrument_lte: Union[Unset, int] = UNSET,
-    instrument_ob_id: Union[Unset, int] = UNSET,
-    instrument_ob_id_in: Union[Unset, list[int]] = UNSET,
-    instrument_uuid: Union[Unset, str] = UNSET,
-    instrument_uuid_in: Union[Unset, list[str]] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform: Union[Unset, int] = UNSET,
-    platform_gt: Union[Unset, int] = UNSET,
-    platform_gte: Union[Unset, int] = UNSET,
-    platform_in: Union[Unset, list[int]] = UNSET,
-    platform_isnull: Union[Unset, bool] = UNSET,
-    platform_lt: Union[Unset, int] = UNSET,
-    platform_lte: Union[Unset, int] = UNSET,
-    platform_ob_id: Union[Unset, int] = UNSET,
-    platform_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_uuid: Union[Unset, str] = UNSET,
-    platform_uuid_in: Union[Unset, list[str]] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
+    instrument: int | Unset = UNSET,
+    instrument_gt: int | Unset = UNSET,
+    instrument_gte: int | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
+    instrument_lt: int | Unset = UNSET,
+    instrument_lte: int | Unset = UNSET,
+    instrument_ob_id: int | Unset = UNSET,
+    instrument_ob_id_in: list[int] | Unset = UNSET,
+    instrument_uuid: str | Unset = UNSET,
+    instrument_uuid_in: list[str] | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform: int | Unset = UNSET,
+    platform_gt: int | Unset = UNSET,
+    platform_gte: int | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    platform_lt: int | Unset = UNSET,
+    platform_lte: int | Unset = UNSET,
+    platform_ob_id: int | Unset = UNSET,
+    platform_ob_id_in: list[int] | Unset = UNSET,
+    platform_uuid: str | Unset = UNSET,
+    platform_uuid_in: list[str] | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
 ) -> Response[PaginatedInstrumentPlatformPairReadList]:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
@@ -721,62 +721,62 @@ async def asyncio_detailed(
     CompositeProcesses).
 
     Args:
-        instrument (Union[Unset, int]):
-        instrument_gt (Union[Unset, int]):
-        instrument_gte (Union[Unset, int]):
-        instrument_in (Union[Unset, list[int]]):
-        instrument_isnull (Union[Unset, bool]):
-        instrument_lt (Union[Unset, int]):
-        instrument_lte (Union[Unset, int]):
-        instrument_ob_id (Union[Unset, int]):
-        instrument_ob_id_in (Union[Unset, list[int]]):
-        instrument_uuid (Union[Unset, str]):
-        instrument_uuid_in (Union[Unset, list[str]]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        platform (Union[Unset, int]):
-        platform_gt (Union[Unset, int]):
-        platform_gte (Union[Unset, int]):
-        platform_in (Union[Unset, list[int]]):
-        platform_isnull (Union[Unset, bool]):
-        platform_lt (Union[Unset, int]):
-        platform_lte (Union[Unset, int]):
-        platform_ob_id (Union[Unset, int]):
-        platform_ob_id_in (Union[Unset, list[int]]):
-        platform_uuid (Union[Unset, str]):
-        platform_uuid_in (Union[Unset, list[str]]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        instrument (int | Unset):
+        instrument_gt (int | Unset):
+        instrument_gte (int | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
+        instrument_lt (int | Unset):
+        instrument_lte (int | Unset):
+        instrument_ob_id (int | Unset):
+        instrument_ob_id_in (list[int] | Unset):
+        instrument_uuid (str | Unset):
+        instrument_uuid_in (list[str] | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        platform (int | Unset):
+        platform_gt (int | Unset):
+        platform_gte (int | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        platform_lt (int | Unset):
+        platform_lte (int | Unset):
+        platform_ob_id (int | Unset):
+        platform_ob_id_in (list[int] | Unset):
+        platform_uuid (str | Unset):
+        platform_uuid_in (list[str] | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -853,125 +853,125 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    instrument: Union[Unset, int] = UNSET,
-    instrument_gt: Union[Unset, int] = UNSET,
-    instrument_gte: Union[Unset, int] = UNSET,
-    instrument_in: Union[Unset, list[int]] = UNSET,
-    instrument_isnull: Union[Unset, bool] = UNSET,
-    instrument_lt: Union[Unset, int] = UNSET,
-    instrument_lte: Union[Unset, int] = UNSET,
-    instrument_ob_id: Union[Unset, int] = UNSET,
-    instrument_ob_id_in: Union[Unset, list[int]] = UNSET,
-    instrument_uuid: Union[Unset, str] = UNSET,
-    instrument_uuid_in: Union[Unset, list[str]] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    platform: Union[Unset, int] = UNSET,
-    platform_gt: Union[Unset, int] = UNSET,
-    platform_gte: Union[Unset, int] = UNSET,
-    platform_in: Union[Unset, list[int]] = UNSET,
-    platform_isnull: Union[Unset, bool] = UNSET,
-    platform_lt: Union[Unset, int] = UNSET,
-    platform_lte: Union[Unset, int] = UNSET,
-    platform_ob_id: Union[Unset, int] = UNSET,
-    platform_ob_id_in: Union[Unset, list[int]] = UNSET,
-    platform_uuid: Union[Unset, str] = UNSET,
-    platform_uuid_in: Union[Unset, list[str]] = UNSET,
-    related_to: Union[Unset, int] = UNSET,
-    related_to_gt: Union[Unset, int] = UNSET,
-    related_to_gte: Union[Unset, int] = UNSET,
-    related_to_in: Union[Unset, list[int]] = UNSET,
-    related_to_isnull: Union[Unset, bool] = UNSET,
-    related_to_lt: Union[Unset, int] = UNSET,
-    related_to_lte: Union[Unset, int] = UNSET,
-    related_to_ob_id: Union[Unset, int] = UNSET,
-    related_to_ob_id_in: Union[Unset, list[int]] = UNSET,
-    related_to_short_code: Union[Unset, str] = UNSET,
-    related_to_short_code_in: Union[Unset, list[str]] = UNSET,
-    related_to_uuid: Union[Unset, str] = UNSET,
-    related_to_uuid_in: Union[Unset, list[str]] = UNSET,
-) -> Optional[PaginatedInstrumentPlatformPairReadList]:
+    instrument: int | Unset = UNSET,
+    instrument_gt: int | Unset = UNSET,
+    instrument_gte: int | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
+    instrument_lt: int | Unset = UNSET,
+    instrument_lte: int | Unset = UNSET,
+    instrument_ob_id: int | Unset = UNSET,
+    instrument_ob_id_in: list[int] | Unset = UNSET,
+    instrument_uuid: str | Unset = UNSET,
+    instrument_uuid_in: list[str] | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    platform: int | Unset = UNSET,
+    platform_gt: int | Unset = UNSET,
+    platform_gte: int | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    platform_lt: int | Unset = UNSET,
+    platform_lte: int | Unset = UNSET,
+    platform_ob_id: int | Unset = UNSET,
+    platform_ob_id_in: list[int] | Unset = UNSET,
+    platform_uuid: str | Unset = UNSET,
+    platform_uuid_in: list[str] | Unset = UNSET,
+    related_to: int | Unset = UNSET,
+    related_to_gt: int | Unset = UNSET,
+    related_to_gte: int | Unset = UNSET,
+    related_to_in: list[int] | Unset = UNSET,
+    related_to_isnull: bool | Unset = UNSET,
+    related_to_lt: int | Unset = UNSET,
+    related_to_lte: int | Unset = UNSET,
+    related_to_ob_id: int | Unset = UNSET,
+    related_to_ob_id_in: list[int] | Unset = UNSET,
+    related_to_short_code: str | Unset = UNSET,
+    related_to_short_code_in: list[str] | Unset = UNSET,
+    related_to_uuid: str | Unset = UNSET,
+    related_to_uuid_in: list[str] | Unset = UNSET,
+) -> PaginatedInstrumentPlatformPairReadList | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
     CompositeProcesses).
 
     Args:
-        instrument (Union[Unset, int]):
-        instrument_gt (Union[Unset, int]):
-        instrument_gte (Union[Unset, int]):
-        instrument_in (Union[Unset, list[int]]):
-        instrument_isnull (Union[Unset, bool]):
-        instrument_lt (Union[Unset, int]):
-        instrument_lte (Union[Unset, int]):
-        instrument_ob_id (Union[Unset, int]):
-        instrument_ob_id_in (Union[Unset, list[int]]):
-        instrument_uuid (Union[Unset, str]):
-        instrument_uuid_in (Union[Unset, list[str]]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        platform (Union[Unset, int]):
-        platform_gt (Union[Unset, int]):
-        platform_gte (Union[Unset, int]):
-        platform_in (Union[Unset, list[int]]):
-        platform_isnull (Union[Unset, bool]):
-        platform_lt (Union[Unset, int]):
-        platform_lte (Union[Unset, int]):
-        platform_ob_id (Union[Unset, int]):
-        platform_ob_id_in (Union[Unset, list[int]]):
-        platform_uuid (Union[Unset, str]):
-        platform_uuid_in (Union[Unset, list[str]]):
-        related_to (Union[Unset, int]):
-        related_to_gt (Union[Unset, int]):
-        related_to_gte (Union[Unset, int]):
-        related_to_in (Union[Unset, list[int]]):
-        related_to_isnull (Union[Unset, bool]):
-        related_to_lt (Union[Unset, int]):
-        related_to_lte (Union[Unset, int]):
-        related_to_ob_id (Union[Unset, int]):
-        related_to_ob_id_in (Union[Unset, list[int]]):
-        related_to_short_code (Union[Unset, str]):
-        related_to_short_code_in (Union[Unset, list[str]]):
-        related_to_uuid (Union[Unset, str]):
-        related_to_uuid_in (Union[Unset, list[str]]):
+        instrument (int | Unset):
+        instrument_gt (int | Unset):
+        instrument_gte (int | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
+        instrument_lt (int | Unset):
+        instrument_lte (int | Unset):
+        instrument_ob_id (int | Unset):
+        instrument_ob_id_in (list[int] | Unset):
+        instrument_uuid (str | Unset):
+        instrument_uuid_in (list[str] | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        platform (int | Unset):
+        platform_gt (int | Unset):
+        platform_gte (int | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        platform_lt (int | Unset):
+        platform_lte (int | Unset):
+        platform_ob_id (int | Unset):
+        platform_ob_id_in (list[int] | Unset):
+        platform_uuid (str | Unset):
+        platform_uuid_in (list[str] | Unset):
+        related_to (int | Unset):
+        related_to_gt (int | Unset):
+        related_to_gte (int | Unset):
+        related_to_in (list[int] | Unset):
+        related_to_isnull (bool | Unset):
+        related_to_lt (int | Unset):
+        related_to_lte (int | Unset):
+        related_to_ob_id (int | Unset):
+        related_to_ob_id_in (list[int] | Unset):
+        related_to_short_code (str | Unset):
+        related_to_short_code_in (list[str] | Unset):
+        related_to_uuid (str | Unset):
+        related_to_uuid_in (list[str] | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -20,7 +20,7 @@ def _get_kwargs(
     return _kwargs
 
 
-def _parse_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Optional[PartyRead]:
+def _parse_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> PartyRead | None:
     if response.status_code == 200:
         response_200 = PartyRead.from_dict(response.json())
 
@@ -32,7 +32,7 @@ def _parse_response(*, client: Union[AuthenticatedClient, Client], response: htt
         return None
 
 
-def _build_response(*, client: Union[AuthenticatedClient, Client], response: httpx.Response) -> Response[PartyRead]:
+def _build_response(*, client: AuthenticatedClient | Client, response: httpx.Response) -> Response[PartyRead]:
     return Response(
         status_code=HTTPStatus(response.status_code),
         content=response.content,
@@ -76,7 +76,7 @@ def sync(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[PartyRead]:
+) -> PartyRead | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.
@@ -131,7 +131,7 @@ async def asyncio(
     ob_id: int,
     *,
     client: AuthenticatedClient,
-) -> Optional[PartyRead]:
+) -> PartyRead | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
     responsiblepartyinfo_set serialisation.

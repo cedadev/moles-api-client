@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import Any, TypeVar, Union
+from typing import Any, TypeVar
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -16,8 +18,8 @@ class PatchedRelatedObservationInfoWriteRequest:
     via the 'fields' keyword argument.
 
         Attributes:
-            subject_observation (Union[Unset, int]):
-            relation_type (Union[Unset, RelationTypeEnum]): * `IsSupplementTo` - supplement to
+            subject_observation (int | Unset):
+            relation_type (RelationTypeEnum | Unset): * `IsSupplementTo` - supplement to
                 * `IsSupplementedBy` - supplemented by
                 * `Continues` - continues
                 * `IsNewVersionOf` - supersedes
@@ -26,18 +28,18 @@ class PatchedRelatedObservationInfoWriteRequest:
                 * `HasMetadata` - uses metadata from
                 * `IsDerivedFrom` - derived from
                 * `IsPartOf` - is part of (dataset only)
-            object_observation (Union[Unset, int]):
+            object_observation (int | Unset):
     """
 
-    subject_observation: Union[Unset, int] = UNSET
-    relation_type: Union[Unset, RelationTypeEnum] = UNSET
-    object_observation: Union[Unset, int] = UNSET
+    subject_observation: int | Unset = UNSET
+    relation_type: RelationTypeEnum | Unset = UNSET
+    object_observation: int | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         subject_observation = self.subject_observation
 
-        relation_type: Union[Unset, str] = UNSET
+        relation_type: str | Unset = UNSET
         if not isinstance(self.relation_type, Unset):
             relation_type = self.relation_type.value
 
@@ -61,7 +63,7 @@ class PatchedRelatedObservationInfoWriteRequest:
         subject_observation = d.pop("subjectObservation", UNSET)
 
         _relation_type = d.pop("relationType", UNSET)
-        relation_type: Union[Unset, RelationTypeEnum]
+        relation_type: RelationTypeEnum | Unset
         if isinstance(_relation_type, Unset):
             relation_type = UNSET
         else:

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -30,8 +30,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[InstrumentPlatformPairWrite]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> InstrumentPlatformPairWrite | None:
     if response.status_code == 201:
         response_201 = InstrumentPlatformPairWrite.from_dict(response.json())
 
@@ -44,7 +44,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[InstrumentPlatformPairWrite]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -92,7 +92,7 @@ def sync(
     *,
     client: AuthenticatedClient,
     body: InstrumentPlatformPairWriteRequest,
-) -> Optional[InstrumentPlatformPairWrite]:
+) -> InstrumentPlatformPairWrite | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via
@@ -153,7 +153,7 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     body: InstrumentPlatformPairWriteRequest,
-) -> Optional[InstrumentPlatformPairWrite]:
+) -> InstrumentPlatformPairWrite | None:
     """Get a list of InstrumentPlaformPair objects. InstrumentPlaformPairs are used within Acquisitions
     which
     enable linking between Instruments, Platforms and Observations (though may be via

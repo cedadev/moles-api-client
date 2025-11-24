@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,24 +23,24 @@ class OnlineResourceRead:
 
         Attributes:
             ob_id (int):
-            function (Union[BlankEnum, FunctionEnum, None]):
+            function (BlankEnum | FunctionEnum | None):
             linkage (str):
-            name (Union[None, str]):
+            name (None | str):
             related_to (Referenceable): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
     ob_id: int
-    function: Union[BlankEnum, FunctionEnum, None]
+    function: BlankEnum | FunctionEnum | None
     linkage: str
-    name: Union[None, str]
-    related_to: "Referenceable"
+    name: None | str
+    related_to: Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         ob_id = self.ob_id
 
-        function: Union[None, str]
+        function: None | str
         if isinstance(self.function, FunctionEnum):
             function = self.function.value
         elif isinstance(self.function, BlankEnum):
@@ -48,7 +50,7 @@ class OnlineResourceRead:
 
         linkage = self.linkage
 
-        name: Union[None, str]
+        name: None | str
         name = self.name
 
         related_to = self.related_to.to_dict()
@@ -74,7 +76,7 @@ class OnlineResourceRead:
         d = dict(src_dict)
         ob_id = d.pop("ob_id")
 
-        def _parse_function(data: object) -> Union[BlankEnum, FunctionEnum, None]:
+        def _parse_function(data: object) -> BlankEnum | FunctionEnum | None:
             if data is None:
                 return data
             try:
@@ -83,7 +85,7 @@ class OnlineResourceRead:
                 function_type_0 = FunctionEnum(data)
 
                 return function_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             try:
                 if not isinstance(data, str):
@@ -91,18 +93,18 @@ class OnlineResourceRead:
                 function_type_1 = BlankEnum(data)
 
                 return function_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union[BlankEnum, FunctionEnum, None], data)
+            return cast(BlankEnum | FunctionEnum | None, data)
 
         function = _parse_function(d.pop("function"))
 
         linkage = d.pop("linkage")
 
-        def _parse_name(data: object) -> Union[None, str]:
+        def _parse_name(data: object) -> None | str:
             if data is None:
                 return data
-            return cast(Union[None, str], data)
+            return cast(None | str, data)
 
         name = _parse_name(d.pop("name"))
 

@@ -1,5 +1,5 @@
 from http import HTTPStatus
-from typing import Any, Optional, Union
+from typing import Any
 
 import httpx
 
@@ -12,128 +12,128 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
-    access_category: Union[Unset, ConstraintsListAccessCategory] = UNSET,
-    access_category_contains: Union[Unset, str] = UNSET,
-    access_category_endswith: Union[Unset, str] = UNSET,
-    access_category_gt: Union[Unset, str] = UNSET,
-    access_category_gte: Union[Unset, str] = UNSET,
-    access_category_icontains: Union[Unset, str] = UNSET,
-    access_category_iendswith: Union[Unset, str] = UNSET,
-    access_category_iexact: Union[Unset, str] = UNSET,
-    access_category_in: Union[Unset, list[str]] = UNSET,
-    access_category_iregex: Union[Unset, str] = UNSET,
-    access_category_isnull: Union[Unset, bool] = UNSET,
-    access_category_istartswith: Union[Unset, str] = UNSET,
-    access_category_lt: Union[Unset, str] = UNSET,
-    access_category_lte: Union[Unset, str] = UNSET,
-    access_category_range: Union[Unset, list[str]] = UNSET,
-    access_category_regex: Union[Unset, str] = UNSET,
-    access_category_startswith: Union[Unset, str] = UNSET,
-    access_constraints: Union[Unset, str] = UNSET,
-    access_constraints_contains: Union[Unset, str] = UNSET,
-    access_constraints_endswith: Union[Unset, str] = UNSET,
-    access_constraints_gt: Union[Unset, str] = UNSET,
-    access_constraints_gte: Union[Unset, str] = UNSET,
-    access_constraints_icontains: Union[Unset, str] = UNSET,
-    access_constraints_iendswith: Union[Unset, str] = UNSET,
-    access_constraints_iexact: Union[Unset, str] = UNSET,
-    access_constraints_in: Union[Unset, list[str]] = UNSET,
-    access_constraints_iregex: Union[Unset, str] = UNSET,
-    access_constraints_isnull: Union[Unset, bool] = UNSET,
-    access_constraints_istartswith: Union[Unset, str] = UNSET,
-    access_constraints_lt: Union[Unset, str] = UNSET,
-    access_constraints_lte: Union[Unset, str] = UNSET,
-    access_constraints_range: Union[Unset, list[str]] = UNSET,
-    access_constraints_regex: Union[Unset, str] = UNSET,
-    access_constraints_startswith: Union[Unset, str] = UNSET,
-    access_roles: Union[Unset, str] = UNSET,
-    access_roles_contains: Union[Unset, str] = UNSET,
-    access_roles_endswith: Union[Unset, str] = UNSET,
-    access_roles_gt: Union[Unset, str] = UNSET,
-    access_roles_gte: Union[Unset, str] = UNSET,
-    access_roles_icontains: Union[Unset, str] = UNSET,
-    access_roles_iendswith: Union[Unset, str] = UNSET,
-    access_roles_iexact: Union[Unset, str] = UNSET,
-    access_roles_in: Union[Unset, list[str]] = UNSET,
-    access_roles_iregex: Union[Unset, str] = UNSET,
-    access_roles_isnull: Union[Unset, bool] = UNSET,
-    access_roles_istartswith: Union[Unset, str] = UNSET,
-    access_roles_lt: Union[Unset, str] = UNSET,
-    access_roles_lte: Union[Unset, str] = UNSET,
-    access_roles_range: Union[Unset, list[str]] = UNSET,
-    access_roles_regex: Union[Unset, str] = UNSET,
-    access_roles_startswith: Union[Unset, str] = UNSET,
-    label: Union[Unset, str] = UNSET,
-    label_contains: Union[Unset, str] = UNSET,
-    label_endswith: Union[Unset, str] = UNSET,
-    label_gt: Union[Unset, str] = UNSET,
-    label_gte: Union[Unset, str] = UNSET,
-    label_icontains: Union[Unset, str] = UNSET,
-    label_iendswith: Union[Unset, str] = UNSET,
-    label_iexact: Union[Unset, str] = UNSET,
-    label_in: Union[Unset, list[str]] = UNSET,
-    label_iregex: Union[Unset, str] = UNSET,
-    label_isnull: Union[Unset, bool] = UNSET,
-    label_istartswith: Union[Unset, str] = UNSET,
-    label_lt: Union[Unset, str] = UNSET,
-    label_lte: Union[Unset, str] = UNSET,
-    label_range: Union[Unset, list[str]] = UNSET,
-    label_regex: Union[Unset, str] = UNSET,
-    label_startswith: Union[Unset, str] = UNSET,
-    licence: Union[Unset, int] = UNSET,
-    licence_gt: Union[Unset, int] = UNSET,
-    licence_gte: Union[Unset, int] = UNSET,
-    licence_in: Union[Unset, list[int]] = UNSET,
-    licence_isnull: Union[Unset, bool] = UNSET,
-    licence_licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_licence_classifications_classification_contains: Union[Unset, str] = UNSET,
-    licence_licence_url: Union[Unset, str] = UNSET,
-    licence_licence_url_contains: Union[Unset, str] = UNSET,
-    licence_licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_lt: Union[Unset, int] = UNSET,
-    licence_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    use_limitation: Union[Unset, str] = UNSET,
-    use_limitation_contains: Union[Unset, str] = UNSET,
-    use_limitation_endswith: Union[Unset, str] = UNSET,
-    use_limitation_gt: Union[Unset, str] = UNSET,
-    use_limitation_gte: Union[Unset, str] = UNSET,
-    use_limitation_icontains: Union[Unset, str] = UNSET,
-    use_limitation_iendswith: Union[Unset, str] = UNSET,
-    use_limitation_iexact: Union[Unset, str] = UNSET,
-    use_limitation_in: Union[Unset, list[str]] = UNSET,
-    use_limitation_iregex: Union[Unset, str] = UNSET,
-    use_limitation_isnull: Union[Unset, bool] = UNSET,
-    use_limitation_istartswith: Union[Unset, str] = UNSET,
-    use_limitation_lt: Union[Unset, str] = UNSET,
-    use_limitation_lte: Union[Unset, str] = UNSET,
-    use_limitation_range: Union[Unset, list[str]] = UNSET,
-    use_limitation_regex: Union[Unset, str] = UNSET,
-    use_limitation_startswith: Union[Unset, str] = UNSET,
+    access_category: ConstraintsListAccessCategory | Unset = UNSET,
+    access_category_contains: str | Unset = UNSET,
+    access_category_endswith: str | Unset = UNSET,
+    access_category_gt: str | Unset = UNSET,
+    access_category_gte: str | Unset = UNSET,
+    access_category_icontains: str | Unset = UNSET,
+    access_category_iendswith: str | Unset = UNSET,
+    access_category_iexact: str | Unset = UNSET,
+    access_category_in: list[str] | Unset = UNSET,
+    access_category_iregex: str | Unset = UNSET,
+    access_category_isnull: bool | Unset = UNSET,
+    access_category_istartswith: str | Unset = UNSET,
+    access_category_lt: str | Unset = UNSET,
+    access_category_lte: str | Unset = UNSET,
+    access_category_range: list[str] | Unset = UNSET,
+    access_category_regex: str | Unset = UNSET,
+    access_category_startswith: str | Unset = UNSET,
+    access_constraints: str | Unset = UNSET,
+    access_constraints_contains: str | Unset = UNSET,
+    access_constraints_endswith: str | Unset = UNSET,
+    access_constraints_gt: str | Unset = UNSET,
+    access_constraints_gte: str | Unset = UNSET,
+    access_constraints_icontains: str | Unset = UNSET,
+    access_constraints_iendswith: str | Unset = UNSET,
+    access_constraints_iexact: str | Unset = UNSET,
+    access_constraints_in: list[str] | Unset = UNSET,
+    access_constraints_iregex: str | Unset = UNSET,
+    access_constraints_isnull: bool | Unset = UNSET,
+    access_constraints_istartswith: str | Unset = UNSET,
+    access_constraints_lt: str | Unset = UNSET,
+    access_constraints_lte: str | Unset = UNSET,
+    access_constraints_range: list[str] | Unset = UNSET,
+    access_constraints_regex: str | Unset = UNSET,
+    access_constraints_startswith: str | Unset = UNSET,
+    access_roles: str | Unset = UNSET,
+    access_roles_contains: str | Unset = UNSET,
+    access_roles_endswith: str | Unset = UNSET,
+    access_roles_gt: str | Unset = UNSET,
+    access_roles_gte: str | Unset = UNSET,
+    access_roles_icontains: str | Unset = UNSET,
+    access_roles_iendswith: str | Unset = UNSET,
+    access_roles_iexact: str | Unset = UNSET,
+    access_roles_in: list[str] | Unset = UNSET,
+    access_roles_iregex: str | Unset = UNSET,
+    access_roles_isnull: bool | Unset = UNSET,
+    access_roles_istartswith: str | Unset = UNSET,
+    access_roles_lt: str | Unset = UNSET,
+    access_roles_lte: str | Unset = UNSET,
+    access_roles_range: list[str] | Unset = UNSET,
+    access_roles_regex: str | Unset = UNSET,
+    access_roles_startswith: str | Unset = UNSET,
+    label: str | Unset = UNSET,
+    label_contains: str | Unset = UNSET,
+    label_endswith: str | Unset = UNSET,
+    label_gt: str | Unset = UNSET,
+    label_gte: str | Unset = UNSET,
+    label_icontains: str | Unset = UNSET,
+    label_iendswith: str | Unset = UNSET,
+    label_iexact: str | Unset = UNSET,
+    label_in: list[str] | Unset = UNSET,
+    label_iregex: str | Unset = UNSET,
+    label_isnull: bool | Unset = UNSET,
+    label_istartswith: str | Unset = UNSET,
+    label_lt: str | Unset = UNSET,
+    label_lte: str | Unset = UNSET,
+    label_range: list[str] | Unset = UNSET,
+    label_regex: str | Unset = UNSET,
+    label_startswith: str | Unset = UNSET,
+    licence: int | Unset = UNSET,
+    licence_gt: int | Unset = UNSET,
+    licence_gte: int | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
+    licence_licence_classifications_classification: str | Unset = UNSET,
+    licence_licence_classifications_classification_contains: str | Unset = UNSET,
+    licence_licence_url: str | Unset = UNSET,
+    licence_licence_url_contains: str | Unset = UNSET,
+    licence_licence_url_in: list[str] | Unset = UNSET,
+    licence_lt: int | Unset = UNSET,
+    licence_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    use_limitation: str | Unset = UNSET,
+    use_limitation_contains: str | Unset = UNSET,
+    use_limitation_endswith: str | Unset = UNSET,
+    use_limitation_gt: str | Unset = UNSET,
+    use_limitation_gte: str | Unset = UNSET,
+    use_limitation_icontains: str | Unset = UNSET,
+    use_limitation_iendswith: str | Unset = UNSET,
+    use_limitation_iexact: str | Unset = UNSET,
+    use_limitation_in: list[str] | Unset = UNSET,
+    use_limitation_iregex: str | Unset = UNSET,
+    use_limitation_isnull: bool | Unset = UNSET,
+    use_limitation_istartswith: str | Unset = UNSET,
+    use_limitation_lt: str | Unset = UNSET,
+    use_limitation_lte: str | Unset = UNSET,
+    use_limitation_range: list[str] | Unset = UNSET,
+    use_limitation_regex: str | Unset = UNSET,
+    use_limitation_startswith: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
-    json_access_category: Union[Unset, str] = UNSET
+    json_access_category: str | Unset = UNSET
     if not isinstance(access_category, Unset):
         json_access_category = access_category.value
 
@@ -153,7 +153,7 @@ def _get_kwargs(
 
     params["accessCategory__iexact"] = access_category_iexact
 
-    json_access_category_in: Union[Unset, list[str]] = UNSET
+    json_access_category_in: list[str] | Unset = UNSET
     if not isinstance(access_category_in, Unset):
         json_access_category_in = ",".join(map(str, access_category_in))
 
@@ -169,7 +169,7 @@ def _get_kwargs(
 
     params["accessCategory__lte"] = access_category_lte
 
-    json_access_category_range: Union[Unset, list[str]] = UNSET
+    json_access_category_range: list[str] | Unset = UNSET
     if not isinstance(access_category_range, Unset):
         json_access_category_range = ",".join(map(str, access_category_range))
 
@@ -195,7 +195,7 @@ def _get_kwargs(
 
     params["accessConstraints__iexact"] = access_constraints_iexact
 
-    json_access_constraints_in: Union[Unset, list[str]] = UNSET
+    json_access_constraints_in: list[str] | Unset = UNSET
     if not isinstance(access_constraints_in, Unset):
         json_access_constraints_in = ",".join(map(str, access_constraints_in))
 
@@ -211,7 +211,7 @@ def _get_kwargs(
 
     params["accessConstraints__lte"] = access_constraints_lte
 
-    json_access_constraints_range: Union[Unset, list[str]] = UNSET
+    json_access_constraints_range: list[str] | Unset = UNSET
     if not isinstance(access_constraints_range, Unset):
         json_access_constraints_range = ",".join(map(str, access_constraints_range))
 
@@ -237,7 +237,7 @@ def _get_kwargs(
 
     params["accessRoles__iexact"] = access_roles_iexact
 
-    json_access_roles_in: Union[Unset, list[str]] = UNSET
+    json_access_roles_in: list[str] | Unset = UNSET
     if not isinstance(access_roles_in, Unset):
         json_access_roles_in = ",".join(map(str, access_roles_in))
 
@@ -253,7 +253,7 @@ def _get_kwargs(
 
     params["accessRoles__lte"] = access_roles_lte
 
-    json_access_roles_range: Union[Unset, list[str]] = UNSET
+    json_access_roles_range: list[str] | Unset = UNSET
     if not isinstance(access_roles_range, Unset):
         json_access_roles_range = ",".join(map(str, access_roles_range))
 
@@ -279,7 +279,7 @@ def _get_kwargs(
 
     params["label__iexact"] = label_iexact
 
-    json_label_in: Union[Unset, list[str]] = UNSET
+    json_label_in: list[str] | Unset = UNSET
     if not isinstance(label_in, Unset):
         json_label_in = ",".join(map(str, label_in))
 
@@ -295,7 +295,7 @@ def _get_kwargs(
 
     params["label__lte"] = label_lte
 
-    json_label_range: Union[Unset, list[str]] = UNSET
+    json_label_range: list[str] | Unset = UNSET
     if not isinstance(label_range, Unset):
         json_label_range = ",".join(map(str, label_range))
 
@@ -311,7 +311,7 @@ def _get_kwargs(
 
     params["licence__gte"] = licence_gte
 
-    json_licence_in: Union[Unset, list[int]] = UNSET
+    json_licence_in: list[int] | Unset = UNSET
     if not isinstance(licence_in, Unset):
         json_licence_in = ",".join(map(str, licence_in))
 
@@ -329,7 +329,7 @@ def _get_kwargs(
 
     params["licence__licenceURL__contains"] = licence_licence_url_contains
 
-    json_licence_licence_url_in: Union[Unset, list[str]] = UNSET
+    json_licence_licence_url_in: list[str] | Unset = UNSET
     if not isinstance(licence_licence_url_in, Unset):
         json_licence_licence_url_in = ",".join(map(str, licence_licence_url_in))
 
@@ -359,7 +359,7 @@ def _get_kwargs(
 
     params["ob_id__iexact"] = ob_id_iexact
 
-    json_ob_id_in: Union[Unset, list[int]] = UNSET
+    json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
         json_ob_id_in = ",".join(map(str, ob_id_in))
 
@@ -375,7 +375,7 @@ def _get_kwargs(
 
     params["ob_id__lte"] = ob_id_lte
 
-    json_ob_id_range: Union[Unset, list[int]] = UNSET
+    json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
         json_ob_id_range = ",".join(map(str, ob_id_range))
 
@@ -405,7 +405,7 @@ def _get_kwargs(
 
     params["useLimitation__iexact"] = use_limitation_iexact
 
-    json_use_limitation_in: Union[Unset, list[str]] = UNSET
+    json_use_limitation_in: list[str] | Unset = UNSET
     if not isinstance(use_limitation_in, Unset):
         json_use_limitation_in = ",".join(map(str, use_limitation_in))
 
@@ -421,7 +421,7 @@ def _get_kwargs(
 
     params["useLimitation__lte"] = use_limitation_lte
 
-    json_use_limitation_range: Union[Unset, list[str]] = UNSET
+    json_use_limitation_range: list[str] | Unset = UNSET
     if not isinstance(use_limitation_range, Unset):
         json_use_limitation_range = ",".join(map(str, use_limitation_range))
 
@@ -443,8 +443,8 @@ def _get_kwargs(
 
 
 def _parse_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
-) -> Optional[PaginatedConstraintsReadList]:
+    *, client: AuthenticatedClient | Client, response: httpx.Response
+) -> PaginatedConstraintsReadList | None:
     if response.status_code == 200:
         response_200 = PaginatedConstraintsReadList.from_dict(response.json())
 
@@ -457,7 +457,7 @@ def _parse_response(
 
 
 def _build_response(
-    *, client: Union[AuthenticatedClient, Client], response: httpx.Response
+    *, client: AuthenticatedClient | Client, response: httpx.Response
 ) -> Response[PaginatedConstraintsReadList]:
     return Response(
         status_code=HTTPStatus(response.status_code),
@@ -470,246 +470,246 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
-    access_category: Union[Unset, ConstraintsListAccessCategory] = UNSET,
-    access_category_contains: Union[Unset, str] = UNSET,
-    access_category_endswith: Union[Unset, str] = UNSET,
-    access_category_gt: Union[Unset, str] = UNSET,
-    access_category_gte: Union[Unset, str] = UNSET,
-    access_category_icontains: Union[Unset, str] = UNSET,
-    access_category_iendswith: Union[Unset, str] = UNSET,
-    access_category_iexact: Union[Unset, str] = UNSET,
-    access_category_in: Union[Unset, list[str]] = UNSET,
-    access_category_iregex: Union[Unset, str] = UNSET,
-    access_category_isnull: Union[Unset, bool] = UNSET,
-    access_category_istartswith: Union[Unset, str] = UNSET,
-    access_category_lt: Union[Unset, str] = UNSET,
-    access_category_lte: Union[Unset, str] = UNSET,
-    access_category_range: Union[Unset, list[str]] = UNSET,
-    access_category_regex: Union[Unset, str] = UNSET,
-    access_category_startswith: Union[Unset, str] = UNSET,
-    access_constraints: Union[Unset, str] = UNSET,
-    access_constraints_contains: Union[Unset, str] = UNSET,
-    access_constraints_endswith: Union[Unset, str] = UNSET,
-    access_constraints_gt: Union[Unset, str] = UNSET,
-    access_constraints_gte: Union[Unset, str] = UNSET,
-    access_constraints_icontains: Union[Unset, str] = UNSET,
-    access_constraints_iendswith: Union[Unset, str] = UNSET,
-    access_constraints_iexact: Union[Unset, str] = UNSET,
-    access_constraints_in: Union[Unset, list[str]] = UNSET,
-    access_constraints_iregex: Union[Unset, str] = UNSET,
-    access_constraints_isnull: Union[Unset, bool] = UNSET,
-    access_constraints_istartswith: Union[Unset, str] = UNSET,
-    access_constraints_lt: Union[Unset, str] = UNSET,
-    access_constraints_lte: Union[Unset, str] = UNSET,
-    access_constraints_range: Union[Unset, list[str]] = UNSET,
-    access_constraints_regex: Union[Unset, str] = UNSET,
-    access_constraints_startswith: Union[Unset, str] = UNSET,
-    access_roles: Union[Unset, str] = UNSET,
-    access_roles_contains: Union[Unset, str] = UNSET,
-    access_roles_endswith: Union[Unset, str] = UNSET,
-    access_roles_gt: Union[Unset, str] = UNSET,
-    access_roles_gte: Union[Unset, str] = UNSET,
-    access_roles_icontains: Union[Unset, str] = UNSET,
-    access_roles_iendswith: Union[Unset, str] = UNSET,
-    access_roles_iexact: Union[Unset, str] = UNSET,
-    access_roles_in: Union[Unset, list[str]] = UNSET,
-    access_roles_iregex: Union[Unset, str] = UNSET,
-    access_roles_isnull: Union[Unset, bool] = UNSET,
-    access_roles_istartswith: Union[Unset, str] = UNSET,
-    access_roles_lt: Union[Unset, str] = UNSET,
-    access_roles_lte: Union[Unset, str] = UNSET,
-    access_roles_range: Union[Unset, list[str]] = UNSET,
-    access_roles_regex: Union[Unset, str] = UNSET,
-    access_roles_startswith: Union[Unset, str] = UNSET,
-    label: Union[Unset, str] = UNSET,
-    label_contains: Union[Unset, str] = UNSET,
-    label_endswith: Union[Unset, str] = UNSET,
-    label_gt: Union[Unset, str] = UNSET,
-    label_gte: Union[Unset, str] = UNSET,
-    label_icontains: Union[Unset, str] = UNSET,
-    label_iendswith: Union[Unset, str] = UNSET,
-    label_iexact: Union[Unset, str] = UNSET,
-    label_in: Union[Unset, list[str]] = UNSET,
-    label_iregex: Union[Unset, str] = UNSET,
-    label_isnull: Union[Unset, bool] = UNSET,
-    label_istartswith: Union[Unset, str] = UNSET,
-    label_lt: Union[Unset, str] = UNSET,
-    label_lte: Union[Unset, str] = UNSET,
-    label_range: Union[Unset, list[str]] = UNSET,
-    label_regex: Union[Unset, str] = UNSET,
-    label_startswith: Union[Unset, str] = UNSET,
-    licence: Union[Unset, int] = UNSET,
-    licence_gt: Union[Unset, int] = UNSET,
-    licence_gte: Union[Unset, int] = UNSET,
-    licence_in: Union[Unset, list[int]] = UNSET,
-    licence_isnull: Union[Unset, bool] = UNSET,
-    licence_licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_licence_classifications_classification_contains: Union[Unset, str] = UNSET,
-    licence_licence_url: Union[Unset, str] = UNSET,
-    licence_licence_url_contains: Union[Unset, str] = UNSET,
-    licence_licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_lt: Union[Unset, int] = UNSET,
-    licence_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    use_limitation: Union[Unset, str] = UNSET,
-    use_limitation_contains: Union[Unset, str] = UNSET,
-    use_limitation_endswith: Union[Unset, str] = UNSET,
-    use_limitation_gt: Union[Unset, str] = UNSET,
-    use_limitation_gte: Union[Unset, str] = UNSET,
-    use_limitation_icontains: Union[Unset, str] = UNSET,
-    use_limitation_iendswith: Union[Unset, str] = UNSET,
-    use_limitation_iexact: Union[Unset, str] = UNSET,
-    use_limitation_in: Union[Unset, list[str]] = UNSET,
-    use_limitation_iregex: Union[Unset, str] = UNSET,
-    use_limitation_isnull: Union[Unset, bool] = UNSET,
-    use_limitation_istartswith: Union[Unset, str] = UNSET,
-    use_limitation_lt: Union[Unset, str] = UNSET,
-    use_limitation_lte: Union[Unset, str] = UNSET,
-    use_limitation_range: Union[Unset, list[str]] = UNSET,
-    use_limitation_regex: Union[Unset, str] = UNSET,
-    use_limitation_startswith: Union[Unset, str] = UNSET,
+    access_category: ConstraintsListAccessCategory | Unset = UNSET,
+    access_category_contains: str | Unset = UNSET,
+    access_category_endswith: str | Unset = UNSET,
+    access_category_gt: str | Unset = UNSET,
+    access_category_gte: str | Unset = UNSET,
+    access_category_icontains: str | Unset = UNSET,
+    access_category_iendswith: str | Unset = UNSET,
+    access_category_iexact: str | Unset = UNSET,
+    access_category_in: list[str] | Unset = UNSET,
+    access_category_iregex: str | Unset = UNSET,
+    access_category_isnull: bool | Unset = UNSET,
+    access_category_istartswith: str | Unset = UNSET,
+    access_category_lt: str | Unset = UNSET,
+    access_category_lte: str | Unset = UNSET,
+    access_category_range: list[str] | Unset = UNSET,
+    access_category_regex: str | Unset = UNSET,
+    access_category_startswith: str | Unset = UNSET,
+    access_constraints: str | Unset = UNSET,
+    access_constraints_contains: str | Unset = UNSET,
+    access_constraints_endswith: str | Unset = UNSET,
+    access_constraints_gt: str | Unset = UNSET,
+    access_constraints_gte: str | Unset = UNSET,
+    access_constraints_icontains: str | Unset = UNSET,
+    access_constraints_iendswith: str | Unset = UNSET,
+    access_constraints_iexact: str | Unset = UNSET,
+    access_constraints_in: list[str] | Unset = UNSET,
+    access_constraints_iregex: str | Unset = UNSET,
+    access_constraints_isnull: bool | Unset = UNSET,
+    access_constraints_istartswith: str | Unset = UNSET,
+    access_constraints_lt: str | Unset = UNSET,
+    access_constraints_lte: str | Unset = UNSET,
+    access_constraints_range: list[str] | Unset = UNSET,
+    access_constraints_regex: str | Unset = UNSET,
+    access_constraints_startswith: str | Unset = UNSET,
+    access_roles: str | Unset = UNSET,
+    access_roles_contains: str | Unset = UNSET,
+    access_roles_endswith: str | Unset = UNSET,
+    access_roles_gt: str | Unset = UNSET,
+    access_roles_gte: str | Unset = UNSET,
+    access_roles_icontains: str | Unset = UNSET,
+    access_roles_iendswith: str | Unset = UNSET,
+    access_roles_iexact: str | Unset = UNSET,
+    access_roles_in: list[str] | Unset = UNSET,
+    access_roles_iregex: str | Unset = UNSET,
+    access_roles_isnull: bool | Unset = UNSET,
+    access_roles_istartswith: str | Unset = UNSET,
+    access_roles_lt: str | Unset = UNSET,
+    access_roles_lte: str | Unset = UNSET,
+    access_roles_range: list[str] | Unset = UNSET,
+    access_roles_regex: str | Unset = UNSET,
+    access_roles_startswith: str | Unset = UNSET,
+    label: str | Unset = UNSET,
+    label_contains: str | Unset = UNSET,
+    label_endswith: str | Unset = UNSET,
+    label_gt: str | Unset = UNSET,
+    label_gte: str | Unset = UNSET,
+    label_icontains: str | Unset = UNSET,
+    label_iendswith: str | Unset = UNSET,
+    label_iexact: str | Unset = UNSET,
+    label_in: list[str] | Unset = UNSET,
+    label_iregex: str | Unset = UNSET,
+    label_isnull: bool | Unset = UNSET,
+    label_istartswith: str | Unset = UNSET,
+    label_lt: str | Unset = UNSET,
+    label_lte: str | Unset = UNSET,
+    label_range: list[str] | Unset = UNSET,
+    label_regex: str | Unset = UNSET,
+    label_startswith: str | Unset = UNSET,
+    licence: int | Unset = UNSET,
+    licence_gt: int | Unset = UNSET,
+    licence_gte: int | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
+    licence_licence_classifications_classification: str | Unset = UNSET,
+    licence_licence_classifications_classification_contains: str | Unset = UNSET,
+    licence_licence_url: str | Unset = UNSET,
+    licence_licence_url_contains: str | Unset = UNSET,
+    licence_licence_url_in: list[str] | Unset = UNSET,
+    licence_lt: int | Unset = UNSET,
+    licence_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    use_limitation: str | Unset = UNSET,
+    use_limitation_contains: str | Unset = UNSET,
+    use_limitation_endswith: str | Unset = UNSET,
+    use_limitation_gt: str | Unset = UNSET,
+    use_limitation_gte: str | Unset = UNSET,
+    use_limitation_icontains: str | Unset = UNSET,
+    use_limitation_iendswith: str | Unset = UNSET,
+    use_limitation_iexact: str | Unset = UNSET,
+    use_limitation_in: list[str] | Unset = UNSET,
+    use_limitation_iregex: str | Unset = UNSET,
+    use_limitation_isnull: bool | Unset = UNSET,
+    use_limitation_istartswith: str | Unset = UNSET,
+    use_limitation_lt: str | Unset = UNSET,
+    use_limitation_lte: str | Unset = UNSET,
+    use_limitation_range: list[str] | Unset = UNSET,
+    use_limitation_regex: str | Unset = UNSET,
+    use_limitation_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
-        access_category (Union[Unset, ConstraintsListAccessCategory]):
-        access_category_contains (Union[Unset, str]):
-        access_category_endswith (Union[Unset, str]):
-        access_category_gt (Union[Unset, str]):
-        access_category_gte (Union[Unset, str]):
-        access_category_icontains (Union[Unset, str]):
-        access_category_iendswith (Union[Unset, str]):
-        access_category_iexact (Union[Unset, str]):
-        access_category_in (Union[Unset, list[str]]):
-        access_category_iregex (Union[Unset, str]):
-        access_category_isnull (Union[Unset, bool]):
-        access_category_istartswith (Union[Unset, str]):
-        access_category_lt (Union[Unset, str]):
-        access_category_lte (Union[Unset, str]):
-        access_category_range (Union[Unset, list[str]]):
-        access_category_regex (Union[Unset, str]):
-        access_category_startswith (Union[Unset, str]):
-        access_constraints (Union[Unset, str]):
-        access_constraints_contains (Union[Unset, str]):
-        access_constraints_endswith (Union[Unset, str]):
-        access_constraints_gt (Union[Unset, str]):
-        access_constraints_gte (Union[Unset, str]):
-        access_constraints_icontains (Union[Unset, str]):
-        access_constraints_iendswith (Union[Unset, str]):
-        access_constraints_iexact (Union[Unset, str]):
-        access_constraints_in (Union[Unset, list[str]]):
-        access_constraints_iregex (Union[Unset, str]):
-        access_constraints_isnull (Union[Unset, bool]):
-        access_constraints_istartswith (Union[Unset, str]):
-        access_constraints_lt (Union[Unset, str]):
-        access_constraints_lte (Union[Unset, str]):
-        access_constraints_range (Union[Unset, list[str]]):
-        access_constraints_regex (Union[Unset, str]):
-        access_constraints_startswith (Union[Unset, str]):
-        access_roles (Union[Unset, str]):
-        access_roles_contains (Union[Unset, str]):
-        access_roles_endswith (Union[Unset, str]):
-        access_roles_gt (Union[Unset, str]):
-        access_roles_gte (Union[Unset, str]):
-        access_roles_icontains (Union[Unset, str]):
-        access_roles_iendswith (Union[Unset, str]):
-        access_roles_iexact (Union[Unset, str]):
-        access_roles_in (Union[Unset, list[str]]):
-        access_roles_iregex (Union[Unset, str]):
-        access_roles_isnull (Union[Unset, bool]):
-        access_roles_istartswith (Union[Unset, str]):
-        access_roles_lt (Union[Unset, str]):
-        access_roles_lte (Union[Unset, str]):
-        access_roles_range (Union[Unset, list[str]]):
-        access_roles_regex (Union[Unset, str]):
-        access_roles_startswith (Union[Unset, str]):
-        label (Union[Unset, str]):
-        label_contains (Union[Unset, str]):
-        label_endswith (Union[Unset, str]):
-        label_gt (Union[Unset, str]):
-        label_gte (Union[Unset, str]):
-        label_icontains (Union[Unset, str]):
-        label_iendswith (Union[Unset, str]):
-        label_iexact (Union[Unset, str]):
-        label_in (Union[Unset, list[str]]):
-        label_iregex (Union[Unset, str]):
-        label_isnull (Union[Unset, bool]):
-        label_istartswith (Union[Unset, str]):
-        label_lt (Union[Unset, str]):
-        label_lte (Union[Unset, str]):
-        label_range (Union[Unset, list[str]]):
-        label_regex (Union[Unset, str]):
-        label_startswith (Union[Unset, str]):
-        licence (Union[Unset, int]):
-        licence_gt (Union[Unset, int]):
-        licence_gte (Union[Unset, int]):
-        licence_in (Union[Unset, list[int]]):
-        licence_isnull (Union[Unset, bool]):
-        licence_licence_classifications_classification (Union[Unset, str]):
-        licence_licence_classifications_classification_contains (Union[Unset, str]):
-        licence_licence_url (Union[Unset, str]):
-        licence_licence_url_contains (Union[Unset, str]):
-        licence_licence_url_in (Union[Unset, list[str]]):
-        licence_lt (Union[Unset, int]):
-        licence_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        use_limitation (Union[Unset, str]):
-        use_limitation_contains (Union[Unset, str]):
-        use_limitation_endswith (Union[Unset, str]):
-        use_limitation_gt (Union[Unset, str]):
-        use_limitation_gte (Union[Unset, str]):
-        use_limitation_icontains (Union[Unset, str]):
-        use_limitation_iendswith (Union[Unset, str]):
-        use_limitation_iexact (Union[Unset, str]):
-        use_limitation_in (Union[Unset, list[str]]):
-        use_limitation_iregex (Union[Unset, str]):
-        use_limitation_isnull (Union[Unset, bool]):
-        use_limitation_istartswith (Union[Unset, str]):
-        use_limitation_lt (Union[Unset, str]):
-        use_limitation_lte (Union[Unset, str]):
-        use_limitation_range (Union[Unset, list[str]]):
-        use_limitation_regex (Union[Unset, str]):
-        use_limitation_startswith (Union[Unset, str]):
+        access_category (ConstraintsListAccessCategory | Unset):
+        access_category_contains (str | Unset):
+        access_category_endswith (str | Unset):
+        access_category_gt (str | Unset):
+        access_category_gte (str | Unset):
+        access_category_icontains (str | Unset):
+        access_category_iendswith (str | Unset):
+        access_category_iexact (str | Unset):
+        access_category_in (list[str] | Unset):
+        access_category_iregex (str | Unset):
+        access_category_isnull (bool | Unset):
+        access_category_istartswith (str | Unset):
+        access_category_lt (str | Unset):
+        access_category_lte (str | Unset):
+        access_category_range (list[str] | Unset):
+        access_category_regex (str | Unset):
+        access_category_startswith (str | Unset):
+        access_constraints (str | Unset):
+        access_constraints_contains (str | Unset):
+        access_constraints_endswith (str | Unset):
+        access_constraints_gt (str | Unset):
+        access_constraints_gte (str | Unset):
+        access_constraints_icontains (str | Unset):
+        access_constraints_iendswith (str | Unset):
+        access_constraints_iexact (str | Unset):
+        access_constraints_in (list[str] | Unset):
+        access_constraints_iregex (str | Unset):
+        access_constraints_isnull (bool | Unset):
+        access_constraints_istartswith (str | Unset):
+        access_constraints_lt (str | Unset):
+        access_constraints_lte (str | Unset):
+        access_constraints_range (list[str] | Unset):
+        access_constraints_regex (str | Unset):
+        access_constraints_startswith (str | Unset):
+        access_roles (str | Unset):
+        access_roles_contains (str | Unset):
+        access_roles_endswith (str | Unset):
+        access_roles_gt (str | Unset):
+        access_roles_gte (str | Unset):
+        access_roles_icontains (str | Unset):
+        access_roles_iendswith (str | Unset):
+        access_roles_iexact (str | Unset):
+        access_roles_in (list[str] | Unset):
+        access_roles_iregex (str | Unset):
+        access_roles_isnull (bool | Unset):
+        access_roles_istartswith (str | Unset):
+        access_roles_lt (str | Unset):
+        access_roles_lte (str | Unset):
+        access_roles_range (list[str] | Unset):
+        access_roles_regex (str | Unset):
+        access_roles_startswith (str | Unset):
+        label (str | Unset):
+        label_contains (str | Unset):
+        label_endswith (str | Unset):
+        label_gt (str | Unset):
+        label_gte (str | Unset):
+        label_icontains (str | Unset):
+        label_iendswith (str | Unset):
+        label_iexact (str | Unset):
+        label_in (list[str] | Unset):
+        label_iregex (str | Unset):
+        label_isnull (bool | Unset):
+        label_istartswith (str | Unset):
+        label_lt (str | Unset):
+        label_lte (str | Unset):
+        label_range (list[str] | Unset):
+        label_regex (str | Unset):
+        label_startswith (str | Unset):
+        licence (int | Unset):
+        licence_gt (int | Unset):
+        licence_gte (int | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
+        licence_licence_classifications_classification (str | Unset):
+        licence_licence_classifications_classification_contains (str | Unset):
+        licence_licence_url (str | Unset):
+        licence_licence_url_contains (str | Unset):
+        licence_licence_url_in (list[str] | Unset):
+        licence_lt (int | Unset):
+        licence_lte (int | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        use_limitation (str | Unset):
+        use_limitation_contains (str | Unset):
+        use_limitation_endswith (str | Unset):
+        use_limitation_gt (str | Unset):
+        use_limitation_gte (str | Unset):
+        use_limitation_icontains (str | Unset):
+        use_limitation_iendswith (str | Unset):
+        use_limitation_iexact (str | Unset):
+        use_limitation_in (list[str] | Unset):
+        use_limitation_iregex (str | Unset):
+        use_limitation_isnull (bool | Unset):
+        use_limitation_istartswith (str | Unset):
+        use_limitation_lt (str | Unset):
+        use_limitation_lte (str | Unset):
+        use_limitation_range (list[str] | Unset):
+        use_limitation_regex (str | Unset):
+        use_limitation_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -850,246 +850,246 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
-    access_category: Union[Unset, ConstraintsListAccessCategory] = UNSET,
-    access_category_contains: Union[Unset, str] = UNSET,
-    access_category_endswith: Union[Unset, str] = UNSET,
-    access_category_gt: Union[Unset, str] = UNSET,
-    access_category_gte: Union[Unset, str] = UNSET,
-    access_category_icontains: Union[Unset, str] = UNSET,
-    access_category_iendswith: Union[Unset, str] = UNSET,
-    access_category_iexact: Union[Unset, str] = UNSET,
-    access_category_in: Union[Unset, list[str]] = UNSET,
-    access_category_iregex: Union[Unset, str] = UNSET,
-    access_category_isnull: Union[Unset, bool] = UNSET,
-    access_category_istartswith: Union[Unset, str] = UNSET,
-    access_category_lt: Union[Unset, str] = UNSET,
-    access_category_lte: Union[Unset, str] = UNSET,
-    access_category_range: Union[Unset, list[str]] = UNSET,
-    access_category_regex: Union[Unset, str] = UNSET,
-    access_category_startswith: Union[Unset, str] = UNSET,
-    access_constraints: Union[Unset, str] = UNSET,
-    access_constraints_contains: Union[Unset, str] = UNSET,
-    access_constraints_endswith: Union[Unset, str] = UNSET,
-    access_constraints_gt: Union[Unset, str] = UNSET,
-    access_constraints_gte: Union[Unset, str] = UNSET,
-    access_constraints_icontains: Union[Unset, str] = UNSET,
-    access_constraints_iendswith: Union[Unset, str] = UNSET,
-    access_constraints_iexact: Union[Unset, str] = UNSET,
-    access_constraints_in: Union[Unset, list[str]] = UNSET,
-    access_constraints_iregex: Union[Unset, str] = UNSET,
-    access_constraints_isnull: Union[Unset, bool] = UNSET,
-    access_constraints_istartswith: Union[Unset, str] = UNSET,
-    access_constraints_lt: Union[Unset, str] = UNSET,
-    access_constraints_lte: Union[Unset, str] = UNSET,
-    access_constraints_range: Union[Unset, list[str]] = UNSET,
-    access_constraints_regex: Union[Unset, str] = UNSET,
-    access_constraints_startswith: Union[Unset, str] = UNSET,
-    access_roles: Union[Unset, str] = UNSET,
-    access_roles_contains: Union[Unset, str] = UNSET,
-    access_roles_endswith: Union[Unset, str] = UNSET,
-    access_roles_gt: Union[Unset, str] = UNSET,
-    access_roles_gte: Union[Unset, str] = UNSET,
-    access_roles_icontains: Union[Unset, str] = UNSET,
-    access_roles_iendswith: Union[Unset, str] = UNSET,
-    access_roles_iexact: Union[Unset, str] = UNSET,
-    access_roles_in: Union[Unset, list[str]] = UNSET,
-    access_roles_iregex: Union[Unset, str] = UNSET,
-    access_roles_isnull: Union[Unset, bool] = UNSET,
-    access_roles_istartswith: Union[Unset, str] = UNSET,
-    access_roles_lt: Union[Unset, str] = UNSET,
-    access_roles_lte: Union[Unset, str] = UNSET,
-    access_roles_range: Union[Unset, list[str]] = UNSET,
-    access_roles_regex: Union[Unset, str] = UNSET,
-    access_roles_startswith: Union[Unset, str] = UNSET,
-    label: Union[Unset, str] = UNSET,
-    label_contains: Union[Unset, str] = UNSET,
-    label_endswith: Union[Unset, str] = UNSET,
-    label_gt: Union[Unset, str] = UNSET,
-    label_gte: Union[Unset, str] = UNSET,
-    label_icontains: Union[Unset, str] = UNSET,
-    label_iendswith: Union[Unset, str] = UNSET,
-    label_iexact: Union[Unset, str] = UNSET,
-    label_in: Union[Unset, list[str]] = UNSET,
-    label_iregex: Union[Unset, str] = UNSET,
-    label_isnull: Union[Unset, bool] = UNSET,
-    label_istartswith: Union[Unset, str] = UNSET,
-    label_lt: Union[Unset, str] = UNSET,
-    label_lte: Union[Unset, str] = UNSET,
-    label_range: Union[Unset, list[str]] = UNSET,
-    label_regex: Union[Unset, str] = UNSET,
-    label_startswith: Union[Unset, str] = UNSET,
-    licence: Union[Unset, int] = UNSET,
-    licence_gt: Union[Unset, int] = UNSET,
-    licence_gte: Union[Unset, int] = UNSET,
-    licence_in: Union[Unset, list[int]] = UNSET,
-    licence_isnull: Union[Unset, bool] = UNSET,
-    licence_licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_licence_classifications_classification_contains: Union[Unset, str] = UNSET,
-    licence_licence_url: Union[Unset, str] = UNSET,
-    licence_licence_url_contains: Union[Unset, str] = UNSET,
-    licence_licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_lt: Union[Unset, int] = UNSET,
-    licence_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    use_limitation: Union[Unset, str] = UNSET,
-    use_limitation_contains: Union[Unset, str] = UNSET,
-    use_limitation_endswith: Union[Unset, str] = UNSET,
-    use_limitation_gt: Union[Unset, str] = UNSET,
-    use_limitation_gte: Union[Unset, str] = UNSET,
-    use_limitation_icontains: Union[Unset, str] = UNSET,
-    use_limitation_iendswith: Union[Unset, str] = UNSET,
-    use_limitation_iexact: Union[Unset, str] = UNSET,
-    use_limitation_in: Union[Unset, list[str]] = UNSET,
-    use_limitation_iregex: Union[Unset, str] = UNSET,
-    use_limitation_isnull: Union[Unset, bool] = UNSET,
-    use_limitation_istartswith: Union[Unset, str] = UNSET,
-    use_limitation_lt: Union[Unset, str] = UNSET,
-    use_limitation_lte: Union[Unset, str] = UNSET,
-    use_limitation_range: Union[Unset, list[str]] = UNSET,
-    use_limitation_regex: Union[Unset, str] = UNSET,
-    use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedConstraintsReadList]:
+    access_category: ConstraintsListAccessCategory | Unset = UNSET,
+    access_category_contains: str | Unset = UNSET,
+    access_category_endswith: str | Unset = UNSET,
+    access_category_gt: str | Unset = UNSET,
+    access_category_gte: str | Unset = UNSET,
+    access_category_icontains: str | Unset = UNSET,
+    access_category_iendswith: str | Unset = UNSET,
+    access_category_iexact: str | Unset = UNSET,
+    access_category_in: list[str] | Unset = UNSET,
+    access_category_iregex: str | Unset = UNSET,
+    access_category_isnull: bool | Unset = UNSET,
+    access_category_istartswith: str | Unset = UNSET,
+    access_category_lt: str | Unset = UNSET,
+    access_category_lte: str | Unset = UNSET,
+    access_category_range: list[str] | Unset = UNSET,
+    access_category_regex: str | Unset = UNSET,
+    access_category_startswith: str | Unset = UNSET,
+    access_constraints: str | Unset = UNSET,
+    access_constraints_contains: str | Unset = UNSET,
+    access_constraints_endswith: str | Unset = UNSET,
+    access_constraints_gt: str | Unset = UNSET,
+    access_constraints_gte: str | Unset = UNSET,
+    access_constraints_icontains: str | Unset = UNSET,
+    access_constraints_iendswith: str | Unset = UNSET,
+    access_constraints_iexact: str | Unset = UNSET,
+    access_constraints_in: list[str] | Unset = UNSET,
+    access_constraints_iregex: str | Unset = UNSET,
+    access_constraints_isnull: bool | Unset = UNSET,
+    access_constraints_istartswith: str | Unset = UNSET,
+    access_constraints_lt: str | Unset = UNSET,
+    access_constraints_lte: str | Unset = UNSET,
+    access_constraints_range: list[str] | Unset = UNSET,
+    access_constraints_regex: str | Unset = UNSET,
+    access_constraints_startswith: str | Unset = UNSET,
+    access_roles: str | Unset = UNSET,
+    access_roles_contains: str | Unset = UNSET,
+    access_roles_endswith: str | Unset = UNSET,
+    access_roles_gt: str | Unset = UNSET,
+    access_roles_gte: str | Unset = UNSET,
+    access_roles_icontains: str | Unset = UNSET,
+    access_roles_iendswith: str | Unset = UNSET,
+    access_roles_iexact: str | Unset = UNSET,
+    access_roles_in: list[str] | Unset = UNSET,
+    access_roles_iregex: str | Unset = UNSET,
+    access_roles_isnull: bool | Unset = UNSET,
+    access_roles_istartswith: str | Unset = UNSET,
+    access_roles_lt: str | Unset = UNSET,
+    access_roles_lte: str | Unset = UNSET,
+    access_roles_range: list[str] | Unset = UNSET,
+    access_roles_regex: str | Unset = UNSET,
+    access_roles_startswith: str | Unset = UNSET,
+    label: str | Unset = UNSET,
+    label_contains: str | Unset = UNSET,
+    label_endswith: str | Unset = UNSET,
+    label_gt: str | Unset = UNSET,
+    label_gte: str | Unset = UNSET,
+    label_icontains: str | Unset = UNSET,
+    label_iendswith: str | Unset = UNSET,
+    label_iexact: str | Unset = UNSET,
+    label_in: list[str] | Unset = UNSET,
+    label_iregex: str | Unset = UNSET,
+    label_isnull: bool | Unset = UNSET,
+    label_istartswith: str | Unset = UNSET,
+    label_lt: str | Unset = UNSET,
+    label_lte: str | Unset = UNSET,
+    label_range: list[str] | Unset = UNSET,
+    label_regex: str | Unset = UNSET,
+    label_startswith: str | Unset = UNSET,
+    licence: int | Unset = UNSET,
+    licence_gt: int | Unset = UNSET,
+    licence_gte: int | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
+    licence_licence_classifications_classification: str | Unset = UNSET,
+    licence_licence_classifications_classification_contains: str | Unset = UNSET,
+    licence_licence_url: str | Unset = UNSET,
+    licence_licence_url_contains: str | Unset = UNSET,
+    licence_licence_url_in: list[str] | Unset = UNSET,
+    licence_lt: int | Unset = UNSET,
+    licence_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    use_limitation: str | Unset = UNSET,
+    use_limitation_contains: str | Unset = UNSET,
+    use_limitation_endswith: str | Unset = UNSET,
+    use_limitation_gt: str | Unset = UNSET,
+    use_limitation_gte: str | Unset = UNSET,
+    use_limitation_icontains: str | Unset = UNSET,
+    use_limitation_iendswith: str | Unset = UNSET,
+    use_limitation_iexact: str | Unset = UNSET,
+    use_limitation_in: list[str] | Unset = UNSET,
+    use_limitation_iregex: str | Unset = UNSET,
+    use_limitation_isnull: bool | Unset = UNSET,
+    use_limitation_istartswith: str | Unset = UNSET,
+    use_limitation_lt: str | Unset = UNSET,
+    use_limitation_lte: str | Unset = UNSET,
+    use_limitation_range: list[str] | Unset = UNSET,
+    use_limitation_regex: str | Unset = UNSET,
+    use_limitation_startswith: str | Unset = UNSET,
+) -> PaginatedConstraintsReadList | None:
     """Get a list of Constraints objects.
 
     Args:
-        access_category (Union[Unset, ConstraintsListAccessCategory]):
-        access_category_contains (Union[Unset, str]):
-        access_category_endswith (Union[Unset, str]):
-        access_category_gt (Union[Unset, str]):
-        access_category_gte (Union[Unset, str]):
-        access_category_icontains (Union[Unset, str]):
-        access_category_iendswith (Union[Unset, str]):
-        access_category_iexact (Union[Unset, str]):
-        access_category_in (Union[Unset, list[str]]):
-        access_category_iregex (Union[Unset, str]):
-        access_category_isnull (Union[Unset, bool]):
-        access_category_istartswith (Union[Unset, str]):
-        access_category_lt (Union[Unset, str]):
-        access_category_lte (Union[Unset, str]):
-        access_category_range (Union[Unset, list[str]]):
-        access_category_regex (Union[Unset, str]):
-        access_category_startswith (Union[Unset, str]):
-        access_constraints (Union[Unset, str]):
-        access_constraints_contains (Union[Unset, str]):
-        access_constraints_endswith (Union[Unset, str]):
-        access_constraints_gt (Union[Unset, str]):
-        access_constraints_gte (Union[Unset, str]):
-        access_constraints_icontains (Union[Unset, str]):
-        access_constraints_iendswith (Union[Unset, str]):
-        access_constraints_iexact (Union[Unset, str]):
-        access_constraints_in (Union[Unset, list[str]]):
-        access_constraints_iregex (Union[Unset, str]):
-        access_constraints_isnull (Union[Unset, bool]):
-        access_constraints_istartswith (Union[Unset, str]):
-        access_constraints_lt (Union[Unset, str]):
-        access_constraints_lte (Union[Unset, str]):
-        access_constraints_range (Union[Unset, list[str]]):
-        access_constraints_regex (Union[Unset, str]):
-        access_constraints_startswith (Union[Unset, str]):
-        access_roles (Union[Unset, str]):
-        access_roles_contains (Union[Unset, str]):
-        access_roles_endswith (Union[Unset, str]):
-        access_roles_gt (Union[Unset, str]):
-        access_roles_gte (Union[Unset, str]):
-        access_roles_icontains (Union[Unset, str]):
-        access_roles_iendswith (Union[Unset, str]):
-        access_roles_iexact (Union[Unset, str]):
-        access_roles_in (Union[Unset, list[str]]):
-        access_roles_iregex (Union[Unset, str]):
-        access_roles_isnull (Union[Unset, bool]):
-        access_roles_istartswith (Union[Unset, str]):
-        access_roles_lt (Union[Unset, str]):
-        access_roles_lte (Union[Unset, str]):
-        access_roles_range (Union[Unset, list[str]]):
-        access_roles_regex (Union[Unset, str]):
-        access_roles_startswith (Union[Unset, str]):
-        label (Union[Unset, str]):
-        label_contains (Union[Unset, str]):
-        label_endswith (Union[Unset, str]):
-        label_gt (Union[Unset, str]):
-        label_gte (Union[Unset, str]):
-        label_icontains (Union[Unset, str]):
-        label_iendswith (Union[Unset, str]):
-        label_iexact (Union[Unset, str]):
-        label_in (Union[Unset, list[str]]):
-        label_iregex (Union[Unset, str]):
-        label_isnull (Union[Unset, bool]):
-        label_istartswith (Union[Unset, str]):
-        label_lt (Union[Unset, str]):
-        label_lte (Union[Unset, str]):
-        label_range (Union[Unset, list[str]]):
-        label_regex (Union[Unset, str]):
-        label_startswith (Union[Unset, str]):
-        licence (Union[Unset, int]):
-        licence_gt (Union[Unset, int]):
-        licence_gte (Union[Unset, int]):
-        licence_in (Union[Unset, list[int]]):
-        licence_isnull (Union[Unset, bool]):
-        licence_licence_classifications_classification (Union[Unset, str]):
-        licence_licence_classifications_classification_contains (Union[Unset, str]):
-        licence_licence_url (Union[Unset, str]):
-        licence_licence_url_contains (Union[Unset, str]):
-        licence_licence_url_in (Union[Unset, list[str]]):
-        licence_lt (Union[Unset, int]):
-        licence_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        use_limitation (Union[Unset, str]):
-        use_limitation_contains (Union[Unset, str]):
-        use_limitation_endswith (Union[Unset, str]):
-        use_limitation_gt (Union[Unset, str]):
-        use_limitation_gte (Union[Unset, str]):
-        use_limitation_icontains (Union[Unset, str]):
-        use_limitation_iendswith (Union[Unset, str]):
-        use_limitation_iexact (Union[Unset, str]):
-        use_limitation_in (Union[Unset, list[str]]):
-        use_limitation_iregex (Union[Unset, str]):
-        use_limitation_isnull (Union[Unset, bool]):
-        use_limitation_istartswith (Union[Unset, str]):
-        use_limitation_lt (Union[Unset, str]):
-        use_limitation_lte (Union[Unset, str]):
-        use_limitation_range (Union[Unset, list[str]]):
-        use_limitation_regex (Union[Unset, str]):
-        use_limitation_startswith (Union[Unset, str]):
+        access_category (ConstraintsListAccessCategory | Unset):
+        access_category_contains (str | Unset):
+        access_category_endswith (str | Unset):
+        access_category_gt (str | Unset):
+        access_category_gte (str | Unset):
+        access_category_icontains (str | Unset):
+        access_category_iendswith (str | Unset):
+        access_category_iexact (str | Unset):
+        access_category_in (list[str] | Unset):
+        access_category_iregex (str | Unset):
+        access_category_isnull (bool | Unset):
+        access_category_istartswith (str | Unset):
+        access_category_lt (str | Unset):
+        access_category_lte (str | Unset):
+        access_category_range (list[str] | Unset):
+        access_category_regex (str | Unset):
+        access_category_startswith (str | Unset):
+        access_constraints (str | Unset):
+        access_constraints_contains (str | Unset):
+        access_constraints_endswith (str | Unset):
+        access_constraints_gt (str | Unset):
+        access_constraints_gte (str | Unset):
+        access_constraints_icontains (str | Unset):
+        access_constraints_iendswith (str | Unset):
+        access_constraints_iexact (str | Unset):
+        access_constraints_in (list[str] | Unset):
+        access_constraints_iregex (str | Unset):
+        access_constraints_isnull (bool | Unset):
+        access_constraints_istartswith (str | Unset):
+        access_constraints_lt (str | Unset):
+        access_constraints_lte (str | Unset):
+        access_constraints_range (list[str] | Unset):
+        access_constraints_regex (str | Unset):
+        access_constraints_startswith (str | Unset):
+        access_roles (str | Unset):
+        access_roles_contains (str | Unset):
+        access_roles_endswith (str | Unset):
+        access_roles_gt (str | Unset):
+        access_roles_gte (str | Unset):
+        access_roles_icontains (str | Unset):
+        access_roles_iendswith (str | Unset):
+        access_roles_iexact (str | Unset):
+        access_roles_in (list[str] | Unset):
+        access_roles_iregex (str | Unset):
+        access_roles_isnull (bool | Unset):
+        access_roles_istartswith (str | Unset):
+        access_roles_lt (str | Unset):
+        access_roles_lte (str | Unset):
+        access_roles_range (list[str] | Unset):
+        access_roles_regex (str | Unset):
+        access_roles_startswith (str | Unset):
+        label (str | Unset):
+        label_contains (str | Unset):
+        label_endswith (str | Unset):
+        label_gt (str | Unset):
+        label_gte (str | Unset):
+        label_icontains (str | Unset):
+        label_iendswith (str | Unset):
+        label_iexact (str | Unset):
+        label_in (list[str] | Unset):
+        label_iregex (str | Unset):
+        label_isnull (bool | Unset):
+        label_istartswith (str | Unset):
+        label_lt (str | Unset):
+        label_lte (str | Unset):
+        label_range (list[str] | Unset):
+        label_regex (str | Unset):
+        label_startswith (str | Unset):
+        licence (int | Unset):
+        licence_gt (int | Unset):
+        licence_gte (int | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
+        licence_licence_classifications_classification (str | Unset):
+        licence_licence_classifications_classification_contains (str | Unset):
+        licence_licence_url (str | Unset):
+        licence_licence_url_contains (str | Unset):
+        licence_licence_url_in (list[str] | Unset):
+        licence_lt (int | Unset):
+        licence_lte (int | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        use_limitation (str | Unset):
+        use_limitation_contains (str | Unset):
+        use_limitation_endswith (str | Unset):
+        use_limitation_gt (str | Unset):
+        use_limitation_gte (str | Unset):
+        use_limitation_icontains (str | Unset):
+        use_limitation_iendswith (str | Unset):
+        use_limitation_iexact (str | Unset):
+        use_limitation_in (list[str] | Unset):
+        use_limitation_iregex (str | Unset):
+        use_limitation_isnull (bool | Unset):
+        use_limitation_istartswith (str | Unset):
+        use_limitation_lt (str | Unset):
+        use_limitation_lte (str | Unset):
+        use_limitation_range (list[str] | Unset):
+        use_limitation_regex (str | Unset):
+        use_limitation_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1225,246 +1225,246 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
-    access_category: Union[Unset, ConstraintsListAccessCategory] = UNSET,
-    access_category_contains: Union[Unset, str] = UNSET,
-    access_category_endswith: Union[Unset, str] = UNSET,
-    access_category_gt: Union[Unset, str] = UNSET,
-    access_category_gte: Union[Unset, str] = UNSET,
-    access_category_icontains: Union[Unset, str] = UNSET,
-    access_category_iendswith: Union[Unset, str] = UNSET,
-    access_category_iexact: Union[Unset, str] = UNSET,
-    access_category_in: Union[Unset, list[str]] = UNSET,
-    access_category_iregex: Union[Unset, str] = UNSET,
-    access_category_isnull: Union[Unset, bool] = UNSET,
-    access_category_istartswith: Union[Unset, str] = UNSET,
-    access_category_lt: Union[Unset, str] = UNSET,
-    access_category_lte: Union[Unset, str] = UNSET,
-    access_category_range: Union[Unset, list[str]] = UNSET,
-    access_category_regex: Union[Unset, str] = UNSET,
-    access_category_startswith: Union[Unset, str] = UNSET,
-    access_constraints: Union[Unset, str] = UNSET,
-    access_constraints_contains: Union[Unset, str] = UNSET,
-    access_constraints_endswith: Union[Unset, str] = UNSET,
-    access_constraints_gt: Union[Unset, str] = UNSET,
-    access_constraints_gte: Union[Unset, str] = UNSET,
-    access_constraints_icontains: Union[Unset, str] = UNSET,
-    access_constraints_iendswith: Union[Unset, str] = UNSET,
-    access_constraints_iexact: Union[Unset, str] = UNSET,
-    access_constraints_in: Union[Unset, list[str]] = UNSET,
-    access_constraints_iregex: Union[Unset, str] = UNSET,
-    access_constraints_isnull: Union[Unset, bool] = UNSET,
-    access_constraints_istartswith: Union[Unset, str] = UNSET,
-    access_constraints_lt: Union[Unset, str] = UNSET,
-    access_constraints_lte: Union[Unset, str] = UNSET,
-    access_constraints_range: Union[Unset, list[str]] = UNSET,
-    access_constraints_regex: Union[Unset, str] = UNSET,
-    access_constraints_startswith: Union[Unset, str] = UNSET,
-    access_roles: Union[Unset, str] = UNSET,
-    access_roles_contains: Union[Unset, str] = UNSET,
-    access_roles_endswith: Union[Unset, str] = UNSET,
-    access_roles_gt: Union[Unset, str] = UNSET,
-    access_roles_gte: Union[Unset, str] = UNSET,
-    access_roles_icontains: Union[Unset, str] = UNSET,
-    access_roles_iendswith: Union[Unset, str] = UNSET,
-    access_roles_iexact: Union[Unset, str] = UNSET,
-    access_roles_in: Union[Unset, list[str]] = UNSET,
-    access_roles_iregex: Union[Unset, str] = UNSET,
-    access_roles_isnull: Union[Unset, bool] = UNSET,
-    access_roles_istartswith: Union[Unset, str] = UNSET,
-    access_roles_lt: Union[Unset, str] = UNSET,
-    access_roles_lte: Union[Unset, str] = UNSET,
-    access_roles_range: Union[Unset, list[str]] = UNSET,
-    access_roles_regex: Union[Unset, str] = UNSET,
-    access_roles_startswith: Union[Unset, str] = UNSET,
-    label: Union[Unset, str] = UNSET,
-    label_contains: Union[Unset, str] = UNSET,
-    label_endswith: Union[Unset, str] = UNSET,
-    label_gt: Union[Unset, str] = UNSET,
-    label_gte: Union[Unset, str] = UNSET,
-    label_icontains: Union[Unset, str] = UNSET,
-    label_iendswith: Union[Unset, str] = UNSET,
-    label_iexact: Union[Unset, str] = UNSET,
-    label_in: Union[Unset, list[str]] = UNSET,
-    label_iregex: Union[Unset, str] = UNSET,
-    label_isnull: Union[Unset, bool] = UNSET,
-    label_istartswith: Union[Unset, str] = UNSET,
-    label_lt: Union[Unset, str] = UNSET,
-    label_lte: Union[Unset, str] = UNSET,
-    label_range: Union[Unset, list[str]] = UNSET,
-    label_regex: Union[Unset, str] = UNSET,
-    label_startswith: Union[Unset, str] = UNSET,
-    licence: Union[Unset, int] = UNSET,
-    licence_gt: Union[Unset, int] = UNSET,
-    licence_gte: Union[Unset, int] = UNSET,
-    licence_in: Union[Unset, list[int]] = UNSET,
-    licence_isnull: Union[Unset, bool] = UNSET,
-    licence_licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_licence_classifications_classification_contains: Union[Unset, str] = UNSET,
-    licence_licence_url: Union[Unset, str] = UNSET,
-    licence_licence_url_contains: Union[Unset, str] = UNSET,
-    licence_licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_lt: Union[Unset, int] = UNSET,
-    licence_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    use_limitation: Union[Unset, str] = UNSET,
-    use_limitation_contains: Union[Unset, str] = UNSET,
-    use_limitation_endswith: Union[Unset, str] = UNSET,
-    use_limitation_gt: Union[Unset, str] = UNSET,
-    use_limitation_gte: Union[Unset, str] = UNSET,
-    use_limitation_icontains: Union[Unset, str] = UNSET,
-    use_limitation_iendswith: Union[Unset, str] = UNSET,
-    use_limitation_iexact: Union[Unset, str] = UNSET,
-    use_limitation_in: Union[Unset, list[str]] = UNSET,
-    use_limitation_iregex: Union[Unset, str] = UNSET,
-    use_limitation_isnull: Union[Unset, bool] = UNSET,
-    use_limitation_istartswith: Union[Unset, str] = UNSET,
-    use_limitation_lt: Union[Unset, str] = UNSET,
-    use_limitation_lte: Union[Unset, str] = UNSET,
-    use_limitation_range: Union[Unset, list[str]] = UNSET,
-    use_limitation_regex: Union[Unset, str] = UNSET,
-    use_limitation_startswith: Union[Unset, str] = UNSET,
+    access_category: ConstraintsListAccessCategory | Unset = UNSET,
+    access_category_contains: str | Unset = UNSET,
+    access_category_endswith: str | Unset = UNSET,
+    access_category_gt: str | Unset = UNSET,
+    access_category_gte: str | Unset = UNSET,
+    access_category_icontains: str | Unset = UNSET,
+    access_category_iendswith: str | Unset = UNSET,
+    access_category_iexact: str | Unset = UNSET,
+    access_category_in: list[str] | Unset = UNSET,
+    access_category_iregex: str | Unset = UNSET,
+    access_category_isnull: bool | Unset = UNSET,
+    access_category_istartswith: str | Unset = UNSET,
+    access_category_lt: str | Unset = UNSET,
+    access_category_lte: str | Unset = UNSET,
+    access_category_range: list[str] | Unset = UNSET,
+    access_category_regex: str | Unset = UNSET,
+    access_category_startswith: str | Unset = UNSET,
+    access_constraints: str | Unset = UNSET,
+    access_constraints_contains: str | Unset = UNSET,
+    access_constraints_endswith: str | Unset = UNSET,
+    access_constraints_gt: str | Unset = UNSET,
+    access_constraints_gte: str | Unset = UNSET,
+    access_constraints_icontains: str | Unset = UNSET,
+    access_constraints_iendswith: str | Unset = UNSET,
+    access_constraints_iexact: str | Unset = UNSET,
+    access_constraints_in: list[str] | Unset = UNSET,
+    access_constraints_iregex: str | Unset = UNSET,
+    access_constraints_isnull: bool | Unset = UNSET,
+    access_constraints_istartswith: str | Unset = UNSET,
+    access_constraints_lt: str | Unset = UNSET,
+    access_constraints_lte: str | Unset = UNSET,
+    access_constraints_range: list[str] | Unset = UNSET,
+    access_constraints_regex: str | Unset = UNSET,
+    access_constraints_startswith: str | Unset = UNSET,
+    access_roles: str | Unset = UNSET,
+    access_roles_contains: str | Unset = UNSET,
+    access_roles_endswith: str | Unset = UNSET,
+    access_roles_gt: str | Unset = UNSET,
+    access_roles_gte: str | Unset = UNSET,
+    access_roles_icontains: str | Unset = UNSET,
+    access_roles_iendswith: str | Unset = UNSET,
+    access_roles_iexact: str | Unset = UNSET,
+    access_roles_in: list[str] | Unset = UNSET,
+    access_roles_iregex: str | Unset = UNSET,
+    access_roles_isnull: bool | Unset = UNSET,
+    access_roles_istartswith: str | Unset = UNSET,
+    access_roles_lt: str | Unset = UNSET,
+    access_roles_lte: str | Unset = UNSET,
+    access_roles_range: list[str] | Unset = UNSET,
+    access_roles_regex: str | Unset = UNSET,
+    access_roles_startswith: str | Unset = UNSET,
+    label: str | Unset = UNSET,
+    label_contains: str | Unset = UNSET,
+    label_endswith: str | Unset = UNSET,
+    label_gt: str | Unset = UNSET,
+    label_gte: str | Unset = UNSET,
+    label_icontains: str | Unset = UNSET,
+    label_iendswith: str | Unset = UNSET,
+    label_iexact: str | Unset = UNSET,
+    label_in: list[str] | Unset = UNSET,
+    label_iregex: str | Unset = UNSET,
+    label_isnull: bool | Unset = UNSET,
+    label_istartswith: str | Unset = UNSET,
+    label_lt: str | Unset = UNSET,
+    label_lte: str | Unset = UNSET,
+    label_range: list[str] | Unset = UNSET,
+    label_regex: str | Unset = UNSET,
+    label_startswith: str | Unset = UNSET,
+    licence: int | Unset = UNSET,
+    licence_gt: int | Unset = UNSET,
+    licence_gte: int | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
+    licence_licence_classifications_classification: str | Unset = UNSET,
+    licence_licence_classifications_classification_contains: str | Unset = UNSET,
+    licence_licence_url: str | Unset = UNSET,
+    licence_licence_url_contains: str | Unset = UNSET,
+    licence_licence_url_in: list[str] | Unset = UNSET,
+    licence_lt: int | Unset = UNSET,
+    licence_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    use_limitation: str | Unset = UNSET,
+    use_limitation_contains: str | Unset = UNSET,
+    use_limitation_endswith: str | Unset = UNSET,
+    use_limitation_gt: str | Unset = UNSET,
+    use_limitation_gte: str | Unset = UNSET,
+    use_limitation_icontains: str | Unset = UNSET,
+    use_limitation_iendswith: str | Unset = UNSET,
+    use_limitation_iexact: str | Unset = UNSET,
+    use_limitation_in: list[str] | Unset = UNSET,
+    use_limitation_iregex: str | Unset = UNSET,
+    use_limitation_isnull: bool | Unset = UNSET,
+    use_limitation_istartswith: str | Unset = UNSET,
+    use_limitation_lt: str | Unset = UNSET,
+    use_limitation_lte: str | Unset = UNSET,
+    use_limitation_range: list[str] | Unset = UNSET,
+    use_limitation_regex: str | Unset = UNSET,
+    use_limitation_startswith: str | Unset = UNSET,
 ) -> Response[PaginatedConstraintsReadList]:
     """Get a list of Constraints objects.
 
     Args:
-        access_category (Union[Unset, ConstraintsListAccessCategory]):
-        access_category_contains (Union[Unset, str]):
-        access_category_endswith (Union[Unset, str]):
-        access_category_gt (Union[Unset, str]):
-        access_category_gte (Union[Unset, str]):
-        access_category_icontains (Union[Unset, str]):
-        access_category_iendswith (Union[Unset, str]):
-        access_category_iexact (Union[Unset, str]):
-        access_category_in (Union[Unset, list[str]]):
-        access_category_iregex (Union[Unset, str]):
-        access_category_isnull (Union[Unset, bool]):
-        access_category_istartswith (Union[Unset, str]):
-        access_category_lt (Union[Unset, str]):
-        access_category_lte (Union[Unset, str]):
-        access_category_range (Union[Unset, list[str]]):
-        access_category_regex (Union[Unset, str]):
-        access_category_startswith (Union[Unset, str]):
-        access_constraints (Union[Unset, str]):
-        access_constraints_contains (Union[Unset, str]):
-        access_constraints_endswith (Union[Unset, str]):
-        access_constraints_gt (Union[Unset, str]):
-        access_constraints_gte (Union[Unset, str]):
-        access_constraints_icontains (Union[Unset, str]):
-        access_constraints_iendswith (Union[Unset, str]):
-        access_constraints_iexact (Union[Unset, str]):
-        access_constraints_in (Union[Unset, list[str]]):
-        access_constraints_iregex (Union[Unset, str]):
-        access_constraints_isnull (Union[Unset, bool]):
-        access_constraints_istartswith (Union[Unset, str]):
-        access_constraints_lt (Union[Unset, str]):
-        access_constraints_lte (Union[Unset, str]):
-        access_constraints_range (Union[Unset, list[str]]):
-        access_constraints_regex (Union[Unset, str]):
-        access_constraints_startswith (Union[Unset, str]):
-        access_roles (Union[Unset, str]):
-        access_roles_contains (Union[Unset, str]):
-        access_roles_endswith (Union[Unset, str]):
-        access_roles_gt (Union[Unset, str]):
-        access_roles_gte (Union[Unset, str]):
-        access_roles_icontains (Union[Unset, str]):
-        access_roles_iendswith (Union[Unset, str]):
-        access_roles_iexact (Union[Unset, str]):
-        access_roles_in (Union[Unset, list[str]]):
-        access_roles_iregex (Union[Unset, str]):
-        access_roles_isnull (Union[Unset, bool]):
-        access_roles_istartswith (Union[Unset, str]):
-        access_roles_lt (Union[Unset, str]):
-        access_roles_lte (Union[Unset, str]):
-        access_roles_range (Union[Unset, list[str]]):
-        access_roles_regex (Union[Unset, str]):
-        access_roles_startswith (Union[Unset, str]):
-        label (Union[Unset, str]):
-        label_contains (Union[Unset, str]):
-        label_endswith (Union[Unset, str]):
-        label_gt (Union[Unset, str]):
-        label_gte (Union[Unset, str]):
-        label_icontains (Union[Unset, str]):
-        label_iendswith (Union[Unset, str]):
-        label_iexact (Union[Unset, str]):
-        label_in (Union[Unset, list[str]]):
-        label_iregex (Union[Unset, str]):
-        label_isnull (Union[Unset, bool]):
-        label_istartswith (Union[Unset, str]):
-        label_lt (Union[Unset, str]):
-        label_lte (Union[Unset, str]):
-        label_range (Union[Unset, list[str]]):
-        label_regex (Union[Unset, str]):
-        label_startswith (Union[Unset, str]):
-        licence (Union[Unset, int]):
-        licence_gt (Union[Unset, int]):
-        licence_gte (Union[Unset, int]):
-        licence_in (Union[Unset, list[int]]):
-        licence_isnull (Union[Unset, bool]):
-        licence_licence_classifications_classification (Union[Unset, str]):
-        licence_licence_classifications_classification_contains (Union[Unset, str]):
-        licence_licence_url (Union[Unset, str]):
-        licence_licence_url_contains (Union[Unset, str]):
-        licence_licence_url_in (Union[Unset, list[str]]):
-        licence_lt (Union[Unset, int]):
-        licence_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        use_limitation (Union[Unset, str]):
-        use_limitation_contains (Union[Unset, str]):
-        use_limitation_endswith (Union[Unset, str]):
-        use_limitation_gt (Union[Unset, str]):
-        use_limitation_gte (Union[Unset, str]):
-        use_limitation_icontains (Union[Unset, str]):
-        use_limitation_iendswith (Union[Unset, str]):
-        use_limitation_iexact (Union[Unset, str]):
-        use_limitation_in (Union[Unset, list[str]]):
-        use_limitation_iregex (Union[Unset, str]):
-        use_limitation_isnull (Union[Unset, bool]):
-        use_limitation_istartswith (Union[Unset, str]):
-        use_limitation_lt (Union[Unset, str]):
-        use_limitation_lte (Union[Unset, str]):
-        use_limitation_range (Union[Unset, list[str]]):
-        use_limitation_regex (Union[Unset, str]):
-        use_limitation_startswith (Union[Unset, str]):
+        access_category (ConstraintsListAccessCategory | Unset):
+        access_category_contains (str | Unset):
+        access_category_endswith (str | Unset):
+        access_category_gt (str | Unset):
+        access_category_gte (str | Unset):
+        access_category_icontains (str | Unset):
+        access_category_iendswith (str | Unset):
+        access_category_iexact (str | Unset):
+        access_category_in (list[str] | Unset):
+        access_category_iregex (str | Unset):
+        access_category_isnull (bool | Unset):
+        access_category_istartswith (str | Unset):
+        access_category_lt (str | Unset):
+        access_category_lte (str | Unset):
+        access_category_range (list[str] | Unset):
+        access_category_regex (str | Unset):
+        access_category_startswith (str | Unset):
+        access_constraints (str | Unset):
+        access_constraints_contains (str | Unset):
+        access_constraints_endswith (str | Unset):
+        access_constraints_gt (str | Unset):
+        access_constraints_gte (str | Unset):
+        access_constraints_icontains (str | Unset):
+        access_constraints_iendswith (str | Unset):
+        access_constraints_iexact (str | Unset):
+        access_constraints_in (list[str] | Unset):
+        access_constraints_iregex (str | Unset):
+        access_constraints_isnull (bool | Unset):
+        access_constraints_istartswith (str | Unset):
+        access_constraints_lt (str | Unset):
+        access_constraints_lte (str | Unset):
+        access_constraints_range (list[str] | Unset):
+        access_constraints_regex (str | Unset):
+        access_constraints_startswith (str | Unset):
+        access_roles (str | Unset):
+        access_roles_contains (str | Unset):
+        access_roles_endswith (str | Unset):
+        access_roles_gt (str | Unset):
+        access_roles_gte (str | Unset):
+        access_roles_icontains (str | Unset):
+        access_roles_iendswith (str | Unset):
+        access_roles_iexact (str | Unset):
+        access_roles_in (list[str] | Unset):
+        access_roles_iregex (str | Unset):
+        access_roles_isnull (bool | Unset):
+        access_roles_istartswith (str | Unset):
+        access_roles_lt (str | Unset):
+        access_roles_lte (str | Unset):
+        access_roles_range (list[str] | Unset):
+        access_roles_regex (str | Unset):
+        access_roles_startswith (str | Unset):
+        label (str | Unset):
+        label_contains (str | Unset):
+        label_endswith (str | Unset):
+        label_gt (str | Unset):
+        label_gte (str | Unset):
+        label_icontains (str | Unset):
+        label_iendswith (str | Unset):
+        label_iexact (str | Unset):
+        label_in (list[str] | Unset):
+        label_iregex (str | Unset):
+        label_isnull (bool | Unset):
+        label_istartswith (str | Unset):
+        label_lt (str | Unset):
+        label_lte (str | Unset):
+        label_range (list[str] | Unset):
+        label_regex (str | Unset):
+        label_startswith (str | Unset):
+        licence (int | Unset):
+        licence_gt (int | Unset):
+        licence_gte (int | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
+        licence_licence_classifications_classification (str | Unset):
+        licence_licence_classifications_classification_contains (str | Unset):
+        licence_licence_url (str | Unset):
+        licence_licence_url_contains (str | Unset):
+        licence_licence_url_in (list[str] | Unset):
+        licence_lt (int | Unset):
+        licence_lte (int | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        use_limitation (str | Unset):
+        use_limitation_contains (str | Unset):
+        use_limitation_endswith (str | Unset):
+        use_limitation_gt (str | Unset):
+        use_limitation_gte (str | Unset):
+        use_limitation_icontains (str | Unset):
+        use_limitation_iendswith (str | Unset):
+        use_limitation_iexact (str | Unset):
+        use_limitation_in (list[str] | Unset):
+        use_limitation_iregex (str | Unset):
+        use_limitation_isnull (bool | Unset):
+        use_limitation_istartswith (str | Unset):
+        use_limitation_lt (str | Unset):
+        use_limitation_lte (str | Unset):
+        use_limitation_range (list[str] | Unset):
+        use_limitation_regex (str | Unset):
+        use_limitation_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1603,246 +1603,246 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
-    access_category: Union[Unset, ConstraintsListAccessCategory] = UNSET,
-    access_category_contains: Union[Unset, str] = UNSET,
-    access_category_endswith: Union[Unset, str] = UNSET,
-    access_category_gt: Union[Unset, str] = UNSET,
-    access_category_gte: Union[Unset, str] = UNSET,
-    access_category_icontains: Union[Unset, str] = UNSET,
-    access_category_iendswith: Union[Unset, str] = UNSET,
-    access_category_iexact: Union[Unset, str] = UNSET,
-    access_category_in: Union[Unset, list[str]] = UNSET,
-    access_category_iregex: Union[Unset, str] = UNSET,
-    access_category_isnull: Union[Unset, bool] = UNSET,
-    access_category_istartswith: Union[Unset, str] = UNSET,
-    access_category_lt: Union[Unset, str] = UNSET,
-    access_category_lte: Union[Unset, str] = UNSET,
-    access_category_range: Union[Unset, list[str]] = UNSET,
-    access_category_regex: Union[Unset, str] = UNSET,
-    access_category_startswith: Union[Unset, str] = UNSET,
-    access_constraints: Union[Unset, str] = UNSET,
-    access_constraints_contains: Union[Unset, str] = UNSET,
-    access_constraints_endswith: Union[Unset, str] = UNSET,
-    access_constraints_gt: Union[Unset, str] = UNSET,
-    access_constraints_gte: Union[Unset, str] = UNSET,
-    access_constraints_icontains: Union[Unset, str] = UNSET,
-    access_constraints_iendswith: Union[Unset, str] = UNSET,
-    access_constraints_iexact: Union[Unset, str] = UNSET,
-    access_constraints_in: Union[Unset, list[str]] = UNSET,
-    access_constraints_iregex: Union[Unset, str] = UNSET,
-    access_constraints_isnull: Union[Unset, bool] = UNSET,
-    access_constraints_istartswith: Union[Unset, str] = UNSET,
-    access_constraints_lt: Union[Unset, str] = UNSET,
-    access_constraints_lte: Union[Unset, str] = UNSET,
-    access_constraints_range: Union[Unset, list[str]] = UNSET,
-    access_constraints_regex: Union[Unset, str] = UNSET,
-    access_constraints_startswith: Union[Unset, str] = UNSET,
-    access_roles: Union[Unset, str] = UNSET,
-    access_roles_contains: Union[Unset, str] = UNSET,
-    access_roles_endswith: Union[Unset, str] = UNSET,
-    access_roles_gt: Union[Unset, str] = UNSET,
-    access_roles_gte: Union[Unset, str] = UNSET,
-    access_roles_icontains: Union[Unset, str] = UNSET,
-    access_roles_iendswith: Union[Unset, str] = UNSET,
-    access_roles_iexact: Union[Unset, str] = UNSET,
-    access_roles_in: Union[Unset, list[str]] = UNSET,
-    access_roles_iregex: Union[Unset, str] = UNSET,
-    access_roles_isnull: Union[Unset, bool] = UNSET,
-    access_roles_istartswith: Union[Unset, str] = UNSET,
-    access_roles_lt: Union[Unset, str] = UNSET,
-    access_roles_lte: Union[Unset, str] = UNSET,
-    access_roles_range: Union[Unset, list[str]] = UNSET,
-    access_roles_regex: Union[Unset, str] = UNSET,
-    access_roles_startswith: Union[Unset, str] = UNSET,
-    label: Union[Unset, str] = UNSET,
-    label_contains: Union[Unset, str] = UNSET,
-    label_endswith: Union[Unset, str] = UNSET,
-    label_gt: Union[Unset, str] = UNSET,
-    label_gte: Union[Unset, str] = UNSET,
-    label_icontains: Union[Unset, str] = UNSET,
-    label_iendswith: Union[Unset, str] = UNSET,
-    label_iexact: Union[Unset, str] = UNSET,
-    label_in: Union[Unset, list[str]] = UNSET,
-    label_iregex: Union[Unset, str] = UNSET,
-    label_isnull: Union[Unset, bool] = UNSET,
-    label_istartswith: Union[Unset, str] = UNSET,
-    label_lt: Union[Unset, str] = UNSET,
-    label_lte: Union[Unset, str] = UNSET,
-    label_range: Union[Unset, list[str]] = UNSET,
-    label_regex: Union[Unset, str] = UNSET,
-    label_startswith: Union[Unset, str] = UNSET,
-    licence: Union[Unset, int] = UNSET,
-    licence_gt: Union[Unset, int] = UNSET,
-    licence_gte: Union[Unset, int] = UNSET,
-    licence_in: Union[Unset, list[int]] = UNSET,
-    licence_isnull: Union[Unset, bool] = UNSET,
-    licence_licence_classifications_classification: Union[Unset, str] = UNSET,
-    licence_licence_classifications_classification_contains: Union[Unset, str] = UNSET,
-    licence_licence_url: Union[Unset, str] = UNSET,
-    licence_licence_url_contains: Union[Unset, str] = UNSET,
-    licence_licence_url_in: Union[Unset, list[str]] = UNSET,
-    licence_lt: Union[Unset, int] = UNSET,
-    licence_lte: Union[Unset, int] = UNSET,
-    limit: Union[Unset, int] = UNSET,
-    ob_id: Union[Unset, int] = UNSET,
-    ob_id_contained_by: Union[Unset, int] = UNSET,
-    ob_id_contains: Union[Unset, int] = UNSET,
-    ob_id_endswith: Union[Unset, int] = UNSET,
-    ob_id_gt: Union[Unset, int] = UNSET,
-    ob_id_gte: Union[Unset, int] = UNSET,
-    ob_id_icontains: Union[Unset, int] = UNSET,
-    ob_id_iendswith: Union[Unset, int] = UNSET,
-    ob_id_iexact: Union[Unset, int] = UNSET,
-    ob_id_in: Union[Unset, list[int]] = UNSET,
-    ob_id_iregex: Union[Unset, int] = UNSET,
-    ob_id_isnull: Union[Unset, bool] = UNSET,
-    ob_id_istartswith: Union[Unset, int] = UNSET,
-    ob_id_lt: Union[Unset, int] = UNSET,
-    ob_id_lte: Union[Unset, int] = UNSET,
-    ob_id_range: Union[Unset, list[int]] = UNSET,
-    ob_id_regex: Union[Unset, int] = UNSET,
-    ob_id_startswith: Union[Unset, int] = UNSET,
-    offset: Union[Unset, int] = UNSET,
-    ordering: Union[Unset, str] = UNSET,
-    use_limitation: Union[Unset, str] = UNSET,
-    use_limitation_contains: Union[Unset, str] = UNSET,
-    use_limitation_endswith: Union[Unset, str] = UNSET,
-    use_limitation_gt: Union[Unset, str] = UNSET,
-    use_limitation_gte: Union[Unset, str] = UNSET,
-    use_limitation_icontains: Union[Unset, str] = UNSET,
-    use_limitation_iendswith: Union[Unset, str] = UNSET,
-    use_limitation_iexact: Union[Unset, str] = UNSET,
-    use_limitation_in: Union[Unset, list[str]] = UNSET,
-    use_limitation_iregex: Union[Unset, str] = UNSET,
-    use_limitation_isnull: Union[Unset, bool] = UNSET,
-    use_limitation_istartswith: Union[Unset, str] = UNSET,
-    use_limitation_lt: Union[Unset, str] = UNSET,
-    use_limitation_lte: Union[Unset, str] = UNSET,
-    use_limitation_range: Union[Unset, list[str]] = UNSET,
-    use_limitation_regex: Union[Unset, str] = UNSET,
-    use_limitation_startswith: Union[Unset, str] = UNSET,
-) -> Optional[PaginatedConstraintsReadList]:
+    access_category: ConstraintsListAccessCategory | Unset = UNSET,
+    access_category_contains: str | Unset = UNSET,
+    access_category_endswith: str | Unset = UNSET,
+    access_category_gt: str | Unset = UNSET,
+    access_category_gte: str | Unset = UNSET,
+    access_category_icontains: str | Unset = UNSET,
+    access_category_iendswith: str | Unset = UNSET,
+    access_category_iexact: str | Unset = UNSET,
+    access_category_in: list[str] | Unset = UNSET,
+    access_category_iregex: str | Unset = UNSET,
+    access_category_isnull: bool | Unset = UNSET,
+    access_category_istartswith: str | Unset = UNSET,
+    access_category_lt: str | Unset = UNSET,
+    access_category_lte: str | Unset = UNSET,
+    access_category_range: list[str] | Unset = UNSET,
+    access_category_regex: str | Unset = UNSET,
+    access_category_startswith: str | Unset = UNSET,
+    access_constraints: str | Unset = UNSET,
+    access_constraints_contains: str | Unset = UNSET,
+    access_constraints_endswith: str | Unset = UNSET,
+    access_constraints_gt: str | Unset = UNSET,
+    access_constraints_gte: str | Unset = UNSET,
+    access_constraints_icontains: str | Unset = UNSET,
+    access_constraints_iendswith: str | Unset = UNSET,
+    access_constraints_iexact: str | Unset = UNSET,
+    access_constraints_in: list[str] | Unset = UNSET,
+    access_constraints_iregex: str | Unset = UNSET,
+    access_constraints_isnull: bool | Unset = UNSET,
+    access_constraints_istartswith: str | Unset = UNSET,
+    access_constraints_lt: str | Unset = UNSET,
+    access_constraints_lte: str | Unset = UNSET,
+    access_constraints_range: list[str] | Unset = UNSET,
+    access_constraints_regex: str | Unset = UNSET,
+    access_constraints_startswith: str | Unset = UNSET,
+    access_roles: str | Unset = UNSET,
+    access_roles_contains: str | Unset = UNSET,
+    access_roles_endswith: str | Unset = UNSET,
+    access_roles_gt: str | Unset = UNSET,
+    access_roles_gte: str | Unset = UNSET,
+    access_roles_icontains: str | Unset = UNSET,
+    access_roles_iendswith: str | Unset = UNSET,
+    access_roles_iexact: str | Unset = UNSET,
+    access_roles_in: list[str] | Unset = UNSET,
+    access_roles_iregex: str | Unset = UNSET,
+    access_roles_isnull: bool | Unset = UNSET,
+    access_roles_istartswith: str | Unset = UNSET,
+    access_roles_lt: str | Unset = UNSET,
+    access_roles_lte: str | Unset = UNSET,
+    access_roles_range: list[str] | Unset = UNSET,
+    access_roles_regex: str | Unset = UNSET,
+    access_roles_startswith: str | Unset = UNSET,
+    label: str | Unset = UNSET,
+    label_contains: str | Unset = UNSET,
+    label_endswith: str | Unset = UNSET,
+    label_gt: str | Unset = UNSET,
+    label_gte: str | Unset = UNSET,
+    label_icontains: str | Unset = UNSET,
+    label_iendswith: str | Unset = UNSET,
+    label_iexact: str | Unset = UNSET,
+    label_in: list[str] | Unset = UNSET,
+    label_iregex: str | Unset = UNSET,
+    label_isnull: bool | Unset = UNSET,
+    label_istartswith: str | Unset = UNSET,
+    label_lt: str | Unset = UNSET,
+    label_lte: str | Unset = UNSET,
+    label_range: list[str] | Unset = UNSET,
+    label_regex: str | Unset = UNSET,
+    label_startswith: str | Unset = UNSET,
+    licence: int | Unset = UNSET,
+    licence_gt: int | Unset = UNSET,
+    licence_gte: int | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
+    licence_licence_classifications_classification: str | Unset = UNSET,
+    licence_licence_classifications_classification_contains: str | Unset = UNSET,
+    licence_licence_url: str | Unset = UNSET,
+    licence_licence_url_contains: str | Unset = UNSET,
+    licence_licence_url_in: list[str] | Unset = UNSET,
+    licence_lt: int | Unset = UNSET,
+    licence_lte: int | Unset = UNSET,
+    limit: int | Unset = UNSET,
+    ob_id: int | Unset = UNSET,
+    ob_id_contained_by: int | Unset = UNSET,
+    ob_id_contains: int | Unset = UNSET,
+    ob_id_endswith: int | Unset = UNSET,
+    ob_id_gt: int | Unset = UNSET,
+    ob_id_gte: int | Unset = UNSET,
+    ob_id_icontains: int | Unset = UNSET,
+    ob_id_iendswith: int | Unset = UNSET,
+    ob_id_iexact: int | Unset = UNSET,
+    ob_id_in: list[int] | Unset = UNSET,
+    ob_id_iregex: int | Unset = UNSET,
+    ob_id_isnull: bool | Unset = UNSET,
+    ob_id_istartswith: int | Unset = UNSET,
+    ob_id_lt: int | Unset = UNSET,
+    ob_id_lte: int | Unset = UNSET,
+    ob_id_range: list[int] | Unset = UNSET,
+    ob_id_regex: int | Unset = UNSET,
+    ob_id_startswith: int | Unset = UNSET,
+    offset: int | Unset = UNSET,
+    ordering: str | Unset = UNSET,
+    use_limitation: str | Unset = UNSET,
+    use_limitation_contains: str | Unset = UNSET,
+    use_limitation_endswith: str | Unset = UNSET,
+    use_limitation_gt: str | Unset = UNSET,
+    use_limitation_gte: str | Unset = UNSET,
+    use_limitation_icontains: str | Unset = UNSET,
+    use_limitation_iendswith: str | Unset = UNSET,
+    use_limitation_iexact: str | Unset = UNSET,
+    use_limitation_in: list[str] | Unset = UNSET,
+    use_limitation_iregex: str | Unset = UNSET,
+    use_limitation_isnull: bool | Unset = UNSET,
+    use_limitation_istartswith: str | Unset = UNSET,
+    use_limitation_lt: str | Unset = UNSET,
+    use_limitation_lte: str | Unset = UNSET,
+    use_limitation_range: list[str] | Unset = UNSET,
+    use_limitation_regex: str | Unset = UNSET,
+    use_limitation_startswith: str | Unset = UNSET,
+) -> PaginatedConstraintsReadList | None:
     """Get a list of Constraints objects.
 
     Args:
-        access_category (Union[Unset, ConstraintsListAccessCategory]):
-        access_category_contains (Union[Unset, str]):
-        access_category_endswith (Union[Unset, str]):
-        access_category_gt (Union[Unset, str]):
-        access_category_gte (Union[Unset, str]):
-        access_category_icontains (Union[Unset, str]):
-        access_category_iendswith (Union[Unset, str]):
-        access_category_iexact (Union[Unset, str]):
-        access_category_in (Union[Unset, list[str]]):
-        access_category_iregex (Union[Unset, str]):
-        access_category_isnull (Union[Unset, bool]):
-        access_category_istartswith (Union[Unset, str]):
-        access_category_lt (Union[Unset, str]):
-        access_category_lte (Union[Unset, str]):
-        access_category_range (Union[Unset, list[str]]):
-        access_category_regex (Union[Unset, str]):
-        access_category_startswith (Union[Unset, str]):
-        access_constraints (Union[Unset, str]):
-        access_constraints_contains (Union[Unset, str]):
-        access_constraints_endswith (Union[Unset, str]):
-        access_constraints_gt (Union[Unset, str]):
-        access_constraints_gte (Union[Unset, str]):
-        access_constraints_icontains (Union[Unset, str]):
-        access_constraints_iendswith (Union[Unset, str]):
-        access_constraints_iexact (Union[Unset, str]):
-        access_constraints_in (Union[Unset, list[str]]):
-        access_constraints_iregex (Union[Unset, str]):
-        access_constraints_isnull (Union[Unset, bool]):
-        access_constraints_istartswith (Union[Unset, str]):
-        access_constraints_lt (Union[Unset, str]):
-        access_constraints_lte (Union[Unset, str]):
-        access_constraints_range (Union[Unset, list[str]]):
-        access_constraints_regex (Union[Unset, str]):
-        access_constraints_startswith (Union[Unset, str]):
-        access_roles (Union[Unset, str]):
-        access_roles_contains (Union[Unset, str]):
-        access_roles_endswith (Union[Unset, str]):
-        access_roles_gt (Union[Unset, str]):
-        access_roles_gte (Union[Unset, str]):
-        access_roles_icontains (Union[Unset, str]):
-        access_roles_iendswith (Union[Unset, str]):
-        access_roles_iexact (Union[Unset, str]):
-        access_roles_in (Union[Unset, list[str]]):
-        access_roles_iregex (Union[Unset, str]):
-        access_roles_isnull (Union[Unset, bool]):
-        access_roles_istartswith (Union[Unset, str]):
-        access_roles_lt (Union[Unset, str]):
-        access_roles_lte (Union[Unset, str]):
-        access_roles_range (Union[Unset, list[str]]):
-        access_roles_regex (Union[Unset, str]):
-        access_roles_startswith (Union[Unset, str]):
-        label (Union[Unset, str]):
-        label_contains (Union[Unset, str]):
-        label_endswith (Union[Unset, str]):
-        label_gt (Union[Unset, str]):
-        label_gte (Union[Unset, str]):
-        label_icontains (Union[Unset, str]):
-        label_iendswith (Union[Unset, str]):
-        label_iexact (Union[Unset, str]):
-        label_in (Union[Unset, list[str]]):
-        label_iregex (Union[Unset, str]):
-        label_isnull (Union[Unset, bool]):
-        label_istartswith (Union[Unset, str]):
-        label_lt (Union[Unset, str]):
-        label_lte (Union[Unset, str]):
-        label_range (Union[Unset, list[str]]):
-        label_regex (Union[Unset, str]):
-        label_startswith (Union[Unset, str]):
-        licence (Union[Unset, int]):
-        licence_gt (Union[Unset, int]):
-        licence_gte (Union[Unset, int]):
-        licence_in (Union[Unset, list[int]]):
-        licence_isnull (Union[Unset, bool]):
-        licence_licence_classifications_classification (Union[Unset, str]):
-        licence_licence_classifications_classification_contains (Union[Unset, str]):
-        licence_licence_url (Union[Unset, str]):
-        licence_licence_url_contains (Union[Unset, str]):
-        licence_licence_url_in (Union[Unset, list[str]]):
-        licence_lt (Union[Unset, int]):
-        licence_lte (Union[Unset, int]):
-        limit (Union[Unset, int]):
-        ob_id (Union[Unset, int]):
-        ob_id_contained_by (Union[Unset, int]):
-        ob_id_contains (Union[Unset, int]):
-        ob_id_endswith (Union[Unset, int]):
-        ob_id_gt (Union[Unset, int]):
-        ob_id_gte (Union[Unset, int]):
-        ob_id_icontains (Union[Unset, int]):
-        ob_id_iendswith (Union[Unset, int]):
-        ob_id_iexact (Union[Unset, int]):
-        ob_id_in (Union[Unset, list[int]]):
-        ob_id_iregex (Union[Unset, int]):
-        ob_id_isnull (Union[Unset, bool]):
-        ob_id_istartswith (Union[Unset, int]):
-        ob_id_lt (Union[Unset, int]):
-        ob_id_lte (Union[Unset, int]):
-        ob_id_range (Union[Unset, list[int]]):
-        ob_id_regex (Union[Unset, int]):
-        ob_id_startswith (Union[Unset, int]):
-        offset (Union[Unset, int]):
-        ordering (Union[Unset, str]):
-        use_limitation (Union[Unset, str]):
-        use_limitation_contains (Union[Unset, str]):
-        use_limitation_endswith (Union[Unset, str]):
-        use_limitation_gt (Union[Unset, str]):
-        use_limitation_gte (Union[Unset, str]):
-        use_limitation_icontains (Union[Unset, str]):
-        use_limitation_iendswith (Union[Unset, str]):
-        use_limitation_iexact (Union[Unset, str]):
-        use_limitation_in (Union[Unset, list[str]]):
-        use_limitation_iregex (Union[Unset, str]):
-        use_limitation_isnull (Union[Unset, bool]):
-        use_limitation_istartswith (Union[Unset, str]):
-        use_limitation_lt (Union[Unset, str]):
-        use_limitation_lte (Union[Unset, str]):
-        use_limitation_range (Union[Unset, list[str]]):
-        use_limitation_regex (Union[Unset, str]):
-        use_limitation_startswith (Union[Unset, str]):
+        access_category (ConstraintsListAccessCategory | Unset):
+        access_category_contains (str | Unset):
+        access_category_endswith (str | Unset):
+        access_category_gt (str | Unset):
+        access_category_gte (str | Unset):
+        access_category_icontains (str | Unset):
+        access_category_iendswith (str | Unset):
+        access_category_iexact (str | Unset):
+        access_category_in (list[str] | Unset):
+        access_category_iregex (str | Unset):
+        access_category_isnull (bool | Unset):
+        access_category_istartswith (str | Unset):
+        access_category_lt (str | Unset):
+        access_category_lte (str | Unset):
+        access_category_range (list[str] | Unset):
+        access_category_regex (str | Unset):
+        access_category_startswith (str | Unset):
+        access_constraints (str | Unset):
+        access_constraints_contains (str | Unset):
+        access_constraints_endswith (str | Unset):
+        access_constraints_gt (str | Unset):
+        access_constraints_gte (str | Unset):
+        access_constraints_icontains (str | Unset):
+        access_constraints_iendswith (str | Unset):
+        access_constraints_iexact (str | Unset):
+        access_constraints_in (list[str] | Unset):
+        access_constraints_iregex (str | Unset):
+        access_constraints_isnull (bool | Unset):
+        access_constraints_istartswith (str | Unset):
+        access_constraints_lt (str | Unset):
+        access_constraints_lte (str | Unset):
+        access_constraints_range (list[str] | Unset):
+        access_constraints_regex (str | Unset):
+        access_constraints_startswith (str | Unset):
+        access_roles (str | Unset):
+        access_roles_contains (str | Unset):
+        access_roles_endswith (str | Unset):
+        access_roles_gt (str | Unset):
+        access_roles_gte (str | Unset):
+        access_roles_icontains (str | Unset):
+        access_roles_iendswith (str | Unset):
+        access_roles_iexact (str | Unset):
+        access_roles_in (list[str] | Unset):
+        access_roles_iregex (str | Unset):
+        access_roles_isnull (bool | Unset):
+        access_roles_istartswith (str | Unset):
+        access_roles_lt (str | Unset):
+        access_roles_lte (str | Unset):
+        access_roles_range (list[str] | Unset):
+        access_roles_regex (str | Unset):
+        access_roles_startswith (str | Unset):
+        label (str | Unset):
+        label_contains (str | Unset):
+        label_endswith (str | Unset):
+        label_gt (str | Unset):
+        label_gte (str | Unset):
+        label_icontains (str | Unset):
+        label_iendswith (str | Unset):
+        label_iexact (str | Unset):
+        label_in (list[str] | Unset):
+        label_iregex (str | Unset):
+        label_isnull (bool | Unset):
+        label_istartswith (str | Unset):
+        label_lt (str | Unset):
+        label_lte (str | Unset):
+        label_range (list[str] | Unset):
+        label_regex (str | Unset):
+        label_startswith (str | Unset):
+        licence (int | Unset):
+        licence_gt (int | Unset):
+        licence_gte (int | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
+        licence_licence_classifications_classification (str | Unset):
+        licence_licence_classifications_classification_contains (str | Unset):
+        licence_licence_url (str | Unset):
+        licence_licence_url_contains (str | Unset):
+        licence_licence_url_in (list[str] | Unset):
+        licence_lt (int | Unset):
+        licence_lte (int | Unset):
+        limit (int | Unset):
+        ob_id (int | Unset):
+        ob_id_contained_by (int | Unset):
+        ob_id_contains (int | Unset):
+        ob_id_endswith (int | Unset):
+        ob_id_gt (int | Unset):
+        ob_id_gte (int | Unset):
+        ob_id_icontains (int | Unset):
+        ob_id_iendswith (int | Unset):
+        ob_id_iexact (int | Unset):
+        ob_id_in (list[int] | Unset):
+        ob_id_iregex (int | Unset):
+        ob_id_isnull (bool | Unset):
+        ob_id_istartswith (int | Unset):
+        ob_id_lt (int | Unset):
+        ob_id_lte (int | Unset):
+        ob_id_range (list[int] | Unset):
+        ob_id_regex (int | Unset):
+        ob_id_startswith (int | Unset):
+        offset (int | Unset):
+        ordering (str | Unset):
+        use_limitation (str | Unset):
+        use_limitation_contains (str | Unset):
+        use_limitation_endswith (str | Unset):
+        use_limitation_gt (str | Unset):
+        use_limitation_gte (str | Unset):
+        use_limitation_icontains (str | Unset):
+        use_limitation_iendswith (str | Unset):
+        use_limitation_iexact (str | Unset):
+        use_limitation_in (list[str] | Unset):
+        use_limitation_iregex (str | Unset):
+        use_limitation_isnull (bool | Unset):
+        use_limitation_istartswith (str | Unset):
+        use_limitation_lt (str | Unset):
+        use_limitation_lte (str | Unset):
+        use_limitation_range (list[str] | Unset):
+        use_limitation_regex (str | Unset):
+        use_limitation_startswith (str | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.

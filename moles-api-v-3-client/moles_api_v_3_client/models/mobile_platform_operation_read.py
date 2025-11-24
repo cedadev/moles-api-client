@@ -1,5 +1,7 @@
+from __future__ import annotations
+
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar, Union, cast
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -27,11 +29,11 @@ class MobilePlatformOperationRead:
             short_code (str):
             title (str):
             abstract (str):
-            status (Union[BlankEnum, StatusEnum]):
-            platform_field (Union['SimpleRead', None]):
-            location (Union['GeographicBoundingBoxRead', None]):
-            operation_time (Union['TimePeriod', None]):
-            child_operation (Union['SimpleRead', None]):
+            status (BlankEnum | StatusEnum):
+            platform_field (None | SimpleRead):
+            location (GeographicBoundingBoxRead | None):
+            operation_time (None | TimePeriod):
+            child_operation (None | SimpleRead):
     """
 
     ob_id: int
@@ -39,11 +41,11 @@ class MobilePlatformOperationRead:
     short_code: str
     title: str
     abstract: str
-    status: Union[BlankEnum, StatusEnum]
-    platform_field: Union["SimpleRead", None]
-    location: Union["GeographicBoundingBoxRead", None]
-    operation_time: Union["TimePeriod", None]
-    child_operation: Union["SimpleRead", None]
+    status: BlankEnum | StatusEnum
+    platform_field: None | SimpleRead
+    location: GeographicBoundingBoxRead | None
+    operation_time: None | TimePeriod
+    child_operation: None | SimpleRead
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -67,25 +69,25 @@ class MobilePlatformOperationRead:
         else:
             status = self.status.value
 
-        platform_field: Union[None, dict[str, Any]]
+        platform_field: dict[str, Any] | None
         if isinstance(self.platform_field, SimpleRead):
             platform_field = self.platform_field.to_dict()
         else:
             platform_field = self.platform_field
 
-        location: Union[None, dict[str, Any]]
+        location: dict[str, Any] | None
         if isinstance(self.location, GeographicBoundingBoxRead):
             location = self.location.to_dict()
         else:
             location = self.location
 
-        operation_time: Union[None, dict[str, Any]]
+        operation_time: dict[str, Any] | None
         if isinstance(self.operation_time, TimePeriod):
             operation_time = self.operation_time.to_dict()
         else:
             operation_time = self.operation_time
 
-        child_operation: Union[None, dict[str, Any]]
+        child_operation: dict[str, Any] | None
         if isinstance(self.child_operation, SimpleRead):
             child_operation = self.child_operation.to_dict()
         else:
@@ -127,14 +129,14 @@ class MobilePlatformOperationRead:
 
         abstract = d.pop("abstract")
 
-        def _parse_status(data: object) -> Union[BlankEnum, StatusEnum]:
+        def _parse_status(data: object) -> BlankEnum | StatusEnum:
             try:
                 if not isinstance(data, str):
                     raise TypeError()
                 status_type_0 = StatusEnum(data)
 
                 return status_type_0
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
             if not isinstance(data, str):
                 raise TypeError()
@@ -144,7 +146,7 @@ class MobilePlatformOperationRead:
 
         status = _parse_status(d.pop("status"))
 
-        def _parse_platform_field(data: object) -> Union["SimpleRead", None]:
+        def _parse_platform_field(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -153,13 +155,13 @@ class MobilePlatformOperationRead:
                 platform_field_type_1 = SimpleRead.from_dict(data)
 
                 return platform_field_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         platform_field = _parse_platform_field(d.pop("platform_field"))
 
-        def _parse_location(data: object) -> Union["GeographicBoundingBoxRead", None]:
+        def _parse_location(data: object) -> GeographicBoundingBoxRead | None:
             if data is None:
                 return data
             try:
@@ -168,13 +170,13 @@ class MobilePlatformOperationRead:
                 location_type_1 = GeographicBoundingBoxRead.from_dict(data)
 
                 return location_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["GeographicBoundingBoxRead", None], data)
+            return cast(GeographicBoundingBoxRead | None, data)
 
         location = _parse_location(d.pop("location"))
 
-        def _parse_operation_time(data: object) -> Union["TimePeriod", None]:
+        def _parse_operation_time(data: object) -> None | TimePeriod:
             if data is None:
                 return data
             try:
@@ -183,13 +185,13 @@ class MobilePlatformOperationRead:
                 operation_time_type_1 = TimePeriod.from_dict(data)
 
                 return operation_time_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["TimePeriod", None], data)
+            return cast(None | TimePeriod, data)
 
         operation_time = _parse_operation_time(d.pop("operationTime"))
 
-        def _parse_child_operation(data: object) -> Union["SimpleRead", None]:
+        def _parse_child_operation(data: object) -> None | SimpleRead:
             if data is None:
                 return data
             try:
@@ -198,9 +200,9 @@ class MobilePlatformOperationRead:
                 child_operation_type_1 = SimpleRead.from_dict(data)
 
                 return child_operation_type_1
-            except:  # noqa: E722
+            except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            return cast(Union["SimpleRead", None], data)
+            return cast(None | SimpleRead, data)
 
         child_operation = _parse_child_operation(d.pop("childOperation"))
 
