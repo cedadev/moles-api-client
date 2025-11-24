@@ -1,19 +1,8 @@
-"""
-
-moles_basic_tools.py
---------------------
-
-Package of tools used in many scripts
-
-started 18/12/2015 by G.A. Parton
-
-use 
-
-from moles_basic_tools import *
-"""
 import sys
 from typing import Protocol
 from enum import Enum
+from collections.abc import Callable
+
 
 from scripts.utils import get_client
 from moles_api_v_3_client.client import AuthenticatedClient
@@ -36,6 +25,7 @@ from moles_api_v_3_client.api.projects import projects_list
 from moles_api_v_3_client.api.referenceables import referenceables_list
 from moles_api_v_3_client.api.results import results_list
 from moles_api_v_3_client.api.rpis import rpis_create, rpis_list
+from moles_api_v_3_client.api.composites import composites_list
 
 # --- Models: core data entities ---
 from moles_api_v_3_client.models.referenceable import Referenceable
@@ -57,10 +47,10 @@ from moles_api_v_3_client.models.online_resource_write_request import OnlineReso
 # --- Models: identifiers and misc ---
 from moles_api_v_3_client.models.patched_identifier_write_request import PatchedIdentifierWriteRequest
 
-
-
+    
 SHORT_CODES_TO_ENDPOINTS_MAP = {
     'acq': acquisitions_list, 
+    'cmppr': composites_list,
     'coll': observationcollections_list,
     'comp': computations_list,
     'instr': instruments_list,
@@ -68,7 +58,7 @@ SHORT_CODES_TO_ENDPOINTS_MAP = {
     'ob': observations_list,
     'plat': platforms_list,
     'proj': projects_list,
-    'result': results_list 
+    'result': results_list,
     }
 
 import logging
@@ -79,6 +69,9 @@ log = logging.getLogger(__name__)
 
 class ApiReadReferenceable(Protocol):
     uuid: str
+    
+def get_endpoint_by_shortcode(short_code: str) -> Callable:
+    return SHORT_CODES_TO_ENDPOINTS_MAP.get(short_code, None)
 
 def _get_value_enum(value: str, enum_class: Enum) -> Enum:
     '''
@@ -110,26 +103,27 @@ def doi_id_checker(record: Referenceable) -> bool:
     if it has, then the record should NOT be editted
     """
     uuid = record.uuid
-    res = identifiers_list.sync_detailed(client=CLIENT, identifier_type=_get_value_enum('doi', IdentifierTypeEnum), related_to_uuid=uuid)
+    id_type = _get_value_enum('doi', IdentifierTypeEnum)
+    response = identifiers_list.sync_detailed(client=CLIENT, identifier_type=id_type, related_to_uuid=uuid)
     
-    return res.parsed.count > 0
+    return response.parsed.count > 0
 
 def uuid_to_obj(uuid: str, short_code: str = None) -> ApiReadReferenceable:
     """
     Function that checks if record of given uuid exists and if so returns it
     """
     if not short_code:
-        res = referenceables_list.sync_detailed(client=CLIENT, uuid=uuid)
-        if res.parsed.count != 1:
+        response = referenceables_list.sync_detailed(client=CLIENT, uuid=uuid)
+        if response.parsed.count != 1:
             return None
         
-        short_code = res.parsed.results[0].short_code
+        short_code = response.parsed.results[0].short_code
     
-    list_function = SHORT_CODES_TO_ENDPOINTS_MAP[short_code]
+    endpoint_list = get_endpoint_by_shortcode(short_code)
     
-    res = list_function.sync_detailed(client=CLIENT, uuid=uuid)
+    response = endpoint_list.sync_detailed(client=CLIENT, uuid=uuid)
     
-    return res.parsed.results[0]
+    return response.parsed.results[0]
 
 def get_procedure(observation: ObservationRead) -> ApiReadReferenceable:
     """
@@ -163,7 +157,7 @@ def copy_online_resources(source_object: ApiReadReferenceable, target_object: Ap
             response = onlineresources_create.sync_detailed(client=CLIENT, body=model)
             
             if response.status_code.value != 201:
-                raise RuntimeError(f"API: {response.status_code}")
+                raise RuntimeError(f"API: {response.status_code.value}")
 
 def party_maker(party_first: str, party_last: str) -> PartyRead:
     """
@@ -177,11 +171,13 @@ def party_maker(party_first: str, party_last: str) -> PartyRead:
     model = PartyWriteRequest(
         first_name = party_first,
         last_name = party_last,
-        party_type = type_of_party
+        party_type = type_of_party,
+        address_line_1 = ' ', # temporary placeholder, client needs to be fixed
+        address_line_2 = ' '
     )
     res = parties_create.sync_detailed(client=CLIENT, body=model)
     if res.status_code.value != 201:
-        raise RuntimeError(f'API: {res.status_code}')
+        raise RuntimeError(f'API: {res.status_code.value}')
     
     # convert Write object to Read object for consistency
     ob_id = res.parsed.ob_id
@@ -259,12 +255,6 @@ def copy_party_by_role(source_object: ApiReadReferenceable, target_object: ApiRe
     (useful when merging records)
     """
 
-    # for each resp info in the set
-    # get party and priority
-    
-    # then check for same party in target of that role
-    # if not, then get existing instances and then 
-    # add new party info with increased priority
     res = rpis_list.sync_detailed(client=CLIENT, role=_get_value_enum(role, RoleEnum), related_to_uuid=source_object.uuid)
     source_parties = [rpi.party for rpi in res.parsed.results]
     party_dict = {role: source_parties}
