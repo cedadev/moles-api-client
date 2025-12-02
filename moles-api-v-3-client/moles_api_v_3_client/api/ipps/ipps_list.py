@@ -12,12 +12,8 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     *,
     instrument: int | Unset = UNSET,
-    instrument_gt: int | Unset = UNSET,
-    instrument_gte: int | Unset = UNSET,
     instrument_in: list[int] | Unset = UNSET,
     instrument_isnull: bool | Unset = UNSET,
-    instrument_lt: int | Unset = UNSET,
-    instrument_lte: int | Unset = UNSET,
     instrument_ob_id: int | Unset = UNSET,
     instrument_ob_id_in: list[int] | Unset = UNSET,
     instrument_uuid: str | Unset = UNSET,
@@ -44,23 +40,15 @@ def _get_kwargs(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     platform: int | Unset = UNSET,
-    platform_gt: int | Unset = UNSET,
-    platform_gte: int | Unset = UNSET,
     platform_in: list[int] | Unset = UNSET,
     platform_isnull: bool | Unset = UNSET,
-    platform_lt: int | Unset = UNSET,
-    platform_lte: int | Unset = UNSET,
     platform_ob_id: int | Unset = UNSET,
     platform_ob_id_in: list[int] | Unset = UNSET,
     platform_uuid: str | Unset = UNSET,
     platform_uuid_in: list[str] | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -72,10 +60,6 @@ def _get_kwargs(
 
     params["instrument"] = instrument
 
-    params["instrument__gt"] = instrument_gt
-
-    params["instrument__gte"] = instrument_gte
-
     json_instrument_in: list[int] | Unset = UNSET
     if not isinstance(instrument_in, Unset):
         json_instrument_in = ",".join(map(str, instrument_in))
@@ -83,10 +67,6 @@ def _get_kwargs(
     params["instrument__in"] = json_instrument_in
 
     params["instrument__isnull"] = instrument_isnull
-
-    params["instrument__lt"] = instrument_lt
-
-    params["instrument__lte"] = instrument_lte
 
     params["instrument__ob_id"] = instrument_ob_id
 
@@ -156,10 +136,6 @@ def _get_kwargs(
 
     params["platform"] = platform
 
-    params["platform__gt"] = platform_gt
-
-    params["platform__gte"] = platform_gte
-
     json_platform_in: list[int] | Unset = UNSET
     if not isinstance(platform_in, Unset):
         json_platform_in = ",".join(map(str, platform_in))
@@ -167,10 +143,6 @@ def _get_kwargs(
     params["platform__in"] = json_platform_in
 
     params["platform__isnull"] = platform_isnull
-
-    params["platform__lt"] = platform_lt
-
-    params["platform__lte"] = platform_lte
 
     params["platform__ob_id"] = platform_ob_id
 
@@ -190,10 +162,6 @@ def _get_kwargs(
 
     params["relatedTo"] = related_to
 
-    params["relatedTo__gt"] = related_to_gt
-
-    params["relatedTo__gte"] = related_to_gte
-
     json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
@@ -201,10 +169,6 @@ def _get_kwargs(
     params["relatedTo__in"] = json_related_to_in
 
     params["relatedTo__isnull"] = related_to_isnull
-
-    params["relatedTo__lt"] = related_to_lt
-
-    params["relatedTo__lte"] = related_to_lte
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
@@ -270,12 +234,8 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     instrument: int | Unset = UNSET,
-    instrument_gt: int | Unset = UNSET,
-    instrument_gte: int | Unset = UNSET,
     instrument_in: list[int] | Unset = UNSET,
     instrument_isnull: bool | Unset = UNSET,
-    instrument_lt: int | Unset = UNSET,
-    instrument_lte: int | Unset = UNSET,
     instrument_ob_id: int | Unset = UNSET,
     instrument_ob_id_in: list[int] | Unset = UNSET,
     instrument_uuid: str | Unset = UNSET,
@@ -302,23 +262,15 @@ def sync_detailed(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     platform: int | Unset = UNSET,
-    platform_gt: int | Unset = UNSET,
-    platform_gte: int | Unset = UNSET,
     platform_in: list[int] | Unset = UNSET,
     platform_isnull: bool | Unset = UNSET,
-    platform_lt: int | Unset = UNSET,
-    platform_lte: int | Unset = UNSET,
     platform_ob_id: int | Unset = UNSET,
     platform_ob_id_in: list[int] | Unset = UNSET,
     platform_uuid: str | Unset = UNSET,
     platform_uuid_in: list[str] | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -333,12 +285,8 @@ def sync_detailed(
 
     Args:
         instrument (int | Unset):
-        instrument_gt (int | Unset):
-        instrument_gte (int | Unset):
         instrument_in (list[int] | Unset):
         instrument_isnull (bool | Unset):
-        instrument_lt (int | Unset):
-        instrument_lte (int | Unset):
         instrument_ob_id (int | Unset):
         instrument_ob_id_in (list[int] | Unset):
         instrument_uuid (str | Unset):
@@ -365,23 +313,15 @@ def sync_detailed(
         offset (int | Unset):
         ordering (str | Unset):
         platform (int | Unset):
-        platform_gt (int | Unset):
-        platform_gte (int | Unset):
         platform_in (list[int] | Unset):
         platform_isnull (bool | Unset):
-        platform_lt (int | Unset):
-        platform_lte (int | Unset):
         platform_ob_id (int | Unset):
         platform_ob_id_in (list[int] | Unset):
         platform_uuid (str | Unset):
         platform_uuid_in (list[str] | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -399,12 +339,8 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         instrument=instrument,
-        instrument_gt=instrument_gt,
-        instrument_gte=instrument_gte,
         instrument_in=instrument_in,
         instrument_isnull=instrument_isnull,
-        instrument_lt=instrument_lt,
-        instrument_lte=instrument_lte,
         instrument_ob_id=instrument_ob_id,
         instrument_ob_id_in=instrument_ob_id_in,
         instrument_uuid=instrument_uuid,
@@ -431,23 +367,15 @@ def sync_detailed(
         offset=offset,
         ordering=ordering,
         platform=platform,
-        platform_gt=platform_gt,
-        platform_gte=platform_gte,
         platform_in=platform_in,
         platform_isnull=platform_isnull,
-        platform_lt=platform_lt,
-        platform_lte=platform_lte,
         platform_ob_id=platform_ob_id,
         platform_ob_id_in=platform_ob_id_in,
         platform_uuid=platform_uuid,
         platform_uuid_in=platform_uuid_in,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -467,12 +395,8 @@ def sync(
     *,
     client: AuthenticatedClient,
     instrument: int | Unset = UNSET,
-    instrument_gt: int | Unset = UNSET,
-    instrument_gte: int | Unset = UNSET,
     instrument_in: list[int] | Unset = UNSET,
     instrument_isnull: bool | Unset = UNSET,
-    instrument_lt: int | Unset = UNSET,
-    instrument_lte: int | Unset = UNSET,
     instrument_ob_id: int | Unset = UNSET,
     instrument_ob_id_in: list[int] | Unset = UNSET,
     instrument_uuid: str | Unset = UNSET,
@@ -499,23 +423,15 @@ def sync(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     platform: int | Unset = UNSET,
-    platform_gt: int | Unset = UNSET,
-    platform_gte: int | Unset = UNSET,
     platform_in: list[int] | Unset = UNSET,
     platform_isnull: bool | Unset = UNSET,
-    platform_lt: int | Unset = UNSET,
-    platform_lte: int | Unset = UNSET,
     platform_ob_id: int | Unset = UNSET,
     platform_ob_id_in: list[int] | Unset = UNSET,
     platform_uuid: str | Unset = UNSET,
     platform_uuid_in: list[str] | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -530,12 +446,8 @@ def sync(
 
     Args:
         instrument (int | Unset):
-        instrument_gt (int | Unset):
-        instrument_gte (int | Unset):
         instrument_in (list[int] | Unset):
         instrument_isnull (bool | Unset):
-        instrument_lt (int | Unset):
-        instrument_lte (int | Unset):
         instrument_ob_id (int | Unset):
         instrument_ob_id_in (list[int] | Unset):
         instrument_uuid (str | Unset):
@@ -562,23 +474,15 @@ def sync(
         offset (int | Unset):
         ordering (str | Unset):
         platform (int | Unset):
-        platform_gt (int | Unset):
-        platform_gte (int | Unset):
         platform_in (list[int] | Unset):
         platform_isnull (bool | Unset):
-        platform_lt (int | Unset):
-        platform_lte (int | Unset):
         platform_ob_id (int | Unset):
         platform_ob_id_in (list[int] | Unset):
         platform_uuid (str | Unset):
         platform_uuid_in (list[str] | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -597,12 +501,8 @@ def sync(
     return sync_detailed(
         client=client,
         instrument=instrument,
-        instrument_gt=instrument_gt,
-        instrument_gte=instrument_gte,
         instrument_in=instrument_in,
         instrument_isnull=instrument_isnull,
-        instrument_lt=instrument_lt,
-        instrument_lte=instrument_lte,
         instrument_ob_id=instrument_ob_id,
         instrument_ob_id_in=instrument_ob_id_in,
         instrument_uuid=instrument_uuid,
@@ -629,23 +529,15 @@ def sync(
         offset=offset,
         ordering=ordering,
         platform=platform,
-        platform_gt=platform_gt,
-        platform_gte=platform_gte,
         platform_in=platform_in,
         platform_isnull=platform_isnull,
-        platform_lt=platform_lt,
-        platform_lte=platform_lte,
         platform_ob_id=platform_ob_id,
         platform_ob_id_in=platform_ob_id_in,
         platform_uuid=platform_uuid,
         platform_uuid_in=platform_uuid_in,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -659,12 +551,8 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     instrument: int | Unset = UNSET,
-    instrument_gt: int | Unset = UNSET,
-    instrument_gte: int | Unset = UNSET,
     instrument_in: list[int] | Unset = UNSET,
     instrument_isnull: bool | Unset = UNSET,
-    instrument_lt: int | Unset = UNSET,
-    instrument_lte: int | Unset = UNSET,
     instrument_ob_id: int | Unset = UNSET,
     instrument_ob_id_in: list[int] | Unset = UNSET,
     instrument_uuid: str | Unset = UNSET,
@@ -691,23 +579,15 @@ async def asyncio_detailed(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     platform: int | Unset = UNSET,
-    platform_gt: int | Unset = UNSET,
-    platform_gte: int | Unset = UNSET,
     platform_in: list[int] | Unset = UNSET,
     platform_isnull: bool | Unset = UNSET,
-    platform_lt: int | Unset = UNSET,
-    platform_lte: int | Unset = UNSET,
     platform_ob_id: int | Unset = UNSET,
     platform_ob_id_in: list[int] | Unset = UNSET,
     platform_uuid: str | Unset = UNSET,
     platform_uuid_in: list[str] | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -722,12 +602,8 @@ async def asyncio_detailed(
 
     Args:
         instrument (int | Unset):
-        instrument_gt (int | Unset):
-        instrument_gte (int | Unset):
         instrument_in (list[int] | Unset):
         instrument_isnull (bool | Unset):
-        instrument_lt (int | Unset):
-        instrument_lte (int | Unset):
         instrument_ob_id (int | Unset):
         instrument_ob_id_in (list[int] | Unset):
         instrument_uuid (str | Unset):
@@ -754,23 +630,15 @@ async def asyncio_detailed(
         offset (int | Unset):
         ordering (str | Unset):
         platform (int | Unset):
-        platform_gt (int | Unset):
-        platform_gte (int | Unset):
         platform_in (list[int] | Unset):
         platform_isnull (bool | Unset):
-        platform_lt (int | Unset):
-        platform_lte (int | Unset):
         platform_ob_id (int | Unset):
         platform_ob_id_in (list[int] | Unset):
         platform_uuid (str | Unset):
         platform_uuid_in (list[str] | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -788,12 +656,8 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         instrument=instrument,
-        instrument_gt=instrument_gt,
-        instrument_gte=instrument_gte,
         instrument_in=instrument_in,
         instrument_isnull=instrument_isnull,
-        instrument_lt=instrument_lt,
-        instrument_lte=instrument_lte,
         instrument_ob_id=instrument_ob_id,
         instrument_ob_id_in=instrument_ob_id_in,
         instrument_uuid=instrument_uuid,
@@ -820,23 +684,15 @@ async def asyncio_detailed(
         offset=offset,
         ordering=ordering,
         platform=platform,
-        platform_gt=platform_gt,
-        platform_gte=platform_gte,
         platform_in=platform_in,
         platform_isnull=platform_isnull,
-        platform_lt=platform_lt,
-        platform_lte=platform_lte,
         platform_ob_id=platform_ob_id,
         platform_ob_id_in=platform_ob_id_in,
         platform_uuid=platform_uuid,
         platform_uuid_in=platform_uuid_in,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -854,12 +710,8 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     instrument: int | Unset = UNSET,
-    instrument_gt: int | Unset = UNSET,
-    instrument_gte: int | Unset = UNSET,
     instrument_in: list[int] | Unset = UNSET,
     instrument_isnull: bool | Unset = UNSET,
-    instrument_lt: int | Unset = UNSET,
-    instrument_lte: int | Unset = UNSET,
     instrument_ob_id: int | Unset = UNSET,
     instrument_ob_id_in: list[int] | Unset = UNSET,
     instrument_uuid: str | Unset = UNSET,
@@ -886,23 +738,15 @@ async def asyncio(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     platform: int | Unset = UNSET,
-    platform_gt: int | Unset = UNSET,
-    platform_gte: int | Unset = UNSET,
     platform_in: list[int] | Unset = UNSET,
     platform_isnull: bool | Unset = UNSET,
-    platform_lt: int | Unset = UNSET,
-    platform_lte: int | Unset = UNSET,
     platform_ob_id: int | Unset = UNSET,
     platform_ob_id_in: list[int] | Unset = UNSET,
     platform_uuid: str | Unset = UNSET,
     platform_uuid_in: list[str] | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -917,12 +761,8 @@ async def asyncio(
 
     Args:
         instrument (int | Unset):
-        instrument_gt (int | Unset):
-        instrument_gte (int | Unset):
         instrument_in (list[int] | Unset):
         instrument_isnull (bool | Unset):
-        instrument_lt (int | Unset):
-        instrument_lte (int | Unset):
         instrument_ob_id (int | Unset):
         instrument_ob_id_in (list[int] | Unset):
         instrument_uuid (str | Unset):
@@ -949,23 +789,15 @@ async def asyncio(
         offset (int | Unset):
         ordering (str | Unset):
         platform (int | Unset):
-        platform_gt (int | Unset):
-        platform_gte (int | Unset):
         platform_in (list[int] | Unset):
         platform_isnull (bool | Unset):
-        platform_lt (int | Unset):
-        platform_lte (int | Unset):
         platform_ob_id (int | Unset):
         platform_ob_id_in (list[int] | Unset):
         platform_uuid (str | Unset):
         platform_uuid_in (list[str] | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -985,12 +817,8 @@ async def asyncio(
         await asyncio_detailed(
             client=client,
             instrument=instrument,
-            instrument_gt=instrument_gt,
-            instrument_gte=instrument_gte,
             instrument_in=instrument_in,
             instrument_isnull=instrument_isnull,
-            instrument_lt=instrument_lt,
-            instrument_lte=instrument_lte,
             instrument_ob_id=instrument_ob_id,
             instrument_ob_id_in=instrument_ob_id_in,
             instrument_uuid=instrument_uuid,
@@ -1017,23 +845,15 @@ async def asyncio(
             offset=offset,
             ordering=ordering,
             platform=platform,
-            platform_gt=platform_gt,
-            platform_gte=platform_gte,
             platform_in=platform_in,
             platform_isnull=platform_isnull,
-            platform_lt=platform_lt,
-            platform_lte=platform_lte,
             platform_ob_id=platform_ob_id,
             platform_ob_id_in=platform_ob_id_in,
             platform_uuid=platform_uuid,
             platform_uuid_in=platform_uuid_in,
             related_to=related_to,
-            related_to_gt=related_to_gt,
-            related_to_gte=related_to_gte,
             related_to_in=related_to_in,
             related_to_isnull=related_to_isnull,
-            related_to_lt=related_to_lt,
-            related_to_lte=related_to_lte,
             related_to_ob_id=related_to_ob_id,
             related_to_ob_id_in=related_to_ob_id_in,
             related_to_short_code=related_to_short_code,

@@ -140,12 +140,8 @@ def _get_kwargs(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -471,10 +467,6 @@ def _get_kwargs(
 
     params["relatedTo"] = related_to
 
-    params["relatedTo__gt"] = related_to_gt
-
-    params["relatedTo__gte"] = related_to_gte
-
     json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
@@ -482,10 +474,6 @@ def _get_kwargs(
     params["relatedTo__in"] = json_related_to_in
 
     params["relatedTo__isnull"] = related_to_isnull
-
-    params["relatedTo__lt"] = related_to_lt
-
-    params["relatedTo__lte"] = related_to_lte
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
@@ -674,12 +662,8 @@ def sync_detailed(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -814,12 +798,8 @@ def sync_detailed(
         offset (int | Unset):
         ordering (str | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -960,12 +940,8 @@ def sync_detailed(
         offset=offset,
         ordering=ordering,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -1108,12 +1084,8 @@ def sync(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -1248,12 +1220,8 @@ def sync(
         offset (int | Unset):
         ordering (str | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -1395,12 +1363,8 @@ def sync(
         offset=offset,
         ordering=ordering,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -1537,12 +1501,8 @@ async def asyncio_detailed(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -1677,12 +1637,8 @@ async def asyncio_detailed(
         offset (int | Unset):
         ordering (str | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -1823,12 +1779,8 @@ async def asyncio_detailed(
         offset=offset,
         ordering=ordering,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -1969,12 +1921,8 @@ async def asyncio(
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -2109,12 +2057,8 @@ async def asyncio(
         offset (int | Unset):
         ordering (str | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -2257,12 +2201,8 @@ async def asyncio(
             offset=offset,
             ordering=ordering,
             related_to=related_to,
-            related_to_gt=related_to_gt,
-            related_to_gte=related_to_gte,
             related_to_in=related_to_in,
             related_to_isnull=related_to_isnull,
-            related_to_lt=related_to_lt,
-            related_to_lte=related_to_lte,
             related_to_ob_id=related_to_ob_id,
             related_to_ob_id_in=related_to_ob_id_in,
             related_to_short_code=related_to_short_code,

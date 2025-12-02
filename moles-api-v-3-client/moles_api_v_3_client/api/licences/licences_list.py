@@ -11,8 +11,14 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
+    constraints: list[int] | Unset = UNSET,
+    constraints_in: list[int] | Unset = UNSET,
+    constraints_isnull: bool | Unset = UNSET,
+    licence_classifications: list[int] | Unset = UNSET,
     licence_classifications_classification: str | Unset = UNSET,
     licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_in: list[int] | Unset = UNSET,
+    licence_classifications_isnull: bool | Unset = UNSET,
     licence_classifications_ob_id: int | Unset = UNSET,
     licence_classifications_ob_id_in: list[int] | Unset = UNSET,
     licence_url: str | Unset = UNSET,
@@ -56,6 +62,26 @@ def _get_kwargs(
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
+    json_constraints: list[int] | Unset = UNSET
+    if not isinstance(constraints, Unset):
+        json_constraints = ",".join(map(str, constraints))
+
+    params["constraints"] = json_constraints
+
+    json_constraints_in: list[int] | Unset = UNSET
+    if not isinstance(constraints_in, Unset):
+        json_constraints_in = ",".join(map(str, constraints_in))
+
+    params["constraints__in"] = json_constraints_in
+
+    params["constraints__isnull"] = constraints_isnull
+
+    json_licence_classifications: list[int] | Unset = UNSET
+    if not isinstance(licence_classifications, Unset):
+        json_licence_classifications = ",".join(map(str, licence_classifications))
+
+    params["licenceClassifications"] = json_licence_classifications
+
     params["licenceClassifications__classification"] = licence_classifications_classification
 
     json_licence_classifications_classification_in: list[str] | Unset = UNSET
@@ -63,6 +89,14 @@ def _get_kwargs(
         json_licence_classifications_classification_in = ",".join(map(str, licence_classifications_classification_in))
 
     params["licenceClassifications__classification__in"] = json_licence_classifications_classification_in
+
+    json_licence_classifications_in: list[int] | Unset = UNSET
+    if not isinstance(licence_classifications_in, Unset):
+        json_licence_classifications_in = ",".join(map(str, licence_classifications_in))
+
+    params["licenceClassifications__in"] = json_licence_classifications_in
+
+    params["licenceClassifications__isnull"] = licence_classifications_isnull
 
     params["licenceClassifications__ob_id"] = licence_classifications_ob_id
 
@@ -203,8 +237,14 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
+    constraints: list[int] | Unset = UNSET,
+    constraints_in: list[int] | Unset = UNSET,
+    constraints_isnull: bool | Unset = UNSET,
+    licence_classifications: list[int] | Unset = UNSET,
     licence_classifications_classification: str | Unset = UNSET,
     licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_in: list[int] | Unset = UNSET,
+    licence_classifications_isnull: bool | Unset = UNSET,
     licence_classifications_ob_id: int | Unset = UNSET,
     licence_classifications_ob_id_in: list[int] | Unset = UNSET,
     licence_url: str | Unset = UNSET,
@@ -249,8 +289,14 @@ def sync_detailed(
     """Get a list of Licence objects.
 
     Args:
+        constraints (list[int] | Unset):
+        constraints_in (list[int] | Unset):
+        constraints_isnull (bool | Unset):
+        licence_classifications (list[int] | Unset):
         licence_classifications_classification (str | Unset):
         licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_in (list[int] | Unset):
+        licence_classifications_isnull (bool | Unset):
         licence_classifications_ob_id (int | Unset):
         licence_classifications_ob_id_in (list[int] | Unset):
         licence_url (str | Unset):
@@ -301,8 +347,14 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        constraints=constraints,
+        constraints_in=constraints_in,
+        constraints_isnull=constraints_isnull,
+        licence_classifications=licence_classifications,
         licence_classifications_classification=licence_classifications_classification,
         licence_classifications_classification_in=licence_classifications_classification_in,
+        licence_classifications_in=licence_classifications_in,
+        licence_classifications_isnull=licence_classifications_isnull,
         licence_classifications_ob_id=licence_classifications_ob_id,
         licence_classifications_ob_id_in=licence_classifications_ob_id_in,
         licence_url=licence_url,
@@ -355,8 +407,14 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
+    constraints: list[int] | Unset = UNSET,
+    constraints_in: list[int] | Unset = UNSET,
+    constraints_isnull: bool | Unset = UNSET,
+    licence_classifications: list[int] | Unset = UNSET,
     licence_classifications_classification: str | Unset = UNSET,
     licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_in: list[int] | Unset = UNSET,
+    licence_classifications_isnull: bool | Unset = UNSET,
     licence_classifications_ob_id: int | Unset = UNSET,
     licence_classifications_ob_id_in: list[int] | Unset = UNSET,
     licence_url: str | Unset = UNSET,
@@ -401,8 +459,14 @@ def sync(
     """Get a list of Licence objects.
 
     Args:
+        constraints (list[int] | Unset):
+        constraints_in (list[int] | Unset):
+        constraints_isnull (bool | Unset):
+        licence_classifications (list[int] | Unset):
         licence_classifications_classification (str | Unset):
         licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_in (list[int] | Unset):
+        licence_classifications_isnull (bool | Unset):
         licence_classifications_ob_id (int | Unset):
         licence_classifications_ob_id_in (list[int] | Unset):
         licence_url (str | Unset):
@@ -454,8 +518,14 @@ def sync(
 
     return sync_detailed(
         client=client,
+        constraints=constraints,
+        constraints_in=constraints_in,
+        constraints_isnull=constraints_isnull,
+        licence_classifications=licence_classifications,
         licence_classifications_classification=licence_classifications_classification,
         licence_classifications_classification_in=licence_classifications_classification_in,
+        licence_classifications_in=licence_classifications_in,
+        licence_classifications_isnull=licence_classifications_isnull,
         licence_classifications_ob_id=licence_classifications_ob_id,
         licence_classifications_ob_id_in=licence_classifications_ob_id_in,
         licence_url=licence_url,
@@ -502,8 +572,14 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
+    constraints: list[int] | Unset = UNSET,
+    constraints_in: list[int] | Unset = UNSET,
+    constraints_isnull: bool | Unset = UNSET,
+    licence_classifications: list[int] | Unset = UNSET,
     licence_classifications_classification: str | Unset = UNSET,
     licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_in: list[int] | Unset = UNSET,
+    licence_classifications_isnull: bool | Unset = UNSET,
     licence_classifications_ob_id: int | Unset = UNSET,
     licence_classifications_ob_id_in: list[int] | Unset = UNSET,
     licence_url: str | Unset = UNSET,
@@ -548,8 +624,14 @@ async def asyncio_detailed(
     """Get a list of Licence objects.
 
     Args:
+        constraints (list[int] | Unset):
+        constraints_in (list[int] | Unset):
+        constraints_isnull (bool | Unset):
+        licence_classifications (list[int] | Unset):
         licence_classifications_classification (str | Unset):
         licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_in (list[int] | Unset):
+        licence_classifications_isnull (bool | Unset):
         licence_classifications_ob_id (int | Unset):
         licence_classifications_ob_id_in (list[int] | Unset):
         licence_url (str | Unset):
@@ -600,8 +682,14 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        constraints=constraints,
+        constraints_in=constraints_in,
+        constraints_isnull=constraints_isnull,
+        licence_classifications=licence_classifications,
         licence_classifications_classification=licence_classifications_classification,
         licence_classifications_classification_in=licence_classifications_classification_in,
+        licence_classifications_in=licence_classifications_in,
+        licence_classifications_isnull=licence_classifications_isnull,
         licence_classifications_ob_id=licence_classifications_ob_id,
         licence_classifications_ob_id_in=licence_classifications_ob_id_in,
         licence_url=licence_url,
@@ -652,8 +740,14 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
+    constraints: list[int] | Unset = UNSET,
+    constraints_in: list[int] | Unset = UNSET,
+    constraints_isnull: bool | Unset = UNSET,
+    licence_classifications: list[int] | Unset = UNSET,
     licence_classifications_classification: str | Unset = UNSET,
     licence_classifications_classification_in: list[str] | Unset = UNSET,
+    licence_classifications_in: list[int] | Unset = UNSET,
+    licence_classifications_isnull: bool | Unset = UNSET,
     licence_classifications_ob_id: int | Unset = UNSET,
     licence_classifications_ob_id_in: list[int] | Unset = UNSET,
     licence_url: str | Unset = UNSET,
@@ -698,8 +792,14 @@ async def asyncio(
     """Get a list of Licence objects.
 
     Args:
+        constraints (list[int] | Unset):
+        constraints_in (list[int] | Unset):
+        constraints_isnull (bool | Unset):
+        licence_classifications (list[int] | Unset):
         licence_classifications_classification (str | Unset):
         licence_classifications_classification_in (list[str] | Unset):
+        licence_classifications_in (list[int] | Unset):
+        licence_classifications_isnull (bool | Unset):
         licence_classifications_ob_id (int | Unset):
         licence_classifications_ob_id_in (list[int] | Unset):
         licence_url (str | Unset):
@@ -752,8 +852,14 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
+            constraints=constraints,
+            constraints_in=constraints_in,
+            constraints_isnull=constraints_isnull,
+            licence_classifications=licence_classifications,
             licence_classifications_classification=licence_classifications_classification,
             licence_classifications_classification_in=licence_classifications_classification_in,
+            licence_classifications_in=licence_classifications_in,
+            licence_classifications_isnull=licence_classifications_isnull,
             licence_classifications_ob_id=licence_classifications_ob_id,
             licence_classifications_ob_id_in=licence_classifications_ob_id_in,
             licence_url=licence_url,

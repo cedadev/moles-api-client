@@ -75,12 +75,8 @@ def _get_kwargs(
     modified_week_day: float | Unset = UNSET,
     modified_year: float | Unset = UNSET,
     ob_ref: int | Unset = UNSET,
-    ob_ref_gt: int | Unset = UNSET,
-    ob_ref_gte: int | Unset = UNSET,
     ob_ref_in: list[int] | Unset = UNSET,
     ob_ref_isnull: bool | Unset = UNSET,
-    ob_ref_lt: int | Unset = UNSET,
-    ob_ref_lte: int | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     value: str | Unset = UNSET,
@@ -304,10 +300,6 @@ def _get_kwargs(
 
     params["ob_ref"] = ob_ref
 
-    params["ob_ref__gt"] = ob_ref_gt
-
-    params["ob_ref__gte"] = ob_ref_gte
-
     json_ob_ref_in: list[int] | Unset = UNSET
     if not isinstance(ob_ref_in, Unset):
         json_ob_ref_in = ",".join(map(str, ob_ref_in))
@@ -315,10 +307,6 @@ def _get_kwargs(
     params["ob_ref__in"] = json_ob_ref_in
 
     params["ob_ref__isnull"] = ob_ref_isnull
-
-    params["ob_ref__lt"] = ob_ref_lt
-
-    params["ob_ref__lte"] = ob_ref_lte
 
     params["offset"] = offset
 
@@ -468,12 +456,8 @@ def sync_detailed(
     modified_week_day: float | Unset = UNSET,
     modified_year: float | Unset = UNSET,
     ob_ref: int | Unset = UNSET,
-    ob_ref_gt: int | Unset = UNSET,
-    ob_ref_gte: int | Unset = UNSET,
     ob_ref_in: list[int] | Unset = UNSET,
     ob_ref_isnull: bool | Unset = UNSET,
-    ob_ref_lt: int | Unset = UNSET,
-    ob_ref_lte: int | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     value: str | Unset = UNSET,
@@ -560,12 +544,8 @@ def sync_detailed(
         modified_week_day (float | Unset):
         modified_year (float | Unset):
         ob_ref (int | Unset):
-        ob_ref_gt (int | Unset):
-        ob_ref_gte (int | Unset):
         ob_ref_in (list[int] | Unset):
         ob_ref_isnull (bool | Unset):
-        ob_ref_lt (int | Unset):
-        ob_ref_lte (int | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         value (str | Unset):
@@ -658,12 +638,8 @@ def sync_detailed(
         modified_week_day=modified_week_day,
         modified_year=modified_year,
         ob_ref=ob_ref,
-        ob_ref_gt=ob_ref_gt,
-        ob_ref_gte=ob_ref_gte,
         ob_ref_in=ob_ref_in,
         ob_ref_isnull=ob_ref_isnull,
-        ob_ref_lt=ob_ref_lt,
-        ob_ref_lte=ob_ref_lte,
         offset=offset,
         ordering=ordering,
         value=value,
@@ -758,12 +734,8 @@ def sync(
     modified_week_day: float | Unset = UNSET,
     modified_year: float | Unset = UNSET,
     ob_ref: int | Unset = UNSET,
-    ob_ref_gt: int | Unset = UNSET,
-    ob_ref_gte: int | Unset = UNSET,
     ob_ref_in: list[int] | Unset = UNSET,
     ob_ref_isnull: bool | Unset = UNSET,
-    ob_ref_lt: int | Unset = UNSET,
-    ob_ref_lte: int | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     value: str | Unset = UNSET,
@@ -850,12 +822,8 @@ def sync(
         modified_week_day (float | Unset):
         modified_year (float | Unset):
         ob_ref (int | Unset):
-        ob_ref_gt (int | Unset):
-        ob_ref_gte (int | Unset):
         ob_ref_in (list[int] | Unset):
         ob_ref_isnull (bool | Unset):
-        ob_ref_lt (int | Unset):
-        ob_ref_lte (int | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         value (str | Unset):
@@ -949,12 +917,8 @@ def sync(
         modified_week_day=modified_week_day,
         modified_year=modified_year,
         ob_ref=ob_ref,
-        ob_ref_gt=ob_ref_gt,
-        ob_ref_gte=ob_ref_gte,
         ob_ref_in=ob_ref_in,
         ob_ref_isnull=ob_ref_isnull,
-        ob_ref_lt=ob_ref_lt,
-        ob_ref_lte=ob_ref_lte,
         offset=offset,
         ordering=ordering,
         value=value,
@@ -1043,12 +1007,8 @@ async def asyncio_detailed(
     modified_week_day: float | Unset = UNSET,
     modified_year: float | Unset = UNSET,
     ob_ref: int | Unset = UNSET,
-    ob_ref_gt: int | Unset = UNSET,
-    ob_ref_gte: int | Unset = UNSET,
     ob_ref_in: list[int] | Unset = UNSET,
     ob_ref_isnull: bool | Unset = UNSET,
-    ob_ref_lt: int | Unset = UNSET,
-    ob_ref_lte: int | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     value: str | Unset = UNSET,
@@ -1135,12 +1095,8 @@ async def asyncio_detailed(
         modified_week_day (float | Unset):
         modified_year (float | Unset):
         ob_ref (int | Unset):
-        ob_ref_gt (int | Unset):
-        ob_ref_gte (int | Unset):
         ob_ref_in (list[int] | Unset):
         ob_ref_isnull (bool | Unset):
-        ob_ref_lt (int | Unset):
-        ob_ref_lte (int | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         value (str | Unset):
@@ -1233,12 +1189,8 @@ async def asyncio_detailed(
         modified_week_day=modified_week_day,
         modified_year=modified_year,
         ob_ref=ob_ref,
-        ob_ref_gt=ob_ref_gt,
-        ob_ref_gte=ob_ref_gte,
         ob_ref_in=ob_ref_in,
         ob_ref_isnull=ob_ref_isnull,
-        ob_ref_lt=ob_ref_lt,
-        ob_ref_lte=ob_ref_lte,
         offset=offset,
         ordering=ordering,
         value=value,
@@ -1331,12 +1283,8 @@ async def asyncio(
     modified_week_day: float | Unset = UNSET,
     modified_year: float | Unset = UNSET,
     ob_ref: int | Unset = UNSET,
-    ob_ref_gt: int | Unset = UNSET,
-    ob_ref_gte: int | Unset = UNSET,
     ob_ref_in: list[int] | Unset = UNSET,
     ob_ref_isnull: bool | Unset = UNSET,
-    ob_ref_lt: int | Unset = UNSET,
-    ob_ref_lte: int | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     value: str | Unset = UNSET,
@@ -1423,12 +1371,8 @@ async def asyncio(
         modified_week_day (float | Unset):
         modified_year (float | Unset):
         ob_ref (int | Unset):
-        ob_ref_gt (int | Unset):
-        ob_ref_gte (int | Unset):
         ob_ref_in (list[int] | Unset):
         ob_ref_isnull (bool | Unset):
-        ob_ref_lt (int | Unset):
-        ob_ref_lte (int | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         value (str | Unset):
@@ -1523,12 +1467,8 @@ async def asyncio(
             modified_week_day=modified_week_day,
             modified_year=modified_year,
             ob_ref=ob_ref,
-            ob_ref_gt=ob_ref_gt,
-            ob_ref_gte=ob_ref_gte,
             ob_ref_in=ob_ref_in,
             ob_ref_isnull=ob_ref_isnull,
-            ob_ref_lt=ob_ref_lt,
-            ob_ref_lte=ob_ref_lte,
             offset=offset,
             ordering=ordering,
             value=value,

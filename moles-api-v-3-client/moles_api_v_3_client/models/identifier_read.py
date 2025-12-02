@@ -21,33 +21,36 @@ class IdentifierRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            url (str):
-            identifier_type (IdentifierTypeEnum): * `moles3_url` - MOLES3 URL
-                * `moles2_url` - MOLES2 URL
-                * `moles1_url` - MOLES1 URL
-                * `doi` - DOI
-                * `ceda_abbreviation` - CEDA Abbreviation
-            short_url (str):
+            ob_id (int | None):
+            url (None | str):
+            identifier_type (IdentifierTypeEnum | None):
+            short_url (None | str):
             related_to (None | Referenceable):
     """
 
-    ob_id: int
-    url: str
-    identifier_type: IdentifierTypeEnum
-    short_url: str
+    ob_id: int | None
+    url: None | str
+    identifier_type: IdentifierTypeEnum | None
+    short_url: None | str
     related_to: None | Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         from ..models.referenceable import Referenceable
 
+        ob_id: int | None
         ob_id = self.ob_id
 
+        url: None | str
         url = self.url
 
-        identifier_type = self.identifier_type.value
+        identifier_type: None | str
+        if isinstance(self.identifier_type, IdentifierTypeEnum):
+            identifier_type = self.identifier_type.value
+        else:
+            identifier_type = self.identifier_type
 
+        short_url: None | str
         short_url = self.short_url
 
         related_to: dict[str, Any] | None
@@ -75,13 +78,42 @@ class IdentifierRead:
         from ..models.referenceable import Referenceable
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        url = d.pop("url")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        identifier_type = IdentifierTypeEnum(d.pop("identifierType"))
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        short_url = d.pop("shortUrl")
+        def _parse_url(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        url = _parse_url(d.pop("url"))
+
+        def _parse_identifier_type(data: object) -> IdentifierTypeEnum | None:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                identifier_type_type_1 = IdentifierTypeEnum(data)
+
+                return identifier_type_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(IdentifierTypeEnum | None, data)
+
+        identifier_type = _parse_identifier_type(d.pop("identifierType"))
+
+        def _parse_short_url(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_url = _parse_short_url(d.pop("shortUrl"))
 
         def _parse_related_to(data: object) -> None | Referenceable:
             if data is None:

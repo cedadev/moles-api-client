@@ -14,6 +14,9 @@ from ...types import UNSET, Response, Unset
 def _get_kwargs(
     *,
     limit: int | Unset = UNSET,
+    names: list[int] | Unset = UNSET,
+    names_in: list[int] | Unset = UNSET,
+    names_isnull: bool | Unset = UNSET,
     names_name: str | Unset = UNSET,
     names_name_contains: str | Unset = UNSET,
     ob_id: int | Unset = UNSET,
@@ -34,8 +37,14 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    terms: list[int] | Unset = UNSET,
+    terms_in: list[int] | Unset = UNSET,
+    terms_isnull: bool | Unset = UNSET,
     terms_label: PhenomonaListTermsLabel | Unset = UNSET,
     terms_label_contains: str | Unset = UNSET,
     terms_label_in: list[str] | Unset = UNSET,
@@ -49,6 +58,20 @@ def _get_kwargs(
     params: dict[str, Any] = {}
 
     params["limit"] = limit
+
+    json_names: list[int] | Unset = UNSET
+    if not isinstance(names, Unset):
+        json_names = ",".join(map(str, names))
+
+    params["names"] = json_names
+
+    json_names_in: list[int] | Unset = UNSET
+    if not isinstance(names_in, Unset):
+        json_names_in = ",".join(map(str, names_in))
+
+    params["names__in"] = json_names_in
+
+    params["names__isnull"] = names_isnull
 
     params["names__name"] = names_name
 
@@ -98,9 +121,37 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
     params["offset"] = offset
 
     params["ordering"] = ordering
+
+    json_terms: list[int] | Unset = UNSET
+    if not isinstance(terms, Unset):
+        json_terms = ",".join(map(str, terms))
+
+    params["terms"] = json_terms
+
+    json_terms_in: list[int] | Unset = UNSET
+    if not isinstance(terms_in, Unset):
+        json_terms_in = ",".join(map(str, terms_in))
+
+    params["terms__in"] = json_terms_in
+
+    params["terms__isnull"] = terms_isnull
 
     json_terms_label: str | Unset = UNSET
     if not isinstance(terms_label, Unset):
@@ -180,6 +231,9 @@ def sync_detailed(
     *,
     client: AuthenticatedClient,
     limit: int | Unset = UNSET,
+    names: list[int] | Unset = UNSET,
+    names_in: list[int] | Unset = UNSET,
+    names_isnull: bool | Unset = UNSET,
     names_name: str | Unset = UNSET,
     names_name_contains: str | Unset = UNSET,
     ob_id: int | Unset = UNSET,
@@ -200,8 +254,14 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    terms: list[int] | Unset = UNSET,
+    terms_in: list[int] | Unset = UNSET,
+    terms_isnull: bool | Unset = UNSET,
     terms_label: PhenomonaListTermsLabel | Unset = UNSET,
     terms_label_contains: str | Unset = UNSET,
     terms_label_in: list[str] | Unset = UNSET,
@@ -216,6 +276,9 @@ def sync_detailed(
 
     Args:
         limit (int | Unset):
+        names (list[int] | Unset):
+        names_in (list[int] | Unset):
+        names_isnull (bool | Unset):
         names_name (str | Unset):
         names_name_contains (str | Unset):
         ob_id (int | Unset):
@@ -236,8 +299,14 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        terms (list[int] | Unset):
+        terms_in (list[int] | Unset):
+        terms_isnull (bool | Unset):
         terms_label (PhenomonaListTermsLabel | Unset):
         terms_label_contains (str | Unset):
         terms_label_in (list[str] | Unset):
@@ -258,6 +327,9 @@ def sync_detailed(
 
     kwargs = _get_kwargs(
         limit=limit,
+        names=names,
+        names_in=names_in,
+        names_isnull=names_isnull,
         names_name=names_name,
         names_name_contains=names_name_contains,
         ob_id=ob_id,
@@ -278,8 +350,14 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        terms=terms,
+        terms_in=terms_in,
+        terms_isnull=terms_isnull,
         terms_label=terms_label,
         terms_label_contains=terms_label_contains,
         terms_label_in=terms_label_in,
@@ -302,6 +380,9 @@ def sync(
     *,
     client: AuthenticatedClient,
     limit: int | Unset = UNSET,
+    names: list[int] | Unset = UNSET,
+    names_in: list[int] | Unset = UNSET,
+    names_isnull: bool | Unset = UNSET,
     names_name: str | Unset = UNSET,
     names_name_contains: str | Unset = UNSET,
     ob_id: int | Unset = UNSET,
@@ -322,8 +403,14 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    terms: list[int] | Unset = UNSET,
+    terms_in: list[int] | Unset = UNSET,
+    terms_isnull: bool | Unset = UNSET,
     terms_label: PhenomonaListTermsLabel | Unset = UNSET,
     terms_label_contains: str | Unset = UNSET,
     terms_label_in: list[str] | Unset = UNSET,
@@ -338,6 +425,9 @@ def sync(
 
     Args:
         limit (int | Unset):
+        names (list[int] | Unset):
+        names_in (list[int] | Unset):
+        names_isnull (bool | Unset):
         names_name (str | Unset):
         names_name_contains (str | Unset):
         ob_id (int | Unset):
@@ -358,8 +448,14 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        terms (list[int] | Unset):
+        terms_in (list[int] | Unset):
+        terms_isnull (bool | Unset):
         terms_label (PhenomonaListTermsLabel | Unset):
         terms_label_contains (str | Unset):
         terms_label_in (list[str] | Unset):
@@ -381,6 +477,9 @@ def sync(
     return sync_detailed(
         client=client,
         limit=limit,
+        names=names,
+        names_in=names_in,
+        names_isnull=names_isnull,
         names_name=names_name,
         names_name_contains=names_name_contains,
         ob_id=ob_id,
@@ -401,8 +500,14 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        terms=terms,
+        terms_in=terms_in,
+        terms_isnull=terms_isnull,
         terms_label=terms_label,
         terms_label_contains=terms_label_contains,
         terms_label_in=terms_label_in,
@@ -419,6 +524,9 @@ async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
     limit: int | Unset = UNSET,
+    names: list[int] | Unset = UNSET,
+    names_in: list[int] | Unset = UNSET,
+    names_isnull: bool | Unset = UNSET,
     names_name: str | Unset = UNSET,
     names_name_contains: str | Unset = UNSET,
     ob_id: int | Unset = UNSET,
@@ -439,8 +547,14 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    terms: list[int] | Unset = UNSET,
+    terms_in: list[int] | Unset = UNSET,
+    terms_isnull: bool | Unset = UNSET,
     terms_label: PhenomonaListTermsLabel | Unset = UNSET,
     terms_label_contains: str | Unset = UNSET,
     terms_label_in: list[str] | Unset = UNSET,
@@ -455,6 +569,9 @@ async def asyncio_detailed(
 
     Args:
         limit (int | Unset):
+        names (list[int] | Unset):
+        names_in (list[int] | Unset):
+        names_isnull (bool | Unset):
         names_name (str | Unset):
         names_name_contains (str | Unset):
         ob_id (int | Unset):
@@ -475,8 +592,14 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        terms (list[int] | Unset):
+        terms_in (list[int] | Unset):
+        terms_isnull (bool | Unset):
         terms_label (PhenomonaListTermsLabel | Unset):
         terms_label_contains (str | Unset):
         terms_label_in (list[str] | Unset):
@@ -497,6 +620,9 @@ async def asyncio_detailed(
 
     kwargs = _get_kwargs(
         limit=limit,
+        names=names,
+        names_in=names_in,
+        names_isnull=names_isnull,
         names_name=names_name,
         names_name_contains=names_name_contains,
         ob_id=ob_id,
@@ -517,8 +643,14 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        terms=terms,
+        terms_in=terms_in,
+        terms_isnull=terms_isnull,
         terms_label=terms_label,
         terms_label_contains=terms_label_contains,
         terms_label_in=terms_label_in,
@@ -539,6 +671,9 @@ async def asyncio(
     *,
     client: AuthenticatedClient,
     limit: int | Unset = UNSET,
+    names: list[int] | Unset = UNSET,
+    names_in: list[int] | Unset = UNSET,
+    names_isnull: bool | Unset = UNSET,
     names_name: str | Unset = UNSET,
     names_name_contains: str | Unset = UNSET,
     ob_id: int | Unset = UNSET,
@@ -559,8 +694,14 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    terms: list[int] | Unset = UNSET,
+    terms_in: list[int] | Unset = UNSET,
+    terms_isnull: bool | Unset = UNSET,
     terms_label: PhenomonaListTermsLabel | Unset = UNSET,
     terms_label_contains: str | Unset = UNSET,
     terms_label_in: list[str] | Unset = UNSET,
@@ -575,6 +716,9 @@ async def asyncio(
 
     Args:
         limit (int | Unset):
+        names (list[int] | Unset):
+        names_in (list[int] | Unset):
+        names_isnull (bool | Unset):
         names_name (str | Unset):
         names_name_contains (str | Unset):
         ob_id (int | Unset):
@@ -595,8 +739,14 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        terms (list[int] | Unset):
+        terms_in (list[int] | Unset):
+        terms_isnull (bool | Unset):
         terms_label (PhenomonaListTermsLabel | Unset):
         terms_label_contains (str | Unset):
         terms_label_in (list[str] | Unset):
@@ -619,6 +769,9 @@ async def asyncio(
         await asyncio_detailed(
             client=client,
             limit=limit,
+            names=names,
+            names_in=names_in,
+            names_isnull=names_isnull,
             names_name=names_name,
             names_name_contains=names_name_contains,
             ob_id=ob_id,
@@ -639,8 +792,14 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
+            terms=terms,
+            terms_in=terms_in,
+            terms_isnull=terms_isnull,
             terms_label=terms_label,
             terms_label_contains=terms_label_contains,
             terms_label_in=terms_label_in,

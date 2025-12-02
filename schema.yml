@@ -88,12 +88,171 @@ paths:
         name: abstract__startswith
         schema:
           type: string
+      - in: query
+        name: compositeprocess
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: compositeprocess__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: compositeprocess__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: independentInstrument
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: independentInstrument__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: independentInstrument__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: instrumentplatformpair
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: instrumentplatformpair__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: instrumentplatformpair__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
         description: Number of results to return per page.
         schema:
           type: integer
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: mobilePlatformOperation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: mobilePlatformOperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobilePlatformOperation__isnull
+        schema:
+          type: boolean
       - in: query
         name: mobilePlatformOperation__ob_id
         schema:
@@ -120,6 +279,29 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: ob_id
         schema:
@@ -202,12 +384,58 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -216,16 +444,6 @@ paths:
           type: string
       - in: query
         name: outputDescription
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -244,27 +462,7 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: outputDescription__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -283,15 +481,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -848,6 +1082,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: mobileplatformoperation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: mobileplatformoperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobileplatformoperation__isnull
+        schema:
+          type: boolean
+      - in: query
         name: northBoundLatitude
         schema:
           type: number
@@ -1028,6 +1285,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -1040,6 +1320,29 @@ paths:
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: platform
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: platform__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: platform__isnull
+        schema:
+          type: boolean
       - in: query
         name: southBoundLatitude
         schema:
@@ -1455,6 +1758,29 @@ paths:
         schema:
           type: string
       - in: query
+        name: acquisitionComponent
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: acquisitionComponent__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisitionComponent__isnull
+        schema:
+          type: boolean
+      - in: query
         name: acquisitionComponent__ob_id
         schema:
           type: integer
@@ -1489,6 +1815,29 @@ paths:
         explode: false
         style: form
       - in: query
+        name: computationComponent
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: computationComponent__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: computationComponent__isnull
+        schema:
+          type: boolean
+      - in: query
         name: computationComponent__ob_id
         schema:
           type: integer
@@ -1522,12 +1871,79 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
         description: Number of results to return per page.
         schema:
           type: integer
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: ob_id
         schema:
@@ -1610,12 +2026,58 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -1624,16 +2086,6 @@ paths:
           type: string
       - in: query
         name: referenceable_ptr
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -1652,15 +2104,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -2122,17 +2610,76 @@ paths:
         schema:
           type: string
       - in: query
+        name: compositeprocess
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: compositeprocess__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: compositeprocess__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
         name: inputDescription
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: inputDescription__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: inputDescription__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -2150,16 +2697,6 @@ paths:
         name: inputDescription__isnull
         schema:
           type: boolean
-      - in: query
-        name: inputDescription__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: inputDescription__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: keywords
         schema:
@@ -2245,6 +2782,50 @@ paths:
         schema:
           type: integer
       - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -2326,12 +2907,58 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -2340,16 +2967,6 @@ paths:
           type: string
       - in: query
         name: outputDescription
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -2368,27 +2985,7 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: outputDescription__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: outputDescription__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -2407,15 +3004,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -2500,16 +3133,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: softwareReference__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: softwareReference__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: softwareReference__in
         schema:
           type: array
@@ -2523,16 +3146,6 @@ paths:
         name: softwareReference__isnull
         schema:
           type: boolean
-      - in: query
-        name: softwareReference__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: softwareReference__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: title
         schema:
@@ -3070,6 +3683,29 @@ paths:
         schema:
           type: string
       - in: query
+        name: imagedetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imagedetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imagedetails__isnull
+        schema:
+          type: boolean
+      - in: query
         name: label
         schema:
           type: string
@@ -3153,16 +3789,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: licence__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: licence__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: licence__in
         schema:
           type: array
@@ -3201,16 +3827,6 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
-      - in: query
-        name: licence__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: licence__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - name: limit
         required: false
         in: query
@@ -3299,6 +3915,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -3670,6 +4309,52 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: observationcollection
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationcollection__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationcollection__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -4115,6 +4800,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -4681,16 +5389,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: relatedTo__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: relatedTo__in
         schema:
           type: array
@@ -4704,16 +5402,6 @@ paths:
         name: relatedTo__isnull
         schema:
           type: boolean
-      - in: query
-        name: relatedTo__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: relatedTo__ob_id
         schema:
@@ -5160,16 +5848,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: relatedTo__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: relatedTo__in
         schema:
           type: array
@@ -5183,16 +5861,6 @@ paths:
         name: relatedTo__isnull
         schema:
           type: boolean
-      - in: query
-        name: relatedTo__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: relatedTo__ob_id
         schema:
@@ -5526,6 +6194,52 @@ paths:
       description: Get a list of ImageDetails objects.
       parameters:
       - in: query
+        name: acquisition
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: acquisition__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisition__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: computation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: computation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: computation__isnull
+        schema:
+          type: boolean
+      - in: query
         name: fileDescription
         schema:
           type: string
@@ -5687,16 +6401,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: imageConstraints__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: imageConstraints__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: imageConstraints__in
         schema:
           type: array
@@ -5711,15 +6415,28 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: imageConstraints__lt
+        name: instrument
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: imageConstraints__lte
+        name: instrument__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: instrument__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
@@ -5886,6 +6603,52 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: observationcollection
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationcollection__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationcollection__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -5898,6 +6661,52 @@ paths:
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: platform
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: platform__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: platform__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: project
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: project__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: project__isnull
+        schema:
+          type: boolean
       tags:
       - imagedetails
       security:
@@ -6196,6 +7005,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -6420,6 +7252,75 @@ paths:
         schema:
           type: string
       - in: query
+        name: acquisition
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: acquisition__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisition__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
         name: instrumentType
         schema:
           type: string
@@ -6543,6 +7444,29 @@ paths:
         schema:
           type: string
       - in: query
+        name: instrumentplatformpair
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: instrumentplatformpair__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: instrumentplatformpair__isnull
+        schema:
+          type: boolean
+      - in: query
         name: keywords
         schema:
           type: string
@@ -6626,6 +7550,50 @@ paths:
         description: Number of results to return per page.
         schema:
           type: integer
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: ob_id
         schema:
@@ -6714,6 +7682,29 @@ paths:
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -6721,17 +7712,30 @@ paths:
         schema:
           type: string
       - in: query
+        name: parentInstrument
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: parentInstrument__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: parentInstrument__isnull
+        schema:
+          type: boolean
+      - in: query
         name: referenceable_ptr
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -6750,15 +7754,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -6837,6 +7877,29 @@ paths:
         name: short_code__startswith
         schema:
           type: string
+      - in: query
+        name: subInstrument
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: subInstrument__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: subInstrument__isnull
+        schema:
+          type: boolean
       - in: query
         name: title
         schema:
@@ -7130,6 +8193,75 @@ paths:
       operationId: iods_list
       description: Get a list of InputOutputDescription objects.
       parameters:
+      - in: query
+        name: acquisition
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: acquisition__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisition__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: computationInputDescription
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: computationInputDescription__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: computationInputDescription__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: computationOutputDescription
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: computationOutputDescription__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: computationOutputDescription__isnull
+        schema:
+          type: boolean
       - in: query
         name: description
         schema:
@@ -7526,16 +8658,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: instrument__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: instrument__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: instrument__in
         schema:
           type: array
@@ -7549,16 +8671,6 @@ paths:
         name: instrument__isnull
         schema:
           type: boolean
-      - in: query
-        name: instrument__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: instrument__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: instrument__ob_id
         schema:
@@ -7691,16 +8803,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: platform__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: platform__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: platform__in
         schema:
           type: array
@@ -7714,16 +8816,6 @@ paths:
         name: platform__isnull
         schema:
           type: boolean
-      - in: query
-        name: platform__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: platform__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: platform__ob_id
         schema:
@@ -7756,16 +8848,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: relatedTo__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: relatedTo__in
         schema:
           type: array
@@ -7779,16 +8861,6 @@ paths:
         name: relatedTo__isnull
         schema:
           type: boolean
-      - in: query
-        name: relatedTo__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: relatedTo__ob_id
         schema:
@@ -8048,6 +9120,29 @@ paths:
         name: classification__startswith
         schema:
           type: string
+      - in: query
+        name: licence
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: licence__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: licence__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
@@ -8264,6 +9359,38 @@ paths:
       description: Get a list of Licence objects.
       parameters:
       - in: query
+        name: constraints
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: constraints__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: constraints__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: licenceClassifications
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
         name: licenceClassifications__classification
         schema:
           type: string
@@ -8276,6 +9403,20 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: licenceClassifications__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: licenceClassifications__isnull
+        schema:
+          type: boolean
       - in: query
         name: licenceClassifications__ob_id
         schema:
@@ -8885,16 +10026,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: ob_ref__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: ob_ref__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: ob_ref__in
         schema:
           type: array
@@ -8908,16 +10039,6 @@ paths:
         name: ob_ref__isnull
         schema:
           type: boolean
-      - in: query
-        name: ob_ref__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: ob_ref__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - name: offset
         required: false
         in: query
@@ -9142,17 +10263,30 @@ paths:
         schema:
           type: string
       - in: query
+        name: acquisition
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: acquisition__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisition__isnull
+        schema:
+          type: boolean
+      - in: query
         name: childOperation
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: childOperation__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: childOperation__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -9171,15 +10305,28 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: childOperation__lt
+        name: identifier
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: childOperation__lte
+        name: identifier__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
@@ -9227,16 +10374,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: location__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: location__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: location__in
         schema:
           type: array
@@ -9250,16 +10387,6 @@ paths:
         name: location__isnull
         schema:
           type: boolean
-      - in: query
-        name: location__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: location__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: location__northBoundLatitude
         schema:
@@ -9379,6 +10506,73 @@ paths:
         explode: false
         style: form
       - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: mobileplatformoperation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: mobileplatformoperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobileplatformoperation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -9467,6 +10661,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
+      - in: query
         name: operationTime
         schema:
           type: integer
@@ -9507,16 +10724,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: operationTime__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: operationTime__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: operationTime__in
         schema:
           type: array
@@ -9530,16 +10737,6 @@ paths:
         name: operationTime__isnull
         schema:
           type: boolean
-      - in: query
-        name: operationTime__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: operationTime__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: operationTime__ob_id
         schema:
@@ -9600,16 +10797,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: platform_field__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: platform_field__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: platform_field__in
         schema:
           type: array
@@ -9623,16 +10810,6 @@ paths:
         name: platform_field__isnull
         schema:
           type: boolean
-      - in: query
-        name: platform_field__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: platform_field__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: platform_field__ob_id
         schema:
@@ -9665,16 +10842,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr__in
         schema:
           type: array
@@ -9689,15 +10856,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -10167,6 +11370,546 @@ paths:
       responses:
         '204':
           description: No response body
+  /api/v3/notes/:
+    get:
+      operationId: notes_list
+      description: Get a list of Note objects.
+      parameters:
+      - in: query
+        name: commentator
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: commentator__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: commentator__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: comments
+        schema:
+          type: string
+      - in: query
+        name: comments__contains
+        schema:
+          type: string
+      - in: query
+        name: comments__endswith
+        schema:
+          type: string
+      - in: query
+        name: comments__gt
+        schema:
+          type: string
+      - in: query
+        name: comments__gte
+        schema:
+          type: string
+      - in: query
+        name: comments__icontains
+        schema:
+          type: string
+      - in: query
+        name: comments__iendswith
+        schema:
+          type: string
+      - in: query
+        name: comments__iexact
+        schema:
+          type: string
+      - in: query
+        name: comments__in
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: comments__iregex
+        schema:
+          type: string
+      - in: query
+        name: comments__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: comments__istartswith
+        schema:
+          type: string
+      - in: query
+        name: comments__lt
+        schema:
+          type: string
+      - in: query
+        name: comments__lte
+        schema:
+          type: string
+      - in: query
+        name: comments__range
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: comments__regex
+        schema:
+          type: string
+      - in: query
+        name: comments__startswith
+        schema:
+          type: string
+      - in: query
+        name: date
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__contained_by
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__contains
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__date
+        schema:
+          type: string
+          format: date
+      - in: query
+        name: date__day
+        schema:
+          type: number
+      - in: query
+        name: date__endswith
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__gt
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__gte
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__hour
+        schema:
+          type: number
+      - in: query
+        name: date__icontains
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__iendswith
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__iexact
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__in
+        schema:
+          type: array
+          items:
+            type: string
+            format: date-time
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: date__iregex
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: date__iso_week_day
+        schema:
+          type: number
+      - in: query
+        name: date__iso_year
+        schema:
+          type: number
+      - in: query
+        name: date__istartswith
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__lt
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__lte
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__minute
+        schema:
+          type: number
+      - in: query
+        name: date__month
+        schema:
+          type: number
+      - in: query
+        name: date__quarter
+        schema:
+          type: number
+      - in: query
+        name: date__range
+        schema:
+          type: array
+          items:
+            type: string
+            format: date-time
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: date__regex
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__second
+        schema:
+          type: number
+      - in: query
+        name: date__startswith
+        schema:
+          type: string
+          format: date-time
+      - in: query
+        name: date__time
+        schema:
+          type: string
+          format: time
+      - in: query
+        name: date__week
+        schema:
+          type: number
+      - in: query
+        name: date__week_day
+        schema:
+          type: number
+      - in: query
+        name: date__year
+        schema:
+          type: number
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: ob_id
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__contained_by
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__contains
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__endswith
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__gt
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__gte
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__icontains
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__iendswith
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__iexact
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: ob_id__iregex
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: ob_id__istartswith
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__lt
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__lte
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__range
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: ob_id__regex
+        schema:
+          type: integer
+      - in: query
+        name: ob_id__startswith
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - in: query
+        name: relatedRecord
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: relatedRecord__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedRecord__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: relatedRecord__ob_id
+        schema:
+          type: integer
+      - in: query
+        name: relatedRecord__ob_id__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedRecord__short_code
+        schema:
+          type: string
+      - in: query
+        name: relatedRecord__short_code__in
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedRecord__uuid
+        schema:
+          type: string
+      - in: query
+        name: relatedRecord__uuid__in
+        schema:
+          type: array
+          items:
+            type: string
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      tags:
+      - notes
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedNoteReadList'
+          description: ''
+    post:
+      operationId: notes_create
+      description: Get a list of Note objects.
+      tags:
+      - notes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteWriteRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteWrite'
+          description: ''
+  /api/v3/notes/{ob_id}/:
+    get:
+      operationId: notes_retrieve
+      description: Get a list of Note objects.
+      parameters:
+      - in: path
+        name: ob_id
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+        description: A unique integer value identifying this Note.
+        required: true
+      tags:
+      - notes
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteRead'
+          description: ''
+    put:
+      operationId: notes_update
+      description: Get a list of Note objects.
+      parameters:
+      - in: path
+        name: ob_id
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+        description: A unique integer value identifying this Note.
+        required: true
+      tags:
+      - notes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteWriteRequest'
+        required: true
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteWrite'
+          description: ''
+    patch:
+      operationId: notes_partial_update
+      description: Get a list of Note objects.
+      parameters:
+      - in: path
+        name: ob_id
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+        description: A unique integer value identifying this Note.
+        required: true
+      tags:
+      - notes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedNoteWriteRequest'
+      security:
+      - jwtAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoteWrite'
+          description: ''
+    delete:
+      operationId: notes_destroy
+      description: Get a list of Note objects.
+      parameters:
+      - in: path
+        name: ob_id
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+        description: A unique integer value identifying this Note.
+        required: true
+      tags:
+      - notes
+      security:
+      - jwtAuth: []
+      responses:
+        '204':
+          description: No response body
   /api/v3/observationcollections/:
     get:
       operationId: observationcollections_list
@@ -10404,6 +12147,29 @@ paths:
         name: dataPublishedTime__year
         schema:
           type: number
+      - in: query
+        name: discoveryKeywords
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: discoveryKeywords__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: discoveryKeywords__isnull
+        schema:
+          type: boolean
       - in: query
         name: discoveryKeywords__name
         schema:
@@ -10644,6 +12410,75 @@ paths:
         schema:
           type: boolean
       - in: query
+        name: externalCitations
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: externalCitations__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: externalCitations__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
         name: keywords
         schema:
           type: string
@@ -10728,6 +12563,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: member
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: member__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: member__isnull
+        schema:
+          type: boolean
+      - in: query
         name: member__ob_id
         schema:
           type: integer
@@ -10753,6 +12611,50 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: ob_id
         schema:
@@ -10841,12 +12743,58 @@ paths:
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: project
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: project__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: project__isnull
+        schema:
+          type: boolean
       - in: query
         name: publicationState
         schema:
@@ -10946,16 +12894,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr__in
         schema:
           type: array
@@ -10970,15 +12908,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -11813,6 +13787,29 @@ paths:
         schema:
           type: number
       - in: query
+        name: discoveryKeywords
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: discoveryKeywords__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: discoveryKeywords__isnull
+        schema:
+          type: boolean
+      - in: query
         name: discoveryKeywords__name
         schema:
           type: string
@@ -12052,6 +14049,52 @@ paths:
         schema:
           type: boolean
       - in: query
+        name: drsdataset
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: drsdataset__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: drsdataset__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: externalCitations
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: externalCitations__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: externalCitations__isnull
+        schema:
+          type: boolean
+      - in: query
         name: featureOfInterest
         schema:
           type: string
@@ -12170,16 +14213,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: geographicExtent__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: geographicExtent__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: geographicExtent__in
         schema:
           type: array
@@ -12193,16 +14226,6 @@ paths:
         name: geographicExtent__isnull
         schema:
           type: boolean
-      - in: query
-        name: geographicExtent__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: geographicExtent__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: geographicExtent__northBoundLatitude
         schema:
@@ -12321,6 +14344,75 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: inspireTheme
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: inspireTheme__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: inspireTheme__isnull
+        schema:
+          type: boolean
       - in: query
         name: keywords
         schema:
@@ -12793,6 +14885,27 @@ paths:
         schema:
           type: integer
       - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
         name: nonGeographicFlag
         schema:
           type: boolean
@@ -12868,6 +14981,29 @@ paths:
           type: boolean
       - in: query
         name: nonGeographicFlag__startswith
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
         schema:
           type: boolean
       - in: query
@@ -12952,18 +15088,96 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: objectObservation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: objectObservation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: objectObservation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: observationcollection
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationcollection__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationcollection__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: permissions
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
         name: permissions__accessCategory
         schema:
@@ -13000,17 +15214,44 @@ paths:
         explode: false
         style: form
       - in: query
+        name: permissions__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: permissions__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: phenomena
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: phenomena__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: phenomena__isnull
+        schema:
+          type: boolean
+      - in: query
         name: procedureAcquisition
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureAcquisition__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureAcquisition__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -13028,16 +15269,6 @@ paths:
         name: procedureAcquisition__isnull
         schema:
           type: boolean
-      - in: query
-        name: procedureAcquisition__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureAcquisition__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: procedureAcquisition__ob_id
         schema:
@@ -13070,16 +15301,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: procedureCompositeProcess__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureCompositeProcess__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: procedureCompositeProcess__in
         schema:
           type: array
@@ -13094,27 +15315,7 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: procedureCompositeProcess__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureCompositeProcess__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: procedureComputation
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureComputation__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureComputation__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -13132,16 +15333,6 @@ paths:
         name: procedureComputation__isnull
         schema:
           type: boolean
-      - in: query
-        name: procedureComputation__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: procedureComputation__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: procedureDescription
         schema:
@@ -13220,6 +15411,29 @@ paths:
         name: procedureDescription__startswith
         schema:
           type: string
+      - in: query
+        name: projects
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: projects__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: projects__isnull
+        schema:
+          type: boolean
       - in: query
         name: projects__ob_id
         schema:
@@ -13345,16 +15559,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr__in
         schema:
           type: array
@@ -13369,15 +15573,28 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: relatedobservationinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: relatedobservationinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: relatedobservationinfo__isnull
+        schema:
+          type: boolean
       - in: query
         name: removedDataReason
         schema:
@@ -13688,6 +15905,29 @@ paths:
         schema:
           type: string
       - in: query
+        name: responsiblepartyinfo
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: responsiblepartyinfo__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
         name: resultQuality
         schema:
           type: integer
@@ -13736,16 +15976,6 @@ paths:
         schema:
           type: string
       - in: query
-        name: resultQuality__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: resultQuality__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: resultQuality__in
         schema:
           type: array
@@ -13759,16 +15989,6 @@ paths:
         name: resultQuality__isnull
         schema:
           type: boolean
-      - in: query
-        name: resultQuality__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: resultQuality__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: resultQuality__ob_id
         schema:
@@ -13820,16 +16040,6 @@ paths:
         schema:
           type: string
       - in: query
-        name: result_field__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: result_field__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: result_field__in
         schema:
           type: array
@@ -13843,16 +16053,6 @@ paths:
         name: result_field__isnull
         schema:
           type: boolean
-      - in: query
-        name: result_field__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: result_field__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: result_field__storageLocation
         schema:
@@ -13875,6 +16075,29 @@ paths:
         description: |-
           * `online` - online
           * `offline` - offline
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -14181,16 +16404,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: timePeriod__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: timePeriod__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: timePeriod__in
         schema:
           type: array
@@ -14204,16 +16417,6 @@ paths:
         name: timePeriod__isnull
         schema:
           type: boolean
-      - in: query
-        name: timePeriod__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: timePeriod__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: timePeriod__ob_id
         schema:
@@ -14340,6 +16543,29 @@ paths:
         name: title__startswith
         schema:
           type: string
+      - in: query
+        name: topicCategory
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: topicCategory__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: topicCategory__isnull
+        schema:
+          type: boolean
       - in: query
         name: updateFrequency
         schema:
@@ -14529,16 +16755,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: validTimePeriod__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: validTimePeriod__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: validTimePeriod__in
         schema:
           type: array
@@ -14553,27 +16769,7 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: validTimePeriod__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: validTimePeriod__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: verticalExtent
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: verticalExtent__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: verticalExtent__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -14592,15 +16788,28 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: verticalExtent__lt
+        name: vocabularyKeywords
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: verticalExtent__lte
+        name: vocabularyKeywords__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: vocabularyKeywords__isnull
+        schema:
+          type: boolean
       tags:
       - observations
       security:
@@ -15359,16 +17568,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: relatedTo__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: relatedTo__in
         schema:
           type: array
@@ -15382,16 +17581,6 @@ paths:
         name: relatedTo__isnull
         schema:
           type: boolean
-      - in: query
-        name: relatedTo__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: relatedTo__ob_id
         schema:
@@ -16202,6 +18391,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -16614,6 +18826,75 @@ paths:
         name: postalCode__startswith
         schema:
           type: string
+      - in: query
+        name: responsiblepartyinfo
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: responsiblepartyinfo__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: reviewnote
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: reviewnote__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: reviewnote__isnull
+        schema:
+          type: boolean
       tags:
       - parties
       security:
@@ -16769,6 +19050,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: names
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: names__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: names__isnull
+        schema:
+          type: boolean
+      - in: query
         name: names__name
         schema:
           type: string
@@ -16858,6 +19162,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -16870,6 +19197,29 @@ paths:
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: terms
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: terms__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: terms__isnull
+        schema:
+          type: boolean
       - in: query
         name: terms__label
         schema:
@@ -17147,6 +19497,98 @@ paths:
         schema:
           type: string
       - in: query
+        name: childPlatform
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: childPlatform__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: childPlatform__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: instrumentplatformpair
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: instrumentplatformpair__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: instrumentplatformpair__isnull
+        schema:
+          type: boolean
+      - in: query
         name: keywords
         schema:
           type: string
@@ -17271,16 +19713,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: location__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: location__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: location__in
         schema:
           type: array
@@ -17294,16 +19726,6 @@ paths:
         name: location__isnull
         schema:
           type: boolean
-      - in: query
-        name: location__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: location__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: location__northBoundLatitude
         schema:
@@ -17423,6 +19845,73 @@ paths:
         explode: false
         style: form
       - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: mobileplatformoperation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: mobileplatformoperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobileplatformoperation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -17510,12 +19999,58 @@ paths:
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: parentPlatform
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: parentPlatform__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: parentPlatform__isnull
+        schema:
+          type: boolean
       - in: query
         name: platformType
         schema:
@@ -17627,16 +20162,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr__in
         schema:
           type: array
@@ -17651,15 +20176,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -18111,6 +20672,52 @@ paths:
         schema:
           type: string
       - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: imageDetails
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: imageDetails__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: imageDetails__isnull
+        schema:
+          type: boolean
+      - in: query
         name: keywords
         schema:
           type: string
@@ -18195,6 +20802,50 @@ paths:
         schema:
           type: integer
       - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -18277,6 +20928,38 @@ paths:
         schema:
           type: integer
       - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationCollection
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationCollection__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationCollection__isnull
+        schema:
+          type: boolean
+      - in: query
         name: observationCollection__ob_id
         schema:
           type: integer
@@ -18310,12 +20993,49 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -18324,16 +21044,6 @@ paths:
           type: string
       - in: query
         name: parentProject
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: parentProject__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: parentProject__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -18351,16 +21061,6 @@ paths:
         name: parentProject__isnull
         schema:
           type: boolean
-      - in: query
-        name: parentProject__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: parentProject__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: publicationState
         schema:
@@ -18458,16 +21158,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: referenceable_ptr__in
         schema:
           type: array
@@ -18482,15 +21172,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -18678,6 +21404,29 @@ paths:
         name: status__startswith
         schema:
           type: string
+      - in: query
+        name: subProject
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: subProject__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: subProject__isnull
+        schema:
+          type: boolean
       - in: query
         name: subProject__ob_id
         schema:
@@ -19015,12 +21764,193 @@ paths:
       description: Get a list of Referenceable objects. This is the base class for
         the main record types in the CEDA data catalogue.
       parameters:
+      - in: query
+        name: acquisition
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: acquisition__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: acquisition__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: compositeprocess
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: compositeprocess__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: compositeprocess__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: computation
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: computation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: computation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: externalcitation
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: externalcitation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: externalcitation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: instrument
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: instrument__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: instrument__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
         description: Number of results to return per page.
         schema:
           type: integer
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: mobileplatformoperation
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: mobileplatformoperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobileplatformoperation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: ob_id
         schema:
@@ -19103,18 +22033,182 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: observationcollection
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: observationcollection__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationcollection__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
         description: Which field to use when ordering the results.
         schema:
           type: string
+      - in: query
+        name: platform
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: platform__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: platform__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: project
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: project__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: project__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: responsiblepartyinfo
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: responsiblepartyinfo__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: result
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: result__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: result__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -19405,16 +22499,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: objectObservation__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: objectObservation__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: objectObservation__in
         schema:
           type: array
@@ -19428,16 +22512,6 @@ paths:
         name: objectObservation__isnull
         schema:
           type: boolean
-      - in: query
-        name: objectObservation__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: objectObservation__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: objectObservation__uuid
         schema:
@@ -19568,16 +22642,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: subjectObservation__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: subjectObservation__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: subjectObservation__in
         schema:
           type: array
@@ -19591,16 +22655,6 @@ paths:
         name: subjectObservation__isnull
         schema:
           type: boolean
-      - in: query
-        name: subjectObservation__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: subjectObservation__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: subjectObservation__ob_id
         schema:
@@ -19847,6 +22901,29 @@ paths:
         schema:
           type: string
       - in: query
+        name: currentDataPath
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: currentDataPath__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: currentDataPath__isnull
+        schema:
+          type: boolean
+      - in: query
         name: dataPath
         schema:
           type: string
@@ -20002,12 +23079,79 @@ paths:
         name: fileFormat__startswith
         schema:
           type: string
+      - in: query
+        name: identifier
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: identifier__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: identifier__isnull
+        schema:
+          type: boolean
       - name: limit
         required: false
         in: query
         description: Number of results to return per page.
         schema:
           type: integer
+      - in: query
+        name: migrationproperty
+        schema:
+          type: array
+          items:
+            type: integer
+        explode: true
+        style: form
+      - in: query
+        name: migrationproperty__in
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: migrationproperty__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: note
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: note__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: note__isnull
+        schema:
+          type: boolean
       - in: query
         name: numberOfFiles
         schema:
@@ -20173,6 +23317,25 @@ paths:
         schema:
           type: integer
       - in: query
+        name: observation
+        schema:
+          type: integer
+          title: Internal identifier (ob_id)
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
+      - in: query
         name: observation__ob_id
         schema:
           type: integer
@@ -20204,6 +23367,52 @@ paths:
         description: The initial index from which to return the results.
         schema:
           type: integer
+      - in: query
+        name: oldDataPath
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: oldDataPath__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: oldDataPath__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: onlineresource
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: onlineresource__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: onlineresource__isnull
+        schema:
+          type: boolean
       - name: ordering
         required: false
         in: query
@@ -20212,16 +23421,6 @@ paths:
           type: string
       - in: query
         name: referenceable_ptr
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: referenceable_ptr__gte
         schema:
           type: integer
           title: Internal identifier (ob_id)
@@ -20240,15 +23439,51 @@ paths:
         schema:
           type: boolean
       - in: query
-        name: referenceable_ptr__lt
+        name: responsiblepartyinfo
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
       - in: query
-        name: referenceable_ptr__lte
+        name: responsiblepartyinfo__in
         schema:
-          type: integer
-          title: Internal identifier (ob_id)
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: responsiblepartyinfo__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: review
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: review__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: review__isnull
+        schema:
+          type: boolean
       - in: query
         name: short_code
         schema:
@@ -20912,16 +24147,6 @@ paths:
         explode: false
         style: form
       - in: query
-        name: party__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: party__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: party__in
         schema:
           type: array
@@ -20948,16 +24173,6 @@ paths:
         description: Multiple values may be separated by commas.
         explode: false
         style: form
-      - in: query
-        name: party__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: party__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: party__ob_id
         schema:
@@ -21079,16 +24294,6 @@ paths:
           type: integer
           title: Internal identifier (ob_id)
       - in: query
-        name: relatedTo__gt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__gte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
         name: relatedTo__in
         schema:
           type: array
@@ -21102,16 +24307,6 @@ paths:
         name: relatedTo__isnull
         schema:
           type: boolean
-      - in: query
-        name: relatedTo__lt
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
-      - in: query
-        name: relatedTo__lte
-        schema:
-          type: integer
-          title: Internal identifier (ob_id)
       - in: query
         name: relatedTo__ob_id
         schema:
@@ -21574,6 +24769,29 @@ paths:
         schema:
           type: integer
       - in: query
+        name: mobileplatformoperation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: mobileplatformoperation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: mobileplatformoperation__isnull
+        schema:
+          type: boolean
+      - in: query
         name: ob_id
         schema:
           type: integer
@@ -21655,6 +24873,52 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationPhenomenonTime
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observationPhenomenonTime__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observationPhenomenonTime__isnull
+        schema:
+          type: boolean
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -22123,6 +25387,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -22553,6 +25840,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -22861,6 +26171,29 @@ paths:
         name: ob_id__startswith
         schema:
           type: integer
+      - in: query
+        name: observation
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        explode: true
+        style: form
+      - in: query
+        name: observation__in
+        schema:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+        description: Multiple values may be separated by commas.
+        explode: false
+        style: form
+      - in: query
+        name: observation__isnull
+        schema:
+          type: boolean
       - name: offset
         required: false
         in: query
@@ -23266,6 +26599,7 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         accessConstraints:
           type: string
           nullable: true
@@ -23276,6 +26610,7 @@ components:
           - $ref: '#/components/schemas/AccessCategoryEnum'
           title: Access Category
           readOnly: true
+          nullable: true
         accessRoles:
           type: string
           nullable: true
@@ -23360,23 +26695,28 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         explanation:
           type: string
           title: Explanation of Data Quality Conformance Test
           readOnly: true
+          nullable: true
         passesTest:
           type: boolean
           title: Passes Test?
           readOnly: true
+          nullable: true
         resultTitle:
           type: string
           title: Title of Data Quality Conformance Test
           readOnly: true
+          nullable: true
         date:
           type: string
           format: date
           title: Date of Data Quality Conformance Test
           readOnly: true
+          nullable: true
       required:
       - date
       - explanation
@@ -23446,16 +26786,20 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         drsId:
           type: string
           title: DRS Dataset Identifier
           readOnly: true
+          nullable: true
         version:
           type: string
           readOnly: true
+          nullable: true
         directory:
           type: string
           readOnly: true
+          nullable: true
         relatedTo:
           $ref: '#/components/schemas/SimpleRead'
       required:
@@ -23530,10 +26874,12 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         name:
           type: string
           title: Name code for discovery service
           readOnly: true
+          nullable: true
       required:
       - name
       - ob_id
@@ -23601,30 +26947,36 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         bboxName:
           type: string
           title: Useful Name for Bounding Box
           readOnly: true
+          nullable: true
         eastBoundLongitude:
           type: number
           format: double
           title: East
           readOnly: true
+          nullable: true
         westBoundLongitude:
           type: number
           format: double
           title: West
           readOnly: true
+          nullable: true
         southBoundLatitude:
           type: number
           format: double
           title: South
           readOnly: true
+          nullable: true
         northBoundLatitude:
           type: number
           format: double
           title: North
           readOnly: true
+          nullable: true
       required:
       - bboxName
       - eastBoundLongitude
@@ -23700,16 +27052,20 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         url:
           type: string
           readOnly: true
+          nullable: true
         identifierType:
           allOf:
           - $ref: '#/components/schemas/IdentifierTypeEnum'
           readOnly: true
+          nullable: true
         shortUrl:
           type: string
           readOnly: true
+          nullable: true
         relatedTo:
           allOf:
           - $ref: '#/components/schemas/Referenceable'
@@ -23788,15 +27144,18 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         linkage:
           type: string
           format: uri
           title: Link to Image
           readOnly: true
+          nullable: true
         fileName:
           type: string
           title: Name of file
           readOnly: true
+          nullable: true
       required:
       - fileName
       - linkage
@@ -23854,12 +27213,15 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         name:
           type: string
           readOnly: true
+          nullable: true
         description:
           type: string
           readOnly: true
+          nullable: true
       required:
       - description
       - name
@@ -23908,10 +27270,12 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         name:
           type: string
           title: INSPIRE Themes
           readOnly: true
+          nullable: true
       required:
       - name
       - ob_id
@@ -23955,6 +27319,7 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         platform:
           allOf:
           - $ref: '#/components/schemas/SimpleRead'
@@ -24019,24 +27384,31 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         keywords:
           type: string
           readOnly: true
+          nullable: true
         instrumentType:
           title: Instrument Type
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/InstrumentTypeEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -24216,10 +27588,12 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         classification:
           type: string
           title: Licence Classification
           readOnly: true
+          nullable: true
       required:
       - classification
       - ob_id
@@ -24250,11 +27624,13 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         licenceURL:
           type: string
           format: uri
           title: Link to Licence file
           readOnly: true
+          nullable: true
         licenceClassifications:
           type: array
           items:
@@ -24300,16 +27676,20 @@ components:
         id:
           type: integer
           readOnly: true
+          nullable: true
         key:
           type: string
           readOnly: true
+          nullable: true
         value:
           type: string
           readOnly: true
+          nullable: true
         modified:
           type: string
           format: date
           readOnly: true
+          nullable: true
         ob_ref:
           type: integer
           title: Internal identifier (ob_id)
@@ -24331,20 +27711,26 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         status:
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/StatusEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -24456,6 +27842,95 @@ components:
       required:
       - platform_field
       - title
+    NoteRead:
+      type: object
+      description: |-
+        A mixin that adds 'simple_fields' as ReadOnlyFields
+        and reorders them to the top.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+          nullable: true
+        comments:
+          type: string
+          title: Comment
+          readOnly: true
+          nullable: true
+        date:
+          type: string
+          format: date-time
+          nullable: true
+          title: Date Time
+          readOnly: true
+        commentator:
+          type: integer
+          title: Internal identifier (ob_id)
+          readOnly: true
+          nullable: true
+        relatedRecord:
+          allOf:
+          - $ref: '#/components/schemas/Referenceable'
+          readOnly: true
+          nullable: true
+      required:
+      - commentator
+      - comments
+      - date
+      - ob_id
+      - relatedRecord
+    NoteWrite:
+      type: object
+      description: |-
+        A mixin that allows specifying which fields to include in the serializer
+        via the 'fields' keyword argument.
+      properties:
+        ob_id:
+          type: integer
+          readOnly: true
+          title: Internal identifier (ob_id)
+        comments:
+          type: string
+          title: Comment
+        commentator:
+          type: integer
+          title: Internal identifier (ob_id)
+          nullable: true
+        date:
+          type: string
+          format: date-time
+          nullable: true
+          title: Date Time
+      required:
+      - comments
+      - ob_id
+    NoteWriteRequest:
+      type: object
+      description: |-
+        A mixin that allows specifying which fields to include in the serializer
+        via the 'fields' keyword argument.
+      properties:
+        comments:
+          type: string
+          minLength: 1
+          title: Comment
+        commentator:
+          type: integer
+          title: Internal identifier (ob_id)
+          nullable: true
+        relatedRecord:
+          type: string
+          minLength: 1
+          writeOnly: true
+        date:
+          type: string
+          format: date-time
+          nullable: true
+          title: Date Time
+      required:
+      - comments
+      - relatedRecord
     NullEnum:
       enum:
       - null
@@ -24469,24 +27944,31 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         keywords:
           type: string
           readOnly: true
+          nullable: true
         publicationState:
           title: Publication State
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/PublicationStateCbbEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -24505,6 +27987,7 @@ components:
         dontHarvestFromProjects:
           type: boolean
           readOnly: true
+          nullable: true
         imageDetails:
           type: array
           items:
@@ -24691,15 +28174,19 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         creationDate:
           type: string
           format: date-time
@@ -24721,6 +28208,7 @@ components:
         updateFrequency:
           title: Data update Frequency
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/UpdateFrequencyEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -24728,27 +28216,34 @@ components:
           type: string
           title: Data Lineage
           readOnly: true
+          nullable: true
         removedDataReason:
           type: string
           title: Reason for Dataset Removal
           readOnly: true
+          nullable: true
         keywords:
           type: string
           readOnly: true
+          nullable: true
         publicationState:
           title: Publication State
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/PublicationStateCbbEnum'
           - $ref: '#/components/schemas/BlankEnum'
         nonGeographicFlag:
           type: boolean
           readOnly: true
+          nullable: true
         dontHarvestFromProjects:
           type: boolean
           readOnly: true
+          nullable: true
         language:
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/LanguageEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -24756,11 +28251,13 @@ components:
           type: string
           title: Horizontal Resolution
           readOnly: true
+          nullable: true
         status:
           allOf:
           - $ref: '#/components/schemas/StatusEnum'
           title: Data Status
           readOnly: true
+          nullable: true
         dataPublishedTime:
           type: string
           format: date-time
@@ -25282,6 +28779,7 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         function:
           nullable: true
           readOnly: true
@@ -25294,6 +28792,7 @@ components:
           format: uri
           title: URL to online resource
           readOnly: true
+          nullable: true
         name:
           type: string
           nullable: true
@@ -25709,6 +29208,29 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MobilePlatformOperationRead'
+    PaginatedNoteReadList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoteRead'
     PaginatedObservationCollectionReadList:
       type: object
       required:
@@ -26133,54 +29655,67 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         firstName:
           type: string
           title: First Name
           readOnly: true
+          nullable: true
         lastName:
           type: string
           title: Last Name
           readOnly: true
+          nullable: true
         partyType:
           allOf:
           - $ref: '#/components/schemas/PartyTypeEnum'
           title: Type
           readOnly: true
+          nullable: true
         description:
           type: string
           readOnly: true
+          nullable: true
         deliveryPoint:
           type: string
           title: Address Line 1
           readOnly: true
+          nullable: true
         administrativeArea:
           type: string
           title: Address Line 2
           readOnly: true
+          nullable: true
         city:
           type: string
           title: City Adress
           readOnly: true
+          nullable: true
         country:
           type: string
           readOnly: true
+          nullable: true
         postalCode:
           type: string
           title: Postcode
           readOnly: true
+          nullable: true
         electronicEmailAddress:
           type: string
           title: E-mail
           readOnly: true
+          nullable: true
         phone:
           type: string
           title: Telephone
           readOnly: true
+          nullable: true
         onlineResource:
           type: string
           format: uri
           title: URL to online resource
           readOnly: true
+          nullable: true
         responsiblepartyinfo_url:
           type: string
           readOnly: true
@@ -26322,8 +29857,6 @@ components:
           title: URL to online resource
           maxLength: 200
       required:
-      - addressLine1
-      - addressLine2
       - lastName
     PatchedDQConformanceResultWriteRequest:
       type: object
@@ -26547,6 +30080,29 @@ components:
           type: integer
           title: Child Operation
           nullable: true
+    PatchedNoteWriteRequest:
+      type: object
+      description: |-
+        A mixin that allows specifying which fields to include in the serializer
+        via the 'fields' keyword argument.
+      properties:
+        comments:
+          type: string
+          minLength: 1
+          title: Comment
+        commentator:
+          type: integer
+          title: Internal identifier (ob_id)
+          nullable: true
+        relatedRecord:
+          type: string
+          minLength: 1
+          writeOnly: true
+        date:
+          type: string
+          format: date-time
+          nullable: true
+          title: Date Time
     PatchedObservationCollectionWriteRequest:
       type: object
       description: |-
@@ -27154,6 +30710,7 @@ components:
         ob_id:
           type: string
           readOnly: true
+          nullable: true
         names:
           type: array
           items:
@@ -27177,9 +30734,11 @@ components:
         ob_id:
           type: string
           readOnly: true
+          nullable: true
         name:
           type: string
           readOnly: true
+          nullable: true
       required:
       - name
       - ob_id
@@ -27192,15 +30751,19 @@ components:
         ob_id:
           type: string
           readOnly: true
+          nullable: true
         label:
           type: string
           readOnly: true
+          nullable: true
         value:
           type: string
           readOnly: true
+          nullable: true
         vocabulary:
           type: string
           readOnly: true
+          nullable: true
       required:
       - label
       - ob_id
@@ -27216,24 +30779,31 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         keywords:
           type: string
           readOnly: true
+          nullable: true
         platformType:
           title: Platform Type
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/PlatformTypeEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -27396,18 +30966,23 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         imageDetails:
           type: array
           items:
@@ -27530,15 +31105,19 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         computationComponent:
           type: array
           items:
@@ -27640,21 +31219,27 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
         keywords:
           type: string
           readOnly: true
+          nullable: true
         inputDescription:
           type: integer
           title: Internal identifier (ob_id)
@@ -27788,15 +31373,19 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           nullable: true
@@ -27804,15 +31393,18 @@ components:
         publicationState:
           title: Publication State
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/PublicationState6f9Enum'
           - $ref: '#/components/schemas/BlankEnum'
         keywords:
           type: string
           readOnly: true
+          nullable: true
         status:
           title: Project Status
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/StatusEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -28012,12 +31604,15 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
       required:
       - ob_id
       - short_code
@@ -28032,11 +31627,13 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         relationType:
           allOf:
           - $ref: '#/components/schemas/RelationTypeEnum'
           title: Relation type between subject and object obs
           readOnly: true
+          nullable: true
         subjectObservation:
           $ref: '#/components/schemas/SimpleRead'
         objectObservation:
@@ -28167,6 +31764,7 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         priority:
           type: integer
           maximum: 2147483647
@@ -28177,6 +31775,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/RoleEnum'
           readOnly: true
+          nullable: true
         party:
           $ref: '#/components/schemas/PartyRead'
         relatedTo:
@@ -28247,15 +31846,19 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         curationCategory:
           title: CEDA Curation Category
           readOnly: true
+          nullable: true
           oneOf:
           - $ref: '#/components/schemas/CurationCategoryEnum'
           - $ref: '#/components/schemas/BlankEnum'
@@ -28263,12 +31866,14 @@ components:
           type: string
           title: Data Path
           readOnly: true
+          nullable: true
         numberOfFiles:
           type: integer
           maximum: 2147483647
           minimum: -2147483648
           title: Number Of Files
           readOnly: true
+          nullable: true
         volume:
           type: integer
           maximum: 9223372036854775807
@@ -28276,6 +31881,7 @@ components:
           format: int64
           title: Volume (bytes)
           readOnly: true
+          nullable: true
         fileFormat:
           type: string
           nullable: true
@@ -28286,11 +31892,13 @@ components:
           - $ref: '#/components/schemas/StorageStatusEnum'
           title: Storage Status
           readOnly: true
+          nullable: true
         storageLocation:
           allOf:
           - $ref: '#/components/schemas/StorageLocationEnum'
           title: Storage Location
           readOnly: true
+          nullable: true
         oldDataPath:
           type: array
           items:
@@ -28300,6 +31908,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/SimpleRead'
           readOnly: true
+          nullable: true
         onlineresource_set:
           type: array
           items:
@@ -28463,18 +32072,23 @@ components:
         ob_id:
           type: string
           readOnly: true
+          nullable: true
         uuid:
           type: string
           readOnly: true
+          nullable: true
         short_code:
           type: string
           readOnly: true
+          nullable: true
         title:
           type: string
           readOnly: true
+          nullable: true
         abstract:
           type: string
           readOnly: true
+          nullable: true
       required:
       - abstract
       - ob_id
@@ -28578,10 +32192,12 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         name:
           type: string
           title: Topic Category
           readOnly: true
+          nullable: true
       required:
       - name
       - ob_id
@@ -28653,20 +32269,24 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         highestLevelBound:
           type: number
           format: double
           title: Highest Level Bound
           readOnly: true
+          nullable: true
         lowestLevelBound:
           type: number
           format: double
           title: Lowest Level Bound
           readOnly: true
+          nullable: true
         units:
           type: string
           title: Units of Vertical Extent
           readOnly: true
+          nullable: true
       required:
       - highestLevelBound
       - lowestLevelBound
@@ -28732,16 +32352,19 @@ components:
           type: integer
           readOnly: true
           title: Internal identifier (ob_id)
+          nullable: true
         vocabService:
           allOf:
           - $ref: '#/components/schemas/VocabServiceEnum'
           title: Vocabulary Service
           readOnly: true
+          nullable: true
         uri:
           type: string
           format: uri
           title: Vocabulary Term URL
           readOnly: true
+          nullable: true
         resolvedTerm:
           type: string
           nullable: true

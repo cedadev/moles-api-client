@@ -37,36 +37,23 @@ class ObservationRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            title (str):
-            abstract (str):
+            ob_id (int | None):
+            uuid (None | str):
+            title (None | str):
+            abstract (None | str):
             creation_date (datetime.datetime | None):
             last_updated_date (datetime.datetime | None):
             latest_data_update_time (datetime.datetime | None):
-            update_frequency (BlankEnum | UpdateFrequencyEnum):
-            data_lineage (str):
-            removed_data_reason (str):
-            keywords (str):
-            publication_state (BlankEnum | PublicationStateCbbEnum):
-            non_geographic_flag (bool):
-            dont_harvest_from_projects (bool):
-            language (BlankEnum | LanguageEnum):
-            resolution (str):
-            status (StatusEnum): * `planned` - Planned (pre)
-                * `required` - Required (pre)
-                * `underDevelopment` - Under Development (pre)
-                * `pending` - Pending (pre)
-                * `tentative` - Tentative (pre)
-                * `withdrawn` - Withdrawn (pre)
-                * `ongoing` - Ongoing (live)
-                * `completed` - Completed (live)
-                * `final` - Final (live)
-                * `superseded` - Superseded (past)
-                * `obsolete` - Obsolete (past)
-                * `historicalArchive` - Historical Archive (past)
-                * `retired` - Retired (past)
-                * `deprecated` - Deprecated (past)
+            update_frequency (BlankEnum | None | UpdateFrequencyEnum):
+            data_lineage (None | str):
+            removed_data_reason (None | str):
+            keywords (None | str):
+            publication_state (BlankEnum | None | PublicationStateCbbEnum):
+            non_geographic_flag (bool | None):
+            dont_harvest_from_projects (bool | None):
+            language (BlankEnum | LanguageEnum | None):
+            resolution (None | str):
+            status (None | StatusEnum):
             data_published_time (datetime.datetime | None):
             doi_published_time (datetime.datetime | None):
             removed_data_time (datetime.datetime | None):
@@ -93,23 +80,23 @@ class ObservationRead:
             onlineresource_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    title: str
-    abstract: str
+    ob_id: int | None
+    uuid: None | str
+    title: None | str
+    abstract: None | str
     creation_date: datetime.datetime | None
     last_updated_date: datetime.datetime | None
     latest_data_update_time: datetime.datetime | None
-    update_frequency: BlankEnum | UpdateFrequencyEnum
-    data_lineage: str
-    removed_data_reason: str
-    keywords: str
-    publication_state: BlankEnum | PublicationStateCbbEnum
-    non_geographic_flag: bool
-    dont_harvest_from_projects: bool
-    language: BlankEnum | LanguageEnum
-    resolution: str
-    status: StatusEnum
+    update_frequency: BlankEnum | None | UpdateFrequencyEnum
+    data_lineage: None | str
+    removed_data_reason: None | str
+    keywords: None | str
+    publication_state: BlankEnum | None | PublicationStateCbbEnum
+    non_geographic_flag: bool | None
+    dont_harvest_from_projects: bool | None
+    language: BlankEnum | LanguageEnum | None
+    resolution: None | str
+    status: None | StatusEnum
     data_published_time: datetime.datetime | None
     doi_published_time: datetime.datetime | None
     removed_data_time: datetime.datetime | None
@@ -143,12 +130,16 @@ class ObservationRead:
         from ..models.time_period import TimePeriod
         from ..models.vertical_extent_read import VerticalExtentRead
 
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
         creation_date: None | str
@@ -169,37 +160,53 @@ class ObservationRead:
         else:
             latest_data_update_time = self.latest_data_update_time
 
-        update_frequency: str
+        update_frequency: None | str
         if isinstance(self.update_frequency, UpdateFrequencyEnum):
             update_frequency = self.update_frequency.value
-        else:
+        elif isinstance(self.update_frequency, BlankEnum):
             update_frequency = self.update_frequency.value
+        else:
+            update_frequency = self.update_frequency
 
+        data_lineage: None | str
         data_lineage = self.data_lineage
 
+        removed_data_reason: None | str
         removed_data_reason = self.removed_data_reason
 
+        keywords: None | str
         keywords = self.keywords
 
-        publication_state: str
+        publication_state: None | str
         if isinstance(self.publication_state, PublicationStateCbbEnum):
             publication_state = self.publication_state.value
-        else:
+        elif isinstance(self.publication_state, BlankEnum):
             publication_state = self.publication_state.value
+        else:
+            publication_state = self.publication_state
 
+        non_geographic_flag: bool | None
         non_geographic_flag = self.non_geographic_flag
 
+        dont_harvest_from_projects: bool | None
         dont_harvest_from_projects = self.dont_harvest_from_projects
 
-        language: str
+        language: None | str
         if isinstance(self.language, LanguageEnum):
             language = self.language.value
-        else:
+        elif isinstance(self.language, BlankEnum):
             language = self.language.value
+        else:
+            language = self.language
 
+        resolution: None | str
         resolution = self.resolution
 
-        status = self.status.value
+        status: None | str
+        if isinstance(self.status, StatusEnum):
+            status = self.status.value
+        else:
+            status = self.status
 
         data_published_time: None | str
         if isinstance(self.data_published_time, datetime.datetime):
@@ -434,13 +441,34 @@ class ObservationRead:
         from ..models.vocabulary_term_read import VocabularyTermRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        title = d.pop("title")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        abstract = d.pop("abstract")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        uuid = _parse_uuid(d.pop("uuid"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
 
         def _parse_creation_date(data: object) -> datetime.datetime | None:
             if data is None:
@@ -487,7 +515,9 @@ class ObservationRead:
 
         latest_data_update_time = _parse_latest_data_update_time(d.pop("latestDataUpdateTime"))
 
-        def _parse_update_frequency(data: object) -> BlankEnum | UpdateFrequencyEnum:
+        def _parse_update_frequency(data: object) -> BlankEnum | None | UpdateFrequencyEnum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -496,21 +526,42 @@ class ObservationRead:
                 return update_frequency_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            update_frequency_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                update_frequency_type_1 = BlankEnum(data)
 
-            return update_frequency_type_1
+                return update_frequency_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | UpdateFrequencyEnum, data)
 
         update_frequency = _parse_update_frequency(d.pop("updateFrequency"))
 
-        data_lineage = d.pop("dataLineage")
+        def _parse_data_lineage(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        removed_data_reason = d.pop("removedDataReason")
+        data_lineage = _parse_data_lineage(d.pop("dataLineage"))
 
-        keywords = d.pop("keywords")
+        def _parse_removed_data_reason(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum:
+        removed_data_reason = _parse_removed_data_reason(d.pop("removedDataReason"))
+
+        def _parse_keywords(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        keywords = _parse_keywords(d.pop("keywords"))
+
+        def _parse_publication_state(data: object) -> BlankEnum | None | PublicationStateCbbEnum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -519,19 +570,35 @@ class ObservationRead:
                 return publication_state_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            publication_state_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                publication_state_type_1 = BlankEnum(data)
 
-            return publication_state_type_1
+                return publication_state_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | PublicationStateCbbEnum, data)
 
         publication_state = _parse_publication_state(d.pop("publicationState"))
 
-        non_geographic_flag = d.pop("nonGeographicFlag")
+        def _parse_non_geographic_flag(data: object) -> bool | None:
+            if data is None:
+                return data
+            return cast(bool | None, data)
 
-        dont_harvest_from_projects = d.pop("dontHarvestFromProjects")
+        non_geographic_flag = _parse_non_geographic_flag(d.pop("nonGeographicFlag"))
 
-        def _parse_language(data: object) -> BlankEnum | LanguageEnum:
+        def _parse_dont_harvest_from_projects(data: object) -> bool | None:
+            if data is None:
+                return data
+            return cast(bool | None, data)
+
+        dont_harvest_from_projects = _parse_dont_harvest_from_projects(d.pop("dontHarvestFromProjects"))
+
+        def _parse_language(data: object) -> BlankEnum | LanguageEnum | None:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -540,17 +607,39 @@ class ObservationRead:
                 return language_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            language_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                language_type_1 = BlankEnum(data)
 
-            return language_type_1
+                return language_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | LanguageEnum | None, data)
 
         language = _parse_language(d.pop("language"))
 
-        resolution = d.pop("resolution")
+        def _parse_resolution(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        status = StatusEnum(d.pop("status"))
+        resolution = _parse_resolution(d.pop("resolution"))
+
+        def _parse_status(data: object) -> None | StatusEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                status_type_1 = StatusEnum(data)
+
+                return status_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | StatusEnum, data)
+
+        status = _parse_status(d.pop("status"))
 
         def _parse_data_published_time(data: object) -> datetime.datetime | None:
             if data is None:

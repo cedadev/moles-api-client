@@ -22,26 +22,26 @@ class InstrumentRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
-            abstract (str):
-            keywords (str):
-            instrument_type (BlankEnum | InstrumentTypeEnum):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
+            abstract (None | str):
+            keywords (None | str):
+            instrument_type (BlankEnum | InstrumentTypeEnum | None):
             image_details (list[int | None]):
             sub_instrument (list[SimpleRead] | None):
             identifier_set (list[int | None]):
             responsiblepartyinfo_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
-    abstract: str
-    keywords: str
-    instrument_type: BlankEnum | InstrumentTypeEnum
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
+    abstract: None | str
+    keywords: None | str
+    instrument_type: BlankEnum | InstrumentTypeEnum | None
     image_details: list[int | None]
     sub_instrument: list[SimpleRead] | None
     identifier_set: list[int | None]
@@ -49,23 +49,31 @@ class InstrumentRead:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
+        keywords: None | str
         keywords = self.keywords
 
-        instrument_type: str
+        instrument_type: None | str
         if isinstance(self.instrument_type, InstrumentTypeEnum):
             instrument_type = self.instrument_type.value
-        else:
+        elif isinstance(self.instrument_type, BlankEnum):
             instrument_type = self.instrument_type.value
+        else:
+            instrument_type = self.instrument_type
 
         image_details = []
         for image_details_item_data in self.image_details:
@@ -120,19 +128,52 @@ class InstrumentRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        abstract = d.pop("abstract")
+        uuid = _parse_uuid(d.pop("uuid"))
 
-        keywords = d.pop("keywords")
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        def _parse_instrument_type(data: object) -> BlankEnum | InstrumentTypeEnum:
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
+
+        def _parse_keywords(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        keywords = _parse_keywords(d.pop("keywords"))
+
+        def _parse_instrument_type(data: object) -> BlankEnum | InstrumentTypeEnum | None:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -141,11 +182,15 @@ class InstrumentRead:
                 return instrument_type_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            instrument_type_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                instrument_type_type_1 = BlankEnum(data)
 
-            return instrument_type_type_1
+                return instrument_type_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | InstrumentTypeEnum | None, data)
 
         instrument_type = _parse_instrument_type(d.pop("instrumentType"))
 

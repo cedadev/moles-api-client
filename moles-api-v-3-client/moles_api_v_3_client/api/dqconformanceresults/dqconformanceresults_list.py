@@ -74,6 +74,9 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     passes_test: bool | Unset = UNSET,
@@ -312,6 +315,20 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
     params["offset"] = offset
 
     params["ordering"] = ordering
@@ -501,6 +518,9 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     passes_test: bool | Unset = UNSET,
@@ -603,6 +623,9 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         passes_test (bool | Unset):
@@ -711,6 +734,9 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         passes_test=passes_test,
@@ -821,6 +847,9 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     passes_test: bool | Unset = UNSET,
@@ -923,6 +952,9 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         passes_test (bool | Unset):
@@ -1032,6 +1064,9 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         passes_test=passes_test,
@@ -1136,6 +1171,9 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     passes_test: bool | Unset = UNSET,
@@ -1238,6 +1276,9 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         passes_test (bool | Unset):
@@ -1346,6 +1387,9 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         passes_test=passes_test,
@@ -1454,6 +1498,9 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     passes_test: bool | Unset = UNSET,
@@ -1556,6 +1603,9 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         passes_test (bool | Unset):
@@ -1666,6 +1716,9 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
             passes_test=passes_test,

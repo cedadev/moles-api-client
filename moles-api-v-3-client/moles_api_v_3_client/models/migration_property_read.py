@@ -17,28 +17,35 @@ class MigrationPropertyRead:
     and reorders them to the top.
 
         Attributes:
-            id (int):
-            key (str):
-            value (str):
-            modified (datetime.date):
+            id (int | None):
+            key (None | str):
+            value (None | str):
+            modified (datetime.date | None):
             ob_ref (int | None):
     """
 
-    id: int
-    key: str
-    value: str
-    modified: datetime.date
+    id: int | None
+    key: None | str
+    value: None | str
+    modified: datetime.date | None
     ob_ref: int | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        id: int | None
         id = self.id
 
+        key: None | str
         key = self.key
 
+        value: None | str
         value = self.value
 
-        modified = self.modified.isoformat()
+        modified: None | str
+        if isinstance(self.modified, datetime.date):
+            modified = self.modified.isoformat()
+        else:
+            modified = self.modified
 
         ob_ref: int | None
         ob_ref = self.ob_ref
@@ -60,13 +67,42 @@ class MigrationPropertyRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        id = d.pop("id")
 
-        key = d.pop("key")
+        def _parse_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        value = d.pop("value")
+        id = _parse_id(d.pop("id"))
 
-        modified = isoparse(d.pop("modified")).date()
+        def _parse_key(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        key = _parse_key(d.pop("key"))
+
+        def _parse_value(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        value = _parse_value(d.pop("value"))
+
+        def _parse_modified(data: object) -> datetime.date | None:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                modified_type_0 = isoparse(data).date()
+
+                return modified_type_0
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(datetime.date | None, data)
+
+        modified = _parse_modified(d.pop("modified"))
 
         def _parse_ob_ref(data: object) -> int | None:
             if data is None:

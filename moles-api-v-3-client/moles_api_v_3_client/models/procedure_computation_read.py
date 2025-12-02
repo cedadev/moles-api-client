@@ -15,12 +15,12 @@ class ProcedureComputationRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
-            abstract (str):
-            keywords (str):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
+            abstract (None | str):
+            keywords (None | str):
             input_description (int | None):
             output_description (int | None):
             software_reference (int | None):
@@ -28,12 +28,12 @@ class ProcedureComputationRead:
             identifier_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
-    abstract: str
-    keywords: str
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
+    abstract: None | str
+    keywords: None | str
     input_description: int | None
     output_description: int | None
     software_reference: int | None
@@ -42,16 +42,22 @@ class ProcedureComputationRead:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
+        keywords: None | str
         keywords = self.keywords
 
         input_description: int | None
@@ -98,17 +104,48 @@ class ProcedureComputationRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        abstract = d.pop("abstract")
+        uuid = _parse_uuid(d.pop("uuid"))
 
-        keywords = d.pop("keywords")
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
+
+        def _parse_keywords(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        keywords = _parse_keywords(d.pop("keywords"))
 
         def _parse_input_description(data: object) -> int | None:
             if data is None:

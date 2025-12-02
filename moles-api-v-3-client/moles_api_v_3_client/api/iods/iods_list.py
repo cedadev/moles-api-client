@@ -11,6 +11,15 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation_input_description: list[int] | Unset = UNSET,
+    computation_input_description_in: list[int] | Unset = UNSET,
+    computation_input_description_isnull: bool | Unset = UNSET,
+    computation_output_description: list[int] | Unset = UNSET,
+    computation_output_description_in: list[int] | Unset = UNSET,
+    computation_output_description_isnull: bool | Unset = UNSET,
     description: str | Unset = UNSET,
     description_contains: str | Unset = UNSET,
     description_endswith: str | Unset = UNSET,
@@ -68,6 +77,48 @@ def _get_kwargs(
     ordering: str | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
+
+    json_acquisition: list[int] | Unset = UNSET
+    if not isinstance(acquisition, Unset):
+        json_acquisition = ",".join(map(str, acquisition))
+
+    params["acquisition"] = json_acquisition
+
+    json_acquisition_in: list[int] | Unset = UNSET
+    if not isinstance(acquisition_in, Unset):
+        json_acquisition_in = ",".join(map(str, acquisition_in))
+
+    params["acquisition__in"] = json_acquisition_in
+
+    params["acquisition__isnull"] = acquisition_isnull
+
+    json_computation_input_description: list[int] | Unset = UNSET
+    if not isinstance(computation_input_description, Unset):
+        json_computation_input_description = ",".join(map(str, computation_input_description))
+
+    params["computationInputDescription"] = json_computation_input_description
+
+    json_computation_input_description_in: list[int] | Unset = UNSET
+    if not isinstance(computation_input_description_in, Unset):
+        json_computation_input_description_in = ",".join(map(str, computation_input_description_in))
+
+    params["computationInputDescription__in"] = json_computation_input_description_in
+
+    params["computationInputDescription__isnull"] = computation_input_description_isnull
+
+    json_computation_output_description: list[int] | Unset = UNSET
+    if not isinstance(computation_output_description, Unset):
+        json_computation_output_description = ",".join(map(str, computation_output_description))
+
+    params["computationOutputDescription"] = json_computation_output_description
+
+    json_computation_output_description_in: list[int] | Unset = UNSET
+    if not isinstance(computation_output_description_in, Unset):
+        json_computation_output_description_in = ",".join(map(str, computation_output_description_in))
+
+    params["computationOutputDescription__in"] = json_computation_output_description_in
+
+    params["computationOutputDescription__isnull"] = computation_output_description_isnull
 
     params["description"] = description
 
@@ -242,6 +293,15 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation_input_description: list[int] | Unset = UNSET,
+    computation_input_description_in: list[int] | Unset = UNSET,
+    computation_input_description_isnull: bool | Unset = UNSET,
+    computation_output_description: list[int] | Unset = UNSET,
+    computation_output_description_in: list[int] | Unset = UNSET,
+    computation_output_description_isnull: bool | Unset = UNSET,
     description: str | Unset = UNSET,
     description_contains: str | Unset = UNSET,
     description_endswith: str | Unset = UNSET,
@@ -301,6 +361,15 @@ def sync_detailed(
     """Get a list of InputOutputDescription objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation_input_description (list[int] | Unset):
+        computation_input_description_in (list[int] | Unset):
+        computation_input_description_isnull (bool | Unset):
+        computation_output_description (list[int] | Unset):
+        computation_output_description_in (list[int] | Unset):
+        computation_output_description_isnull (bool | Unset):
         description (str | Unset):
         description_contains (str | Unset):
         description_endswith (str | Unset):
@@ -366,6 +435,15 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation_input_description=computation_input_description,
+        computation_input_description_in=computation_input_description_in,
+        computation_input_description_isnull=computation_input_description_isnull,
+        computation_output_description=computation_output_description,
+        computation_output_description_in=computation_output_description_in,
+        computation_output_description_isnull=computation_output_description_isnull,
         description=description,
         description_contains=description_contains,
         description_endswith=description_endswith,
@@ -433,6 +511,15 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation_input_description: list[int] | Unset = UNSET,
+    computation_input_description_in: list[int] | Unset = UNSET,
+    computation_input_description_isnull: bool | Unset = UNSET,
+    computation_output_description: list[int] | Unset = UNSET,
+    computation_output_description_in: list[int] | Unset = UNSET,
+    computation_output_description_isnull: bool | Unset = UNSET,
     description: str | Unset = UNSET,
     description_contains: str | Unset = UNSET,
     description_endswith: str | Unset = UNSET,
@@ -492,6 +579,15 @@ def sync(
     """Get a list of InputOutputDescription objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation_input_description (list[int] | Unset):
+        computation_input_description_in (list[int] | Unset):
+        computation_input_description_isnull (bool | Unset):
+        computation_output_description (list[int] | Unset):
+        computation_output_description_in (list[int] | Unset):
+        computation_output_description_isnull (bool | Unset):
         description (str | Unset):
         description_contains (str | Unset):
         description_endswith (str | Unset):
@@ -558,6 +654,15 @@ def sync(
 
     return sync_detailed(
         client=client,
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation_input_description=computation_input_description,
+        computation_input_description_in=computation_input_description_in,
+        computation_input_description_isnull=computation_input_description_isnull,
+        computation_output_description=computation_output_description,
+        computation_output_description_in=computation_output_description_in,
+        computation_output_description_isnull=computation_output_description_isnull,
         description=description,
         description_contains=description_contains,
         description_endswith=description_endswith,
@@ -619,6 +724,15 @@ def sync(
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation_input_description: list[int] | Unset = UNSET,
+    computation_input_description_in: list[int] | Unset = UNSET,
+    computation_input_description_isnull: bool | Unset = UNSET,
+    computation_output_description: list[int] | Unset = UNSET,
+    computation_output_description_in: list[int] | Unset = UNSET,
+    computation_output_description_isnull: bool | Unset = UNSET,
     description: str | Unset = UNSET,
     description_contains: str | Unset = UNSET,
     description_endswith: str | Unset = UNSET,
@@ -678,6 +792,15 @@ async def asyncio_detailed(
     """Get a list of InputOutputDescription objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation_input_description (list[int] | Unset):
+        computation_input_description_in (list[int] | Unset):
+        computation_input_description_isnull (bool | Unset):
+        computation_output_description (list[int] | Unset):
+        computation_output_description_in (list[int] | Unset):
+        computation_output_description_isnull (bool | Unset):
         description (str | Unset):
         description_contains (str | Unset):
         description_endswith (str | Unset):
@@ -743,6 +866,15 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation_input_description=computation_input_description,
+        computation_input_description_in=computation_input_description_in,
+        computation_input_description_isnull=computation_input_description_isnull,
+        computation_output_description=computation_output_description,
+        computation_output_description_in=computation_output_description_in,
+        computation_output_description_isnull=computation_output_description_isnull,
         description=description,
         description_contains=description_contains,
         description_endswith=description_endswith,
@@ -808,6 +940,15 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation_input_description: list[int] | Unset = UNSET,
+    computation_input_description_in: list[int] | Unset = UNSET,
+    computation_input_description_isnull: bool | Unset = UNSET,
+    computation_output_description: list[int] | Unset = UNSET,
+    computation_output_description_in: list[int] | Unset = UNSET,
+    computation_output_description_isnull: bool | Unset = UNSET,
     description: str | Unset = UNSET,
     description_contains: str | Unset = UNSET,
     description_endswith: str | Unset = UNSET,
@@ -867,6 +1008,15 @@ async def asyncio(
     """Get a list of InputOutputDescription objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation_input_description (list[int] | Unset):
+        computation_input_description_in (list[int] | Unset):
+        computation_input_description_isnull (bool | Unset):
+        computation_output_description (list[int] | Unset):
+        computation_output_description_in (list[int] | Unset):
+        computation_output_description_isnull (bool | Unset):
         description (str | Unset):
         description_contains (str | Unset):
         description_endswith (str | Unset):
@@ -934,6 +1084,15 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
+            acquisition=acquisition,
+            acquisition_in=acquisition_in,
+            acquisition_isnull=acquisition_isnull,
+            computation_input_description=computation_input_description,
+            computation_input_description_in=computation_input_description_in,
+            computation_input_description_isnull=computation_input_description_isnull,
+            computation_output_description=computation_output_description,
+            computation_output_description_in=computation_output_description_in,
+            computation_output_description_isnull=computation_output_description_isnull,
             description=description,
             description_contains=description_contains,
             description_endswith=description_endswith,

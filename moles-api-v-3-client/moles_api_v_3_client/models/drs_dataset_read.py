@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -19,28 +19,32 @@ class DRSDatasetRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            drs_id (str):
-            version (str):
-            directory (str):
+            ob_id (int | None):
+            drs_id (None | str):
+            version (None | str):
+            directory (None | str):
             related_to (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
-    ob_id: int
-    drs_id: str
-    version: str
-    directory: str
+    ob_id: int | None
+    drs_id: None | str
+    version: None | str
+    directory: None | str
     related_to: SimpleRead
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        drs_id: None | str
         drs_id = self.drs_id
 
+        version: None | str
         version = self.version
 
+        directory: None | str
         directory = self.directory
 
         related_to = self.related_to.to_dict()
@@ -64,13 +68,34 @@ class DRSDatasetRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        drs_id = d.pop("drsId")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        version = d.pop("version")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        directory = d.pop("directory")
+        def _parse_drs_id(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        drs_id = _parse_drs_id(d.pop("drsId"))
+
+        def _parse_version(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        version = _parse_version(d.pop("version"))
+
+        def _parse_directory(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        directory = _parse_directory(d.pop("directory"))
 
         related_to = SimpleRead.from_dict(d.pop("relatedTo"))
 

@@ -51,6 +51,9 @@ from .mobile_platform_operation_read import MobilePlatformOperationRead
 from .mobile_platform_operation_write import MobilePlatformOperationWrite
 from .mobile_platform_operation_write_request import MobilePlatformOperationWriteRequest
 from .mpos_list_status import MposListStatus
+from .note_read import NoteRead
+from .note_write import NoteWrite
+from .note_write_request import NoteWriteRequest
 from .observation_collection_read import ObservationCollectionRead
 from .observation_collection_write import ObservationCollectionWrite
 from .observation_collection_write_request import ObservationCollectionWriteRequest
@@ -86,6 +89,7 @@ from .paginated_licence_classification_read_list import PaginatedLicenceClassifi
 from .paginated_licence_read_list import PaginatedLicenceReadList
 from .paginated_migration_property_read_list import PaginatedMigrationPropertyReadList
 from .paginated_mobile_platform_operation_read_list import PaginatedMobilePlatformOperationReadList
+from .paginated_note_read_list import PaginatedNoteReadList
 from .paginated_observation_collection_read_list import PaginatedObservationCollectionReadList
 from .paginated_observation_read_list import PaginatedObservationReadList
 from .paginated_online_resource_read_list import PaginatedOnlineResourceReadList
@@ -120,6 +124,7 @@ from .patched_inspire_theme_write_request import PatchedInspireThemeWriteRequest
 from .patched_instrument_platform_pair_write_request import PatchedInstrumentPlatformPairWriteRequest
 from .patched_instrument_write_request import PatchedInstrumentWriteRequest
 from .patched_mobile_platform_operation_write_request import PatchedMobilePlatformOperationWriteRequest
+from .patched_note_write_request import PatchedNoteWriteRequest
 from .patched_observation_collection_write_request import PatchedObservationCollectionWriteRequest
 from .patched_observation_write_request import PatchedObservationWriteRequest
 from .patched_online_resource_write_request import PatchedOnlineResourceWriteRequest
@@ -254,6 +259,9 @@ __all__ = (
     "MobilePlatformOperationWrite",
     "MobilePlatformOperationWriteRequest",
     "MposListStatus",
+    "NoteRead",
+    "NoteWrite",
+    "NoteWriteRequest",
     "ObservationCollectionRead",
     "ObservationcollectionsListPublicationState",
     "ObservationCollectionWrite",
@@ -289,6 +297,7 @@ __all__ = (
     "PaginatedLicenceReadList",
     "PaginatedMigrationPropertyReadList",
     "PaginatedMobilePlatformOperationReadList",
+    "PaginatedNoteReadList",
     "PaginatedObservationCollectionReadList",
     "PaginatedObservationReadList",
     "PaginatedOnlineResourceReadList",
@@ -323,6 +332,7 @@ __all__ = (
     "PatchedInstrumentPlatformPairWriteRequest",
     "PatchedInstrumentWriteRequest",
     "PatchedMobilePlatformOperationWriteRequest",
+    "PatchedNoteWriteRequest",
     "PatchedObservationCollectionWriteRequest",
     "PatchedObservationWriteRequest",
     "PatchedOnlineResourceWriteRequest",

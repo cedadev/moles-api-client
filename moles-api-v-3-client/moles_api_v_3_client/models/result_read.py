@@ -24,71 +24,90 @@ class ResultRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            curation_category (BlankEnum | CurationCategoryEnum):
-            data_path (str):
-            number_of_files (int):
-            volume (int):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            curation_category (BlankEnum | CurationCategoryEnum | None):
+            data_path (None | str):
+            number_of_files (int | None):
+            volume (int | None):
             file_format (None | str):
-            storage_status (StorageStatusEnum): * `online` - online
-                * `offline` - offline
-            storage_location (StorageLocationEnum): * `internal` - internal
-                * `external` - external
+            storage_status (None | StorageStatusEnum):
+            storage_location (None | StorageLocationEnum):
             old_data_path (list[SimpleRead]):
-            observation (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
-                and reorders them to the top.
+            observation (None | SimpleRead):
             onlineresource_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    curation_category: BlankEnum | CurationCategoryEnum
-    data_path: str
-    number_of_files: int
-    volume: int
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    curation_category: BlankEnum | CurationCategoryEnum | None
+    data_path: None | str
+    number_of_files: int | None
+    volume: int | None
     file_format: None | str
-    storage_status: StorageStatusEnum
-    storage_location: StorageLocationEnum
+    storage_status: None | StorageStatusEnum
+    storage_location: None | StorageLocationEnum
     old_data_path: list[SimpleRead]
-    observation: SimpleRead
+    observation: None | SimpleRead
     onlineresource_set: list[int | None]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        from ..models.simple_read import SimpleRead
+
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
-        curation_category: str
+        curation_category: None | str
         if isinstance(self.curation_category, CurationCategoryEnum):
             curation_category = self.curation_category.value
-        else:
+        elif isinstance(self.curation_category, BlankEnum):
             curation_category = self.curation_category.value
+        else:
+            curation_category = self.curation_category
 
+        data_path: None | str
         data_path = self.data_path
 
+        number_of_files: int | None
         number_of_files = self.number_of_files
 
+        volume: int | None
         volume = self.volume
 
         file_format: None | str
         file_format = self.file_format
 
-        storage_status = self.storage_status.value
+        storage_status: None | str
+        if isinstance(self.storage_status, StorageStatusEnum):
+            storage_status = self.storage_status.value
+        else:
+            storage_status = self.storage_status
 
-        storage_location = self.storage_location.value
+        storage_location: None | str
+        if isinstance(self.storage_location, StorageLocationEnum):
+            storage_location = self.storage_location.value
+        else:
+            storage_location = self.storage_location
 
         old_data_path = []
         for old_data_path_item_data in self.old_data_path:
             old_data_path_item = old_data_path_item_data.to_dict()
             old_data_path.append(old_data_path_item)
 
-        observation = self.observation.to_dict()
+        observation: dict[str, Any] | None
+        if isinstance(self.observation, SimpleRead):
+            observation = self.observation.to_dict()
+        else:
+            observation = self.observation
 
         onlineresource_set = []
         for onlineresource_set_item_data in self.onlineresource_set:
@@ -123,13 +142,31 @@ class ResultRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        def _parse_curation_category(data: object) -> BlankEnum | CurationCategoryEnum:
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        uuid = _parse_uuid(d.pop("uuid"))
+
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_curation_category(data: object) -> BlankEnum | CurationCategoryEnum | None:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -138,19 +175,38 @@ class ResultRead:
                 return curation_category_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            curation_category_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                curation_category_type_1 = BlankEnum(data)
 
-            return curation_category_type_1
+                return curation_category_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | CurationCategoryEnum | None, data)
 
         curation_category = _parse_curation_category(d.pop("curationCategory"))
 
-        data_path = d.pop("dataPath")
+        def _parse_data_path(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        number_of_files = d.pop("numberOfFiles")
+        data_path = _parse_data_path(d.pop("dataPath"))
 
-        volume = d.pop("volume")
+        def _parse_number_of_files(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        number_of_files = _parse_number_of_files(d.pop("numberOfFiles"))
+
+        def _parse_volume(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        volume = _parse_volume(d.pop("volume"))
 
         def _parse_file_format(data: object) -> None | str:
             if data is None:
@@ -159,9 +215,35 @@ class ResultRead:
 
         file_format = _parse_file_format(d.pop("fileFormat"))
 
-        storage_status = StorageStatusEnum(d.pop("storageStatus"))
+        def _parse_storage_status(data: object) -> None | StorageStatusEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                storage_status_type_1 = StorageStatusEnum(data)
 
-        storage_location = StorageLocationEnum(d.pop("storageLocation"))
+                return storage_status_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | StorageStatusEnum, data)
+
+        storage_status = _parse_storage_status(d.pop("storageStatus"))
+
+        def _parse_storage_location(data: object) -> None | StorageLocationEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                storage_location_type_1 = StorageLocationEnum(data)
+
+                return storage_location_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | StorageLocationEnum, data)
+
+        storage_location = _parse_storage_location(d.pop("storageLocation"))
 
         old_data_path = []
         _old_data_path = d.pop("oldDataPath")
@@ -170,7 +252,20 @@ class ResultRead:
 
             old_data_path.append(old_data_path_item)
 
-        observation = SimpleRead.from_dict(d.pop("observation"))
+        def _parse_observation(data: object) -> None | SimpleRead:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, dict):
+                    raise TypeError()
+                observation_type_1 = SimpleRead.from_dict(data)
+
+                return observation_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | SimpleRead, data)
+
+        observation = _parse_observation(d.pop("observation"))
 
         onlineresource_set = []
         _onlineresource_set = d.pop("onlineresource_set")

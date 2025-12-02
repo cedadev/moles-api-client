@@ -47,6 +47,12 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
 ) -> dict[str, Any]:
@@ -140,6 +146,34 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
+    json_observationcollection: list[int] | Unset = UNSET
+    if not isinstance(observationcollection, Unset):
+        json_observationcollection = ",".join(map(str, observationcollection))
+
+    params["observationcollection"] = json_observationcollection
+
+    json_observationcollection_in: list[int] | Unset = UNSET
+    if not isinstance(observationcollection_in, Unset):
+        json_observationcollection_in = ",".join(map(str, observationcollection_in))
+
+    params["observationcollection__in"] = json_observationcollection_in
+
+    params["observationcollection__isnull"] = observationcollection_isnull
+
     params["offset"] = offset
 
     params["ordering"] = ordering
@@ -219,6 +253,12 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
 ) -> Response[PaginatedDiscoveryServiceIdReadList]:
@@ -261,6 +301,12 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
 
@@ -309,6 +355,12 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
     )
@@ -359,6 +411,12 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
 ) -> PaginatedDiscoveryServiceIdReadList | None:
@@ -401,6 +459,12 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
 
@@ -450,6 +514,12 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
     ).parsed
@@ -494,6 +564,12 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
 ) -> Response[PaginatedDiscoveryServiceIdReadList]:
@@ -536,6 +612,12 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
 
@@ -584,6 +666,12 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
     )
@@ -632,6 +720,12 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
 ) -> PaginatedDiscoveryServiceIdReadList | None:
@@ -674,6 +768,12 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
 
@@ -724,6 +824,12 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
+            observationcollection=observationcollection,
+            observationcollection_in=observationcollection_in,
+            observationcollection_isnull=observationcollection_isnull,
             offset=offset,
             ordering=ordering,
         )

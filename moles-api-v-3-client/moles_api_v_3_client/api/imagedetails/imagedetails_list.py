@@ -11,6 +11,12 @@ from ...types import UNSET, Response, Unset
 
 def _get_kwargs(
     *,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation: list[int] | Unset = UNSET,
+    computation_in: list[int] | Unset = UNSET,
+    computation_isnull: bool | Unset = UNSET,
     file_description: str | Unset = UNSET,
     file_description_contains: str | Unset = UNSET,
     file_description_endswith: str | Unset = UNSET,
@@ -46,12 +52,11 @@ def _get_kwargs(
     file_name_regex: str | Unset = UNSET,
     file_name_startswith: str | Unset = UNSET,
     image_constraints: int | Unset = UNSET,
-    image_constraints_gt: int | Unset = UNSET,
-    image_constraints_gte: int | Unset = UNSET,
     image_constraints_in: list[int] | Unset = UNSET,
     image_constraints_isnull: bool | Unset = UNSET,
-    image_constraints_lt: int | Unset = UNSET,
-    image_constraints_lte: int | Unset = UNSET,
+    instrument: list[int] | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     linkage: str | Unset = UNSET,
     linkage_contains: str | Unset = UNSET,
@@ -88,10 +93,50 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    project: list[int] | Unset = UNSET,
+    project_in: list[int] | Unset = UNSET,
+    project_isnull: bool | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
+
+    json_acquisition: list[int] | Unset = UNSET
+    if not isinstance(acquisition, Unset):
+        json_acquisition = ",".join(map(str, acquisition))
+
+    params["acquisition"] = json_acquisition
+
+    json_acquisition_in: list[int] | Unset = UNSET
+    if not isinstance(acquisition_in, Unset):
+        json_acquisition_in = ",".join(map(str, acquisition_in))
+
+    params["acquisition__in"] = json_acquisition_in
+
+    params["acquisition__isnull"] = acquisition_isnull
+
+    json_computation: list[int] | Unset = UNSET
+    if not isinstance(computation, Unset):
+        json_computation = ",".join(map(str, computation))
+
+    params["computation"] = json_computation
+
+    json_computation_in: list[int] | Unset = UNSET
+    if not isinstance(computation_in, Unset):
+        json_computation_in = ",".join(map(str, computation_in))
+
+    params["computation__in"] = json_computation_in
+
+    params["computation__isnull"] = computation_isnull
 
     params["fileDescription"] = file_description
 
@@ -179,10 +224,6 @@ def _get_kwargs(
 
     params["imageConstraints"] = image_constraints
 
-    params["imageConstraints__gt"] = image_constraints_gt
-
-    params["imageConstraints__gte"] = image_constraints_gte
-
     json_image_constraints_in: list[int] | Unset = UNSET
     if not isinstance(image_constraints_in, Unset):
         json_image_constraints_in = ",".join(map(str, image_constraints_in))
@@ -191,9 +232,19 @@ def _get_kwargs(
 
     params["imageConstraints__isnull"] = image_constraints_isnull
 
-    params["imageConstraints__lt"] = image_constraints_lt
+    json_instrument: list[int] | Unset = UNSET
+    if not isinstance(instrument, Unset):
+        json_instrument = ",".join(map(str, instrument))
 
-    params["imageConstraints__lte"] = image_constraints_lte
+    params["instrument"] = json_instrument
+
+    json_instrument_in: list[int] | Unset = UNSET
+    if not isinstance(instrument_in, Unset):
+        json_instrument_in = ",".join(map(str, instrument_in))
+
+    params["instrument__in"] = json_instrument_in
+
+    params["instrument__isnull"] = instrument_isnull
 
     params["limit"] = limit
 
@@ -283,9 +334,65 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
+    json_observationcollection: list[int] | Unset = UNSET
+    if not isinstance(observationcollection, Unset):
+        json_observationcollection = ",".join(map(str, observationcollection))
+
+    params["observationcollection"] = json_observationcollection
+
+    json_observationcollection_in: list[int] | Unset = UNSET
+    if not isinstance(observationcollection_in, Unset):
+        json_observationcollection_in = ",".join(map(str, observationcollection_in))
+
+    params["observationcollection__in"] = json_observationcollection_in
+
+    params["observationcollection__isnull"] = observationcollection_isnull
+
     params["offset"] = offset
 
     params["ordering"] = ordering
+
+    json_platform: list[int] | Unset = UNSET
+    if not isinstance(platform, Unset):
+        json_platform = ",".join(map(str, platform))
+
+    params["platform"] = json_platform
+
+    json_platform_in: list[int] | Unset = UNSET
+    if not isinstance(platform_in, Unset):
+        json_platform_in = ",".join(map(str, platform_in))
+
+    params["platform__in"] = json_platform_in
+
+    params["platform__isnull"] = platform_isnull
+
+    json_project: list[int] | Unset = UNSET
+    if not isinstance(project, Unset):
+        json_project = ",".join(map(str, project))
+
+    params["project"] = json_project
+
+    json_project_in: list[int] | Unset = UNSET
+    if not isinstance(project_in, Unset):
+        json_project_in = ",".join(map(str, project_in))
+
+    params["project__in"] = json_project_in
+
+    params["project__isnull"] = project_isnull
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -326,6 +433,12 @@ def _build_response(
 def sync_detailed(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation: list[int] | Unset = UNSET,
+    computation_in: list[int] | Unset = UNSET,
+    computation_isnull: bool | Unset = UNSET,
     file_description: str | Unset = UNSET,
     file_description_contains: str | Unset = UNSET,
     file_description_endswith: str | Unset = UNSET,
@@ -361,12 +474,11 @@ def sync_detailed(
     file_name_regex: str | Unset = UNSET,
     file_name_startswith: str | Unset = UNSET,
     image_constraints: int | Unset = UNSET,
-    image_constraints_gt: int | Unset = UNSET,
-    image_constraints_gte: int | Unset = UNSET,
     image_constraints_in: list[int] | Unset = UNSET,
     image_constraints_isnull: bool | Unset = UNSET,
-    image_constraints_lt: int | Unset = UNSET,
-    image_constraints_lte: int | Unset = UNSET,
+    instrument: list[int] | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     linkage: str | Unset = UNSET,
     linkage_contains: str | Unset = UNSET,
@@ -403,12 +515,30 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    project: list[int] | Unset = UNSET,
+    project_in: list[int] | Unset = UNSET,
+    project_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedImageDetailsReadList]:
     """Get a list of ImageDetails objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation (list[int] | Unset):
+        computation_in (list[int] | Unset):
+        computation_isnull (bool | Unset):
         file_description (str | Unset):
         file_description_contains (str | Unset):
         file_description_endswith (str | Unset):
@@ -444,12 +574,11 @@ def sync_detailed(
         file_name_regex (str | Unset):
         file_name_startswith (str | Unset):
         image_constraints (int | Unset):
-        image_constraints_gt (int | Unset):
-        image_constraints_gte (int | Unset):
         image_constraints_in (list[int] | Unset):
         image_constraints_isnull (bool | Unset):
-        image_constraints_lt (int | Unset):
-        image_constraints_lte (int | Unset):
+        instrument (list[int] | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
         limit (int | Unset):
         linkage (str | Unset):
         linkage_contains (str | Unset):
@@ -486,8 +615,20 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        project (list[int] | Unset):
+        project_in (list[int] | Unset):
+        project_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -498,6 +639,12 @@ def sync_detailed(
     """
 
     kwargs = _get_kwargs(
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation=computation,
+        computation_in=computation_in,
+        computation_isnull=computation_isnull,
         file_description=file_description,
         file_description_contains=file_description_contains,
         file_description_endswith=file_description_endswith,
@@ -533,12 +680,11 @@ def sync_detailed(
         file_name_regex=file_name_regex,
         file_name_startswith=file_name_startswith,
         image_constraints=image_constraints,
-        image_constraints_gt=image_constraints_gt,
-        image_constraints_gte=image_constraints_gte,
         image_constraints_in=image_constraints_in,
         image_constraints_isnull=image_constraints_isnull,
-        image_constraints_lt=image_constraints_lt,
-        image_constraints_lte=image_constraints_lte,
+        instrument=instrument,
+        instrument_in=instrument_in,
+        instrument_isnull=instrument_isnull,
         limit=limit,
         linkage=linkage,
         linkage_contains=linkage_contains,
@@ -575,8 +721,20 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
+        project=project,
+        project_in=project_in,
+        project_isnull=project_isnull,
     )
 
     response = client.get_httpx_client().request(
@@ -589,6 +747,12 @@ def sync_detailed(
 def sync(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation: list[int] | Unset = UNSET,
+    computation_in: list[int] | Unset = UNSET,
+    computation_isnull: bool | Unset = UNSET,
     file_description: str | Unset = UNSET,
     file_description_contains: str | Unset = UNSET,
     file_description_endswith: str | Unset = UNSET,
@@ -624,12 +788,11 @@ def sync(
     file_name_regex: str | Unset = UNSET,
     file_name_startswith: str | Unset = UNSET,
     image_constraints: int | Unset = UNSET,
-    image_constraints_gt: int | Unset = UNSET,
-    image_constraints_gte: int | Unset = UNSET,
     image_constraints_in: list[int] | Unset = UNSET,
     image_constraints_isnull: bool | Unset = UNSET,
-    image_constraints_lt: int | Unset = UNSET,
-    image_constraints_lte: int | Unset = UNSET,
+    instrument: list[int] | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     linkage: str | Unset = UNSET,
     linkage_contains: str | Unset = UNSET,
@@ -666,12 +829,30 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    project: list[int] | Unset = UNSET,
+    project_in: list[int] | Unset = UNSET,
+    project_isnull: bool | Unset = UNSET,
 ) -> PaginatedImageDetailsReadList | None:
     """Get a list of ImageDetails objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation (list[int] | Unset):
+        computation_in (list[int] | Unset):
+        computation_isnull (bool | Unset):
         file_description (str | Unset):
         file_description_contains (str | Unset):
         file_description_endswith (str | Unset):
@@ -707,12 +888,11 @@ def sync(
         file_name_regex (str | Unset):
         file_name_startswith (str | Unset):
         image_constraints (int | Unset):
-        image_constraints_gt (int | Unset):
-        image_constraints_gte (int | Unset):
         image_constraints_in (list[int] | Unset):
         image_constraints_isnull (bool | Unset):
-        image_constraints_lt (int | Unset):
-        image_constraints_lte (int | Unset):
+        instrument (list[int] | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
         limit (int | Unset):
         linkage (str | Unset):
         linkage_contains (str | Unset):
@@ -749,8 +929,20 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        project (list[int] | Unset):
+        project_in (list[int] | Unset):
+        project_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -762,6 +954,12 @@ def sync(
 
     return sync_detailed(
         client=client,
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation=computation,
+        computation_in=computation_in,
+        computation_isnull=computation_isnull,
         file_description=file_description,
         file_description_contains=file_description_contains,
         file_description_endswith=file_description_endswith,
@@ -797,12 +995,11 @@ def sync(
         file_name_regex=file_name_regex,
         file_name_startswith=file_name_startswith,
         image_constraints=image_constraints,
-        image_constraints_gt=image_constraints_gt,
-        image_constraints_gte=image_constraints_gte,
         image_constraints_in=image_constraints_in,
         image_constraints_isnull=image_constraints_isnull,
-        image_constraints_lt=image_constraints_lt,
-        image_constraints_lte=image_constraints_lte,
+        instrument=instrument,
+        instrument_in=instrument_in,
+        instrument_isnull=instrument_isnull,
         limit=limit,
         linkage=linkage,
         linkage_contains=linkage_contains,
@@ -839,14 +1036,32 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
+        project=project,
+        project_in=project_in,
+        project_isnull=project_isnull,
     ).parsed
 
 
 async def asyncio_detailed(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation: list[int] | Unset = UNSET,
+    computation_in: list[int] | Unset = UNSET,
+    computation_isnull: bool | Unset = UNSET,
     file_description: str | Unset = UNSET,
     file_description_contains: str | Unset = UNSET,
     file_description_endswith: str | Unset = UNSET,
@@ -882,12 +1097,11 @@ async def asyncio_detailed(
     file_name_regex: str | Unset = UNSET,
     file_name_startswith: str | Unset = UNSET,
     image_constraints: int | Unset = UNSET,
-    image_constraints_gt: int | Unset = UNSET,
-    image_constraints_gte: int | Unset = UNSET,
     image_constraints_in: list[int] | Unset = UNSET,
     image_constraints_isnull: bool | Unset = UNSET,
-    image_constraints_lt: int | Unset = UNSET,
-    image_constraints_lte: int | Unset = UNSET,
+    instrument: list[int] | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     linkage: str | Unset = UNSET,
     linkage_contains: str | Unset = UNSET,
@@ -924,12 +1138,30 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    project: list[int] | Unset = UNSET,
+    project_in: list[int] | Unset = UNSET,
+    project_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedImageDetailsReadList]:
     """Get a list of ImageDetails objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation (list[int] | Unset):
+        computation_in (list[int] | Unset):
+        computation_isnull (bool | Unset):
         file_description (str | Unset):
         file_description_contains (str | Unset):
         file_description_endswith (str | Unset):
@@ -965,12 +1197,11 @@ async def asyncio_detailed(
         file_name_regex (str | Unset):
         file_name_startswith (str | Unset):
         image_constraints (int | Unset):
-        image_constraints_gt (int | Unset):
-        image_constraints_gte (int | Unset):
         image_constraints_in (list[int] | Unset):
         image_constraints_isnull (bool | Unset):
-        image_constraints_lt (int | Unset):
-        image_constraints_lte (int | Unset):
+        instrument (list[int] | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
         limit (int | Unset):
         linkage (str | Unset):
         linkage_contains (str | Unset):
@@ -1007,8 +1238,20 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        project (list[int] | Unset):
+        project_in (list[int] | Unset):
+        project_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1019,6 +1262,12 @@ async def asyncio_detailed(
     """
 
     kwargs = _get_kwargs(
+        acquisition=acquisition,
+        acquisition_in=acquisition_in,
+        acquisition_isnull=acquisition_isnull,
+        computation=computation,
+        computation_in=computation_in,
+        computation_isnull=computation_isnull,
         file_description=file_description,
         file_description_contains=file_description_contains,
         file_description_endswith=file_description_endswith,
@@ -1054,12 +1303,11 @@ async def asyncio_detailed(
         file_name_regex=file_name_regex,
         file_name_startswith=file_name_startswith,
         image_constraints=image_constraints,
-        image_constraints_gt=image_constraints_gt,
-        image_constraints_gte=image_constraints_gte,
         image_constraints_in=image_constraints_in,
         image_constraints_isnull=image_constraints_isnull,
-        image_constraints_lt=image_constraints_lt,
-        image_constraints_lte=image_constraints_lte,
+        instrument=instrument,
+        instrument_in=instrument_in,
+        instrument_isnull=instrument_isnull,
         limit=limit,
         linkage=linkage,
         linkage_contains=linkage_contains,
@@ -1096,8 +1344,20 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
+        project=project,
+        project_in=project_in,
+        project_isnull=project_isnull,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -1108,6 +1368,12 @@ async def asyncio_detailed(
 async def asyncio(
     *,
     client: AuthenticatedClient,
+    acquisition: list[int] | Unset = UNSET,
+    acquisition_in: list[int] | Unset = UNSET,
+    acquisition_isnull: bool | Unset = UNSET,
+    computation: list[int] | Unset = UNSET,
+    computation_in: list[int] | Unset = UNSET,
+    computation_isnull: bool | Unset = UNSET,
     file_description: str | Unset = UNSET,
     file_description_contains: str | Unset = UNSET,
     file_description_endswith: str | Unset = UNSET,
@@ -1143,12 +1409,11 @@ async def asyncio(
     file_name_regex: str | Unset = UNSET,
     file_name_startswith: str | Unset = UNSET,
     image_constraints: int | Unset = UNSET,
-    image_constraints_gt: int | Unset = UNSET,
-    image_constraints_gte: int | Unset = UNSET,
     image_constraints_in: list[int] | Unset = UNSET,
     image_constraints_isnull: bool | Unset = UNSET,
-    image_constraints_lt: int | Unset = UNSET,
-    image_constraints_lte: int | Unset = UNSET,
+    instrument: list[int] | Unset = UNSET,
+    instrument_in: list[int] | Unset = UNSET,
+    instrument_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     linkage: str | Unset = UNSET,
     linkage_contains: str | Unset = UNSET,
@@ -1185,12 +1450,30 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
+    project: list[int] | Unset = UNSET,
+    project_in: list[int] | Unset = UNSET,
+    project_isnull: bool | Unset = UNSET,
 ) -> PaginatedImageDetailsReadList | None:
     """Get a list of ImageDetails objects.
 
     Args:
+        acquisition (list[int] | Unset):
+        acquisition_in (list[int] | Unset):
+        acquisition_isnull (bool | Unset):
+        computation (list[int] | Unset):
+        computation_in (list[int] | Unset):
+        computation_isnull (bool | Unset):
         file_description (str | Unset):
         file_description_contains (str | Unset):
         file_description_endswith (str | Unset):
@@ -1226,12 +1509,11 @@ async def asyncio(
         file_name_regex (str | Unset):
         file_name_startswith (str | Unset):
         image_constraints (int | Unset):
-        image_constraints_gt (int | Unset):
-        image_constraints_gte (int | Unset):
         image_constraints_in (list[int] | Unset):
         image_constraints_isnull (bool | Unset):
-        image_constraints_lt (int | Unset):
-        image_constraints_lte (int | Unset):
+        instrument (list[int] | Unset):
+        instrument_in (list[int] | Unset):
+        instrument_isnull (bool | Unset):
         limit (int | Unset):
         linkage (str | Unset):
         linkage_contains (str | Unset):
@@ -1268,8 +1550,20 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
+        project (list[int] | Unset):
+        project_in (list[int] | Unset):
+        project_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1282,6 +1576,12 @@ async def asyncio(
     return (
         await asyncio_detailed(
             client=client,
+            acquisition=acquisition,
+            acquisition_in=acquisition_in,
+            acquisition_isnull=acquisition_isnull,
+            computation=computation,
+            computation_in=computation_in,
+            computation_isnull=computation_isnull,
             file_description=file_description,
             file_description_contains=file_description_contains,
             file_description_endswith=file_description_endswith,
@@ -1317,12 +1617,11 @@ async def asyncio(
             file_name_regex=file_name_regex,
             file_name_startswith=file_name_startswith,
             image_constraints=image_constraints,
-            image_constraints_gt=image_constraints_gt,
-            image_constraints_gte=image_constraints_gte,
             image_constraints_in=image_constraints_in,
             image_constraints_isnull=image_constraints_isnull,
-            image_constraints_lt=image_constraints_lt,
-            image_constraints_lte=image_constraints_lte,
+            instrument=instrument,
+            instrument_in=instrument_in,
+            instrument_isnull=instrument_isnull,
             limit=limit,
             linkage=linkage,
             linkage_contains=linkage_contains,
@@ -1359,7 +1658,19 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
+            observationcollection=observationcollection,
+            observationcollection_in=observationcollection_in,
+            observationcollection_isnull=observationcollection_isnull,
             offset=offset,
             ordering=ordering,
+            platform=platform,
+            platform_in=platform_in,
+            platform_isnull=platform_isnull,
+            project=project,
+            project_in=project_in,
+            project_isnull=project_isnull,
         )
     ).parsed

@@ -22,22 +22,23 @@ class OnlineResourceRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
+            ob_id (int | None):
             function (BlankEnum | FunctionEnum | None):
-            linkage (str):
+            linkage (None | str):
             name (None | str):
             related_to (Referenceable): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
-    ob_id: int
+    ob_id: int | None
     function: BlankEnum | FunctionEnum | None
-    linkage: str
+    linkage: None | str
     name: None | str
     related_to: Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
         function: None | str
@@ -48,6 +49,7 @@ class OnlineResourceRead:
         else:
             function = self.function
 
+        linkage: None | str
         linkage = self.linkage
 
         name: None | str
@@ -74,7 +76,13 @@ class OnlineResourceRead:
         from ..models.referenceable import Referenceable
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
+
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
         def _parse_function(data: object) -> BlankEnum | FunctionEnum | None:
             if data is None:
@@ -99,7 +107,12 @@ class OnlineResourceRead:
 
         function = _parse_function(d.pop("function"))
 
-        linkage = d.pop("linkage")
+        def _parse_linkage(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        linkage = _parse_linkage(d.pop("linkage"))
 
         def _parse_name(data: object) -> None | str:
             if data is None:

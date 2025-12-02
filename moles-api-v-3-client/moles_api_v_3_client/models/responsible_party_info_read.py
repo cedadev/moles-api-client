@@ -22,41 +22,34 @@ class ResponsiblePartyInfoRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
+            ob_id (int | None):
             priority (int | None):
-            role (RoleEnum): * `author` - Author
-                * `ceda_officer` - CEDA Officer
-                * `co_investigator` - Co-Investigator
-                * `curator` - Curator
-                * `custodian` - Custodian
-                * `data_owner` - Data Owner
-                * `distributor` - Distributor
-                * `funder` - Funder
-                * `metadata_owner` - Metadata Owner
-                * `operator` - Operator
-                * `principal_investigator` - Principal Investigator
-                * `point_of_contact` - Point of Contact
-                * `publisher` - Publisher
+            role (None | RoleEnum):
             party (PartyRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
             related_to (Referenceable): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
-    ob_id: int
+    ob_id: int | None
     priority: int | None
-    role: RoleEnum
+    role: None | RoleEnum
     party: PartyRead
     related_to: Referenceable
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
         priority: int | None
         priority = self.priority
 
-        role = self.role.value
+        role: None | str
+        if isinstance(self.role, RoleEnum):
+            role = self.role.value
+        else:
+            role = self.role
 
         party = self.party.to_dict()
 
@@ -82,7 +75,13 @@ class ResponsiblePartyInfoRead:
         from ..models.referenceable import Referenceable
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
+
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
         def _parse_priority(data: object) -> int | None:
             if data is None:
@@ -91,7 +90,20 @@ class ResponsiblePartyInfoRead:
 
         priority = _parse_priority(d.pop("priority"))
 
-        role = RoleEnum(d.pop("role"))
+        def _parse_role(data: object) -> None | RoleEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                role_type_1 = RoleEnum(data)
+
+                return role_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | RoleEnum, data)
+
+        role = _parse_role(d.pop("role"))
 
         party = PartyRead.from_dict(d.pop("party"))
 

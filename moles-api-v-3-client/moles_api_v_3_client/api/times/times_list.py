@@ -44,6 +44,9 @@ def _get_kwargs(
     end_time_week_day: float | Unset = UNSET,
     end_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -62,6 +65,12 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_phenomenon_time: list[int] | Unset = UNSET,
+    observation_phenomenon_time_in: list[int] | Unset = UNSET,
+    observation_phenomenon_time_isnull: bool | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     start_time: datetime.datetime | Unset = UNSET,
@@ -224,6 +233,20 @@ def _get_kwargs(
 
     params["limit"] = limit
 
+    json_mobileplatformoperation: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation, Unset):
+        json_mobileplatformoperation = ",".join(map(str, mobileplatformoperation))
+
+    params["mobileplatformoperation"] = json_mobileplatformoperation
+
+    json_mobileplatformoperation_in: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation_in, Unset):
+        json_mobileplatformoperation_in = ",".join(map(str, mobileplatformoperation_in))
+
+    params["mobileplatformoperation__in"] = json_mobileplatformoperation_in
+
+    params["mobileplatformoperation__isnull"] = mobileplatformoperation_isnull
+
     params["ob_id"] = ob_id
 
     params["ob_id__contained_by"] = ob_id_contained_by
@@ -267,6 +290,34 @@ def _get_kwargs(
     params["ob_id__regex"] = ob_id_regex
 
     params["ob_id__startswith"] = ob_id_startswith
+
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_phenomenon_time: list[int] | Unset = UNSET
+    if not isinstance(observation_phenomenon_time, Unset):
+        json_observation_phenomenon_time = ",".join(map(str, observation_phenomenon_time))
+
+    params["observationPhenomenonTime"] = json_observation_phenomenon_time
+
+    json_observation_phenomenon_time_in: list[int] | Unset = UNSET
+    if not isinstance(observation_phenomenon_time_in, Unset):
+        json_observation_phenomenon_time_in = ",".join(map(str, observation_phenomenon_time_in))
+
+    params["observationPhenomenonTime__in"] = json_observation_phenomenon_time_in
+
+    params["observationPhenomenonTime__isnull"] = observation_phenomenon_time_isnull
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
 
     params["offset"] = offset
 
@@ -467,6 +518,9 @@ def sync_detailed(
     end_time_week_day: float | Unset = UNSET,
     end_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -485,6 +539,12 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_phenomenon_time: list[int] | Unset = UNSET,
+    observation_phenomenon_time_in: list[int] | Unset = UNSET,
+    observation_phenomenon_time_isnull: bool | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     start_time: datetime.datetime | Unset = UNSET,
@@ -555,6 +615,9 @@ def sync_detailed(
         end_time_week_day (float | Unset):
         end_time_year (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -573,6 +636,12 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_phenomenon_time (list[int] | Unset):
+        observation_phenomenon_time_in (list[int] | Unset):
+        observation_phenomenon_time_isnull (bool | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         start_time (datetime.datetime | Unset):
@@ -648,6 +717,9 @@ def sync_detailed(
         end_time_week_day=end_time_week_day,
         end_time_year=end_time_year,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -666,6 +738,12 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_phenomenon_time=observation_phenomenon_time,
+        observation_phenomenon_time_in=observation_phenomenon_time_in,
+        observation_phenomenon_time_isnull=observation_phenomenon_time_isnull,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         start_time=start_time,
@@ -743,6 +821,9 @@ def sync(
     end_time_week_day: float | Unset = UNSET,
     end_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -761,6 +842,12 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_phenomenon_time: list[int] | Unset = UNSET,
+    observation_phenomenon_time_in: list[int] | Unset = UNSET,
+    observation_phenomenon_time_isnull: bool | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     start_time: datetime.datetime | Unset = UNSET,
@@ -831,6 +918,9 @@ def sync(
         end_time_week_day (float | Unset):
         end_time_year (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -849,6 +939,12 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_phenomenon_time (list[int] | Unset):
+        observation_phenomenon_time_in (list[int] | Unset):
+        observation_phenomenon_time_isnull (bool | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         start_time (datetime.datetime | Unset):
@@ -925,6 +1021,9 @@ def sync(
         end_time_week_day=end_time_week_day,
         end_time_year=end_time_year,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -943,6 +1042,12 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_phenomenon_time=observation_phenomenon_time,
+        observation_phenomenon_time_in=observation_phenomenon_time_in,
+        observation_phenomenon_time_isnull=observation_phenomenon_time_isnull,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         start_time=start_time,
@@ -1014,6 +1119,9 @@ async def asyncio_detailed(
     end_time_week_day: float | Unset = UNSET,
     end_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1032,6 +1140,12 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_phenomenon_time: list[int] | Unset = UNSET,
+    observation_phenomenon_time_in: list[int] | Unset = UNSET,
+    observation_phenomenon_time_isnull: bool | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     start_time: datetime.datetime | Unset = UNSET,
@@ -1102,6 +1216,9 @@ async def asyncio_detailed(
         end_time_week_day (float | Unset):
         end_time_year (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1120,6 +1237,12 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_phenomenon_time (list[int] | Unset):
+        observation_phenomenon_time_in (list[int] | Unset):
+        observation_phenomenon_time_isnull (bool | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         start_time (datetime.datetime | Unset):
@@ -1195,6 +1318,9 @@ async def asyncio_detailed(
         end_time_week_day=end_time_week_day,
         end_time_year=end_time_year,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1213,6 +1339,12 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_phenomenon_time=observation_phenomenon_time,
+        observation_phenomenon_time_in=observation_phenomenon_time_in,
+        observation_phenomenon_time_isnull=observation_phenomenon_time_isnull,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         start_time=start_time,
@@ -1288,6 +1420,9 @@ async def asyncio(
     end_time_week_day: float | Unset = UNSET,
     end_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1306,6 +1441,12 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_phenomenon_time: list[int] | Unset = UNSET,
+    observation_phenomenon_time_in: list[int] | Unset = UNSET,
+    observation_phenomenon_time_isnull: bool | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     start_time: datetime.datetime | Unset = UNSET,
@@ -1376,6 +1517,9 @@ async def asyncio(
         end_time_week_day (float | Unset):
         end_time_year (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1394,6 +1538,12 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_phenomenon_time (list[int] | Unset):
+        observation_phenomenon_time_in (list[int] | Unset):
+        observation_phenomenon_time_isnull (bool | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         start_time (datetime.datetime | Unset):
@@ -1471,6 +1621,9 @@ async def asyncio(
             end_time_week_day=end_time_week_day,
             end_time_year=end_time_year,
             limit=limit,
+            mobileplatformoperation=mobileplatformoperation,
+            mobileplatformoperation_in=mobileplatformoperation_in,
+            mobileplatformoperation_isnull=mobileplatformoperation_isnull,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
             ob_id_contains=ob_id_contains,
@@ -1489,6 +1642,12 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_phenomenon_time=observation_phenomenon_time,
+            observation_phenomenon_time_in=observation_phenomenon_time_in,
+            observation_phenomenon_time_isnull=observation_phenomenon_time_isnull,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
             start_time=start_time,

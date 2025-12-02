@@ -28,13 +28,18 @@ def _get_kwargs(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    compositeprocess: list[int] | Unset = UNSET,
+    compositeprocess_in: list[int] | Unset = UNSET,
+    compositeprocess_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
     input_description: int | Unset = UNSET,
-    input_description_gt: int | Unset = UNSET,
-    input_description_gte: int | Unset = UNSET,
     input_description_in: list[int] | Unset = UNSET,
     input_description_isnull: bool | Unset = UNSET,
-    input_description_lt: int | Unset = UNSET,
-    input_description_lte: int | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -53,6 +58,12 @@ def _get_kwargs(
     keywords_regex: str | Unset = UNSET,
     keywords_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -71,22 +82,26 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     output_description: int | Unset = UNSET,
-    output_description_gt: int | Unset = UNSET,
-    output_description_gte: int | Unset = UNSET,
     output_description_in: list[int] | Unset = UNSET,
     output_description_isnull: bool | Unset = UNSET,
-    output_description_lt: int | Unset = UNSET,
-    output_description_lte: int | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -105,12 +120,8 @@ def _get_kwargs(
     short_code_regex: str | Unset = UNSET,
     short_code_startswith: str | Unset = UNSET,
     software_reference: int | Unset = UNSET,
-    software_reference_gt: int | Unset = UNSET,
-    software_reference_gte: int | Unset = UNSET,
     software_reference_in: list[int] | Unset = UNSET,
     software_reference_isnull: bool | Unset = UNSET,
-    software_reference_lt: int | Unset = UNSET,
-    software_reference_lte: int | Unset = UNSET,
     title: str | Unset = UNSET,
     title_contains: str | Unset = UNSET,
     title_endswith: str | Unset = UNSET,
@@ -190,11 +201,49 @@ def _get_kwargs(
 
     params["abstract__startswith"] = abstract_startswith
 
+    json_compositeprocess: list[int] | Unset = UNSET
+    if not isinstance(compositeprocess, Unset):
+        json_compositeprocess = ",".join(map(str, compositeprocess))
+
+    params["compositeprocess"] = json_compositeprocess
+
+    json_compositeprocess_in: list[int] | Unset = UNSET
+    if not isinstance(compositeprocess_in, Unset):
+        json_compositeprocess_in = ",".join(map(str, compositeprocess_in))
+
+    params["compositeprocess__in"] = json_compositeprocess_in
+
+    params["compositeprocess__isnull"] = compositeprocess_isnull
+
+    json_identifier: list[int] | Unset = UNSET
+    if not isinstance(identifier, Unset):
+        json_identifier = ",".join(map(str, identifier))
+
+    params["identifier"] = json_identifier
+
+    json_identifier_in: list[int] | Unset = UNSET
+    if not isinstance(identifier_in, Unset):
+        json_identifier_in = ",".join(map(str, identifier_in))
+
+    params["identifier__in"] = json_identifier_in
+
+    params["identifier__isnull"] = identifier_isnull
+
+    json_image_details: list[int] | Unset = UNSET
+    if not isinstance(image_details, Unset):
+        json_image_details = ",".join(map(str, image_details))
+
+    params["imageDetails"] = json_image_details
+
+    json_image_details_in: list[int] | Unset = UNSET
+    if not isinstance(image_details_in, Unset):
+        json_image_details_in = ",".join(map(str, image_details_in))
+
+    params["imageDetails__in"] = json_image_details_in
+
+    params["imageDetails__isnull"] = image_details_isnull
+
     params["inputDescription"] = input_description
-
-    params["inputDescription__gt"] = input_description_gt
-
-    params["inputDescription__gte"] = input_description_gte
 
     json_input_description_in: list[int] | Unset = UNSET
     if not isinstance(input_description_in, Unset):
@@ -203,10 +252,6 @@ def _get_kwargs(
     params["inputDescription__in"] = json_input_description_in
 
     params["inputDescription__isnull"] = input_description_isnull
-
-    params["inputDescription__lt"] = input_description_lt
-
-    params["inputDescription__lte"] = input_description_lte
 
     params["keywords"] = keywords
 
@@ -252,6 +297,34 @@ def _get_kwargs(
 
     params["limit"] = limit
 
+    json_migrationproperty: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty, Unset):
+        json_migrationproperty = ",".join(map(str, migrationproperty))
+
+    params["migrationproperty"] = json_migrationproperty
+
+    json_migrationproperty_in: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty_in, Unset):
+        json_migrationproperty_in = ",".join(map(str, migrationproperty_in))
+
+    params["migrationproperty__in"] = json_migrationproperty_in
+
+    params["migrationproperty__isnull"] = migrationproperty_isnull
+
+    json_note: list[int] | Unset = UNSET
+    if not isinstance(note, Unset):
+        json_note = ",".join(map(str, note))
+
+    params["note"] = json_note
+
+    json_note_in: list[int] | Unset = UNSET
+    if not isinstance(note_in, Unset):
+        json_note_in = ",".join(map(str, note_in))
+
+    params["note__in"] = json_note_in
+
+    params["note__isnull"] = note_isnull
+
     params["ob_id"] = ob_id
 
     params["ob_id__contained_by"] = ob_id_contained_by
@@ -296,15 +369,39 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = ",".join(map(str, observation))
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = ",".join(map(str, observation_in))
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
     params["offset"] = offset
+
+    json_onlineresource: list[int] | Unset = UNSET
+    if not isinstance(onlineresource, Unset):
+        json_onlineresource = ",".join(map(str, onlineresource))
+
+    params["onlineresource"] = json_onlineresource
+
+    json_onlineresource_in: list[int] | Unset = UNSET
+    if not isinstance(onlineresource_in, Unset):
+        json_onlineresource_in = ",".join(map(str, onlineresource_in))
+
+    params["onlineresource__in"] = json_onlineresource_in
+
+    params["onlineresource__isnull"] = onlineresource_isnull
 
     params["ordering"] = ordering
 
     params["outputDescription"] = output_description
-
-    params["outputDescription__gt"] = output_description_gt
-
-    params["outputDescription__gte"] = output_description_gte
 
     json_output_description_in: list[int] | Unset = UNSET
     if not isinstance(output_description_in, Unset):
@@ -314,15 +411,7 @@ def _get_kwargs(
 
     params["outputDescription__isnull"] = output_description_isnull
 
-    params["outputDescription__lt"] = output_description_lt
-
-    params["outputDescription__lte"] = output_description_lte
-
     params["referenceable_ptr"] = referenceable_ptr
-
-    params["referenceable_ptr__gt"] = referenceable_ptr_gt
-
-    params["referenceable_ptr__gte"] = referenceable_ptr_gte
 
     json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
@@ -332,9 +421,33 @@ def _get_kwargs(
 
     params["referenceable_ptr__isnull"] = referenceable_ptr_isnull
 
-    params["referenceable_ptr__lt"] = referenceable_ptr_lt
+    json_responsiblepartyinfo: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo, Unset):
+        json_responsiblepartyinfo = ",".join(map(str, responsiblepartyinfo))
 
-    params["referenceable_ptr__lte"] = referenceable_ptr_lte
+    params["responsiblepartyinfo"] = json_responsiblepartyinfo
+
+    json_responsiblepartyinfo_in: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo_in, Unset):
+        json_responsiblepartyinfo_in = ",".join(map(str, responsiblepartyinfo_in))
+
+    params["responsiblepartyinfo__in"] = json_responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__isnull"] = responsiblepartyinfo_isnull
+
+    json_review: list[int] | Unset = UNSET
+    if not isinstance(review, Unset):
+        json_review = ",".join(map(str, review))
+
+    params["review"] = json_review
+
+    json_review_in: list[int] | Unset = UNSET
+    if not isinstance(review_in, Unset):
+        json_review_in = ",".join(map(str, review_in))
+
+    params["review__in"] = json_review_in
+
+    params["review__isnull"] = review_isnull
 
     params["short_code"] = short_code
 
@@ -380,10 +493,6 @@ def _get_kwargs(
 
     params["softwareReference"] = software_reference
 
-    params["softwareReference__gt"] = software_reference_gt
-
-    params["softwareReference__gte"] = software_reference_gte
-
     json_software_reference_in: list[int] | Unset = UNSET
     if not isinstance(software_reference_in, Unset):
         json_software_reference_in = ",".join(map(str, software_reference_in))
@@ -391,10 +500,6 @@ def _get_kwargs(
     params["softwareReference__in"] = json_software_reference_in
 
     params["softwareReference__isnull"] = software_reference_isnull
-
-    params["softwareReference__lt"] = software_reference_lt
-
-    params["softwareReference__lte"] = software_reference_lte
 
     params["title"] = title
 
@@ -536,13 +641,18 @@ def sync_detailed(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    compositeprocess: list[int] | Unset = UNSET,
+    compositeprocess_in: list[int] | Unset = UNSET,
+    compositeprocess_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
     input_description: int | Unset = UNSET,
-    input_description_gt: int | Unset = UNSET,
-    input_description_gte: int | Unset = UNSET,
     input_description_in: list[int] | Unset = UNSET,
     input_description_isnull: bool | Unset = UNSET,
-    input_description_lt: int | Unset = UNSET,
-    input_description_lte: int | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -561,6 +671,12 @@ def sync_detailed(
     keywords_regex: str | Unset = UNSET,
     keywords_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -579,22 +695,26 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     output_description: int | Unset = UNSET,
-    output_description_gt: int | Unset = UNSET,
-    output_description_gte: int | Unset = UNSET,
     output_description_in: list[int] | Unset = UNSET,
     output_description_isnull: bool | Unset = UNSET,
-    output_description_lt: int | Unset = UNSET,
-    output_description_lte: int | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -613,12 +733,8 @@ def sync_detailed(
     short_code_regex: str | Unset = UNSET,
     short_code_startswith: str | Unset = UNSET,
     software_reference: int | Unset = UNSET,
-    software_reference_gt: int | Unset = UNSET,
-    software_reference_gte: int | Unset = UNSET,
     software_reference_in: list[int] | Unset = UNSET,
     software_reference_isnull: bool | Unset = UNSET,
-    software_reference_lt: int | Unset = UNSET,
-    software_reference_lte: int | Unset = UNSET,
     title: str | Unset = UNSET,
     title_contains: str | Unset = UNSET,
     title_endswith: str | Unset = UNSET,
@@ -675,13 +791,18 @@ def sync_detailed(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        compositeprocess (list[int] | Unset):
+        compositeprocess_in (list[int] | Unset):
+        compositeprocess_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
         input_description (int | Unset):
-        input_description_gt (int | Unset):
-        input_description_gte (int | Unset):
         input_description_in (list[int] | Unset):
         input_description_isnull (bool | Unset):
-        input_description_lt (int | Unset):
-        input_description_lte (int | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -700,6 +821,12 @@ def sync_detailed(
         keywords_regex (str | Unset):
         keywords_startswith (str | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -718,22 +845,26 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         output_description (int | Unset):
-        output_description_gt (int | Unset):
-        output_description_gte (int | Unset):
         output_description_in (list[int] | Unset):
         output_description_isnull (bool | Unset):
-        output_description_lt (int | Unset):
-        output_description_lte (int | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -752,12 +883,8 @@ def sync_detailed(
         short_code_regex (str | Unset):
         short_code_startswith (str | Unset):
         software_reference (int | Unset):
-        software_reference_gt (int | Unset):
-        software_reference_gte (int | Unset):
         software_reference_in (list[int] | Unset):
         software_reference_isnull (bool | Unset):
-        software_reference_lt (int | Unset):
-        software_reference_lte (int | Unset):
         title (str | Unset):
         title_contains (str | Unset):
         title_endswith (str | Unset):
@@ -819,13 +946,18 @@ def sync_detailed(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        compositeprocess=compositeprocess,
+        compositeprocess_in=compositeprocess_in,
+        compositeprocess_isnull=compositeprocess_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
         input_description=input_description,
-        input_description_gt=input_description_gt,
-        input_description_gte=input_description_gte,
         input_description_in=input_description_in,
         input_description_isnull=input_description_isnull,
-        input_description_lt=input_description_lt,
-        input_description_lte=input_description_lte,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -844,6 +976,12 @@ def sync_detailed(
         keywords_regex=keywords_regex,
         keywords_startswith=keywords_startswith,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -862,22 +1000,26 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         output_description=output_description,
-        output_description_gt=output_description_gt,
-        output_description_gte=output_description_gte,
         output_description_in=output_description_in,
         output_description_isnull=output_description_isnull,
-        output_description_lt=output_description_lt,
-        output_description_lte=output_description_lte,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -896,12 +1038,8 @@ def sync_detailed(
         short_code_regex=short_code_regex,
         short_code_startswith=short_code_startswith,
         software_reference=software_reference,
-        software_reference_gt=software_reference_gt,
-        software_reference_gte=software_reference_gte,
         software_reference_in=software_reference_in,
         software_reference_isnull=software_reference_isnull,
-        software_reference_lt=software_reference_lt,
-        software_reference_lte=software_reference_lte,
         title=title,
         title_contains=title_contains,
         title_endswith=title_endswith,
@@ -965,13 +1103,18 @@ def sync(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    compositeprocess: list[int] | Unset = UNSET,
+    compositeprocess_in: list[int] | Unset = UNSET,
+    compositeprocess_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
     input_description: int | Unset = UNSET,
-    input_description_gt: int | Unset = UNSET,
-    input_description_gte: int | Unset = UNSET,
     input_description_in: list[int] | Unset = UNSET,
     input_description_isnull: bool | Unset = UNSET,
-    input_description_lt: int | Unset = UNSET,
-    input_description_lte: int | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -990,6 +1133,12 @@ def sync(
     keywords_regex: str | Unset = UNSET,
     keywords_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1008,22 +1157,26 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     output_description: int | Unset = UNSET,
-    output_description_gt: int | Unset = UNSET,
-    output_description_gte: int | Unset = UNSET,
     output_description_in: list[int] | Unset = UNSET,
     output_description_isnull: bool | Unset = UNSET,
-    output_description_lt: int | Unset = UNSET,
-    output_description_lte: int | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1042,12 +1195,8 @@ def sync(
     short_code_regex: str | Unset = UNSET,
     short_code_startswith: str | Unset = UNSET,
     software_reference: int | Unset = UNSET,
-    software_reference_gt: int | Unset = UNSET,
-    software_reference_gte: int | Unset = UNSET,
     software_reference_in: list[int] | Unset = UNSET,
     software_reference_isnull: bool | Unset = UNSET,
-    software_reference_lt: int | Unset = UNSET,
-    software_reference_lte: int | Unset = UNSET,
     title: str | Unset = UNSET,
     title_contains: str | Unset = UNSET,
     title_endswith: str | Unset = UNSET,
@@ -1104,13 +1253,18 @@ def sync(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        compositeprocess (list[int] | Unset):
+        compositeprocess_in (list[int] | Unset):
+        compositeprocess_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
         input_description (int | Unset):
-        input_description_gt (int | Unset):
-        input_description_gte (int | Unset):
         input_description_in (list[int] | Unset):
         input_description_isnull (bool | Unset):
-        input_description_lt (int | Unset):
-        input_description_lte (int | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -1129,6 +1283,12 @@ def sync(
         keywords_regex (str | Unset):
         keywords_startswith (str | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1147,22 +1307,26 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         output_description (int | Unset):
-        output_description_gt (int | Unset):
-        output_description_gte (int | Unset):
         output_description_in (list[int] | Unset):
         output_description_isnull (bool | Unset):
-        output_description_lt (int | Unset):
-        output_description_lte (int | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -1181,12 +1345,8 @@ def sync(
         short_code_regex (str | Unset):
         short_code_startswith (str | Unset):
         software_reference (int | Unset):
-        software_reference_gt (int | Unset):
-        software_reference_gte (int | Unset):
         software_reference_in (list[int] | Unset):
         software_reference_isnull (bool | Unset):
-        software_reference_lt (int | Unset):
-        software_reference_lte (int | Unset):
         title (str | Unset):
         title_contains (str | Unset):
         title_endswith (str | Unset):
@@ -1249,13 +1409,18 @@ def sync(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        compositeprocess=compositeprocess,
+        compositeprocess_in=compositeprocess_in,
+        compositeprocess_isnull=compositeprocess_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
         input_description=input_description,
-        input_description_gt=input_description_gt,
-        input_description_gte=input_description_gte,
         input_description_in=input_description_in,
         input_description_isnull=input_description_isnull,
-        input_description_lt=input_description_lt,
-        input_description_lte=input_description_lte,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -1274,6 +1439,12 @@ def sync(
         keywords_regex=keywords_regex,
         keywords_startswith=keywords_startswith,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1292,22 +1463,26 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         output_description=output_description,
-        output_description_gt=output_description_gt,
-        output_description_gte=output_description_gte,
         output_description_in=output_description_in,
         output_description_isnull=output_description_isnull,
-        output_description_lt=output_description_lt,
-        output_description_lte=output_description_lte,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1326,12 +1501,8 @@ def sync(
         short_code_regex=short_code_regex,
         short_code_startswith=short_code_startswith,
         software_reference=software_reference,
-        software_reference_gt=software_reference_gt,
-        software_reference_gte=software_reference_gte,
         software_reference_in=software_reference_in,
         software_reference_isnull=software_reference_isnull,
-        software_reference_lt=software_reference_lt,
-        software_reference_lte=software_reference_lte,
         title=title,
         title_contains=title_contains,
         title_endswith=title_endswith,
@@ -1389,13 +1560,18 @@ async def asyncio_detailed(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    compositeprocess: list[int] | Unset = UNSET,
+    compositeprocess_in: list[int] | Unset = UNSET,
+    compositeprocess_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
     input_description: int | Unset = UNSET,
-    input_description_gt: int | Unset = UNSET,
-    input_description_gte: int | Unset = UNSET,
     input_description_in: list[int] | Unset = UNSET,
     input_description_isnull: bool | Unset = UNSET,
-    input_description_lt: int | Unset = UNSET,
-    input_description_lte: int | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -1414,6 +1590,12 @@ async def asyncio_detailed(
     keywords_regex: str | Unset = UNSET,
     keywords_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1432,22 +1614,26 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     output_description: int | Unset = UNSET,
-    output_description_gt: int | Unset = UNSET,
-    output_description_gte: int | Unset = UNSET,
     output_description_in: list[int] | Unset = UNSET,
     output_description_isnull: bool | Unset = UNSET,
-    output_description_lt: int | Unset = UNSET,
-    output_description_lte: int | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1466,12 +1652,8 @@ async def asyncio_detailed(
     short_code_regex: str | Unset = UNSET,
     short_code_startswith: str | Unset = UNSET,
     software_reference: int | Unset = UNSET,
-    software_reference_gt: int | Unset = UNSET,
-    software_reference_gte: int | Unset = UNSET,
     software_reference_in: list[int] | Unset = UNSET,
     software_reference_isnull: bool | Unset = UNSET,
-    software_reference_lt: int | Unset = UNSET,
-    software_reference_lte: int | Unset = UNSET,
     title: str | Unset = UNSET,
     title_contains: str | Unset = UNSET,
     title_endswith: str | Unset = UNSET,
@@ -1528,13 +1710,18 @@ async def asyncio_detailed(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        compositeprocess (list[int] | Unset):
+        compositeprocess_in (list[int] | Unset):
+        compositeprocess_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
         input_description (int | Unset):
-        input_description_gt (int | Unset):
-        input_description_gte (int | Unset):
         input_description_in (list[int] | Unset):
         input_description_isnull (bool | Unset):
-        input_description_lt (int | Unset):
-        input_description_lte (int | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -1553,6 +1740,12 @@ async def asyncio_detailed(
         keywords_regex (str | Unset):
         keywords_startswith (str | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1571,22 +1764,26 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         output_description (int | Unset):
-        output_description_gt (int | Unset):
-        output_description_gte (int | Unset):
         output_description_in (list[int] | Unset):
         output_description_isnull (bool | Unset):
-        output_description_lt (int | Unset):
-        output_description_lte (int | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -1605,12 +1802,8 @@ async def asyncio_detailed(
         short_code_regex (str | Unset):
         short_code_startswith (str | Unset):
         software_reference (int | Unset):
-        software_reference_gt (int | Unset):
-        software_reference_gte (int | Unset):
         software_reference_in (list[int] | Unset):
         software_reference_isnull (bool | Unset):
-        software_reference_lt (int | Unset):
-        software_reference_lte (int | Unset):
         title (str | Unset):
         title_contains (str | Unset):
         title_endswith (str | Unset):
@@ -1672,13 +1865,18 @@ async def asyncio_detailed(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        compositeprocess=compositeprocess,
+        compositeprocess_in=compositeprocess_in,
+        compositeprocess_isnull=compositeprocess_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
         input_description=input_description,
-        input_description_gt=input_description_gt,
-        input_description_gte=input_description_gte,
         input_description_in=input_description_in,
         input_description_isnull=input_description_isnull,
-        input_description_lt=input_description_lt,
-        input_description_lte=input_description_lte,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -1697,6 +1895,12 @@ async def asyncio_detailed(
         keywords_regex=keywords_regex,
         keywords_startswith=keywords_startswith,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1715,22 +1919,26 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         output_description=output_description,
-        output_description_gt=output_description_gt,
-        output_description_gte=output_description_gte,
         output_description_in=output_description_in,
         output_description_isnull=output_description_isnull,
-        output_description_lt=output_description_lt,
-        output_description_lte=output_description_lte,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1749,12 +1957,8 @@ async def asyncio_detailed(
         short_code_regex=short_code_regex,
         short_code_startswith=short_code_startswith,
         software_reference=software_reference,
-        software_reference_gt=software_reference_gt,
-        software_reference_gte=software_reference_gte,
         software_reference_in=software_reference_in,
         software_reference_isnull=software_reference_isnull,
-        software_reference_lt=software_reference_lt,
-        software_reference_lte=software_reference_lte,
         title=title,
         title_contains=title_contains,
         title_endswith=title_endswith,
@@ -1816,13 +2020,18 @@ async def asyncio(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    compositeprocess: list[int] | Unset = UNSET,
+    compositeprocess_in: list[int] | Unset = UNSET,
+    compositeprocess_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
     input_description: int | Unset = UNSET,
-    input_description_gt: int | Unset = UNSET,
-    input_description_gte: int | Unset = UNSET,
     input_description_in: list[int] | Unset = UNSET,
     input_description_isnull: bool | Unset = UNSET,
-    input_description_lt: int | Unset = UNSET,
-    input_description_lte: int | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -1841,6 +2050,12 @@ async def asyncio(
     keywords_regex: str | Unset = UNSET,
     keywords_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1859,22 +2074,26 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     output_description: int | Unset = UNSET,
-    output_description_gt: int | Unset = UNSET,
-    output_description_gte: int | Unset = UNSET,
     output_description_in: list[int] | Unset = UNSET,
     output_description_isnull: bool | Unset = UNSET,
-    output_description_lt: int | Unset = UNSET,
-    output_description_lte: int | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1893,12 +2112,8 @@ async def asyncio(
     short_code_regex: str | Unset = UNSET,
     short_code_startswith: str | Unset = UNSET,
     software_reference: int | Unset = UNSET,
-    software_reference_gt: int | Unset = UNSET,
-    software_reference_gte: int | Unset = UNSET,
     software_reference_in: list[int] | Unset = UNSET,
     software_reference_isnull: bool | Unset = UNSET,
-    software_reference_lt: int | Unset = UNSET,
-    software_reference_lte: int | Unset = UNSET,
     title: str | Unset = UNSET,
     title_contains: str | Unset = UNSET,
     title_endswith: str | Unset = UNSET,
@@ -1955,13 +2170,18 @@ async def asyncio(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        compositeprocess (list[int] | Unset):
+        compositeprocess_in (list[int] | Unset):
+        compositeprocess_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
         input_description (int | Unset):
-        input_description_gt (int | Unset):
-        input_description_gte (int | Unset):
         input_description_in (list[int] | Unset):
         input_description_isnull (bool | Unset):
-        input_description_lt (int | Unset):
-        input_description_lte (int | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -1980,6 +2200,12 @@ async def asyncio(
         keywords_regex (str | Unset):
         keywords_startswith (str | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1998,22 +2224,26 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         output_description (int | Unset):
-        output_description_gt (int | Unset):
-        output_description_gte (int | Unset):
         output_description_in (list[int] | Unset):
         output_description_isnull (bool | Unset):
-        output_description_lt (int | Unset):
-        output_description_lte (int | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -2032,12 +2262,8 @@ async def asyncio(
         short_code_regex (str | Unset):
         short_code_startswith (str | Unset):
         software_reference (int | Unset):
-        software_reference_gt (int | Unset):
-        software_reference_gte (int | Unset):
         software_reference_in (list[int] | Unset):
         software_reference_isnull (bool | Unset):
-        software_reference_lt (int | Unset):
-        software_reference_lte (int | Unset):
         title (str | Unset):
         title_contains (str | Unset):
         title_endswith (str | Unset):
@@ -2101,13 +2327,18 @@ async def asyncio(
             abstract_range=abstract_range,
             abstract_regex=abstract_regex,
             abstract_startswith=abstract_startswith,
+            compositeprocess=compositeprocess,
+            compositeprocess_in=compositeprocess_in,
+            compositeprocess_isnull=compositeprocess_isnull,
+            identifier=identifier,
+            identifier_in=identifier_in,
+            identifier_isnull=identifier_isnull,
+            image_details=image_details,
+            image_details_in=image_details_in,
+            image_details_isnull=image_details_isnull,
             input_description=input_description,
-            input_description_gt=input_description_gt,
-            input_description_gte=input_description_gte,
             input_description_in=input_description_in,
             input_description_isnull=input_description_isnull,
-            input_description_lt=input_description_lt,
-            input_description_lte=input_description_lte,
             keywords=keywords,
             keywords_contains=keywords_contains,
             keywords_endswith=keywords_endswith,
@@ -2126,6 +2357,12 @@ async def asyncio(
             keywords_regex=keywords_regex,
             keywords_startswith=keywords_startswith,
             limit=limit,
+            migrationproperty=migrationproperty,
+            migrationproperty_in=migrationproperty_in,
+            migrationproperty_isnull=migrationproperty_isnull,
+            note=note,
+            note_in=note_in,
+            note_isnull=note_isnull,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
             ob_id_contains=ob_id_contains,
@@ -2144,22 +2381,26 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
+            onlineresource=onlineresource,
+            onlineresource_in=onlineresource_in,
+            onlineresource_isnull=onlineresource_isnull,
             ordering=ordering,
             output_description=output_description,
-            output_description_gt=output_description_gt,
-            output_description_gte=output_description_gte,
             output_description_in=output_description_in,
             output_description_isnull=output_description_isnull,
-            output_description_lt=output_description_lt,
-            output_description_lte=output_description_lte,
             referenceable_ptr=referenceable_ptr,
-            referenceable_ptr_gt=referenceable_ptr_gt,
-            referenceable_ptr_gte=referenceable_ptr_gte,
             referenceable_ptr_in=referenceable_ptr_in,
             referenceable_ptr_isnull=referenceable_ptr_isnull,
-            referenceable_ptr_lt=referenceable_ptr_lt,
-            referenceable_ptr_lte=referenceable_ptr_lte,
+            responsiblepartyinfo=responsiblepartyinfo,
+            responsiblepartyinfo_in=responsiblepartyinfo_in,
+            responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+            review=review,
+            review_in=review_in,
+            review_isnull=review_isnull,
             short_code=short_code,
             short_code_contains=short_code_contains,
             short_code_endswith=short_code_endswith,
@@ -2178,12 +2419,8 @@ async def asyncio(
             short_code_regex=short_code_regex,
             short_code_startswith=short_code_startswith,
             software_reference=software_reference,
-            software_reference_gt=software_reference_gt,
-            software_reference_gte=software_reference_gte,
             software_reference_in=software_reference_in,
             software_reference_isnull=software_reference_isnull,
-            software_reference_lt=software_reference_lt,
-            software_reference_lte=software_reference_lte,
             title=title,
             title_contains=title_contains,
             title_endswith=title_endswith,

@@ -115,6 +115,9 @@ def _get_kwargs(
     data_published_time_week: float | Unset = UNSET,
     data_published_time_week_day: float | Unset = UNSET,
     data_published_time_year: float | Unset = UNSET,
+    discovery_keywords: list[int] | Unset = UNSET,
+    discovery_keywords_in: list[int] | Unset = UNSET,
+    discovery_keywords_isnull: bool | Unset = UNSET,
     discovery_keywords_name: str | Unset = UNSET,
     discovery_keywords_name_contains: str | Unset = UNSET,
     doi_published_time: datetime.datetime | Unset = UNSET,
@@ -165,6 +168,12 @@ def _get_kwargs(
     dont_harvest_from_projects_range: list[bool] | Unset = UNSET,
     dont_harvest_from_projects_regex: bool | Unset = UNSET,
     dont_harvest_from_projects_startswith: bool | Unset = UNSET,
+    drsdataset: list[int] | Unset = UNSET,
+    drsdataset_in: list[int] | Unset = UNSET,
+    drsdataset_isnull: bool | Unset = UNSET,
+    external_citations: list[int] | Unset = UNSET,
+    external_citations_in: list[int] | Unset = UNSET,
+    external_citations_isnull: bool | Unset = UNSET,
     feature_of_interest: str | Unset = UNSET,
     feature_of_interest_contains: str | Unset = UNSET,
     feature_of_interest_endswith: str | Unset = UNSET,
@@ -189,12 +198,8 @@ def _get_kwargs(
     geographic_extent_east_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_range: list[float] | Unset = UNSET,
-    geographic_extent_gt: int | Unset = UNSET,
-    geographic_extent_gte: int | Unset = UNSET,
     geographic_extent_in: list[int] | Unset = UNSET,
     geographic_extent_isnull: bool | Unset = UNSET,
-    geographic_extent_lt: int | Unset = UNSET,
-    geographic_extent_lte: int | Unset = UNSET,
     geographic_extent_north_bound_latitude: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gt: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gte: float | Unset = UNSET,
@@ -215,6 +220,15 @@ def _get_kwargs(
     geographic_extent_west_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_range: list[float] | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    inspire_theme: list[int] | Unset = UNSET,
+    inspire_theme_in: list[int] | Unset = UNSET,
+    inspire_theme_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -312,6 +326,9 @@ def _get_kwargs(
     latest_data_update_time_week_day: float | Unset = UNSET,
     latest_data_update_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
     non_geographic_flag: bool | Unset = UNSET,
     non_geographic_flag_contains: bool | Unset = UNSET,
     non_geographic_flag_endswith: bool | Unset = UNSET,
@@ -329,6 +346,9 @@ def _get_kwargs(
     non_geographic_flag_range: list[bool] | Unset = UNSET,
     non_geographic_flag_regex: bool | Unset = UNSET,
     non_geographic_flag_startswith: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -347,37 +367,40 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    object_observation: list[int] | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    permissions: list[int] | Unset = UNSET,
     permissions_access_category: ObservationsListAccessCategory | Unset = UNSET,
     permissions_access_category_in: list[str] | Unset = UNSET,
     permissions_access_roles: str | Unset = UNSET,
     permissions_access_roles_in: list[str] | Unset = UNSET,
+    permissions_in: list[int] | Unset = UNSET,
+    permissions_isnull: bool | Unset = UNSET,
+    phenomena: list[int] | Unset = UNSET,
+    phenomena_in: list[int] | Unset = UNSET,
+    phenomena_isnull: bool | Unset = UNSET,
     procedure_acquisition: int | Unset = UNSET,
-    procedure_acquisition_gt: int | Unset = UNSET,
-    procedure_acquisition_gte: int | Unset = UNSET,
     procedure_acquisition_in: list[int] | Unset = UNSET,
     procedure_acquisition_isnull: bool | Unset = UNSET,
-    procedure_acquisition_lt: int | Unset = UNSET,
-    procedure_acquisition_lte: int | Unset = UNSET,
     procedure_acquisition_ob_id: int | Unset = UNSET,
     procedure_acquisition_ob_id_in: list[int] | Unset = UNSET,
     procedure_acquisition_uuid: str | Unset = UNSET,
     procedure_acquisition_uuid_in: list[str] | Unset = UNSET,
     procedure_composite_process: int | Unset = UNSET,
-    procedure_composite_process_gt: int | Unset = UNSET,
-    procedure_composite_process_gte: int | Unset = UNSET,
     procedure_composite_process_in: list[int] | Unset = UNSET,
     procedure_composite_process_isnull: bool | Unset = UNSET,
-    procedure_composite_process_lt: int | Unset = UNSET,
-    procedure_composite_process_lte: int | Unset = UNSET,
     procedure_computation: int | Unset = UNSET,
-    procedure_computation_gt: int | Unset = UNSET,
-    procedure_computation_gte: int | Unset = UNSET,
     procedure_computation_in: list[int] | Unset = UNSET,
     procedure_computation_isnull: bool | Unset = UNSET,
-    procedure_computation_lt: int | Unset = UNSET,
-    procedure_computation_lte: int | Unset = UNSET,
     procedure_description: str | Unset = UNSET,
     procedure_description_contains: str | Unset = UNSET,
     procedure_description_endswith: str | Unset = UNSET,
@@ -395,6 +418,9 @@ def _get_kwargs(
     procedure_description_range: list[str] | Unset = UNSET,
     procedure_description_regex: str | Unset = UNSET,
     procedure_description_startswith: str | Unset = UNSET,
+    projects: list[int] | Unset = UNSET,
+    projects_in: list[int] | Unset = UNSET,
+    projects_isnull: bool | Unset = UNSET,
     projects_ob_id: int | Unset = UNSET,
     projects_ob_id_in: list[int] | Unset = UNSET,
     projects_uuid: str | Unset = UNSET,
@@ -417,12 +443,11 @@ def _get_kwargs(
     publication_state_regex: str | Unset = UNSET,
     publication_state_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    relatedobservationinfo: list[int] | Unset = UNSET,
+    relatedobservationinfo_in: list[int] | Unset = UNSET,
+    relatedobservationinfo_isnull: bool | Unset = UNSET,
     removed_data_reason: str | Unset = UNSET,
     removed_data_reason_contains: str | Unset = UNSET,
     removed_data_reason_endswith: str | Unset = UNSET,
@@ -488,6 +513,9 @@ def _get_kwargs(
     resolution_range: list[str] | Unset = UNSET,
     resolution_regex: str | Unset = UNSET,
     resolution_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
     result_quality: int | Unset = UNSET,
     result_quality_date: datetime.date | Unset = UNSET,
     result_quality_date_gt: datetime.date | Unset = UNSET,
@@ -497,12 +525,8 @@ def _get_kwargs(
     result_quality_date_range: list[datetime.date] | Unset = UNSET,
     result_quality_explanation: str | Unset = UNSET,
     result_quality_explanation_contains: str | Unset = UNSET,
-    result_quality_gt: int | Unset = UNSET,
-    result_quality_gte: int | Unset = UNSET,
     result_quality_in: list[int] | Unset = UNSET,
     result_quality_isnull: bool | Unset = UNSET,
-    result_quality_lt: int | Unset = UNSET,
-    result_quality_lte: int | Unset = UNSET,
     result_quality_ob_id: int | Unset = UNSET,
     result_quality_ob_id_in: list[int] | Unset = UNSET,
     result_quality_passes_test: bool | Unset = UNSET,
@@ -514,14 +538,13 @@ def _get_kwargs(
     result_field_data_path_startswith: str | Unset = UNSET,
     result_field_file_format: str | Unset = UNSET,
     result_field_file_format_contains: str | Unset = UNSET,
-    result_field_gt: int | Unset = UNSET,
-    result_field_gte: int | Unset = UNSET,
     result_field_in: list[int] | Unset = UNSET,
     result_field_isnull: bool | Unset = UNSET,
-    result_field_lt: int | Unset = UNSET,
-    result_field_lte: int | Unset = UNSET,
     result_field_storage_location: ObservationsListStorageLocation | Unset = UNSET,
     result_field_storage_status: ObservationsListStorageStatus | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -580,12 +603,8 @@ def _get_kwargs(
     time_period_end_time_lt: datetime.datetime | Unset = UNSET,
     time_period_end_time_lte: datetime.datetime | Unset = UNSET,
     time_period_end_time_range: list[datetime.datetime] | Unset = UNSET,
-    time_period_gt: int | Unset = UNSET,
-    time_period_gte: int | Unset = UNSET,
     time_period_in: list[int] | Unset = UNSET,
     time_period_isnull: bool | Unset = UNSET,
-    time_period_lt: int | Unset = UNSET,
-    time_period_lte: int | Unset = UNSET,
     time_period_ob_id: int | Unset = UNSET,
     time_period_ob_id_in: list[int] | Unset = UNSET,
     time_period_start_time: datetime.datetime | Unset = UNSET,
@@ -611,6 +630,9 @@ def _get_kwargs(
     title_range: list[str] | Unset = UNSET,
     title_regex: str | Unset = UNSET,
     title_startswith: str | Unset = UNSET,
+    topic_category: list[int] | Unset = UNSET,
+    topic_category_in: list[int] | Unset = UNSET,
+    topic_category_isnull: bool | Unset = UNSET,
     update_frequency: ObservationsListDataUpdateFrequency | Unset = UNSET,
     update_frequency_contains: str | Unset = UNSET,
     update_frequency_endswith: str | Unset = UNSET,
@@ -646,19 +668,14 @@ def _get_kwargs(
     uuid_regex: str | Unset = UNSET,
     uuid_startswith: str | Unset = UNSET,
     valid_time_period: int | Unset = UNSET,
-    valid_time_period_gt: int | Unset = UNSET,
-    valid_time_period_gte: int | Unset = UNSET,
     valid_time_period_in: list[int] | Unset = UNSET,
     valid_time_period_isnull: bool | Unset = UNSET,
-    valid_time_period_lt: int | Unset = UNSET,
-    valid_time_period_lte: int | Unset = UNSET,
     vertical_extent: int | Unset = UNSET,
-    vertical_extent_gt: int | Unset = UNSET,
-    vertical_extent_gte: int | Unset = UNSET,
     vertical_extent_in: list[int] | Unset = UNSET,
     vertical_extent_isnull: bool | Unset = UNSET,
-    vertical_extent_lt: int | Unset = UNSET,
-    vertical_extent_lte: int | Unset = UNSET,
+    vocabulary_keywords: list[int] | Unset = UNSET,
+    vocabulary_keywords_in: list[int] | Unset = UNSET,
+    vocabulary_keywords_isnull: bool | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -994,6 +1011,20 @@ def _get_kwargs(
 
     params["dataPublishedTime__year"] = data_published_time_year
 
+    json_discovery_keywords: list[int] | Unset = UNSET
+    if not isinstance(discovery_keywords, Unset):
+        json_discovery_keywords = ",".join(map(str, discovery_keywords))
+
+    params["discoveryKeywords"] = json_discovery_keywords
+
+    json_discovery_keywords_in: list[int] | Unset = UNSET
+    if not isinstance(discovery_keywords_in, Unset):
+        json_discovery_keywords_in = ",".join(map(str, discovery_keywords_in))
+
+    params["discoveryKeywords__in"] = json_discovery_keywords_in
+
+    params["discoveryKeywords__isnull"] = discovery_keywords_isnull
+
     params["discoveryKeywords__name"] = discovery_keywords_name
 
     params["discoveryKeywords__name__contains"] = discovery_keywords_name_contains
@@ -1164,6 +1195,34 @@ def _get_kwargs(
 
     params["dontHarvestFromProjects__startswith"] = dont_harvest_from_projects_startswith
 
+    json_drsdataset: list[int] | Unset = UNSET
+    if not isinstance(drsdataset, Unset):
+        json_drsdataset = ",".join(map(str, drsdataset))
+
+    params["drsdataset"] = json_drsdataset
+
+    json_drsdataset_in: list[int] | Unset = UNSET
+    if not isinstance(drsdataset_in, Unset):
+        json_drsdataset_in = ",".join(map(str, drsdataset_in))
+
+    params["drsdataset__in"] = json_drsdataset_in
+
+    params["drsdataset__isnull"] = drsdataset_isnull
+
+    json_external_citations: list[int] | Unset = UNSET
+    if not isinstance(external_citations, Unset):
+        json_external_citations = ",".join(map(str, external_citations))
+
+    params["externalCitations"] = json_external_citations
+
+    json_external_citations_in: list[int] | Unset = UNSET
+    if not isinstance(external_citations_in, Unset):
+        json_external_citations_in = ",".join(map(str, external_citations_in))
+
+    params["externalCitations__in"] = json_external_citations_in
+
+    params["externalCitations__isnull"] = external_citations_isnull
+
     params["featureOfInterest"] = feature_of_interest
 
     params["featureOfInterest__contains"] = feature_of_interest_contains
@@ -1226,10 +1285,6 @@ def _get_kwargs(
 
     params["geographicExtent__eastBoundLongitude__range"] = json_geographic_extent_east_bound_longitude_range
 
-    params["geographicExtent__gt"] = geographic_extent_gt
-
-    params["geographicExtent__gte"] = geographic_extent_gte
-
     json_geographic_extent_in: list[int] | Unset = UNSET
     if not isinstance(geographic_extent_in, Unset):
         json_geographic_extent_in = ",".join(map(str, geographic_extent_in))
@@ -1237,10 +1292,6 @@ def _get_kwargs(
     params["geographicExtent__in"] = json_geographic_extent_in
 
     params["geographicExtent__isnull"] = geographic_extent_isnull
-
-    params["geographicExtent__lt"] = geographic_extent_lt
-
-    params["geographicExtent__lte"] = geographic_extent_lte
 
     params["geographicExtent__northBoundLatitude"] = geographic_extent_north_bound_latitude
 
@@ -1303,6 +1354,48 @@ def _get_kwargs(
         )
 
     params["geographicExtent__westBoundLongitude__range"] = json_geographic_extent_west_bound_longitude_range
+
+    json_identifier: list[int] | Unset = UNSET
+    if not isinstance(identifier, Unset):
+        json_identifier = ",".join(map(str, identifier))
+
+    params["identifier"] = json_identifier
+
+    json_identifier_in: list[int] | Unset = UNSET
+    if not isinstance(identifier_in, Unset):
+        json_identifier_in = ",".join(map(str, identifier_in))
+
+    params["identifier__in"] = json_identifier_in
+
+    params["identifier__isnull"] = identifier_isnull
+
+    json_image_details: list[int] | Unset = UNSET
+    if not isinstance(image_details, Unset):
+        json_image_details = ",".join(map(str, image_details))
+
+    params["imageDetails"] = json_image_details
+
+    json_image_details_in: list[int] | Unset = UNSET
+    if not isinstance(image_details_in, Unset):
+        json_image_details_in = ",".join(map(str, image_details_in))
+
+    params["imageDetails__in"] = json_image_details_in
+
+    params["imageDetails__isnull"] = image_details_isnull
+
+    json_inspire_theme: list[int] | Unset = UNSET
+    if not isinstance(inspire_theme, Unset):
+        json_inspire_theme = ",".join(map(str, inspire_theme))
+
+    params["inspireTheme"] = json_inspire_theme
+
+    json_inspire_theme_in: list[int] | Unset = UNSET
+    if not isinstance(inspire_theme_in, Unset):
+        json_inspire_theme_in = ",".join(map(str, inspire_theme_in))
+
+    params["inspireTheme__in"] = json_inspire_theme_in
+
+    params["inspireTheme__isnull"] = inspire_theme_isnull
 
     params["keywords"] = keywords
 
@@ -1642,6 +1735,20 @@ def _get_kwargs(
 
     params["limit"] = limit
 
+    json_migrationproperty: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty, Unset):
+        json_migrationproperty = ",".join(map(str, migrationproperty))
+
+    params["migrationproperty"] = json_migrationproperty
+
+    json_migrationproperty_in: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty_in, Unset):
+        json_migrationproperty_in = ",".join(map(str, migrationproperty_in))
+
+    params["migrationproperty__in"] = json_migrationproperty_in
+
+    params["migrationproperty__isnull"] = migrationproperty_isnull
+
     params["nonGeographicFlag"] = non_geographic_flag
 
     params["nonGeographicFlag__contains"] = non_geographic_flag_contains
@@ -1683,6 +1790,20 @@ def _get_kwargs(
     params["nonGeographicFlag__regex"] = non_geographic_flag_regex
 
     params["nonGeographicFlag__startswith"] = non_geographic_flag_startswith
+
+    json_note: list[int] | Unset = UNSET
+    if not isinstance(note, Unset):
+        json_note = ",".join(map(str, note))
+
+    params["note"] = json_note
+
+    json_note_in: list[int] | Unset = UNSET
+    if not isinstance(note_in, Unset):
+        json_note_in = ",".join(map(str, note_in))
+
+    params["note__in"] = json_note_in
+
+    params["note__isnull"] = note_isnull
 
     params["ob_id"] = ob_id
 
@@ -1728,9 +1849,57 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_object_observation: list[int] | Unset = UNSET
+    if not isinstance(object_observation, Unset):
+        json_object_observation = ",".join(map(str, object_observation))
+
+    params["objectObservation"] = json_object_observation
+
+    json_object_observation_in: list[int] | Unset = UNSET
+    if not isinstance(object_observation_in, Unset):
+        json_object_observation_in = ",".join(map(str, object_observation_in))
+
+    params["objectObservation__in"] = json_object_observation_in
+
+    params["objectObservation__isnull"] = object_observation_isnull
+
+    json_observationcollection: list[int] | Unset = UNSET
+    if not isinstance(observationcollection, Unset):
+        json_observationcollection = ",".join(map(str, observationcollection))
+
+    params["observationcollection"] = json_observationcollection
+
+    json_observationcollection_in: list[int] | Unset = UNSET
+    if not isinstance(observationcollection_in, Unset):
+        json_observationcollection_in = ",".join(map(str, observationcollection_in))
+
+    params["observationcollection__in"] = json_observationcollection_in
+
+    params["observationcollection__isnull"] = observationcollection_isnull
+
     params["offset"] = offset
 
+    json_onlineresource: list[int] | Unset = UNSET
+    if not isinstance(onlineresource, Unset):
+        json_onlineresource = ",".join(map(str, onlineresource))
+
+    params["onlineresource"] = json_onlineresource
+
+    json_onlineresource_in: list[int] | Unset = UNSET
+    if not isinstance(onlineresource_in, Unset):
+        json_onlineresource_in = ",".join(map(str, onlineresource_in))
+
+    params["onlineresource__in"] = json_onlineresource_in
+
+    params["onlineresource__isnull"] = onlineresource_isnull
+
     params["ordering"] = ordering
+
+    json_permissions: list[int] | Unset = UNSET
+    if not isinstance(permissions, Unset):
+        json_permissions = ",".join(map(str, permissions))
+
+    params["permissions"] = json_permissions
 
     json_permissions_access_category: str | Unset = UNSET
     if not isinstance(permissions_access_category, Unset):
@@ -1752,11 +1921,29 @@ def _get_kwargs(
 
     params["permissions__accessRoles__in"] = json_permissions_access_roles_in
 
+    json_permissions_in: list[int] | Unset = UNSET
+    if not isinstance(permissions_in, Unset):
+        json_permissions_in = ",".join(map(str, permissions_in))
+
+    params["permissions__in"] = json_permissions_in
+
+    params["permissions__isnull"] = permissions_isnull
+
+    json_phenomena: list[int] | Unset = UNSET
+    if not isinstance(phenomena, Unset):
+        json_phenomena = ",".join(map(str, phenomena))
+
+    params["phenomena"] = json_phenomena
+
+    json_phenomena_in: list[int] | Unset = UNSET
+    if not isinstance(phenomena_in, Unset):
+        json_phenomena_in = ",".join(map(str, phenomena_in))
+
+    params["phenomena__in"] = json_phenomena_in
+
+    params["phenomena__isnull"] = phenomena_isnull
+
     params["procedureAcquisition"] = procedure_acquisition
-
-    params["procedureAcquisition__gt"] = procedure_acquisition_gt
-
-    params["procedureAcquisition__gte"] = procedure_acquisition_gte
 
     json_procedure_acquisition_in: list[int] | Unset = UNSET
     if not isinstance(procedure_acquisition_in, Unset):
@@ -1765,10 +1952,6 @@ def _get_kwargs(
     params["procedureAcquisition__in"] = json_procedure_acquisition_in
 
     params["procedureAcquisition__isnull"] = procedure_acquisition_isnull
-
-    params["procedureAcquisition__lt"] = procedure_acquisition_lt
-
-    params["procedureAcquisition__lte"] = procedure_acquisition_lte
 
     params["procedureAcquisition__ob_id"] = procedure_acquisition_ob_id
 
@@ -1788,10 +1971,6 @@ def _get_kwargs(
 
     params["procedureCompositeProcess"] = procedure_composite_process
 
-    params["procedureCompositeProcess__gt"] = procedure_composite_process_gt
-
-    params["procedureCompositeProcess__gte"] = procedure_composite_process_gte
-
     json_procedure_composite_process_in: list[int] | Unset = UNSET
     if not isinstance(procedure_composite_process_in, Unset):
         json_procedure_composite_process_in = ",".join(map(str, procedure_composite_process_in))
@@ -1800,15 +1979,7 @@ def _get_kwargs(
 
     params["procedureCompositeProcess__isnull"] = procedure_composite_process_isnull
 
-    params["procedureCompositeProcess__lt"] = procedure_composite_process_lt
-
-    params["procedureCompositeProcess__lte"] = procedure_composite_process_lte
-
     params["procedureComputation"] = procedure_computation
-
-    params["procedureComputation__gt"] = procedure_computation_gt
-
-    params["procedureComputation__gte"] = procedure_computation_gte
 
     json_procedure_computation_in: list[int] | Unset = UNSET
     if not isinstance(procedure_computation_in, Unset):
@@ -1817,10 +1988,6 @@ def _get_kwargs(
     params["procedureComputation__in"] = json_procedure_computation_in
 
     params["procedureComputation__isnull"] = procedure_computation_isnull
-
-    params["procedureComputation__lt"] = procedure_computation_lt
-
-    params["procedureComputation__lte"] = procedure_computation_lte
 
     params["procedureDescription"] = procedure_description
 
@@ -1863,6 +2030,20 @@ def _get_kwargs(
     params["procedureDescription__regex"] = procedure_description_regex
 
     params["procedureDescription__startswith"] = procedure_description_startswith
+
+    json_projects: list[int] | Unset = UNSET
+    if not isinstance(projects, Unset):
+        json_projects = ",".join(map(str, projects))
+
+    params["projects"] = json_projects
+
+    json_projects_in: list[int] | Unset = UNSET
+    if not isinstance(projects_in, Unset):
+        json_projects_in = ",".join(map(str, projects_in))
+
+    params["projects__in"] = json_projects_in
+
+    params["projects__isnull"] = projects_isnull
 
     params["projects__ob_id"] = projects_ob_id
 
@@ -1928,10 +2109,6 @@ def _get_kwargs(
 
     params["referenceable_ptr"] = referenceable_ptr
 
-    params["referenceable_ptr__gt"] = referenceable_ptr_gt
-
-    params["referenceable_ptr__gte"] = referenceable_ptr_gte
-
     json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
         json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
@@ -1940,9 +2117,19 @@ def _get_kwargs(
 
     params["referenceable_ptr__isnull"] = referenceable_ptr_isnull
 
-    params["referenceable_ptr__lt"] = referenceable_ptr_lt
+    json_relatedobservationinfo: list[int] | Unset = UNSET
+    if not isinstance(relatedobservationinfo, Unset):
+        json_relatedobservationinfo = ",".join(map(str, relatedobservationinfo))
 
-    params["referenceable_ptr__lte"] = referenceable_ptr_lte
+    params["relatedobservationinfo"] = json_relatedobservationinfo
+
+    json_relatedobservationinfo_in: list[int] | Unset = UNSET
+    if not isinstance(relatedobservationinfo_in, Unset):
+        json_relatedobservationinfo_in = ",".join(map(str, relatedobservationinfo_in))
+
+    params["relatedobservationinfo__in"] = json_relatedobservationinfo_in
+
+    params["relatedobservationinfo__isnull"] = relatedobservationinfo_isnull
 
     params["removedDataReason"] = removed_data_reason
 
@@ -2152,6 +2339,20 @@ def _get_kwargs(
 
     params["resolution__startswith"] = resolution_startswith
 
+    json_responsiblepartyinfo: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo, Unset):
+        json_responsiblepartyinfo = ",".join(map(str, responsiblepartyinfo))
+
+    params["responsiblepartyinfo"] = json_responsiblepartyinfo
+
+    json_responsiblepartyinfo_in: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo_in, Unset):
+        json_responsiblepartyinfo_in = ",".join(map(str, responsiblepartyinfo_in))
+
+    params["responsiblepartyinfo__in"] = json_responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__isnull"] = responsiblepartyinfo_isnull
+
     params["resultQuality"] = result_quality
 
     json_result_quality_date: str | Unset = UNSET
@@ -2192,10 +2393,6 @@ def _get_kwargs(
 
     params["resultQuality__explanation__contains"] = result_quality_explanation_contains
 
-    params["resultQuality__gt"] = result_quality_gt
-
-    params["resultQuality__gte"] = result_quality_gte
-
     json_result_quality_in: list[int] | Unset = UNSET
     if not isinstance(result_quality_in, Unset):
         json_result_quality_in = ",".join(map(str, result_quality_in))
@@ -2203,10 +2400,6 @@ def _get_kwargs(
     params["resultQuality__in"] = json_result_quality_in
 
     params["resultQuality__isnull"] = result_quality_isnull
-
-    params["resultQuality__lt"] = result_quality_lt
-
-    params["resultQuality__lte"] = result_quality_lte
 
     params["resultQuality__ob_id"] = result_quality_ob_id
 
@@ -2234,10 +2427,6 @@ def _get_kwargs(
 
     params["result_field__fileFormat__contains"] = result_field_file_format_contains
 
-    params["result_field__gt"] = result_field_gt
-
-    params["result_field__gte"] = result_field_gte
-
     json_result_field_in: list[int] | Unset = UNSET
     if not isinstance(result_field_in, Unset):
         json_result_field_in = ",".join(map(str, result_field_in))
@@ -2245,10 +2434,6 @@ def _get_kwargs(
     params["result_field__in"] = json_result_field_in
 
     params["result_field__isnull"] = result_field_isnull
-
-    params["result_field__lt"] = result_field_lt
-
-    params["result_field__lte"] = result_field_lte
 
     json_result_field_storage_location: str | Unset = UNSET
     if not isinstance(result_field_storage_location, Unset):
@@ -2261,6 +2446,20 @@ def _get_kwargs(
         json_result_field_storage_status = result_field_storage_status.value
 
     params["result_field__storageStatus"] = json_result_field_storage_status
+
+    json_review: list[int] | Unset = UNSET
+    if not isinstance(review, Unset):
+        json_review = ",".join(map(str, review))
+
+    params["review"] = json_review
+
+    json_review_in: list[int] | Unset = UNSET
+    if not isinstance(review_in, Unset):
+        json_review_in = ",".join(map(str, review_in))
+
+    params["review__in"] = json_review_in
+
+    params["review__isnull"] = review_isnull
 
     params["short_code"] = short_code
 
@@ -2428,10 +2627,6 @@ def _get_kwargs(
 
     params["timePeriod__endTime__range"] = json_time_period_end_time_range
 
-    params["timePeriod__gt"] = time_period_gt
-
-    params["timePeriod__gte"] = time_period_gte
-
     json_time_period_in: list[int] | Unset = UNSET
     if not isinstance(time_period_in, Unset):
         json_time_period_in = ",".join(map(str, time_period_in))
@@ -2439,10 +2634,6 @@ def _get_kwargs(
     params["timePeriod__in"] = json_time_period_in
 
     params["timePeriod__isnull"] = time_period_isnull
-
-    params["timePeriod__lt"] = time_period_lt
-
-    params["timePeriod__lte"] = time_period_lte
 
     params["timePeriod__ob_id"] = time_period_ob_id
 
@@ -2527,6 +2718,20 @@ def _get_kwargs(
     params["title__regex"] = title_regex
 
     params["title__startswith"] = title_startswith
+
+    json_topic_category: list[int] | Unset = UNSET
+    if not isinstance(topic_category, Unset):
+        json_topic_category = ",".join(map(str, topic_category))
+
+    params["topicCategory"] = json_topic_category
+
+    json_topic_category_in: list[int] | Unset = UNSET
+    if not isinstance(topic_category_in, Unset):
+        json_topic_category_in = ",".join(map(str, topic_category_in))
+
+    params["topicCategory__in"] = json_topic_category_in
+
+    params["topicCategory__isnull"] = topic_category_isnull
 
     json_update_frequency: str | Unset = UNSET
     if not isinstance(update_frequency, Unset):
@@ -2618,10 +2823,6 @@ def _get_kwargs(
 
     params["validTimePeriod"] = valid_time_period
 
-    params["validTimePeriod__gt"] = valid_time_period_gt
-
-    params["validTimePeriod__gte"] = valid_time_period_gte
-
     json_valid_time_period_in: list[int] | Unset = UNSET
     if not isinstance(valid_time_period_in, Unset):
         json_valid_time_period_in = ",".join(map(str, valid_time_period_in))
@@ -2630,15 +2831,7 @@ def _get_kwargs(
 
     params["validTimePeriod__isnull"] = valid_time_period_isnull
 
-    params["validTimePeriod__lt"] = valid_time_period_lt
-
-    params["validTimePeriod__lte"] = valid_time_period_lte
-
     params["verticalExtent"] = vertical_extent
-
-    params["verticalExtent__gt"] = vertical_extent_gt
-
-    params["verticalExtent__gte"] = vertical_extent_gte
 
     json_vertical_extent_in: list[int] | Unset = UNSET
     if not isinstance(vertical_extent_in, Unset):
@@ -2648,9 +2841,19 @@ def _get_kwargs(
 
     params["verticalExtent__isnull"] = vertical_extent_isnull
 
-    params["verticalExtent__lt"] = vertical_extent_lt
+    json_vocabulary_keywords: list[int] | Unset = UNSET
+    if not isinstance(vocabulary_keywords, Unset):
+        json_vocabulary_keywords = ",".join(map(str, vocabulary_keywords))
 
-    params["verticalExtent__lte"] = vertical_extent_lte
+    params["vocabularyKeywords"] = json_vocabulary_keywords
+
+    json_vocabulary_keywords_in: list[int] | Unset = UNSET
+    if not isinstance(vocabulary_keywords_in, Unset):
+        json_vocabulary_keywords_in = ",".join(map(str, vocabulary_keywords_in))
+
+    params["vocabularyKeywords__in"] = json_vocabulary_keywords_in
+
+    params["vocabularyKeywords__isnull"] = vocabulary_keywords_isnull
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -2787,6 +2990,9 @@ def sync_detailed(
     data_published_time_week: float | Unset = UNSET,
     data_published_time_week_day: float | Unset = UNSET,
     data_published_time_year: float | Unset = UNSET,
+    discovery_keywords: list[int] | Unset = UNSET,
+    discovery_keywords_in: list[int] | Unset = UNSET,
+    discovery_keywords_isnull: bool | Unset = UNSET,
     discovery_keywords_name: str | Unset = UNSET,
     discovery_keywords_name_contains: str | Unset = UNSET,
     doi_published_time: datetime.datetime | Unset = UNSET,
@@ -2837,6 +3043,12 @@ def sync_detailed(
     dont_harvest_from_projects_range: list[bool] | Unset = UNSET,
     dont_harvest_from_projects_regex: bool | Unset = UNSET,
     dont_harvest_from_projects_startswith: bool | Unset = UNSET,
+    drsdataset: list[int] | Unset = UNSET,
+    drsdataset_in: list[int] | Unset = UNSET,
+    drsdataset_isnull: bool | Unset = UNSET,
+    external_citations: list[int] | Unset = UNSET,
+    external_citations_in: list[int] | Unset = UNSET,
+    external_citations_isnull: bool | Unset = UNSET,
     feature_of_interest: str | Unset = UNSET,
     feature_of_interest_contains: str | Unset = UNSET,
     feature_of_interest_endswith: str | Unset = UNSET,
@@ -2861,12 +3073,8 @@ def sync_detailed(
     geographic_extent_east_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_range: list[float] | Unset = UNSET,
-    geographic_extent_gt: int | Unset = UNSET,
-    geographic_extent_gte: int | Unset = UNSET,
     geographic_extent_in: list[int] | Unset = UNSET,
     geographic_extent_isnull: bool | Unset = UNSET,
-    geographic_extent_lt: int | Unset = UNSET,
-    geographic_extent_lte: int | Unset = UNSET,
     geographic_extent_north_bound_latitude: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gt: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gte: float | Unset = UNSET,
@@ -2887,6 +3095,15 @@ def sync_detailed(
     geographic_extent_west_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_range: list[float] | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    inspire_theme: list[int] | Unset = UNSET,
+    inspire_theme_in: list[int] | Unset = UNSET,
+    inspire_theme_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -2984,6 +3201,9 @@ def sync_detailed(
     latest_data_update_time_week_day: float | Unset = UNSET,
     latest_data_update_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
     non_geographic_flag: bool | Unset = UNSET,
     non_geographic_flag_contains: bool | Unset = UNSET,
     non_geographic_flag_endswith: bool | Unset = UNSET,
@@ -3001,6 +3221,9 @@ def sync_detailed(
     non_geographic_flag_range: list[bool] | Unset = UNSET,
     non_geographic_flag_regex: bool | Unset = UNSET,
     non_geographic_flag_startswith: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -3019,37 +3242,40 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    object_observation: list[int] | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    permissions: list[int] | Unset = UNSET,
     permissions_access_category: ObservationsListAccessCategory | Unset = UNSET,
     permissions_access_category_in: list[str] | Unset = UNSET,
     permissions_access_roles: str | Unset = UNSET,
     permissions_access_roles_in: list[str] | Unset = UNSET,
+    permissions_in: list[int] | Unset = UNSET,
+    permissions_isnull: bool | Unset = UNSET,
+    phenomena: list[int] | Unset = UNSET,
+    phenomena_in: list[int] | Unset = UNSET,
+    phenomena_isnull: bool | Unset = UNSET,
     procedure_acquisition: int | Unset = UNSET,
-    procedure_acquisition_gt: int | Unset = UNSET,
-    procedure_acquisition_gte: int | Unset = UNSET,
     procedure_acquisition_in: list[int] | Unset = UNSET,
     procedure_acquisition_isnull: bool | Unset = UNSET,
-    procedure_acquisition_lt: int | Unset = UNSET,
-    procedure_acquisition_lte: int | Unset = UNSET,
     procedure_acquisition_ob_id: int | Unset = UNSET,
     procedure_acquisition_ob_id_in: list[int] | Unset = UNSET,
     procedure_acquisition_uuid: str | Unset = UNSET,
     procedure_acquisition_uuid_in: list[str] | Unset = UNSET,
     procedure_composite_process: int | Unset = UNSET,
-    procedure_composite_process_gt: int | Unset = UNSET,
-    procedure_composite_process_gte: int | Unset = UNSET,
     procedure_composite_process_in: list[int] | Unset = UNSET,
     procedure_composite_process_isnull: bool | Unset = UNSET,
-    procedure_composite_process_lt: int | Unset = UNSET,
-    procedure_composite_process_lte: int | Unset = UNSET,
     procedure_computation: int | Unset = UNSET,
-    procedure_computation_gt: int | Unset = UNSET,
-    procedure_computation_gte: int | Unset = UNSET,
     procedure_computation_in: list[int] | Unset = UNSET,
     procedure_computation_isnull: bool | Unset = UNSET,
-    procedure_computation_lt: int | Unset = UNSET,
-    procedure_computation_lte: int | Unset = UNSET,
     procedure_description: str | Unset = UNSET,
     procedure_description_contains: str | Unset = UNSET,
     procedure_description_endswith: str | Unset = UNSET,
@@ -3067,6 +3293,9 @@ def sync_detailed(
     procedure_description_range: list[str] | Unset = UNSET,
     procedure_description_regex: str | Unset = UNSET,
     procedure_description_startswith: str | Unset = UNSET,
+    projects: list[int] | Unset = UNSET,
+    projects_in: list[int] | Unset = UNSET,
+    projects_isnull: bool | Unset = UNSET,
     projects_ob_id: int | Unset = UNSET,
     projects_ob_id_in: list[int] | Unset = UNSET,
     projects_uuid: str | Unset = UNSET,
@@ -3089,12 +3318,11 @@ def sync_detailed(
     publication_state_regex: str | Unset = UNSET,
     publication_state_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    relatedobservationinfo: list[int] | Unset = UNSET,
+    relatedobservationinfo_in: list[int] | Unset = UNSET,
+    relatedobservationinfo_isnull: bool | Unset = UNSET,
     removed_data_reason: str | Unset = UNSET,
     removed_data_reason_contains: str | Unset = UNSET,
     removed_data_reason_endswith: str | Unset = UNSET,
@@ -3160,6 +3388,9 @@ def sync_detailed(
     resolution_range: list[str] | Unset = UNSET,
     resolution_regex: str | Unset = UNSET,
     resolution_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
     result_quality: int | Unset = UNSET,
     result_quality_date: datetime.date | Unset = UNSET,
     result_quality_date_gt: datetime.date | Unset = UNSET,
@@ -3169,12 +3400,8 @@ def sync_detailed(
     result_quality_date_range: list[datetime.date] | Unset = UNSET,
     result_quality_explanation: str | Unset = UNSET,
     result_quality_explanation_contains: str | Unset = UNSET,
-    result_quality_gt: int | Unset = UNSET,
-    result_quality_gte: int | Unset = UNSET,
     result_quality_in: list[int] | Unset = UNSET,
     result_quality_isnull: bool | Unset = UNSET,
-    result_quality_lt: int | Unset = UNSET,
-    result_quality_lte: int | Unset = UNSET,
     result_quality_ob_id: int | Unset = UNSET,
     result_quality_ob_id_in: list[int] | Unset = UNSET,
     result_quality_passes_test: bool | Unset = UNSET,
@@ -3186,14 +3413,13 @@ def sync_detailed(
     result_field_data_path_startswith: str | Unset = UNSET,
     result_field_file_format: str | Unset = UNSET,
     result_field_file_format_contains: str | Unset = UNSET,
-    result_field_gt: int | Unset = UNSET,
-    result_field_gte: int | Unset = UNSET,
     result_field_in: list[int] | Unset = UNSET,
     result_field_isnull: bool | Unset = UNSET,
-    result_field_lt: int | Unset = UNSET,
-    result_field_lte: int | Unset = UNSET,
     result_field_storage_location: ObservationsListStorageLocation | Unset = UNSET,
     result_field_storage_status: ObservationsListStorageStatus | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -3252,12 +3478,8 @@ def sync_detailed(
     time_period_end_time_lt: datetime.datetime | Unset = UNSET,
     time_period_end_time_lte: datetime.datetime | Unset = UNSET,
     time_period_end_time_range: list[datetime.datetime] | Unset = UNSET,
-    time_period_gt: int | Unset = UNSET,
-    time_period_gte: int | Unset = UNSET,
     time_period_in: list[int] | Unset = UNSET,
     time_period_isnull: bool | Unset = UNSET,
-    time_period_lt: int | Unset = UNSET,
-    time_period_lte: int | Unset = UNSET,
     time_period_ob_id: int | Unset = UNSET,
     time_period_ob_id_in: list[int] | Unset = UNSET,
     time_period_start_time: datetime.datetime | Unset = UNSET,
@@ -3283,6 +3505,9 @@ def sync_detailed(
     title_range: list[str] | Unset = UNSET,
     title_regex: str | Unset = UNSET,
     title_startswith: str | Unset = UNSET,
+    topic_category: list[int] | Unset = UNSET,
+    topic_category_in: list[int] | Unset = UNSET,
+    topic_category_isnull: bool | Unset = UNSET,
     update_frequency: ObservationsListDataUpdateFrequency | Unset = UNSET,
     update_frequency_contains: str | Unset = UNSET,
     update_frequency_endswith: str | Unset = UNSET,
@@ -3318,19 +3543,14 @@ def sync_detailed(
     uuid_regex: str | Unset = UNSET,
     uuid_startswith: str | Unset = UNSET,
     valid_time_period: int | Unset = UNSET,
-    valid_time_period_gt: int | Unset = UNSET,
-    valid_time_period_gte: int | Unset = UNSET,
     valid_time_period_in: list[int] | Unset = UNSET,
     valid_time_period_isnull: bool | Unset = UNSET,
-    valid_time_period_lt: int | Unset = UNSET,
-    valid_time_period_lte: int | Unset = UNSET,
     vertical_extent: int | Unset = UNSET,
-    vertical_extent_gt: int | Unset = UNSET,
-    vertical_extent_gte: int | Unset = UNSET,
     vertical_extent_in: list[int] | Unset = UNSET,
     vertical_extent_isnull: bool | Unset = UNSET,
-    vertical_extent_lt: int | Unset = UNSET,
-    vertical_extent_lte: int | Unset = UNSET,
+    vocabulary_keywords: list[int] | Unset = UNSET,
+    vocabulary_keywords_in: list[int] | Unset = UNSET,
+    vocabulary_keywords_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedObservationReadList]:
     """Get a list of Observation objects.
 
@@ -3431,6 +3651,9 @@ def sync_detailed(
         data_published_time_week (float | Unset):
         data_published_time_week_day (float | Unset):
         data_published_time_year (float | Unset):
+        discovery_keywords (list[int] | Unset):
+        discovery_keywords_in (list[int] | Unset):
+        discovery_keywords_isnull (bool | Unset):
         discovery_keywords_name (str | Unset):
         discovery_keywords_name_contains (str | Unset):
         doi_published_time (datetime.datetime | Unset):
@@ -3481,6 +3704,12 @@ def sync_detailed(
         dont_harvest_from_projects_range (list[bool] | Unset):
         dont_harvest_from_projects_regex (bool | Unset):
         dont_harvest_from_projects_startswith (bool | Unset):
+        drsdataset (list[int] | Unset):
+        drsdataset_in (list[int] | Unset):
+        drsdataset_isnull (bool | Unset):
+        external_citations (list[int] | Unset):
+        external_citations_in (list[int] | Unset):
+        external_citations_isnull (bool | Unset):
         feature_of_interest (str | Unset):
         feature_of_interest_contains (str | Unset):
         feature_of_interest_endswith (str | Unset):
@@ -3505,12 +3734,8 @@ def sync_detailed(
         geographic_extent_east_bound_longitude_lt (float | Unset):
         geographic_extent_east_bound_longitude_lte (float | Unset):
         geographic_extent_east_bound_longitude_range (list[float] | Unset):
-        geographic_extent_gt (int | Unset):
-        geographic_extent_gte (int | Unset):
         geographic_extent_in (list[int] | Unset):
         geographic_extent_isnull (bool | Unset):
-        geographic_extent_lt (int | Unset):
-        geographic_extent_lte (int | Unset):
         geographic_extent_north_bound_latitude (float | Unset):
         geographic_extent_north_bound_latitude_gt (float | Unset):
         geographic_extent_north_bound_latitude_gte (float | Unset):
@@ -3531,6 +3756,15 @@ def sync_detailed(
         geographic_extent_west_bound_longitude_lt (float | Unset):
         geographic_extent_west_bound_longitude_lte (float | Unset):
         geographic_extent_west_bound_longitude_range (list[float] | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        inspire_theme (list[int] | Unset):
+        inspire_theme_in (list[int] | Unset):
+        inspire_theme_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -3628,6 +3862,9 @@ def sync_detailed(
         latest_data_update_time_week_day (float | Unset):
         latest_data_update_time_year (float | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
         non_geographic_flag (bool | Unset):
         non_geographic_flag_contains (bool | Unset):
         non_geographic_flag_endswith (bool | Unset):
@@ -3645,6 +3882,9 @@ def sync_detailed(
         non_geographic_flag_range (list[bool] | Unset):
         non_geographic_flag_regex (bool | Unset):
         non_geographic_flag_startswith (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -3663,37 +3903,40 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        object_observation (list[int] | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        permissions (list[int] | Unset):
         permissions_access_category (ObservationsListAccessCategory | Unset):
         permissions_access_category_in (list[str] | Unset):
         permissions_access_roles (str | Unset):
         permissions_access_roles_in (list[str] | Unset):
+        permissions_in (list[int] | Unset):
+        permissions_isnull (bool | Unset):
+        phenomena (list[int] | Unset):
+        phenomena_in (list[int] | Unset):
+        phenomena_isnull (bool | Unset):
         procedure_acquisition (int | Unset):
-        procedure_acquisition_gt (int | Unset):
-        procedure_acquisition_gte (int | Unset):
         procedure_acquisition_in (list[int] | Unset):
         procedure_acquisition_isnull (bool | Unset):
-        procedure_acquisition_lt (int | Unset):
-        procedure_acquisition_lte (int | Unset):
         procedure_acquisition_ob_id (int | Unset):
         procedure_acquisition_ob_id_in (list[int] | Unset):
         procedure_acquisition_uuid (str | Unset):
         procedure_acquisition_uuid_in (list[str] | Unset):
         procedure_composite_process (int | Unset):
-        procedure_composite_process_gt (int | Unset):
-        procedure_composite_process_gte (int | Unset):
         procedure_composite_process_in (list[int] | Unset):
         procedure_composite_process_isnull (bool | Unset):
-        procedure_composite_process_lt (int | Unset):
-        procedure_composite_process_lte (int | Unset):
         procedure_computation (int | Unset):
-        procedure_computation_gt (int | Unset):
-        procedure_computation_gte (int | Unset):
         procedure_computation_in (list[int] | Unset):
         procedure_computation_isnull (bool | Unset):
-        procedure_computation_lt (int | Unset):
-        procedure_computation_lte (int | Unset):
         procedure_description (str | Unset):
         procedure_description_contains (str | Unset):
         procedure_description_endswith (str | Unset):
@@ -3711,6 +3954,9 @@ def sync_detailed(
         procedure_description_range (list[str] | Unset):
         procedure_description_regex (str | Unset):
         procedure_description_startswith (str | Unset):
+        projects (list[int] | Unset):
+        projects_in (list[int] | Unset):
+        projects_isnull (bool | Unset):
         projects_ob_id (int | Unset):
         projects_ob_id_in (list[int] | Unset):
         projects_uuid (str | Unset):
@@ -3733,12 +3979,11 @@ def sync_detailed(
         publication_state_regex (str | Unset):
         publication_state_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        relatedobservationinfo (list[int] | Unset):
+        relatedobservationinfo_in (list[int] | Unset):
+        relatedobservationinfo_isnull (bool | Unset):
         removed_data_reason (str | Unset):
         removed_data_reason_contains (str | Unset):
         removed_data_reason_endswith (str | Unset):
@@ -3804,6 +4049,9 @@ def sync_detailed(
         resolution_range (list[str] | Unset):
         resolution_regex (str | Unset):
         resolution_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
         result_quality (int | Unset):
         result_quality_date (datetime.date | Unset):
         result_quality_date_gt (datetime.date | Unset):
@@ -3813,12 +4061,8 @@ def sync_detailed(
         result_quality_date_range (list[datetime.date] | Unset):
         result_quality_explanation (str | Unset):
         result_quality_explanation_contains (str | Unset):
-        result_quality_gt (int | Unset):
-        result_quality_gte (int | Unset):
         result_quality_in (list[int] | Unset):
         result_quality_isnull (bool | Unset):
-        result_quality_lt (int | Unset):
-        result_quality_lte (int | Unset):
         result_quality_ob_id (int | Unset):
         result_quality_ob_id_in (list[int] | Unset):
         result_quality_passes_test (bool | Unset):
@@ -3830,14 +4074,13 @@ def sync_detailed(
         result_field_data_path_startswith (str | Unset):
         result_field_file_format (str | Unset):
         result_field_file_format_contains (str | Unset):
-        result_field_gt (int | Unset):
-        result_field_gte (int | Unset):
         result_field_in (list[int] | Unset):
         result_field_isnull (bool | Unset):
-        result_field_lt (int | Unset):
-        result_field_lte (int | Unset):
         result_field_storage_location (ObservationsListStorageLocation | Unset):
         result_field_storage_status (ObservationsListStorageStatus | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -3896,12 +4139,8 @@ def sync_detailed(
         time_period_end_time_lt (datetime.datetime | Unset):
         time_period_end_time_lte (datetime.datetime | Unset):
         time_period_end_time_range (list[datetime.datetime] | Unset):
-        time_period_gt (int | Unset):
-        time_period_gte (int | Unset):
         time_period_in (list[int] | Unset):
         time_period_isnull (bool | Unset):
-        time_period_lt (int | Unset):
-        time_period_lte (int | Unset):
         time_period_ob_id (int | Unset):
         time_period_ob_id_in (list[int] | Unset):
         time_period_start_time (datetime.datetime | Unset):
@@ -3927,6 +4166,9 @@ def sync_detailed(
         title_range (list[str] | Unset):
         title_regex (str | Unset):
         title_startswith (str | Unset):
+        topic_category (list[int] | Unset):
+        topic_category_in (list[int] | Unset):
+        topic_category_isnull (bool | Unset):
         update_frequency (ObservationsListDataUpdateFrequency | Unset):
         update_frequency_contains (str | Unset):
         update_frequency_endswith (str | Unset):
@@ -3962,19 +4204,14 @@ def sync_detailed(
         uuid_regex (str | Unset):
         uuid_startswith (str | Unset):
         valid_time_period (int | Unset):
-        valid_time_period_gt (int | Unset):
-        valid_time_period_gte (int | Unset):
         valid_time_period_in (list[int] | Unset):
         valid_time_period_isnull (bool | Unset):
-        valid_time_period_lt (int | Unset):
-        valid_time_period_lte (int | Unset):
         vertical_extent (int | Unset):
-        vertical_extent_gt (int | Unset):
-        vertical_extent_gte (int | Unset):
         vertical_extent_in (list[int] | Unset):
         vertical_extent_isnull (bool | Unset):
-        vertical_extent_lt (int | Unset):
-        vertical_extent_lte (int | Unset):
+        vocabulary_keywords (list[int] | Unset):
+        vocabulary_keywords_in (list[int] | Unset):
+        vocabulary_keywords_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -4081,6 +4318,9 @@ def sync_detailed(
         data_published_time_week=data_published_time_week,
         data_published_time_week_day=data_published_time_week_day,
         data_published_time_year=data_published_time_year,
+        discovery_keywords=discovery_keywords,
+        discovery_keywords_in=discovery_keywords_in,
+        discovery_keywords_isnull=discovery_keywords_isnull,
         discovery_keywords_name=discovery_keywords_name,
         discovery_keywords_name_contains=discovery_keywords_name_contains,
         doi_published_time=doi_published_time,
@@ -4131,6 +4371,12 @@ def sync_detailed(
         dont_harvest_from_projects_range=dont_harvest_from_projects_range,
         dont_harvest_from_projects_regex=dont_harvest_from_projects_regex,
         dont_harvest_from_projects_startswith=dont_harvest_from_projects_startswith,
+        drsdataset=drsdataset,
+        drsdataset_in=drsdataset_in,
+        drsdataset_isnull=drsdataset_isnull,
+        external_citations=external_citations,
+        external_citations_in=external_citations_in,
+        external_citations_isnull=external_citations_isnull,
         feature_of_interest=feature_of_interest,
         feature_of_interest_contains=feature_of_interest_contains,
         feature_of_interest_endswith=feature_of_interest_endswith,
@@ -4155,12 +4401,8 @@ def sync_detailed(
         geographic_extent_east_bound_longitude_lt=geographic_extent_east_bound_longitude_lt,
         geographic_extent_east_bound_longitude_lte=geographic_extent_east_bound_longitude_lte,
         geographic_extent_east_bound_longitude_range=geographic_extent_east_bound_longitude_range,
-        geographic_extent_gt=geographic_extent_gt,
-        geographic_extent_gte=geographic_extent_gte,
         geographic_extent_in=geographic_extent_in,
         geographic_extent_isnull=geographic_extent_isnull,
-        geographic_extent_lt=geographic_extent_lt,
-        geographic_extent_lte=geographic_extent_lte,
         geographic_extent_north_bound_latitude=geographic_extent_north_bound_latitude,
         geographic_extent_north_bound_latitude_gt=geographic_extent_north_bound_latitude_gt,
         geographic_extent_north_bound_latitude_gte=geographic_extent_north_bound_latitude_gte,
@@ -4181,6 +4423,15 @@ def sync_detailed(
         geographic_extent_west_bound_longitude_lt=geographic_extent_west_bound_longitude_lt,
         geographic_extent_west_bound_longitude_lte=geographic_extent_west_bound_longitude_lte,
         geographic_extent_west_bound_longitude_range=geographic_extent_west_bound_longitude_range,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        inspire_theme=inspire_theme,
+        inspire_theme_in=inspire_theme_in,
+        inspire_theme_isnull=inspire_theme_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -4278,6 +4529,9 @@ def sync_detailed(
         latest_data_update_time_week_day=latest_data_update_time_week_day,
         latest_data_update_time_year=latest_data_update_time_year,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
         non_geographic_flag=non_geographic_flag,
         non_geographic_flag_contains=non_geographic_flag_contains,
         non_geographic_flag_endswith=non_geographic_flag_endswith,
@@ -4295,6 +4549,9 @@ def sync_detailed(
         non_geographic_flag_range=non_geographic_flag_range,
         non_geographic_flag_regex=non_geographic_flag_regex,
         non_geographic_flag_startswith=non_geographic_flag_startswith,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -4313,37 +4570,40 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        object_observation=object_observation,
+        object_observation_in=object_observation_in,
+        object_observation_isnull=object_observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        permissions=permissions,
         permissions_access_category=permissions_access_category,
         permissions_access_category_in=permissions_access_category_in,
         permissions_access_roles=permissions_access_roles,
         permissions_access_roles_in=permissions_access_roles_in,
+        permissions_in=permissions_in,
+        permissions_isnull=permissions_isnull,
+        phenomena=phenomena,
+        phenomena_in=phenomena_in,
+        phenomena_isnull=phenomena_isnull,
         procedure_acquisition=procedure_acquisition,
-        procedure_acquisition_gt=procedure_acquisition_gt,
-        procedure_acquisition_gte=procedure_acquisition_gte,
         procedure_acquisition_in=procedure_acquisition_in,
         procedure_acquisition_isnull=procedure_acquisition_isnull,
-        procedure_acquisition_lt=procedure_acquisition_lt,
-        procedure_acquisition_lte=procedure_acquisition_lte,
         procedure_acquisition_ob_id=procedure_acquisition_ob_id,
         procedure_acquisition_ob_id_in=procedure_acquisition_ob_id_in,
         procedure_acquisition_uuid=procedure_acquisition_uuid,
         procedure_acquisition_uuid_in=procedure_acquisition_uuid_in,
         procedure_composite_process=procedure_composite_process,
-        procedure_composite_process_gt=procedure_composite_process_gt,
-        procedure_composite_process_gte=procedure_composite_process_gte,
         procedure_composite_process_in=procedure_composite_process_in,
         procedure_composite_process_isnull=procedure_composite_process_isnull,
-        procedure_composite_process_lt=procedure_composite_process_lt,
-        procedure_composite_process_lte=procedure_composite_process_lte,
         procedure_computation=procedure_computation,
-        procedure_computation_gt=procedure_computation_gt,
-        procedure_computation_gte=procedure_computation_gte,
         procedure_computation_in=procedure_computation_in,
         procedure_computation_isnull=procedure_computation_isnull,
-        procedure_computation_lt=procedure_computation_lt,
-        procedure_computation_lte=procedure_computation_lte,
         procedure_description=procedure_description,
         procedure_description_contains=procedure_description_contains,
         procedure_description_endswith=procedure_description_endswith,
@@ -4361,6 +4621,9 @@ def sync_detailed(
         procedure_description_range=procedure_description_range,
         procedure_description_regex=procedure_description_regex,
         procedure_description_startswith=procedure_description_startswith,
+        projects=projects,
+        projects_in=projects_in,
+        projects_isnull=projects_isnull,
         projects_ob_id=projects_ob_id,
         projects_ob_id_in=projects_ob_id_in,
         projects_uuid=projects_uuid,
@@ -4383,12 +4646,11 @@ def sync_detailed(
         publication_state_regex=publication_state_regex,
         publication_state_startswith=publication_state_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        relatedobservationinfo=relatedobservationinfo,
+        relatedobservationinfo_in=relatedobservationinfo_in,
+        relatedobservationinfo_isnull=relatedobservationinfo_isnull,
         removed_data_reason=removed_data_reason,
         removed_data_reason_contains=removed_data_reason_contains,
         removed_data_reason_endswith=removed_data_reason_endswith,
@@ -4454,6 +4716,9 @@ def sync_detailed(
         resolution_range=resolution_range,
         resolution_regex=resolution_regex,
         resolution_startswith=resolution_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
         result_quality=result_quality,
         result_quality_date=result_quality_date,
         result_quality_date_gt=result_quality_date_gt,
@@ -4463,12 +4728,8 @@ def sync_detailed(
         result_quality_date_range=result_quality_date_range,
         result_quality_explanation=result_quality_explanation,
         result_quality_explanation_contains=result_quality_explanation_contains,
-        result_quality_gt=result_quality_gt,
-        result_quality_gte=result_quality_gte,
         result_quality_in=result_quality_in,
         result_quality_isnull=result_quality_isnull,
-        result_quality_lt=result_quality_lt,
-        result_quality_lte=result_quality_lte,
         result_quality_ob_id=result_quality_ob_id,
         result_quality_ob_id_in=result_quality_ob_id_in,
         result_quality_passes_test=result_quality_passes_test,
@@ -4480,14 +4741,13 @@ def sync_detailed(
         result_field_data_path_startswith=result_field_data_path_startswith,
         result_field_file_format=result_field_file_format,
         result_field_file_format_contains=result_field_file_format_contains,
-        result_field_gt=result_field_gt,
-        result_field_gte=result_field_gte,
         result_field_in=result_field_in,
         result_field_isnull=result_field_isnull,
-        result_field_lt=result_field_lt,
-        result_field_lte=result_field_lte,
         result_field_storage_location=result_field_storage_location,
         result_field_storage_status=result_field_storage_status,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -4546,12 +4806,8 @@ def sync_detailed(
         time_period_end_time_lt=time_period_end_time_lt,
         time_period_end_time_lte=time_period_end_time_lte,
         time_period_end_time_range=time_period_end_time_range,
-        time_period_gt=time_period_gt,
-        time_period_gte=time_period_gte,
         time_period_in=time_period_in,
         time_period_isnull=time_period_isnull,
-        time_period_lt=time_period_lt,
-        time_period_lte=time_period_lte,
         time_period_ob_id=time_period_ob_id,
         time_period_ob_id_in=time_period_ob_id_in,
         time_period_start_time=time_period_start_time,
@@ -4577,6 +4833,9 @@ def sync_detailed(
         title_range=title_range,
         title_regex=title_regex,
         title_startswith=title_startswith,
+        topic_category=topic_category,
+        topic_category_in=topic_category_in,
+        topic_category_isnull=topic_category_isnull,
         update_frequency=update_frequency,
         update_frequency_contains=update_frequency_contains,
         update_frequency_endswith=update_frequency_endswith,
@@ -4612,19 +4871,14 @@ def sync_detailed(
         uuid_regex=uuid_regex,
         uuid_startswith=uuid_startswith,
         valid_time_period=valid_time_period,
-        valid_time_period_gt=valid_time_period_gt,
-        valid_time_period_gte=valid_time_period_gte,
         valid_time_period_in=valid_time_period_in,
         valid_time_period_isnull=valid_time_period_isnull,
-        valid_time_period_lt=valid_time_period_lt,
-        valid_time_period_lte=valid_time_period_lte,
         vertical_extent=vertical_extent,
-        vertical_extent_gt=vertical_extent_gt,
-        vertical_extent_gte=vertical_extent_gte,
         vertical_extent_in=vertical_extent_in,
         vertical_extent_isnull=vertical_extent_isnull,
-        vertical_extent_lt=vertical_extent_lt,
-        vertical_extent_lte=vertical_extent_lte,
+        vocabulary_keywords=vocabulary_keywords,
+        vocabulary_keywords_in=vocabulary_keywords_in,
+        vocabulary_keywords_isnull=vocabulary_keywords_isnull,
     )
 
     response = client.get_httpx_client().request(
@@ -4733,6 +4987,9 @@ def sync(
     data_published_time_week: float | Unset = UNSET,
     data_published_time_week_day: float | Unset = UNSET,
     data_published_time_year: float | Unset = UNSET,
+    discovery_keywords: list[int] | Unset = UNSET,
+    discovery_keywords_in: list[int] | Unset = UNSET,
+    discovery_keywords_isnull: bool | Unset = UNSET,
     discovery_keywords_name: str | Unset = UNSET,
     discovery_keywords_name_contains: str | Unset = UNSET,
     doi_published_time: datetime.datetime | Unset = UNSET,
@@ -4783,6 +5040,12 @@ def sync(
     dont_harvest_from_projects_range: list[bool] | Unset = UNSET,
     dont_harvest_from_projects_regex: bool | Unset = UNSET,
     dont_harvest_from_projects_startswith: bool | Unset = UNSET,
+    drsdataset: list[int] | Unset = UNSET,
+    drsdataset_in: list[int] | Unset = UNSET,
+    drsdataset_isnull: bool | Unset = UNSET,
+    external_citations: list[int] | Unset = UNSET,
+    external_citations_in: list[int] | Unset = UNSET,
+    external_citations_isnull: bool | Unset = UNSET,
     feature_of_interest: str | Unset = UNSET,
     feature_of_interest_contains: str | Unset = UNSET,
     feature_of_interest_endswith: str | Unset = UNSET,
@@ -4807,12 +5070,8 @@ def sync(
     geographic_extent_east_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_range: list[float] | Unset = UNSET,
-    geographic_extent_gt: int | Unset = UNSET,
-    geographic_extent_gte: int | Unset = UNSET,
     geographic_extent_in: list[int] | Unset = UNSET,
     geographic_extent_isnull: bool | Unset = UNSET,
-    geographic_extent_lt: int | Unset = UNSET,
-    geographic_extent_lte: int | Unset = UNSET,
     geographic_extent_north_bound_latitude: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gt: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gte: float | Unset = UNSET,
@@ -4833,6 +5092,15 @@ def sync(
     geographic_extent_west_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_range: list[float] | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    inspire_theme: list[int] | Unset = UNSET,
+    inspire_theme_in: list[int] | Unset = UNSET,
+    inspire_theme_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -4930,6 +5198,9 @@ def sync(
     latest_data_update_time_week_day: float | Unset = UNSET,
     latest_data_update_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
     non_geographic_flag: bool | Unset = UNSET,
     non_geographic_flag_contains: bool | Unset = UNSET,
     non_geographic_flag_endswith: bool | Unset = UNSET,
@@ -4947,6 +5218,9 @@ def sync(
     non_geographic_flag_range: list[bool] | Unset = UNSET,
     non_geographic_flag_regex: bool | Unset = UNSET,
     non_geographic_flag_startswith: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -4965,37 +5239,40 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    object_observation: list[int] | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    permissions: list[int] | Unset = UNSET,
     permissions_access_category: ObservationsListAccessCategory | Unset = UNSET,
     permissions_access_category_in: list[str] | Unset = UNSET,
     permissions_access_roles: str | Unset = UNSET,
     permissions_access_roles_in: list[str] | Unset = UNSET,
+    permissions_in: list[int] | Unset = UNSET,
+    permissions_isnull: bool | Unset = UNSET,
+    phenomena: list[int] | Unset = UNSET,
+    phenomena_in: list[int] | Unset = UNSET,
+    phenomena_isnull: bool | Unset = UNSET,
     procedure_acquisition: int | Unset = UNSET,
-    procedure_acquisition_gt: int | Unset = UNSET,
-    procedure_acquisition_gte: int | Unset = UNSET,
     procedure_acquisition_in: list[int] | Unset = UNSET,
     procedure_acquisition_isnull: bool | Unset = UNSET,
-    procedure_acquisition_lt: int | Unset = UNSET,
-    procedure_acquisition_lte: int | Unset = UNSET,
     procedure_acquisition_ob_id: int | Unset = UNSET,
     procedure_acquisition_ob_id_in: list[int] | Unset = UNSET,
     procedure_acquisition_uuid: str | Unset = UNSET,
     procedure_acquisition_uuid_in: list[str] | Unset = UNSET,
     procedure_composite_process: int | Unset = UNSET,
-    procedure_composite_process_gt: int | Unset = UNSET,
-    procedure_composite_process_gte: int | Unset = UNSET,
     procedure_composite_process_in: list[int] | Unset = UNSET,
     procedure_composite_process_isnull: bool | Unset = UNSET,
-    procedure_composite_process_lt: int | Unset = UNSET,
-    procedure_composite_process_lte: int | Unset = UNSET,
     procedure_computation: int | Unset = UNSET,
-    procedure_computation_gt: int | Unset = UNSET,
-    procedure_computation_gte: int | Unset = UNSET,
     procedure_computation_in: list[int] | Unset = UNSET,
     procedure_computation_isnull: bool | Unset = UNSET,
-    procedure_computation_lt: int | Unset = UNSET,
-    procedure_computation_lte: int | Unset = UNSET,
     procedure_description: str | Unset = UNSET,
     procedure_description_contains: str | Unset = UNSET,
     procedure_description_endswith: str | Unset = UNSET,
@@ -5013,6 +5290,9 @@ def sync(
     procedure_description_range: list[str] | Unset = UNSET,
     procedure_description_regex: str | Unset = UNSET,
     procedure_description_startswith: str | Unset = UNSET,
+    projects: list[int] | Unset = UNSET,
+    projects_in: list[int] | Unset = UNSET,
+    projects_isnull: bool | Unset = UNSET,
     projects_ob_id: int | Unset = UNSET,
     projects_ob_id_in: list[int] | Unset = UNSET,
     projects_uuid: str | Unset = UNSET,
@@ -5035,12 +5315,11 @@ def sync(
     publication_state_regex: str | Unset = UNSET,
     publication_state_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    relatedobservationinfo: list[int] | Unset = UNSET,
+    relatedobservationinfo_in: list[int] | Unset = UNSET,
+    relatedobservationinfo_isnull: bool | Unset = UNSET,
     removed_data_reason: str | Unset = UNSET,
     removed_data_reason_contains: str | Unset = UNSET,
     removed_data_reason_endswith: str | Unset = UNSET,
@@ -5106,6 +5385,9 @@ def sync(
     resolution_range: list[str] | Unset = UNSET,
     resolution_regex: str | Unset = UNSET,
     resolution_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
     result_quality: int | Unset = UNSET,
     result_quality_date: datetime.date | Unset = UNSET,
     result_quality_date_gt: datetime.date | Unset = UNSET,
@@ -5115,12 +5397,8 @@ def sync(
     result_quality_date_range: list[datetime.date] | Unset = UNSET,
     result_quality_explanation: str | Unset = UNSET,
     result_quality_explanation_contains: str | Unset = UNSET,
-    result_quality_gt: int | Unset = UNSET,
-    result_quality_gte: int | Unset = UNSET,
     result_quality_in: list[int] | Unset = UNSET,
     result_quality_isnull: bool | Unset = UNSET,
-    result_quality_lt: int | Unset = UNSET,
-    result_quality_lte: int | Unset = UNSET,
     result_quality_ob_id: int | Unset = UNSET,
     result_quality_ob_id_in: list[int] | Unset = UNSET,
     result_quality_passes_test: bool | Unset = UNSET,
@@ -5132,14 +5410,13 @@ def sync(
     result_field_data_path_startswith: str | Unset = UNSET,
     result_field_file_format: str | Unset = UNSET,
     result_field_file_format_contains: str | Unset = UNSET,
-    result_field_gt: int | Unset = UNSET,
-    result_field_gte: int | Unset = UNSET,
     result_field_in: list[int] | Unset = UNSET,
     result_field_isnull: bool | Unset = UNSET,
-    result_field_lt: int | Unset = UNSET,
-    result_field_lte: int | Unset = UNSET,
     result_field_storage_location: ObservationsListStorageLocation | Unset = UNSET,
     result_field_storage_status: ObservationsListStorageStatus | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -5198,12 +5475,8 @@ def sync(
     time_period_end_time_lt: datetime.datetime | Unset = UNSET,
     time_period_end_time_lte: datetime.datetime | Unset = UNSET,
     time_period_end_time_range: list[datetime.datetime] | Unset = UNSET,
-    time_period_gt: int | Unset = UNSET,
-    time_period_gte: int | Unset = UNSET,
     time_period_in: list[int] | Unset = UNSET,
     time_period_isnull: bool | Unset = UNSET,
-    time_period_lt: int | Unset = UNSET,
-    time_period_lte: int | Unset = UNSET,
     time_period_ob_id: int | Unset = UNSET,
     time_period_ob_id_in: list[int] | Unset = UNSET,
     time_period_start_time: datetime.datetime | Unset = UNSET,
@@ -5229,6 +5502,9 @@ def sync(
     title_range: list[str] | Unset = UNSET,
     title_regex: str | Unset = UNSET,
     title_startswith: str | Unset = UNSET,
+    topic_category: list[int] | Unset = UNSET,
+    topic_category_in: list[int] | Unset = UNSET,
+    topic_category_isnull: bool | Unset = UNSET,
     update_frequency: ObservationsListDataUpdateFrequency | Unset = UNSET,
     update_frequency_contains: str | Unset = UNSET,
     update_frequency_endswith: str | Unset = UNSET,
@@ -5264,19 +5540,14 @@ def sync(
     uuid_regex: str | Unset = UNSET,
     uuid_startswith: str | Unset = UNSET,
     valid_time_period: int | Unset = UNSET,
-    valid_time_period_gt: int | Unset = UNSET,
-    valid_time_period_gte: int | Unset = UNSET,
     valid_time_period_in: list[int] | Unset = UNSET,
     valid_time_period_isnull: bool | Unset = UNSET,
-    valid_time_period_lt: int | Unset = UNSET,
-    valid_time_period_lte: int | Unset = UNSET,
     vertical_extent: int | Unset = UNSET,
-    vertical_extent_gt: int | Unset = UNSET,
-    vertical_extent_gte: int | Unset = UNSET,
     vertical_extent_in: list[int] | Unset = UNSET,
     vertical_extent_isnull: bool | Unset = UNSET,
-    vertical_extent_lt: int | Unset = UNSET,
-    vertical_extent_lte: int | Unset = UNSET,
+    vocabulary_keywords: list[int] | Unset = UNSET,
+    vocabulary_keywords_in: list[int] | Unset = UNSET,
+    vocabulary_keywords_isnull: bool | Unset = UNSET,
 ) -> PaginatedObservationReadList | None:
     """Get a list of Observation objects.
 
@@ -5377,6 +5648,9 @@ def sync(
         data_published_time_week (float | Unset):
         data_published_time_week_day (float | Unset):
         data_published_time_year (float | Unset):
+        discovery_keywords (list[int] | Unset):
+        discovery_keywords_in (list[int] | Unset):
+        discovery_keywords_isnull (bool | Unset):
         discovery_keywords_name (str | Unset):
         discovery_keywords_name_contains (str | Unset):
         doi_published_time (datetime.datetime | Unset):
@@ -5427,6 +5701,12 @@ def sync(
         dont_harvest_from_projects_range (list[bool] | Unset):
         dont_harvest_from_projects_regex (bool | Unset):
         dont_harvest_from_projects_startswith (bool | Unset):
+        drsdataset (list[int] | Unset):
+        drsdataset_in (list[int] | Unset):
+        drsdataset_isnull (bool | Unset):
+        external_citations (list[int] | Unset):
+        external_citations_in (list[int] | Unset):
+        external_citations_isnull (bool | Unset):
         feature_of_interest (str | Unset):
         feature_of_interest_contains (str | Unset):
         feature_of_interest_endswith (str | Unset):
@@ -5451,12 +5731,8 @@ def sync(
         geographic_extent_east_bound_longitude_lt (float | Unset):
         geographic_extent_east_bound_longitude_lte (float | Unset):
         geographic_extent_east_bound_longitude_range (list[float] | Unset):
-        geographic_extent_gt (int | Unset):
-        geographic_extent_gte (int | Unset):
         geographic_extent_in (list[int] | Unset):
         geographic_extent_isnull (bool | Unset):
-        geographic_extent_lt (int | Unset):
-        geographic_extent_lte (int | Unset):
         geographic_extent_north_bound_latitude (float | Unset):
         geographic_extent_north_bound_latitude_gt (float | Unset):
         geographic_extent_north_bound_latitude_gte (float | Unset):
@@ -5477,6 +5753,15 @@ def sync(
         geographic_extent_west_bound_longitude_lt (float | Unset):
         geographic_extent_west_bound_longitude_lte (float | Unset):
         geographic_extent_west_bound_longitude_range (list[float] | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        inspire_theme (list[int] | Unset):
+        inspire_theme_in (list[int] | Unset):
+        inspire_theme_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -5574,6 +5859,9 @@ def sync(
         latest_data_update_time_week_day (float | Unset):
         latest_data_update_time_year (float | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
         non_geographic_flag (bool | Unset):
         non_geographic_flag_contains (bool | Unset):
         non_geographic_flag_endswith (bool | Unset):
@@ -5591,6 +5879,9 @@ def sync(
         non_geographic_flag_range (list[bool] | Unset):
         non_geographic_flag_regex (bool | Unset):
         non_geographic_flag_startswith (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -5609,37 +5900,40 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        object_observation (list[int] | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        permissions (list[int] | Unset):
         permissions_access_category (ObservationsListAccessCategory | Unset):
         permissions_access_category_in (list[str] | Unset):
         permissions_access_roles (str | Unset):
         permissions_access_roles_in (list[str] | Unset):
+        permissions_in (list[int] | Unset):
+        permissions_isnull (bool | Unset):
+        phenomena (list[int] | Unset):
+        phenomena_in (list[int] | Unset):
+        phenomena_isnull (bool | Unset):
         procedure_acquisition (int | Unset):
-        procedure_acquisition_gt (int | Unset):
-        procedure_acquisition_gte (int | Unset):
         procedure_acquisition_in (list[int] | Unset):
         procedure_acquisition_isnull (bool | Unset):
-        procedure_acquisition_lt (int | Unset):
-        procedure_acquisition_lte (int | Unset):
         procedure_acquisition_ob_id (int | Unset):
         procedure_acquisition_ob_id_in (list[int] | Unset):
         procedure_acquisition_uuid (str | Unset):
         procedure_acquisition_uuid_in (list[str] | Unset):
         procedure_composite_process (int | Unset):
-        procedure_composite_process_gt (int | Unset):
-        procedure_composite_process_gte (int | Unset):
         procedure_composite_process_in (list[int] | Unset):
         procedure_composite_process_isnull (bool | Unset):
-        procedure_composite_process_lt (int | Unset):
-        procedure_composite_process_lte (int | Unset):
         procedure_computation (int | Unset):
-        procedure_computation_gt (int | Unset):
-        procedure_computation_gte (int | Unset):
         procedure_computation_in (list[int] | Unset):
         procedure_computation_isnull (bool | Unset):
-        procedure_computation_lt (int | Unset):
-        procedure_computation_lte (int | Unset):
         procedure_description (str | Unset):
         procedure_description_contains (str | Unset):
         procedure_description_endswith (str | Unset):
@@ -5657,6 +5951,9 @@ def sync(
         procedure_description_range (list[str] | Unset):
         procedure_description_regex (str | Unset):
         procedure_description_startswith (str | Unset):
+        projects (list[int] | Unset):
+        projects_in (list[int] | Unset):
+        projects_isnull (bool | Unset):
         projects_ob_id (int | Unset):
         projects_ob_id_in (list[int] | Unset):
         projects_uuid (str | Unset):
@@ -5679,12 +5976,11 @@ def sync(
         publication_state_regex (str | Unset):
         publication_state_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        relatedobservationinfo (list[int] | Unset):
+        relatedobservationinfo_in (list[int] | Unset):
+        relatedobservationinfo_isnull (bool | Unset):
         removed_data_reason (str | Unset):
         removed_data_reason_contains (str | Unset):
         removed_data_reason_endswith (str | Unset):
@@ -5750,6 +6046,9 @@ def sync(
         resolution_range (list[str] | Unset):
         resolution_regex (str | Unset):
         resolution_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
         result_quality (int | Unset):
         result_quality_date (datetime.date | Unset):
         result_quality_date_gt (datetime.date | Unset):
@@ -5759,12 +6058,8 @@ def sync(
         result_quality_date_range (list[datetime.date] | Unset):
         result_quality_explanation (str | Unset):
         result_quality_explanation_contains (str | Unset):
-        result_quality_gt (int | Unset):
-        result_quality_gte (int | Unset):
         result_quality_in (list[int] | Unset):
         result_quality_isnull (bool | Unset):
-        result_quality_lt (int | Unset):
-        result_quality_lte (int | Unset):
         result_quality_ob_id (int | Unset):
         result_quality_ob_id_in (list[int] | Unset):
         result_quality_passes_test (bool | Unset):
@@ -5776,14 +6071,13 @@ def sync(
         result_field_data_path_startswith (str | Unset):
         result_field_file_format (str | Unset):
         result_field_file_format_contains (str | Unset):
-        result_field_gt (int | Unset):
-        result_field_gte (int | Unset):
         result_field_in (list[int] | Unset):
         result_field_isnull (bool | Unset):
-        result_field_lt (int | Unset):
-        result_field_lte (int | Unset):
         result_field_storage_location (ObservationsListStorageLocation | Unset):
         result_field_storage_status (ObservationsListStorageStatus | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -5842,12 +6136,8 @@ def sync(
         time_period_end_time_lt (datetime.datetime | Unset):
         time_period_end_time_lte (datetime.datetime | Unset):
         time_period_end_time_range (list[datetime.datetime] | Unset):
-        time_period_gt (int | Unset):
-        time_period_gte (int | Unset):
         time_period_in (list[int] | Unset):
         time_period_isnull (bool | Unset):
-        time_period_lt (int | Unset):
-        time_period_lte (int | Unset):
         time_period_ob_id (int | Unset):
         time_period_ob_id_in (list[int] | Unset):
         time_period_start_time (datetime.datetime | Unset):
@@ -5873,6 +6163,9 @@ def sync(
         title_range (list[str] | Unset):
         title_regex (str | Unset):
         title_startswith (str | Unset):
+        topic_category (list[int] | Unset):
+        topic_category_in (list[int] | Unset):
+        topic_category_isnull (bool | Unset):
         update_frequency (ObservationsListDataUpdateFrequency | Unset):
         update_frequency_contains (str | Unset):
         update_frequency_endswith (str | Unset):
@@ -5908,19 +6201,14 @@ def sync(
         uuid_regex (str | Unset):
         uuid_startswith (str | Unset):
         valid_time_period (int | Unset):
-        valid_time_period_gt (int | Unset):
-        valid_time_period_gte (int | Unset):
         valid_time_period_in (list[int] | Unset):
         valid_time_period_isnull (bool | Unset):
-        valid_time_period_lt (int | Unset):
-        valid_time_period_lte (int | Unset):
         vertical_extent (int | Unset):
-        vertical_extent_gt (int | Unset):
-        vertical_extent_gte (int | Unset):
         vertical_extent_in (list[int] | Unset):
         vertical_extent_isnull (bool | Unset):
-        vertical_extent_lt (int | Unset):
-        vertical_extent_lte (int | Unset):
+        vocabulary_keywords (list[int] | Unset):
+        vocabulary_keywords_in (list[int] | Unset):
+        vocabulary_keywords_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -6028,6 +6316,9 @@ def sync(
         data_published_time_week=data_published_time_week,
         data_published_time_week_day=data_published_time_week_day,
         data_published_time_year=data_published_time_year,
+        discovery_keywords=discovery_keywords,
+        discovery_keywords_in=discovery_keywords_in,
+        discovery_keywords_isnull=discovery_keywords_isnull,
         discovery_keywords_name=discovery_keywords_name,
         discovery_keywords_name_contains=discovery_keywords_name_contains,
         doi_published_time=doi_published_time,
@@ -6078,6 +6369,12 @@ def sync(
         dont_harvest_from_projects_range=dont_harvest_from_projects_range,
         dont_harvest_from_projects_regex=dont_harvest_from_projects_regex,
         dont_harvest_from_projects_startswith=dont_harvest_from_projects_startswith,
+        drsdataset=drsdataset,
+        drsdataset_in=drsdataset_in,
+        drsdataset_isnull=drsdataset_isnull,
+        external_citations=external_citations,
+        external_citations_in=external_citations_in,
+        external_citations_isnull=external_citations_isnull,
         feature_of_interest=feature_of_interest,
         feature_of_interest_contains=feature_of_interest_contains,
         feature_of_interest_endswith=feature_of_interest_endswith,
@@ -6102,12 +6399,8 @@ def sync(
         geographic_extent_east_bound_longitude_lt=geographic_extent_east_bound_longitude_lt,
         geographic_extent_east_bound_longitude_lte=geographic_extent_east_bound_longitude_lte,
         geographic_extent_east_bound_longitude_range=geographic_extent_east_bound_longitude_range,
-        geographic_extent_gt=geographic_extent_gt,
-        geographic_extent_gte=geographic_extent_gte,
         geographic_extent_in=geographic_extent_in,
         geographic_extent_isnull=geographic_extent_isnull,
-        geographic_extent_lt=geographic_extent_lt,
-        geographic_extent_lte=geographic_extent_lte,
         geographic_extent_north_bound_latitude=geographic_extent_north_bound_latitude,
         geographic_extent_north_bound_latitude_gt=geographic_extent_north_bound_latitude_gt,
         geographic_extent_north_bound_latitude_gte=geographic_extent_north_bound_latitude_gte,
@@ -6128,6 +6421,15 @@ def sync(
         geographic_extent_west_bound_longitude_lt=geographic_extent_west_bound_longitude_lt,
         geographic_extent_west_bound_longitude_lte=geographic_extent_west_bound_longitude_lte,
         geographic_extent_west_bound_longitude_range=geographic_extent_west_bound_longitude_range,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        inspire_theme=inspire_theme,
+        inspire_theme_in=inspire_theme_in,
+        inspire_theme_isnull=inspire_theme_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -6225,6 +6527,9 @@ def sync(
         latest_data_update_time_week_day=latest_data_update_time_week_day,
         latest_data_update_time_year=latest_data_update_time_year,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
         non_geographic_flag=non_geographic_flag,
         non_geographic_flag_contains=non_geographic_flag_contains,
         non_geographic_flag_endswith=non_geographic_flag_endswith,
@@ -6242,6 +6547,9 @@ def sync(
         non_geographic_flag_range=non_geographic_flag_range,
         non_geographic_flag_regex=non_geographic_flag_regex,
         non_geographic_flag_startswith=non_geographic_flag_startswith,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -6260,37 +6568,40 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        object_observation=object_observation,
+        object_observation_in=object_observation_in,
+        object_observation_isnull=object_observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        permissions=permissions,
         permissions_access_category=permissions_access_category,
         permissions_access_category_in=permissions_access_category_in,
         permissions_access_roles=permissions_access_roles,
         permissions_access_roles_in=permissions_access_roles_in,
+        permissions_in=permissions_in,
+        permissions_isnull=permissions_isnull,
+        phenomena=phenomena,
+        phenomena_in=phenomena_in,
+        phenomena_isnull=phenomena_isnull,
         procedure_acquisition=procedure_acquisition,
-        procedure_acquisition_gt=procedure_acquisition_gt,
-        procedure_acquisition_gte=procedure_acquisition_gte,
         procedure_acquisition_in=procedure_acquisition_in,
         procedure_acquisition_isnull=procedure_acquisition_isnull,
-        procedure_acquisition_lt=procedure_acquisition_lt,
-        procedure_acquisition_lte=procedure_acquisition_lte,
         procedure_acquisition_ob_id=procedure_acquisition_ob_id,
         procedure_acquisition_ob_id_in=procedure_acquisition_ob_id_in,
         procedure_acquisition_uuid=procedure_acquisition_uuid,
         procedure_acquisition_uuid_in=procedure_acquisition_uuid_in,
         procedure_composite_process=procedure_composite_process,
-        procedure_composite_process_gt=procedure_composite_process_gt,
-        procedure_composite_process_gte=procedure_composite_process_gte,
         procedure_composite_process_in=procedure_composite_process_in,
         procedure_composite_process_isnull=procedure_composite_process_isnull,
-        procedure_composite_process_lt=procedure_composite_process_lt,
-        procedure_composite_process_lte=procedure_composite_process_lte,
         procedure_computation=procedure_computation,
-        procedure_computation_gt=procedure_computation_gt,
-        procedure_computation_gte=procedure_computation_gte,
         procedure_computation_in=procedure_computation_in,
         procedure_computation_isnull=procedure_computation_isnull,
-        procedure_computation_lt=procedure_computation_lt,
-        procedure_computation_lte=procedure_computation_lte,
         procedure_description=procedure_description,
         procedure_description_contains=procedure_description_contains,
         procedure_description_endswith=procedure_description_endswith,
@@ -6308,6 +6619,9 @@ def sync(
         procedure_description_range=procedure_description_range,
         procedure_description_regex=procedure_description_regex,
         procedure_description_startswith=procedure_description_startswith,
+        projects=projects,
+        projects_in=projects_in,
+        projects_isnull=projects_isnull,
         projects_ob_id=projects_ob_id,
         projects_ob_id_in=projects_ob_id_in,
         projects_uuid=projects_uuid,
@@ -6330,12 +6644,11 @@ def sync(
         publication_state_regex=publication_state_regex,
         publication_state_startswith=publication_state_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        relatedobservationinfo=relatedobservationinfo,
+        relatedobservationinfo_in=relatedobservationinfo_in,
+        relatedobservationinfo_isnull=relatedobservationinfo_isnull,
         removed_data_reason=removed_data_reason,
         removed_data_reason_contains=removed_data_reason_contains,
         removed_data_reason_endswith=removed_data_reason_endswith,
@@ -6401,6 +6714,9 @@ def sync(
         resolution_range=resolution_range,
         resolution_regex=resolution_regex,
         resolution_startswith=resolution_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
         result_quality=result_quality,
         result_quality_date=result_quality_date,
         result_quality_date_gt=result_quality_date_gt,
@@ -6410,12 +6726,8 @@ def sync(
         result_quality_date_range=result_quality_date_range,
         result_quality_explanation=result_quality_explanation,
         result_quality_explanation_contains=result_quality_explanation_contains,
-        result_quality_gt=result_quality_gt,
-        result_quality_gte=result_quality_gte,
         result_quality_in=result_quality_in,
         result_quality_isnull=result_quality_isnull,
-        result_quality_lt=result_quality_lt,
-        result_quality_lte=result_quality_lte,
         result_quality_ob_id=result_quality_ob_id,
         result_quality_ob_id_in=result_quality_ob_id_in,
         result_quality_passes_test=result_quality_passes_test,
@@ -6427,14 +6739,13 @@ def sync(
         result_field_data_path_startswith=result_field_data_path_startswith,
         result_field_file_format=result_field_file_format,
         result_field_file_format_contains=result_field_file_format_contains,
-        result_field_gt=result_field_gt,
-        result_field_gte=result_field_gte,
         result_field_in=result_field_in,
         result_field_isnull=result_field_isnull,
-        result_field_lt=result_field_lt,
-        result_field_lte=result_field_lte,
         result_field_storage_location=result_field_storage_location,
         result_field_storage_status=result_field_storage_status,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -6493,12 +6804,8 @@ def sync(
         time_period_end_time_lt=time_period_end_time_lt,
         time_period_end_time_lte=time_period_end_time_lte,
         time_period_end_time_range=time_period_end_time_range,
-        time_period_gt=time_period_gt,
-        time_period_gte=time_period_gte,
         time_period_in=time_period_in,
         time_period_isnull=time_period_isnull,
-        time_period_lt=time_period_lt,
-        time_period_lte=time_period_lte,
         time_period_ob_id=time_period_ob_id,
         time_period_ob_id_in=time_period_ob_id_in,
         time_period_start_time=time_period_start_time,
@@ -6524,6 +6831,9 @@ def sync(
         title_range=title_range,
         title_regex=title_regex,
         title_startswith=title_startswith,
+        topic_category=topic_category,
+        topic_category_in=topic_category_in,
+        topic_category_isnull=topic_category_isnull,
         update_frequency=update_frequency,
         update_frequency_contains=update_frequency_contains,
         update_frequency_endswith=update_frequency_endswith,
@@ -6559,19 +6869,14 @@ def sync(
         uuid_regex=uuid_regex,
         uuid_startswith=uuid_startswith,
         valid_time_period=valid_time_period,
-        valid_time_period_gt=valid_time_period_gt,
-        valid_time_period_gte=valid_time_period_gte,
         valid_time_period_in=valid_time_period_in,
         valid_time_period_isnull=valid_time_period_isnull,
-        valid_time_period_lt=valid_time_period_lt,
-        valid_time_period_lte=valid_time_period_lte,
         vertical_extent=vertical_extent,
-        vertical_extent_gt=vertical_extent_gt,
-        vertical_extent_gte=vertical_extent_gte,
         vertical_extent_in=vertical_extent_in,
         vertical_extent_isnull=vertical_extent_isnull,
-        vertical_extent_lt=vertical_extent_lt,
-        vertical_extent_lte=vertical_extent_lte,
+        vocabulary_keywords=vocabulary_keywords,
+        vocabulary_keywords_in=vocabulary_keywords_in,
+        vocabulary_keywords_isnull=vocabulary_keywords_isnull,
     ).parsed
 
 
@@ -6674,6 +6979,9 @@ async def asyncio_detailed(
     data_published_time_week: float | Unset = UNSET,
     data_published_time_week_day: float | Unset = UNSET,
     data_published_time_year: float | Unset = UNSET,
+    discovery_keywords: list[int] | Unset = UNSET,
+    discovery_keywords_in: list[int] | Unset = UNSET,
+    discovery_keywords_isnull: bool | Unset = UNSET,
     discovery_keywords_name: str | Unset = UNSET,
     discovery_keywords_name_contains: str | Unset = UNSET,
     doi_published_time: datetime.datetime | Unset = UNSET,
@@ -6724,6 +7032,12 @@ async def asyncio_detailed(
     dont_harvest_from_projects_range: list[bool] | Unset = UNSET,
     dont_harvest_from_projects_regex: bool | Unset = UNSET,
     dont_harvest_from_projects_startswith: bool | Unset = UNSET,
+    drsdataset: list[int] | Unset = UNSET,
+    drsdataset_in: list[int] | Unset = UNSET,
+    drsdataset_isnull: bool | Unset = UNSET,
+    external_citations: list[int] | Unset = UNSET,
+    external_citations_in: list[int] | Unset = UNSET,
+    external_citations_isnull: bool | Unset = UNSET,
     feature_of_interest: str | Unset = UNSET,
     feature_of_interest_contains: str | Unset = UNSET,
     feature_of_interest_endswith: str | Unset = UNSET,
@@ -6748,12 +7062,8 @@ async def asyncio_detailed(
     geographic_extent_east_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_range: list[float] | Unset = UNSET,
-    geographic_extent_gt: int | Unset = UNSET,
-    geographic_extent_gte: int | Unset = UNSET,
     geographic_extent_in: list[int] | Unset = UNSET,
     geographic_extent_isnull: bool | Unset = UNSET,
-    geographic_extent_lt: int | Unset = UNSET,
-    geographic_extent_lte: int | Unset = UNSET,
     geographic_extent_north_bound_latitude: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gt: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gte: float | Unset = UNSET,
@@ -6774,6 +7084,15 @@ async def asyncio_detailed(
     geographic_extent_west_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_range: list[float] | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    inspire_theme: list[int] | Unset = UNSET,
+    inspire_theme_in: list[int] | Unset = UNSET,
+    inspire_theme_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -6871,6 +7190,9 @@ async def asyncio_detailed(
     latest_data_update_time_week_day: float | Unset = UNSET,
     latest_data_update_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
     non_geographic_flag: bool | Unset = UNSET,
     non_geographic_flag_contains: bool | Unset = UNSET,
     non_geographic_flag_endswith: bool | Unset = UNSET,
@@ -6888,6 +7210,9 @@ async def asyncio_detailed(
     non_geographic_flag_range: list[bool] | Unset = UNSET,
     non_geographic_flag_regex: bool | Unset = UNSET,
     non_geographic_flag_startswith: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -6906,37 +7231,40 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    object_observation: list[int] | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    permissions: list[int] | Unset = UNSET,
     permissions_access_category: ObservationsListAccessCategory | Unset = UNSET,
     permissions_access_category_in: list[str] | Unset = UNSET,
     permissions_access_roles: str | Unset = UNSET,
     permissions_access_roles_in: list[str] | Unset = UNSET,
+    permissions_in: list[int] | Unset = UNSET,
+    permissions_isnull: bool | Unset = UNSET,
+    phenomena: list[int] | Unset = UNSET,
+    phenomena_in: list[int] | Unset = UNSET,
+    phenomena_isnull: bool | Unset = UNSET,
     procedure_acquisition: int | Unset = UNSET,
-    procedure_acquisition_gt: int | Unset = UNSET,
-    procedure_acquisition_gte: int | Unset = UNSET,
     procedure_acquisition_in: list[int] | Unset = UNSET,
     procedure_acquisition_isnull: bool | Unset = UNSET,
-    procedure_acquisition_lt: int | Unset = UNSET,
-    procedure_acquisition_lte: int | Unset = UNSET,
     procedure_acquisition_ob_id: int | Unset = UNSET,
     procedure_acquisition_ob_id_in: list[int] | Unset = UNSET,
     procedure_acquisition_uuid: str | Unset = UNSET,
     procedure_acquisition_uuid_in: list[str] | Unset = UNSET,
     procedure_composite_process: int | Unset = UNSET,
-    procedure_composite_process_gt: int | Unset = UNSET,
-    procedure_composite_process_gte: int | Unset = UNSET,
     procedure_composite_process_in: list[int] | Unset = UNSET,
     procedure_composite_process_isnull: bool | Unset = UNSET,
-    procedure_composite_process_lt: int | Unset = UNSET,
-    procedure_composite_process_lte: int | Unset = UNSET,
     procedure_computation: int | Unset = UNSET,
-    procedure_computation_gt: int | Unset = UNSET,
-    procedure_computation_gte: int | Unset = UNSET,
     procedure_computation_in: list[int] | Unset = UNSET,
     procedure_computation_isnull: bool | Unset = UNSET,
-    procedure_computation_lt: int | Unset = UNSET,
-    procedure_computation_lte: int | Unset = UNSET,
     procedure_description: str | Unset = UNSET,
     procedure_description_contains: str | Unset = UNSET,
     procedure_description_endswith: str | Unset = UNSET,
@@ -6954,6 +7282,9 @@ async def asyncio_detailed(
     procedure_description_range: list[str] | Unset = UNSET,
     procedure_description_regex: str | Unset = UNSET,
     procedure_description_startswith: str | Unset = UNSET,
+    projects: list[int] | Unset = UNSET,
+    projects_in: list[int] | Unset = UNSET,
+    projects_isnull: bool | Unset = UNSET,
     projects_ob_id: int | Unset = UNSET,
     projects_ob_id_in: list[int] | Unset = UNSET,
     projects_uuid: str | Unset = UNSET,
@@ -6976,12 +7307,11 @@ async def asyncio_detailed(
     publication_state_regex: str | Unset = UNSET,
     publication_state_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    relatedobservationinfo: list[int] | Unset = UNSET,
+    relatedobservationinfo_in: list[int] | Unset = UNSET,
+    relatedobservationinfo_isnull: bool | Unset = UNSET,
     removed_data_reason: str | Unset = UNSET,
     removed_data_reason_contains: str | Unset = UNSET,
     removed_data_reason_endswith: str | Unset = UNSET,
@@ -7047,6 +7377,9 @@ async def asyncio_detailed(
     resolution_range: list[str] | Unset = UNSET,
     resolution_regex: str | Unset = UNSET,
     resolution_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
     result_quality: int | Unset = UNSET,
     result_quality_date: datetime.date | Unset = UNSET,
     result_quality_date_gt: datetime.date | Unset = UNSET,
@@ -7056,12 +7389,8 @@ async def asyncio_detailed(
     result_quality_date_range: list[datetime.date] | Unset = UNSET,
     result_quality_explanation: str | Unset = UNSET,
     result_quality_explanation_contains: str | Unset = UNSET,
-    result_quality_gt: int | Unset = UNSET,
-    result_quality_gte: int | Unset = UNSET,
     result_quality_in: list[int] | Unset = UNSET,
     result_quality_isnull: bool | Unset = UNSET,
-    result_quality_lt: int | Unset = UNSET,
-    result_quality_lte: int | Unset = UNSET,
     result_quality_ob_id: int | Unset = UNSET,
     result_quality_ob_id_in: list[int] | Unset = UNSET,
     result_quality_passes_test: bool | Unset = UNSET,
@@ -7073,14 +7402,13 @@ async def asyncio_detailed(
     result_field_data_path_startswith: str | Unset = UNSET,
     result_field_file_format: str | Unset = UNSET,
     result_field_file_format_contains: str | Unset = UNSET,
-    result_field_gt: int | Unset = UNSET,
-    result_field_gte: int | Unset = UNSET,
     result_field_in: list[int] | Unset = UNSET,
     result_field_isnull: bool | Unset = UNSET,
-    result_field_lt: int | Unset = UNSET,
-    result_field_lte: int | Unset = UNSET,
     result_field_storage_location: ObservationsListStorageLocation | Unset = UNSET,
     result_field_storage_status: ObservationsListStorageStatus | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -7139,12 +7467,8 @@ async def asyncio_detailed(
     time_period_end_time_lt: datetime.datetime | Unset = UNSET,
     time_period_end_time_lte: datetime.datetime | Unset = UNSET,
     time_period_end_time_range: list[datetime.datetime] | Unset = UNSET,
-    time_period_gt: int | Unset = UNSET,
-    time_period_gte: int | Unset = UNSET,
     time_period_in: list[int] | Unset = UNSET,
     time_period_isnull: bool | Unset = UNSET,
-    time_period_lt: int | Unset = UNSET,
-    time_period_lte: int | Unset = UNSET,
     time_period_ob_id: int | Unset = UNSET,
     time_period_ob_id_in: list[int] | Unset = UNSET,
     time_period_start_time: datetime.datetime | Unset = UNSET,
@@ -7170,6 +7494,9 @@ async def asyncio_detailed(
     title_range: list[str] | Unset = UNSET,
     title_regex: str | Unset = UNSET,
     title_startswith: str | Unset = UNSET,
+    topic_category: list[int] | Unset = UNSET,
+    topic_category_in: list[int] | Unset = UNSET,
+    topic_category_isnull: bool | Unset = UNSET,
     update_frequency: ObservationsListDataUpdateFrequency | Unset = UNSET,
     update_frequency_contains: str | Unset = UNSET,
     update_frequency_endswith: str | Unset = UNSET,
@@ -7205,19 +7532,14 @@ async def asyncio_detailed(
     uuid_regex: str | Unset = UNSET,
     uuid_startswith: str | Unset = UNSET,
     valid_time_period: int | Unset = UNSET,
-    valid_time_period_gt: int | Unset = UNSET,
-    valid_time_period_gte: int | Unset = UNSET,
     valid_time_period_in: list[int] | Unset = UNSET,
     valid_time_period_isnull: bool | Unset = UNSET,
-    valid_time_period_lt: int | Unset = UNSET,
-    valid_time_period_lte: int | Unset = UNSET,
     vertical_extent: int | Unset = UNSET,
-    vertical_extent_gt: int | Unset = UNSET,
-    vertical_extent_gte: int | Unset = UNSET,
     vertical_extent_in: list[int] | Unset = UNSET,
     vertical_extent_isnull: bool | Unset = UNSET,
-    vertical_extent_lt: int | Unset = UNSET,
-    vertical_extent_lte: int | Unset = UNSET,
+    vocabulary_keywords: list[int] | Unset = UNSET,
+    vocabulary_keywords_in: list[int] | Unset = UNSET,
+    vocabulary_keywords_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedObservationReadList]:
     """Get a list of Observation objects.
 
@@ -7318,6 +7640,9 @@ async def asyncio_detailed(
         data_published_time_week (float | Unset):
         data_published_time_week_day (float | Unset):
         data_published_time_year (float | Unset):
+        discovery_keywords (list[int] | Unset):
+        discovery_keywords_in (list[int] | Unset):
+        discovery_keywords_isnull (bool | Unset):
         discovery_keywords_name (str | Unset):
         discovery_keywords_name_contains (str | Unset):
         doi_published_time (datetime.datetime | Unset):
@@ -7368,6 +7693,12 @@ async def asyncio_detailed(
         dont_harvest_from_projects_range (list[bool] | Unset):
         dont_harvest_from_projects_regex (bool | Unset):
         dont_harvest_from_projects_startswith (bool | Unset):
+        drsdataset (list[int] | Unset):
+        drsdataset_in (list[int] | Unset):
+        drsdataset_isnull (bool | Unset):
+        external_citations (list[int] | Unset):
+        external_citations_in (list[int] | Unset):
+        external_citations_isnull (bool | Unset):
         feature_of_interest (str | Unset):
         feature_of_interest_contains (str | Unset):
         feature_of_interest_endswith (str | Unset):
@@ -7392,12 +7723,8 @@ async def asyncio_detailed(
         geographic_extent_east_bound_longitude_lt (float | Unset):
         geographic_extent_east_bound_longitude_lte (float | Unset):
         geographic_extent_east_bound_longitude_range (list[float] | Unset):
-        geographic_extent_gt (int | Unset):
-        geographic_extent_gte (int | Unset):
         geographic_extent_in (list[int] | Unset):
         geographic_extent_isnull (bool | Unset):
-        geographic_extent_lt (int | Unset):
-        geographic_extent_lte (int | Unset):
         geographic_extent_north_bound_latitude (float | Unset):
         geographic_extent_north_bound_latitude_gt (float | Unset):
         geographic_extent_north_bound_latitude_gte (float | Unset):
@@ -7418,6 +7745,15 @@ async def asyncio_detailed(
         geographic_extent_west_bound_longitude_lt (float | Unset):
         geographic_extent_west_bound_longitude_lte (float | Unset):
         geographic_extent_west_bound_longitude_range (list[float] | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        inspire_theme (list[int] | Unset):
+        inspire_theme_in (list[int] | Unset):
+        inspire_theme_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -7515,6 +7851,9 @@ async def asyncio_detailed(
         latest_data_update_time_week_day (float | Unset):
         latest_data_update_time_year (float | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
         non_geographic_flag (bool | Unset):
         non_geographic_flag_contains (bool | Unset):
         non_geographic_flag_endswith (bool | Unset):
@@ -7532,6 +7871,9 @@ async def asyncio_detailed(
         non_geographic_flag_range (list[bool] | Unset):
         non_geographic_flag_regex (bool | Unset):
         non_geographic_flag_startswith (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -7550,37 +7892,40 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        object_observation (list[int] | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        permissions (list[int] | Unset):
         permissions_access_category (ObservationsListAccessCategory | Unset):
         permissions_access_category_in (list[str] | Unset):
         permissions_access_roles (str | Unset):
         permissions_access_roles_in (list[str] | Unset):
+        permissions_in (list[int] | Unset):
+        permissions_isnull (bool | Unset):
+        phenomena (list[int] | Unset):
+        phenomena_in (list[int] | Unset):
+        phenomena_isnull (bool | Unset):
         procedure_acquisition (int | Unset):
-        procedure_acquisition_gt (int | Unset):
-        procedure_acquisition_gte (int | Unset):
         procedure_acquisition_in (list[int] | Unset):
         procedure_acquisition_isnull (bool | Unset):
-        procedure_acquisition_lt (int | Unset):
-        procedure_acquisition_lte (int | Unset):
         procedure_acquisition_ob_id (int | Unset):
         procedure_acquisition_ob_id_in (list[int] | Unset):
         procedure_acquisition_uuid (str | Unset):
         procedure_acquisition_uuid_in (list[str] | Unset):
         procedure_composite_process (int | Unset):
-        procedure_composite_process_gt (int | Unset):
-        procedure_composite_process_gte (int | Unset):
         procedure_composite_process_in (list[int] | Unset):
         procedure_composite_process_isnull (bool | Unset):
-        procedure_composite_process_lt (int | Unset):
-        procedure_composite_process_lte (int | Unset):
         procedure_computation (int | Unset):
-        procedure_computation_gt (int | Unset):
-        procedure_computation_gte (int | Unset):
         procedure_computation_in (list[int] | Unset):
         procedure_computation_isnull (bool | Unset):
-        procedure_computation_lt (int | Unset):
-        procedure_computation_lte (int | Unset):
         procedure_description (str | Unset):
         procedure_description_contains (str | Unset):
         procedure_description_endswith (str | Unset):
@@ -7598,6 +7943,9 @@ async def asyncio_detailed(
         procedure_description_range (list[str] | Unset):
         procedure_description_regex (str | Unset):
         procedure_description_startswith (str | Unset):
+        projects (list[int] | Unset):
+        projects_in (list[int] | Unset):
+        projects_isnull (bool | Unset):
         projects_ob_id (int | Unset):
         projects_ob_id_in (list[int] | Unset):
         projects_uuid (str | Unset):
@@ -7620,12 +7968,11 @@ async def asyncio_detailed(
         publication_state_regex (str | Unset):
         publication_state_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        relatedobservationinfo (list[int] | Unset):
+        relatedobservationinfo_in (list[int] | Unset):
+        relatedobservationinfo_isnull (bool | Unset):
         removed_data_reason (str | Unset):
         removed_data_reason_contains (str | Unset):
         removed_data_reason_endswith (str | Unset):
@@ -7691,6 +8038,9 @@ async def asyncio_detailed(
         resolution_range (list[str] | Unset):
         resolution_regex (str | Unset):
         resolution_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
         result_quality (int | Unset):
         result_quality_date (datetime.date | Unset):
         result_quality_date_gt (datetime.date | Unset):
@@ -7700,12 +8050,8 @@ async def asyncio_detailed(
         result_quality_date_range (list[datetime.date] | Unset):
         result_quality_explanation (str | Unset):
         result_quality_explanation_contains (str | Unset):
-        result_quality_gt (int | Unset):
-        result_quality_gte (int | Unset):
         result_quality_in (list[int] | Unset):
         result_quality_isnull (bool | Unset):
-        result_quality_lt (int | Unset):
-        result_quality_lte (int | Unset):
         result_quality_ob_id (int | Unset):
         result_quality_ob_id_in (list[int] | Unset):
         result_quality_passes_test (bool | Unset):
@@ -7717,14 +8063,13 @@ async def asyncio_detailed(
         result_field_data_path_startswith (str | Unset):
         result_field_file_format (str | Unset):
         result_field_file_format_contains (str | Unset):
-        result_field_gt (int | Unset):
-        result_field_gte (int | Unset):
         result_field_in (list[int] | Unset):
         result_field_isnull (bool | Unset):
-        result_field_lt (int | Unset):
-        result_field_lte (int | Unset):
         result_field_storage_location (ObservationsListStorageLocation | Unset):
         result_field_storage_status (ObservationsListStorageStatus | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -7783,12 +8128,8 @@ async def asyncio_detailed(
         time_period_end_time_lt (datetime.datetime | Unset):
         time_period_end_time_lte (datetime.datetime | Unset):
         time_period_end_time_range (list[datetime.datetime] | Unset):
-        time_period_gt (int | Unset):
-        time_period_gte (int | Unset):
         time_period_in (list[int] | Unset):
         time_period_isnull (bool | Unset):
-        time_period_lt (int | Unset):
-        time_period_lte (int | Unset):
         time_period_ob_id (int | Unset):
         time_period_ob_id_in (list[int] | Unset):
         time_period_start_time (datetime.datetime | Unset):
@@ -7814,6 +8155,9 @@ async def asyncio_detailed(
         title_range (list[str] | Unset):
         title_regex (str | Unset):
         title_startswith (str | Unset):
+        topic_category (list[int] | Unset):
+        topic_category_in (list[int] | Unset):
+        topic_category_isnull (bool | Unset):
         update_frequency (ObservationsListDataUpdateFrequency | Unset):
         update_frequency_contains (str | Unset):
         update_frequency_endswith (str | Unset):
@@ -7849,19 +8193,14 @@ async def asyncio_detailed(
         uuid_regex (str | Unset):
         uuid_startswith (str | Unset):
         valid_time_period (int | Unset):
-        valid_time_period_gt (int | Unset):
-        valid_time_period_gte (int | Unset):
         valid_time_period_in (list[int] | Unset):
         valid_time_period_isnull (bool | Unset):
-        valid_time_period_lt (int | Unset):
-        valid_time_period_lte (int | Unset):
         vertical_extent (int | Unset):
-        vertical_extent_gt (int | Unset):
-        vertical_extent_gte (int | Unset):
         vertical_extent_in (list[int] | Unset):
         vertical_extent_isnull (bool | Unset):
-        vertical_extent_lt (int | Unset):
-        vertical_extent_lte (int | Unset):
+        vocabulary_keywords (list[int] | Unset):
+        vocabulary_keywords_in (list[int] | Unset):
+        vocabulary_keywords_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -7968,6 +8307,9 @@ async def asyncio_detailed(
         data_published_time_week=data_published_time_week,
         data_published_time_week_day=data_published_time_week_day,
         data_published_time_year=data_published_time_year,
+        discovery_keywords=discovery_keywords,
+        discovery_keywords_in=discovery_keywords_in,
+        discovery_keywords_isnull=discovery_keywords_isnull,
         discovery_keywords_name=discovery_keywords_name,
         discovery_keywords_name_contains=discovery_keywords_name_contains,
         doi_published_time=doi_published_time,
@@ -8018,6 +8360,12 @@ async def asyncio_detailed(
         dont_harvest_from_projects_range=dont_harvest_from_projects_range,
         dont_harvest_from_projects_regex=dont_harvest_from_projects_regex,
         dont_harvest_from_projects_startswith=dont_harvest_from_projects_startswith,
+        drsdataset=drsdataset,
+        drsdataset_in=drsdataset_in,
+        drsdataset_isnull=drsdataset_isnull,
+        external_citations=external_citations,
+        external_citations_in=external_citations_in,
+        external_citations_isnull=external_citations_isnull,
         feature_of_interest=feature_of_interest,
         feature_of_interest_contains=feature_of_interest_contains,
         feature_of_interest_endswith=feature_of_interest_endswith,
@@ -8042,12 +8390,8 @@ async def asyncio_detailed(
         geographic_extent_east_bound_longitude_lt=geographic_extent_east_bound_longitude_lt,
         geographic_extent_east_bound_longitude_lte=geographic_extent_east_bound_longitude_lte,
         geographic_extent_east_bound_longitude_range=geographic_extent_east_bound_longitude_range,
-        geographic_extent_gt=geographic_extent_gt,
-        geographic_extent_gte=geographic_extent_gte,
         geographic_extent_in=geographic_extent_in,
         geographic_extent_isnull=geographic_extent_isnull,
-        geographic_extent_lt=geographic_extent_lt,
-        geographic_extent_lte=geographic_extent_lte,
         geographic_extent_north_bound_latitude=geographic_extent_north_bound_latitude,
         geographic_extent_north_bound_latitude_gt=geographic_extent_north_bound_latitude_gt,
         geographic_extent_north_bound_latitude_gte=geographic_extent_north_bound_latitude_gte,
@@ -8068,6 +8412,15 @@ async def asyncio_detailed(
         geographic_extent_west_bound_longitude_lt=geographic_extent_west_bound_longitude_lt,
         geographic_extent_west_bound_longitude_lte=geographic_extent_west_bound_longitude_lte,
         geographic_extent_west_bound_longitude_range=geographic_extent_west_bound_longitude_range,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        inspire_theme=inspire_theme,
+        inspire_theme_in=inspire_theme_in,
+        inspire_theme_isnull=inspire_theme_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -8165,6 +8518,9 @@ async def asyncio_detailed(
         latest_data_update_time_week_day=latest_data_update_time_week_day,
         latest_data_update_time_year=latest_data_update_time_year,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
         non_geographic_flag=non_geographic_flag,
         non_geographic_flag_contains=non_geographic_flag_contains,
         non_geographic_flag_endswith=non_geographic_flag_endswith,
@@ -8182,6 +8538,9 @@ async def asyncio_detailed(
         non_geographic_flag_range=non_geographic_flag_range,
         non_geographic_flag_regex=non_geographic_flag_regex,
         non_geographic_flag_startswith=non_geographic_flag_startswith,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -8200,37 +8559,40 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        object_observation=object_observation,
+        object_observation_in=object_observation_in,
+        object_observation_isnull=object_observation_isnull,
+        observationcollection=observationcollection,
+        observationcollection_in=observationcollection_in,
+        observationcollection_isnull=observationcollection_isnull,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        permissions=permissions,
         permissions_access_category=permissions_access_category,
         permissions_access_category_in=permissions_access_category_in,
         permissions_access_roles=permissions_access_roles,
         permissions_access_roles_in=permissions_access_roles_in,
+        permissions_in=permissions_in,
+        permissions_isnull=permissions_isnull,
+        phenomena=phenomena,
+        phenomena_in=phenomena_in,
+        phenomena_isnull=phenomena_isnull,
         procedure_acquisition=procedure_acquisition,
-        procedure_acquisition_gt=procedure_acquisition_gt,
-        procedure_acquisition_gte=procedure_acquisition_gte,
         procedure_acquisition_in=procedure_acquisition_in,
         procedure_acquisition_isnull=procedure_acquisition_isnull,
-        procedure_acquisition_lt=procedure_acquisition_lt,
-        procedure_acquisition_lte=procedure_acquisition_lte,
         procedure_acquisition_ob_id=procedure_acquisition_ob_id,
         procedure_acquisition_ob_id_in=procedure_acquisition_ob_id_in,
         procedure_acquisition_uuid=procedure_acquisition_uuid,
         procedure_acquisition_uuid_in=procedure_acquisition_uuid_in,
         procedure_composite_process=procedure_composite_process,
-        procedure_composite_process_gt=procedure_composite_process_gt,
-        procedure_composite_process_gte=procedure_composite_process_gte,
         procedure_composite_process_in=procedure_composite_process_in,
         procedure_composite_process_isnull=procedure_composite_process_isnull,
-        procedure_composite_process_lt=procedure_composite_process_lt,
-        procedure_composite_process_lte=procedure_composite_process_lte,
         procedure_computation=procedure_computation,
-        procedure_computation_gt=procedure_computation_gt,
-        procedure_computation_gte=procedure_computation_gte,
         procedure_computation_in=procedure_computation_in,
         procedure_computation_isnull=procedure_computation_isnull,
-        procedure_computation_lt=procedure_computation_lt,
-        procedure_computation_lte=procedure_computation_lte,
         procedure_description=procedure_description,
         procedure_description_contains=procedure_description_contains,
         procedure_description_endswith=procedure_description_endswith,
@@ -8248,6 +8610,9 @@ async def asyncio_detailed(
         procedure_description_range=procedure_description_range,
         procedure_description_regex=procedure_description_regex,
         procedure_description_startswith=procedure_description_startswith,
+        projects=projects,
+        projects_in=projects_in,
+        projects_isnull=projects_isnull,
         projects_ob_id=projects_ob_id,
         projects_ob_id_in=projects_ob_id_in,
         projects_uuid=projects_uuid,
@@ -8270,12 +8635,11 @@ async def asyncio_detailed(
         publication_state_regex=publication_state_regex,
         publication_state_startswith=publication_state_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        relatedobservationinfo=relatedobservationinfo,
+        relatedobservationinfo_in=relatedobservationinfo_in,
+        relatedobservationinfo_isnull=relatedobservationinfo_isnull,
         removed_data_reason=removed_data_reason,
         removed_data_reason_contains=removed_data_reason_contains,
         removed_data_reason_endswith=removed_data_reason_endswith,
@@ -8341,6 +8705,9 @@ async def asyncio_detailed(
         resolution_range=resolution_range,
         resolution_regex=resolution_regex,
         resolution_startswith=resolution_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
         result_quality=result_quality,
         result_quality_date=result_quality_date,
         result_quality_date_gt=result_quality_date_gt,
@@ -8350,12 +8717,8 @@ async def asyncio_detailed(
         result_quality_date_range=result_quality_date_range,
         result_quality_explanation=result_quality_explanation,
         result_quality_explanation_contains=result_quality_explanation_contains,
-        result_quality_gt=result_quality_gt,
-        result_quality_gte=result_quality_gte,
         result_quality_in=result_quality_in,
         result_quality_isnull=result_quality_isnull,
-        result_quality_lt=result_quality_lt,
-        result_quality_lte=result_quality_lte,
         result_quality_ob_id=result_quality_ob_id,
         result_quality_ob_id_in=result_quality_ob_id_in,
         result_quality_passes_test=result_quality_passes_test,
@@ -8367,14 +8730,13 @@ async def asyncio_detailed(
         result_field_data_path_startswith=result_field_data_path_startswith,
         result_field_file_format=result_field_file_format,
         result_field_file_format_contains=result_field_file_format_contains,
-        result_field_gt=result_field_gt,
-        result_field_gte=result_field_gte,
         result_field_in=result_field_in,
         result_field_isnull=result_field_isnull,
-        result_field_lt=result_field_lt,
-        result_field_lte=result_field_lte,
         result_field_storage_location=result_field_storage_location,
         result_field_storage_status=result_field_storage_status,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -8433,12 +8795,8 @@ async def asyncio_detailed(
         time_period_end_time_lt=time_period_end_time_lt,
         time_period_end_time_lte=time_period_end_time_lte,
         time_period_end_time_range=time_period_end_time_range,
-        time_period_gt=time_period_gt,
-        time_period_gte=time_period_gte,
         time_period_in=time_period_in,
         time_period_isnull=time_period_isnull,
-        time_period_lt=time_period_lt,
-        time_period_lte=time_period_lte,
         time_period_ob_id=time_period_ob_id,
         time_period_ob_id_in=time_period_ob_id_in,
         time_period_start_time=time_period_start_time,
@@ -8464,6 +8822,9 @@ async def asyncio_detailed(
         title_range=title_range,
         title_regex=title_regex,
         title_startswith=title_startswith,
+        topic_category=topic_category,
+        topic_category_in=topic_category_in,
+        topic_category_isnull=topic_category_isnull,
         update_frequency=update_frequency,
         update_frequency_contains=update_frequency_contains,
         update_frequency_endswith=update_frequency_endswith,
@@ -8499,19 +8860,14 @@ async def asyncio_detailed(
         uuid_regex=uuid_regex,
         uuid_startswith=uuid_startswith,
         valid_time_period=valid_time_period,
-        valid_time_period_gt=valid_time_period_gt,
-        valid_time_period_gte=valid_time_period_gte,
         valid_time_period_in=valid_time_period_in,
         valid_time_period_isnull=valid_time_period_isnull,
-        valid_time_period_lt=valid_time_period_lt,
-        valid_time_period_lte=valid_time_period_lte,
         vertical_extent=vertical_extent,
-        vertical_extent_gt=vertical_extent_gt,
-        vertical_extent_gte=vertical_extent_gte,
         vertical_extent_in=vertical_extent_in,
         vertical_extent_isnull=vertical_extent_isnull,
-        vertical_extent_lt=vertical_extent_lt,
-        vertical_extent_lte=vertical_extent_lte,
+        vocabulary_keywords=vocabulary_keywords,
+        vocabulary_keywords_in=vocabulary_keywords_in,
+        vocabulary_keywords_isnull=vocabulary_keywords_isnull,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -8618,6 +8974,9 @@ async def asyncio(
     data_published_time_week: float | Unset = UNSET,
     data_published_time_week_day: float | Unset = UNSET,
     data_published_time_year: float | Unset = UNSET,
+    discovery_keywords: list[int] | Unset = UNSET,
+    discovery_keywords_in: list[int] | Unset = UNSET,
+    discovery_keywords_isnull: bool | Unset = UNSET,
     discovery_keywords_name: str | Unset = UNSET,
     discovery_keywords_name_contains: str | Unset = UNSET,
     doi_published_time: datetime.datetime | Unset = UNSET,
@@ -8668,6 +9027,12 @@ async def asyncio(
     dont_harvest_from_projects_range: list[bool] | Unset = UNSET,
     dont_harvest_from_projects_regex: bool | Unset = UNSET,
     dont_harvest_from_projects_startswith: bool | Unset = UNSET,
+    drsdataset: list[int] | Unset = UNSET,
+    drsdataset_in: list[int] | Unset = UNSET,
+    drsdataset_isnull: bool | Unset = UNSET,
+    external_citations: list[int] | Unset = UNSET,
+    external_citations_in: list[int] | Unset = UNSET,
+    external_citations_isnull: bool | Unset = UNSET,
     feature_of_interest: str | Unset = UNSET,
     feature_of_interest_contains: str | Unset = UNSET,
     feature_of_interest_endswith: str | Unset = UNSET,
@@ -8692,12 +9057,8 @@ async def asyncio(
     geographic_extent_east_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_east_bound_longitude_range: list[float] | Unset = UNSET,
-    geographic_extent_gt: int | Unset = UNSET,
-    geographic_extent_gte: int | Unset = UNSET,
     geographic_extent_in: list[int] | Unset = UNSET,
     geographic_extent_isnull: bool | Unset = UNSET,
-    geographic_extent_lt: int | Unset = UNSET,
-    geographic_extent_lte: int | Unset = UNSET,
     geographic_extent_north_bound_latitude: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gt: float | Unset = UNSET,
     geographic_extent_north_bound_latitude_gte: float | Unset = UNSET,
@@ -8718,6 +9079,15 @@ async def asyncio(
     geographic_extent_west_bound_longitude_lt: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_lte: float | Unset = UNSET,
     geographic_extent_west_bound_longitude_range: list[float] | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    inspire_theme: list[int] | Unset = UNSET,
+    inspire_theme_in: list[int] | Unset = UNSET,
+    inspire_theme_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -8815,6 +9185,9 @@ async def asyncio(
     latest_data_update_time_week_day: float | Unset = UNSET,
     latest_data_update_time_year: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
     non_geographic_flag: bool | Unset = UNSET,
     non_geographic_flag_contains: bool | Unset = UNSET,
     non_geographic_flag_endswith: bool | Unset = UNSET,
@@ -8832,6 +9205,9 @@ async def asyncio(
     non_geographic_flag_range: list[bool] | Unset = UNSET,
     non_geographic_flag_regex: bool | Unset = UNSET,
     non_geographic_flag_startswith: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -8850,37 +9226,40 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    object_observation: list[int] | Unset = UNSET,
+    object_observation_in: list[int] | Unset = UNSET,
+    object_observation_isnull: bool | Unset = UNSET,
+    observationcollection: list[int] | Unset = UNSET,
+    observationcollection_in: list[int] | Unset = UNSET,
+    observationcollection_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    permissions: list[int] | Unset = UNSET,
     permissions_access_category: ObservationsListAccessCategory | Unset = UNSET,
     permissions_access_category_in: list[str] | Unset = UNSET,
     permissions_access_roles: str | Unset = UNSET,
     permissions_access_roles_in: list[str] | Unset = UNSET,
+    permissions_in: list[int] | Unset = UNSET,
+    permissions_isnull: bool | Unset = UNSET,
+    phenomena: list[int] | Unset = UNSET,
+    phenomena_in: list[int] | Unset = UNSET,
+    phenomena_isnull: bool | Unset = UNSET,
     procedure_acquisition: int | Unset = UNSET,
-    procedure_acquisition_gt: int | Unset = UNSET,
-    procedure_acquisition_gte: int | Unset = UNSET,
     procedure_acquisition_in: list[int] | Unset = UNSET,
     procedure_acquisition_isnull: bool | Unset = UNSET,
-    procedure_acquisition_lt: int | Unset = UNSET,
-    procedure_acquisition_lte: int | Unset = UNSET,
     procedure_acquisition_ob_id: int | Unset = UNSET,
     procedure_acquisition_ob_id_in: list[int] | Unset = UNSET,
     procedure_acquisition_uuid: str | Unset = UNSET,
     procedure_acquisition_uuid_in: list[str] | Unset = UNSET,
     procedure_composite_process: int | Unset = UNSET,
-    procedure_composite_process_gt: int | Unset = UNSET,
-    procedure_composite_process_gte: int | Unset = UNSET,
     procedure_composite_process_in: list[int] | Unset = UNSET,
     procedure_composite_process_isnull: bool | Unset = UNSET,
-    procedure_composite_process_lt: int | Unset = UNSET,
-    procedure_composite_process_lte: int | Unset = UNSET,
     procedure_computation: int | Unset = UNSET,
-    procedure_computation_gt: int | Unset = UNSET,
-    procedure_computation_gte: int | Unset = UNSET,
     procedure_computation_in: list[int] | Unset = UNSET,
     procedure_computation_isnull: bool | Unset = UNSET,
-    procedure_computation_lt: int | Unset = UNSET,
-    procedure_computation_lte: int | Unset = UNSET,
     procedure_description: str | Unset = UNSET,
     procedure_description_contains: str | Unset = UNSET,
     procedure_description_endswith: str | Unset = UNSET,
@@ -8898,6 +9277,9 @@ async def asyncio(
     procedure_description_range: list[str] | Unset = UNSET,
     procedure_description_regex: str | Unset = UNSET,
     procedure_description_startswith: str | Unset = UNSET,
+    projects: list[int] | Unset = UNSET,
+    projects_in: list[int] | Unset = UNSET,
+    projects_isnull: bool | Unset = UNSET,
     projects_ob_id: int | Unset = UNSET,
     projects_ob_id_in: list[int] | Unset = UNSET,
     projects_uuid: str | Unset = UNSET,
@@ -8920,12 +9302,11 @@ async def asyncio(
     publication_state_regex: str | Unset = UNSET,
     publication_state_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    relatedobservationinfo: list[int] | Unset = UNSET,
+    relatedobservationinfo_in: list[int] | Unset = UNSET,
+    relatedobservationinfo_isnull: bool | Unset = UNSET,
     removed_data_reason: str | Unset = UNSET,
     removed_data_reason_contains: str | Unset = UNSET,
     removed_data_reason_endswith: str | Unset = UNSET,
@@ -8991,6 +9372,9 @@ async def asyncio(
     resolution_range: list[str] | Unset = UNSET,
     resolution_regex: str | Unset = UNSET,
     resolution_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
     result_quality: int | Unset = UNSET,
     result_quality_date: datetime.date | Unset = UNSET,
     result_quality_date_gt: datetime.date | Unset = UNSET,
@@ -9000,12 +9384,8 @@ async def asyncio(
     result_quality_date_range: list[datetime.date] | Unset = UNSET,
     result_quality_explanation: str | Unset = UNSET,
     result_quality_explanation_contains: str | Unset = UNSET,
-    result_quality_gt: int | Unset = UNSET,
-    result_quality_gte: int | Unset = UNSET,
     result_quality_in: list[int] | Unset = UNSET,
     result_quality_isnull: bool | Unset = UNSET,
-    result_quality_lt: int | Unset = UNSET,
-    result_quality_lte: int | Unset = UNSET,
     result_quality_ob_id: int | Unset = UNSET,
     result_quality_ob_id_in: list[int] | Unset = UNSET,
     result_quality_passes_test: bool | Unset = UNSET,
@@ -9017,14 +9397,13 @@ async def asyncio(
     result_field_data_path_startswith: str | Unset = UNSET,
     result_field_file_format: str | Unset = UNSET,
     result_field_file_format_contains: str | Unset = UNSET,
-    result_field_gt: int | Unset = UNSET,
-    result_field_gte: int | Unset = UNSET,
     result_field_in: list[int] | Unset = UNSET,
     result_field_isnull: bool | Unset = UNSET,
-    result_field_lt: int | Unset = UNSET,
-    result_field_lte: int | Unset = UNSET,
     result_field_storage_location: ObservationsListStorageLocation | Unset = UNSET,
     result_field_storage_status: ObservationsListStorageStatus | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -9083,12 +9462,8 @@ async def asyncio(
     time_period_end_time_lt: datetime.datetime | Unset = UNSET,
     time_period_end_time_lte: datetime.datetime | Unset = UNSET,
     time_period_end_time_range: list[datetime.datetime] | Unset = UNSET,
-    time_period_gt: int | Unset = UNSET,
-    time_period_gte: int | Unset = UNSET,
     time_period_in: list[int] | Unset = UNSET,
     time_period_isnull: bool | Unset = UNSET,
-    time_period_lt: int | Unset = UNSET,
-    time_period_lte: int | Unset = UNSET,
     time_period_ob_id: int | Unset = UNSET,
     time_period_ob_id_in: list[int] | Unset = UNSET,
     time_period_start_time: datetime.datetime | Unset = UNSET,
@@ -9114,6 +9489,9 @@ async def asyncio(
     title_range: list[str] | Unset = UNSET,
     title_regex: str | Unset = UNSET,
     title_startswith: str | Unset = UNSET,
+    topic_category: list[int] | Unset = UNSET,
+    topic_category_in: list[int] | Unset = UNSET,
+    topic_category_isnull: bool | Unset = UNSET,
     update_frequency: ObservationsListDataUpdateFrequency | Unset = UNSET,
     update_frequency_contains: str | Unset = UNSET,
     update_frequency_endswith: str | Unset = UNSET,
@@ -9149,19 +9527,14 @@ async def asyncio(
     uuid_regex: str | Unset = UNSET,
     uuid_startswith: str | Unset = UNSET,
     valid_time_period: int | Unset = UNSET,
-    valid_time_period_gt: int | Unset = UNSET,
-    valid_time_period_gte: int | Unset = UNSET,
     valid_time_period_in: list[int] | Unset = UNSET,
     valid_time_period_isnull: bool | Unset = UNSET,
-    valid_time_period_lt: int | Unset = UNSET,
-    valid_time_period_lte: int | Unset = UNSET,
     vertical_extent: int | Unset = UNSET,
-    vertical_extent_gt: int | Unset = UNSET,
-    vertical_extent_gte: int | Unset = UNSET,
     vertical_extent_in: list[int] | Unset = UNSET,
     vertical_extent_isnull: bool | Unset = UNSET,
-    vertical_extent_lt: int | Unset = UNSET,
-    vertical_extent_lte: int | Unset = UNSET,
+    vocabulary_keywords: list[int] | Unset = UNSET,
+    vocabulary_keywords_in: list[int] | Unset = UNSET,
+    vocabulary_keywords_isnull: bool | Unset = UNSET,
 ) -> PaginatedObservationReadList | None:
     """Get a list of Observation objects.
 
@@ -9262,6 +9635,9 @@ async def asyncio(
         data_published_time_week (float | Unset):
         data_published_time_week_day (float | Unset):
         data_published_time_year (float | Unset):
+        discovery_keywords (list[int] | Unset):
+        discovery_keywords_in (list[int] | Unset):
+        discovery_keywords_isnull (bool | Unset):
         discovery_keywords_name (str | Unset):
         discovery_keywords_name_contains (str | Unset):
         doi_published_time (datetime.datetime | Unset):
@@ -9312,6 +9688,12 @@ async def asyncio(
         dont_harvest_from_projects_range (list[bool] | Unset):
         dont_harvest_from_projects_regex (bool | Unset):
         dont_harvest_from_projects_startswith (bool | Unset):
+        drsdataset (list[int] | Unset):
+        drsdataset_in (list[int] | Unset):
+        drsdataset_isnull (bool | Unset):
+        external_citations (list[int] | Unset):
+        external_citations_in (list[int] | Unset):
+        external_citations_isnull (bool | Unset):
         feature_of_interest (str | Unset):
         feature_of_interest_contains (str | Unset):
         feature_of_interest_endswith (str | Unset):
@@ -9336,12 +9718,8 @@ async def asyncio(
         geographic_extent_east_bound_longitude_lt (float | Unset):
         geographic_extent_east_bound_longitude_lte (float | Unset):
         geographic_extent_east_bound_longitude_range (list[float] | Unset):
-        geographic_extent_gt (int | Unset):
-        geographic_extent_gte (int | Unset):
         geographic_extent_in (list[int] | Unset):
         geographic_extent_isnull (bool | Unset):
-        geographic_extent_lt (int | Unset):
-        geographic_extent_lte (int | Unset):
         geographic_extent_north_bound_latitude (float | Unset):
         geographic_extent_north_bound_latitude_gt (float | Unset):
         geographic_extent_north_bound_latitude_gte (float | Unset):
@@ -9362,6 +9740,15 @@ async def asyncio(
         geographic_extent_west_bound_longitude_lt (float | Unset):
         geographic_extent_west_bound_longitude_lte (float | Unset):
         geographic_extent_west_bound_longitude_range (list[float] | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        inspire_theme (list[int] | Unset):
+        inspire_theme_in (list[int] | Unset):
+        inspire_theme_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -9459,6 +9846,9 @@ async def asyncio(
         latest_data_update_time_week_day (float | Unset):
         latest_data_update_time_year (float | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
         non_geographic_flag (bool | Unset):
         non_geographic_flag_contains (bool | Unset):
         non_geographic_flag_endswith (bool | Unset):
@@ -9476,6 +9866,9 @@ async def asyncio(
         non_geographic_flag_range (list[bool] | Unset):
         non_geographic_flag_regex (bool | Unset):
         non_geographic_flag_startswith (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -9494,37 +9887,40 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        object_observation (list[int] | Unset):
+        object_observation_in (list[int] | Unset):
+        object_observation_isnull (bool | Unset):
+        observationcollection (list[int] | Unset):
+        observationcollection_in (list[int] | Unset):
+        observationcollection_isnull (bool | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        permissions (list[int] | Unset):
         permissions_access_category (ObservationsListAccessCategory | Unset):
         permissions_access_category_in (list[str] | Unset):
         permissions_access_roles (str | Unset):
         permissions_access_roles_in (list[str] | Unset):
+        permissions_in (list[int] | Unset):
+        permissions_isnull (bool | Unset):
+        phenomena (list[int] | Unset):
+        phenomena_in (list[int] | Unset):
+        phenomena_isnull (bool | Unset):
         procedure_acquisition (int | Unset):
-        procedure_acquisition_gt (int | Unset):
-        procedure_acquisition_gte (int | Unset):
         procedure_acquisition_in (list[int] | Unset):
         procedure_acquisition_isnull (bool | Unset):
-        procedure_acquisition_lt (int | Unset):
-        procedure_acquisition_lte (int | Unset):
         procedure_acquisition_ob_id (int | Unset):
         procedure_acquisition_ob_id_in (list[int] | Unset):
         procedure_acquisition_uuid (str | Unset):
         procedure_acquisition_uuid_in (list[str] | Unset):
         procedure_composite_process (int | Unset):
-        procedure_composite_process_gt (int | Unset):
-        procedure_composite_process_gte (int | Unset):
         procedure_composite_process_in (list[int] | Unset):
         procedure_composite_process_isnull (bool | Unset):
-        procedure_composite_process_lt (int | Unset):
-        procedure_composite_process_lte (int | Unset):
         procedure_computation (int | Unset):
-        procedure_computation_gt (int | Unset):
-        procedure_computation_gte (int | Unset):
         procedure_computation_in (list[int] | Unset):
         procedure_computation_isnull (bool | Unset):
-        procedure_computation_lt (int | Unset):
-        procedure_computation_lte (int | Unset):
         procedure_description (str | Unset):
         procedure_description_contains (str | Unset):
         procedure_description_endswith (str | Unset):
@@ -9542,6 +9938,9 @@ async def asyncio(
         procedure_description_range (list[str] | Unset):
         procedure_description_regex (str | Unset):
         procedure_description_startswith (str | Unset):
+        projects (list[int] | Unset):
+        projects_in (list[int] | Unset):
+        projects_isnull (bool | Unset):
         projects_ob_id (int | Unset):
         projects_ob_id_in (list[int] | Unset):
         projects_uuid (str | Unset):
@@ -9564,12 +9963,11 @@ async def asyncio(
         publication_state_regex (str | Unset):
         publication_state_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        relatedobservationinfo (list[int] | Unset):
+        relatedobservationinfo_in (list[int] | Unset):
+        relatedobservationinfo_isnull (bool | Unset):
         removed_data_reason (str | Unset):
         removed_data_reason_contains (str | Unset):
         removed_data_reason_endswith (str | Unset):
@@ -9635,6 +10033,9 @@ async def asyncio(
         resolution_range (list[str] | Unset):
         resolution_regex (str | Unset):
         resolution_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
         result_quality (int | Unset):
         result_quality_date (datetime.date | Unset):
         result_quality_date_gt (datetime.date | Unset):
@@ -9644,12 +10045,8 @@ async def asyncio(
         result_quality_date_range (list[datetime.date] | Unset):
         result_quality_explanation (str | Unset):
         result_quality_explanation_contains (str | Unset):
-        result_quality_gt (int | Unset):
-        result_quality_gte (int | Unset):
         result_quality_in (list[int] | Unset):
         result_quality_isnull (bool | Unset):
-        result_quality_lt (int | Unset):
-        result_quality_lte (int | Unset):
         result_quality_ob_id (int | Unset):
         result_quality_ob_id_in (list[int] | Unset):
         result_quality_passes_test (bool | Unset):
@@ -9661,14 +10058,13 @@ async def asyncio(
         result_field_data_path_startswith (str | Unset):
         result_field_file_format (str | Unset):
         result_field_file_format_contains (str | Unset):
-        result_field_gt (int | Unset):
-        result_field_gte (int | Unset):
         result_field_in (list[int] | Unset):
         result_field_isnull (bool | Unset):
-        result_field_lt (int | Unset):
-        result_field_lte (int | Unset):
         result_field_storage_location (ObservationsListStorageLocation | Unset):
         result_field_storage_status (ObservationsListStorageStatus | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -9727,12 +10123,8 @@ async def asyncio(
         time_period_end_time_lt (datetime.datetime | Unset):
         time_period_end_time_lte (datetime.datetime | Unset):
         time_period_end_time_range (list[datetime.datetime] | Unset):
-        time_period_gt (int | Unset):
-        time_period_gte (int | Unset):
         time_period_in (list[int] | Unset):
         time_period_isnull (bool | Unset):
-        time_period_lt (int | Unset):
-        time_period_lte (int | Unset):
         time_period_ob_id (int | Unset):
         time_period_ob_id_in (list[int] | Unset):
         time_period_start_time (datetime.datetime | Unset):
@@ -9758,6 +10150,9 @@ async def asyncio(
         title_range (list[str] | Unset):
         title_regex (str | Unset):
         title_startswith (str | Unset):
+        topic_category (list[int] | Unset):
+        topic_category_in (list[int] | Unset):
+        topic_category_isnull (bool | Unset):
         update_frequency (ObservationsListDataUpdateFrequency | Unset):
         update_frequency_contains (str | Unset):
         update_frequency_endswith (str | Unset):
@@ -9793,19 +10188,14 @@ async def asyncio(
         uuid_regex (str | Unset):
         uuid_startswith (str | Unset):
         valid_time_period (int | Unset):
-        valid_time_period_gt (int | Unset):
-        valid_time_period_gte (int | Unset):
         valid_time_period_in (list[int] | Unset):
         valid_time_period_isnull (bool | Unset):
-        valid_time_period_lt (int | Unset):
-        valid_time_period_lte (int | Unset):
         vertical_extent (int | Unset):
-        vertical_extent_gt (int | Unset):
-        vertical_extent_gte (int | Unset):
         vertical_extent_in (list[int] | Unset):
         vertical_extent_isnull (bool | Unset):
-        vertical_extent_lt (int | Unset):
-        vertical_extent_lte (int | Unset):
+        vocabulary_keywords (list[int] | Unset):
+        vocabulary_keywords_in (list[int] | Unset):
+        vocabulary_keywords_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -9914,6 +10304,9 @@ async def asyncio(
             data_published_time_week=data_published_time_week,
             data_published_time_week_day=data_published_time_week_day,
             data_published_time_year=data_published_time_year,
+            discovery_keywords=discovery_keywords,
+            discovery_keywords_in=discovery_keywords_in,
+            discovery_keywords_isnull=discovery_keywords_isnull,
             discovery_keywords_name=discovery_keywords_name,
             discovery_keywords_name_contains=discovery_keywords_name_contains,
             doi_published_time=doi_published_time,
@@ -9964,6 +10357,12 @@ async def asyncio(
             dont_harvest_from_projects_range=dont_harvest_from_projects_range,
             dont_harvest_from_projects_regex=dont_harvest_from_projects_regex,
             dont_harvest_from_projects_startswith=dont_harvest_from_projects_startswith,
+            drsdataset=drsdataset,
+            drsdataset_in=drsdataset_in,
+            drsdataset_isnull=drsdataset_isnull,
+            external_citations=external_citations,
+            external_citations_in=external_citations_in,
+            external_citations_isnull=external_citations_isnull,
             feature_of_interest=feature_of_interest,
             feature_of_interest_contains=feature_of_interest_contains,
             feature_of_interest_endswith=feature_of_interest_endswith,
@@ -9988,12 +10387,8 @@ async def asyncio(
             geographic_extent_east_bound_longitude_lt=geographic_extent_east_bound_longitude_lt,
             geographic_extent_east_bound_longitude_lte=geographic_extent_east_bound_longitude_lte,
             geographic_extent_east_bound_longitude_range=geographic_extent_east_bound_longitude_range,
-            geographic_extent_gt=geographic_extent_gt,
-            geographic_extent_gte=geographic_extent_gte,
             geographic_extent_in=geographic_extent_in,
             geographic_extent_isnull=geographic_extent_isnull,
-            geographic_extent_lt=geographic_extent_lt,
-            geographic_extent_lte=geographic_extent_lte,
             geographic_extent_north_bound_latitude=geographic_extent_north_bound_latitude,
             geographic_extent_north_bound_latitude_gt=geographic_extent_north_bound_latitude_gt,
             geographic_extent_north_bound_latitude_gte=geographic_extent_north_bound_latitude_gte,
@@ -10014,6 +10409,15 @@ async def asyncio(
             geographic_extent_west_bound_longitude_lt=geographic_extent_west_bound_longitude_lt,
             geographic_extent_west_bound_longitude_lte=geographic_extent_west_bound_longitude_lte,
             geographic_extent_west_bound_longitude_range=geographic_extent_west_bound_longitude_range,
+            identifier=identifier,
+            identifier_in=identifier_in,
+            identifier_isnull=identifier_isnull,
+            image_details=image_details,
+            image_details_in=image_details_in,
+            image_details_isnull=image_details_isnull,
+            inspire_theme=inspire_theme,
+            inspire_theme_in=inspire_theme_in,
+            inspire_theme_isnull=inspire_theme_isnull,
             keywords=keywords,
             keywords_contains=keywords_contains,
             keywords_endswith=keywords_endswith,
@@ -10111,6 +10515,9 @@ async def asyncio(
             latest_data_update_time_week_day=latest_data_update_time_week_day,
             latest_data_update_time_year=latest_data_update_time_year,
             limit=limit,
+            migrationproperty=migrationproperty,
+            migrationproperty_in=migrationproperty_in,
+            migrationproperty_isnull=migrationproperty_isnull,
             non_geographic_flag=non_geographic_flag,
             non_geographic_flag_contains=non_geographic_flag_contains,
             non_geographic_flag_endswith=non_geographic_flag_endswith,
@@ -10128,6 +10535,9 @@ async def asyncio(
             non_geographic_flag_range=non_geographic_flag_range,
             non_geographic_flag_regex=non_geographic_flag_regex,
             non_geographic_flag_startswith=non_geographic_flag_startswith,
+            note=note,
+            note_in=note_in,
+            note_isnull=note_isnull,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
             ob_id_contains=ob_id_contains,
@@ -10146,37 +10556,40 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            object_observation=object_observation,
+            object_observation_in=object_observation_in,
+            object_observation_isnull=object_observation_isnull,
+            observationcollection=observationcollection,
+            observationcollection_in=observationcollection_in,
+            observationcollection_isnull=observationcollection_isnull,
             offset=offset,
+            onlineresource=onlineresource,
+            onlineresource_in=onlineresource_in,
+            onlineresource_isnull=onlineresource_isnull,
             ordering=ordering,
+            permissions=permissions,
             permissions_access_category=permissions_access_category,
             permissions_access_category_in=permissions_access_category_in,
             permissions_access_roles=permissions_access_roles,
             permissions_access_roles_in=permissions_access_roles_in,
+            permissions_in=permissions_in,
+            permissions_isnull=permissions_isnull,
+            phenomena=phenomena,
+            phenomena_in=phenomena_in,
+            phenomena_isnull=phenomena_isnull,
             procedure_acquisition=procedure_acquisition,
-            procedure_acquisition_gt=procedure_acquisition_gt,
-            procedure_acquisition_gte=procedure_acquisition_gte,
             procedure_acquisition_in=procedure_acquisition_in,
             procedure_acquisition_isnull=procedure_acquisition_isnull,
-            procedure_acquisition_lt=procedure_acquisition_lt,
-            procedure_acquisition_lte=procedure_acquisition_lte,
             procedure_acquisition_ob_id=procedure_acquisition_ob_id,
             procedure_acquisition_ob_id_in=procedure_acquisition_ob_id_in,
             procedure_acquisition_uuid=procedure_acquisition_uuid,
             procedure_acquisition_uuid_in=procedure_acquisition_uuid_in,
             procedure_composite_process=procedure_composite_process,
-            procedure_composite_process_gt=procedure_composite_process_gt,
-            procedure_composite_process_gte=procedure_composite_process_gte,
             procedure_composite_process_in=procedure_composite_process_in,
             procedure_composite_process_isnull=procedure_composite_process_isnull,
-            procedure_composite_process_lt=procedure_composite_process_lt,
-            procedure_composite_process_lte=procedure_composite_process_lte,
             procedure_computation=procedure_computation,
-            procedure_computation_gt=procedure_computation_gt,
-            procedure_computation_gte=procedure_computation_gte,
             procedure_computation_in=procedure_computation_in,
             procedure_computation_isnull=procedure_computation_isnull,
-            procedure_computation_lt=procedure_computation_lt,
-            procedure_computation_lte=procedure_computation_lte,
             procedure_description=procedure_description,
             procedure_description_contains=procedure_description_contains,
             procedure_description_endswith=procedure_description_endswith,
@@ -10194,6 +10607,9 @@ async def asyncio(
             procedure_description_range=procedure_description_range,
             procedure_description_regex=procedure_description_regex,
             procedure_description_startswith=procedure_description_startswith,
+            projects=projects,
+            projects_in=projects_in,
+            projects_isnull=projects_isnull,
             projects_ob_id=projects_ob_id,
             projects_ob_id_in=projects_ob_id_in,
             projects_uuid=projects_uuid,
@@ -10216,12 +10632,11 @@ async def asyncio(
             publication_state_regex=publication_state_regex,
             publication_state_startswith=publication_state_startswith,
             referenceable_ptr=referenceable_ptr,
-            referenceable_ptr_gt=referenceable_ptr_gt,
-            referenceable_ptr_gte=referenceable_ptr_gte,
             referenceable_ptr_in=referenceable_ptr_in,
             referenceable_ptr_isnull=referenceable_ptr_isnull,
-            referenceable_ptr_lt=referenceable_ptr_lt,
-            referenceable_ptr_lte=referenceable_ptr_lte,
+            relatedobservationinfo=relatedobservationinfo,
+            relatedobservationinfo_in=relatedobservationinfo_in,
+            relatedobservationinfo_isnull=relatedobservationinfo_isnull,
             removed_data_reason=removed_data_reason,
             removed_data_reason_contains=removed_data_reason_contains,
             removed_data_reason_endswith=removed_data_reason_endswith,
@@ -10287,6 +10702,9 @@ async def asyncio(
             resolution_range=resolution_range,
             resolution_regex=resolution_regex,
             resolution_startswith=resolution_startswith,
+            responsiblepartyinfo=responsiblepartyinfo,
+            responsiblepartyinfo_in=responsiblepartyinfo_in,
+            responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
             result_quality=result_quality,
             result_quality_date=result_quality_date,
             result_quality_date_gt=result_quality_date_gt,
@@ -10296,12 +10714,8 @@ async def asyncio(
             result_quality_date_range=result_quality_date_range,
             result_quality_explanation=result_quality_explanation,
             result_quality_explanation_contains=result_quality_explanation_contains,
-            result_quality_gt=result_quality_gt,
-            result_quality_gte=result_quality_gte,
             result_quality_in=result_quality_in,
             result_quality_isnull=result_quality_isnull,
-            result_quality_lt=result_quality_lt,
-            result_quality_lte=result_quality_lte,
             result_quality_ob_id=result_quality_ob_id,
             result_quality_ob_id_in=result_quality_ob_id_in,
             result_quality_passes_test=result_quality_passes_test,
@@ -10313,14 +10727,13 @@ async def asyncio(
             result_field_data_path_startswith=result_field_data_path_startswith,
             result_field_file_format=result_field_file_format,
             result_field_file_format_contains=result_field_file_format_contains,
-            result_field_gt=result_field_gt,
-            result_field_gte=result_field_gte,
             result_field_in=result_field_in,
             result_field_isnull=result_field_isnull,
-            result_field_lt=result_field_lt,
-            result_field_lte=result_field_lte,
             result_field_storage_location=result_field_storage_location,
             result_field_storage_status=result_field_storage_status,
+            review=review,
+            review_in=review_in,
+            review_isnull=review_isnull,
             short_code=short_code,
             short_code_contains=short_code_contains,
             short_code_endswith=short_code_endswith,
@@ -10379,12 +10792,8 @@ async def asyncio(
             time_period_end_time_lt=time_period_end_time_lt,
             time_period_end_time_lte=time_period_end_time_lte,
             time_period_end_time_range=time_period_end_time_range,
-            time_period_gt=time_period_gt,
-            time_period_gte=time_period_gte,
             time_period_in=time_period_in,
             time_period_isnull=time_period_isnull,
-            time_period_lt=time_period_lt,
-            time_period_lte=time_period_lte,
             time_period_ob_id=time_period_ob_id,
             time_period_ob_id_in=time_period_ob_id_in,
             time_period_start_time=time_period_start_time,
@@ -10410,6 +10819,9 @@ async def asyncio(
             title_range=title_range,
             title_regex=title_regex,
             title_startswith=title_startswith,
+            topic_category=topic_category,
+            topic_category_in=topic_category_in,
+            topic_category_isnull=topic_category_isnull,
             update_frequency=update_frequency,
             update_frequency_contains=update_frequency_contains,
             update_frequency_endswith=update_frequency_endswith,
@@ -10445,18 +10857,13 @@ async def asyncio(
             uuid_regex=uuid_regex,
             uuid_startswith=uuid_startswith,
             valid_time_period=valid_time_period,
-            valid_time_period_gt=valid_time_period_gt,
-            valid_time_period_gte=valid_time_period_gte,
             valid_time_period_in=valid_time_period_in,
             valid_time_period_isnull=valid_time_period_isnull,
-            valid_time_period_lt=valid_time_period_lt,
-            valid_time_period_lte=valid_time_period_lte,
             vertical_extent=vertical_extent,
-            vertical_extent_gt=vertical_extent_gt,
-            vertical_extent_gte=vertical_extent_gte,
             vertical_extent_in=vertical_extent_in,
             vertical_extent_isnull=vertical_extent_isnull,
-            vertical_extent_lt=vertical_extent_lt,
-            vertical_extent_lte=vertical_extent_lte,
+            vocabulary_keywords=vocabulary_keywords,
+            vocabulary_keywords_in=vocabulary_keywords_in,
+            vocabulary_keywords_isnull=vocabulary_keywords_isnull,
         )
     ).parsed

@@ -25,16 +25,16 @@ class ObservationCollectionRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
-            abstract (str):
-            keywords (str):
-            publication_state (BlankEnum | PublicationStateCbbEnum):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
+            abstract (None | str):
+            keywords (None | str):
+            publication_state (BlankEnum | None | PublicationStateCbbEnum):
             data_published_time (datetime.datetime | None):
             doi_published_time (datetime.datetime | None):
-            dont_harvest_from_projects (bool):
+            dont_harvest_from_projects (bool | None):
             image_details (list[int | None]):
             discovery_keywords (list[DiscoveryServiceIdRead]):
             member (list[SimpleRead] | None):
@@ -44,16 +44,16 @@ class ObservationCollectionRead:
             project_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
-    abstract: str
-    keywords: str
-    publication_state: BlankEnum | PublicationStateCbbEnum
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
+    abstract: None | str
+    keywords: None | str
+    publication_state: BlankEnum | None | PublicationStateCbbEnum
     data_published_time: datetime.datetime | None
     doi_published_time: datetime.datetime | None
-    dont_harvest_from_projects: bool
+    dont_harvest_from_projects: bool | None
     image_details: list[int | None]
     discovery_keywords: list[DiscoveryServiceIdRead]
     member: list[SimpleRead] | None
@@ -64,23 +64,31 @@ class ObservationCollectionRead:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
+        keywords: None | str
         keywords = self.keywords
 
-        publication_state: str
+        publication_state: None | str
         if isinstance(self.publication_state, PublicationStateCbbEnum):
             publication_state = self.publication_state.value
-        else:
+        elif isinstance(self.publication_state, BlankEnum):
             publication_state = self.publication_state.value
+        else:
+            publication_state = self.publication_state
 
         data_published_time: None | str
         if isinstance(self.data_published_time, datetime.datetime):
@@ -94,6 +102,7 @@ class ObservationCollectionRead:
         else:
             doi_published_time = self.doi_published_time
 
+        dont_harvest_from_projects: bool | None
         dont_harvest_from_projects = self.dont_harvest_from_projects
 
         image_details = []
@@ -173,19 +182,52 @@ class ObservationCollectionRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        abstract = d.pop("abstract")
+        uuid = _parse_uuid(d.pop("uuid"))
 
-        keywords = d.pop("keywords")
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        def _parse_publication_state(data: object) -> BlankEnum | PublicationStateCbbEnum:
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
+
+        def _parse_keywords(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        keywords = _parse_keywords(d.pop("keywords"))
+
+        def _parse_publication_state(data: object) -> BlankEnum | None | PublicationStateCbbEnum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -194,11 +236,15 @@ class ObservationCollectionRead:
                 return publication_state_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            publication_state_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                publication_state_type_1 = BlankEnum(data)
 
-            return publication_state_type_1
+                return publication_state_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | PublicationStateCbbEnum, data)
 
         publication_state = _parse_publication_state(d.pop("publicationState"))
 
@@ -232,7 +278,12 @@ class ObservationCollectionRead:
 
         doi_published_time = _parse_doi_published_time(d.pop("doiPublishedTime"))
 
-        dont_harvest_from_projects = d.pop("dontHarvestFromProjects")
+        def _parse_dont_harvest_from_projects(data: object) -> bool | None:
+            if data is None:
+                return data
+            return cast(bool | None, data)
+
+        dont_harvest_from_projects = _parse_dont_harvest_from_projects(d.pop("dontHarvestFromProjects"))
 
         image_details = []
         _image_details = d.pop("imageDetails")

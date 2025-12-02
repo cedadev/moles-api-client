@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -20,17 +20,18 @@ class Phenomenon:
     and reorders them to the top.
 
         Attributes:
-            ob_id (str):
+            ob_id (None | str):
             names (list[PhenomenonName]):
             terms (list[PhenomenonTerm]):
     """
 
-    ob_id: str
+    ob_id: None | str
     names: list[PhenomenonName]
     terms: list[PhenomenonTerm]
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: None | str
         ob_id = self.ob_id
 
         names = []
@@ -61,7 +62,13 @@ class Phenomenon:
         from ..models.phenomenon_term import PhenomenonTerm
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
+
+        def _parse_ob_id(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
         names = []
         _names = d.pop("names")

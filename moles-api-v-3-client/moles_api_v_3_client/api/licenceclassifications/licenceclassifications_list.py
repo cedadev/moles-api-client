@@ -28,6 +28,9 @@ def _get_kwargs(
     classification_range: list[str] | Unset = UNSET,
     classification_regex: str | Unset = UNSET,
     classification_startswith: str | Unset = UNSET,
+    licence: list[int] | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -93,6 +96,20 @@ def _get_kwargs(
     params["classification__regex"] = classification_regex
 
     params["classification__startswith"] = classification_startswith
+
+    json_licence: list[int] | Unset = UNSET
+    if not isinstance(licence, Unset):
+        json_licence = ",".join(map(str, licence))
+
+    params["licence"] = json_licence
+
+    json_licence_in: list[int] | Unset = UNSET
+    if not isinstance(licence_in, Unset):
+        json_licence_in = ",".join(map(str, licence_in))
+
+    params["licence__in"] = json_licence_in
+
+    params["licence__isnull"] = licence_isnull
 
     params["limit"] = limit
 
@@ -200,6 +217,9 @@ def sync_detailed(
     classification_range: list[str] | Unset = UNSET,
     classification_regex: str | Unset = UNSET,
     classification_startswith: str | Unset = UNSET,
+    licence: list[int] | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -242,6 +262,9 @@ def sync_detailed(
         classification_range (list[str] | Unset):
         classification_regex (str | Unset):
         classification_startswith (str | Unset):
+        licence (list[int] | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -290,6 +313,9 @@ def sync_detailed(
         classification_range=classification_range,
         classification_regex=classification_regex,
         classification_startswith=classification_startswith,
+        licence=licence,
+        licence_in=licence_in,
+        licence_isnull=licence_isnull,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -340,6 +366,9 @@ def sync(
     classification_range: list[str] | Unset = UNSET,
     classification_regex: str | Unset = UNSET,
     classification_startswith: str | Unset = UNSET,
+    licence: list[int] | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -382,6 +411,9 @@ def sync(
         classification_range (list[str] | Unset):
         classification_regex (str | Unset):
         classification_startswith (str | Unset):
+        licence (list[int] | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -431,6 +463,9 @@ def sync(
         classification_range=classification_range,
         classification_regex=classification_regex,
         classification_startswith=classification_startswith,
+        licence=licence,
+        licence_in=licence_in,
+        licence_isnull=licence_isnull,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -475,6 +510,9 @@ async def asyncio_detailed(
     classification_range: list[str] | Unset = UNSET,
     classification_regex: str | Unset = UNSET,
     classification_startswith: str | Unset = UNSET,
+    licence: list[int] | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -517,6 +555,9 @@ async def asyncio_detailed(
         classification_range (list[str] | Unset):
         classification_regex (str | Unset):
         classification_startswith (str | Unset):
+        licence (list[int] | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -565,6 +606,9 @@ async def asyncio_detailed(
         classification_range=classification_range,
         classification_regex=classification_regex,
         classification_startswith=classification_startswith,
+        licence=licence,
+        licence_in=licence_in,
+        licence_isnull=licence_isnull,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -613,6 +657,9 @@ async def asyncio(
     classification_range: list[str] | Unset = UNSET,
     classification_regex: str | Unset = UNSET,
     classification_startswith: str | Unset = UNSET,
+    licence: list[int] | Unset = UNSET,
+    licence_in: list[int] | Unset = UNSET,
+    licence_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -655,6 +702,9 @@ async def asyncio(
         classification_range (list[str] | Unset):
         classification_regex (str | Unset):
         classification_startswith (str | Unset):
+        licence (list[int] | Unset):
+        licence_in (list[int] | Unset):
+        licence_isnull (bool | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -705,6 +755,9 @@ async def asyncio(
             classification_range=classification_range,
             classification_regex=classification_regex,
             classification_startswith=classification_startswith,
+            licence=licence,
+            licence_in=licence_in,
+            licence_isnull=licence_isnull,
             limit=limit,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,

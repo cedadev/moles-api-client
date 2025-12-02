@@ -37,14 +37,10 @@ def _get_kwargs(
     party: int | Unset = UNSET,
     party_first_name: str | Unset = UNSET,
     party_first_name_in: list[str] | Unset = UNSET,
-    party_gt: int | Unset = UNSET,
-    party_gte: int | Unset = UNSET,
     party_in: list[int] | Unset = UNSET,
     party_isnull: bool | Unset = UNSET,
     party_last_name: str | Unset = UNSET,
     party_last_name_in: list[str] | Unset = UNSET,
-    party_lt: int | Unset = UNSET,
-    party_lte: int | Unset = UNSET,
     party_ob_id: int | Unset = UNSET,
     party_ob_id_in: list[int] | Unset = UNSET,
     party_party_type: RpisListType | Unset = UNSET,
@@ -68,12 +64,8 @@ def _get_kwargs(
     priority_regex: int | Unset = UNSET,
     priority_startswith: int | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -160,10 +152,6 @@ def _get_kwargs(
 
     params["party__firstName__in"] = json_party_first_name_in
 
-    params["party__gt"] = party_gt
-
-    params["party__gte"] = party_gte
-
     json_party_in: list[int] | Unset = UNSET
     if not isinstance(party_in, Unset):
         json_party_in = ",".join(map(str, party_in))
@@ -179,10 +167,6 @@ def _get_kwargs(
         json_party_last_name_in = ",".join(map(str, party_last_name_in))
 
     params["party__lastName__in"] = json_party_last_name_in
-
-    params["party__lt"] = party_lt
-
-    params["party__lte"] = party_lte
 
     params["party__ob_id"] = party_ob_id
 
@@ -250,10 +234,6 @@ def _get_kwargs(
 
     params["relatedTo"] = related_to
 
-    params["relatedTo__gt"] = related_to_gt
-
-    params["relatedTo__gte"] = related_to_gte
-
     json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
         json_related_to_in = ",".join(map(str, related_to_in))
@@ -261,10 +241,6 @@ def _get_kwargs(
     params["relatedTo__in"] = json_related_to_in
 
     params["relatedTo__isnull"] = related_to_isnull
-
-    params["relatedTo__lt"] = related_to_lt
-
-    params["relatedTo__lte"] = related_to_lte
 
     params["relatedTo__ob_id"] = related_to_ob_id
 
@@ -399,14 +375,10 @@ def sync_detailed(
     party: int | Unset = UNSET,
     party_first_name: str | Unset = UNSET,
     party_first_name_in: list[str] | Unset = UNSET,
-    party_gt: int | Unset = UNSET,
-    party_gte: int | Unset = UNSET,
     party_in: list[int] | Unset = UNSET,
     party_isnull: bool | Unset = UNSET,
     party_last_name: str | Unset = UNSET,
     party_last_name_in: list[str] | Unset = UNSET,
-    party_lt: int | Unset = UNSET,
-    party_lte: int | Unset = UNSET,
     party_ob_id: int | Unset = UNSET,
     party_ob_id_in: list[int] | Unset = UNSET,
     party_party_type: RpisListType | Unset = UNSET,
@@ -430,12 +402,8 @@ def sync_detailed(
     priority_regex: int | Unset = UNSET,
     priority_startswith: int | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -490,14 +458,10 @@ def sync_detailed(
         party (int | Unset):
         party_first_name (str | Unset):
         party_first_name_in (list[str] | Unset):
-        party_gt (int | Unset):
-        party_gte (int | Unset):
         party_in (list[int] | Unset):
         party_isnull (bool | Unset):
         party_last_name (str | Unset):
         party_last_name_in (list[str] | Unset):
-        party_lt (int | Unset):
-        party_lte (int | Unset):
         party_ob_id (int | Unset):
         party_ob_id_in (list[int] | Unset):
         party_party_type (RpisListType | Unset):
@@ -521,12 +485,8 @@ def sync_detailed(
         priority_regex (int | Unset):
         priority_startswith (int | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -584,14 +544,10 @@ def sync_detailed(
         party=party,
         party_first_name=party_first_name,
         party_first_name_in=party_first_name_in,
-        party_gt=party_gt,
-        party_gte=party_gte,
         party_in=party_in,
         party_isnull=party_isnull,
         party_last_name=party_last_name,
         party_last_name_in=party_last_name_in,
-        party_lt=party_lt,
-        party_lte=party_lte,
         party_ob_id=party_ob_id,
         party_ob_id_in=party_ob_id_in,
         party_party_type=party_party_type,
@@ -615,12 +571,8 @@ def sync_detailed(
         priority_regex=priority_regex,
         priority_startswith=priority_startswith,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -680,14 +632,10 @@ def sync(
     party: int | Unset = UNSET,
     party_first_name: str | Unset = UNSET,
     party_first_name_in: list[str] | Unset = UNSET,
-    party_gt: int | Unset = UNSET,
-    party_gte: int | Unset = UNSET,
     party_in: list[int] | Unset = UNSET,
     party_isnull: bool | Unset = UNSET,
     party_last_name: str | Unset = UNSET,
     party_last_name_in: list[str] | Unset = UNSET,
-    party_lt: int | Unset = UNSET,
-    party_lte: int | Unset = UNSET,
     party_ob_id: int | Unset = UNSET,
     party_ob_id_in: list[int] | Unset = UNSET,
     party_party_type: RpisListType | Unset = UNSET,
@@ -711,12 +659,8 @@ def sync(
     priority_regex: int | Unset = UNSET,
     priority_startswith: int | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -771,14 +715,10 @@ def sync(
         party (int | Unset):
         party_first_name (str | Unset):
         party_first_name_in (list[str] | Unset):
-        party_gt (int | Unset):
-        party_gte (int | Unset):
         party_in (list[int] | Unset):
         party_isnull (bool | Unset):
         party_last_name (str | Unset):
         party_last_name_in (list[str] | Unset):
-        party_lt (int | Unset):
-        party_lte (int | Unset):
         party_ob_id (int | Unset):
         party_ob_id_in (list[int] | Unset):
         party_party_type (RpisListType | Unset):
@@ -802,12 +742,8 @@ def sync(
         priority_regex (int | Unset):
         priority_startswith (int | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -866,14 +802,10 @@ def sync(
         party=party,
         party_first_name=party_first_name,
         party_first_name_in=party_first_name_in,
-        party_gt=party_gt,
-        party_gte=party_gte,
         party_in=party_in,
         party_isnull=party_isnull,
         party_last_name=party_last_name,
         party_last_name_in=party_last_name_in,
-        party_lt=party_lt,
-        party_lte=party_lte,
         party_ob_id=party_ob_id,
         party_ob_id_in=party_ob_id_in,
         party_party_type=party_party_type,
@@ -897,12 +829,8 @@ def sync(
         priority_regex=priority_regex,
         priority_startswith=priority_startswith,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -956,14 +884,10 @@ async def asyncio_detailed(
     party: int | Unset = UNSET,
     party_first_name: str | Unset = UNSET,
     party_first_name_in: list[str] | Unset = UNSET,
-    party_gt: int | Unset = UNSET,
-    party_gte: int | Unset = UNSET,
     party_in: list[int] | Unset = UNSET,
     party_isnull: bool | Unset = UNSET,
     party_last_name: str | Unset = UNSET,
     party_last_name_in: list[str] | Unset = UNSET,
-    party_lt: int | Unset = UNSET,
-    party_lte: int | Unset = UNSET,
     party_ob_id: int | Unset = UNSET,
     party_ob_id_in: list[int] | Unset = UNSET,
     party_party_type: RpisListType | Unset = UNSET,
@@ -987,12 +911,8 @@ async def asyncio_detailed(
     priority_regex: int | Unset = UNSET,
     priority_startswith: int | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -1047,14 +967,10 @@ async def asyncio_detailed(
         party (int | Unset):
         party_first_name (str | Unset):
         party_first_name_in (list[str] | Unset):
-        party_gt (int | Unset):
-        party_gte (int | Unset):
         party_in (list[int] | Unset):
         party_isnull (bool | Unset):
         party_last_name (str | Unset):
         party_last_name_in (list[str] | Unset):
-        party_lt (int | Unset):
-        party_lte (int | Unset):
         party_ob_id (int | Unset):
         party_ob_id_in (list[int] | Unset):
         party_party_type (RpisListType | Unset):
@@ -1078,12 +994,8 @@ async def asyncio_detailed(
         priority_regex (int | Unset):
         priority_startswith (int | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -1141,14 +1053,10 @@ async def asyncio_detailed(
         party=party,
         party_first_name=party_first_name,
         party_first_name_in=party_first_name_in,
-        party_gt=party_gt,
-        party_gte=party_gte,
         party_in=party_in,
         party_isnull=party_isnull,
         party_last_name=party_last_name,
         party_last_name_in=party_last_name_in,
-        party_lt=party_lt,
-        party_lte=party_lte,
         party_ob_id=party_ob_id,
         party_ob_id_in=party_ob_id_in,
         party_party_type=party_party_type,
@@ -1172,12 +1080,8 @@ async def asyncio_detailed(
         priority_regex=priority_regex,
         priority_startswith=priority_startswith,
         related_to=related_to,
-        related_to_gt=related_to_gt,
-        related_to_gte=related_to_gte,
         related_to_in=related_to_in,
         related_to_isnull=related_to_isnull,
-        related_to_lt=related_to_lt,
-        related_to_lte=related_to_lte,
         related_to_ob_id=related_to_ob_id,
         related_to_ob_id_in=related_to_ob_id_in,
         related_to_short_code=related_to_short_code,
@@ -1235,14 +1139,10 @@ async def asyncio(
     party: int | Unset = UNSET,
     party_first_name: str | Unset = UNSET,
     party_first_name_in: list[str] | Unset = UNSET,
-    party_gt: int | Unset = UNSET,
-    party_gte: int | Unset = UNSET,
     party_in: list[int] | Unset = UNSET,
     party_isnull: bool | Unset = UNSET,
     party_last_name: str | Unset = UNSET,
     party_last_name_in: list[str] | Unset = UNSET,
-    party_lt: int | Unset = UNSET,
-    party_lte: int | Unset = UNSET,
     party_ob_id: int | Unset = UNSET,
     party_ob_id_in: list[int] | Unset = UNSET,
     party_party_type: RpisListType | Unset = UNSET,
@@ -1266,12 +1166,8 @@ async def asyncio(
     priority_regex: int | Unset = UNSET,
     priority_startswith: int | Unset = UNSET,
     related_to: int | Unset = UNSET,
-    related_to_gt: int | Unset = UNSET,
-    related_to_gte: int | Unset = UNSET,
     related_to_in: list[int] | Unset = UNSET,
     related_to_isnull: bool | Unset = UNSET,
-    related_to_lt: int | Unset = UNSET,
-    related_to_lte: int | Unset = UNSET,
     related_to_ob_id: int | Unset = UNSET,
     related_to_ob_id_in: list[int] | Unset = UNSET,
     related_to_short_code: str | Unset = UNSET,
@@ -1326,14 +1222,10 @@ async def asyncio(
         party (int | Unset):
         party_first_name (str | Unset):
         party_first_name_in (list[str] | Unset):
-        party_gt (int | Unset):
-        party_gte (int | Unset):
         party_in (list[int] | Unset):
         party_isnull (bool | Unset):
         party_last_name (str | Unset):
         party_last_name_in (list[str] | Unset):
-        party_lt (int | Unset):
-        party_lte (int | Unset):
         party_ob_id (int | Unset):
         party_ob_id_in (list[int] | Unset):
         party_party_type (RpisListType | Unset):
@@ -1357,12 +1249,8 @@ async def asyncio(
         priority_regex (int | Unset):
         priority_startswith (int | Unset):
         related_to (int | Unset):
-        related_to_gt (int | Unset):
-        related_to_gte (int | Unset):
         related_to_in (list[int] | Unset):
         related_to_isnull (bool | Unset):
-        related_to_lt (int | Unset):
-        related_to_lte (int | Unset):
         related_to_ob_id (int | Unset):
         related_to_ob_id_in (list[int] | Unset):
         related_to_short_code (str | Unset):
@@ -1422,14 +1310,10 @@ async def asyncio(
             party=party,
             party_first_name=party_first_name,
             party_first_name_in=party_first_name_in,
-            party_gt=party_gt,
-            party_gte=party_gte,
             party_in=party_in,
             party_isnull=party_isnull,
             party_last_name=party_last_name,
             party_last_name_in=party_last_name_in,
-            party_lt=party_lt,
-            party_lte=party_lte,
             party_ob_id=party_ob_id,
             party_ob_id_in=party_ob_id_in,
             party_party_type=party_party_type,
@@ -1453,12 +1337,8 @@ async def asyncio(
             priority_regex=priority_regex,
             priority_startswith=priority_startswith,
             related_to=related_to,
-            related_to_gt=related_to_gt,
-            related_to_gte=related_to_gte,
             related_to_in=related_to_in,
             related_to_isnull=related_to_isnull,
-            related_to_lt=related_to_lt,
-            related_to_lte=related_to_lte,
             related_to_ob_id=related_to_ob_id,
             related_to_ob_id_in=related_to_ob_id_in,
             related_to_short_code=related_to_short_code,
