@@ -21,19 +21,17 @@ class ConstraintsRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
+            ob_id (int | None):
             access_constraints (None | str):
-            access_category (AccessCategoryEnum): * `public` - Public access no restriction
-                * `registered` - Available to any registered user (no dataset registration required)
-                * `restricted` - Dataset registration required
+            access_category (AccessCategoryEnum | None):
             access_roles (None | str):
             label (None | str):
             licence (LicenceRead | None):
     """
 
-    ob_id: int
+    ob_id: int | None
     access_constraints: None | str
-    access_category: AccessCategoryEnum
+    access_category: AccessCategoryEnum | None
     access_roles: None | str
     label: None | str
     licence: LicenceRead | None
@@ -42,12 +40,17 @@ class ConstraintsRead:
     def to_dict(self) -> dict[str, Any]:
         from ..models.licence_read import LicenceRead
 
+        ob_id: int | None
         ob_id = self.ob_id
 
         access_constraints: None | str
         access_constraints = self.access_constraints
 
-        access_category = self.access_category.value
+        access_category: None | str
+        if isinstance(self.access_category, AccessCategoryEnum):
+            access_category = self.access_category.value
+        else:
+            access_category = self.access_category
 
         access_roles: None | str
         access_roles = self.access_roles
@@ -81,7 +84,13 @@ class ConstraintsRead:
         from ..models.licence_read import LicenceRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
+
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
         def _parse_access_constraints(data: object) -> None | str:
             if data is None:
@@ -90,7 +99,20 @@ class ConstraintsRead:
 
         access_constraints = _parse_access_constraints(d.pop("accessConstraints"))
 
-        access_category = AccessCategoryEnum(d.pop("accessCategory"))
+        def _parse_access_category(data: object) -> AccessCategoryEnum | None:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                access_category_type_1 = AccessCategoryEnum(data)
+
+                return access_category_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(AccessCategoryEnum | None, data)
+
+        access_category = _parse_access_category(d.pop("accessCategory"))
 
         def _parse_access_roles(data: object) -> None | str:
             if data is None:

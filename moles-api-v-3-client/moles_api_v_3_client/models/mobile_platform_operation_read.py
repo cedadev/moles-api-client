@@ -24,24 +24,24 @@ class MobilePlatformOperationRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
-            abstract (str):
-            status (BlankEnum | StatusEnum):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
+            abstract (None | str):
+            status (BlankEnum | None | StatusEnum):
             platform_field (None | SimpleRead):
             location (GeographicBoundingBoxRead | None):
             operation_time (None | TimePeriod):
             child_operation (None | SimpleRead):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
-    abstract: str
-    status: BlankEnum | StatusEnum
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
+    abstract: None | str
+    status: BlankEnum | None | StatusEnum
     platform_field: None | SimpleRead
     location: GeographicBoundingBoxRead | None
     operation_time: None | TimePeriod
@@ -53,21 +53,28 @@ class MobilePlatformOperationRead:
         from ..models.simple_read import SimpleRead
         from ..models.time_period import TimePeriod
 
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
-        status: str
+        status: None | str
         if isinstance(self.status, StatusEnum):
             status = self.status.value
-        else:
+        elif isinstance(self.status, BlankEnum):
             status = self.status.value
+        else:
+            status = self.status
 
         platform_field: dict[str, Any] | None
         if isinstance(self.platform_field, SimpleRead):
@@ -119,17 +126,45 @@ class MobilePlatformOperationRead:
         from ..models.time_period import TimePeriod
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        abstract = d.pop("abstract")
+        uuid = _parse_uuid(d.pop("uuid"))
 
-        def _parse_status(data: object) -> BlankEnum | StatusEnum:
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
+
+        def _parse_status(data: object) -> BlankEnum | None | StatusEnum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -138,11 +173,15 @@ class MobilePlatformOperationRead:
                 return status_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            status_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                status_type_1 = BlankEnum(data)
 
-            return status_type_1
+                return status_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | StatusEnum, data)
 
         status = _parse_status(d.pop("status"))
 

@@ -66,6 +66,9 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     units: str | Unset = UNSET,
@@ -108,7 +111,7 @@ def _get_kwargs(
 
     json_highest_level_bound_in: list[float] | Unset = UNSET
     if not isinstance(highest_level_bound_in, Unset):
-        json_highest_level_bound_in = ",".join(map(str, highest_level_bound_in))
+        json_highest_level_bound_in = highest_level_bound_in
 
     params["highestLevelBound__in"] = json_highest_level_bound_in
 
@@ -124,7 +127,7 @@ def _get_kwargs(
 
     json_highest_level_bound_range: list[float] | Unset = UNSET
     if not isinstance(highest_level_bound_range, Unset):
-        json_highest_level_bound_range = ",".join(map(str, highest_level_bound_range))
+        json_highest_level_bound_range = highest_level_bound_range
 
     params["highestLevelBound__range"] = json_highest_level_bound_range
 
@@ -154,7 +157,7 @@ def _get_kwargs(
 
     json_lowest_level_bound_in: list[float] | Unset = UNSET
     if not isinstance(lowest_level_bound_in, Unset):
-        json_lowest_level_bound_in = ",".join(map(str, lowest_level_bound_in))
+        json_lowest_level_bound_in = lowest_level_bound_in
 
     params["lowestLevelBound__in"] = json_lowest_level_bound_in
 
@@ -170,7 +173,7 @@ def _get_kwargs(
 
     json_lowest_level_bound_range: list[float] | Unset = UNSET
     if not isinstance(lowest_level_bound_range, Unset):
-        json_lowest_level_bound_range = ",".join(map(str, lowest_level_bound_range))
+        json_lowest_level_bound_range = lowest_level_bound_range
 
     params["lowestLevelBound__range"] = json_lowest_level_bound_range
 
@@ -198,7 +201,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -214,13 +217,27 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
     params["ob_id__regex"] = ob_id_regex
 
     params["ob_id__startswith"] = ob_id_startswith
+
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = observation
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = observation_in
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
 
     params["offset"] = offset
 
@@ -244,7 +261,7 @@ def _get_kwargs(
 
     json_units_in: list[str] | Unset = UNSET
     if not isinstance(units_in, Unset):
-        json_units_in = ",".join(map(str, units_in))
+        json_units_in = units_in
 
     params["units__in"] = json_units_in
 
@@ -260,7 +277,7 @@ def _get_kwargs(
 
     json_units_range: list[str] | Unset = UNSET
     if not isinstance(units_range, Unset):
-        json_units_range = ",".join(map(str, units_range))
+        json_units_range = units_range
 
     params["units__range"] = json_units_range
 
@@ -362,6 +379,9 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     units: str | Unset = UNSET,
@@ -440,6 +460,9 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         units (str | Unset):
@@ -524,6 +547,9 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         units=units,
@@ -610,6 +636,9 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     units: str | Unset = UNSET,
@@ -688,6 +717,9 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         units (str | Unset):
@@ -773,6 +805,9 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         units=units,
@@ -853,6 +888,9 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     units: str | Unset = UNSET,
@@ -931,6 +969,9 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         units (str | Unset):
@@ -1015,6 +1056,9 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         units=units,
@@ -1099,6 +1143,9 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     units: str | Unset = UNSET,
@@ -1177,6 +1224,9 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         units (str | Unset):
@@ -1263,6 +1313,9 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
             units=units,

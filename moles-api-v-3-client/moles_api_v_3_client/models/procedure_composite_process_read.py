@@ -19,20 +19,20 @@ class ProcedureCompositeProcessRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            title (str):
-            abstract (str):
+            ob_id (int | None):
+            uuid (None | str):
+            title (None | str):
+            abstract (None | str):
             computation_component (list[SimpleRead] | None):
             acquisition_component (list[SimpleRead] | None):
             identifier_set (list[int | None]):
             responsiblepartyinfo_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    title: str
-    abstract: str
+    ob_id: int | None
+    uuid: None | str
+    title: None | str
+    abstract: None | str
     computation_component: list[SimpleRead] | None
     acquisition_component: list[SimpleRead] | None
     identifier_set: list[int | None]
@@ -40,12 +40,16 @@ class ProcedureCompositeProcessRead:
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
         computation_component: list[dict[str, Any]] | None
@@ -102,13 +106,34 @@ class ProcedureCompositeProcessRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        title = d.pop("title")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        abstract = d.pop("abstract")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        uuid = _parse_uuid(d.pop("uuid"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
 
         def _parse_computation_component(data: object) -> list[SimpleRead] | None:
             if data is None:

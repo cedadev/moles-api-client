@@ -20,35 +20,42 @@ class ProcedureAcquisitionRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
-            abstract (str):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
+            abstract (None | str):
             image_details (list[int | None]):
             mobile_platform_operation (list[SimpleRead] | None):
+            independent_instrument (list[int | None]):
             instrumentplatformpair_set (list[InstrumentPlatformPairRead] | None):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
-    abstract: str
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
+    abstract: None | str
     image_details: list[int | None]
     mobile_platform_operation: list[SimpleRead] | None
+    independent_instrument: list[int | None]
     instrumentplatformpair_set: list[InstrumentPlatformPairRead] | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
+        abstract: None | str
         abstract = self.abstract
 
         image_details = []
@@ -66,6 +73,12 @@ class ProcedureAcquisitionRead:
 
         else:
             mobile_platform_operation = self.mobile_platform_operation
+
+        independent_instrument = []
+        for independent_instrument_item_data in self.independent_instrument:
+            independent_instrument_item: int | None
+            independent_instrument_item = independent_instrument_item_data
+            independent_instrument.append(independent_instrument_item)
 
         instrumentplatformpair_set: list[dict[str, Any]] | None
         if isinstance(self.instrumentplatformpair_set, list):
@@ -88,6 +101,7 @@ class ProcedureAcquisitionRead:
                 "abstract": abstract,
                 "imageDetails": image_details,
                 "mobilePlatformOperation": mobile_platform_operation,
+                "independentInstrument": independent_instrument,
                 "instrumentplatformpair_set": instrumentplatformpair_set,
             }
         )
@@ -100,15 +114,41 @@ class ProcedureAcquisitionRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        abstract = d.pop("abstract")
+        uuid = _parse_uuid(d.pop("uuid"))
+
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
+
+        def _parse_abstract(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        abstract = _parse_abstract(d.pop("abstract"))
 
         image_details = []
         _image_details = d.pop("imageDetails")
@@ -145,6 +185,19 @@ class ProcedureAcquisitionRead:
 
         mobile_platform_operation = _parse_mobile_platform_operation(d.pop("mobilePlatformOperation"))
 
+        independent_instrument = []
+        _independent_instrument = d.pop("independentInstrument")
+        for independent_instrument_item_data in _independent_instrument:
+
+            def _parse_independent_instrument_item(data: object) -> int | None:
+                if data is None:
+                    return data
+                return cast(int | None, data)
+
+            independent_instrument_item = _parse_independent_instrument_item(independent_instrument_item_data)
+
+            independent_instrument.append(independent_instrument_item)
+
         def _parse_instrumentplatformpair_set(data: object) -> list[InstrumentPlatformPairRead] | None:
             if data is None:
                 return data
@@ -175,6 +228,7 @@ class ProcedureAcquisitionRead:
             abstract=abstract,
             image_details=image_details,
             mobile_platform_operation=mobile_platform_operation,
+            independent_instrument=independent_instrument,
             instrumentplatformpair_set=instrumentplatformpair_set,
         )
 

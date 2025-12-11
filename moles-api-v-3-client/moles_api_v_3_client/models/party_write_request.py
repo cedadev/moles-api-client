@@ -19,12 +19,12 @@ class PartyWriteRequest:
 
         Attributes:
             last_name (str):
-            address_line_1 (str):
-            address_line_2 (str):
             first_name (str | Unset):
             party_type (PartyTypeEnum | Unset): * `individual` - Individual
                 * `organisation` - Organisation
             description (str | Unset):
+            address_line_1 (str | Unset):
+            address_line_2 (str | Unset):
             city (str | Unset):
             country (str | Unset):
             postal_code (str | Unset):
@@ -34,11 +34,11 @@ class PartyWriteRequest:
     """
 
     last_name: str
-    address_line_1: str
-    address_line_2: str
     first_name: str | Unset = UNSET
     party_type: PartyTypeEnum | Unset = UNSET
     description: str | Unset = UNSET
+    address_line_1: str | Unset = UNSET
+    address_line_2: str | Unset = UNSET
     city: str | Unset = UNSET
     country: str | Unset = UNSET
     postal_code: str | Unset = UNSET
@@ -50,10 +50,6 @@ class PartyWriteRequest:
     def to_dict(self) -> dict[str, Any]:
         last_name = self.last_name
 
-        address_line_1 = self.address_line_1
-
-        address_line_2 = self.address_line_2
-
         first_name = self.first_name
 
         party_type: str | Unset = UNSET
@@ -61,6 +57,10 @@ class PartyWriteRequest:
             party_type = self.party_type.value
 
         description = self.description
+
+        address_line_1 = self.address_line_1
+
+        address_line_2 = self.address_line_2
 
         city = self.city
 
@@ -79,8 +79,6 @@ class PartyWriteRequest:
         field_dict.update(
             {
                 "lastName": last_name,
-                "addressLine1": address_line_1,
-                "addressLine2": address_line_2,
             }
         )
         if first_name is not UNSET:
@@ -89,6 +87,10 @@ class PartyWriteRequest:
             field_dict["partyType"] = party_type
         if description is not UNSET:
             field_dict["description"] = description
+        if address_line_1 is not UNSET:
+            field_dict["addressLine1"] = address_line_1
+        if address_line_2 is not UNSET:
+            field_dict["addressLine2"] = address_line_2
         if city is not UNSET:
             field_dict["city"] = city
         if country is not UNSET:
@@ -109,10 +111,6 @@ class PartyWriteRequest:
         d = dict(src_dict)
         last_name = d.pop("lastName")
 
-        address_line_1 = d.pop("addressLine1")
-
-        address_line_2 = d.pop("addressLine2")
-
         first_name = d.pop("firstName", UNSET)
 
         _party_type = d.pop("partyType", UNSET)
@@ -123,6 +121,10 @@ class PartyWriteRequest:
             party_type = PartyTypeEnum(_party_type)
 
         description = d.pop("description", UNSET)
+
+        address_line_1 = d.pop("addressLine1", UNSET)
+
+        address_line_2 = d.pop("addressLine2", UNSET)
 
         city = d.pop("city", UNSET)
 
@@ -138,11 +140,11 @@ class PartyWriteRequest:
 
         party_write_request = cls(
             last_name=last_name,
-            address_line_1=address_line_1,
-            address_line_2=address_line_2,
             first_name=first_name,
             party_type=party_type,
             description=description,
+            address_line_1=address_line_1,
+            address_line_2=address_line_2,
             city=city,
             country=country,
             postal_code=postal_code,

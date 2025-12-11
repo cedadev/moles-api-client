@@ -47,6 +47,9 @@ def _get_kwargs(
     east_bound_longitude_regex: float | Unset = UNSET,
     east_bound_longitude_startswith: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     north_bound_latitude: float | Unset = UNSET,
     north_bound_latitude_contained_by: float | Unset = UNSET,
     north_bound_latitude_contains: float | Unset = UNSET,
@@ -83,8 +86,14 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
     south_bound_latitude: float | Unset = UNSET,
     south_bound_latitude_contained_by: float | Unset = UNSET,
     south_bound_latitude_contains: float | Unset = UNSET,
@@ -142,7 +151,7 @@ def _get_kwargs(
 
     json_bbox_name_in: list[str] | Unset = UNSET
     if not isinstance(bbox_name_in, Unset):
-        json_bbox_name_in = ",".join(map(str, bbox_name_in))
+        json_bbox_name_in = bbox_name_in
 
     params["bboxName__in"] = json_bbox_name_in
 
@@ -158,7 +167,7 @@ def _get_kwargs(
 
     json_bbox_name_range: list[str] | Unset = UNSET
     if not isinstance(bbox_name_range, Unset):
-        json_bbox_name_range = ",".join(map(str, bbox_name_range))
+        json_bbox_name_range = bbox_name_range
 
     params["bboxName__range"] = json_bbox_name_range
 
@@ -186,7 +195,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_in, Unset):
-        json_east_bound_longitude_in = ",".join(map(str, east_bound_longitude_in))
+        json_east_bound_longitude_in = east_bound_longitude_in
 
     params["eastBoundLongitude__in"] = json_east_bound_longitude_in
 
@@ -202,7 +211,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_range, Unset):
-        json_east_bound_longitude_range = ",".join(map(str, east_bound_longitude_range))
+        json_east_bound_longitude_range = east_bound_longitude_range
 
     params["eastBoundLongitude__range"] = json_east_bound_longitude_range
 
@@ -211,6 +220,20 @@ def _get_kwargs(
     params["eastBoundLongitude__startswith"] = east_bound_longitude_startswith
 
     params["limit"] = limit
+
+    json_mobileplatformoperation: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation, Unset):
+        json_mobileplatformoperation = mobileplatformoperation
+
+    params["mobileplatformoperation"] = json_mobileplatformoperation
+
+    json_mobileplatformoperation_in: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation_in, Unset):
+        json_mobileplatformoperation_in = mobileplatformoperation_in
+
+    params["mobileplatformoperation__in"] = json_mobileplatformoperation_in
+
+    params["mobileplatformoperation__isnull"] = mobileplatformoperation_isnull
 
     params["northBoundLatitude"] = north_bound_latitude
 
@@ -232,7 +255,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_in, Unset):
-        json_north_bound_latitude_in = ",".join(map(str, north_bound_latitude_in))
+        json_north_bound_latitude_in = north_bound_latitude_in
 
     params["northBoundLatitude__in"] = json_north_bound_latitude_in
 
@@ -248,7 +271,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_range, Unset):
-        json_north_bound_latitude_range = ",".join(map(str, north_bound_latitude_range))
+        json_north_bound_latitude_range = north_bound_latitude_range
 
     params["northBoundLatitude__range"] = json_north_bound_latitude_range
 
@@ -276,7 +299,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -292,7 +315,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -300,9 +323,37 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = observation
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = observation_in
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
     params["offset"] = offset
 
     params["ordering"] = ordering
+
+    json_platform: list[int] | Unset = UNSET
+    if not isinstance(platform, Unset):
+        json_platform = platform
+
+    params["platform"] = json_platform
+
+    json_platform_in: list[int] | Unset = UNSET
+    if not isinstance(platform_in, Unset):
+        json_platform_in = platform_in
+
+    params["platform__in"] = json_platform_in
+
+    params["platform__isnull"] = platform_isnull
 
     params["southBoundLatitude"] = south_bound_latitude
 
@@ -324,7 +375,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_in, Unset):
-        json_south_bound_latitude_in = ",".join(map(str, south_bound_latitude_in))
+        json_south_bound_latitude_in = south_bound_latitude_in
 
     params["southBoundLatitude__in"] = json_south_bound_latitude_in
 
@@ -340,7 +391,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_range, Unset):
-        json_south_bound_latitude_range = ",".join(map(str, south_bound_latitude_range))
+        json_south_bound_latitude_range = south_bound_latitude_range
 
     params["southBoundLatitude__range"] = json_south_bound_latitude_range
 
@@ -368,7 +419,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_in, Unset):
-        json_west_bound_longitude_in = ",".join(map(str, west_bound_longitude_in))
+        json_west_bound_longitude_in = west_bound_longitude_in
 
     params["westBoundLongitude__in"] = json_west_bound_longitude_in
 
@@ -384,7 +435,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_range, Unset):
-        json_west_bound_longitude_range = ",".join(map(str, west_bound_longitude_range))
+        json_west_bound_longitude_range = west_bound_longitude_range
 
     params["westBoundLongitude__range"] = json_west_bound_longitude_range
 
@@ -467,6 +518,9 @@ def sync_detailed(
     east_bound_longitude_regex: float | Unset = UNSET,
     east_bound_longitude_startswith: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     north_bound_latitude: float | Unset = UNSET,
     north_bound_latitude_contained_by: float | Unset = UNSET,
     north_bound_latitude_contains: float | Unset = UNSET,
@@ -503,8 +557,14 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
     south_bound_latitude: float | Unset = UNSET,
     south_bound_latitude_contained_by: float | Unset = UNSET,
     south_bound_latitude_contains: float | Unset = UNSET,
@@ -582,6 +642,9 @@ def sync_detailed(
         east_bound_longitude_regex (float | Unset):
         east_bound_longitude_startswith (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         north_bound_latitude (float | Unset):
         north_bound_latitude_contained_by (float | Unset):
         north_bound_latitude_contains (float | Unset):
@@ -618,8 +681,14 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
         south_bound_latitude (float | Unset):
         south_bound_latitude_contained_by (float | Unset):
         south_bound_latitude_contains (float | Unset):
@@ -702,6 +771,9 @@ def sync_detailed(
         east_bound_longitude_regex=east_bound_longitude_regex,
         east_bound_longitude_startswith=east_bound_longitude_startswith,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         north_bound_latitude=north_bound_latitude,
         north_bound_latitude_contained_by=north_bound_latitude_contained_by,
         north_bound_latitude_contains=north_bound_latitude_contains,
@@ -738,8 +810,14 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
         south_bound_latitude=south_bound_latitude,
         south_bound_latitude_contained_by=south_bound_latitude_contained_by,
         south_bound_latitude_contains=south_bound_latitude_contains,
@@ -824,6 +902,9 @@ def sync(
     east_bound_longitude_regex: float | Unset = UNSET,
     east_bound_longitude_startswith: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     north_bound_latitude: float | Unset = UNSET,
     north_bound_latitude_contained_by: float | Unset = UNSET,
     north_bound_latitude_contains: float | Unset = UNSET,
@@ -860,8 +941,14 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
     south_bound_latitude: float | Unset = UNSET,
     south_bound_latitude_contained_by: float | Unset = UNSET,
     south_bound_latitude_contains: float | Unset = UNSET,
@@ -939,6 +1026,9 @@ def sync(
         east_bound_longitude_regex (float | Unset):
         east_bound_longitude_startswith (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         north_bound_latitude (float | Unset):
         north_bound_latitude_contained_by (float | Unset):
         north_bound_latitude_contains (float | Unset):
@@ -975,8 +1065,14 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
         south_bound_latitude (float | Unset):
         south_bound_latitude_contained_by (float | Unset):
         south_bound_latitude_contains (float | Unset):
@@ -1060,6 +1156,9 @@ def sync(
         east_bound_longitude_regex=east_bound_longitude_regex,
         east_bound_longitude_startswith=east_bound_longitude_startswith,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         north_bound_latitude=north_bound_latitude,
         north_bound_latitude_contained_by=north_bound_latitude_contained_by,
         north_bound_latitude_contains=north_bound_latitude_contains,
@@ -1096,8 +1195,14 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
         south_bound_latitude=south_bound_latitude,
         south_bound_latitude_contained_by=south_bound_latitude_contained_by,
         south_bound_latitude_contains=south_bound_latitude_contains,
@@ -1176,6 +1281,9 @@ async def asyncio_detailed(
     east_bound_longitude_regex: float | Unset = UNSET,
     east_bound_longitude_startswith: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     north_bound_latitude: float | Unset = UNSET,
     north_bound_latitude_contained_by: float | Unset = UNSET,
     north_bound_latitude_contains: float | Unset = UNSET,
@@ -1212,8 +1320,14 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
     south_bound_latitude: float | Unset = UNSET,
     south_bound_latitude_contained_by: float | Unset = UNSET,
     south_bound_latitude_contains: float | Unset = UNSET,
@@ -1291,6 +1405,9 @@ async def asyncio_detailed(
         east_bound_longitude_regex (float | Unset):
         east_bound_longitude_startswith (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         north_bound_latitude (float | Unset):
         north_bound_latitude_contained_by (float | Unset):
         north_bound_latitude_contains (float | Unset):
@@ -1327,8 +1444,14 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
         south_bound_latitude (float | Unset):
         south_bound_latitude_contained_by (float | Unset):
         south_bound_latitude_contains (float | Unset):
@@ -1411,6 +1534,9 @@ async def asyncio_detailed(
         east_bound_longitude_regex=east_bound_longitude_regex,
         east_bound_longitude_startswith=east_bound_longitude_startswith,
         limit=limit,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
         north_bound_latitude=north_bound_latitude,
         north_bound_latitude_contained_by=north_bound_latitude_contained_by,
         north_bound_latitude_contains=north_bound_latitude_contains,
@@ -1447,8 +1573,14 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
+        platform=platform,
+        platform_in=platform_in,
+        platform_isnull=platform_isnull,
         south_bound_latitude=south_bound_latitude,
         south_bound_latitude_contained_by=south_bound_latitude_contained_by,
         south_bound_latitude_contains=south_bound_latitude_contains,
@@ -1531,6 +1663,9 @@ async def asyncio(
     east_bound_longitude_regex: float | Unset = UNSET,
     east_bound_longitude_startswith: float | Unset = UNSET,
     limit: int | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
     north_bound_latitude: float | Unset = UNSET,
     north_bound_latitude_contained_by: float | Unset = UNSET,
     north_bound_latitude_contains: float | Unset = UNSET,
@@ -1567,8 +1702,14 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    platform: list[int] | Unset = UNSET,
+    platform_in: list[int] | Unset = UNSET,
+    platform_isnull: bool | Unset = UNSET,
     south_bound_latitude: float | Unset = UNSET,
     south_bound_latitude_contained_by: float | Unset = UNSET,
     south_bound_latitude_contains: float | Unset = UNSET,
@@ -1646,6 +1787,9 @@ async def asyncio(
         east_bound_longitude_regex (float | Unset):
         east_bound_longitude_startswith (float | Unset):
         limit (int | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
         north_bound_latitude (float | Unset):
         north_bound_latitude_contained_by (float | Unset):
         north_bound_latitude_contains (float | Unset):
@@ -1682,8 +1826,14 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
+        platform (list[int] | Unset):
+        platform_in (list[int] | Unset):
+        platform_isnull (bool | Unset):
         south_bound_latitude (float | Unset):
         south_bound_latitude_contained_by (float | Unset):
         south_bound_latitude_contains (float | Unset):
@@ -1768,6 +1918,9 @@ async def asyncio(
             east_bound_longitude_regex=east_bound_longitude_regex,
             east_bound_longitude_startswith=east_bound_longitude_startswith,
             limit=limit,
+            mobileplatformoperation=mobileplatformoperation,
+            mobileplatformoperation_in=mobileplatformoperation_in,
+            mobileplatformoperation_isnull=mobileplatformoperation_isnull,
             north_bound_latitude=north_bound_latitude,
             north_bound_latitude_contained_by=north_bound_latitude_contained_by,
             north_bound_latitude_contains=north_bound_latitude_contains,
@@ -1804,8 +1957,14 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
+            platform=platform,
+            platform_in=platform_in,
+            platform_isnull=platform_isnull,
             south_bound_latitude=south_bound_latitude,
             south_bound_latitude_contained_by=south_bound_latitude_contained_by,
             south_bound_latitude_contains=south_bound_latitude_contains,

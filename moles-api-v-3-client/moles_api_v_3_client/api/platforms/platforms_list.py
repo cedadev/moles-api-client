@@ -29,6 +29,18 @@ def _get_kwargs(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    child_platform: list[int] | Unset = UNSET,
+    child_platform_in: list[int] | Unset = UNSET,
+    child_platform_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    instrumentplatformpair: list[int] | Unset = UNSET,
+    instrumentplatformpair_in: list[int] | Unset = UNSET,
+    instrumentplatformpair_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -54,12 +66,8 @@ def _get_kwargs(
     location_east_bound_longitude_lt: float | Unset = UNSET,
     location_east_bound_longitude_lte: float | Unset = UNSET,
     location_east_bound_longitude_range: list[float] | Unset = UNSET,
-    location_gt: int | Unset = UNSET,
-    location_gte: int | Unset = UNSET,
     location_in: list[int] | Unset = UNSET,
     location_isnull: bool | Unset = UNSET,
-    location_lt: int | Unset = UNSET,
-    location_lte: int | Unset = UNSET,
     location_north_bound_latitude: float | Unset = UNSET,
     location_north_bound_latitude_gt: float | Unset = UNSET,
     location_north_bound_latitude_gte: float | Unset = UNSET,
@@ -80,6 +88,15 @@ def _get_kwargs(
     location_west_bound_longitude_lt: float | Unset = UNSET,
     location_west_bound_longitude_lte: float | Unset = UNSET,
     location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -99,7 +116,13 @@ def _get_kwargs(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    parent_platform: list[int] | Unset = UNSET,
+    parent_platform_in: list[int] | Unset = UNSET,
+    parent_platform_isnull: bool | Unset = UNSET,
     platform_type: PlatformsListPlatformType | Unset = UNSET,
     platform_type_contains: str | Unset = UNSET,
     platform_type_endswith: str | Unset = UNSET,
@@ -118,12 +141,14 @@ def _get_kwargs(
     platform_type_regex: str | Unset = UNSET,
     platform_type_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -196,7 +221,7 @@ def _get_kwargs(
 
     json_abstract_in: list[str] | Unset = UNSET
     if not isinstance(abstract_in, Unset):
-        json_abstract_in = ",".join(map(str, abstract_in))
+        json_abstract_in = abstract_in
 
     params["abstract__in"] = json_abstract_in
 
@@ -212,13 +237,69 @@ def _get_kwargs(
 
     json_abstract_range: list[str] | Unset = UNSET
     if not isinstance(abstract_range, Unset):
-        json_abstract_range = ",".join(map(str, abstract_range))
+        json_abstract_range = abstract_range
 
     params["abstract__range"] = json_abstract_range
 
     params["abstract__regex"] = abstract_regex
 
     params["abstract__startswith"] = abstract_startswith
+
+    json_child_platform: list[int] | Unset = UNSET
+    if not isinstance(child_platform, Unset):
+        json_child_platform = child_platform
+
+    params["childPlatform"] = json_child_platform
+
+    json_child_platform_in: list[int] | Unset = UNSET
+    if not isinstance(child_platform_in, Unset):
+        json_child_platform_in = child_platform_in
+
+    params["childPlatform__in"] = json_child_platform_in
+
+    params["childPlatform__isnull"] = child_platform_isnull
+
+    json_identifier: list[int] | Unset = UNSET
+    if not isinstance(identifier, Unset):
+        json_identifier = identifier
+
+    params["identifier"] = json_identifier
+
+    json_identifier_in: list[int] | Unset = UNSET
+    if not isinstance(identifier_in, Unset):
+        json_identifier_in = identifier_in
+
+    params["identifier__in"] = json_identifier_in
+
+    params["identifier__isnull"] = identifier_isnull
+
+    json_image_details: list[int] | Unset = UNSET
+    if not isinstance(image_details, Unset):
+        json_image_details = image_details
+
+    params["imageDetails"] = json_image_details
+
+    json_image_details_in: list[int] | Unset = UNSET
+    if not isinstance(image_details_in, Unset):
+        json_image_details_in = image_details_in
+
+    params["imageDetails__in"] = json_image_details_in
+
+    params["imageDetails__isnull"] = image_details_isnull
+
+    json_instrumentplatformpair: list[int] | Unset = UNSET
+    if not isinstance(instrumentplatformpair, Unset):
+        json_instrumentplatformpair = instrumentplatformpair
+
+    params["instrumentplatformpair"] = json_instrumentplatformpair
+
+    json_instrumentplatformpair_in: list[int] | Unset = UNSET
+    if not isinstance(instrumentplatformpair_in, Unset):
+        json_instrumentplatformpair_in = instrumentplatformpair_in
+
+    params["instrumentplatformpair__in"] = json_instrumentplatformpair_in
+
+    params["instrumentplatformpair__isnull"] = instrumentplatformpair_isnull
 
     params["keywords"] = keywords
 
@@ -238,7 +319,7 @@ def _get_kwargs(
 
     json_keywords_in: list[str] | Unset = UNSET
     if not isinstance(keywords_in, Unset):
-        json_keywords_in = ",".join(map(str, keywords_in))
+        json_keywords_in = keywords_in
 
     params["keywords__in"] = json_keywords_in
 
@@ -254,7 +335,7 @@ def _get_kwargs(
 
     json_keywords_range: list[str] | Unset = UNSET
     if not isinstance(keywords_range, Unset):
-        json_keywords_range = ",".join(map(str, keywords_range))
+        json_keywords_range = keywords_range
 
     params["keywords__range"] = json_keywords_range
 
@@ -278,25 +359,17 @@ def _get_kwargs(
 
     json_location_east_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(location_east_bound_longitude_range, Unset):
-        json_location_east_bound_longitude_range = ",".join(map(str, location_east_bound_longitude_range))
+        json_location_east_bound_longitude_range = location_east_bound_longitude_range
 
     params["location__eastBoundLongitude__range"] = json_location_east_bound_longitude_range
 
-    params["location__gt"] = location_gt
-
-    params["location__gte"] = location_gte
-
     json_location_in: list[int] | Unset = UNSET
     if not isinstance(location_in, Unset):
-        json_location_in = ",".join(map(str, location_in))
+        json_location_in = location_in
 
     params["location__in"] = json_location_in
 
     params["location__isnull"] = location_isnull
-
-    params["location__lt"] = location_lt
-
-    params["location__lte"] = location_lte
 
     params["location__northBoundLatitude"] = location_north_bound_latitude
 
@@ -310,7 +383,7 @@ def _get_kwargs(
 
     json_location_north_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(location_north_bound_latitude_range, Unset):
-        json_location_north_bound_latitude_range = ",".join(map(str, location_north_bound_latitude_range))
+        json_location_north_bound_latitude_range = location_north_bound_latitude_range
 
     params["location__northBoundLatitude__range"] = json_location_north_bound_latitude_range
 
@@ -318,7 +391,7 @@ def _get_kwargs(
 
     json_location_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(location_ob_id_in, Unset):
-        json_location_ob_id_in = ",".join(map(str, location_ob_id_in))
+        json_location_ob_id_in = location_ob_id_in
 
     params["location__ob_id__in"] = json_location_ob_id_in
 
@@ -334,7 +407,7 @@ def _get_kwargs(
 
     json_location_south_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(location_south_bound_latitude_range, Unset):
-        json_location_south_bound_latitude_range = ",".join(map(str, location_south_bound_latitude_range))
+        json_location_south_bound_latitude_range = location_south_bound_latitude_range
 
     params["location__southBoundLatitude__range"] = json_location_south_bound_latitude_range
 
@@ -350,9 +423,51 @@ def _get_kwargs(
 
     json_location_west_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(location_west_bound_longitude_range, Unset):
-        json_location_west_bound_longitude_range = ",".join(map(str, location_west_bound_longitude_range))
+        json_location_west_bound_longitude_range = location_west_bound_longitude_range
 
     params["location__westBoundLongitude__range"] = json_location_west_bound_longitude_range
+
+    json_migrationproperty: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty, Unset):
+        json_migrationproperty = migrationproperty
+
+    params["migrationproperty"] = json_migrationproperty
+
+    json_migrationproperty_in: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty_in, Unset):
+        json_migrationproperty_in = migrationproperty_in
+
+    params["migrationproperty__in"] = json_migrationproperty_in
+
+    params["migrationproperty__isnull"] = migrationproperty_isnull
+
+    json_mobileplatformoperation: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation, Unset):
+        json_mobileplatformoperation = mobileplatformoperation
+
+    params["mobileplatformoperation"] = json_mobileplatformoperation
+
+    json_mobileplatformoperation_in: list[int] | Unset = UNSET
+    if not isinstance(mobileplatformoperation_in, Unset):
+        json_mobileplatformoperation_in = mobileplatformoperation_in
+
+    params["mobileplatformoperation__in"] = json_mobileplatformoperation_in
+
+    params["mobileplatformoperation__isnull"] = mobileplatformoperation_isnull
+
+    json_note: list[int] | Unset = UNSET
+    if not isinstance(note, Unset):
+        json_note = note
+
+    params["note"] = json_note
+
+    json_note_in: list[int] | Unset = UNSET
+    if not isinstance(note_in, Unset):
+        json_note_in = note_in
+
+    params["note__in"] = json_note_in
+
+    params["note__isnull"] = note_isnull
 
     params["ob_id"] = ob_id
 
@@ -374,7 +489,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -390,7 +505,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -400,7 +515,35 @@ def _get_kwargs(
 
     params["offset"] = offset
 
+    json_onlineresource: list[int] | Unset = UNSET
+    if not isinstance(onlineresource, Unset):
+        json_onlineresource = onlineresource
+
+    params["onlineresource"] = json_onlineresource
+
+    json_onlineresource_in: list[int] | Unset = UNSET
+    if not isinstance(onlineresource_in, Unset):
+        json_onlineresource_in = onlineresource_in
+
+    params["onlineresource__in"] = json_onlineresource_in
+
+    params["onlineresource__isnull"] = onlineresource_isnull
+
     params["ordering"] = ordering
+
+    json_parent_platform: list[int] | Unset = UNSET
+    if not isinstance(parent_platform, Unset):
+        json_parent_platform = parent_platform
+
+    params["parentPlatform"] = json_parent_platform
+
+    json_parent_platform_in: list[int] | Unset = UNSET
+    if not isinstance(parent_platform_in, Unset):
+        json_parent_platform_in = parent_platform_in
+
+    params["parentPlatform__in"] = json_parent_platform_in
+
+    params["parentPlatform__isnull"] = parent_platform_isnull
 
     json_platform_type: str | Unset = UNSET
     if not isinstance(platform_type, Unset):
@@ -424,7 +567,7 @@ def _get_kwargs(
 
     json_platform_type_in: list[str] | Unset = UNSET
     if not isinstance(platform_type_in, Unset):
-        json_platform_type_in = ",".join(map(str, platform_type_in))
+        json_platform_type_in = platform_type_in
 
     params["platformType__in"] = json_platform_type_in
 
@@ -440,7 +583,7 @@ def _get_kwargs(
 
     json_platform_type_range: list[str] | Unset = UNSET
     if not isinstance(platform_type_range, Unset):
-        json_platform_type_range = ",".join(map(str, platform_type_range))
+        json_platform_type_range = platform_type_range
 
     params["platformType__range"] = json_platform_type_range
 
@@ -450,21 +593,41 @@ def _get_kwargs(
 
     params["referenceable_ptr"] = referenceable_ptr
 
-    params["referenceable_ptr__gt"] = referenceable_ptr_gt
-
-    params["referenceable_ptr__gte"] = referenceable_ptr_gte
-
     json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
-        json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
+        json_referenceable_ptr_in = referenceable_ptr_in
 
     params["referenceable_ptr__in"] = json_referenceable_ptr_in
 
     params["referenceable_ptr__isnull"] = referenceable_ptr_isnull
 
-    params["referenceable_ptr__lt"] = referenceable_ptr_lt
+    json_responsiblepartyinfo: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo, Unset):
+        json_responsiblepartyinfo = responsiblepartyinfo
 
-    params["referenceable_ptr__lte"] = referenceable_ptr_lte
+    params["responsiblepartyinfo"] = json_responsiblepartyinfo
+
+    json_responsiblepartyinfo_in: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo_in, Unset):
+        json_responsiblepartyinfo_in = responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__in"] = json_responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__isnull"] = responsiblepartyinfo_isnull
+
+    json_review: list[int] | Unset = UNSET
+    if not isinstance(review, Unset):
+        json_review = review
+
+    params["review"] = json_review
+
+    json_review_in: list[int] | Unset = UNSET
+    if not isinstance(review_in, Unset):
+        json_review_in = review_in
+
+    params["review__in"] = json_review_in
+
+    params["review__isnull"] = review_isnull
 
     params["short_code"] = short_code
 
@@ -484,7 +647,7 @@ def _get_kwargs(
 
     json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
-        json_short_code_in = ",".join(map(str, short_code_in))
+        json_short_code_in = short_code_in
 
     params["short_code__in"] = json_short_code_in
 
@@ -500,7 +663,7 @@ def _get_kwargs(
 
     json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
-        json_short_code_range = ",".join(map(str, short_code_range))
+        json_short_code_range = short_code_range
 
     params["short_code__range"] = json_short_code_range
 
@@ -526,7 +689,7 @@ def _get_kwargs(
 
     json_title_in: list[str] | Unset = UNSET
     if not isinstance(title_in, Unset):
-        json_title_in = ",".join(map(str, title_in))
+        json_title_in = title_in
 
     params["title__in"] = json_title_in
 
@@ -542,7 +705,7 @@ def _get_kwargs(
 
     json_title_range: list[str] | Unset = UNSET
     if not isinstance(title_range, Unset):
-        json_title_range = ",".join(map(str, title_range))
+        json_title_range = title_range
 
     params["title__range"] = json_title_range
 
@@ -568,7 +731,7 @@ def _get_kwargs(
 
     json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
-        json_uuid_in = ",".join(map(str, uuid_in))
+        json_uuid_in = uuid_in
 
     params["uuid__in"] = json_uuid_in
 
@@ -584,7 +747,7 @@ def _get_kwargs(
 
     json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
-        json_uuid_range = ",".join(map(str, uuid_range))
+        json_uuid_range = uuid_range
 
     params["uuid__range"] = json_uuid_range
 
@@ -648,6 +811,18 @@ def sync_detailed(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    child_platform: list[int] | Unset = UNSET,
+    child_platform_in: list[int] | Unset = UNSET,
+    child_platform_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    instrumentplatformpair: list[int] | Unset = UNSET,
+    instrumentplatformpair_in: list[int] | Unset = UNSET,
+    instrumentplatformpair_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -673,12 +848,8 @@ def sync_detailed(
     location_east_bound_longitude_lt: float | Unset = UNSET,
     location_east_bound_longitude_lte: float | Unset = UNSET,
     location_east_bound_longitude_range: list[float] | Unset = UNSET,
-    location_gt: int | Unset = UNSET,
-    location_gte: int | Unset = UNSET,
     location_in: list[int] | Unset = UNSET,
     location_isnull: bool | Unset = UNSET,
-    location_lt: int | Unset = UNSET,
-    location_lte: int | Unset = UNSET,
     location_north_bound_latitude: float | Unset = UNSET,
     location_north_bound_latitude_gt: float | Unset = UNSET,
     location_north_bound_latitude_gte: float | Unset = UNSET,
@@ -699,6 +870,15 @@ def sync_detailed(
     location_west_bound_longitude_lt: float | Unset = UNSET,
     location_west_bound_longitude_lte: float | Unset = UNSET,
     location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -718,7 +898,13 @@ def sync_detailed(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    parent_platform: list[int] | Unset = UNSET,
+    parent_platform_in: list[int] | Unset = UNSET,
+    parent_platform_isnull: bool | Unset = UNSET,
     platform_type: PlatformsListPlatformType | Unset = UNSET,
     platform_type_contains: str | Unset = UNSET,
     platform_type_endswith: str | Unset = UNSET,
@@ -737,12 +923,14 @@ def sync_detailed(
     platform_type_regex: str | Unset = UNSET,
     platform_type_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -815,6 +1003,18 @@ def sync_detailed(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        child_platform (list[int] | Unset):
+        child_platform_in (list[int] | Unset):
+        child_platform_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        instrumentplatformpair (list[int] | Unset):
+        instrumentplatformpair_in (list[int] | Unset):
+        instrumentplatformpair_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -840,12 +1040,8 @@ def sync_detailed(
         location_east_bound_longitude_lt (float | Unset):
         location_east_bound_longitude_lte (float | Unset):
         location_east_bound_longitude_range (list[float] | Unset):
-        location_gt (int | Unset):
-        location_gte (int | Unset):
         location_in (list[int] | Unset):
         location_isnull (bool | Unset):
-        location_lt (int | Unset):
-        location_lte (int | Unset):
         location_north_bound_latitude (float | Unset):
         location_north_bound_latitude_gt (float | Unset):
         location_north_bound_latitude_gte (float | Unset):
@@ -866,6 +1062,15 @@ def sync_detailed(
         location_west_bound_longitude_lt (float | Unset):
         location_west_bound_longitude_lte (float | Unset):
         location_west_bound_longitude_range (list[float] | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -885,7 +1090,13 @@ def sync_detailed(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        parent_platform (list[int] | Unset):
+        parent_platform_in (list[int] | Unset):
+        parent_platform_isnull (bool | Unset):
         platform_type (PlatformsListPlatformType | Unset):
         platform_type_contains (str | Unset):
         platform_type_endswith (str | Unset):
@@ -904,12 +1115,14 @@ def sync_detailed(
         platform_type_regex (str | Unset):
         platform_type_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -988,6 +1201,18 @@ def sync_detailed(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        child_platform=child_platform,
+        child_platform_in=child_platform_in,
+        child_platform_isnull=child_platform_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        instrumentplatformpair=instrumentplatformpair,
+        instrumentplatformpair_in=instrumentplatformpair_in,
+        instrumentplatformpair_isnull=instrumentplatformpair_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -1013,12 +1238,8 @@ def sync_detailed(
         location_east_bound_longitude_lt=location_east_bound_longitude_lt,
         location_east_bound_longitude_lte=location_east_bound_longitude_lte,
         location_east_bound_longitude_range=location_east_bound_longitude_range,
-        location_gt=location_gt,
-        location_gte=location_gte,
         location_in=location_in,
         location_isnull=location_isnull,
-        location_lt=location_lt,
-        location_lte=location_lte,
         location_north_bound_latitude=location_north_bound_latitude,
         location_north_bound_latitude_gt=location_north_bound_latitude_gt,
         location_north_bound_latitude_gte=location_north_bound_latitude_gte,
@@ -1039,6 +1260,15 @@ def sync_detailed(
         location_west_bound_longitude_lt=location_west_bound_longitude_lt,
         location_west_bound_longitude_lte=location_west_bound_longitude_lte,
         location_west_bound_longitude_range=location_west_bound_longitude_range,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1058,7 +1288,13 @@ def sync_detailed(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        parent_platform=parent_platform,
+        parent_platform_in=parent_platform_in,
+        parent_platform_isnull=parent_platform_isnull,
         platform_type=platform_type,
         platform_type_contains=platform_type_contains,
         platform_type_endswith=platform_type_endswith,
@@ -1077,12 +1313,14 @@ def sync_detailed(
         platform_type_regex=platform_type_regex,
         platform_type_startswith=platform_type_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1163,6 +1401,18 @@ def sync(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    child_platform: list[int] | Unset = UNSET,
+    child_platform_in: list[int] | Unset = UNSET,
+    child_platform_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    instrumentplatformpair: list[int] | Unset = UNSET,
+    instrumentplatformpair_in: list[int] | Unset = UNSET,
+    instrumentplatformpair_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -1188,12 +1438,8 @@ def sync(
     location_east_bound_longitude_lt: float | Unset = UNSET,
     location_east_bound_longitude_lte: float | Unset = UNSET,
     location_east_bound_longitude_range: list[float] | Unset = UNSET,
-    location_gt: int | Unset = UNSET,
-    location_gte: int | Unset = UNSET,
     location_in: list[int] | Unset = UNSET,
     location_isnull: bool | Unset = UNSET,
-    location_lt: int | Unset = UNSET,
-    location_lte: int | Unset = UNSET,
     location_north_bound_latitude: float | Unset = UNSET,
     location_north_bound_latitude_gt: float | Unset = UNSET,
     location_north_bound_latitude_gte: float | Unset = UNSET,
@@ -1214,6 +1460,15 @@ def sync(
     location_west_bound_longitude_lt: float | Unset = UNSET,
     location_west_bound_longitude_lte: float | Unset = UNSET,
     location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1233,7 +1488,13 @@ def sync(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    parent_platform: list[int] | Unset = UNSET,
+    parent_platform_in: list[int] | Unset = UNSET,
+    parent_platform_isnull: bool | Unset = UNSET,
     platform_type: PlatformsListPlatformType | Unset = UNSET,
     platform_type_contains: str | Unset = UNSET,
     platform_type_endswith: str | Unset = UNSET,
@@ -1252,12 +1513,14 @@ def sync(
     platform_type_regex: str | Unset = UNSET,
     platform_type_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1330,6 +1593,18 @@ def sync(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        child_platform (list[int] | Unset):
+        child_platform_in (list[int] | Unset):
+        child_platform_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        instrumentplatformpair (list[int] | Unset):
+        instrumentplatformpair_in (list[int] | Unset):
+        instrumentplatformpair_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -1355,12 +1630,8 @@ def sync(
         location_east_bound_longitude_lt (float | Unset):
         location_east_bound_longitude_lte (float | Unset):
         location_east_bound_longitude_range (list[float] | Unset):
-        location_gt (int | Unset):
-        location_gte (int | Unset):
         location_in (list[int] | Unset):
         location_isnull (bool | Unset):
-        location_lt (int | Unset):
-        location_lte (int | Unset):
         location_north_bound_latitude (float | Unset):
         location_north_bound_latitude_gt (float | Unset):
         location_north_bound_latitude_gte (float | Unset):
@@ -1381,6 +1652,15 @@ def sync(
         location_west_bound_longitude_lt (float | Unset):
         location_west_bound_longitude_lte (float | Unset):
         location_west_bound_longitude_range (list[float] | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1400,7 +1680,13 @@ def sync(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        parent_platform (list[int] | Unset):
+        parent_platform_in (list[int] | Unset):
+        parent_platform_isnull (bool | Unset):
         platform_type (PlatformsListPlatformType | Unset):
         platform_type_contains (str | Unset):
         platform_type_endswith (str | Unset):
@@ -1419,12 +1705,14 @@ def sync(
         platform_type_regex (str | Unset):
         platform_type_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -1504,6 +1792,18 @@ def sync(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        child_platform=child_platform,
+        child_platform_in=child_platform_in,
+        child_platform_isnull=child_platform_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        instrumentplatformpair=instrumentplatformpair,
+        instrumentplatformpair_in=instrumentplatformpair_in,
+        instrumentplatformpair_isnull=instrumentplatformpair_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -1529,12 +1829,8 @@ def sync(
         location_east_bound_longitude_lt=location_east_bound_longitude_lt,
         location_east_bound_longitude_lte=location_east_bound_longitude_lte,
         location_east_bound_longitude_range=location_east_bound_longitude_range,
-        location_gt=location_gt,
-        location_gte=location_gte,
         location_in=location_in,
         location_isnull=location_isnull,
-        location_lt=location_lt,
-        location_lte=location_lte,
         location_north_bound_latitude=location_north_bound_latitude,
         location_north_bound_latitude_gt=location_north_bound_latitude_gt,
         location_north_bound_latitude_gte=location_north_bound_latitude_gte,
@@ -1555,6 +1851,15 @@ def sync(
         location_west_bound_longitude_lt=location_west_bound_longitude_lt,
         location_west_bound_longitude_lte=location_west_bound_longitude_lte,
         location_west_bound_longitude_range=location_west_bound_longitude_range,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1574,7 +1879,13 @@ def sync(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        parent_platform=parent_platform,
+        parent_platform_in=parent_platform_in,
+        parent_platform_isnull=parent_platform_isnull,
         platform_type=platform_type,
         platform_type_contains=platform_type_contains,
         platform_type_endswith=platform_type_endswith,
@@ -1593,12 +1904,14 @@ def sync(
         platform_type_regex=platform_type_regex,
         platform_type_startswith=platform_type_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1673,6 +1986,18 @@ async def asyncio_detailed(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    child_platform: list[int] | Unset = UNSET,
+    child_platform_in: list[int] | Unset = UNSET,
+    child_platform_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    instrumentplatformpair: list[int] | Unset = UNSET,
+    instrumentplatformpair_in: list[int] | Unset = UNSET,
+    instrumentplatformpair_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -1698,12 +2023,8 @@ async def asyncio_detailed(
     location_east_bound_longitude_lt: float | Unset = UNSET,
     location_east_bound_longitude_lte: float | Unset = UNSET,
     location_east_bound_longitude_range: list[float] | Unset = UNSET,
-    location_gt: int | Unset = UNSET,
-    location_gte: int | Unset = UNSET,
     location_in: list[int] | Unset = UNSET,
     location_isnull: bool | Unset = UNSET,
-    location_lt: int | Unset = UNSET,
-    location_lte: int | Unset = UNSET,
     location_north_bound_latitude: float | Unset = UNSET,
     location_north_bound_latitude_gt: float | Unset = UNSET,
     location_north_bound_latitude_gte: float | Unset = UNSET,
@@ -1724,6 +2045,15 @@ async def asyncio_detailed(
     location_west_bound_longitude_lt: float | Unset = UNSET,
     location_west_bound_longitude_lte: float | Unset = UNSET,
     location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1743,7 +2073,13 @@ async def asyncio_detailed(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    parent_platform: list[int] | Unset = UNSET,
+    parent_platform_in: list[int] | Unset = UNSET,
+    parent_platform_isnull: bool | Unset = UNSET,
     platform_type: PlatformsListPlatformType | Unset = UNSET,
     platform_type_contains: str | Unset = UNSET,
     platform_type_endswith: str | Unset = UNSET,
@@ -1762,12 +2098,14 @@ async def asyncio_detailed(
     platform_type_regex: str | Unset = UNSET,
     platform_type_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1840,6 +2178,18 @@ async def asyncio_detailed(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        child_platform (list[int] | Unset):
+        child_platform_in (list[int] | Unset):
+        child_platform_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        instrumentplatformpair (list[int] | Unset):
+        instrumentplatformpair_in (list[int] | Unset):
+        instrumentplatformpair_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -1865,12 +2215,8 @@ async def asyncio_detailed(
         location_east_bound_longitude_lt (float | Unset):
         location_east_bound_longitude_lte (float | Unset):
         location_east_bound_longitude_range (list[float] | Unset):
-        location_gt (int | Unset):
-        location_gte (int | Unset):
         location_in (list[int] | Unset):
         location_isnull (bool | Unset):
-        location_lt (int | Unset):
-        location_lte (int | Unset):
         location_north_bound_latitude (float | Unset):
         location_north_bound_latitude_gt (float | Unset):
         location_north_bound_latitude_gte (float | Unset):
@@ -1891,6 +2237,15 @@ async def asyncio_detailed(
         location_west_bound_longitude_lt (float | Unset):
         location_west_bound_longitude_lte (float | Unset):
         location_west_bound_longitude_range (list[float] | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1910,7 +2265,13 @@ async def asyncio_detailed(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        parent_platform (list[int] | Unset):
+        parent_platform_in (list[int] | Unset):
+        parent_platform_isnull (bool | Unset):
         platform_type (PlatformsListPlatformType | Unset):
         platform_type_contains (str | Unset):
         platform_type_endswith (str | Unset):
@@ -1929,12 +2290,14 @@ async def asyncio_detailed(
         platform_type_regex (str | Unset):
         platform_type_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -2013,6 +2376,18 @@ async def asyncio_detailed(
         abstract_range=abstract_range,
         abstract_regex=abstract_regex,
         abstract_startswith=abstract_startswith,
+        child_platform=child_platform,
+        child_platform_in=child_platform_in,
+        child_platform_isnull=child_platform_isnull,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
+        image_details=image_details,
+        image_details_in=image_details_in,
+        image_details_isnull=image_details_isnull,
+        instrumentplatformpair=instrumentplatformpair,
+        instrumentplatformpair_in=instrumentplatformpair_in,
+        instrumentplatformpair_isnull=instrumentplatformpair_isnull,
         keywords=keywords,
         keywords_contains=keywords_contains,
         keywords_endswith=keywords_endswith,
@@ -2038,12 +2413,8 @@ async def asyncio_detailed(
         location_east_bound_longitude_lt=location_east_bound_longitude_lt,
         location_east_bound_longitude_lte=location_east_bound_longitude_lte,
         location_east_bound_longitude_range=location_east_bound_longitude_range,
-        location_gt=location_gt,
-        location_gte=location_gte,
         location_in=location_in,
         location_isnull=location_isnull,
-        location_lt=location_lt,
-        location_lte=location_lte,
         location_north_bound_latitude=location_north_bound_latitude,
         location_north_bound_latitude_gt=location_north_bound_latitude_gt,
         location_north_bound_latitude_gte=location_north_bound_latitude_gte,
@@ -2064,6 +2435,15 @@ async def asyncio_detailed(
         location_west_bound_longitude_lt=location_west_bound_longitude_lt,
         location_west_bound_longitude_lte=location_west_bound_longitude_lte,
         location_west_bound_longitude_range=location_west_bound_longitude_range,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        mobileplatformoperation=mobileplatformoperation,
+        mobileplatformoperation_in=mobileplatformoperation_in,
+        mobileplatformoperation_isnull=mobileplatformoperation_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -2083,7 +2463,13 @@ async def asyncio_detailed(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         offset=offset,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
+        parent_platform=parent_platform,
+        parent_platform_in=parent_platform_in,
+        parent_platform_isnull=parent_platform_isnull,
         platform_type=platform_type,
         platform_type_contains=platform_type_contains,
         platform_type_endswith=platform_type_endswith,
@@ -2102,12 +2488,14 @@ async def asyncio_detailed(
         platform_type_regex=platform_type_regex,
         platform_type_startswith=platform_type_startswith,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -2186,6 +2574,18 @@ async def asyncio(
     abstract_range: list[str] | Unset = UNSET,
     abstract_regex: str | Unset = UNSET,
     abstract_startswith: str | Unset = UNSET,
+    child_platform: list[int] | Unset = UNSET,
+    child_platform_in: list[int] | Unset = UNSET,
+    child_platform_isnull: bool | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
+    image_details: list[int] | Unset = UNSET,
+    image_details_in: list[int] | Unset = UNSET,
+    image_details_isnull: bool | Unset = UNSET,
+    instrumentplatformpair: list[int] | Unset = UNSET,
+    instrumentplatformpair_in: list[int] | Unset = UNSET,
+    instrumentplatformpair_isnull: bool | Unset = UNSET,
     keywords: str | Unset = UNSET,
     keywords_contains: str | Unset = UNSET,
     keywords_endswith: str | Unset = UNSET,
@@ -2211,12 +2611,8 @@ async def asyncio(
     location_east_bound_longitude_lt: float | Unset = UNSET,
     location_east_bound_longitude_lte: float | Unset = UNSET,
     location_east_bound_longitude_range: list[float] | Unset = UNSET,
-    location_gt: int | Unset = UNSET,
-    location_gte: int | Unset = UNSET,
     location_in: list[int] | Unset = UNSET,
     location_isnull: bool | Unset = UNSET,
-    location_lt: int | Unset = UNSET,
-    location_lte: int | Unset = UNSET,
     location_north_bound_latitude: float | Unset = UNSET,
     location_north_bound_latitude_gt: float | Unset = UNSET,
     location_north_bound_latitude_gte: float | Unset = UNSET,
@@ -2237,6 +2633,15 @@ async def asyncio(
     location_west_bound_longitude_lt: float | Unset = UNSET,
     location_west_bound_longitude_lte: float | Unset = UNSET,
     location_west_bound_longitude_range: list[float] | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    mobileplatformoperation: list[int] | Unset = UNSET,
+    mobileplatformoperation_in: list[int] | Unset = UNSET,
+    mobileplatformoperation_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -2256,7 +2661,13 @@ async def asyncio(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     offset: int | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
+    parent_platform: list[int] | Unset = UNSET,
+    parent_platform_in: list[int] | Unset = UNSET,
+    parent_platform_isnull: bool | Unset = UNSET,
     platform_type: PlatformsListPlatformType | Unset = UNSET,
     platform_type_contains: str | Unset = UNSET,
     platform_type_endswith: str | Unset = UNSET,
@@ -2275,12 +2686,14 @@ async def asyncio(
     platform_type_regex: str | Unset = UNSET,
     platform_type_startswith: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -2353,6 +2766,18 @@ async def asyncio(
         abstract_range (list[str] | Unset):
         abstract_regex (str | Unset):
         abstract_startswith (str | Unset):
+        child_platform (list[int] | Unset):
+        child_platform_in (list[int] | Unset):
+        child_platform_isnull (bool | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
+        image_details (list[int] | Unset):
+        image_details_in (list[int] | Unset):
+        image_details_isnull (bool | Unset):
+        instrumentplatformpair (list[int] | Unset):
+        instrumentplatformpair_in (list[int] | Unset):
+        instrumentplatformpair_isnull (bool | Unset):
         keywords (str | Unset):
         keywords_contains (str | Unset):
         keywords_endswith (str | Unset):
@@ -2378,12 +2803,8 @@ async def asyncio(
         location_east_bound_longitude_lt (float | Unset):
         location_east_bound_longitude_lte (float | Unset):
         location_east_bound_longitude_range (list[float] | Unset):
-        location_gt (int | Unset):
-        location_gte (int | Unset):
         location_in (list[int] | Unset):
         location_isnull (bool | Unset):
-        location_lt (int | Unset):
-        location_lte (int | Unset):
         location_north_bound_latitude (float | Unset):
         location_north_bound_latitude_gt (float | Unset):
         location_north_bound_latitude_gte (float | Unset):
@@ -2404,6 +2825,15 @@ async def asyncio(
         location_west_bound_longitude_lt (float | Unset):
         location_west_bound_longitude_lte (float | Unset):
         location_west_bound_longitude_range (list[float] | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        mobileplatformoperation (list[int] | Unset):
+        mobileplatformoperation_in (list[int] | Unset):
+        mobileplatformoperation_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -2423,7 +2853,13 @@ async def asyncio(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         offset (int | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
+        parent_platform (list[int] | Unset):
+        parent_platform_in (list[int] | Unset):
+        parent_platform_isnull (bool | Unset):
         platform_type (PlatformsListPlatformType | Unset):
         platform_type_contains (str | Unset):
         platform_type_endswith (str | Unset):
@@ -2442,12 +2878,14 @@ async def asyncio(
         platform_type_regex (str | Unset):
         platform_type_startswith (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -2528,6 +2966,18 @@ async def asyncio(
             abstract_range=abstract_range,
             abstract_regex=abstract_regex,
             abstract_startswith=abstract_startswith,
+            child_platform=child_platform,
+            child_platform_in=child_platform_in,
+            child_platform_isnull=child_platform_isnull,
+            identifier=identifier,
+            identifier_in=identifier_in,
+            identifier_isnull=identifier_isnull,
+            image_details=image_details,
+            image_details_in=image_details_in,
+            image_details_isnull=image_details_isnull,
+            instrumentplatformpair=instrumentplatformpair,
+            instrumentplatformpair_in=instrumentplatformpair_in,
+            instrumentplatformpair_isnull=instrumentplatformpair_isnull,
             keywords=keywords,
             keywords_contains=keywords_contains,
             keywords_endswith=keywords_endswith,
@@ -2553,12 +3003,8 @@ async def asyncio(
             location_east_bound_longitude_lt=location_east_bound_longitude_lt,
             location_east_bound_longitude_lte=location_east_bound_longitude_lte,
             location_east_bound_longitude_range=location_east_bound_longitude_range,
-            location_gt=location_gt,
-            location_gte=location_gte,
             location_in=location_in,
             location_isnull=location_isnull,
-            location_lt=location_lt,
-            location_lte=location_lte,
             location_north_bound_latitude=location_north_bound_latitude,
             location_north_bound_latitude_gt=location_north_bound_latitude_gt,
             location_north_bound_latitude_gte=location_north_bound_latitude_gte,
@@ -2579,6 +3025,15 @@ async def asyncio(
             location_west_bound_longitude_lt=location_west_bound_longitude_lt,
             location_west_bound_longitude_lte=location_west_bound_longitude_lte,
             location_west_bound_longitude_range=location_west_bound_longitude_range,
+            migrationproperty=migrationproperty,
+            migrationproperty_in=migrationproperty_in,
+            migrationproperty_isnull=migrationproperty_isnull,
+            mobileplatformoperation=mobileplatformoperation,
+            mobileplatformoperation_in=mobileplatformoperation_in,
+            mobileplatformoperation_isnull=mobileplatformoperation_isnull,
+            note=note,
+            note_in=note_in,
+            note_isnull=note_isnull,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
             ob_id_contains=ob_id_contains,
@@ -2598,7 +3053,13 @@ async def asyncio(
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
             offset=offset,
+            onlineresource=onlineresource,
+            onlineresource_in=onlineresource_in,
+            onlineresource_isnull=onlineresource_isnull,
             ordering=ordering,
+            parent_platform=parent_platform,
+            parent_platform_in=parent_platform_in,
+            parent_platform_isnull=parent_platform_isnull,
             platform_type=platform_type,
             platform_type_contains=platform_type_contains,
             platform_type_endswith=platform_type_endswith,
@@ -2617,12 +3078,14 @@ async def asyncio(
             platform_type_regex=platform_type_regex,
             platform_type_startswith=platform_type_startswith,
             referenceable_ptr=referenceable_ptr,
-            referenceable_ptr_gt=referenceable_ptr_gt,
-            referenceable_ptr_gte=referenceable_ptr_gte,
             referenceable_ptr_in=referenceable_ptr_in,
             referenceable_ptr_isnull=referenceable_ptr_isnull,
-            referenceable_ptr_lt=referenceable_ptr_lt,
-            referenceable_ptr_lte=referenceable_ptr_lte,
+            responsiblepartyinfo=responsiblepartyinfo,
+            responsiblepartyinfo_in=responsiblepartyinfo_in,
+            responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+            review=review,
+            review_in=review_in,
+            review_isnull=review_isnull,
             short_code=short_code,
             short_code_contains=short_code_contains,
             short_code_endswith=short_code_endswith,

@@ -258,31 +258,31 @@ class PatchedObservationWriteRequest:
 
         image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(map(str, self.image_details))
+            image_details = self.image_details
 
         discovery_keywords: list[int] | Unset = UNSET
         if not isinstance(self.discovery_keywords, Unset):
-            discovery_keywords = ",".join(map(str, self.discovery_keywords))
+            discovery_keywords = self.discovery_keywords
 
         permissions: list[int] | Unset = UNSET
         if not isinstance(self.permissions, Unset):
-            permissions = ",".join(map(str, self.permissions))
+            permissions = self.permissions
 
         projects: list[int] | Unset = UNSET
         if not isinstance(self.projects, Unset):
-            projects = ",".join(map(str, self.projects))
+            projects = self.projects
 
         inspire_theme: list[int] | Unset = UNSET
         if not isinstance(self.inspire_theme, Unset):
-            inspire_theme = ",".join(map(str, self.inspire_theme))
+            inspire_theme = self.inspire_theme
 
         topic_category: list[int] | Unset = UNSET
         if not isinstance(self.topic_category, Unset):
-            topic_category = ",".join(map(str, self.topic_category))
+            topic_category = self.topic_category
 
         vocabulary_keywords: list[int] | Unset = UNSET
         if not isinstance(self.vocabulary_keywords, Unset):
-            vocabulary_keywords = ",".join(map(str, self.vocabulary_keywords))
+            vocabulary_keywords = self.vocabulary_keywords
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

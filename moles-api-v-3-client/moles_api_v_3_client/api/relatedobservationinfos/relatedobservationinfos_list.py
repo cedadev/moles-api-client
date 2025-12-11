@@ -34,12 +34,8 @@ def _get_kwargs(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     object_observation: int | Unset = UNSET,
-    object_observation_gt: int | Unset = UNSET,
-    object_observation_gte: int | Unset = UNSET,
     object_observation_in: list[int] | Unset = UNSET,
     object_observation_isnull: bool | Unset = UNSET,
-    object_observation_lt: int | Unset = UNSET,
-    object_observation_lte: int | Unset = UNSET,
     object_observation_uuid: str | Unset = UNSET,
     object_observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
@@ -62,12 +58,8 @@ def _get_kwargs(
     relation_type_regex: str | Unset = UNSET,
     relation_type_startswith: str | Unset = UNSET,
     subject_observation: int | Unset = UNSET,
-    subject_observation_gt: int | Unset = UNSET,
-    subject_observation_gte: int | Unset = UNSET,
     subject_observation_in: list[int] | Unset = UNSET,
     subject_observation_isnull: bool | Unset = UNSET,
-    subject_observation_lt: int | Unset = UNSET,
-    subject_observation_lte: int | Unset = UNSET,
     subject_observation_ob_id: int | Unset = UNSET,
     subject_observation_ob_id_in: list[int] | Unset = UNSET,
     subject_observation_uuid: str | Unset = UNSET,
@@ -97,7 +89,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -113,7 +105,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -123,27 +115,19 @@ def _get_kwargs(
 
     params["objectObservation"] = object_observation
 
-    params["objectObservation__gt"] = object_observation_gt
-
-    params["objectObservation__gte"] = object_observation_gte
-
     json_object_observation_in: list[int] | Unset = UNSET
     if not isinstance(object_observation_in, Unset):
-        json_object_observation_in = ",".join(map(str, object_observation_in))
+        json_object_observation_in = object_observation_in
 
     params["objectObservation__in"] = json_object_observation_in
 
     params["objectObservation__isnull"] = object_observation_isnull
 
-    params["objectObservation__lt"] = object_observation_lt
-
-    params["objectObservation__lte"] = object_observation_lte
-
     params["objectObservation__uuid"] = object_observation_uuid
 
     json_object_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(object_observation_uuid_in, Unset):
-        json_object_observation_uuid_in = ",".join(map(str, object_observation_uuid_in))
+        json_object_observation_uuid_in = object_observation_uuid_in
 
     params["objectObservation__uuid__in"] = json_object_observation_uuid_in
 
@@ -173,7 +157,7 @@ def _get_kwargs(
 
     json_relation_type_in: list[str] | Unset = UNSET
     if not isinstance(relation_type_in, Unset):
-        json_relation_type_in = ",".join(map(str, relation_type_in))
+        json_relation_type_in = relation_type_in
 
     params["relationType__in"] = json_relation_type_in
 
@@ -189,7 +173,7 @@ def _get_kwargs(
 
     json_relation_type_range: list[str] | Unset = UNSET
     if not isinstance(relation_type_range, Unset):
-        json_relation_type_range = ",".join(map(str, relation_type_range))
+        json_relation_type_range = relation_type_range
 
     params["relationType__range"] = json_relation_type_range
 
@@ -199,27 +183,19 @@ def _get_kwargs(
 
     params["subjectObservation"] = subject_observation
 
-    params["subjectObservation__gt"] = subject_observation_gt
-
-    params["subjectObservation__gte"] = subject_observation_gte
-
     json_subject_observation_in: list[int] | Unset = UNSET
     if not isinstance(subject_observation_in, Unset):
-        json_subject_observation_in = ",".join(map(str, subject_observation_in))
+        json_subject_observation_in = subject_observation_in
 
     params["subjectObservation__in"] = json_subject_observation_in
 
     params["subjectObservation__isnull"] = subject_observation_isnull
 
-    params["subjectObservation__lt"] = subject_observation_lt
-
-    params["subjectObservation__lte"] = subject_observation_lte
-
     params["subjectObservation__ob_id"] = subject_observation_ob_id
 
     json_subject_observation_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(subject_observation_ob_id_in, Unset):
-        json_subject_observation_ob_id_in = ",".join(map(str, subject_observation_ob_id_in))
+        json_subject_observation_ob_id_in = subject_observation_ob_id_in
 
     params["subjectObservation__ob_id__in"] = json_subject_observation_ob_id_in
 
@@ -227,7 +203,7 @@ def _get_kwargs(
 
     json_subject_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(subject_observation_uuid_in, Unset):
-        json_subject_observation_uuid_in = ",".join(map(str, subject_observation_uuid_in))
+        json_subject_observation_uuid_in = subject_observation_uuid_in
 
     params["subjectObservation__uuid__in"] = json_subject_observation_uuid_in
 
@@ -290,12 +266,8 @@ def sync_detailed(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     object_observation: int | Unset = UNSET,
-    object_observation_gt: int | Unset = UNSET,
-    object_observation_gte: int | Unset = UNSET,
     object_observation_in: list[int] | Unset = UNSET,
     object_observation_isnull: bool | Unset = UNSET,
-    object_observation_lt: int | Unset = UNSET,
-    object_observation_lte: int | Unset = UNSET,
     object_observation_uuid: str | Unset = UNSET,
     object_observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
@@ -318,12 +290,8 @@ def sync_detailed(
     relation_type_regex: str | Unset = UNSET,
     relation_type_startswith: str | Unset = UNSET,
     subject_observation: int | Unset = UNSET,
-    subject_observation_gt: int | Unset = UNSET,
-    subject_observation_gte: int | Unset = UNSET,
     subject_observation_in: list[int] | Unset = UNSET,
     subject_observation_isnull: bool | Unset = UNSET,
-    subject_observation_lt: int | Unset = UNSET,
-    subject_observation_lte: int | Unset = UNSET,
     subject_observation_ob_id: int | Unset = UNSET,
     subject_observation_ob_id_in: list[int] | Unset = UNSET,
     subject_observation_uuid: str | Unset = UNSET,
@@ -352,12 +320,8 @@ def sync_detailed(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         object_observation (int | Unset):
-        object_observation_gt (int | Unset):
-        object_observation_gte (int | Unset):
         object_observation_in (list[int] | Unset):
         object_observation_isnull (bool | Unset):
-        object_observation_lt (int | Unset):
-        object_observation_lte (int | Unset):
         object_observation_uuid (str | Unset):
         object_observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
@@ -380,12 +344,8 @@ def sync_detailed(
         relation_type_regex (str | Unset):
         relation_type_startswith (str | Unset):
         subject_observation (int | Unset):
-        subject_observation_gt (int | Unset):
-        subject_observation_gte (int | Unset):
         subject_observation_in (list[int] | Unset):
         subject_observation_isnull (bool | Unset):
-        subject_observation_lt (int | Unset):
-        subject_observation_lte (int | Unset):
         subject_observation_ob_id (int | Unset):
         subject_observation_ob_id_in (list[int] | Unset):
         subject_observation_uuid (str | Unset):
@@ -420,12 +380,8 @@ def sync_detailed(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         object_observation=object_observation,
-        object_observation_gt=object_observation_gt,
-        object_observation_gte=object_observation_gte,
         object_observation_in=object_observation_in,
         object_observation_isnull=object_observation_isnull,
-        object_observation_lt=object_observation_lt,
-        object_observation_lte=object_observation_lte,
         object_observation_uuid=object_observation_uuid,
         object_observation_uuid_in=object_observation_uuid_in,
         offset=offset,
@@ -448,12 +404,8 @@ def sync_detailed(
         relation_type_regex=relation_type_regex,
         relation_type_startswith=relation_type_startswith,
         subject_observation=subject_observation,
-        subject_observation_gt=subject_observation_gt,
-        subject_observation_gte=subject_observation_gte,
         subject_observation_in=subject_observation_in,
         subject_observation_isnull=subject_observation_isnull,
-        subject_observation_lt=subject_observation_lt,
-        subject_observation_lte=subject_observation_lte,
         subject_observation_ob_id=subject_observation_ob_id,
         subject_observation_ob_id_in=subject_observation_ob_id_in,
         subject_observation_uuid=subject_observation_uuid,
@@ -490,12 +442,8 @@ def sync(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     object_observation: int | Unset = UNSET,
-    object_observation_gt: int | Unset = UNSET,
-    object_observation_gte: int | Unset = UNSET,
     object_observation_in: list[int] | Unset = UNSET,
     object_observation_isnull: bool | Unset = UNSET,
-    object_observation_lt: int | Unset = UNSET,
-    object_observation_lte: int | Unset = UNSET,
     object_observation_uuid: str | Unset = UNSET,
     object_observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
@@ -518,12 +466,8 @@ def sync(
     relation_type_regex: str | Unset = UNSET,
     relation_type_startswith: str | Unset = UNSET,
     subject_observation: int | Unset = UNSET,
-    subject_observation_gt: int | Unset = UNSET,
-    subject_observation_gte: int | Unset = UNSET,
     subject_observation_in: list[int] | Unset = UNSET,
     subject_observation_isnull: bool | Unset = UNSET,
-    subject_observation_lt: int | Unset = UNSET,
-    subject_observation_lte: int | Unset = UNSET,
     subject_observation_ob_id: int | Unset = UNSET,
     subject_observation_ob_id_in: list[int] | Unset = UNSET,
     subject_observation_uuid: str | Unset = UNSET,
@@ -552,12 +496,8 @@ def sync(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         object_observation (int | Unset):
-        object_observation_gt (int | Unset):
-        object_observation_gte (int | Unset):
         object_observation_in (list[int] | Unset):
         object_observation_isnull (bool | Unset):
-        object_observation_lt (int | Unset):
-        object_observation_lte (int | Unset):
         object_observation_uuid (str | Unset):
         object_observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
@@ -580,12 +520,8 @@ def sync(
         relation_type_regex (str | Unset):
         relation_type_startswith (str | Unset):
         subject_observation (int | Unset):
-        subject_observation_gt (int | Unset):
-        subject_observation_gte (int | Unset):
         subject_observation_in (list[int] | Unset):
         subject_observation_isnull (bool | Unset):
-        subject_observation_lt (int | Unset):
-        subject_observation_lte (int | Unset):
         subject_observation_ob_id (int | Unset):
         subject_observation_ob_id_in (list[int] | Unset):
         subject_observation_uuid (str | Unset):
@@ -621,12 +557,8 @@ def sync(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         object_observation=object_observation,
-        object_observation_gt=object_observation_gt,
-        object_observation_gte=object_observation_gte,
         object_observation_in=object_observation_in,
         object_observation_isnull=object_observation_isnull,
-        object_observation_lt=object_observation_lt,
-        object_observation_lte=object_observation_lte,
         object_observation_uuid=object_observation_uuid,
         object_observation_uuid_in=object_observation_uuid_in,
         offset=offset,
@@ -649,12 +581,8 @@ def sync(
         relation_type_regex=relation_type_regex,
         relation_type_startswith=relation_type_startswith,
         subject_observation=subject_observation,
-        subject_observation_gt=subject_observation_gt,
-        subject_observation_gte=subject_observation_gte,
         subject_observation_in=subject_observation_in,
         subject_observation_isnull=subject_observation_isnull,
-        subject_observation_lt=subject_observation_lt,
-        subject_observation_lte=subject_observation_lte,
         subject_observation_ob_id=subject_observation_ob_id,
         subject_observation_ob_id_in=subject_observation_ob_id_in,
         subject_observation_uuid=subject_observation_uuid,
@@ -685,12 +613,8 @@ async def asyncio_detailed(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     object_observation: int | Unset = UNSET,
-    object_observation_gt: int | Unset = UNSET,
-    object_observation_gte: int | Unset = UNSET,
     object_observation_in: list[int] | Unset = UNSET,
     object_observation_isnull: bool | Unset = UNSET,
-    object_observation_lt: int | Unset = UNSET,
-    object_observation_lte: int | Unset = UNSET,
     object_observation_uuid: str | Unset = UNSET,
     object_observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
@@ -713,12 +637,8 @@ async def asyncio_detailed(
     relation_type_regex: str | Unset = UNSET,
     relation_type_startswith: str | Unset = UNSET,
     subject_observation: int | Unset = UNSET,
-    subject_observation_gt: int | Unset = UNSET,
-    subject_observation_gte: int | Unset = UNSET,
     subject_observation_in: list[int] | Unset = UNSET,
     subject_observation_isnull: bool | Unset = UNSET,
-    subject_observation_lt: int | Unset = UNSET,
-    subject_observation_lte: int | Unset = UNSET,
     subject_observation_ob_id: int | Unset = UNSET,
     subject_observation_ob_id_in: list[int] | Unset = UNSET,
     subject_observation_uuid: str | Unset = UNSET,
@@ -747,12 +667,8 @@ async def asyncio_detailed(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         object_observation (int | Unset):
-        object_observation_gt (int | Unset):
-        object_observation_gte (int | Unset):
         object_observation_in (list[int] | Unset):
         object_observation_isnull (bool | Unset):
-        object_observation_lt (int | Unset):
-        object_observation_lte (int | Unset):
         object_observation_uuid (str | Unset):
         object_observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
@@ -775,12 +691,8 @@ async def asyncio_detailed(
         relation_type_regex (str | Unset):
         relation_type_startswith (str | Unset):
         subject_observation (int | Unset):
-        subject_observation_gt (int | Unset):
-        subject_observation_gte (int | Unset):
         subject_observation_in (list[int] | Unset):
         subject_observation_isnull (bool | Unset):
-        subject_observation_lt (int | Unset):
-        subject_observation_lte (int | Unset):
         subject_observation_ob_id (int | Unset):
         subject_observation_ob_id_in (list[int] | Unset):
         subject_observation_uuid (str | Unset):
@@ -815,12 +727,8 @@ async def asyncio_detailed(
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
         object_observation=object_observation,
-        object_observation_gt=object_observation_gt,
-        object_observation_gte=object_observation_gte,
         object_observation_in=object_observation_in,
         object_observation_isnull=object_observation_isnull,
-        object_observation_lt=object_observation_lt,
-        object_observation_lte=object_observation_lte,
         object_observation_uuid=object_observation_uuid,
         object_observation_uuid_in=object_observation_uuid_in,
         offset=offset,
@@ -843,12 +751,8 @@ async def asyncio_detailed(
         relation_type_regex=relation_type_regex,
         relation_type_startswith=relation_type_startswith,
         subject_observation=subject_observation,
-        subject_observation_gt=subject_observation_gt,
-        subject_observation_gte=subject_observation_gte,
         subject_observation_in=subject_observation_in,
         subject_observation_isnull=subject_observation_isnull,
-        subject_observation_lt=subject_observation_lt,
-        subject_observation_lte=subject_observation_lte,
         subject_observation_ob_id=subject_observation_ob_id,
         subject_observation_ob_id_in=subject_observation_ob_id_in,
         subject_observation_uuid=subject_observation_uuid,
@@ -883,12 +787,8 @@ async def asyncio(
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
     object_observation: int | Unset = UNSET,
-    object_observation_gt: int | Unset = UNSET,
-    object_observation_gte: int | Unset = UNSET,
     object_observation_in: list[int] | Unset = UNSET,
     object_observation_isnull: bool | Unset = UNSET,
-    object_observation_lt: int | Unset = UNSET,
-    object_observation_lte: int | Unset = UNSET,
     object_observation_uuid: str | Unset = UNSET,
     object_observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
@@ -911,12 +811,8 @@ async def asyncio(
     relation_type_regex: str | Unset = UNSET,
     relation_type_startswith: str | Unset = UNSET,
     subject_observation: int | Unset = UNSET,
-    subject_observation_gt: int | Unset = UNSET,
-    subject_observation_gte: int | Unset = UNSET,
     subject_observation_in: list[int] | Unset = UNSET,
     subject_observation_isnull: bool | Unset = UNSET,
-    subject_observation_lt: int | Unset = UNSET,
-    subject_observation_lte: int | Unset = UNSET,
     subject_observation_ob_id: int | Unset = UNSET,
     subject_observation_ob_id_in: list[int] | Unset = UNSET,
     subject_observation_uuid: str | Unset = UNSET,
@@ -945,12 +841,8 @@ async def asyncio(
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
         object_observation (int | Unset):
-        object_observation_gt (int | Unset):
-        object_observation_gte (int | Unset):
         object_observation_in (list[int] | Unset):
         object_observation_isnull (bool | Unset):
-        object_observation_lt (int | Unset):
-        object_observation_lte (int | Unset):
         object_observation_uuid (str | Unset):
         object_observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
@@ -973,12 +865,8 @@ async def asyncio(
         relation_type_regex (str | Unset):
         relation_type_startswith (str | Unset):
         subject_observation (int | Unset):
-        subject_observation_gt (int | Unset):
-        subject_observation_gte (int | Unset):
         subject_observation_in (list[int] | Unset):
         subject_observation_isnull (bool | Unset):
-        subject_observation_lt (int | Unset):
-        subject_observation_lte (int | Unset):
         subject_observation_ob_id (int | Unset):
         subject_observation_ob_id_in (list[int] | Unset):
         subject_observation_uuid (str | Unset):
@@ -1015,12 +903,8 @@ async def asyncio(
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
             object_observation=object_observation,
-            object_observation_gt=object_observation_gt,
-            object_observation_gte=object_observation_gte,
             object_observation_in=object_observation_in,
             object_observation_isnull=object_observation_isnull,
-            object_observation_lt=object_observation_lt,
-            object_observation_lte=object_observation_lte,
             object_observation_uuid=object_observation_uuid,
             object_observation_uuid_in=object_observation_uuid_in,
             offset=offset,
@@ -1043,12 +927,8 @@ async def asyncio(
             relation_type_regex=relation_type_regex,
             relation_type_startswith=relation_type_startswith,
             subject_observation=subject_observation,
-            subject_observation_gt=subject_observation_gt,
-            subject_observation_gte=subject_observation_gte,
             subject_observation_in=subject_observation_in,
             subject_observation_isnull=subject_observation_isnull,
-            subject_observation_lt=subject_observation_lt,
-            subject_observation_lte=subject_observation_lte,
             subject_observation_ob_id=subject_observation_ob_id,
             subject_observation_ob_id_in=subject_observation_ob_id_in,
             subject_observation_uuid=subject_observation_uuid,

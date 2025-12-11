@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,21 +15,24 @@ class InputOutputDescriptionRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            name (str):
-            description (str):
+            ob_id (int | None):
+            name (None | str):
+            description (None | str):
     """
 
-    ob_id: int
-    name: str
-    description: str
+    ob_id: int | None
+    name: None | str
+    description: None | str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        name: None | str
         name = self.name
 
+        description: None | str
         description = self.description
 
         field_dict: dict[str, Any] = {}
@@ -47,11 +50,27 @@ class InputOutputDescriptionRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        name = d.pop("name")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        description = d.pop("description")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
+
+        def _parse_name(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        name = _parse_name(d.pop("name"))
+
+        def _parse_description(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        description = _parse_description(d.pop("description"))
 
         input_output_description_read = cls(
             ob_id=ob_id,

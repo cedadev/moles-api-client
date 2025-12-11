@@ -19,19 +19,21 @@ class LicenceRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            licence_url (str):
+            ob_id (int | None):
+            licence_url (None | str):
             licence_classifications (list[LicenceClassificationRead] | None):
     """
 
-    ob_id: int
-    licence_url: str
+    ob_id: int | None
+    licence_url: None | str
     licence_classifications: list[LicenceClassificationRead] | None
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        licence_url: None | str
         licence_url = self.licence_url
 
         licence_classifications: list[dict[str, Any]] | None
@@ -61,9 +63,20 @@ class LicenceRead:
         from ..models.licence_classification_read import LicenceClassificationRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        licence_url = d.pop("licenceURL")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
+
+        def _parse_licence_url(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        licence_url = _parse_licence_url(d.pop("licenceURL"))
 
         def _parse_licence_classifications(data: object) -> list[LicenceClassificationRead] | None:
             if data is None:

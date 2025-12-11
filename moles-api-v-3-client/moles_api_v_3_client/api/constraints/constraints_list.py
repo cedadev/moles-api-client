@@ -63,6 +63,9 @@ def _get_kwargs(
     access_roles_range: list[str] | Unset = UNSET,
     access_roles_regex: str | Unset = UNSET,
     access_roles_startswith: str | Unset = UNSET,
+    imagedetails: list[int] | Unset = UNSET,
+    imagedetails_in: list[int] | Unset = UNSET,
+    imagedetails_isnull: bool | Unset = UNSET,
     label: str | Unset = UNSET,
     label_contains: str | Unset = UNSET,
     label_endswith: str | Unset = UNSET,
@@ -81,8 +84,6 @@ def _get_kwargs(
     label_regex: str | Unset = UNSET,
     label_startswith: str | Unset = UNSET,
     licence: int | Unset = UNSET,
-    licence_gt: int | Unset = UNSET,
-    licence_gte: int | Unset = UNSET,
     licence_in: list[int] | Unset = UNSET,
     licence_isnull: bool | Unset = UNSET,
     licence_licence_classifications_classification: str | Unset = UNSET,
@@ -90,8 +91,6 @@ def _get_kwargs(
     licence_licence_url: str | Unset = UNSET,
     licence_licence_url_contains: str | Unset = UNSET,
     licence_licence_url_in: list[str] | Unset = UNSET,
-    licence_lt: int | Unset = UNSET,
-    licence_lte: int | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -111,6 +110,9 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     use_limitation: str | Unset = UNSET,
@@ -155,7 +157,7 @@ def _get_kwargs(
 
     json_access_category_in: list[str] | Unset = UNSET
     if not isinstance(access_category_in, Unset):
-        json_access_category_in = ",".join(map(str, access_category_in))
+        json_access_category_in = access_category_in
 
     params["accessCategory__in"] = json_access_category_in
 
@@ -171,7 +173,7 @@ def _get_kwargs(
 
     json_access_category_range: list[str] | Unset = UNSET
     if not isinstance(access_category_range, Unset):
-        json_access_category_range = ",".join(map(str, access_category_range))
+        json_access_category_range = access_category_range
 
     params["accessCategory__range"] = json_access_category_range
 
@@ -197,7 +199,7 @@ def _get_kwargs(
 
     json_access_constraints_in: list[str] | Unset = UNSET
     if not isinstance(access_constraints_in, Unset):
-        json_access_constraints_in = ",".join(map(str, access_constraints_in))
+        json_access_constraints_in = access_constraints_in
 
     params["accessConstraints__in"] = json_access_constraints_in
 
@@ -213,7 +215,7 @@ def _get_kwargs(
 
     json_access_constraints_range: list[str] | Unset = UNSET
     if not isinstance(access_constraints_range, Unset):
-        json_access_constraints_range = ",".join(map(str, access_constraints_range))
+        json_access_constraints_range = access_constraints_range
 
     params["accessConstraints__range"] = json_access_constraints_range
 
@@ -239,7 +241,7 @@ def _get_kwargs(
 
     json_access_roles_in: list[str] | Unset = UNSET
     if not isinstance(access_roles_in, Unset):
-        json_access_roles_in = ",".join(map(str, access_roles_in))
+        json_access_roles_in = access_roles_in
 
     params["accessRoles__in"] = json_access_roles_in
 
@@ -255,13 +257,27 @@ def _get_kwargs(
 
     json_access_roles_range: list[str] | Unset = UNSET
     if not isinstance(access_roles_range, Unset):
-        json_access_roles_range = ",".join(map(str, access_roles_range))
+        json_access_roles_range = access_roles_range
 
     params["accessRoles__range"] = json_access_roles_range
 
     params["accessRoles__regex"] = access_roles_regex
 
     params["accessRoles__startswith"] = access_roles_startswith
+
+    json_imagedetails: list[int] | Unset = UNSET
+    if not isinstance(imagedetails, Unset):
+        json_imagedetails = imagedetails
+
+    params["imagedetails"] = json_imagedetails
+
+    json_imagedetails_in: list[int] | Unset = UNSET
+    if not isinstance(imagedetails_in, Unset):
+        json_imagedetails_in = imagedetails_in
+
+    params["imagedetails__in"] = json_imagedetails_in
+
+    params["imagedetails__isnull"] = imagedetails_isnull
 
     params["label"] = label
 
@@ -281,7 +297,7 @@ def _get_kwargs(
 
     json_label_in: list[str] | Unset = UNSET
     if not isinstance(label_in, Unset):
-        json_label_in = ",".join(map(str, label_in))
+        json_label_in = label_in
 
     params["label__in"] = json_label_in
 
@@ -297,7 +313,7 @@ def _get_kwargs(
 
     json_label_range: list[str] | Unset = UNSET
     if not isinstance(label_range, Unset):
-        json_label_range = ",".join(map(str, label_range))
+        json_label_range = label_range
 
     params["label__range"] = json_label_range
 
@@ -307,13 +323,9 @@ def _get_kwargs(
 
     params["licence"] = licence
 
-    params["licence__gt"] = licence_gt
-
-    params["licence__gte"] = licence_gte
-
     json_licence_in: list[int] | Unset = UNSET
     if not isinstance(licence_in, Unset):
-        json_licence_in = ",".join(map(str, licence_in))
+        json_licence_in = licence_in
 
     params["licence__in"] = json_licence_in
 
@@ -331,13 +343,9 @@ def _get_kwargs(
 
     json_licence_licence_url_in: list[str] | Unset = UNSET
     if not isinstance(licence_licence_url_in, Unset):
-        json_licence_licence_url_in = ",".join(map(str, licence_licence_url_in))
+        json_licence_licence_url_in = licence_licence_url_in
 
     params["licence__licenceURL__in"] = json_licence_licence_url_in
-
-    params["licence__lt"] = licence_lt
-
-    params["licence__lte"] = licence_lte
 
     params["limit"] = limit
 
@@ -361,7 +369,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -377,13 +385,27 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
     params["ob_id__regex"] = ob_id_regex
 
     params["ob_id__startswith"] = ob_id_startswith
+
+    json_observation: list[int] | Unset = UNSET
+    if not isinstance(observation, Unset):
+        json_observation = observation
+
+    params["observation"] = json_observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = observation_in
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
 
     params["offset"] = offset
 
@@ -407,7 +429,7 @@ def _get_kwargs(
 
     json_use_limitation_in: list[str] | Unset = UNSET
     if not isinstance(use_limitation_in, Unset):
-        json_use_limitation_in = ",".join(map(str, use_limitation_in))
+        json_use_limitation_in = use_limitation_in
 
     params["useLimitation__in"] = json_use_limitation_in
 
@@ -423,7 +445,7 @@ def _get_kwargs(
 
     json_use_limitation_range: list[str] | Unset = UNSET
     if not isinstance(use_limitation_range, Unset):
-        json_use_limitation_range = ",".join(map(str, use_limitation_range))
+        json_use_limitation_range = use_limitation_range
 
     params["useLimitation__range"] = json_use_limitation_range
 
@@ -521,6 +543,9 @@ def sync_detailed(
     access_roles_range: list[str] | Unset = UNSET,
     access_roles_regex: str | Unset = UNSET,
     access_roles_startswith: str | Unset = UNSET,
+    imagedetails: list[int] | Unset = UNSET,
+    imagedetails_in: list[int] | Unset = UNSET,
+    imagedetails_isnull: bool | Unset = UNSET,
     label: str | Unset = UNSET,
     label_contains: str | Unset = UNSET,
     label_endswith: str | Unset = UNSET,
@@ -539,8 +564,6 @@ def sync_detailed(
     label_regex: str | Unset = UNSET,
     label_startswith: str | Unset = UNSET,
     licence: int | Unset = UNSET,
-    licence_gt: int | Unset = UNSET,
-    licence_gte: int | Unset = UNSET,
     licence_in: list[int] | Unset = UNSET,
     licence_isnull: bool | Unset = UNSET,
     licence_licence_classifications_classification: str | Unset = UNSET,
@@ -548,8 +571,6 @@ def sync_detailed(
     licence_licence_url: str | Unset = UNSET,
     licence_licence_url_contains: str | Unset = UNSET,
     licence_licence_url_in: list[str] | Unset = UNSET,
-    licence_lt: int | Unset = UNSET,
-    licence_lte: int | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -569,6 +590,9 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     use_limitation: str | Unset = UNSET,
@@ -643,6 +667,9 @@ def sync_detailed(
         access_roles_range (list[str] | Unset):
         access_roles_regex (str | Unset):
         access_roles_startswith (str | Unset):
+        imagedetails (list[int] | Unset):
+        imagedetails_in (list[int] | Unset):
+        imagedetails_isnull (bool | Unset):
         label (str | Unset):
         label_contains (str | Unset):
         label_endswith (str | Unset):
@@ -661,8 +688,6 @@ def sync_detailed(
         label_regex (str | Unset):
         label_startswith (str | Unset):
         licence (int | Unset):
-        licence_gt (int | Unset):
-        licence_gte (int | Unset):
         licence_in (list[int] | Unset):
         licence_isnull (bool | Unset):
         licence_licence_classifications_classification (str | Unset):
@@ -670,8 +695,6 @@ def sync_detailed(
         licence_licence_url (str | Unset):
         licence_licence_url_contains (str | Unset):
         licence_licence_url_in (list[str] | Unset):
-        licence_lt (int | Unset):
-        licence_lte (int | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -691,6 +714,9 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         use_limitation (str | Unset):
@@ -771,6 +797,9 @@ def sync_detailed(
         access_roles_range=access_roles_range,
         access_roles_regex=access_roles_regex,
         access_roles_startswith=access_roles_startswith,
+        imagedetails=imagedetails,
+        imagedetails_in=imagedetails_in,
+        imagedetails_isnull=imagedetails_isnull,
         label=label,
         label_contains=label_contains,
         label_endswith=label_endswith,
@@ -789,8 +818,6 @@ def sync_detailed(
         label_regex=label_regex,
         label_startswith=label_startswith,
         licence=licence,
-        licence_gt=licence_gt,
-        licence_gte=licence_gte,
         licence_in=licence_in,
         licence_isnull=licence_isnull,
         licence_licence_classifications_classification=licence_licence_classifications_classification,
@@ -798,8 +825,6 @@ def sync_detailed(
         licence_licence_url=licence_licence_url,
         licence_licence_url_contains=licence_licence_url_contains,
         licence_licence_url_in=licence_licence_url_in,
-        licence_lt=licence_lt,
-        licence_lte=licence_lte,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -819,6 +844,9 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         use_limitation=use_limitation,
@@ -901,6 +929,9 @@ def sync(
     access_roles_range: list[str] | Unset = UNSET,
     access_roles_regex: str | Unset = UNSET,
     access_roles_startswith: str | Unset = UNSET,
+    imagedetails: list[int] | Unset = UNSET,
+    imagedetails_in: list[int] | Unset = UNSET,
+    imagedetails_isnull: bool | Unset = UNSET,
     label: str | Unset = UNSET,
     label_contains: str | Unset = UNSET,
     label_endswith: str | Unset = UNSET,
@@ -919,8 +950,6 @@ def sync(
     label_regex: str | Unset = UNSET,
     label_startswith: str | Unset = UNSET,
     licence: int | Unset = UNSET,
-    licence_gt: int | Unset = UNSET,
-    licence_gte: int | Unset = UNSET,
     licence_in: list[int] | Unset = UNSET,
     licence_isnull: bool | Unset = UNSET,
     licence_licence_classifications_classification: str | Unset = UNSET,
@@ -928,8 +957,6 @@ def sync(
     licence_licence_url: str | Unset = UNSET,
     licence_licence_url_contains: str | Unset = UNSET,
     licence_licence_url_in: list[str] | Unset = UNSET,
-    licence_lt: int | Unset = UNSET,
-    licence_lte: int | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -949,6 +976,9 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     use_limitation: str | Unset = UNSET,
@@ -1023,6 +1053,9 @@ def sync(
         access_roles_range (list[str] | Unset):
         access_roles_regex (str | Unset):
         access_roles_startswith (str | Unset):
+        imagedetails (list[int] | Unset):
+        imagedetails_in (list[int] | Unset):
+        imagedetails_isnull (bool | Unset):
         label (str | Unset):
         label_contains (str | Unset):
         label_endswith (str | Unset):
@@ -1041,8 +1074,6 @@ def sync(
         label_regex (str | Unset):
         label_startswith (str | Unset):
         licence (int | Unset):
-        licence_gt (int | Unset):
-        licence_gte (int | Unset):
         licence_in (list[int] | Unset):
         licence_isnull (bool | Unset):
         licence_licence_classifications_classification (str | Unset):
@@ -1050,8 +1081,6 @@ def sync(
         licence_licence_url (str | Unset):
         licence_licence_url_contains (str | Unset):
         licence_licence_url_in (list[str] | Unset):
-        licence_lt (int | Unset):
-        licence_lte (int | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -1071,6 +1100,9 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         use_limitation (str | Unset):
@@ -1152,6 +1184,9 @@ def sync(
         access_roles_range=access_roles_range,
         access_roles_regex=access_roles_regex,
         access_roles_startswith=access_roles_startswith,
+        imagedetails=imagedetails,
+        imagedetails_in=imagedetails_in,
+        imagedetails_isnull=imagedetails_isnull,
         label=label,
         label_contains=label_contains,
         label_endswith=label_endswith,
@@ -1170,8 +1205,6 @@ def sync(
         label_regex=label_regex,
         label_startswith=label_startswith,
         licence=licence,
-        licence_gt=licence_gt,
-        licence_gte=licence_gte,
         licence_in=licence_in,
         licence_isnull=licence_isnull,
         licence_licence_classifications_classification=licence_licence_classifications_classification,
@@ -1179,8 +1212,6 @@ def sync(
         licence_licence_url=licence_licence_url,
         licence_licence_url_contains=licence_licence_url_contains,
         licence_licence_url_in=licence_licence_url_in,
-        licence_lt=licence_lt,
-        licence_lte=licence_lte,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -1200,6 +1231,9 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         use_limitation=use_limitation,
@@ -1276,6 +1310,9 @@ async def asyncio_detailed(
     access_roles_range: list[str] | Unset = UNSET,
     access_roles_regex: str | Unset = UNSET,
     access_roles_startswith: str | Unset = UNSET,
+    imagedetails: list[int] | Unset = UNSET,
+    imagedetails_in: list[int] | Unset = UNSET,
+    imagedetails_isnull: bool | Unset = UNSET,
     label: str | Unset = UNSET,
     label_contains: str | Unset = UNSET,
     label_endswith: str | Unset = UNSET,
@@ -1294,8 +1331,6 @@ async def asyncio_detailed(
     label_regex: str | Unset = UNSET,
     label_startswith: str | Unset = UNSET,
     licence: int | Unset = UNSET,
-    licence_gt: int | Unset = UNSET,
-    licence_gte: int | Unset = UNSET,
     licence_in: list[int] | Unset = UNSET,
     licence_isnull: bool | Unset = UNSET,
     licence_licence_classifications_classification: str | Unset = UNSET,
@@ -1303,8 +1338,6 @@ async def asyncio_detailed(
     licence_licence_url: str | Unset = UNSET,
     licence_licence_url_contains: str | Unset = UNSET,
     licence_licence_url_in: list[str] | Unset = UNSET,
-    licence_lt: int | Unset = UNSET,
-    licence_lte: int | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -1324,6 +1357,9 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     use_limitation: str | Unset = UNSET,
@@ -1398,6 +1434,9 @@ async def asyncio_detailed(
         access_roles_range (list[str] | Unset):
         access_roles_regex (str | Unset):
         access_roles_startswith (str | Unset):
+        imagedetails (list[int] | Unset):
+        imagedetails_in (list[int] | Unset):
+        imagedetails_isnull (bool | Unset):
         label (str | Unset):
         label_contains (str | Unset):
         label_endswith (str | Unset):
@@ -1416,8 +1455,6 @@ async def asyncio_detailed(
         label_regex (str | Unset):
         label_startswith (str | Unset):
         licence (int | Unset):
-        licence_gt (int | Unset):
-        licence_gte (int | Unset):
         licence_in (list[int] | Unset):
         licence_isnull (bool | Unset):
         licence_licence_classifications_classification (str | Unset):
@@ -1425,8 +1462,6 @@ async def asyncio_detailed(
         licence_licence_url (str | Unset):
         licence_licence_url_contains (str | Unset):
         licence_licence_url_in (list[str] | Unset):
-        licence_lt (int | Unset):
-        licence_lte (int | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -1446,6 +1481,9 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         use_limitation (str | Unset):
@@ -1526,6 +1564,9 @@ async def asyncio_detailed(
         access_roles_range=access_roles_range,
         access_roles_regex=access_roles_regex,
         access_roles_startswith=access_roles_startswith,
+        imagedetails=imagedetails,
+        imagedetails_in=imagedetails_in,
+        imagedetails_isnull=imagedetails_isnull,
         label=label,
         label_contains=label_contains,
         label_endswith=label_endswith,
@@ -1544,8 +1585,6 @@ async def asyncio_detailed(
         label_regex=label_regex,
         label_startswith=label_startswith,
         licence=licence,
-        licence_gt=licence_gt,
-        licence_gte=licence_gte,
         licence_in=licence_in,
         licence_isnull=licence_isnull,
         licence_licence_classifications_classification=licence_licence_classifications_classification,
@@ -1553,8 +1592,6 @@ async def asyncio_detailed(
         licence_licence_url=licence_licence_url,
         licence_licence_url_contains=licence_licence_url_contains,
         licence_licence_url_in=licence_licence_url_in,
-        licence_lt=licence_lt,
-        licence_lte=licence_lte,
         limit=limit,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
@@ -1574,6 +1611,9 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         offset=offset,
         ordering=ordering,
         use_limitation=use_limitation,
@@ -1654,6 +1694,9 @@ async def asyncio(
     access_roles_range: list[str] | Unset = UNSET,
     access_roles_regex: str | Unset = UNSET,
     access_roles_startswith: str | Unset = UNSET,
+    imagedetails: list[int] | Unset = UNSET,
+    imagedetails_in: list[int] | Unset = UNSET,
+    imagedetails_isnull: bool | Unset = UNSET,
     label: str | Unset = UNSET,
     label_contains: str | Unset = UNSET,
     label_endswith: str | Unset = UNSET,
@@ -1672,8 +1715,6 @@ async def asyncio(
     label_regex: str | Unset = UNSET,
     label_startswith: str | Unset = UNSET,
     licence: int | Unset = UNSET,
-    licence_gt: int | Unset = UNSET,
-    licence_gte: int | Unset = UNSET,
     licence_in: list[int] | Unset = UNSET,
     licence_isnull: bool | Unset = UNSET,
     licence_licence_classifications_classification: str | Unset = UNSET,
@@ -1681,8 +1722,6 @@ async def asyncio(
     licence_licence_url: str | Unset = UNSET,
     licence_licence_url_contains: str | Unset = UNSET,
     licence_licence_url_in: list[str] | Unset = UNSET,
-    licence_lt: int | Unset = UNSET,
-    licence_lte: int | Unset = UNSET,
     limit: int | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
@@ -1702,6 +1741,9 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: list[int] | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     offset: int | Unset = UNSET,
     ordering: str | Unset = UNSET,
     use_limitation: str | Unset = UNSET,
@@ -1776,6 +1818,9 @@ async def asyncio(
         access_roles_range (list[str] | Unset):
         access_roles_regex (str | Unset):
         access_roles_startswith (str | Unset):
+        imagedetails (list[int] | Unset):
+        imagedetails_in (list[int] | Unset):
+        imagedetails_isnull (bool | Unset):
         label (str | Unset):
         label_contains (str | Unset):
         label_endswith (str | Unset):
@@ -1794,8 +1839,6 @@ async def asyncio(
         label_regex (str | Unset):
         label_startswith (str | Unset):
         licence (int | Unset):
-        licence_gt (int | Unset):
-        licence_gte (int | Unset):
         licence_in (list[int] | Unset):
         licence_isnull (bool | Unset):
         licence_licence_classifications_classification (str | Unset):
@@ -1803,8 +1846,6 @@ async def asyncio(
         licence_licence_url (str | Unset):
         licence_licence_url_contains (str | Unset):
         licence_licence_url_in (list[str] | Unset):
-        licence_lt (int | Unset):
-        licence_lte (int | Unset):
         limit (int | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
@@ -1824,6 +1865,9 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (list[int] | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         offset (int | Unset):
         ordering (str | Unset):
         use_limitation (str | Unset):
@@ -1906,6 +1950,9 @@ async def asyncio(
             access_roles_range=access_roles_range,
             access_roles_regex=access_roles_regex,
             access_roles_startswith=access_roles_startswith,
+            imagedetails=imagedetails,
+            imagedetails_in=imagedetails_in,
+            imagedetails_isnull=imagedetails_isnull,
             label=label,
             label_contains=label_contains,
             label_endswith=label_endswith,
@@ -1924,8 +1971,6 @@ async def asyncio(
             label_regex=label_regex,
             label_startswith=label_startswith,
             licence=licence,
-            licence_gt=licence_gt,
-            licence_gte=licence_gte,
             licence_in=licence_in,
             licence_isnull=licence_isnull,
             licence_licence_classifications_classification=licence_licence_classifications_classification,
@@ -1933,8 +1978,6 @@ async def asyncio(
             licence_licence_url=licence_licence_url,
             licence_licence_url_contains=licence_licence_url_contains,
             licence_licence_url_in=licence_licence_url_in,
-            licence_lt=licence_lt,
-            licence_lte=licence_lte,
             limit=limit,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
@@ -1954,6 +1997,9 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             offset=offset,
             ordering=ordering,
             use_limitation=use_limitation,

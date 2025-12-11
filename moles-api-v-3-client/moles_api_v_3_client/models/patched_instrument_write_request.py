@@ -52,11 +52,11 @@ class PatchedInstrumentWriteRequest:
 
         image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(map(str, self.image_details))
+            image_details = self.image_details
 
         sub_instrument: list[int] | Unset = UNSET
         if not isinstance(self.sub_instrument, Unset):
-            sub_instrument = ",".join(map(str, self.sub_instrument))
+            sub_instrument = self.sub_instrument
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

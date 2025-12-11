@@ -66,6 +66,7 @@ logging.basicConfig(level = logging.INFO)
 log = logging.getLogger(__name__)
 
 class ApiReadReferenceable(Protocol):
+    ob_id: int
     uuid: str
     
 def get_endpoint_by_shortcode(short_code: str) -> Callable:
@@ -106,7 +107,7 @@ def doi_id_checker(record: Referenceable) -> bool:
     
     return response.parsed.count > 0
 
-def uuid_to_obj(uuid: str, short_code: str = None) -> ApiReadReferenceable:
+def uuid_to_obj(uuid: str, short_code: str = None) -> ApiReadReferenceable | None:
     """
     Function that checks if record of given uuid exists and if so returns it
     """
@@ -225,7 +226,7 @@ def add_parties(party_dict: dict[str, list[PartyRead]], target_record_uuid: str)
     """
 
     for role, parties in party_dict.items():
-        response = rpis_list.sync_detailed(client=CLIENT, related_to_uuid=target_record_uuid, role=role)
+        response = rpis_list.sync_detailed(client=CLIENT, related_to_uuid=target_record_uuid, role=_get_value_enum(role, RoleEnum))
         existing_rpi_for_role = response.parsed.results
         
         priority = response.parsed.count + 1

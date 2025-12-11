@@ -19,13 +19,13 @@ class InstrumentPlatformPairRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
+            ob_id (int | None):
             platform (None | SimpleRead):
             instrument (None | SimpleRead):
             related_to (None | SimpleRead):
     """
 
-    ob_id: int
+    ob_id: int | None
     platform: None | SimpleRead
     instrument: None | SimpleRead
     related_to: None | SimpleRead
@@ -34,6 +34,7 @@ class InstrumentPlatformPairRead:
     def to_dict(self) -> dict[str, Any]:
         from ..models.simple_read import SimpleRead
 
+        ob_id: int | None
         ob_id = self.ob_id
 
         platform: dict[str, Any] | None
@@ -72,7 +73,13 @@ class InstrumentPlatformPairRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
+
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
         def _parse_platform(data: object) -> None | SimpleRead:
             if data is None:

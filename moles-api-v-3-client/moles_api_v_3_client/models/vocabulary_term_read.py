@@ -17,24 +17,29 @@ class VocabularyTermRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            vocab_service (VocabServiceEnum): * `clipc_skos_vocab` - CLIPC SKOS Vocabulary Service
-                * `nerc_skos_vocab` - NERC SKOS Vocabulary Service
-            uri (str):
+            ob_id (int | None):
+            vocab_service (None | VocabServiceEnum):
+            uri (None | str):
             resolved_term (None | str):
     """
 
-    ob_id: int
-    vocab_service: VocabServiceEnum
-    uri: str
+    ob_id: int | None
+    vocab_service: None | VocabServiceEnum
+    uri: None | str
     resolved_term: None | str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
-        vocab_service = self.vocab_service.value
+        vocab_service: None | str
+        if isinstance(self.vocab_service, VocabServiceEnum):
+            vocab_service = self.vocab_service.value
+        else:
+            vocab_service = self.vocab_service
 
+        uri: None | str
         uri = self.uri
 
         resolved_term: None | str
@@ -56,11 +61,35 @@ class VocabularyTermRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        vocab_service = VocabServiceEnum(d.pop("vocabService"))
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        uri = d.pop("uri")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
+
+        def _parse_vocab_service(data: object) -> None | VocabServiceEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                vocab_service_type_1 = VocabServiceEnum(data)
+
+                return vocab_service_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | VocabServiceEnum, data)
+
+        vocab_service = _parse_vocab_service(d.pop("vocabService"))
+
+        def _parse_uri(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        uri = _parse_uri(d.pop("uri"))
 
         def _parse_resolved_term(data: object) -> None | str:
             if data is None:

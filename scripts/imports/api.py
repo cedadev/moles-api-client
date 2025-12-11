@@ -1,0 +1,14 @@
+from moles_api_v_3_client.api.observations import observations_create, observations_destroy
+from moles_api_v_3_client.api.results import results_create, results_destroy
+from moles_api_v_3_client.api.verticalextents import verticalextents_create, verticalextents_destroy
+from moles_api_v_3_client.api.dqconformanceresults import dqconformanceresults_create, dqconformanceresults_destroy
+from moles_api_v_3_client.api.times import times_create, times_destroy
+from moles_api_v_3_client.api.bboxes import bboxes_create, bboxes_destroy
+from moles_api_v_3_client.api.onlineresources import onlineresources_create, onlineresources_destroy
+from moles_api_v_3_client.api.projects import projects_create, projects_destroy
+from moles_api_v_3_client.api.rpis import rpis_create, rpis_destroy
+from moles_api_v_3_client.api.parties import parties_list, parties_create, parties_destroy
+from moles_api_v_3_client.api.acquisitions import acquisitions_create, acquisitions_destroy
+from moles_api_v_3_client.api.instruments import instruments_create, instruments_destroy
+from moles_api_v_3_client.api.computations import computations_create, computations_destroy
+from moles_api_v_3_client.api.composites import composites_create, composites_destroy

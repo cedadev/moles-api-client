@@ -44,7 +44,7 @@ class PatchedPlatformWriteRequest:
 
         child_platform: list[str] | Unset = UNSET
         if not isinstance(self.child_platform, Unset):
-            child_platform = ",".join(map(str, self.child_platform))
+            child_platform = self.child_platform
 
         platform_type: str | Unset
         if isinstance(self.platform_type, Unset):

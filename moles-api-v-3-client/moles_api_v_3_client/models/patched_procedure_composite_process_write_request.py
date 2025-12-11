@@ -36,11 +36,11 @@ class PatchedProcedureCompositeProcessWriteRequest:
 
         computation_component: list[int] | Unset = UNSET
         if not isinstance(self.computation_component, Unset):
-            computation_component = ",".join(map(str, self.computation_component))
+            computation_component = self.computation_component
 
         acquisition_component: list[int] | Unset = UNSET
         if not isinstance(self.acquisition_component, Unset):
-            acquisition_component = ",".join(map(str, self.acquisition_component))
+            acquisition_component = self.acquisition_component
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

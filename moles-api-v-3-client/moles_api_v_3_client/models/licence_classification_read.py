@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import Any, TypeVar
+from typing import Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -15,17 +15,19 @@ class LicenceClassificationRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            classification (str):
+            ob_id (int | None):
+            classification (None | str):
     """
 
-    ob_id: int
-    classification: str
+    ob_id: int | None
+    classification: None | str
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
+        classification: None | str
         classification = self.classification
 
         field_dict: dict[str, Any] = {}
@@ -42,9 +44,20 @@ class LicenceClassificationRead:
     @classmethod
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        classification = d.pop("classification")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
+
+        def _parse_classification(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        classification = _parse_classification(d.pop("classification"))
 
         licence_classification_read = cls(
             ob_id=ob_id,

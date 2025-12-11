@@ -31,6 +31,9 @@ def _get_kwargs(
     curation_category_range: list[str] | Unset = UNSET,
     curation_category_regex: str | Unset = UNSET,
     curation_category_startswith: str | Unset = UNSET,
+    current_data_path: list[int] | Unset = UNSET,
+    current_data_path_in: list[int] | Unset = UNSET,
+    current_data_path_isnull: bool | Unset = UNSET,
     data_path: str | Unset = UNSET,
     data_path_contains: str | Unset = UNSET,
     data_path_endswith: str | Unset = UNSET,
@@ -65,7 +68,16 @@ def _get_kwargs(
     file_format_range: list[str] | Unset = UNSET,
     file_format_regex: str | Unset = UNSET,
     file_format_startswith: str | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     number_of_files: int | Unset = UNSET,
     number_of_files_contained_by: int | Unset = UNSET,
     number_of_files_contains: int | Unset = UNSET,
@@ -102,19 +114,30 @@ def _get_kwargs(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: int | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     observation_ob_id: int | Unset = UNSET,
     observation_ob_id_in: list[int] | Unset = UNSET,
     observation_uuid: str | Unset = UNSET,
     observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
+    old_data_path: list[int] | Unset = UNSET,
+    old_data_path_in: list[int] | Unset = UNSET,
+    old_data_path_isnull: bool | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -226,7 +249,7 @@ def _get_kwargs(
 
     json_curation_category_in: list[str] | Unset = UNSET
     if not isinstance(curation_category_in, Unset):
-        json_curation_category_in = ",".join(map(str, curation_category_in))
+        json_curation_category_in = curation_category_in
 
     params["curationCategory__in"] = json_curation_category_in
 
@@ -242,13 +265,27 @@ def _get_kwargs(
 
     json_curation_category_range: list[str] | Unset = UNSET
     if not isinstance(curation_category_range, Unset):
-        json_curation_category_range = ",".join(map(str, curation_category_range))
+        json_curation_category_range = curation_category_range
 
     params["curationCategory__range"] = json_curation_category_range
 
     params["curationCategory__regex"] = curation_category_regex
 
     params["curationCategory__startswith"] = curation_category_startswith
+
+    json_current_data_path: list[int] | Unset = UNSET
+    if not isinstance(current_data_path, Unset):
+        json_current_data_path = current_data_path
+
+    params["currentDataPath"] = json_current_data_path
+
+    json_current_data_path_in: list[int] | Unset = UNSET
+    if not isinstance(current_data_path_in, Unset):
+        json_current_data_path_in = current_data_path_in
+
+    params["currentDataPath__in"] = json_current_data_path_in
+
+    params["currentDataPath__isnull"] = current_data_path_isnull
 
     params["dataPath"] = data_path
 
@@ -268,7 +305,7 @@ def _get_kwargs(
 
     json_data_path_in: list[str] | Unset = UNSET
     if not isinstance(data_path_in, Unset):
-        json_data_path_in = ",".join(map(str, data_path_in))
+        json_data_path_in = data_path_in
 
     params["dataPath__in"] = json_data_path_in
 
@@ -284,7 +321,7 @@ def _get_kwargs(
 
     json_data_path_range: list[str] | Unset = UNSET
     if not isinstance(data_path_range, Unset):
-        json_data_path_range = ",".join(map(str, data_path_range))
+        json_data_path_range = data_path_range
 
     params["dataPath__range"] = json_data_path_range
 
@@ -310,7 +347,7 @@ def _get_kwargs(
 
     json_file_format_in: list[str] | Unset = UNSET
     if not isinstance(file_format_in, Unset):
-        json_file_format_in = ",".join(map(str, file_format_in))
+        json_file_format_in = file_format_in
 
     params["fileFormat__in"] = json_file_format_in
 
@@ -326,7 +363,7 @@ def _get_kwargs(
 
     json_file_format_range: list[str] | Unset = UNSET
     if not isinstance(file_format_range, Unset):
-        json_file_format_range = ",".join(map(str, file_format_range))
+        json_file_format_range = file_format_range
 
     params["fileFormat__range"] = json_file_format_range
 
@@ -334,7 +371,49 @@ def _get_kwargs(
 
     params["fileFormat__startswith"] = file_format_startswith
 
+    json_identifier: list[int] | Unset = UNSET
+    if not isinstance(identifier, Unset):
+        json_identifier = identifier
+
+    params["identifier"] = json_identifier
+
+    json_identifier_in: list[int] | Unset = UNSET
+    if not isinstance(identifier_in, Unset):
+        json_identifier_in = identifier_in
+
+    params["identifier__in"] = json_identifier_in
+
+    params["identifier__isnull"] = identifier_isnull
+
     params["limit"] = limit
+
+    json_migrationproperty: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty, Unset):
+        json_migrationproperty = migrationproperty
+
+    params["migrationproperty"] = json_migrationproperty
+
+    json_migrationproperty_in: list[int] | Unset = UNSET
+    if not isinstance(migrationproperty_in, Unset):
+        json_migrationproperty_in = migrationproperty_in
+
+    params["migrationproperty__in"] = json_migrationproperty_in
+
+    params["migrationproperty__isnull"] = migrationproperty_isnull
+
+    json_note: list[int] | Unset = UNSET
+    if not isinstance(note, Unset):
+        json_note = note
+
+    params["note"] = json_note
+
+    json_note_in: list[int] | Unset = UNSET
+    if not isinstance(note_in, Unset):
+        json_note_in = note_in
+
+    params["note__in"] = json_note_in
+
+    params["note__isnull"] = note_isnull
 
     params["numberOfFiles"] = number_of_files
 
@@ -356,7 +435,7 @@ def _get_kwargs(
 
     json_number_of_files_in: list[int] | Unset = UNSET
     if not isinstance(number_of_files_in, Unset):
-        json_number_of_files_in = ",".join(map(str, number_of_files_in))
+        json_number_of_files_in = number_of_files_in
 
     params["numberOfFiles__in"] = json_number_of_files_in
 
@@ -372,7 +451,7 @@ def _get_kwargs(
 
     json_number_of_files_range: list[int] | Unset = UNSET
     if not isinstance(number_of_files_range, Unset):
-        json_number_of_files_range = ",".join(map(str, number_of_files_range))
+        json_number_of_files_range = number_of_files_range
 
     params["numberOfFiles__range"] = json_number_of_files_range
 
@@ -400,7 +479,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -416,7 +495,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -424,11 +503,21 @@ def _get_kwargs(
 
     params["ob_id__startswith"] = ob_id_startswith
 
+    params["observation"] = observation
+
+    json_observation_in: list[int] | Unset = UNSET
+    if not isinstance(observation_in, Unset):
+        json_observation_in = observation_in
+
+    params["observation__in"] = json_observation_in
+
+    params["observation__isnull"] = observation_isnull
+
     params["observation__ob_id"] = observation_ob_id
 
     json_observation_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(observation_ob_id_in, Unset):
-        json_observation_ob_id_in = ",".join(map(str, observation_ob_id_in))
+        json_observation_ob_id_in = observation_ob_id_in
 
     params["observation__ob_id__in"] = json_observation_ob_id_in
 
@@ -436,31 +525,79 @@ def _get_kwargs(
 
     json_observation_uuid_in: list[str] | Unset = UNSET
     if not isinstance(observation_uuid_in, Unset):
-        json_observation_uuid_in = ",".join(map(str, observation_uuid_in))
+        json_observation_uuid_in = observation_uuid_in
 
     params["observation__uuid__in"] = json_observation_uuid_in
 
     params["offset"] = offset
 
+    json_old_data_path: list[int] | Unset = UNSET
+    if not isinstance(old_data_path, Unset):
+        json_old_data_path = old_data_path
+
+    params["oldDataPath"] = json_old_data_path
+
+    json_old_data_path_in: list[int] | Unset = UNSET
+    if not isinstance(old_data_path_in, Unset):
+        json_old_data_path_in = old_data_path_in
+
+    params["oldDataPath__in"] = json_old_data_path_in
+
+    params["oldDataPath__isnull"] = old_data_path_isnull
+
+    json_onlineresource: list[int] | Unset = UNSET
+    if not isinstance(onlineresource, Unset):
+        json_onlineresource = onlineresource
+
+    params["onlineresource"] = json_onlineresource
+
+    json_onlineresource_in: list[int] | Unset = UNSET
+    if not isinstance(onlineresource_in, Unset):
+        json_onlineresource_in = onlineresource_in
+
+    params["onlineresource__in"] = json_onlineresource_in
+
+    params["onlineresource__isnull"] = onlineresource_isnull
+
     params["ordering"] = ordering
 
     params["referenceable_ptr"] = referenceable_ptr
 
-    params["referenceable_ptr__gt"] = referenceable_ptr_gt
-
-    params["referenceable_ptr__gte"] = referenceable_ptr_gte
-
     json_referenceable_ptr_in: list[int] | Unset = UNSET
     if not isinstance(referenceable_ptr_in, Unset):
-        json_referenceable_ptr_in = ",".join(map(str, referenceable_ptr_in))
+        json_referenceable_ptr_in = referenceable_ptr_in
 
     params["referenceable_ptr__in"] = json_referenceable_ptr_in
 
     params["referenceable_ptr__isnull"] = referenceable_ptr_isnull
 
-    params["referenceable_ptr__lt"] = referenceable_ptr_lt
+    json_responsiblepartyinfo: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo, Unset):
+        json_responsiblepartyinfo = responsiblepartyinfo
 
-    params["referenceable_ptr__lte"] = referenceable_ptr_lte
+    params["responsiblepartyinfo"] = json_responsiblepartyinfo
+
+    json_responsiblepartyinfo_in: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo_in, Unset):
+        json_responsiblepartyinfo_in = responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__in"] = json_responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__isnull"] = responsiblepartyinfo_isnull
+
+    json_review: list[int] | Unset = UNSET
+    if not isinstance(review, Unset):
+        json_review = review
+
+    params["review"] = json_review
+
+    json_review_in: list[int] | Unset = UNSET
+    if not isinstance(review_in, Unset):
+        json_review_in = review_in
+
+    params["review__in"] = json_review_in
+
+    params["review__isnull"] = review_isnull
 
     params["short_code"] = short_code
 
@@ -480,7 +617,7 @@ def _get_kwargs(
 
     json_short_code_in: list[str] | Unset = UNSET
     if not isinstance(short_code_in, Unset):
-        json_short_code_in = ",".join(map(str, short_code_in))
+        json_short_code_in = short_code_in
 
     params["short_code__in"] = json_short_code_in
 
@@ -496,7 +633,7 @@ def _get_kwargs(
 
     json_short_code_range: list[str] | Unset = UNSET
     if not isinstance(short_code_range, Unset):
-        json_short_code_range = ",".join(map(str, short_code_range))
+        json_short_code_range = short_code_range
 
     params["short_code__range"] = json_short_code_range
 
@@ -526,7 +663,7 @@ def _get_kwargs(
 
     json_storage_location_in: list[str] | Unset = UNSET
     if not isinstance(storage_location_in, Unset):
-        json_storage_location_in = ",".join(map(str, storage_location_in))
+        json_storage_location_in = storage_location_in
 
     params["storageLocation__in"] = json_storage_location_in
 
@@ -542,7 +679,7 @@ def _get_kwargs(
 
     json_storage_location_range: list[str] | Unset = UNSET
     if not isinstance(storage_location_range, Unset):
-        json_storage_location_range = ",".join(map(str, storage_location_range))
+        json_storage_location_range = storage_location_range
 
     params["storageLocation__range"] = json_storage_location_range
 
@@ -572,7 +709,7 @@ def _get_kwargs(
 
     json_storage_status_in: list[str] | Unset = UNSET
     if not isinstance(storage_status_in, Unset):
-        json_storage_status_in = ",".join(map(str, storage_status_in))
+        json_storage_status_in = storage_status_in
 
     params["storageStatus__in"] = json_storage_status_in
 
@@ -588,7 +725,7 @@ def _get_kwargs(
 
     json_storage_status_range: list[str] | Unset = UNSET
     if not isinstance(storage_status_range, Unset):
-        json_storage_status_range = ",".join(map(str, storage_status_range))
+        json_storage_status_range = storage_status_range
 
     params["storageStatus__range"] = json_storage_status_range
 
@@ -614,7 +751,7 @@ def _get_kwargs(
 
     json_uuid_in: list[str] | Unset = UNSET
     if not isinstance(uuid_in, Unset):
-        json_uuid_in = ",".join(map(str, uuid_in))
+        json_uuid_in = uuid_in
 
     params["uuid__in"] = json_uuid_in
 
@@ -630,7 +767,7 @@ def _get_kwargs(
 
     json_uuid_range: list[str] | Unset = UNSET
     if not isinstance(uuid_range, Unset):
-        json_uuid_range = ",".join(map(str, uuid_range))
+        json_uuid_range = uuid_range
 
     params["uuid__range"] = json_uuid_range
 
@@ -658,7 +795,7 @@ def _get_kwargs(
 
     json_volume_in: list[int] | Unset = UNSET
     if not isinstance(volume_in, Unset):
-        json_volume_in = ",".join(map(str, volume_in))
+        json_volume_in = volume_in
 
     params["volume__in"] = json_volume_in
 
@@ -674,7 +811,7 @@ def _get_kwargs(
 
     json_volume_range: list[int] | Unset = UNSET
     if not isinstance(volume_range, Unset):
-        json_volume_range = ",".join(map(str, volume_range))
+        json_volume_range = volume_range
 
     params["volume__range"] = json_volume_range
 
@@ -738,6 +875,9 @@ def sync_detailed(
     curation_category_range: list[str] | Unset = UNSET,
     curation_category_regex: str | Unset = UNSET,
     curation_category_startswith: str | Unset = UNSET,
+    current_data_path: list[int] | Unset = UNSET,
+    current_data_path_in: list[int] | Unset = UNSET,
+    current_data_path_isnull: bool | Unset = UNSET,
     data_path: str | Unset = UNSET,
     data_path_contains: str | Unset = UNSET,
     data_path_endswith: str | Unset = UNSET,
@@ -772,7 +912,16 @@ def sync_detailed(
     file_format_range: list[str] | Unset = UNSET,
     file_format_regex: str | Unset = UNSET,
     file_format_startswith: str | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     number_of_files: int | Unset = UNSET,
     number_of_files_contained_by: int | Unset = UNSET,
     number_of_files_contains: int | Unset = UNSET,
@@ -809,19 +958,30 @@ def sync_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: int | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     observation_ob_id: int | Unset = UNSET,
     observation_ob_id_in: list[int] | Unset = UNSET,
     observation_uuid: str | Unset = UNSET,
     observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
+    old_data_path: list[int] | Unset = UNSET,
+    old_data_path_in: list[int] | Unset = UNSET,
+    old_data_path_isnull: bool | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -929,6 +1089,9 @@ def sync_detailed(
         curation_category_range (list[str] | Unset):
         curation_category_regex (str | Unset):
         curation_category_startswith (str | Unset):
+        current_data_path (list[int] | Unset):
+        current_data_path_in (list[int] | Unset):
+        current_data_path_isnull (bool | Unset):
         data_path (str | Unset):
         data_path_contains (str | Unset):
         data_path_endswith (str | Unset):
@@ -963,7 +1126,16 @@ def sync_detailed(
         file_format_range (list[str] | Unset):
         file_format_regex (str | Unset):
         file_format_startswith (str | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         number_of_files (int | Unset):
         number_of_files_contained_by (int | Unset):
         number_of_files_contains (int | Unset):
@@ -1000,19 +1172,30 @@ def sync_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (int | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         observation_ob_id (int | Unset):
         observation_ob_id_in (list[int] | Unset):
         observation_uuid (str | Unset):
         observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
+        old_data_path (list[int] | Unset):
+        old_data_path_in (list[int] | Unset):
+        old_data_path_isnull (bool | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -1126,6 +1309,9 @@ def sync_detailed(
         curation_category_range=curation_category_range,
         curation_category_regex=curation_category_regex,
         curation_category_startswith=curation_category_startswith,
+        current_data_path=current_data_path,
+        current_data_path_in=current_data_path_in,
+        current_data_path_isnull=current_data_path_isnull,
         data_path=data_path,
         data_path_contains=data_path_contains,
         data_path_endswith=data_path_endswith,
@@ -1160,7 +1346,16 @@ def sync_detailed(
         file_format_range=file_format_range,
         file_format_regex=file_format_regex,
         file_format_startswith=file_format_startswith,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         number_of_files=number_of_files,
         number_of_files_contained_by=number_of_files_contained_by,
         number_of_files_contains=number_of_files_contains,
@@ -1197,19 +1392,30 @@ def sync_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         observation_ob_id=observation_ob_id,
         observation_ob_id_in=observation_ob_id_in,
         observation_uuid=observation_uuid,
         observation_uuid_in=observation_uuid_in,
         offset=offset,
+        old_data_path=old_data_path,
+        old_data_path_in=old_data_path_in,
+        old_data_path_isnull=old_data_path_isnull,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1325,6 +1531,9 @@ def sync(
     curation_category_range: list[str] | Unset = UNSET,
     curation_category_regex: str | Unset = UNSET,
     curation_category_startswith: str | Unset = UNSET,
+    current_data_path: list[int] | Unset = UNSET,
+    current_data_path_in: list[int] | Unset = UNSET,
+    current_data_path_isnull: bool | Unset = UNSET,
     data_path: str | Unset = UNSET,
     data_path_contains: str | Unset = UNSET,
     data_path_endswith: str | Unset = UNSET,
@@ -1359,7 +1568,16 @@ def sync(
     file_format_range: list[str] | Unset = UNSET,
     file_format_regex: str | Unset = UNSET,
     file_format_startswith: str | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     number_of_files: int | Unset = UNSET,
     number_of_files_contained_by: int | Unset = UNSET,
     number_of_files_contains: int | Unset = UNSET,
@@ -1396,19 +1614,30 @@ def sync(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: int | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     observation_ob_id: int | Unset = UNSET,
     observation_ob_id_in: list[int] | Unset = UNSET,
     observation_uuid: str | Unset = UNSET,
     observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
+    old_data_path: list[int] | Unset = UNSET,
+    old_data_path_in: list[int] | Unset = UNSET,
+    old_data_path_isnull: bool | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -1516,6 +1745,9 @@ def sync(
         curation_category_range (list[str] | Unset):
         curation_category_regex (str | Unset):
         curation_category_startswith (str | Unset):
+        current_data_path (list[int] | Unset):
+        current_data_path_in (list[int] | Unset):
+        current_data_path_isnull (bool | Unset):
         data_path (str | Unset):
         data_path_contains (str | Unset):
         data_path_endswith (str | Unset):
@@ -1550,7 +1782,16 @@ def sync(
         file_format_range (list[str] | Unset):
         file_format_regex (str | Unset):
         file_format_startswith (str | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         number_of_files (int | Unset):
         number_of_files_contained_by (int | Unset):
         number_of_files_contains (int | Unset):
@@ -1587,19 +1828,30 @@ def sync(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (int | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         observation_ob_id (int | Unset):
         observation_ob_id_in (list[int] | Unset):
         observation_uuid (str | Unset):
         observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
+        old_data_path (list[int] | Unset):
+        old_data_path_in (list[int] | Unset):
+        old_data_path_isnull (bool | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -1714,6 +1966,9 @@ def sync(
         curation_category_range=curation_category_range,
         curation_category_regex=curation_category_regex,
         curation_category_startswith=curation_category_startswith,
+        current_data_path=current_data_path,
+        current_data_path_in=current_data_path_in,
+        current_data_path_isnull=current_data_path_isnull,
         data_path=data_path,
         data_path_contains=data_path_contains,
         data_path_endswith=data_path_endswith,
@@ -1748,7 +2003,16 @@ def sync(
         file_format_range=file_format_range,
         file_format_regex=file_format_regex,
         file_format_startswith=file_format_startswith,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         number_of_files=number_of_files,
         number_of_files_contained_by=number_of_files_contained_by,
         number_of_files_contains=number_of_files_contains,
@@ -1785,19 +2049,30 @@ def sync(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         observation_ob_id=observation_ob_id,
         observation_ob_id_in=observation_ob_id_in,
         observation_uuid=observation_uuid,
         observation_uuid_in=observation_uuid_in,
         offset=offset,
+        old_data_path=old_data_path,
+        old_data_path_in=old_data_path_in,
+        old_data_path_isnull=old_data_path_isnull,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -1907,6 +2182,9 @@ async def asyncio_detailed(
     curation_category_range: list[str] | Unset = UNSET,
     curation_category_regex: str | Unset = UNSET,
     curation_category_startswith: str | Unset = UNSET,
+    current_data_path: list[int] | Unset = UNSET,
+    current_data_path_in: list[int] | Unset = UNSET,
+    current_data_path_isnull: bool | Unset = UNSET,
     data_path: str | Unset = UNSET,
     data_path_contains: str | Unset = UNSET,
     data_path_endswith: str | Unset = UNSET,
@@ -1941,7 +2219,16 @@ async def asyncio_detailed(
     file_format_range: list[str] | Unset = UNSET,
     file_format_regex: str | Unset = UNSET,
     file_format_startswith: str | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     number_of_files: int | Unset = UNSET,
     number_of_files_contained_by: int | Unset = UNSET,
     number_of_files_contains: int | Unset = UNSET,
@@ -1978,19 +2265,30 @@ async def asyncio_detailed(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: int | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     observation_ob_id: int | Unset = UNSET,
     observation_ob_id_in: list[int] | Unset = UNSET,
     observation_uuid: str | Unset = UNSET,
     observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
+    old_data_path: list[int] | Unset = UNSET,
+    old_data_path_in: list[int] | Unset = UNSET,
+    old_data_path_isnull: bool | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -2098,6 +2396,9 @@ async def asyncio_detailed(
         curation_category_range (list[str] | Unset):
         curation_category_regex (str | Unset):
         curation_category_startswith (str | Unset):
+        current_data_path (list[int] | Unset):
+        current_data_path_in (list[int] | Unset):
+        current_data_path_isnull (bool | Unset):
         data_path (str | Unset):
         data_path_contains (str | Unset):
         data_path_endswith (str | Unset):
@@ -2132,7 +2433,16 @@ async def asyncio_detailed(
         file_format_range (list[str] | Unset):
         file_format_regex (str | Unset):
         file_format_startswith (str | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         number_of_files (int | Unset):
         number_of_files_contained_by (int | Unset):
         number_of_files_contains (int | Unset):
@@ -2169,19 +2479,30 @@ async def asyncio_detailed(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (int | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         observation_ob_id (int | Unset):
         observation_ob_id_in (list[int] | Unset):
         observation_uuid (str | Unset):
         observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
+        old_data_path (list[int] | Unset):
+        old_data_path_in (list[int] | Unset):
+        old_data_path_isnull (bool | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -2295,6 +2616,9 @@ async def asyncio_detailed(
         curation_category_range=curation_category_range,
         curation_category_regex=curation_category_regex,
         curation_category_startswith=curation_category_startswith,
+        current_data_path=current_data_path,
+        current_data_path_in=current_data_path_in,
+        current_data_path_isnull=current_data_path_isnull,
         data_path=data_path,
         data_path_contains=data_path_contains,
         data_path_endswith=data_path_endswith,
@@ -2329,7 +2653,16 @@ async def asyncio_detailed(
         file_format_range=file_format_range,
         file_format_regex=file_format_regex,
         file_format_startswith=file_format_startswith,
+        identifier=identifier,
+        identifier_in=identifier_in,
+        identifier_isnull=identifier_isnull,
         limit=limit,
+        migrationproperty=migrationproperty,
+        migrationproperty_in=migrationproperty_in,
+        migrationproperty_isnull=migrationproperty_isnull,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         number_of_files=number_of_files,
         number_of_files_contained_by=number_of_files_contained_by,
         number_of_files_contains=number_of_files_contains,
@@ -2366,19 +2699,30 @@ async def asyncio_detailed(
         ob_id_range=ob_id_range,
         ob_id_regex=ob_id_regex,
         ob_id_startswith=ob_id_startswith,
+        observation=observation,
+        observation_in=observation_in,
+        observation_isnull=observation_isnull,
         observation_ob_id=observation_ob_id,
         observation_ob_id_in=observation_ob_id_in,
         observation_uuid=observation_uuid,
         observation_uuid_in=observation_uuid_in,
         offset=offset,
+        old_data_path=old_data_path,
+        old_data_path_in=old_data_path_in,
+        old_data_path_isnull=old_data_path_isnull,
+        onlineresource=onlineresource,
+        onlineresource_in=onlineresource_in,
+        onlineresource_isnull=onlineresource_isnull,
         ordering=ordering,
         referenceable_ptr=referenceable_ptr,
-        referenceable_ptr_gt=referenceable_ptr_gt,
-        referenceable_ptr_gte=referenceable_ptr_gte,
         referenceable_ptr_in=referenceable_ptr_in,
         referenceable_ptr_isnull=referenceable_ptr_isnull,
-        referenceable_ptr_lt=referenceable_ptr_lt,
-        referenceable_ptr_lte=referenceable_ptr_lte,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
         short_code=short_code,
         short_code_contains=short_code_contains,
         short_code_endswith=short_code_endswith,
@@ -2492,6 +2836,9 @@ async def asyncio(
     curation_category_range: list[str] | Unset = UNSET,
     curation_category_regex: str | Unset = UNSET,
     curation_category_startswith: str | Unset = UNSET,
+    current_data_path: list[int] | Unset = UNSET,
+    current_data_path_in: list[int] | Unset = UNSET,
+    current_data_path_isnull: bool | Unset = UNSET,
     data_path: str | Unset = UNSET,
     data_path_contains: str | Unset = UNSET,
     data_path_endswith: str | Unset = UNSET,
@@ -2526,7 +2873,16 @@ async def asyncio(
     file_format_range: list[str] | Unset = UNSET,
     file_format_regex: str | Unset = UNSET,
     file_format_startswith: str | Unset = UNSET,
+    identifier: list[int] | Unset = UNSET,
+    identifier_in: list[int] | Unset = UNSET,
+    identifier_isnull: bool | Unset = UNSET,
     limit: int | Unset = UNSET,
+    migrationproperty: list[int] | Unset = UNSET,
+    migrationproperty_in: list[int] | Unset = UNSET,
+    migrationproperty_isnull: bool | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     number_of_files: int | Unset = UNSET,
     number_of_files_contained_by: int | Unset = UNSET,
     number_of_files_contains: int | Unset = UNSET,
@@ -2563,19 +2919,30 @@ async def asyncio(
     ob_id_range: list[int] | Unset = UNSET,
     ob_id_regex: int | Unset = UNSET,
     ob_id_startswith: int | Unset = UNSET,
+    observation: int | Unset = UNSET,
+    observation_in: list[int] | Unset = UNSET,
+    observation_isnull: bool | Unset = UNSET,
     observation_ob_id: int | Unset = UNSET,
     observation_ob_id_in: list[int] | Unset = UNSET,
     observation_uuid: str | Unset = UNSET,
     observation_uuid_in: list[str] | Unset = UNSET,
     offset: int | Unset = UNSET,
+    old_data_path: list[int] | Unset = UNSET,
+    old_data_path_in: list[int] | Unset = UNSET,
+    old_data_path_isnull: bool | Unset = UNSET,
+    onlineresource: list[int] | Unset = UNSET,
+    onlineresource_in: list[int] | Unset = UNSET,
+    onlineresource_isnull: bool | Unset = UNSET,
     ordering: str | Unset = UNSET,
     referenceable_ptr: int | Unset = UNSET,
-    referenceable_ptr_gt: int | Unset = UNSET,
-    referenceable_ptr_gte: int | Unset = UNSET,
     referenceable_ptr_in: list[int] | Unset = UNSET,
     referenceable_ptr_isnull: bool | Unset = UNSET,
-    referenceable_ptr_lt: int | Unset = UNSET,
-    referenceable_ptr_lte: int | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
     short_code: str | Unset = UNSET,
     short_code_contains: str | Unset = UNSET,
     short_code_endswith: str | Unset = UNSET,
@@ -2683,6 +3050,9 @@ async def asyncio(
         curation_category_range (list[str] | Unset):
         curation_category_regex (str | Unset):
         curation_category_startswith (str | Unset):
+        current_data_path (list[int] | Unset):
+        current_data_path_in (list[int] | Unset):
+        current_data_path_isnull (bool | Unset):
         data_path (str | Unset):
         data_path_contains (str | Unset):
         data_path_endswith (str | Unset):
@@ -2717,7 +3087,16 @@ async def asyncio(
         file_format_range (list[str] | Unset):
         file_format_regex (str | Unset):
         file_format_startswith (str | Unset):
+        identifier (list[int] | Unset):
+        identifier_in (list[int] | Unset):
+        identifier_isnull (bool | Unset):
         limit (int | Unset):
+        migrationproperty (list[int] | Unset):
+        migrationproperty_in (list[int] | Unset):
+        migrationproperty_isnull (bool | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         number_of_files (int | Unset):
         number_of_files_contained_by (int | Unset):
         number_of_files_contains (int | Unset):
@@ -2754,19 +3133,30 @@ async def asyncio(
         ob_id_range (list[int] | Unset):
         ob_id_regex (int | Unset):
         ob_id_startswith (int | Unset):
+        observation (int | Unset):
+        observation_in (list[int] | Unset):
+        observation_isnull (bool | Unset):
         observation_ob_id (int | Unset):
         observation_ob_id_in (list[int] | Unset):
         observation_uuid (str | Unset):
         observation_uuid_in (list[str] | Unset):
         offset (int | Unset):
+        old_data_path (list[int] | Unset):
+        old_data_path_in (list[int] | Unset):
+        old_data_path_isnull (bool | Unset):
+        onlineresource (list[int] | Unset):
+        onlineresource_in (list[int] | Unset):
+        onlineresource_isnull (bool | Unset):
         ordering (str | Unset):
         referenceable_ptr (int | Unset):
-        referenceable_ptr_gt (int | Unset):
-        referenceable_ptr_gte (int | Unset):
         referenceable_ptr_in (list[int] | Unset):
         referenceable_ptr_isnull (bool | Unset):
-        referenceable_ptr_lt (int | Unset):
-        referenceable_ptr_lte (int | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
         short_code (str | Unset):
         short_code_contains (str | Unset):
         short_code_endswith (str | Unset):
@@ -2882,6 +3272,9 @@ async def asyncio(
             curation_category_range=curation_category_range,
             curation_category_regex=curation_category_regex,
             curation_category_startswith=curation_category_startswith,
+            current_data_path=current_data_path,
+            current_data_path_in=current_data_path_in,
+            current_data_path_isnull=current_data_path_isnull,
             data_path=data_path,
             data_path_contains=data_path_contains,
             data_path_endswith=data_path_endswith,
@@ -2916,7 +3309,16 @@ async def asyncio(
             file_format_range=file_format_range,
             file_format_regex=file_format_regex,
             file_format_startswith=file_format_startswith,
+            identifier=identifier,
+            identifier_in=identifier_in,
+            identifier_isnull=identifier_isnull,
             limit=limit,
+            migrationproperty=migrationproperty,
+            migrationproperty_in=migrationproperty_in,
+            migrationproperty_isnull=migrationproperty_isnull,
+            note=note,
+            note_in=note_in,
+            note_isnull=note_isnull,
             number_of_files=number_of_files,
             number_of_files_contained_by=number_of_files_contained_by,
             number_of_files_contains=number_of_files_contains,
@@ -2953,19 +3355,30 @@ async def asyncio(
             ob_id_range=ob_id_range,
             ob_id_regex=ob_id_regex,
             ob_id_startswith=ob_id_startswith,
+            observation=observation,
+            observation_in=observation_in,
+            observation_isnull=observation_isnull,
             observation_ob_id=observation_ob_id,
             observation_ob_id_in=observation_ob_id_in,
             observation_uuid=observation_uuid,
             observation_uuid_in=observation_uuid_in,
             offset=offset,
+            old_data_path=old_data_path,
+            old_data_path_in=old_data_path_in,
+            old_data_path_isnull=old_data_path_isnull,
+            onlineresource=onlineresource,
+            onlineresource_in=onlineresource_in,
+            onlineresource_isnull=onlineresource_isnull,
             ordering=ordering,
             referenceable_ptr=referenceable_ptr,
-            referenceable_ptr_gt=referenceable_ptr_gt,
-            referenceable_ptr_gte=referenceable_ptr_gte,
             referenceable_ptr_in=referenceable_ptr_in,
             referenceable_ptr_isnull=referenceable_ptr_isnull,
-            referenceable_ptr_lt=referenceable_ptr_lt,
-            referenceable_ptr_lte=referenceable_ptr_lte,
+            responsiblepartyinfo=responsiblepartyinfo,
+            responsiblepartyinfo_in=responsiblepartyinfo_in,
+            responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+            review=review,
+            review_in=review_in,
+            review_isnull=review_isnull,
             short_code=short_code,
             short_code_contains=short_code_contains,
             short_code_endswith=short_code_endswith,

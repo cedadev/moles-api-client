@@ -62,7 +62,7 @@ class ProcedureComputationWriteRequest:
 
         image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(map(str, self.image_details))
+            image_details = self.image_details
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)

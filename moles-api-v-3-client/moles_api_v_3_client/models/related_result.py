@@ -46,7 +46,7 @@ class RelatedResult:
 
         old_data_path: list[int] | Unset = UNSET
         if not isinstance(self.old_data_path, Unset):
-            old_data_path = ",".join(map(str, self.old_data_path))
+            old_data_path = self.old_data_path
 
         storage_location: str | Unset = UNSET
         if not isinstance(self.storage_location, Unset):

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
-from typing import TYPE_CHECKING, Any, TypeVar
+from typing import TYPE_CHECKING, Any, TypeVar, cast
 
 from attrs import define as _attrs_define
 from attrs import field as _attrs_field
@@ -21,32 +21,29 @@ class RelatedObservationInfoRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            relation_type (RelationTypeEnum): * `IsSupplementTo` - supplement to
-                * `IsSupplementedBy` - supplemented by
-                * `Continues` - continues
-                * `IsNewVersionOf` - supersedes
-                * `IsVariantFormOf` - a variant of
-                * `IsIdenticalTo` - identical to
-                * `HasMetadata` - uses metadata from
-                * `IsDerivedFrom` - derived from
-                * `IsPartOf` - is part of (dataset only)
+            ob_id (int | None):
+            relation_type (None | RelationTypeEnum):
             subject_observation (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
             object_observation (SimpleRead): A mixin that adds 'simple_fields' as ReadOnlyFields
                 and reorders them to the top.
     """
 
-    ob_id: int
-    relation_type: RelationTypeEnum
+    ob_id: int | None
+    relation_type: None | RelationTypeEnum
     subject_observation: SimpleRead
     object_observation: SimpleRead
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
+        ob_id: int | None
         ob_id = self.ob_id
 
-        relation_type = self.relation_type.value
+        relation_type: None | str
+        if isinstance(self.relation_type, RelationTypeEnum):
+            relation_type = self.relation_type.value
+        else:
+            relation_type = self.relation_type
 
         subject_observation = self.subject_observation.to_dict()
 
@@ -70,9 +67,28 @@ class RelatedObservationInfoRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        relation_type = RelationTypeEnum(d.pop("relationType"))
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
+
+        ob_id = _parse_ob_id(d.pop("ob_id"))
+
+        def _parse_relation_type(data: object) -> None | RelationTypeEnum:
+            if data is None:
+                return data
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                relation_type_type_1 = RelationTypeEnum(data)
+
+                return relation_type_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(None | RelationTypeEnum, data)
+
+        relation_type = _parse_relation_type(d.pop("relationType"))
 
         subject_observation = SimpleRead.from_dict(d.pop("subjectObservation"))
 

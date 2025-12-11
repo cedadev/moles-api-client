@@ -149,6 +149,9 @@ def _get_kwargs(
     last_name_regex: str | Unset = UNSET,
     last_name_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -237,6 +240,15 @@ def _get_kwargs(
     postal_code_range: list[str] | Unset = UNSET,
     postal_code_regex: str | Unset = UNSET,
     postal_code_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
+    reviewnote: list[int] | Unset = UNSET,
+    reviewnote_in: list[int] | Unset = UNSET,
+    reviewnote_isnull: bool | Unset = UNSET,
 ) -> dict[str, Any]:
     params: dict[str, Any] = {}
 
@@ -258,7 +270,7 @@ def _get_kwargs(
 
     json_administrative_area_in: list[str] | Unset = UNSET
     if not isinstance(administrative_area_in, Unset):
-        json_administrative_area_in = ",".join(map(str, administrative_area_in))
+        json_administrative_area_in = administrative_area_in
 
     params["administrativeArea__in"] = json_administrative_area_in
 
@@ -274,7 +286,7 @@ def _get_kwargs(
 
     json_administrative_area_range: list[str] | Unset = UNSET
     if not isinstance(administrative_area_range, Unset):
-        json_administrative_area_range = ",".join(map(str, administrative_area_range))
+        json_administrative_area_range = administrative_area_range
 
     params["administrativeArea__range"] = json_administrative_area_range
 
@@ -300,7 +312,7 @@ def _get_kwargs(
 
     json_city_in: list[str] | Unset = UNSET
     if not isinstance(city_in, Unset):
-        json_city_in = ",".join(map(str, city_in))
+        json_city_in = city_in
 
     params["city__in"] = json_city_in
 
@@ -316,7 +328,7 @@ def _get_kwargs(
 
     json_city_range: list[str] | Unset = UNSET
     if not isinstance(city_range, Unset):
-        json_city_range = ",".join(map(str, city_range))
+        json_city_range = city_range
 
     params["city__range"] = json_city_range
 
@@ -342,7 +354,7 @@ def _get_kwargs(
 
     json_country_in: list[str] | Unset = UNSET
     if not isinstance(country_in, Unset):
-        json_country_in = ",".join(map(str, country_in))
+        json_country_in = country_in
 
     params["country__in"] = json_country_in
 
@@ -358,7 +370,7 @@ def _get_kwargs(
 
     json_country_range: list[str] | Unset = UNSET
     if not isinstance(country_range, Unset):
-        json_country_range = ",".join(map(str, country_range))
+        json_country_range = country_range
 
     params["country__range"] = json_country_range
 
@@ -384,7 +396,7 @@ def _get_kwargs(
 
     json_delivery_point_in: list[str] | Unset = UNSET
     if not isinstance(delivery_point_in, Unset):
-        json_delivery_point_in = ",".join(map(str, delivery_point_in))
+        json_delivery_point_in = delivery_point_in
 
     params["deliveryPoint__in"] = json_delivery_point_in
 
@@ -400,7 +412,7 @@ def _get_kwargs(
 
     json_delivery_point_range: list[str] | Unset = UNSET
     if not isinstance(delivery_point_range, Unset):
-        json_delivery_point_range = ",".join(map(str, delivery_point_range))
+        json_delivery_point_range = delivery_point_range
 
     params["deliveryPoint__range"] = json_delivery_point_range
 
@@ -426,7 +438,7 @@ def _get_kwargs(
 
     json_description_in: list[str] | Unset = UNSET
     if not isinstance(description_in, Unset):
-        json_description_in = ",".join(map(str, description_in))
+        json_description_in = description_in
 
     params["description__in"] = json_description_in
 
@@ -442,7 +454,7 @@ def _get_kwargs(
 
     json_description_range: list[str] | Unset = UNSET
     if not isinstance(description_range, Unset):
-        json_description_range = ",".join(map(str, description_range))
+        json_description_range = description_range
 
     params["description__range"] = json_description_range
 
@@ -468,7 +480,7 @@ def _get_kwargs(
 
     json_electronic_email_address_in: list[str] | Unset = UNSET
     if not isinstance(electronic_email_address_in, Unset):
-        json_electronic_email_address_in = ",".join(map(str, electronic_email_address_in))
+        json_electronic_email_address_in = electronic_email_address_in
 
     params["electronicEmailAddress__in"] = json_electronic_email_address_in
 
@@ -484,7 +496,7 @@ def _get_kwargs(
 
     json_electronic_email_address_range: list[str] | Unset = UNSET
     if not isinstance(electronic_email_address_range, Unset):
-        json_electronic_email_address_range = ",".join(map(str, electronic_email_address_range))
+        json_electronic_email_address_range = electronic_email_address_range
 
     params["electronicEmailAddress__range"] = json_electronic_email_address_range
 
@@ -510,7 +522,7 @@ def _get_kwargs(
 
     json_first_name_in: list[str] | Unset = UNSET
     if not isinstance(first_name_in, Unset):
-        json_first_name_in = ",".join(map(str, first_name_in))
+        json_first_name_in = first_name_in
 
     params["firstName__in"] = json_first_name_in
 
@@ -526,7 +538,7 @@ def _get_kwargs(
 
     json_first_name_range: list[str] | Unset = UNSET
     if not isinstance(first_name_range, Unset):
-        json_first_name_range = ",".join(map(str, first_name_range))
+        json_first_name_range = first_name_range
 
     params["firstName__range"] = json_first_name_range
 
@@ -552,7 +564,7 @@ def _get_kwargs(
 
     json_last_name_in: list[str] | Unset = UNSET
     if not isinstance(last_name_in, Unset):
-        json_last_name_in = ",".join(map(str, last_name_in))
+        json_last_name_in = last_name_in
 
     params["lastName__in"] = json_last_name_in
 
@@ -568,7 +580,7 @@ def _get_kwargs(
 
     json_last_name_range: list[str] | Unset = UNSET
     if not isinstance(last_name_range, Unset):
-        json_last_name_range = ",".join(map(str, last_name_range))
+        json_last_name_range = last_name_range
 
     params["lastName__range"] = json_last_name_range
 
@@ -577,6 +589,20 @@ def _get_kwargs(
     params["lastName__startswith"] = last_name_startswith
 
     params["limit"] = limit
+
+    json_note: list[int] | Unset = UNSET
+    if not isinstance(note, Unset):
+        json_note = note
+
+    params["note"] = json_note
+
+    json_note_in: list[int] | Unset = UNSET
+    if not isinstance(note_in, Unset):
+        json_note_in = note_in
+
+    params["note__in"] = json_note_in
+
+    params["note__isnull"] = note_isnull
 
     params["ob_id"] = ob_id
 
@@ -598,7 +624,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -614,7 +640,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -642,7 +668,7 @@ def _get_kwargs(
 
     json_online_resource_in: list[str] | Unset = UNSET
     if not isinstance(online_resource_in, Unset):
-        json_online_resource_in = ",".join(map(str, online_resource_in))
+        json_online_resource_in = online_resource_in
 
     params["onlineResource__in"] = json_online_resource_in
 
@@ -658,7 +684,7 @@ def _get_kwargs(
 
     json_online_resource_range: list[str] | Unset = UNSET
     if not isinstance(online_resource_range, Unset):
-        json_online_resource_range = ",".join(map(str, online_resource_range))
+        json_online_resource_range = online_resource_range
 
     params["onlineResource__range"] = json_online_resource_range
 
@@ -690,7 +716,7 @@ def _get_kwargs(
 
     json_party_type_in: list[str] | Unset = UNSET
     if not isinstance(party_type_in, Unset):
-        json_party_type_in = ",".join(map(str, party_type_in))
+        json_party_type_in = party_type_in
 
     params["partyType__in"] = json_party_type_in
 
@@ -706,7 +732,7 @@ def _get_kwargs(
 
     json_party_type_range: list[str] | Unset = UNSET
     if not isinstance(party_type_range, Unset):
-        json_party_type_range = ",".join(map(str, party_type_range))
+        json_party_type_range = party_type_range
 
     params["partyType__range"] = json_party_type_range
 
@@ -732,7 +758,7 @@ def _get_kwargs(
 
     json_phone_in: list[str] | Unset = UNSET
     if not isinstance(phone_in, Unset):
-        json_phone_in = ",".join(map(str, phone_in))
+        json_phone_in = phone_in
 
     params["phone__in"] = json_phone_in
 
@@ -748,7 +774,7 @@ def _get_kwargs(
 
     json_phone_range: list[str] | Unset = UNSET
     if not isinstance(phone_range, Unset):
-        json_phone_range = ",".join(map(str, phone_range))
+        json_phone_range = phone_range
 
     params["phone__range"] = json_phone_range
 
@@ -774,7 +800,7 @@ def _get_kwargs(
 
     json_postal_code_in: list[str] | Unset = UNSET
     if not isinstance(postal_code_in, Unset):
-        json_postal_code_in = ",".join(map(str, postal_code_in))
+        json_postal_code_in = postal_code_in
 
     params["postalCode__in"] = json_postal_code_in
 
@@ -790,13 +816,55 @@ def _get_kwargs(
 
     json_postal_code_range: list[str] | Unset = UNSET
     if not isinstance(postal_code_range, Unset):
-        json_postal_code_range = ",".join(map(str, postal_code_range))
+        json_postal_code_range = postal_code_range
 
     params["postalCode__range"] = json_postal_code_range
 
     params["postalCode__regex"] = postal_code_regex
 
     params["postalCode__startswith"] = postal_code_startswith
+
+    json_responsiblepartyinfo: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo, Unset):
+        json_responsiblepartyinfo = responsiblepartyinfo
+
+    params["responsiblepartyinfo"] = json_responsiblepartyinfo
+
+    json_responsiblepartyinfo_in: list[int] | Unset = UNSET
+    if not isinstance(responsiblepartyinfo_in, Unset):
+        json_responsiblepartyinfo_in = responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__in"] = json_responsiblepartyinfo_in
+
+    params["responsiblepartyinfo__isnull"] = responsiblepartyinfo_isnull
+
+    json_review: list[int] | Unset = UNSET
+    if not isinstance(review, Unset):
+        json_review = review
+
+    params["review"] = json_review
+
+    json_review_in: list[int] | Unset = UNSET
+    if not isinstance(review_in, Unset):
+        json_review_in = review_in
+
+    params["review__in"] = json_review_in
+
+    params["review__isnull"] = review_isnull
+
+    json_reviewnote: list[int] | Unset = UNSET
+    if not isinstance(reviewnote, Unset):
+        json_reviewnote = reviewnote
+
+    params["reviewnote"] = json_reviewnote
+
+    json_reviewnote_in: list[int] | Unset = UNSET
+    if not isinstance(reviewnote_in, Unset):
+        json_reviewnote_in = reviewnote_in
+
+    params["reviewnote__in"] = json_reviewnote_in
+
+    params["reviewnote__isnull"] = reviewnote_isnull
 
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
@@ -972,6 +1040,9 @@ def sync_detailed(
     last_name_regex: str | Unset = UNSET,
     last_name_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1060,6 +1131,15 @@ def sync_detailed(
     postal_code_range: list[str] | Unset = UNSET,
     postal_code_regex: str | Unset = UNSET,
     postal_code_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
+    reviewnote: list[int] | Unset = UNSET,
+    reviewnote_in: list[int] | Unset = UNSET,
+    reviewnote_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -1203,6 +1283,9 @@ def sync_detailed(
         last_name_regex (str | Unset):
         last_name_startswith (str | Unset):
         limit (int | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1291,6 +1374,15 @@ def sync_detailed(
         postal_code_range (list[str] | Unset):
         postal_code_regex (str | Unset):
         postal_code_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
+        reviewnote (list[int] | Unset):
+        reviewnote_in (list[int] | Unset):
+        reviewnote_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -1438,6 +1530,9 @@ def sync_detailed(
         last_name_regex=last_name_regex,
         last_name_startswith=last_name_startswith,
         limit=limit,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -1526,6 +1621,15 @@ def sync_detailed(
         postal_code_range=postal_code_range,
         postal_code_regex=postal_code_regex,
         postal_code_startswith=postal_code_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
+        reviewnote=reviewnote,
+        reviewnote_in=reviewnote_in,
+        reviewnote_isnull=reviewnote_isnull,
     )
 
     response = client.get_httpx_client().request(
@@ -1675,6 +1779,9 @@ def sync(
     last_name_regex: str | Unset = UNSET,
     last_name_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -1763,6 +1870,15 @@ def sync(
     postal_code_range: list[str] | Unset = UNSET,
     postal_code_regex: str | Unset = UNSET,
     postal_code_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
+    reviewnote: list[int] | Unset = UNSET,
+    reviewnote_in: list[int] | Unset = UNSET,
+    reviewnote_isnull: bool | Unset = UNSET,
 ) -> PaginatedPartyReadList | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -1906,6 +2022,9 @@ def sync(
         last_name_regex (str | Unset):
         last_name_startswith (str | Unset):
         limit (int | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -1994,6 +2113,15 @@ def sync(
         postal_code_range (list[str] | Unset):
         postal_code_regex (str | Unset):
         postal_code_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
+        reviewnote (list[int] | Unset):
+        reviewnote_in (list[int] | Unset):
+        reviewnote_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2142,6 +2270,9 @@ def sync(
         last_name_regex=last_name_regex,
         last_name_startswith=last_name_startswith,
         limit=limit,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -2230,6 +2361,15 @@ def sync(
         postal_code_range=postal_code_range,
         postal_code_regex=postal_code_regex,
         postal_code_startswith=postal_code_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
+        reviewnote=reviewnote,
+        reviewnote_in=reviewnote_in,
+        reviewnote_isnull=reviewnote_isnull,
     ).parsed
 
 
@@ -2373,6 +2513,9 @@ async def asyncio_detailed(
     last_name_regex: str | Unset = UNSET,
     last_name_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -2461,6 +2604,15 @@ async def asyncio_detailed(
     postal_code_range: list[str] | Unset = UNSET,
     postal_code_regex: str | Unset = UNSET,
     postal_code_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
+    reviewnote: list[int] | Unset = UNSET,
+    reviewnote_in: list[int] | Unset = UNSET,
+    reviewnote_isnull: bool | Unset = UNSET,
 ) -> Response[PaginatedPartyReadList]:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -2604,6 +2756,9 @@ async def asyncio_detailed(
         last_name_regex (str | Unset):
         last_name_startswith (str | Unset):
         limit (int | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -2692,6 +2847,15 @@ async def asyncio_detailed(
         postal_code_range (list[str] | Unset):
         postal_code_regex (str | Unset):
         postal_code_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
+        reviewnote (list[int] | Unset):
+        reviewnote_in (list[int] | Unset):
+        reviewnote_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -2839,6 +3003,9 @@ async def asyncio_detailed(
         last_name_regex=last_name_regex,
         last_name_startswith=last_name_startswith,
         limit=limit,
+        note=note,
+        note_in=note_in,
+        note_isnull=note_isnull,
         ob_id=ob_id,
         ob_id_contained_by=ob_id_contained_by,
         ob_id_contains=ob_id_contains,
@@ -2927,6 +3094,15 @@ async def asyncio_detailed(
         postal_code_range=postal_code_range,
         postal_code_regex=postal_code_regex,
         postal_code_startswith=postal_code_startswith,
+        responsiblepartyinfo=responsiblepartyinfo,
+        responsiblepartyinfo_in=responsiblepartyinfo_in,
+        responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+        review=review,
+        review_in=review_in,
+        review_isnull=review_isnull,
+        reviewnote=reviewnote,
+        reviewnote_in=reviewnote_in,
+        reviewnote_isnull=reviewnote_isnull,
     )
 
     response = await client.get_async_httpx_client().request(**kwargs)
@@ -3074,6 +3250,9 @@ async def asyncio(
     last_name_regex: str | Unset = UNSET,
     last_name_startswith: str | Unset = UNSET,
     limit: int | Unset = UNSET,
+    note: list[int] | Unset = UNSET,
+    note_in: list[int] | Unset = UNSET,
+    note_isnull: bool | Unset = UNSET,
     ob_id: int | Unset = UNSET,
     ob_id_contained_by: int | Unset = UNSET,
     ob_id_contains: int | Unset = UNSET,
@@ -3162,6 +3341,15 @@ async def asyncio(
     postal_code_range: list[str] | Unset = UNSET,
     postal_code_regex: str | Unset = UNSET,
     postal_code_startswith: str | Unset = UNSET,
+    responsiblepartyinfo: list[int] | Unset = UNSET,
+    responsiblepartyinfo_in: list[int] | Unset = UNSET,
+    responsiblepartyinfo_isnull: bool | Unset = UNSET,
+    review: list[int] | Unset = UNSET,
+    review_in: list[int] | Unset = UNSET,
+    review_isnull: bool | Unset = UNSET,
+    reviewnote: list[int] | Unset = UNSET,
+    reviewnote_in: list[int] | Unset = UNSET,
+    reviewnote_isnull: bool | Unset = UNSET,
 ) -> PaginatedPartyReadList | None:
     """Get a list of Party objects. Parties have a many to many mapping with a number of record types which
     are listed through the responsiblepartyinfo end point as connected to via the
@@ -3305,6 +3493,9 @@ async def asyncio(
         last_name_regex (str | Unset):
         last_name_startswith (str | Unset):
         limit (int | Unset):
+        note (list[int] | Unset):
+        note_in (list[int] | Unset):
+        note_isnull (bool | Unset):
         ob_id (int | Unset):
         ob_id_contained_by (int | Unset):
         ob_id_contains (int | Unset):
@@ -3393,6 +3584,15 @@ async def asyncio(
         postal_code_range (list[str] | Unset):
         postal_code_regex (str | Unset):
         postal_code_startswith (str | Unset):
+        responsiblepartyinfo (list[int] | Unset):
+        responsiblepartyinfo_in (list[int] | Unset):
+        responsiblepartyinfo_isnull (bool | Unset):
+        review (list[int] | Unset):
+        review_in (list[int] | Unset):
+        review_isnull (bool | Unset):
+        reviewnote (list[int] | Unset):
+        reviewnote_in (list[int] | Unset):
+        reviewnote_isnull (bool | Unset):
 
     Raises:
         errors.UnexpectedStatus: If the server returns an undocumented status code and Client.raise_on_unexpected_status is True.
@@ -3542,6 +3742,9 @@ async def asyncio(
             last_name_regex=last_name_regex,
             last_name_startswith=last_name_startswith,
             limit=limit,
+            note=note,
+            note_in=note_in,
+            note_isnull=note_isnull,
             ob_id=ob_id,
             ob_id_contained_by=ob_id_contained_by,
             ob_id_contains=ob_id_contains,
@@ -3630,5 +3833,14 @@ async def asyncio(
             postal_code_range=postal_code_range,
             postal_code_regex=postal_code_regex,
             postal_code_startswith=postal_code_startswith,
+            responsiblepartyinfo=responsiblepartyinfo,
+            responsiblepartyinfo_in=responsiblepartyinfo_in,
+            responsiblepartyinfo_isnull=responsiblepartyinfo_isnull,
+            review=review,
+            review_in=review_in,
+            review_isnull=review_isnull,
+            reviewnote=reviewnote,
+            reviewnote_in=reviewnote_in,
+            reviewnote_isnull=reviewnote_isnull,
         )
     ).parsed

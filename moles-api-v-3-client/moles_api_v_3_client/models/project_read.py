@@ -23,14 +23,14 @@ class ProjectRead:
     and reorders them to the top.
 
         Attributes:
-            ob_id (int):
-            uuid (str):
-            short_code (str):
-            title (str):
+            ob_id (int | None):
+            uuid (None | str):
+            short_code (None | str):
+            title (None | str):
             abstract (None | str):
-            publication_state (BlankEnum | PublicationState6F9Enum):
-            keywords (str):
-            status (BlankEnum | StatusEnum):
+            publication_state (BlankEnum | None | PublicationState6F9Enum):
+            keywords (None | str):
+            status (BlankEnum | None | StatusEnum):
             parent_project (None | SimpleRead):
             sub_project (list[SimpleRead] | None):
             image_details (list[int | None]):
@@ -40,14 +40,14 @@ class ProjectRead:
             onlineresource_set (list[int | None]):
     """
 
-    ob_id: int
-    uuid: str
-    short_code: str
-    title: str
+    ob_id: int | None
+    uuid: None | str
+    short_code: None | str
+    title: None | str
     abstract: None | str
-    publication_state: BlankEnum | PublicationState6F9Enum
-    keywords: str
-    status: BlankEnum | StatusEnum
+    publication_state: BlankEnum | None | PublicationState6F9Enum
+    keywords: None | str
+    status: BlankEnum | None | StatusEnum
     parent_project: None | SimpleRead
     sub_project: list[SimpleRead] | None
     image_details: list[int | None]
@@ -60,30 +60,39 @@ class ProjectRead:
     def to_dict(self) -> dict[str, Any]:
         from ..models.simple_read import SimpleRead
 
+        ob_id: int | None
         ob_id = self.ob_id
 
+        uuid: None | str
         uuid = self.uuid
 
+        short_code: None | str
         short_code = self.short_code
 
+        title: None | str
         title = self.title
 
         abstract: None | str
         abstract = self.abstract
 
-        publication_state: str
+        publication_state: None | str
         if isinstance(self.publication_state, PublicationState6F9Enum):
             publication_state = self.publication_state.value
-        else:
+        elif isinstance(self.publication_state, BlankEnum):
             publication_state = self.publication_state.value
+        else:
+            publication_state = self.publication_state
 
+        keywords: None | str
         keywords = self.keywords
 
-        status: str
+        status: None | str
         if isinstance(self.status, StatusEnum):
             status = self.status.value
-        else:
+        elif isinstance(self.status, BlankEnum):
             status = self.status.value
+        else:
+            status = self.status
 
         parent_project: dict[str, Any] | None
         if isinstance(self.parent_project, SimpleRead):
@@ -164,13 +173,34 @@ class ProjectRead:
         from ..models.simple_read import SimpleRead
 
         d = dict(src_dict)
-        ob_id = d.pop("ob_id")
 
-        uuid = d.pop("uuid")
+        def _parse_ob_id(data: object) -> int | None:
+            if data is None:
+                return data
+            return cast(int | None, data)
 
-        short_code = d.pop("short_code")
+        ob_id = _parse_ob_id(d.pop("ob_id"))
 
-        title = d.pop("title")
+        def _parse_uuid(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        uuid = _parse_uuid(d.pop("uuid"))
+
+        def _parse_short_code(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        short_code = _parse_short_code(d.pop("short_code"))
+
+        def _parse_title(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
+
+        title = _parse_title(d.pop("title"))
 
         def _parse_abstract(data: object) -> None | str:
             if data is None:
@@ -179,7 +209,9 @@ class ProjectRead:
 
         abstract = _parse_abstract(d.pop("abstract"))
 
-        def _parse_publication_state(data: object) -> BlankEnum | PublicationState6F9Enum:
+        def _parse_publication_state(data: object) -> BlankEnum | None | PublicationState6F9Enum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -188,17 +220,28 @@ class ProjectRead:
                 return publication_state_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            publication_state_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                publication_state_type_1 = BlankEnum(data)
 
-            return publication_state_type_1
+                return publication_state_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | PublicationState6F9Enum, data)
 
         publication_state = _parse_publication_state(d.pop("publicationState"))
 
-        keywords = d.pop("keywords")
+        def _parse_keywords(data: object) -> None | str:
+            if data is None:
+                return data
+            return cast(None | str, data)
 
-        def _parse_status(data: object) -> BlankEnum | StatusEnum:
+        keywords = _parse_keywords(d.pop("keywords"))
+
+        def _parse_status(data: object) -> BlankEnum | None | StatusEnum:
+            if data is None:
+                return data
             try:
                 if not isinstance(data, str):
                     raise TypeError()
@@ -207,11 +250,15 @@ class ProjectRead:
                 return status_type_0
             except (TypeError, ValueError, AttributeError, KeyError):
                 pass
-            if not isinstance(data, str):
-                raise TypeError()
-            status_type_1 = BlankEnum(data)
+            try:
+                if not isinstance(data, str):
+                    raise TypeError()
+                status_type_1 = BlankEnum(data)
 
-            return status_type_1
+                return status_type_1
+            except (TypeError, ValueError, AttributeError, KeyError):
+                pass
+            return cast(BlankEnum | None | StatusEnum, data)
 
         status = _parse_status(d.pop("status"))
 
