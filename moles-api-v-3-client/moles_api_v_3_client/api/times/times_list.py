@@ -235,13 +235,13 @@ def _get_kwargs(
 
     json_mobileplatformoperation: list[int] | Unset = UNSET
     if not isinstance(mobileplatformoperation, Unset):
-        json_mobileplatformoperation = ",".join(map(str, mobileplatformoperation))
+        json_mobileplatformoperation = mobileplatformoperation
 
     params["mobileplatformoperation"] = json_mobileplatformoperation
 
     json_mobileplatformoperation_in: list[int] | Unset = UNSET
     if not isinstance(mobileplatformoperation_in, Unset):
-        json_mobileplatformoperation_in = ",".join(map(str, mobileplatformoperation_in))
+        json_mobileplatformoperation_in = mobileplatformoperation_in
 
     params["mobileplatformoperation__in"] = json_mobileplatformoperation_in
 
@@ -267,7 +267,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -283,7 +283,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -293,19 +293,19 @@ def _get_kwargs(
 
     json_observation: list[int] | Unset = UNSET
     if not isinstance(observation, Unset):
-        json_observation = ",".join(map(str, observation))
+        json_observation = observation
 
     params["observation"] = json_observation
 
     json_observation_phenomenon_time: list[int] | Unset = UNSET
     if not isinstance(observation_phenomenon_time, Unset):
-        json_observation_phenomenon_time = ",".join(map(str, observation_phenomenon_time))
+        json_observation_phenomenon_time = observation_phenomenon_time
 
     params["observationPhenomenonTime"] = json_observation_phenomenon_time
 
     json_observation_phenomenon_time_in: list[int] | Unset = UNSET
     if not isinstance(observation_phenomenon_time_in, Unset):
-        json_observation_phenomenon_time_in = ",".join(map(str, observation_phenomenon_time_in))
+        json_observation_phenomenon_time_in = observation_phenomenon_time_in
 
     params["observationPhenomenonTime__in"] = json_observation_phenomenon_time_in
 
@@ -313,7 +313,7 @@ def _get_kwargs(
 
     json_observation_in: list[int] | Unset = UNSET
     if not isinstance(observation_in, Unset):
-        json_observation_in = ",".join(map(str, observation_in))
+        json_observation_in = observation_in
 
     params["observation__in"] = json_observation_in
 

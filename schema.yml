@@ -27571,7 +27571,6 @@ components:
             writeOnly: true
           writeOnly: true
       required:
-      - subInstrument
       - title
     LanguageEnum:
       enum:
@@ -30996,6 +30995,13 @@ components:
             $ref: '#/components/schemas/SimpleRead'
           readOnly: true
           nullable: true
+        independentInstrument:
+          type: array
+          items:
+            type: integer
+            title: Internal identifier (ob_id)
+            nullable: true
+          readOnly: true
         instrumentplatformpair_set:
           type: array
           items:
@@ -31005,6 +31011,7 @@ components:
       required:
       - abstract
       - imageDetails
+      - independentInstrument
       - instrumentplatformpair_set
       - mobilePlatformOperation
       - ob_id

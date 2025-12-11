@@ -118,7 +118,7 @@ def _get_kwargs(
 
     json_identifier_type_in: list[str] | Unset = UNSET
     if not isinstance(identifier_type_in, Unset):
-        json_identifier_type_in = ",".join(map(str, identifier_type_in))
+        json_identifier_type_in = identifier_type_in
 
     params["identifierType__in"] = json_identifier_type_in
 
@@ -134,7 +134,7 @@ def _get_kwargs(
 
     json_identifier_type_range: list[str] | Unset = UNSET
     if not isinstance(identifier_type_range, Unset):
-        json_identifier_type_range = ",".join(map(str, identifier_type_range))
+        json_identifier_type_range = identifier_type_range
 
     params["identifierType__range"] = json_identifier_type_range
 
@@ -164,7 +164,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -180,7 +180,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -196,7 +196,7 @@ def _get_kwargs(
 
     json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
-        json_related_to_in = ",".join(map(str, related_to_in))
+        json_related_to_in = related_to_in
 
     params["relatedTo__in"] = json_related_to_in
 
@@ -206,7 +206,7 @@ def _get_kwargs(
 
     json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
-        json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
+        json_related_to_ob_id_in = related_to_ob_id_in
 
     params["relatedTo__ob_id__in"] = json_related_to_ob_id_in
 
@@ -214,7 +214,7 @@ def _get_kwargs(
 
     json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
-        json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
+        json_related_to_short_code_in = related_to_short_code_in
 
     params["relatedTo__short_code__in"] = json_related_to_short_code_in
 
@@ -222,7 +222,7 @@ def _get_kwargs(
 
     json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
-        json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
+        json_related_to_uuid_in = related_to_uuid_in
 
     params["relatedTo__uuid__in"] = json_related_to_uuid_in
 
@@ -244,7 +244,7 @@ def _get_kwargs(
 
     json_short_url_in: list[str] | Unset = UNSET
     if not isinstance(short_url_in, Unset):
-        json_short_url_in = ",".join(map(str, short_url_in))
+        json_short_url_in = short_url_in
 
     params["shortUrl__in"] = json_short_url_in
 
@@ -260,7 +260,7 @@ def _get_kwargs(
 
     json_short_url_range: list[str] | Unset = UNSET
     if not isinstance(short_url_range, Unset):
-        json_short_url_range = ",".join(map(str, short_url_range))
+        json_short_url_range = short_url_range
 
     params["shortUrl__range"] = json_short_url_range
 
@@ -286,7 +286,7 @@ def _get_kwargs(
 
     json_url_in: list[str] | Unset = UNSET
     if not isinstance(url_in, Unset):
-        json_url_in = ",".join(map(str, url_in))
+        json_url_in = url_in
 
     params["url__in"] = json_url_in
 
@@ -302,7 +302,7 @@ def _get_kwargs(
 
     json_url_range: list[str] | Unset = UNSET
     if not isinstance(url_range, Unset):
-        json_url_range = ",".join(map(str, url_range))
+        json_url_range = url_range
 
     params["url__range"] = json_url_range
 

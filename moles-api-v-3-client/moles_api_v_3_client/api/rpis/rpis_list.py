@@ -114,7 +114,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -130,7 +130,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -148,13 +148,13 @@ def _get_kwargs(
 
     json_party_first_name_in: list[str] | Unset = UNSET
     if not isinstance(party_first_name_in, Unset):
-        json_party_first_name_in = ",".join(map(str, party_first_name_in))
+        json_party_first_name_in = party_first_name_in
 
     params["party__firstName__in"] = json_party_first_name_in
 
     json_party_in: list[int] | Unset = UNSET
     if not isinstance(party_in, Unset):
-        json_party_in = ",".join(map(str, party_in))
+        json_party_in = party_in
 
     params["party__in"] = json_party_in
 
@@ -164,7 +164,7 @@ def _get_kwargs(
 
     json_party_last_name_in: list[str] | Unset = UNSET
     if not isinstance(party_last_name_in, Unset):
-        json_party_last_name_in = ",".join(map(str, party_last_name_in))
+        json_party_last_name_in = party_last_name_in
 
     params["party__lastName__in"] = json_party_last_name_in
 
@@ -172,7 +172,7 @@ def _get_kwargs(
 
     json_party_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(party_ob_id_in, Unset):
-        json_party_ob_id_in = ",".join(map(str, party_ob_id_in))
+        json_party_ob_id_in = party_ob_id_in
 
     params["party__ob_id__in"] = json_party_ob_id_in
 
@@ -184,7 +184,7 @@ def _get_kwargs(
 
     json_party_party_type_in: list[str] | Unset = UNSET
     if not isinstance(party_party_type_in, Unset):
-        json_party_party_type_in = ",".join(map(str, party_party_type_in))
+        json_party_party_type_in = party_party_type_in
 
     params["party__partyType__in"] = json_party_party_type_in
 
@@ -208,7 +208,7 @@ def _get_kwargs(
 
     json_priority_in: list[int] | Unset = UNSET
     if not isinstance(priority_in, Unset):
-        json_priority_in = ",".join(map(str, priority_in))
+        json_priority_in = priority_in
 
     params["priority__in"] = json_priority_in
 
@@ -224,7 +224,7 @@ def _get_kwargs(
 
     json_priority_range: list[int] | Unset = UNSET
     if not isinstance(priority_range, Unset):
-        json_priority_range = ",".join(map(str, priority_range))
+        json_priority_range = priority_range
 
     params["priority__range"] = json_priority_range
 
@@ -236,7 +236,7 @@ def _get_kwargs(
 
     json_related_to_in: list[int] | Unset = UNSET
     if not isinstance(related_to_in, Unset):
-        json_related_to_in = ",".join(map(str, related_to_in))
+        json_related_to_in = related_to_in
 
     params["relatedTo__in"] = json_related_to_in
 
@@ -246,7 +246,7 @@ def _get_kwargs(
 
     json_related_to_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_to_ob_id_in, Unset):
-        json_related_to_ob_id_in = ",".join(map(str, related_to_ob_id_in))
+        json_related_to_ob_id_in = related_to_ob_id_in
 
     params["relatedTo__ob_id__in"] = json_related_to_ob_id_in
 
@@ -254,7 +254,7 @@ def _get_kwargs(
 
     json_related_to_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_to_short_code_in, Unset):
-        json_related_to_short_code_in = ",".join(map(str, related_to_short_code_in))
+        json_related_to_short_code_in = related_to_short_code_in
 
     params["relatedTo__short_code__in"] = json_related_to_short_code_in
 
@@ -262,7 +262,7 @@ def _get_kwargs(
 
     json_related_to_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_to_uuid_in, Unset):
-        json_related_to_uuid_in = ",".join(map(str, related_to_uuid_in))
+        json_related_to_uuid_in = related_to_uuid_in
 
     params["relatedTo__uuid__in"] = json_related_to_uuid_in
 
@@ -288,7 +288,7 @@ def _get_kwargs(
 
     json_role_in: list[str] | Unset = UNSET
     if not isinstance(role_in, Unset):
-        json_role_in = ",".join(map(str, role_in))
+        json_role_in = role_in
 
     params["role__in"] = json_role_in
 
@@ -304,7 +304,7 @@ def _get_kwargs(
 
     json_role_range: list[str] | Unset = UNSET
     if not isinstance(role_range, Unset):
-        json_role_range = ",".join(map(str, role_range))
+        json_role_range = role_range
 
     params["role__range"] = json_role_range
 

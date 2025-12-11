@@ -245,7 +245,7 @@ def _get_kwargs(
 
     json_explanation_in: list[str] | Unset = UNSET
     if not isinstance(explanation_in, Unset):
-        json_explanation_in = ",".join(map(str, explanation_in))
+        json_explanation_in = explanation_in
 
     params["explanation__in"] = json_explanation_in
 
@@ -261,7 +261,7 @@ def _get_kwargs(
 
     json_explanation_range: list[str] | Unset = UNSET
     if not isinstance(explanation_range, Unset):
-        json_explanation_range = ",".join(map(str, explanation_range))
+        json_explanation_range = explanation_range
 
     params["explanation__range"] = json_explanation_range
 
@@ -291,7 +291,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -307,7 +307,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -317,13 +317,13 @@ def _get_kwargs(
 
     json_observation: list[int] | Unset = UNSET
     if not isinstance(observation, Unset):
-        json_observation = ",".join(map(str, observation))
+        json_observation = observation
 
     params["observation"] = json_observation
 
     json_observation_in: list[int] | Unset = UNSET
     if not isinstance(observation_in, Unset):
-        json_observation_in = ",".join(map(str, observation_in))
+        json_observation_in = observation_in
 
     params["observation__in"] = json_observation_in
 
@@ -351,7 +351,7 @@ def _get_kwargs(
 
     json_passes_test_in: list[bool] | Unset = UNSET
     if not isinstance(passes_test_in, Unset):
-        json_passes_test_in = ",".join(map(str, passes_test_in))
+        json_passes_test_in = passes_test_in
 
     params["passesTest__in"] = json_passes_test_in
 
@@ -367,7 +367,7 @@ def _get_kwargs(
 
     json_passes_test_range: list[bool] | Unset = UNSET
     if not isinstance(passes_test_range, Unset):
-        json_passes_test_range = ",".join(map(str, passes_test_range))
+        json_passes_test_range = passes_test_range
 
     params["passesTest__range"] = json_passes_test_range
 
@@ -393,7 +393,7 @@ def _get_kwargs(
 
     json_result_title_in: list[str] | Unset = UNSET
     if not isinstance(result_title_in, Unset):
-        json_result_title_in = ",".join(map(str, result_title_in))
+        json_result_title_in = result_title_in
 
     params["resultTitle__in"] = json_result_title_in
 
@@ -409,7 +409,7 @@ def _get_kwargs(
 
     json_result_title_range: list[str] | Unset = UNSET
     if not isinstance(result_title_range, Unset):
-        json_result_title_range = ",".join(map(str, result_title_range))
+        json_result_title_range = result_title_range
 
     params["resultTitle__range"] = json_result_title_range
 

@@ -100,7 +100,7 @@ def _get_kwargs(
 
     json_commentator_in: list[int] | Unset = UNSET
     if not isinstance(commentator_in, Unset):
-        json_commentator_in = ",".join(map(str, commentator_in))
+        json_commentator_in = commentator_in
 
     params["commentator__in"] = json_commentator_in
 
@@ -124,7 +124,7 @@ def _get_kwargs(
 
     json_comments_in: list[str] | Unset = UNSET
     if not isinstance(comments_in, Unset):
-        json_comments_in = ",".join(map(str, comments_in))
+        json_comments_in = comments_in
 
     params["comments__in"] = json_comments_in
 
@@ -140,7 +140,7 @@ def _get_kwargs(
 
     json_comments_range: list[str] | Unset = UNSET
     if not isinstance(comments_range, Unset):
-        json_comments_range = ",".join(map(str, comments_range))
+        json_comments_range = comments_range
 
     params["comments__range"] = json_comments_range
 
@@ -294,7 +294,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -310,7 +310,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -326,7 +326,7 @@ def _get_kwargs(
 
     json_related_record_in: list[int] | Unset = UNSET
     if not isinstance(related_record_in, Unset):
-        json_related_record_in = ",".join(map(str, related_record_in))
+        json_related_record_in = related_record_in
 
     params["relatedRecord__in"] = json_related_record_in
 
@@ -336,7 +336,7 @@ def _get_kwargs(
 
     json_related_record_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(related_record_ob_id_in, Unset):
-        json_related_record_ob_id_in = ",".join(map(str, related_record_ob_id_in))
+        json_related_record_ob_id_in = related_record_ob_id_in
 
     params["relatedRecord__ob_id__in"] = json_related_record_ob_id_in
 
@@ -344,7 +344,7 @@ def _get_kwargs(
 
     json_related_record_short_code_in: list[str] | Unset = UNSET
     if not isinstance(related_record_short_code_in, Unset):
-        json_related_record_short_code_in = ",".join(map(str, related_record_short_code_in))
+        json_related_record_short_code_in = related_record_short_code_in
 
     params["relatedRecord__short_code__in"] = json_related_record_short_code_in
 
@@ -352,7 +352,7 @@ def _get_kwargs(
 
     json_related_record_uuid_in: list[str] | Unset = UNSET
     if not isinstance(related_record_uuid_in, Unset):
-        json_related_record_uuid_in = ",".join(map(str, related_record_uuid_in))
+        json_related_record_uuid_in = related_record_uuid_in
 
     params["relatedRecord__uuid__in"] = json_related_record_uuid_in
 

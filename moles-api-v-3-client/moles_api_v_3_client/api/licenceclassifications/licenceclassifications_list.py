@@ -73,7 +73,7 @@ def _get_kwargs(
 
     json_classification_in: list[str] | Unset = UNSET
     if not isinstance(classification_in, Unset):
-        json_classification_in = ",".join(map(str, classification_in))
+        json_classification_in = classification_in
 
     params["classification__in"] = json_classification_in
 
@@ -89,7 +89,7 @@ def _get_kwargs(
 
     json_classification_range: list[str] | Unset = UNSET
     if not isinstance(classification_range, Unset):
-        json_classification_range = ",".join(map(str, classification_range))
+        json_classification_range = classification_range
 
     params["classification__range"] = json_classification_range
 
@@ -99,13 +99,13 @@ def _get_kwargs(
 
     json_licence: list[int] | Unset = UNSET
     if not isinstance(licence, Unset):
-        json_licence = ",".join(map(str, licence))
+        json_licence = licence
 
     params["licence"] = json_licence
 
     json_licence_in: list[int] | Unset = UNSET
     if not isinstance(licence_in, Unset):
-        json_licence_in = ",".join(map(str, licence_in))
+        json_licence_in = licence_in
 
     params["licence__in"] = json_licence_in
 
@@ -133,7 +133,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -149,7 +149,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 

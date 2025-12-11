@@ -64,13 +64,13 @@ def _get_kwargs(
 
     json_constraints: list[int] | Unset = UNSET
     if not isinstance(constraints, Unset):
-        json_constraints = ",".join(map(str, constraints))
+        json_constraints = constraints
 
     params["constraints"] = json_constraints
 
     json_constraints_in: list[int] | Unset = UNSET
     if not isinstance(constraints_in, Unset):
-        json_constraints_in = ",".join(map(str, constraints_in))
+        json_constraints_in = constraints_in
 
     params["constraints__in"] = json_constraints_in
 
@@ -78,7 +78,7 @@ def _get_kwargs(
 
     json_licence_classifications: list[int] | Unset = UNSET
     if not isinstance(licence_classifications, Unset):
-        json_licence_classifications = ",".join(map(str, licence_classifications))
+        json_licence_classifications = licence_classifications
 
     params["licenceClassifications"] = json_licence_classifications
 
@@ -86,13 +86,13 @@ def _get_kwargs(
 
     json_licence_classifications_classification_in: list[str] | Unset = UNSET
     if not isinstance(licence_classifications_classification_in, Unset):
-        json_licence_classifications_classification_in = ",".join(map(str, licence_classifications_classification_in))
+        json_licence_classifications_classification_in = licence_classifications_classification_in
 
     params["licenceClassifications__classification__in"] = json_licence_classifications_classification_in
 
     json_licence_classifications_in: list[int] | Unset = UNSET
     if not isinstance(licence_classifications_in, Unset):
-        json_licence_classifications_in = ",".join(map(str, licence_classifications_in))
+        json_licence_classifications_in = licence_classifications_in
 
     params["licenceClassifications__in"] = json_licence_classifications_in
 
@@ -102,7 +102,7 @@ def _get_kwargs(
 
     json_licence_classifications_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(licence_classifications_ob_id_in, Unset):
-        json_licence_classifications_ob_id_in = ",".join(map(str, licence_classifications_ob_id_in))
+        json_licence_classifications_ob_id_in = licence_classifications_ob_id_in
 
     params["licenceClassifications__ob_id__in"] = json_licence_classifications_ob_id_in
 
@@ -124,7 +124,7 @@ def _get_kwargs(
 
     json_licence_url_in: list[str] | Unset = UNSET
     if not isinstance(licence_url_in, Unset):
-        json_licence_url_in = ",".join(map(str, licence_url_in))
+        json_licence_url_in = licence_url_in
 
     params["licenceURL__in"] = json_licence_url_in
 
@@ -140,7 +140,7 @@ def _get_kwargs(
 
     json_licence_url_range: list[str] | Unset = UNSET
     if not isinstance(licence_url_range, Unset):
-        json_licence_url_range = ",".join(map(str, licence_url_range))
+        json_licence_url_range = licence_url_range
 
     params["licenceURL__range"] = json_licence_url_range
 
@@ -170,7 +170,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -186,7 +186,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 

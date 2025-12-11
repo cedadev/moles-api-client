@@ -151,7 +151,7 @@ def _get_kwargs(
 
     json_bbox_name_in: list[str] | Unset = UNSET
     if not isinstance(bbox_name_in, Unset):
-        json_bbox_name_in = ",".join(map(str, bbox_name_in))
+        json_bbox_name_in = bbox_name_in
 
     params["bboxName__in"] = json_bbox_name_in
 
@@ -167,7 +167,7 @@ def _get_kwargs(
 
     json_bbox_name_range: list[str] | Unset = UNSET
     if not isinstance(bbox_name_range, Unset):
-        json_bbox_name_range = ",".join(map(str, bbox_name_range))
+        json_bbox_name_range = bbox_name_range
 
     params["bboxName__range"] = json_bbox_name_range
 
@@ -195,7 +195,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_in, Unset):
-        json_east_bound_longitude_in = ",".join(map(str, east_bound_longitude_in))
+        json_east_bound_longitude_in = east_bound_longitude_in
 
     params["eastBoundLongitude__in"] = json_east_bound_longitude_in
 
@@ -211,7 +211,7 @@ def _get_kwargs(
 
     json_east_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(east_bound_longitude_range, Unset):
-        json_east_bound_longitude_range = ",".join(map(str, east_bound_longitude_range))
+        json_east_bound_longitude_range = east_bound_longitude_range
 
     params["eastBoundLongitude__range"] = json_east_bound_longitude_range
 
@@ -223,13 +223,13 @@ def _get_kwargs(
 
     json_mobileplatformoperation: list[int] | Unset = UNSET
     if not isinstance(mobileplatformoperation, Unset):
-        json_mobileplatformoperation = ",".join(map(str, mobileplatformoperation))
+        json_mobileplatformoperation = mobileplatformoperation
 
     params["mobileplatformoperation"] = json_mobileplatformoperation
 
     json_mobileplatformoperation_in: list[int] | Unset = UNSET
     if not isinstance(mobileplatformoperation_in, Unset):
-        json_mobileplatformoperation_in = ",".join(map(str, mobileplatformoperation_in))
+        json_mobileplatformoperation_in = mobileplatformoperation_in
 
     params["mobileplatformoperation__in"] = json_mobileplatformoperation_in
 
@@ -255,7 +255,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_in, Unset):
-        json_north_bound_latitude_in = ",".join(map(str, north_bound_latitude_in))
+        json_north_bound_latitude_in = north_bound_latitude_in
 
     params["northBoundLatitude__in"] = json_north_bound_latitude_in
 
@@ -271,7 +271,7 @@ def _get_kwargs(
 
     json_north_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(north_bound_latitude_range, Unset):
-        json_north_bound_latitude_range = ",".join(map(str, north_bound_latitude_range))
+        json_north_bound_latitude_range = north_bound_latitude_range
 
     params["northBoundLatitude__range"] = json_north_bound_latitude_range
 
@@ -299,7 +299,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -315,7 +315,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 
@@ -325,13 +325,13 @@ def _get_kwargs(
 
     json_observation: list[int] | Unset = UNSET
     if not isinstance(observation, Unset):
-        json_observation = ",".join(map(str, observation))
+        json_observation = observation
 
     params["observation"] = json_observation
 
     json_observation_in: list[int] | Unset = UNSET
     if not isinstance(observation_in, Unset):
-        json_observation_in = ",".join(map(str, observation_in))
+        json_observation_in = observation_in
 
     params["observation__in"] = json_observation_in
 
@@ -343,13 +343,13 @@ def _get_kwargs(
 
     json_platform: list[int] | Unset = UNSET
     if not isinstance(platform, Unset):
-        json_platform = ",".join(map(str, platform))
+        json_platform = platform
 
     params["platform"] = json_platform
 
     json_platform_in: list[int] | Unset = UNSET
     if not isinstance(platform_in, Unset):
-        json_platform_in = ",".join(map(str, platform_in))
+        json_platform_in = platform_in
 
     params["platform__in"] = json_platform_in
 
@@ -375,7 +375,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_in: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_in, Unset):
-        json_south_bound_latitude_in = ",".join(map(str, south_bound_latitude_in))
+        json_south_bound_latitude_in = south_bound_latitude_in
 
     params["southBoundLatitude__in"] = json_south_bound_latitude_in
 
@@ -391,7 +391,7 @@ def _get_kwargs(
 
     json_south_bound_latitude_range: list[float] | Unset = UNSET
     if not isinstance(south_bound_latitude_range, Unset):
-        json_south_bound_latitude_range = ",".join(map(str, south_bound_latitude_range))
+        json_south_bound_latitude_range = south_bound_latitude_range
 
     params["southBoundLatitude__range"] = json_south_bound_latitude_range
 
@@ -419,7 +419,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_in: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_in, Unset):
-        json_west_bound_longitude_in = ",".join(map(str, west_bound_longitude_in))
+        json_west_bound_longitude_in = west_bound_longitude_in
 
     params["westBoundLongitude__in"] = json_west_bound_longitude_in
 
@@ -435,7 +435,7 @@ def _get_kwargs(
 
     json_west_bound_longitude_range: list[float] | Unset = UNSET
     if not isinstance(west_bound_longitude_range, Unset):
-        json_west_bound_longitude_range = ",".join(map(str, west_bound_longitude_range))
+        json_west_bound_longitude_range = west_bound_longitude_range
 
     params["westBoundLongitude__range"] = json_west_bound_longitude_range
 

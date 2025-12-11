@@ -20,25 +20,23 @@ class InstrumentWriteRequest:
 
         Attributes:
             title (str):
-            sub_instrument (list[int]):
             abstract (str | Unset):
             keywords (str | Unset):
             instrument_type (BlankEnum | InstrumentTypeEnum | Unset):
             image_details (list[int] | Unset):
+            sub_instrument (list[int] | Unset):
     """
 
     title: str
-    sub_instrument: list[int]
     abstract: str | Unset = UNSET
     keywords: str | Unset = UNSET
     instrument_type: BlankEnum | InstrumentTypeEnum | Unset = UNSET
     image_details: list[int] | Unset = UNSET
+    sub_instrument: list[int] | Unset = UNSET
     additional_properties: dict[str, Any] = _attrs_field(init=False, factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         title = self.title
-
-        sub_instrument = ",".join(map(str, self.sub_instrument))
 
         abstract = self.abstract
 
@@ -54,14 +52,17 @@ class InstrumentWriteRequest:
 
         image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(map(str, self.image_details))
+            image_details = self.image_details
+
+        sub_instrument: list[int] | Unset = UNSET
+        if not isinstance(self.sub_instrument, Unset):
+            sub_instrument = self.sub_instrument
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
         field_dict.update(
             {
                 "title": title,
-                "subInstrument": sub_instrument,
             }
         )
         if abstract is not UNSET:
@@ -72,6 +73,8 @@ class InstrumentWriteRequest:
             field_dict["instrumentType"] = instrument_type
         if image_details is not UNSET:
             field_dict["imageDetails"] = image_details
+        if sub_instrument is not UNSET:
+            field_dict["subInstrument"] = sub_instrument
 
         return field_dict
 
@@ -79,8 +82,6 @@ class InstrumentWriteRequest:
     def from_dict(cls: type[T], src_dict: Mapping[str, Any]) -> T:
         d = dict(src_dict)
         title = d.pop("title")
-
-        sub_instrument = cast(list[int], d.pop("subInstrument"))
 
         abstract = d.pop("abstract", UNSET)
 
@@ -107,13 +108,15 @@ class InstrumentWriteRequest:
 
         image_details = cast(list[int], d.pop("imageDetails", UNSET))
 
+        sub_instrument = cast(list[int], d.pop("subInstrument", UNSET))
+
         instrument_write_request = cls(
             title=title,
-            sub_instrument=sub_instrument,
             abstract=abstract,
             keywords=keywords,
             instrument_type=instrument_type,
             image_details=image_details,
+            sub_instrument=sub_instrument,
         )
 
         instrument_write_request.additional_properties = d

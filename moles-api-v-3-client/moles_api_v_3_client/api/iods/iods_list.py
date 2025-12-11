@@ -80,13 +80,13 @@ def _get_kwargs(
 
     json_acquisition: list[int] | Unset = UNSET
     if not isinstance(acquisition, Unset):
-        json_acquisition = ",".join(map(str, acquisition))
+        json_acquisition = acquisition
 
     params["acquisition"] = json_acquisition
 
     json_acquisition_in: list[int] | Unset = UNSET
     if not isinstance(acquisition_in, Unset):
-        json_acquisition_in = ",".join(map(str, acquisition_in))
+        json_acquisition_in = acquisition_in
 
     params["acquisition__in"] = json_acquisition_in
 
@@ -94,13 +94,13 @@ def _get_kwargs(
 
     json_computation_input_description: list[int] | Unset = UNSET
     if not isinstance(computation_input_description, Unset):
-        json_computation_input_description = ",".join(map(str, computation_input_description))
+        json_computation_input_description = computation_input_description
 
     params["computationInputDescription"] = json_computation_input_description
 
     json_computation_input_description_in: list[int] | Unset = UNSET
     if not isinstance(computation_input_description_in, Unset):
-        json_computation_input_description_in = ",".join(map(str, computation_input_description_in))
+        json_computation_input_description_in = computation_input_description_in
 
     params["computationInputDescription__in"] = json_computation_input_description_in
 
@@ -108,13 +108,13 @@ def _get_kwargs(
 
     json_computation_output_description: list[int] | Unset = UNSET
     if not isinstance(computation_output_description, Unset):
-        json_computation_output_description = ",".join(map(str, computation_output_description))
+        json_computation_output_description = computation_output_description
 
     params["computationOutputDescription"] = json_computation_output_description
 
     json_computation_output_description_in: list[int] | Unset = UNSET
     if not isinstance(computation_output_description_in, Unset):
-        json_computation_output_description_in = ",".join(map(str, computation_output_description_in))
+        json_computation_output_description_in = computation_output_description_in
 
     params["computationOutputDescription__in"] = json_computation_output_description_in
 
@@ -138,7 +138,7 @@ def _get_kwargs(
 
     json_description_in: list[str] | Unset = UNSET
     if not isinstance(description_in, Unset):
-        json_description_in = ",".join(map(str, description_in))
+        json_description_in = description_in
 
     params["description__in"] = json_description_in
 
@@ -154,7 +154,7 @@ def _get_kwargs(
 
     json_description_range: list[str] | Unset = UNSET
     if not isinstance(description_range, Unset):
-        json_description_range = ",".join(map(str, description_range))
+        json_description_range = description_range
 
     params["description__range"] = json_description_range
 
@@ -182,7 +182,7 @@ def _get_kwargs(
 
     json_name_in: list[str] | Unset = UNSET
     if not isinstance(name_in, Unset):
-        json_name_in = ",".join(map(str, name_in))
+        json_name_in = name_in
 
     params["name__in"] = json_name_in
 
@@ -198,7 +198,7 @@ def _get_kwargs(
 
     json_name_range: list[str] | Unset = UNSET
     if not isinstance(name_range, Unset):
-        json_name_range = ",".join(map(str, name_range))
+        json_name_range = name_range
 
     params["name__range"] = json_name_range
 
@@ -226,7 +226,7 @@ def _get_kwargs(
 
     json_ob_id_in: list[int] | Unset = UNSET
     if not isinstance(ob_id_in, Unset):
-        json_ob_id_in = ",".join(map(str, ob_id_in))
+        json_ob_id_in = ob_id_in
 
     params["ob_id__in"] = json_ob_id_in
 
@@ -242,7 +242,7 @@ def _get_kwargs(
 
     json_ob_id_range: list[int] | Unset = UNSET
     if not isinstance(ob_id_range, Unset):
-        json_ob_id_range = ",".join(map(str, ob_id_range))
+        json_ob_id_range = ob_id_range
 
     params["ob_id__range"] = json_ob_id_range
 

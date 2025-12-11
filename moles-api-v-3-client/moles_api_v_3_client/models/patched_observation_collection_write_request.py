@@ -80,15 +80,15 @@ class PatchedObservationCollectionWriteRequest:
 
         image_details: list[int] | Unset = UNSET
         if not isinstance(self.image_details, Unset):
-            image_details = ",".join(map(str, self.image_details))
+            image_details = self.image_details
 
         discovery_keywords: list[int] | Unset = UNSET
         if not isinstance(self.discovery_keywords, Unset):
-            discovery_keywords = ",".join(map(str, self.discovery_keywords))
+            discovery_keywords = self.discovery_keywords
 
         member: list[int] | Unset = UNSET
         if not isinstance(self.member, Unset):
-            member = ",".join(map(str, self.member))
+            member = self.member
 
         field_dict: dict[str, Any] = {}
         field_dict.update(self.additional_properties)
