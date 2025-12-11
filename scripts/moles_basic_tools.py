@@ -45,6 +45,8 @@ from moles_api_v_3_client.models.online_resource_write_request import OnlineReso
 # --- Models: identifiers and misc ---
 from moles_api_v_3_client.models.patched_identifier_write_request import PatchedIdentifierWriteRequest
 
+from scripts.utils import get_client
+CLIENT = get_client()
     
 SHORT_CODES_TO_ENDPOINTS_MAP = {
     'acq': acquisitions_list, 

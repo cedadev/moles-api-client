@@ -2,5 +2,89 @@
     "20251210170312": {},
     "20251211093946": {},
     "20251211113950": {},
-    "20251211114129": {}
+    "20251211114129": {},
+    "20251211120902": {
+        "verticalextents": [
+            349
+        ],
+        "results": [
+            45019
+        ],
+        "dqconformanceresults": [
+            4837
+        ],
+        "bboxes": [
+            4875
+        ]
+    },
+    "20251211121000": {
+        "verticalextents": [
+            350
+        ],
+        "results": [
+            45020
+        ],
+        "dqconformanceresults": [
+            4838
+        ],
+        "bboxes": [
+            4876
+        ],
+        "acquisitions": [
+            45021
+        ],
+        "rpis": [
+            215220,
+            215222,
+            215224
+        ],
+        "computations": [
+            45022
+        ],
+        "onlineresources": [
+            94253
+        ],
+        "composites": [
+            45023
+        ]
+    },
+    "20251211121320": {},
+    "20251211121406": {
+        "verticalextents": [
+            352
+        ],
+        "results": [
+            45029
+        ],
+        "dqconformanceresults": [
+            4840
+        ],
+        "bboxes": [
+            4878
+        ],
+        "acquisitions": [
+            45030
+        ],
+        "rpis": [
+            215241,
+            215243,
+            215245,
+            215252,
+            215253,
+            215254
+        ],
+        "computations": [
+            45031
+        ],
+        "onlineresources": [
+            94256,
+            94257
+        ],
+        "composites": [
+            45032
+        ],
+        "observations": [
+            45033
+        ]
+    }
 }

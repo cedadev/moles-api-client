@@ -647,7 +647,6 @@ def make_new_basic_obs_record(obs_dict):
             publication_state=PublicationStateCbbEnum.PREVIEW,
             update_frequency=UpdateFrequencyEnum.NOTPLANNED,
             data_lineage=obs_dict.get("lineage"),
-            non_geographic_flag=True,
             resolution=obs_dict.get("resolution", ""),
             keywords=obs_dict.get("keywords", ""),
             image_details=image_details,
@@ -658,7 +657,8 @@ def make_new_basic_obs_record(obs_dict):
             geographic_extent=bbox,
             procedure_acquisition = acquisition,
             procedure_computation = computation,
-            procedure_composite_process = composite_process
+            procedure_composite_process = composite_process,
+            non_geographic_flag=(bbox is UNSET),
         )
     )
     
@@ -722,6 +722,20 @@ def main():
             'lowest_level_bound': 0,
             'units': 'C'
         },
+        'result_path': '/my/example/path',
+        'format': 'pdf',
+        'quality': 'good quality 10/10',
+        'timerange':
+            {
+                'start': '1978-12-01T00:00:00Z',
+                'end': '1998-06-29T23:00:00Z'
+            },
+        'bbox': {
+            'east': 10,
+            'west': -10,
+            'north': 10,
+            'south': -10
+        },
         'ceda_officer': {
             'last_name': 'Example Org',
             'first_name': ''
@@ -737,9 +751,6 @@ def main():
                 'last_name': 'Example PI'
             }
         },
-        'result_path': '/my/example/path',
-        'format': 'pdf',
-        'quality': 'good quality 10/10',
         'instrument': {
             'catalogue_url': 'https://catalogue.ceda.ac.uk/uuid/c7fa005e2095425392b18adbd7b40617/',
             'title': f"titleTest{datetime.datetime.now()}",
@@ -775,17 +786,22 @@ def main():
         
             
     }
-    make_new_basic_obs_record(TEST_DATA)
+    try:
+        make_new_basic_obs_record(TEST_DATA)
     
-    print("=============== Items added to the MOLES =============== ")
-    for k, v in ROLL_BACK_DICT.items():
-        print(k)
-        for e in v:
-            print(e)
-    
-    yn = input("press Y for accepting it and N for rollback")
-    
-    if yn != 'Y':
+        print("=============== Items added to the MOLES =============== ")
+        for k, v in ROLL_BACK_DICT.items():
+            print(k)
+            for e in v:
+                print(e)
+        
+        yn = input("press Y for accepting it and N for rollback:\n")
+        
+        if yn != 'Y':
+            rollback_session()
+
+    except:
+        print('Problem occured! Rollback...')
         rollback_session()
 
 if __name__ == '__main__':
