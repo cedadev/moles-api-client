@@ -1,76 +1,27 @@
-
-from moles_api_v_3_client.api.observations import observations_create, observations_destroy
-from moles_api_v_3_client.models.observation_write_request import ObservationWriteRequest, StatusEnum, PublicationStateCbbEnum, UpdateFrequencyEnum
-from moles_api_v_3_client.models.observation_write import ObservationWrite
-
-from moles_api_v_3_client.api.results import results_create, results_destroy
-from moles_api_v_3_client.models.result_write_request import ResultWriteRequest, CurationCategoryEnum, StorageLocationEnum, StorageStatusEnum
-
-from moles_api_v_3_client.api.verticalextents import verticalextents_create, verticalextents_destroy
-from moles_api_v_3_client.models.vertical_extent_write_request import VerticalExtentWriteRequest
-
-from moles_api_v_3_client.api.dqconformanceresults import dqconformanceresults_create, dqconformanceresults_destroy
-from moles_api_v_3_client.models.dq_conformance_result_write_request import DQConformanceResultWriteRequest
-
-from moles_api_v_3_client.api.times import times_create, times_destroy
-from moles_api_v_3_client.models.time_period_request import TimePeriodRequest
-
-from moles_api_v_3_client.api.bboxes import bboxes_create, bboxes_destroy
-from moles_api_v_3_client.models.geographic_bounding_box_write_request import GeographicBoundingBoxWriteRequest
-
-from moles_api_v_3_client.api.onlineresources import onlineresources_create, onlineresources_destroy
-from moles_api_v_3_client.models.online_resource_write_request import OnlineResourceWriteRequest, FunctionEnum
-
-from moles_api_v_3_client.api.projects import projects_create, projects_destroy
-from moles_api_v_3_client.models.project_write_request import ProjectWriteRequest
-from moles_api_v_3_client.models.project_write import ProjectWrite
-from moles_api_v_3_client.models.publication_state_6f9_enum import PublicationState6F9Enum
-
-from moles_api_v_3_client.api.rpis import rpis_create, rpis_destroy
-from moles_api_v_3_client.models.responsible_party_info_write_request import ResponsiblePartyInfoWriteRequest
-from moles_api_v_3_client.models.role_enum import RoleEnum
-
-from moles_api_v_3_client.api.parties import parties_list, parties_create, parties_destroy
-from moles_api_v_3_client.models.party_write_request import PartyWriteRequest, PartyTypeEnum
-from moles_api_v_3_client.models.party_read import PartyRead
-from moles_api_v_3_client.models.party_write import PartyWrite
-
-from moles_api_v_3_client.api.acquisitions import acquisitions_create, acquisitions_destroy
-from moles_api_v_3_client.models.procedure_acquisition_write_request import ProcedureAcquisitionWriteRequest
-from moles_api_v_3_client.models.procedure_acquisition_write import ProcedureAcquisitionWrite
-
-from moles_api_v_3_client.api.instruments import instruments_create, instruments_destroy
-from moles_api_v_3_client.models.instrument_write_request import InstrumentWriteRequest
-
-from moles_api_v_3_client.api.computations import computations_create, computations_destroy
-from moles_api_v_3_client.models.procedure_computation_write_request import ProcedureComputationWriteRequest
-from moles_api_v_3_client.models.procedure_computation_write import ProcedureComputationWrite
-
-from moles_api_v_3_client.api.composites import composites_create, composites_destroy
-from moles_api_v_3_client.models.procedure_composite_process_write_request import ProcedureCompositeProcessWriteRequest
-
+from scripts.imports.api import *
+from scripts.imports.models import *
+from scripts.utils import get_client
+from scripts.moles_basic_tools import uuid_to_obj, ApiReadReferenceable, _get_value_enum
 
 from moles_api_v_3_client.types import Response, UNSET
-from scripts.utils import get_client
 import datetime
 import re
 import json
-from typing import Protocol, Union
-
-from scripts.moles_basic_tools import uuid_to_obj, ApiReadReferenceable, _get_value_enum
 import logging
 from collections import defaultdict
 import importlib
-
-logger = logging.getLogger(__name__)
 from pathlib import Path
 
 ROLL_BACK_PATH = Path(__file__).resolve().parent / 'files' / 'rollback.json'
 ROLL_BACK_DICT = defaultdict(list)
 MAX_SESSIONS_NUMBER = 20
 
+logger = logging.getLogger(__name__)
+
 ### TYPING CLASSES
 # ======================= #
+from typing import Protocol, Union
+
 PartyObj = Union[
     PartyRead,
     PartyWrite
@@ -162,7 +113,6 @@ def rollback_session(session: str = ''):
             except Exception as e:
                 print(f"❌ Failed to remove {endpoint}:{ob_id} → {e}")
         
-    
 def get_destroy_function(endpoint: str):
     '''
     Function to get destroy function for given endpoint
@@ -761,7 +711,7 @@ def main():
     SESSION_ID = f'{str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))}'
     
     # test data 
-    obs_dict = {
+    TEST_DATA = {
         'title': f'titleTest{datetime.datetime.now()}',
         'description': 'abstract',
         'lineage': 'lineage',
@@ -825,7 +775,7 @@ def main():
         
             
     }
-    make_new_basic_obs_record(obs_dict)
+    make_new_basic_obs_record(TEST_DATA)
     
     print("=============== Items added to the MOLES =============== ")
     for k, v in ROLL_BACK_DICT.items():
