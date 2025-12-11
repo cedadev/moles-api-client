@@ -15,7 +15,7 @@ MAX_SESSIONS_NUMBER = 20
 
 logger = logging.getLogger(__name__)
 
-TEST_DATA = {
+TEST_OBSERVATION = {
         'title': f'titleTest{datetime.datetime.now()}',
         'description': 'abstract',
         'lineage': 'lineage',
@@ -90,6 +90,21 @@ TEST_DATA = {
         
             
     }
+
+TEST_PROJECT = {
+    'title': f'titleTest{datetime.datetime.now()}',
+    'description': 'abstract',
+    'ceda_officer': {
+            'last_name': 'Example Org',
+            'first_name': ''
+        },
+    'funder': 'NERC',
+    'PI': {
+        'first_name': 'Example PI',
+        'last_name': 'Example PI'
+    }
+    
+}
 
 def get_sessions_dict() -> dict:
     data = None
@@ -302,37 +317,44 @@ def party_check_create(last_name: str, first_name: str = '') -> PartyObj | None:
             )
         )
 
-def make_project(proj_title: str, proj_abstract: str, ceda_officer: PartyObj, funder: PartyObj = None, pi: PartyObj = None) -> ProjectWrite:
+def make_project(proj_dict: dict) -> ProjectWrite:
     '''
-    Creates project record
+    Creates project record 
+    Proj_dict structure:
     
-    :param proj_title: Project title
-    :type proj_title: str
-    :param proj_abstract: Project abstract
-    :type proj_abstract: str
-    :param ceda_officer: Party Object for ceda officer
-    :type ceda_officer: PartyObj
-    :param funder: Party Object for funder
-    :type funder: PartyObj
-    :param pi: Party Object for principal investigator
-    :type pi: PartyObj
-    :return: Standard API client project write object 
-    :rtype: ProjectWrite
+    title(str)
+    description(str)
+    ceda_officer:
+        last_name(str)
+        first_name(str)
+    PI:
+        last_name(str)
+        first_name(str)
+    funder(str)
     '''
     new_proj = create_obj(
         projects_create,
         ProjectWriteRequest(
-            title=proj_title,
-            abstract=proj_abstract,
+            title=proj_dict.get('title'),
+            abstract=proj_dict.get('description'),
             publication_state=PublicationState6F9Enum.PUBLISHED,
             status=StatusEnum.COMPLETED
         )
     )
+    ceda_officer = proj_dict.get('ceda_officer')
+    co_fn = ceda_officer.get('first_name')
+    co_ln = ceda_officer.get('last_name')
+    
+    pi = proj_dict.get('PI')
+    pi_fn = pi.get('first_name')
+    pi_ln = pi.get('last_name')
+    
+    funder = proj_dict.get('funder')
     
     rpis_to_create = [
-        ('ceda_officer', ceda_officer),
-        ('funder', funder),
-        ('principal_investigator', pi)
+        ('ceda_officer', party_check_create(co_ln, co_fn)),
+        ('funder', party_check_create(funder)),
+        ('principal_investigator', party_check_create(pi_ln, pi_fn))
     ]
     
     for role, party in rpis_to_create:
@@ -628,10 +650,8 @@ def make_new_basic_obs_record(obs_dict):
         proj = url_to_obj(project["catalogue_url"], 'proj')
         
         if not proj:
-            funder = party_check_create(project.get('funder'))
-            pi_dict = project.get('PI', {})
-            pi = party_check_create(pi_dict.get('last_name'), pi_dict.get('first_name'))
-            proj = make_project(project["title"], project["description"], ceda_officer, funder=funder, pi=pi)
+            project['ceda_officer'] = obs_dict.get('ceda_officer')
+            proj = make_project(project)
 
 
     # make an aquisition
@@ -805,9 +825,9 @@ def main_menu():
         choice = input("Select an option (1-6): ").strip()
 
         if choice == "1":
-            make_new_basic_obs_record(TEST_DATA)
+            make_new_basic_obs_record(TEST_OBSERVATION)
         elif choice == "2":
-            pass
+            make_project(TEST_PROJECT)
         elif choice == "3":
             pass
         elif choice == "4":

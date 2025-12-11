@@ -1,1 +1,53 @@
-{}
+{
+    "20251211183857": {
+        "verticalextents": [
+            358
+        ],
+        "results": [
+            45059
+        ],
+        "dqconformanceresults": [
+            4846
+        ],
+        "bboxes": [
+            4884
+        ],
+        "acquisitions": [
+            45060
+        ],
+        "rpis": [
+            215331,
+            215333,
+            215335,
+            215342,
+            215343,
+            215344
+        ],
+        "computations": [
+            45061
+        ],
+        "onlineresources": [
+            94268,
+            94269
+        ],
+        "composites": [
+            45062
+        ],
+        "observations": [
+            45063
+        ]
+    },
+    "20251211184246": {
+        "projects": [
+            45064
+        ],
+        "parties": [
+            5182
+        ],
+        "rpis": [
+            215346,
+            215347,
+            215348
+        ]
+    }
+}
