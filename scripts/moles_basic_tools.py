@@ -7,7 +7,7 @@ from collections.abc import Callable
 from scripts.utils import get_client
 from moles_api_v_3_client.client import AuthenticatedClient
 
-CLIENT = get_client()
+
 # --- Core API endpoints (by domain) ---
 from moles_api_v_3_client.api.acquisitions import acquisitions_list
 from moles_api_v_3_client.api.computations import computations_list
