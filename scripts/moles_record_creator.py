@@ -4,19 +4,91 @@ from scripts.utils import get_client
 from scripts.moles_basic_tools import uuid_to_obj, ApiReadReferenceable, _get_value_enum
 
 from moles_api_v_3_client.types import Response, UNSET
-import datetime
-import re
-import json
-import logging
+import datetime, re, json, logging, importlib
 from collections import defaultdict
-import importlib
 from pathlib import Path
 
-ROLL_BACK_PATH = Path(__file__).resolve().parent / 'files' / 'rollback.json'
-ROLL_BACK_DICT = defaultdict(list)
+SESSIONS_PATH = Path(__file__).resolve().parent / 'files' / 'sessions.json'
+SESSIONS_DICT = defaultdict(list)
 MAX_SESSIONS_NUMBER = 20
 
 logger = logging.getLogger(__name__)
+
+TEST_DATA = {
+        'title': f'titleTest{datetime.datetime.now()}',
+        'description': 'abstract',
+        'lineage': 'lineage',
+        'resolution': 'reseseses',
+        'keywords': 'test; example',
+        'vertical_extent': {
+            'highest_level_bound': 1,
+            'lowest_level_bound': 0,
+            'units': 'C'
+        },
+        'result_path': '/my/example/path',
+        'format': 'pdf',
+        'quality': 'good quality 10/10',
+        'timerange':
+            {
+                'start': '1978-12-01T00:00:00Z',
+                'end': '1998-06-29T23:00:00Z'
+            },
+        'bbox': {
+            'east': 10,
+            'west': -10,
+            'north': 10,
+            'south': -10
+        },
+        'ceda_officer': {
+            'last_name': 'Example Org',
+            'first_name': ''
+        },
+        'image_details': 2,
+        'project': {
+            'catalogue_url': "https://catalogue.ceda.ac.uk/uuid/e2868732b207415b95697871cd109ce3/",
+            'title': f"titleTest{datetime.datetime.now()}",
+            'description': 'abstract',
+            'funder': 'NERC',
+            'PI': {
+                'first_name': 'Example PI',
+                'last_name': 'Example PI'
+            }
+        },
+        'instrument': {
+            'catalogue_url': 'https://catalogue.ceda.ac.uk/uuid/c7fa005e2095425392b18adbd7b40617/',
+            'title': f"titleTest{datetime.datetime.now()}",
+            'description': 'abstract',
+        },       
+        'computation': {
+            'title': f"titleTest{datetime.datetime.now()}",
+            'description': 'abstract',
+            'docs': [
+                    {
+                    'title': f"titleTest{datetime.datetime.now()}",
+                    'url': 'https://artefacts.ceda.ac.uk/badc_datadocs/tovs/tovshelp.html'
+                }
+            ]
+        },
+        'docs': [
+            {
+                'title': f"titleTest{datetime.datetime.now()}",
+                'url': 'https://artefacts.ceda.ac.uk/badc_datadocs/tovs/tovshelp.html'
+            },
+        ],
+        'authors':
+            [
+                {
+                    'last_name': 'first author',
+                    'first_name': 'name'
+                },
+                {
+                    'last_name': 'second author',
+                    'first_name': 'name'
+                }
+            ]
+        
+            
+    }
 
 ### TYPING CLASSES
 # ======================= #
@@ -59,6 +131,18 @@ class RecordCreationError(Exception):
 
 # ======================= #
 
+def get_sessions_dict() -> dict:
+    data = None
+    with open(SESSIONS_PATH) as f:
+        data = json.load(f)
+        
+    return data
+    
+def save_sessions_dict(data: dict):
+    with open(SESSIONS_PATH, 'w') as f:
+        json.dump(data, f, indent=4)
+    
+
 def add_to_rollback(endpoint: str, ob_id: int):
     '''
     Function to add endpoint and ob_id to the rollback file under current session
@@ -68,56 +152,53 @@ def add_to_rollback(endpoint: str, ob_id: int):
     :param ob_id: Object id
     :type ob_id: int
     '''
-    ROLL_BACK_DICT[endpoint].append(ob_id)
-    data = None
-    with open(ROLL_BACK_PATH) as f:
-        data = json.load(f)
+    SESSIONS_DICT[endpoint].append(ob_id)
+    data = get_sessions_dict()
     
-    data[SESSION_ID] = ROLL_BACK_DICT
+    data[SESSION_ID] = SESSIONS_DICT
     
     if len(data) > MAX_SESSIONS_NUMBER:
         data.pop(0)
     
-    with open(ROLL_BACK_PATH, 'w') as f:
-        f.write(json.dumps(data))
+    save_sessions_dict(data)
     
 def rollback_session(session: str = ''):
     '''
-    Docstring for rollback_session
+    Function to remove all records created in given session
     
-    :param session: Description
+    :param session: Session id; if empty latest session is taken
     :type session: str
     '''
-    data = None
-    with open(ROLL_BACK_PATH) as f:
-        data = json.load(f)
+    data = get_sessions_dict()
     
-    latest_session = list(data.keys())[-1]
-    session_data = data[latest_session]
+    if not session:
+        session = list(data.keys())[-1]
+    session_data = data[session]
     
     for endpoint, ob_ids in list(session_data.items()):
         for ob_id in list(ob_ids):
             try:
                 remove_obj(endpoint, ob_id)  
-
                 session_data[endpoint].remove(ob_id)
-
-                if not session_data[endpoint]:
-                    del session_data[endpoint]
-
-                with open(ROLL_BACK_PATH, "w") as f:
-                    json.dump(data, f, indent=4)
-
+                save_sessions_dict(data)
                 print(f"✅ Removed {endpoint}:{ob_id}")
-
+                
             except Exception as e:
                 print(f"❌ Failed to remove {endpoint}:{ob_id} → {e}")
-        
+                
+        if not session_data[endpoint]:
+            del session_data[endpoint]
+            
+    if not data[session]:
+        del data[session]
+                    
+    save_sessions_dict(data)
+    
 def get_destroy_function(endpoint: str):
     '''
     Function to get destroy function for given endpoint
     
-    :param endpoint: Name of the endpoint
+    :param endpoint: Endpoint name
     :type endpoint: str
     '''
     module_path = f"moles_api_v_3_client.api.{endpoint}"
@@ -130,7 +211,7 @@ def remove_obj(endpoint: str, ob_id: int):
     '''
     Function that removes object of given ob_id from given endpoint
     
-    :param endpoint: endpoint name
+    :param endpoint: Endpoint name
     :type endpoint: str
     :param ob_id: ob_id
     :type ob_id: int
@@ -188,7 +269,7 @@ def url_to_obj(url: str, short_code: str = '') -> ApiReadReferenceable | None:
     :rtype: ApiReadReferenceable | None
     '''
     # check if there's uuid in the url
-    match = re.search('/([\da-f]{32})/?$', url)
+    match = re.search(r'/([\da-f]{32})/?$', url)
     if not match:
         return None
     
@@ -704,103 +785,87 @@ def make_new_basic_obs_record(obs_dict):
 
     logger.info(f'View resulting Observation record at: https://catalogue.ceda.ac.uk/admin/cedamoles_app/observation/{obs}/')
        
+def print_rollback_dict():
+    '''
+    Shortcut for formatted print of rollback dict
+    '''       
+
+    print("=============== Items added to the MOLES =============== ")
+    for k, v in SESSIONS_DICT.items():
+        print(k)
+        for e in v:
+            print('\t' + e)
+    print("======================================================== ")  
+    
+def choose_session() -> str | None:
+    '''
+    Docstring for choose_session
+    
+    :return: Description
+    :rtype: str | None
+    '''
+    
+    print(10 * '=' + "Choose session to rollback" + 10 * '=')
+    data = get_sessions_dict()
+    sessions = list(data.keys())
+    n = 0
+    for session, endpoints in data.items():
+        n += 1
+        count = 0
+        for _, v in endpoints.items():
+            count += len(v)
+            
+        print(f'{n}. {session}: {count} records')
+    
+    choice = input('Choice: ')
+    choice = int(choice) - 1
+    if 0 <= choice < len(sessions):
+        return sessions[choice]
+    
+    return None
+
+def invalid_choice():
+    print("Invalid option. Please try again.")
+
+def main_menu():
+    while True:
+        print("\n=== MAIN MENU ===")
+        print("1. Add observation")
+        print("2. Add project")
+        print("3. Add party")
+        print("4. Print created records")
+        print("5. Rollback")
+        print("6. Exit")
+
+        choice = input("Select an option (1-6): ").strip()
+
+        if choice == "1":
+            make_new_basic_obs_record(TEST_DATA)
+        elif choice == "2":
+            pass
+        elif choice == "3":
+            pass
+        elif choice == "4":
+            pass
+        elif choice == "5":
+            choice = choose_session()
+            invalid_choice() if choice is None else rollback_session(choice)
+        elif choice == "6":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid option. Please try again.")
+            
 def main():
     global CLIENT
     CLIENT = get_client()
     global SESSION_ID
     SESSION_ID = f'{str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))}'
     
-    # test data 
-    TEST_DATA = {
-        'title': f'titleTest{datetime.datetime.now()}',
-        'description': 'abstract',
-        'lineage': 'lineage',
-        'resolution': 'reseseses',
-        'keywords': 'test; example',
-        'vertical_extent': {
-            'highest_level_bound': 1,
-            'lowest_level_bound': 0,
-            'units': 'C'
-        },
-        'result_path': '/my/example/path',
-        'format': 'pdf',
-        'quality': 'good quality 10/10',
-        'timerange':
-            {
-                'start': '1978-12-01T00:00:00Z',
-                'end': '1998-06-29T23:00:00Z'
-            },
-        'bbox': {
-            'east': 10,
-            'west': -10,
-            'north': 10,
-            'south': -10
-        },
-        'ceda_officer': {
-            'last_name': 'Example Org',
-            'first_name': ''
-        },
-        'image_details': 2,
-        'project': {
-            'catalogue_url': "https://catalogue.ceda.ac.uk/uuid/e2868732b207415b95697871cd109ce3/",
-            'title': f"titleTest{datetime.datetime.now()}",
-            'description': 'abstract',
-            'funder': 'NERC',
-            'PI': {
-                'first_name': 'Example PI',
-                'last_name': 'Example PI'
-            }
-        },
-        'instrument': {
-            'catalogue_url': 'https://catalogue.ceda.ac.uk/uuid/c7fa005e2095425392b18adbd7b40617/',
-            'title': f"titleTest{datetime.datetime.now()}",
-            'description': 'abstract',
-        },       
-        'computation': {
-            'title': f"titleTest{datetime.datetime.now()}",
-            'description': 'abstract',
-            'docs': [
-                    {
-                    'title': f"titleTest{datetime.datetime.now()}",
-                    'url': 'https://artefacts.ceda.ac.uk/badc_datadocs/tovs/tovshelp.html'
-                }
-            ]
-        },
-        'docs': [
-            {
-                'title': f"titleTest{datetime.datetime.now()}",
-                'url': 'https://artefacts.ceda.ac.uk/badc_datadocs/tovs/tovshelp.html'
-            },
-        ],
-        'authors':
-            [
-                {
-                    'last_name': 'first author',
-                    'first_name': 'name'
-                },
-                {
-                    'last_name': 'second author',
-                    'first_name': 'name'
-                }
-            ]
-        
-            
-    }
     try:
-        make_new_basic_obs_record(TEST_DATA)
-    
-        print("=============== Items added to the MOLES =============== ")
-        for k, v in ROLL_BACK_DICT.items():
-            print(k)
-            for e in v:
-                print(e)
-        
-        yn = input("press Y for accepting it and N for rollback:\n")
-        
-        if yn != 'Y':
-            rollback_session()
-
-    except:
+        main_menu()
+    except Exception as e:
+        print(str(e))
         print('Problem occured! Rollback...')
         rollback_session()
 
