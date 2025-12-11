@@ -1,5 +1,6 @@
 from scripts.imports.api import *
 from scripts.imports.models import *
+from scripts.imports.typing_moles import *
 from scripts.utils import get_client
 from scripts.moles_basic_tools import uuid_to_obj, ApiReadReferenceable, _get_value_enum
 
@@ -90,47 +91,6 @@ TEST_DATA = {
             
     }
 
-### TYPING CLASSES
-# ======================= #
-from typing import Protocol, Union
-
-PartyObj = Union[
-    PartyRead,
-    PartyWrite
-]
-
-WriteObj = Union[
-    ObservationWriteRequest,
-    ResultWriteRequest,
-    VerticalExtentWriteRequest,
-    DQConformanceResultWriteRequest,
-    TimePeriodRequest,
-    GeographicBoundingBoxWriteRequest,
-    OnlineResourceWriteRequest,
-    ProjectWriteRequest,
-    ResponsiblePartyInfoWriteRequest,
-    PartyWriteRequest,
-    ProcedureAcquisitionWriteRequest,
-    InstrumentWriteRequest,
-    ProcedureComputationWriteRequest,
-    ProcedureCompositeProcessWriteRequest
-]
-
-class CreateModule(Protocol):
-    def sync_detailed(self, body: object) -> Response:
-        pass
-
-class APIWriteResponse(Protocol):
-    '''
-    Generic typing class for objects like ObservationWrite, ProjectWrite...
-    '''
-    ob_id: int
-
-class RecordCreationError(Exception):
-    pass
-
-# ======================= #
-
 def get_sessions_dict() -> dict:
     data = None
     with open(SESSIONS_PATH) as f:
@@ -140,8 +100,7 @@ def get_sessions_dict() -> dict:
     
 def save_sessions_dict(data: dict):
     with open(SESSIONS_PATH, 'w') as f:
-        json.dump(data, f, indent=4)
-    
+        json.dump(data, f, indent=4)    
 
 def add_to_rollback(endpoint: str, ob_id: int):
     '''
@@ -816,27 +775,33 @@ def choose_session() -> str | None:
             count += len(v)
             
         print(f'{n}. {session}: {count} records')
+    print(f'{n + 1}. Exit')
     
     choice = input('Choice: ')
     choice = int(choice) - 1
     if 0 <= choice < len(sessions):
         return sessions[choice]
     
+    if choice != len(sessions):
+        print_invalid_choice()
+        
     return None
 
-def invalid_choice():
+def print_invalid_choice():
     print("Invalid option. Please try again.")
+
+def print_main_menu():
+    print("\n=== MAIN MENU ===")
+    print("1. Add observation")
+    print("2. Add project")
+    print("3. Add party")
+    print("4. Print created records")
+    print("5. Rollback")
+    print("6. Exit")
 
 def main_menu():
     while True:
-        print("\n=== MAIN MENU ===")
-        print("1. Add observation")
-        print("2. Add project")
-        print("3. Add party")
-        print("4. Print created records")
-        print("5. Rollback")
-        print("6. Exit")
-
+        print_main_menu()
         choice = input("Select an option (1-6): ").strip()
 
         if choice == "1":
@@ -849,7 +814,8 @@ def main_menu():
             pass
         elif choice == "5":
             choice = choose_session()
-            invalid_choice() if choice is None else rollback_session(choice)
+            if choice is not None:
+                rollback_session(choice)
         elif choice == "6":
             print("Exiting...")
             break
@@ -864,8 +830,7 @@ def main():
     
     try:
         main_menu()
-    except Exception as e:
-        print(str(e))
+    except Exception:
         print('Problem occured! Rollback...')
         rollback_session()
 
