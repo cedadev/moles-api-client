@@ -1,19 +1,25 @@
 from scripts.imports.api import *
 from scripts.imports.models import *
 from scripts.imports.typing_moles import *
-from scripts.utils import get_client
+from scripts.utils import *
 from scripts.moles_basic_tools import uuid_to_obj, ApiReadReferenceable, _get_value_enum
 
 from moles_api_v_3_client.types import Response, UNSET
-import datetime, re, json, logging, importlib
+import datetime, re, logging, importlib, json, yaml
 from collections import defaultdict
-from pathlib import Path
 
-SESSIONS_PATH = Path(__file__).resolve().parent / 'files' / 'sessions.json'
+FILES_PATH = Path(__file__).resolve().parent / 'files' 
 SESSIONS_DICT = defaultdict(list)
 MAX_SESSIONS_NUMBER = 20
 
+VALID_INPUT_TYPES = [
+    'yml',
+    'json',
+    'text'
+]
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.ERROR)
 
 TEST_OBSERVATION = {
         'title': f'titleTest{datetime.datetime.now()}',
@@ -106,18 +112,7 @@ TEST_PROJECT = {
     
 }
 
-def get_sessions_dict() -> dict:
-    data = None
-    with open(SESSIONS_PATH) as f:
-        data = json.load(f)
-        
-    return data
-    
-def save_sessions_dict(data: dict):
-    with open(SESSIONS_PATH, 'w') as f:
-        json.dump(data, f, indent=4)    
-
-def add_to_rollback(endpoint: str, ob_id: int):
+def add_to_sessions(endpoint: str, ob_id: int):
     '''
     Function to add endpoint and ob_id to the rollback file under current session
     
@@ -135,6 +130,35 @@ def add_to_rollback(endpoint: str, ob_id: int):
         data.pop(0)
     
     save_sessions_dict(data)
+
+def get_destroy_function(endpoint: str):
+    '''
+    Function to get destroy function for given endpoint
+    
+    :param endpoint: Endpoint name
+    :type endpoint: str
+    '''
+    module_path = f"moles_api_v_3_client.api.{endpoint}"
+    function_name = f"{endpoint}_destroy"
+    
+    module = importlib.import_module(module_path)
+    return getattr(module, function_name)
+    
+def remove_obj(endpoint: str, ob_id: int):
+    '''
+    Function that removes object of given ob_id from given endpoint
+    
+    :param endpoint: Endpoint name
+    :type endpoint: str
+    :param ob_id: ob_id
+    :type ob_id: int
+    '''
+    destroy_func = get_destroy_function(endpoint)
+    response = destroy_func.sync_detailed(client=CLIENT, ob_id=ob_id)
+    try:
+        validate_api_response(response, 204)
+    except:
+        validate_api_response(response, 404)
     
 def rollback_session(session: str = ''):
     '''
@@ -167,68 +191,6 @@ def rollback_session(session: str = ''):
         del data[session]
                     
     save_sessions_dict(data)
-    
-def get_destroy_function(endpoint: str):
-    '''
-    Function to get destroy function for given endpoint
-    
-    :param endpoint: Endpoint name
-    :type endpoint: str
-    '''
-    module_path = f"moles_api_v_3_client.api.{endpoint}"
-    function_name = f"{endpoint}_destroy"
-    
-    module = importlib.import_module(module_path)
-    return getattr(module, function_name)
-    
-def remove_obj(endpoint: str, ob_id: int):
-    '''
-    Function that removes object of given ob_id from given endpoint
-    
-    :param endpoint: Endpoint name
-    :type endpoint: str
-    :param ob_id: ob_id
-    :type ob_id: int
-    '''
-    destroy_func = get_destroy_function(endpoint)
-    response = destroy_func.sync_detailed(client=CLIENT, ob_id=ob_id)
-    try:
-        _validate_api_response(response, 204)
-    except:
-        _validate_api_response(response, 404)
-
-def _validate_api_response(response: Response, expected_status_code: int, message: str = '') -> None:
-    '''
-    Function to validate API response.
-    It compares expected status code with an actual status code and raise expection if they don't match.
-    
-    :param response: Response from API client
-    :type response: Response
-    :param expected_status_code: Expected status code
-    :type expected_status_code: int
-    :param message: Optional error message to be printed before an exception
-    :type message: str
-    '''
-    status_code = response.status_code.value
-    if status_code != expected_status_code:
-        logger.error("%s", message)
-        # if 500 save error to html for easier debugging
-        if status_code == 500:
-            raw = str(response.content)
-            clean = raw.lstrip("b'").rstrip("'").replace("\\n", "")
-            with open('error.html', 'w') as f:
-                f.write(clean)
-        raise Exception(response)
-
-def _validate_record_url(url: str) -> None:
-    '''
-    Function to check if record url is pointing to the ceda catalogue
-    
-    :param url: URL string
-    :type url: str
-    '''
-    if 'catalogue.ceda.ac.uk' not in url or 'admin' in url : 
-        raise RecordCreationError('Record URL needs to be a valid user-view MOLES record, not external URL. Exiting and cleaning up...')
 
 def url_to_obj(url: str, short_code: str = '') -> ApiReadReferenceable | None:
     '''
@@ -273,11 +235,11 @@ def create_obj(create_fn: CreateModule, write_obj: WriteObj) -> APIWriteResponse
     
     response: Response = create_fn.sync_detailed(client=CLIENT, body=write_obj)
     
-    _validate_api_response(response, 201)
+    validate_api_response(response, 201)
     
-    logger.info("Created successfully %s", response.parsed.ob_id)
+    logger.debug("Created successfully %s", response.parsed.ob_id)
     
-    add_to_rollback(model_name, response.parsed.ob_id)
+    add_to_sessions(model_name, response.parsed.ob_id)
 
     return response.parsed
 
@@ -303,7 +265,7 @@ def party_check_create(last_name: str, first_name: str = '') -> PartyObj | None:
     first_name = first_name or UNSET
 
     response = parties_list.sync_detailed(client=CLIENT, last_name=last_name, first_name=first_name)
-    _validate_api_response(response, 200)
+    validate_api_response(response, 200)
     
     if response.parsed.count > 0:
         return response.parsed.results[0]
@@ -332,6 +294,8 @@ def make_project(proj_dict: dict) -> ProjectWrite:
         first_name(str)
     funder(str)
     '''
+    title=proj_dict.get('title'),
+    abstract=proj_dict.get('description'),
     new_proj = create_obj(
         projects_create,
         ProjectWriteRequest(
@@ -341,13 +305,17 @@ def make_project(proj_dict: dict) -> ProjectWrite:
             status=StatusEnum.COMPLETED
         )
     )
+    co_fn, co_ln = None, None
     ceda_officer = proj_dict.get('ceda_officer')
-    co_fn = ceda_officer.get('first_name')
-    co_ln = ceda_officer.get('last_name')
+    if ceda_officer:
+        co_fn = ceda_officer.get('first_name')
+        co_ln = ceda_officer.get('last_name')
     
+    pi_fn, pi_ln = None, None
     pi = proj_dict.get('PI')
-    pi_fn = pi.get('first_name')
-    pi_ln = pi.get('last_name')
+    if pi:
+        pi_fn = pi.get('first_name')
+        pi_ln = pi.get('last_name')
     
     funder = proj_dict.get('funder')
     
@@ -762,25 +730,13 @@ def make_new_basic_obs_record(obs_dict):
         i += 1
 
 
-    logger.info(f'View resulting Observation record at: https://catalogue.ceda.ac.uk/admin/cedamoles_app/observation/{obs}/')
+    return obs
        
-def print_rollback_dict():
-    '''
-    Shortcut for formatted print of rollback dict
-    '''       
-
-    print("=============== Items added to the MOLES =============== ")
-    for k, v in SESSIONS_DICT.items():
-        print(k)
-        for e in v:
-            print('\t' + e)
-    print("======================================================== ")  
-    
 def choose_session() -> str | None:
     '''
-    Docstring for choose_session
+    Function that allows choosing session without typiong exact id
     
-    :return: Description
+    :return: session id
     :rtype: str | None
     '''
     
@@ -810,32 +766,119 @@ def choose_session() -> str | None:
 def print_invalid_choice():
     print("Invalid option. Please try again.")
 
-def print_main_menu():
+def print_main_menu() -> None:
+    '''
+    Shortcut for printing main menu
+    '''
     print("\n=== MAIN MENU ===")
     print("1. Add observation")
     print("2. Add project")
-    print("3. Add party")
-    print("4. Print created records")
+    print("3. Test obs upload")
+    print("4. Print current session")
     print("5. Rollback")
     print("6. Exit")
 
+def print_current_session() -> None:
+    '''
+    Print all records created in the current session
+    '''
+    sessions = get_sessions_dict()
+    s = sessions.get(SESSION_ID)
+    if not s:
+        return
+    
+    print(10 * '=' + 'Current session' + 10 * '=')
+    for endpoint, ids in s.items():
+        print(endpoint)
+        for ob_id in ids:
+            print(f'\t{ob_id}')
+
+def input_to_dict(input_type: str, data: str) -> dict:
+    '''
+    Docstring for input_to_dict
+    
+    :param input_type: yml, json or text
+    :type input_type: str
+    :param data: filepath or data
+    :type data: str
+    :return: moles record dict
+    :rtype: dict
+    '''
+    
+    if input_type not in VALID_INPUT_TYPES:
+        return None
+    
+    if input_type == 'text':
+        try:
+            return json.loads(data)
+        except json.JSONDecodeError as e:
+            print(e)
+            return None
+    
+    raw_string = None
+    try:
+        with open(FILES_PATH / data) as f:
+            raw_string = f.read()
+    except FileNotFoundError:
+        print("File not found!")
+        return None
+    
+    if input_type == 'yml':
+        return yaml.safe_load(raw_string)
+    return json.loads(raw_string)
+
+def user_input_data() -> tuple:
+    '''
+    Function to get user input for record creation
+    
+    :return: Type of input (e.g. yml, text) and filepath/string
+    :rtype: tuple
+    '''
+    print('Available input types:')
+    print(";".join(VALID_INPUT_TYPES))
+    
+    input_type = input('Choose input type: ')
+    data = input('Provide filename for json/yml, or serialized json string if you chose "text": ')
+    
+    return (input_type, data)
+
 def main_menu():
+    '''
+    Function that hanles main menu loop 
+    '''
     while True:
         print_main_menu()
         choice = input("Select an option (1-6): ").strip()
 
         if choice == "1":
-            make_new_basic_obs_record(TEST_OBSERVATION)
+            input_type, record_dict = user_input_data()
+            record_dict = input_to_dict(input_type, record_dict)
+            
+            if record_dict is None:
+                print_invalid_choice()
+            else:
+                make_new_basic_obs_record(record_dict)
+            
         elif choice == "2":
-            make_project(TEST_PROJECT)
+            input_type, record_dict = user_input_data()
+            record_dict = input_to_dict(input_type, record_dict)
+            
+            if record_dict is None:
+                print_invalid_choice()
+            else:
+                make_project(record_dict)
+
         elif choice == "3":
-            pass
+            make_new_basic_obs_record(TEST_OBSERVATION)
+            
         elif choice == "4":
-            pass
+            print_current_session()
+            
         elif choice == "5":
             choice = choose_session()
             if choice is not None:
                 rollback_session(choice)
+                
         elif choice == "6":
             print("Exiting...")
             break
@@ -848,11 +891,7 @@ def main():
     global SESSION_ID
     SESSION_ID = f'{str(datetime.datetime.now().strftime("%Y%m%d%H%M%S"))}'
     
-    try:
-        main_menu()
-    except Exception:
-        print('Problem occured! Rollback...')
-        rollback_session()
+    main_menu()
 
 if __name__ == '__main__':
     main()

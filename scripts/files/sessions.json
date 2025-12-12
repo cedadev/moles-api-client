@@ -1,53 +1,257 @@
 {
-    "20251211183857": {
+    "20251212110033": {
         "verticalextents": [
-            358
+            359
         ],
         "results": [
-            45059
+            45065
         ],
         "dqconformanceresults": [
-            4846
+            4847
         ],
         "bboxes": [
-            4884
+            4885
         ],
         "acquisitions": [
-            45060
+            45066
         ],
         "rpis": [
-            215331,
-            215333,
-            215335,
-            215342,
-            215343,
-            215344
+            215350,
+            215352,
+            215354,
+            215361,
+            215362,
+            215363
         ],
         "computations": [
-            45061
+            45067
         ],
         "onlineresources": [
-            94268,
-            94269
+            94270,
+            94271
         ],
         "composites": [
-            45062
+            45068
         ],
         "observations": [
-            45063
+            45069
         ]
     },
-    "20251211184246": {
-        "projects": [
-            45064
+    "20251212110139": {
+        "verticalextents": [
+            360
         ],
-        "parties": [
-            5182
+        "results": [
+            45070
+        ],
+        "dqconformanceresults": [
+            4848
+        ],
+        "bboxes": [
+            4886
+        ],
+        "acquisitions": [
+            45071
         ],
         "rpis": [
-            215346,
-            215347,
-            215348
+            215365,
+            215367,
+            215369,
+            215376,
+            215377,
+            215378
+        ],
+        "computations": [
+            45072
+        ],
+        "onlineresources": [
+            94272,
+            94273
+        ],
+        "composites": [
+            45073
+        ],
+        "observations": [
+            45074
+        ]
+    },
+    "20251212110338": {
+        "verticalextents": [
+            361
+        ],
+        "results": [
+            45075
+        ],
+        "dqconformanceresults": [
+            4849
+        ],
+        "bboxes": [
+            4887
+        ],
+        "acquisitions": [
+            45076
+        ],
+        "rpis": [
+            215380,
+            215382,
+            215384,
+            215391,
+            215392,
+            215393
+        ],
+        "computations": [
+            45077
+        ],
+        "onlineresources": [
+            94274,
+            94275
+        ],
+        "composites": [
+            45078
+        ],
+        "observations": [
+            45079
+        ]
+    },
+    "20251212110508": {
+        "verticalextents": [
+            362
+        ],
+        "results": [
+            45080
+        ],
+        "dqconformanceresults": [
+            4850
+        ],
+        "bboxes": [
+            4888
+        ],
+        "acquisitions": [
+            45081
+        ],
+        "rpis": [
+            215395,
+            215397,
+            215399,
+            215406,
+            215407,
+            215408
+        ],
+        "computations": [
+            45082
+        ],
+        "onlineresources": [
+            94276,
+            94277
+        ],
+        "composites": [
+            45083
+        ],
+        "observations": [
+            45084
+        ]
+    },
+    "20251212111814": {
+        "verticalextents": [
+            363
+        ],
+        "results": [
+            45085
+        ],
+        "dqconformanceresults": [
+            4851
+        ],
+        "bboxes": [
+            4889
+        ],
+        "acquisitions": [
+            45086
+        ],
+        "rpis": [
+            215410,
+            215412,
+            215414,
+            215421,
+            215422,
+            215423
+        ],
+        "computations": [
+            45087
+        ],
+        "onlineresources": [
+            94278,
+            94279
+        ],
+        "composites": [
+            45088
+        ],
+        "observations": [
+            45089
+        ]
+    },
+    "20251212111846": {
+        "verticalextents": [
+            364
+        ],
+        "results": [
+            45090
+        ],
+        "dqconformanceresults": [
+            4852
+        ],
+        "bboxes": [
+            4890
+        ],
+        "acquisitions": [
+            45091
+        ],
+        "rpis": [
+            215425,
+            215427,
+            215429,
+            215436,
+            215437,
+            215438
+        ],
+        "computations": [
+            45092
+        ],
+        "onlineresources": [
+            94280,
+            94281
+        ],
+        "composites": [
+            45093
+        ],
+        "observations": [
+            45094
+        ]
+    },
+    "20251212133230": {
+        "projects": [
+            45095,
+            45096
+        ],
+        "parties": [
+            5183
+        ],
+        "rpis": [
+            215440,
+            215441,
+            215442,
+            215444,
+            215445,
+            215446
+        ]
+    },
+    "20251212135110": {
+        "projects": [
+            45097
+        ]
+    },
+    "20251212135532": {
+        "projects": [
+            45098
         ]
     }
 }
